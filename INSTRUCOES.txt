@@ -1,0 +1,15 @@
+INSTRUÇÕES RÁPIDAS
+==================
+
+✅ PARA TESTAR LOCALMENTE:
+   - Dê duplo clique em "testar.bat"
+   - Abra o navegador em: http://localhost:8000
+
+🌐 PARA PUBLICAR NA VERCELL:
+   - Acesse: https://vercel.com
+   - Crie conta (grátis)
+   - Arraste esta pasta para o site
+
+🔗 LINKS IMPORTANTES:
+   - Admin: /admin (senha: GT@5513)
+   - Rastreamento: /rastreamento/CODIGO
