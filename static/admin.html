@@ -1,140 +1,89 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Painel Admin - Rastreamento</title>
-
-<script type="module">
-
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"
-
 const supabaseUrl = "https://opiwznepfjcinxrymrxw.supabase.co"
-
 const supabaseKey = "sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
-const supabase = createClient(supabaseUrl, supabaseKey)
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey)
 
+async function criarRastreio() {
 
-async function carregarRastreios(){
+const code = document.getElementById("codigo").value
+const recipient = document.getElementById("destinatario").value
+const address = document.getElementById("endereco").value
+const status = document.getElementById("status").value
+const location = document.getElementById("localizacao").value
+const cep = document.getElementById("cep").value
 
-const { data, error } = await supabase
-.from("trackings_test")
-.select("*")
-.order("id",{ascending:false})
-
-if(error){
-
-console.error(error)
-return
-
+const timeline = [
+{
+status: status,
+location: location,
+date: new Date().toISOString()
 }
-
-const lista = document.getElementById("lista")
-
-lista.innerHTML=""
-
-data.forEach(item=>{
-
-lista.innerHTML += `
-
-<div class="card">
-
-<b>${item.code}</b><br>
-
-Destinatário: ${item.recipient_name}<br>
-
-Endereço: ${item.address}<br>
-
-Última atualização: ${item.last_update ?? ""}<br>
-
-<button onclick="atualizar('${item.code}')">
-Atualizar Status
-</button>
-
-</div>
-
-`
-
-})
-
-}
-
-
-
-async function atualizar(code){
-
-const status = prompt("Digite o novo status")
-
-if(!status) return
+]
 
 const { error } = await supabase
 .from("trackings_test")
-.update({ last_update: status })
+.insert([
+{
+code: code,
+recipient_name: recipient,
+address: address,
+status: status,
+timeline: timeline,
+cep: cep,
+last_update: new Date().toISOString(),
+is_verified: true
+}
+])
+
+if (error) {
+console.error(error)
+alert("Erro ao salvar")
+} else {
+alert("Rastreamento criado com sucesso")
+}
+
+}
+
+async function atualizarStatus() {
+
+const code = document.getElementById("codigo").value
+const status = document.getElementById("status").value
+const location = document.getElementById("localizacao").value
+
+const { data, error } = await supabase
+.from("trackings_test")
+.select("timeline")
+.eq("code", code)
+.single()
+
+if (error) {
+console.error(error)
+alert("Erro ao buscar rastreio")
+return
+}
+
+let timeline = data.timeline || []
+
+timeline.push({
+status: status,
+location: location,
+date: new Date().toISOString()
+})
+
+const { error: updateError } = await supabase
+.from("trackings_test")
+.update({
+status: status,
+timeline: timeline,
+last_update: new Date().toISOString()
+})
 .eq("code", code)
 
-if(error){
-
-alert("Erro ao atualizar")
-console.error(error)
-return
-
+if (updateError) {
+console.error(updateError)
+alert("Erro ao atualizar status")
+} else {
+alert("Status atualizado com sucesso")
 }
 
-alert("Atualizado com sucesso")
-
-carregarRastreios()
-
 }
-
-
-window.atualizar = atualizar
-
-
-carregarRastreios()
-
-</script>
-
-
-<style>
-
-body{
-
-font-family:Arial;
-background:#f4f4f4;
-padding:40px;
-
-}
-
-.card{
-
-background:white;
-padding:15px;
-margin:10px;
-border-radius:8px;
-box-shadow:0 0 5px rgba(0,0,0,0.1);
-
-}
-
-button{
-
-padding:10px;
-background:#0066ff;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<h2>Painel Admin - Rastreamento</h2>
-
-<div id="lista"></div>
-
-</body>
-</html>
