@@ -1,32 +1,294 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
+<meta charset="UTF-8">
+<title>Área Administrativa</title>
 
-<title>Admin</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<style>
 
-<script src="/js/supabase.js"></script>
+body{
+font-family:Arial;
+background:#f5f7fb;
+margin:0;
+padding:40px;
+}
 
-<script src="/js/admin.js"></script>
+.container{
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:10px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+padding:10px 15px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+margin-right:10px;
+}
+
+.criar{
+background:#1a73e8;
+color:white;
+}
+
+.atualizar{
+background:#ff9800;
+color:white;
+}
+
+.ver{
+background:#1a73e8;
+color:white;
+}
+
+.excluir{
+background:#e53935;
+color:white;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<h1>Painel Admin</h1>
+<div class="container">
 
-<input id="codigo" placeholder="Código">
-<input id="nome" placeholder="Destinatário">
+<h2>Área Administrativa</h2>
+
+<div class="card">
+
+<h3>Criar Rastreamento</h3>
+
+<input id="codigo" placeholder="Código de rastreio">
+
+<input id="destinatario" placeholder="Destinatário">
+
+<input id="cep" placeholder="CEP">
+
 <input id="endereco" placeholder="Endereço">
 
-<button onclick="criar()">Criar rastreio</button>
+<input id="localizacao" placeholder="Localização">
 
-<hr>
+<select id="status">
+
+<option>Postado</option>
+<option>Em trânsito</option>
+<option>Centro de distribuição</option>
+<option>Saiu para entrega</option>
+<option>Entregue</option>
+
+</select>
+
+<button class="criar" onclick="criarRastreio()">
+Criar Rastreamento
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Rastreamentos</h3>
 
 <div id="lista"></div>
 
-</body>
+</div>
 
+</div>
+
+<script>
+
+const supabaseUrl="https://opiwznepfjcinxrymrxw.supabase.co"
+const supabaseKey="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
+
+const supabase=window.supabase.createClient(supabaseUrl,supabaseKey)
+
+
+
+async function carregar(){
+
+const {data}=await supabase
+.from("trackings_test")
+.select("*")
+.order("id",{ascending:false})
+
+const lista=document.getElementById("lista")
+
+lista.innerHTML=""
+
+data.forEach(r=>{
+
+lista.innerHTML+=`
+
+<div style="border:1px solid #ddd;padding:15px;margin-bottom:10px;border-radius:6px">
+
+<b>${r.code}</b><br>
+${r.recipient_name}<br>
+${r.address}
+
+<div style="margin-top:10px">
+
+<button class="ver" onclick="ver('${r.code}')">
+Ver
+</button>
+
+<button class="atualizar" onclick="atualizarStatus('${r.code}')">
+Atualizar Status
+</button>
+
+<button class="excluir" onclick="excluir('${r.code}')">
+Excluir
+</button>
+
+</div>
+
+</div>
+
+`
+
+})
+
+}
+
+
+
+async function criarRastreio(){
+
+const code=document.getElementById("codigo").value
+const recipient=document.getElementById("destinatario").value
+const address=document.getElementById("endereco").value
+const status=document.getElementById("status").value
+const location=document.getElementById("localizacao").value
+const cep=document.getElementById("cep").value
+
+const timeline=[{
+
+status:status,
+location:location,
+date:new Date().toISOString()
+
+}]
+
+const {error}=await supabase
+.from("trackings_test")
+.insert([{
+
+code:code,
+recipient_name:recipient,
+address:address,
+status:status,
+timeline:timeline,
+cep:cep,
+last_update:new Date().toISOString(),
+is_verified:true
+
+}])
+
+if(error){
+
+alert("Erro ao criar")
+
+}else{
+
+alert("Criado com sucesso")
+
+carregar()
+
+}
+
+}
+
+
+
+async function atualizarStatus(code){
+
+const novoStatus=prompt("Novo status")
+
+if(!novoStatus) return
+
+const novaLocalizacao=prompt("Localização")
+
+const {data}=await supabase
+.from("trackings_test")
+.select("timeline")
+.eq("code",code)
+.single()
+
+let timeline=data.timeline||[]
+
+timeline.push({
+
+status:novoStatus,
+location:novaLocalizacao,
+date:new Date().toISOString()
+
+})
+
+await supabase
+.from("trackings_test")
+.update({
+
+status:novoStatus,
+timeline:timeline,
+last_update:new Date().toISOString()
+
+})
+.eq("code",code)
+
+alert("Status atualizado")
+
+carregar()
+
+}
+
+
+
+async function excluir(code){
+
+if(!confirm("Excluir rastreamento?")) return
+
+await supabase
+.from("trackings_test")
+.delete()
+.eq("code",code)
+
+carregar()
+
+}
+
+
+
+function ver(code){
+
+window.open("/rastreamento/"+code,"_blank")
+
+}
+
+
+
+carregar()
+
+</script>
+
+</body>
 </html>
