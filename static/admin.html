@@ -2,25 +2,30 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Painel Admin - Rastreamento</title>
+<title>Painel Admin</title>
 </head>
 
 <body>
 
 <h2>Criar Rastreamento</h2>
 
-<label>Código:</label><br>
-<input id="codigo"><br><br>
+<input id="codigo" placeholder="Código"><br><br>
+<input id="nome" placeholder="Destinatário"><br><br>
+<input id="endereco" placeholder="Endereço"><br><br>
+<input id="status" placeholder="Status inicial"><br><br>
 
-<label>Nome do destinatário:</label><br>
-<input id="nome"><br><br>
+<button onclick="criar()">Criar Rastreamento</button>
 
-<label>Endereço:</label><br>
-<input id="endereco"><br><br>
+<hr>
 
-<button onclick="criar()">Criar Rastreio</button>
+<h2>Atualizar Status</h2>
 
-<p id="status"></p>
+<input id="codigo_update" placeholder="Código"><br><br>
+<input id="novo_status" placeholder="Novo status"><br><br>
+
+<button onclick="atualizar()">Atualizar Status</button>
+
+<p id="resultado"></p>
 
 <script type="module">
 
@@ -37,24 +42,52 @@ window.criar = async function(){
 const codigo = document.getElementById("codigo").value
 const nome = document.getElementById("nome").value
 const endereco = document.getElementById("endereco").value
+const status = document.getElementById("status").value
 
-const { data, error } = await supabase
+const { error } = await supabase
 .from("trackings_test")
 .insert([
 {
 code: codigo,
 recipient_name: nome,
-address: endereco
+address: endereco,
+status: status,
+last_update: new Date()
 }
 ])
 
 if(error){
 
-document.getElementById("status").innerText = "Erro: " + error.message
+document.getElementById("resultado").innerText = "Erro: " + error.message
 
 }else{
 
-document.getElementById("status").innerText = "Rastreamento criado com sucesso"
+document.getElementById("resultado").innerText = "Rastreamento criado"
+
+}
+
+}
+
+window.atualizar = async function(){
+
+const codigo = document.getElementById("codigo_update").value
+const novoStatus = document.getElementById("novo_status").value
+
+const { error } = await supabase
+.from("trackings_test")
+.update({
+status: novoStatus,
+last_update: new Date()
+})
+.eq("code", codigo)
+
+if(error){
+
+document.getElementById("resultado").innerText = "Erro: " + error.message
+
+}else{
+
+document.getElementById("resultado").innerText = "Status atualizado"
 
 }
 
