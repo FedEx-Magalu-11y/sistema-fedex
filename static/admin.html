@@ -1,89 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<title>Painel Admin - Rastreamento</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f7fb;
+padding:40px;
+}
+
+.container{
+max-width:600px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+padding:12px 20px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.criar{
+background:#1a73e8;
+color:white;
+}
+
+.atualizar{
+background:#ff9800;
+color:white;
+margin-left:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Painel de Rastreamento</h2>
+
+<input id="codigo" placeholder="Código de rastreio">
+
+<input id="destinatario" placeholder="Nome do destinatário">
+
+<input id="cep" placeholder="CEP">
+
+<input id="endereco" placeholder="Endereço">
+
+<input id="localizacao" placeholder="Localização (cidade - estado)">
+
+<select id="status">
+
+<option value="Postado">Postado</option>
+<option value="Em trânsito">Em trânsito</option>
+<option value="Centro de distribuição">Centro de distribuição</option>
+<option value="Saiu para entrega">Saiu para entrega</option>
+<option value="Entregue">Entregue</option>
+
+</select>
+
+<div>
+
+<button class="criar" onclick="criarRastreio()">
+Criar Rastreamento
+</button>
+
+<button class="atualizar" onclick="atualizarStatus()">
+Atualizar Status
+</button>
+
+</div>
+
+</div>
+
+<script>
+
 const supabaseUrl = "https://opiwznepfjcinxrymrxw.supabase.co"
+
 const supabaseKey = "sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey)
+const supabase = window.supabase.createClient(supabaseUrl,supabaseKey)
 
-async function criarRastreio() {
 
-const code = document.getElementById("codigo").value
-const recipient = document.getElementById("destinatario").value
-const address = document.getElementById("endereco").value
-const status = document.getElementById("status").value
-const location = document.getElementById("localizacao").value
-const cep = document.getElementById("cep").value
 
-const timeline = [
-{
-status: status,
-location: location,
-date: new Date().toISOString()
-}
-]
+async function criarRastreio(){
 
-const { error } = await supabase
+const code=document.getElementById("codigo").value
+const recipient=document.getElementById("destinatario").value
+const address=document.getElementById("endereco").value
+const status=document.getElementById("status").value
+const location=document.getElementById("localizacao").value
+const cep=document.getElementById("cep").value
+
+const timeline=[{
+status:status,
+location:location,
+date:new Date().toISOString()
+}]
+
+const {error}=await supabase
 .from("trackings_test")
-.insert([
-{
-code: code,
-recipient_name: recipient,
-address: address,
-status: status,
-timeline: timeline,
-cep: cep,
-last_update: new Date().toISOString(),
-is_verified: true
-}
-])
+.insert([{
 
-if (error) {
+code:code,
+recipient_name:recipient,
+address:address,
+status:status,
+timeline:timeline,
+cep:cep,
+last_update:new Date().toISOString(),
+is_verified:true
+
+}])
+
+if(error){
+
 console.error(error)
-alert("Erro ao salvar")
-} else {
+alert("Erro ao criar rastreamento")
+
+}else{
+
 alert("Rastreamento criado com sucesso")
-}
 
 }
 
-async function atualizarStatus() {
+}
 
-const code = document.getElementById("codigo").value
-const status = document.getElementById("status").value
-const location = document.getElementById("localizacao").value
 
-const { data, error } = await supabase
+
+async function atualizarStatus(){
+
+const code=document.getElementById("codigo").value
+const status=document.getElementById("status").value
+const location=document.getElementById("localizacao").value
+
+const {data,error}=await supabase
 .from("trackings_test")
 .select("timeline")
-.eq("code", code)
+.eq("code",code)
 .single()
 
-if (error) {
-console.error(error)
-alert("Erro ao buscar rastreio")
+if(error){
+
+alert("Rastreamento não encontrado")
 return
+
 }
 
-let timeline = data.timeline || []
+let timeline=data.timeline||[]
 
 timeline.push({
-status: status,
-location: location,
-date: new Date().toISOString()
+
+status:status,
+location:location,
+date:new Date().toISOString()
+
 })
 
-const { error: updateError } = await supabase
+const {error:updateError}=await supabase
 .from("trackings_test")
 .update({
-status: status,
-timeline: timeline,
-last_update: new Date().toISOString()
-})
-.eq("code", code)
 
-if (updateError) {
+status:status,
+timeline:timeline,
+last_update:new Date().toISOString()
+
+})
+.eq("code",code)
+
+if(updateError){
+
 console.error(updateError)
 alert("Erro ao atualizar status")
-} else {
+
+}else{
+
 alert("Status atualizado com sucesso")
+
 }
 
 }
+
+</script>
+
+</body>
+</html>
