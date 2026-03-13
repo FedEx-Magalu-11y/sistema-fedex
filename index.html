@@ -10,183 +10,80 @@
 
 <link rel="stylesheet" href="style.css">
 
-<style>
-
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f5f5f7;
-}
-
-header{
-background:linear-gradient(90deg,#5b1fa6,#1a6ed8);
-padding:14px 60px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.logo-area{
-display:flex;
-align-items:center;
-gap:20px;
-}
-
-.logo-area img{
-height:38px;
-}
-
-nav a{
-color:white;
-margin-left:30px;
-text-decoration:none;
-font-weight:500;
-}
-
-.hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:60px;
-background:#f5f5f7;
-}
-
-.hero-text{
-max-width:520px;
-}
-
-.hero-text h1{
-font-size:44px;
-margin-bottom:10px;
-}
-
-.hero-text span.magalu{
-color:#1976d2;
-}
-
-.hero-text span.fedex{
-color:#5b1fa6;
-}
-
-.hero-text p{
-color:#555;
-font-size:16px;
-line-height:1.6;
-}
-
-.confirm-btn{
-background:#ff7a1a;
-color:white;
-padding:14px 22px;
-border-radius:8px;
-display:inline-block;
-margin-top:20px;
-font-weight:bold;
-}
-
-.search-box{
-background:white;
-padding:20px;
-border-radius:12px;
-margin-top:25px;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
-width:320px;
-}
-
-.search-box input{
-width:70%;
-padding:10px;
-border:1px solid #ccc;
-border-radius:6px;
-}
-
-.search-box button{
-padding:10px 16px;
-background:#1976d2;
-border:none;
-color:white;
-border-radius:6px;
-cursor:pointer;
-}
-
-.hero img{
-width:520px;
-border-radius:12px;
-}
-
-.services{
-padding:60px;
-text-align:center;
-}
-
-.services h2{
-margin-bottom:40px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-}
-
-.card h3{
-margin-bottom:10px;
-}
-
-</style>
-
 </head>
 
 <body>
 
-<header>
+<div class="home-container">
 
-<div class="logo-area">
-<img src="logo-magalu-azul (1).png">
-<img src="fedex.png">
+<header class="home-header">
+
+<div class="header-content">
+
+<div class="header-logo">
+
+<div class="header-logo-wrapper">
+<img src="logo-magalu-azul (1).png" class="header-logo-magalu">
 </div>
 
-<nav>
-<a href="#">Serviços</a>
-<a href="#">Rastreamento</a>
-<a href="#">Suporte</a>
+<div class="header-logo-wrapper">
+<img src="fedex.png" class="header-logo-fedex">
+</div>
+
+</div>
+
+<nav class="header-nav">
+<a class="nav-link" href="#">Serviços</a>
+<a class="nav-link" href="#">Rastreamento</a>
+<a class="nav-link" href="#">Suporte</a>
 </nav>
+
+</div>
 
 </header>
 
-<section class="hero">
+
+<section class="hero-section">
+
+<div class="hero-content">
 
 <div class="hero-text">
 
-<h1>
-Parceria <span class="magalu">Magalu</span> e <span class="fedex">FedEx</span>
+<h1 class="hero-title">
+Parceria <span class="highlight-magalu">Magalu</span> e <span class="highlight-fedex">FedEx</span>
 </h1>
 
-<p>
-Programa de Bonificação Magalu! Confirme sua entrega e participe do sorteio de prêmios incríveis.
+<p class="hero-subtitle">
+<strong>Programa de Bonificação Magalu!</strong> Confirme sua entrega e participe do sorteio de prêmios incríveis.
 Entregas rápidas, seguras e confiáveis em todo o Brasil através da parceria entre Magalu e FedEx.
 </p>
 
-<div class="confirm-btn">
+<div class="bonus-badge">
 ⭐ Confirme sua entrega e concorra a prêmios exclusivos!
 </div>
 
-<div class="search-box">
 
-<h3>Rastreie seu pedido</h3>
+<div class="tracking-search-box">
 
-<form onsubmit="buscar(event)">
+<div class="search-title">
+Rastreie seu pedido
+</div>
 
-<input id="codigo" placeholder="Digite o código">
+<div class="search-subtitle">
+Digite o código de rastreamento fornecido para acompanhar sua entrega
+</div>
 
-<button>Rastrear</button>
+<form class="search-form" onsubmit="buscar(event)">
+
+<input
+class="search-input"
+id="codigo"
+placeholder="Digite o código"
+/>
+
+<button class="search-button">
+Rastrear
+</button>
 
 </form>
 
@@ -194,39 +91,86 @@ Entregas rápidas, seguras e confiáveis em todo o Brasil através da parceria e
 
 </div>
 
-<img src="bannerfedex.png">
 
-</section>
-
-<section class="services">
-
-<h2>Gerencie suas remessas</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>ABRA UMA CONTA</h3>
-<p>Crie sua conta e tenha acesso a todos os serviços</p>
-</div>
-
-<div class="card">
-<h3>ALERTAS DE SERVIÇO</h3>
-<p>Receba notificações sobre o status das suas entregas</p>
-</div>
-
-<div class="card">
-<h3>FERRAMENTAS ON-LINE</h3>
-<p>Acesse ferramentas exclusivas</p>
-</div>
-
-<div class="card">
-<h3>HORÁRIO DE ATENDIMENTO</h3>
-<p>Encontre lojas e horários próximos</p>
+<div class="hero-image">
+<img src="bannerfedex.png" class="hero-banner">
 </div>
 
 </div>
 
 </section>
+
+
+
+<section class="services-section">
+
+<div class="services-container">
+
+<h2 class="section-title">
+Gerencie suas remessas
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<div class="service-title">
+ABRA UMA CONTA
+</div>
+
+<div class="service-description">
+Crie sua conta e tenha acesso a todos os serviços
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-title">
+ALERTAS DE SERVIÇO
+</div>
+
+<div class="service-description">
+Receba notificações sobre o status das suas entregas
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-title">
+FERRAMENTAS ON-LINE
+</div>
+
+<div class="service-description">
+Acesse ferramentas exclusivas
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-title">
+HORÁRIO DE ATENDIMENTO
+</div>
+
+<div class="service-description">
+Encontre lojas e horários próximos
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
 
 <script>
 
@@ -234,7 +178,7 @@ function buscar(e){
 
 e.preventDefault()
 
-const code=document.getElementById("codigo").value
+const code = document.getElementById("codigo").value
 
 window.location.href="/rastreamento.html?code="+code
 
