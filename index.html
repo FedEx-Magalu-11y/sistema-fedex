@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Rastreamento FedEx</title>
+
+</head>
+
+<body>
+
+<h1>Rastreamento de Encomendas</h1>
+
+<input id="codigo" placeholder="Digite seu código">
+
+<button onclick="buscar()">Rastrear</button>
+
+<script>
+
+function buscar(){
+
+const code=document.getElementById("codigo").value
+
+window.location.href="/rastreamento.html?code="+code
+
+}
+
+</script>
+
+</body>
+
+</html>
