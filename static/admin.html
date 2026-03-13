@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Painel Admin</title>
+</head>
+
+<body>
+
+<h2>Criar Rastreamento</h2>
+
+<input id="codigo" placeholder="Código do rastreio"><br><br>
+<input id="cidade" placeholder="Cidade"><br><br>
+<input id="status" placeholder="Status"><br><br>
+
+<button onclick="criar()">Criar Rastreamento</button>
+
+<script type="module">
+
+import { supabase } from "./supabaseClient.js"
+
+async function criar(){
+
+const codigo = document.getElementById("codigo").value
+const cidade = document.getElementById("cidade").value
+const status = document.getElementById("status").value
+
+// cria rastreio
+const { data, error } = await supabase
+.from("trackings")
+.insert([
+{
+codigo: codigo,
+cidade: cidade
+}
+])
+
+if(error){
+alert("Erro ao criar rastreio")
+return
+}
+
+// cria apenas UM evento
+await supabase
+.from("tracking_events")
+.insert([
+{
+codigo: codigo,
+status: status,
+cidade: cidade,
+data: new Date()
+}
+])
+
+alert("Rastreamento criado")
+
+}
+
+</script>
+
+</body>
+</html>
