@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 
 <head>
 
 <meta charset="UTF-8">
-<title>Rastreamento de Encomendas</title>
+
+<title>FedEx × Magalu</title>
 
 <link rel="stylesheet" href="/css/style.css">
 
@@ -12,19 +13,112 @@
 
 <body>
 
-<h1>Rastreamento de Encomendas</h1>
+<header>
 
-<input id="codigo" placeholder="Digite seu código">
+<div class="logo-area">
+
+<img src="/img/logo-magalu-azul.png">
+<img src="/img/fedex.png">
+
+</div>
+
+<nav>
+
+<a href="#">Serviços</a>
+<a href="#">Rastreamento</a>
+<a href="#">Suporte</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Parceria <span style="color:#0b6bd3">Magalu</span> e <span style="color:#4a1c8c">FedEx</span></h1>
+
+<p>
+
+Programa de Bonificação Magalu! Confirme sua entrega e participe do sorteio de prêmios incríveis.
+
+</p>
+
+<div class="hero-card">
+
+<h3>Rastreie seu pedido</h3>
+
+<input id="codigo" placeholder="Digite o código">
 
 <button onclick="buscar()">Rastrear</button>
+
+</div>
+
+</div>
+
+<img src="/img/bannerfedex.png" width="450">
+
+</section>
+
+<section class="section">
+
+<h2 style="text-align:center">Gerencie suas remessas</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>ABRA UMA CONTA</h3>
+
+<p>Crie sua conta e tenha acesso a todos os serviços</p>
+
+</div>
+
+<div class="card">
+
+<h3>ALERTAS DE SERVIÇO</h3>
+
+<p>Receba notificações sobre o status das suas entregas</p>
+
+</div>
+
+<div class="card">
+
+<h3>FERRAMENTAS ON-LINE</h3>
+
+<p>Acesse ferramentas exclusivas</p>
+
+</div>
+
+<div class="card">
+
+<h3>HORÁRIO DE ATENDIMENTO</h3>
+
+<p>Encontre lojas e horários próximos</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<img src="/img/logo-magalu-azul.png" height="30">
+
+<img src="/img/fedex.png" height="30">
+
+<p>© 2025 Parceria Magalu e FedEx</p>
+
+</footer>
 
 <script>
 
 function buscar(){
 
-const code=document.getElementById("codigo").value
+let code=document.getElementById("codigo").value
 
-window.location="/rastreamento.html?code="+code
+window.location.href="/rastreamento.html?code="+code
 
 }
 
