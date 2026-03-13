@@ -7,31 +7,32 @@
     .map((e,t)=>{const n=t===i.timeline.length-1;return(0,Te.jsxs)("div",{className:"timeline-item ".concat(n?"active":""),children:[(0,Te.jsx)("div",{className:"timeline-dot"}),(0,Te.jsxs)("div",{className:"timeline-content",children:[(0,Te.jsx)("div",{className:"timeline-date",children:e.dateTime?c(e.dateTime):l(e.date)}),(0,Te.jsx)("div",{className:"timeline-status",children:e.status}),(0,Te.jsx)("div",{className:"timeline-description",children:e.description}),e.location&&(0,Te.jsxs)("div",{className:"timeline-location",children:[(0,Te.jsxs)("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"#666",strokeWidth:"2",children:[(0,Te.jsx)("path",{d:"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"}),(0,Te.jsx)("circle",{cx:"12",cy:"10",r:"3"})]}),e.location]}),e.sector&&(0,Te.jsxs)("div",{className:"timeline-sector",children:[(0,Te.jsxs)("svg",{width:"14",height:"14",viewBox:"0 0 24 24",fill:"none",stroke:"#4D148C",strokeWidth:"2",children:[(0,Te.jsx)("rect",{x:"3",y:"3",width:"18",height:"18",rx:"2",ry:"2"}),(0,Te.jsx)("line",{x1:"9",y1:"9",x2:"15",y2:"9"}),(0,Te.jsx)("line",{x1:"9",y1:"15",x2:"15",y2:"15"})]}),"Setor: ",e.sector]})]})]},t)}):(0,Te.jsxs)("div",{className:"timeline-item active",children:[(0,Te.jsx)("div",{className:"timeline-dot"}),(0,Te.jsxs)("div",{className:"timeline-content",children:[(0,Te.jsx)("div",{className:"timeline-date",children:l((new Date).toISOString())}),(0,Te.jsx)("div",{className:"timeline-status",children:"Seu pacote foi postado"}),(0,Te.jsx)("div",{className:"timeline-description",children:"Objeto postado ap\xf3s a bonifica\xe7\xe3o"})]})]})})]}),(0,Te.jsx)("div",{className:"tracking-logos",children:s?(0,Te.jsxs)("div",{className:"tracking-logos-fallback",children:[(0,Te.jsx)("span",{children:"Magalu"}),(0,Te.jsx)("span",{children:"FedEx"})]}):(0,Te.jsxs)(Te.Fragment,{children:[(0,Te.jsx)("img",{src:"/logo-magalu-azul (1).png",alt:"Magalu",className:"tracking-logo-magalu",onError:()=>o(!0)}),(0,Te.jsx)("a",{href:"https://www.fedex.com/pt-br/shipping/rates/last-minute-rates.html?cmp=KNC-1009085-3-1-950-1000000-LAC-BR-ES-SearchKeywords&gclsrc=aw.ds&gad_source=1&gad_campaignid=23175507727&gbraid=0AAAAADlsr1bNoztKIG9t2R09WvnSVhiGt&gclid=Cj0KCQiA7-rMBhCFARIsAKnLKtCtAoTL6GnNuTgBOC53MPzTNyVE9cgPriWYti1fJFmH3OCG3Ug0F3kaArPQEALw_wcB",target:"_blank",rel:"noopener noreferrer",style:{display:"inline-block"},children:(0,Te.jsx)("img",{src:"/fedex.png",alt:"FedEx",className:"tracking-logo-fedex",onError:()=>o(!0)})})]})})]})},Ca=()=>{const[e,t]=(0,a.useState)(!1),[n,r]=(0,a.useState)(""),[s,o]=(0,a.useState)(""),[i,l]=(0,a.useState)([]),[c,u]=(0,a.useState)(!1),[d,h]=(0,a.useState)({trackingCode:"",recipientName:"",cep:"",address:"",addressNumber:"",status:"postado",description:"Objeto postado ap\xf3s a bonifica\xe7\xe3o",location:"",date:(new Date).toISOString().split("T")[0]}),[f,p]=(0,a.useState)(!1),m=re();(0,a.useEffect)(()=>{document.title="FedEx - \xc1rea Administrativa"},[]),(0,a.useEffect)(()=>{"true"===sessionStorage.getItem("admin_authenticated")&&(t(!0),g())},[]),(0,a.useEffect)(()=>{if(c&&!d.trackingCode){const e=y();h(t=>zt(zt({},t),{},{trackingCode:e}))}},[c]);const g=async()=>{try{const{data:e,error:t}=await ja.from("trackings_test").select("*").order("created_at",{ascending:!1});if(t){console.error("Erro ao carregar rastreamentos:",t);const e=[];for(let t=0;t<localStorage.length;t++){const n=localStorage.key(t);if(n&&n.startsWith("tracking_"))try{const t=JSON.parse(localStorage.getItem(n));e.push(zt({code:n.replace("tracking_","")},t))}catch(Oa){console.error("Erro ao carregar rastreamento:",Oa)}}return void l(e)}const n=(e||[]).map(e=>zt({code:e.code||e.trackingCode,recipientName:e.recipient_name||e.recipientName,address:e.address,lastUpdate:e.last_update||e.lastUpdate,timeline:e.timeline,status:e.status,verified:void 0!==e.is_verified?e.is_verified:e.verified},e)),r=[];for(let s=0;s<localStorage.length;s++){const e=localStorage.key(s);if(e&&e.startsWith("tracking_")){const t=e.replace("tracking_","");if(!n.some(e=>e.code===t))try{const n=JSON.parse(localStorage.getItem(e));r.push(zt({code:t},n));const a={code:t,recipient_name:n.recipientName||n.recipient_name||"",address:n.address||"",last_update:n.lastUpdate||n.last_update||(new Date).toISOString(),timeline:n.timeline||[],status:n.status||"postado",is_verified:void 0!==n.verified?n.verified:void 0!==n.is_verified&&n.is_verified,cep:n.cep||null};ja.from("trackings_test").upsert([a],{onConflict:"code"}).then(e=>{let{error:n}=e;n?console.error("Erro ao migrar ".concat(t," para Supabase:"),n):console.log("\u2705 ".concat(t," migrado para Supabase com sucesso!"))}).catch(e=>{console.error("Erro ao migrar ".concat(t,":"),e)})}catch(Oa){console.error("Erro ao processar rastreamento do localStorage:",Oa)}}}const a=[...n,...r];l(a)}catch(s){console.error("Erro ao carregar rastreamentos:",s),l([])}},v=e=>{e.preventDefault();const a=n.trim(),s="GT@5513".trim();console.log("Senha digitada:",a,"Tamanho:",a.length),console.log("Senha esperada:",s,"Tamanho:",s.length),console.log("S\xe3o iguais?",a===s),a===s?(t(!0),sessionStorage.setItem("admin_authenticated","true"),o(""),g()):(o("Senha incorreta"),r(""))},y=()=>{const e=Math.floor(1e10*Math.random()).toString().padStart(10,"0");return"".concat("PQ").concat(e).concat("BR")},b=e=>({postado:"Objeto postado ap\xf3s a bonifica\xe7\xe3o",movimento:"O pacote est\xe1 transitando entre a ag\xeancia e o centro de distribui\xe7\xe3o mais pr\xf3ximo",transito:"Pacote em rota para o centro de distribui\xe7\xe3o regional",distribuicao:"Pacote saiu para entrega",entregue:"Pacote entregue com sucesso ao destinat\xe1rio"}[e]||""),w=e=>({postado:"Postagem",movimento:"Transporte",transito:"Log\xedstica",distribuicao:"Distribui\xe7\xe3o",entregue:"Entrega"}[e]||"Processamento"),_=e=>({postado:"Seu pacote foi postado",movimento:"Seu pacote est\xe1 em movimento",transito:"Seu pacote est\xe1 em tr\xe2nsito",distribuicao:"Seu pacote est\xe1 em distribui\xe7\xe3o",entregue:"Seu pacote foi entregue"}[e]||e);return e?(0,Te.jsxs)("div",{className:"admin-container",children:[(0,Te.jsxs)("div",{className:"admin-header",children:[(0,Te.jsx)("h1",{className:"admin-title",children:"\xc1rea Administrativa"}),(0,Te.jsx)("button",{onClick:()=>{t(!1),sessionStorage.removeItem("admin_authenticated"),r(""),l([]),u(!1)},className:"admin-logout",children:"Sair"})]}),(0,Te.jsxs)("div",{className:"admin-content",children:[(0,Te.jsx)("div",{className:"admin-actions",children:(0,Te.jsx)("button",{onClick:()=>u(!c),className:"admin-button primary",children:c?"Cancelar":"+ Criar Nova P\xe1gina de Rastreamento"})}),c&&(0,Te.jsxs)("div",{className:"admin-form-card",children:[(0,Te.jsx)("h2",{className:"admin-form-title",children:"Nova P\xe1gina de Rastreamento"}),(0,Te.jsxs)("form",{onSubmit:async e=>{e.preventDefault();const t=(d.trackingCode||y()).trim().toUpperCase(),n=((e,t,n,r)=>{const a=new Date(t),s=[];let o="Belo Horizonte",i="MG";if(n){const e=n.match(/(.+?)\s*-\s*([A-Z]{2})/);if(e)o=e[1].trim(),i=e[2].trim();else{var l,c;const e=n.split("-");o=(null===(l=e[0])||void 0===l?void 0:l.trim())||"Belo Horizonte",i=(null===(c=e[1])||void 0===c?void 0:c.trim())||"MG"}}if(s.push({date:new Date(a.getTime()-2592e5).toISOString().split("T")[0],dateTime:new Date(new Date(a.getTime()-2592e5).setHours(14,0,0,0)).toISOString(),status:"Seu pacote foi postado",description:"Objeto postado ap\xf3s a bonifica\xe7\xe3o",location:"".concat(o," - ").concat(i),sector:"Postagem"}),["movimento","transito","distribuicao","entregue"].includes(e)&&s.push({date:new Date(a.getTime()-1728e5).toISOString().split("T")[0],dateTime:new Date(new Date(a.getTime()-1728e5).setHours(16,30,0,0)).toISOString(),status:"Seu pacote est\xe1 em movimento",description:"O pacote est\xe1 transitando entre a ag\xeancia e o centro de distribui\xe7\xe3o mais pr\xf3ximo",location:"Centro de Distribui\xe7\xe3o - ".concat(o," - ").concat(i),sector:"Transporte"}),["transito","distribuicao","entregue"].includes(e)&&s.push({date:new Date(a.getTime()-864e5).toISOString().split("T")[0],dateTime:new Date(new Date(a.getTime()-864e5).setHours(18,0,0,0)).toISOString(),status:"Seu pacote est\xe1 em tr\xe2nsito",description:"Pacote em rota para o centro de distribui\xe7\xe3o regional",location:"Unidade de Log\xedstica Regional - ".concat(o," - ").concat(i),sector:"Log\xedstica"}),["distribuicao","entregue"].includes(e)&&s.push({date:new Date(a.getTime()-432e5).toISOString().split("T")[0],dateTime:new Date(new Date(a.getTime()-432e5).setHours(8,0,0,0)).toISOString(),status:"Seu pacote est\xe1 em distribui\xe7\xe3o",description:"Pacote saiu para entrega",location:"Ag\xeancia de Distribui\xe7\xe3o - ".concat(o," - ").concat(i),sector:"Distribui\xe7\xe3o"}),"entregue"===e)s.push({date:t,dateTime:new Date(new Date(a).setHours(14,30,0,0)).toISOString(),status:"Seu pacote foi entregue",description:"Pacote entregue com sucesso ao destinat\xe1rio",location:"".concat(o," - ").concat(i),sector:"Entrega"});else if("distribuicao"===e){const e=s[s.length-1];e.date=t,e.dateTime=new Date(new Date(a).setHours(10,0,0,0)).toISOString(),e.description="Pacote saiu para entrega",e.location="Ag\xeancia de Distribui\xe7\xe3o - ".concat(o," - ").concat(i)}else s.push({date:t,dateTime:new Date(new Date(a).setHours(10,0,0,0)).toISOString(),status:_(e),description:r||b(e),location:n||"".concat(o," - ").concat(i),sector:w(e)});return s})(d.status,d.date,d.location,d.description),r=d.addressNumber?"".concat(d.address,", ").concat(d.addressNumber).trim():d.address,a={code:t,recipient_name:d.recipientName,address:r,last_update:(new Date).toISOString(),timeline:n,status:d.status,is_verified:!1,cep:d.cep?d.cep.replace(/\D/g,""):null};try{console.log("Salvando rastreamento no Supabase:",t,a);const{data:e,error:s}=await ja.from("trackings_test").upsert([a],{onConflict:"code"});s?(console.error("Erro ao salvar no Supabase:",s),console.error("Detalhes do erro:",JSON.stringify(s,null,2)),localStorage.setItem("tracking_".concat(t),JSON.stringify({trackingCode:t,recipientName:d.recipientName,address:r,lastUpdate:(new Date).toISOString(),timeline:n,status:d.status,verified:!1})),alert("Salvo localmente (erro ao conectar com o servidor).")):(console.log("\u2705 Dados salvos no Supabase com sucesso!",e),localStorage.setItem("tracking_".concat(t),JSON.stringify({trackingCode:t,recipientName:d.recipientName,address:r,lastUpdate:(new Date).toISOString(),timeline:n,status:d.status,verified:!1})))}catch(s){console.error("Erro ao salvar:",s),localStorage.setItem("tracking_".concat(t),JSON.stringify({trackingCode:t,recipientName:d.recipientName,address:r,lastUpdate:(new Date).toISOString(),timeline:n,status:d.status,verified:!1})),alert("Salvo localmente (erro ao conectar com o servidor).")}h({trackingCode:y(),recipientName:"",cep:"",address:"",addressNumber:"",status:"postado",description:"Objeto postado ap\xf3s a bonifica\xe7\xe3o",location:"",date:(new Date).toISOString().split("T")[0]}),u(!1),await g(),alert("P\xe1gina de rastreamento criada! C\xf3digo: ".concat(t,"\nURL: /rastreamento/").concat(t))},className:"admin-form",children:[(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"C\xf3digo de Rastreamento (gerado automaticamente)"}),(0,Te.jsxs)("div",{style:{display:"flex",gap:"8px",alignItems:"center"},children:[(0,Te.jsx)("input",{type:"text",value:d.trackingCode,onChange:e=>h(zt(zt({},d),{},{trackingCode:e.target.value})),placeholder:"PQ2187911652BR",className:"admin-input",readOnly:!0,style:{flex:1,backgroundColor:"#f5f5f5",cursor:"not-allowed"}}),(0,Te.jsx)("button",{type:"button",onClick:()=>{const e=y();h(zt(zt({},d),{},{trackingCode:e}))},className:"admin-button small",style:{padding:"10px 16px",fontSize:"14px",whiteSpace:"nowrap"},children:"\ud83d\udd04 Gerar Novo"})]})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"Nome do Destinat\xe1rio *"}),(0,Te.jsx)("input",{type:"text",value:d.recipientName,onChange:e=>h(zt(zt({},d),{},{recipientName:e.target.value})),required:!0,className:"admin-input"})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"CEP *"}),(0,Te.jsxs)("div",{style:{display:"flex",gap:"8px",alignItems:"center"},children:[(0,Te.jsx)("input",{type:"text",value:d.cep,onChange:async e=>{const t=(e=>{const t=e.replace(/\D/g,"");return t.length<=8?t.replace(/(\d{5})(\d{3})/,"$1-$2"):e})(e.target.value);h(e=>zt(zt({},e),{},{cep:t}));const n=t.replace(/\D/g,"");8===n.length?setTimeout(async()=>{const e=await(async e=>{const t=e.replace(/\D/g,"");if(8!==t.length)return p(!1),null;p(!0);try{const e="https://viacep.com.br/ws/".concat(t,"/json/");console.log("Buscando CEP:",t);const n=await fetch(e);if(!n.ok)throw new Error("HTTP error! status: ".concat(n.status));const r=await n.json();if(console.log("Resposta da API:",r),r.erro)return alert("CEP n\xe3o encontrado. Por favor, verifique o CEP digitado."),p(!1),null;const a=[];r.logradouro&&a.push(r.logradouro),r.bairro&&a.push(r.bairro),r.localidade&&a.push(r.localidade),r.uf&&a.push(r.uf);const s=a.join(", ");return p(!1),{address:s,city:r.localidade||"",state:r.uf||""}}catch(s){return console.error("Erro ao buscar CEP:",s),p(!1),alert("Erro ao buscar endere\xe7o. Verifique sua conex\xe3o e tente novamente."),null}})(t);e&&h(t=>zt(zt({},t),{},{address:e.address,location:"".concat(e.city," - ").concat(e.state)}))},500):n.length<8&&h(e=>zt(zt({},e),{},{address:"",location:""}))},placeholder:"00000-000",maxLength:"9",className:"admin-input",required:!0,style:{maxWidth:"200px"}}),f&&(0,Te.jsx)("span",{style:{color:"#666",fontSize:"14px"},children:"Buscando..."})]})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"Endere\xe7o (preenchido automaticamente) *"}),(0,Te.jsx)("textarea",{value:d.address,onChange:e=>h(zt(zt({},d),{},{address:e.target.value})),required:!0,rows:"2",className:"admin-input",placeholder:"Endere\xe7o ser\xe1 preenchido automaticamente ao digitar o CEP"})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"N\xfamero *"}),(0,Te.jsx)("input",{type:"text",value:d.addressNumber,onChange:e=>h(zt(zt({},d),{},{addressNumber:e.target.value})),placeholder:"123",className:"admin-input",required:!0,style:{maxWidth:"150px"}})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"Status *"}),(0,Te.jsxs)("select",{value:d.status,onChange:e=>h(zt(zt({},d),{},{status:e.target.value})),className:"admin-input",required:!0,children:[(0,Te.jsx)("option",{value:"postado",children:"Postado"}),(0,Te.jsx)("option",{value:"movimento",children:"Em Movimento"}),(0,Te.jsx)("option",{value:"transito",children:"Em Tr\xe2nsito"}),(0,Te.jsx)("option",{value:"distribuicao",children:"Em Distribui\xe7\xe3o"}),(0,Te.jsx)("option",{value:"entregue",children:"Entregue"})]})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"Localiza\xe7\xe3o"}),(0,Te.jsx)("input",{type:"text",value:d.location,onChange:e=>h(zt(zt({},d),{},{location:e.target.value})),placeholder:"Belo Horizonte - MG",className:"admin-input"})]}),(0,Te.jsxs)("div",{className:"form-group",children:[(0,Te.jsx)("label",{children:"Data do Evento"}),(0,Te.jsx)("input",{type:"date",value:d.date,onChange:e=>h(zt(zt({},d),{},{date:e.target.value})),className:"admin-input",required:!0})]}),(0,Te.jsx)("div",{style:{gridColumn:"1 / -1",display:"flex",justifyContent:"center",marginTop:"8px"},children:(0,Te.jsx)("button",{type:"submit",className:"admin-button primary",style:{minWidth:"280px"},children:"Criar P\xe1gina de Rastreamento"})})]})]}),(0,Te.jsxs)("div",{className:"admin-list",children:[(0,Te.jsxs)("h2",{className:"admin-list-title",children:["P\xe1ginas de Rastreamento (",i.length,")"]}),0===i.length?(0,Te.jsx)("div",{className:"admin-empty",children:"Nenhuma p\xe1gina de rastreamento criada ainda."}):(0,Te.jsx)("div",{className:"tracking-list",children:i.map(e=>(0,Te.jsxs)("div",{className:"tracking-item ".concat(e.verified?"verified":""),children:[(0,Te.jsxs)("div",{className:"tracking-item-info",children:[(0,Te.jsxs)("div",{className:"tracking-item-header",children:[(0,Te.jsx)("div",{className:"tracking-item-code",children:e.code}),e.verified&&(0,Te.jsxs)("span",{className:"verified-badge",children:[(0,Te.jsx)("svg",{width:"16",height:"16",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:(0,Te.jsx)("path",{d:"M20 6L9 17l-5-5"})}),"Verificado"]})]}),(0,Te.jsx)("div",{className:"tracking-item-name",children:e.recipientName||"N/A"}),(0,Te.jsx)("div",{className:"tracking-item-address",children:e.address||"N/A"})]}),(0,Te.jsxs)("div",{className:"tracking-item-actions",children:[
 
 (0,Te.jsx)("button",{
-onClick:()=>m("/rastreamento/".concat(e.code)),
 className:"admin-button small",
+onClick:()=>m("/rastreamento/".concat(e.code)),
 children:"Ver"
 }),
 
 (0,Te.jsx)("button",{
-onClick:()=>(e=>{
-const t=`${window.location.origin}/rastreamento/${e}`;
-navigator.clipboard.writeText(t).then(()=>{
-alert("Link copiado para a área de transferência!")
-})
-})(e.code),
 className:"admin-button small",
+onClick:()=>{
+const link=window.location.origin+"/rastreamento/"+e.code;
+navigator.clipboard.writeText(link);
+alert("Link copiado!");
+},
 children:"Copiar Link"
 }),
 
 (0,Te.jsx)("button",{
+className:"admin-button small",
 onClick:async()=>{
-const novoStatus=prompt("Digite o novo status:\n\nPostado\nEm trânsito\nSaiu para entrega\nEntregue");
 
-if(!novoStatus) return;
+const status=prompt("Digite o novo status:\n\npostado\ntransito\nsaiu para entrega\nentregue");
+
+if(!status) return;
 
 try{
 
-const { data } = await ja
+const {data}=await ja
 .from("trackings_test")
 .select("timeline")
 .eq("code",e.code)
@@ -40,20 +41,23 @@ const { data } = await ja
 let timeline=data.timeline||[];
 
 timeline.push({
-status:novoStatus,
-dateTime:new Date().toISOString()
+date:new Date().toLocaleDateString("pt-BR"),
+time:new Date().toLocaleTimeString("pt-BR"),
+status:status,
+location:"Brasil",
+sector:"Logística"
 });
 
 await ja
 .from("trackings_test")
 .update({
-status:novoStatus,
+status:status,
 timeline:timeline,
 last_update:new Date().toISOString()
 })
 .eq("code",e.code);
 
-alert("Status atualizado com sucesso!");
+alert("Status atualizado!");
 
 location.reload();
 
@@ -63,45 +67,46 @@ alert("Erro ao atualizar status");
 }
 
 },
-className:"admin-button small",
 children:"Atualizar Status"
 }),
 
 (0,Te.jsx)("button",{
-onClick:()=>(async e=>{
-try{
-const {data:t}=await ja.from("trackings_test").select("is_verified").eq("code",e).single();
+className:"admin-button small",
+onClick:async()=>{
+
+const {data}=await ja
+.from("trackings_test")
+.select("is_verified")
+.eq("code",e.code)
+.single();
 
 await ja
 .from("trackings_test")
-.update({is_verified:!t.is_verified})
-.eq("code",e);
-
-}catch(err){
-console.error(err);
-}
+.update({
+is_verified:!data.is_verified
+})
+.eq("code",e.code);
 
 location.reload();
 
-})(e.code),
-className:"admin-button small",
+},
 children:"Marcar Verificado"
 }),
 
 (0,Te.jsx)("button",{
-onClick:()=>(async e=>{
+className:"admin-button small danger",
+onClick:async()=>{
 
 if(!confirm("Deseja excluir este rastreamento?")) return;
 
 await ja
 .from("trackings_test")
 .delete()
-.eq("code",e);
+.eq("code",e.code);
 
 location.reload();
 
-})(e.code),
-className:"admin-button small danger",
+},
 children:"Excluir"
 })
 
