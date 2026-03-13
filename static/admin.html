@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
 <meta charset="UTF-8">
 <title>Área Administrativa</title>
 
@@ -44,27 +45,14 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 margin-right:10px;
+margin-top:5px;
 }
 
-.criar{
-background:#1a73e8;
-color:white;
-}
-
-.atualizar{
-background:#ff9800;
-color:white;
-}
-
-.ver{
-background:#1a73e8;
-color:white;
-}
-
-.excluir{
-background:#e53935;
-color:white;
-}
+.criar{background:#1a73e8;color:white}
+.atualizar{background:#ff9800;color:white}
+.ver{background:#1a73e8;color:white}
+.excluir{background:#e53935;color:white}
+.copiar{background:#4caf50;color:white}
 
 </style>
 
@@ -152,6 +140,10 @@ ${r.address}
 Ver
 </button>
 
+<button class="copiar" onclick="copiar('${r.code}')">
+Copiar Link
+</button>
+
 <button class="atualizar" onclick="atualizarStatus('${r.code}')">
 Atualizar Status
 </button>
@@ -222,29 +214,38 @@ carregar()
 
 async function atualizarStatus(code){
 
-const novoStatus=prompt("Novo status")
+const novoStatus=prompt(
+"Novo status:\n\nPostado\nEm trânsito\nCentro de distribuição\nSaiu para entrega\nEntregue"
+)
 
 if(!novoStatus) return
 
 const novaLocalizacao=prompt("Localização")
 
-const {data}=await supabase
+const {data,error}=await supabase
 .from("trackings_test")
 .select("timeline")
 .eq("code",code)
 .single()
+
+if(error){
+
+alert("Erro ao carregar timeline")
+return
+
+}
 
 let timeline=data.timeline||[]
 
 timeline.push({
 
 status:novoStatus,
-location:novaLocalizacao,
+location:novaLocalizacao || "Brasil",
 date:new Date().toISOString()
 
 })
 
-await supabase
+const {error:updateError}=await supabase
 .from("trackings_test")
 .update({
 
@@ -254,6 +255,13 @@ last_update:new Date().toISOString()
 
 })
 .eq("code",code)
+
+if(updateError){
+
+alert("Erro ao atualizar status")
+return
+
+}
 
 alert("Status atualizado")
 
@@ -281,6 +289,18 @@ carregar()
 function ver(code){
 
 window.open("/rastreamento/"+code,"_blank")
+
+}
+
+
+
+function copiar(code){
+
+const link=window.location.origin+"/rastreamento/"+code
+
+navigator.clipboard.writeText(link)
+
+alert("Link copiado!")
 
 }
 
