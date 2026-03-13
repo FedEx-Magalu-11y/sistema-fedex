@@ -1,14 +1,22 @@
-const params = new URLSearchParams(window.location.search)
+const params=new URLSearchParams(window.location.search)
 
-const code = params.get("code")
+const code=params.get("code")
 
 async function carregar(){
 
-const {data} = await supabase
+const {data}=await supabase
 .from("trackings_test")
 .select("*")
 .eq("code",code)
 .single()
+
+if(!data){
+
+document.body.innerHTML="Código não encontrado"
+
+return
+
+}
 
 document.getElementById("codigo").innerText=data.code
 
