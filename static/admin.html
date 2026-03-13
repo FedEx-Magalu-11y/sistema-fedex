@@ -1,58 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Painel Admin</title>
+<title>Painel Admin - Rastreamento</title>
 </head>
 
 <body>
 
 <h2>Criar Rastreamento</h2>
 
-<input id="codigo" placeholder="Código do rastreio"><br><br>
-<input id="cidade" placeholder="Cidade"><br><br>
-<input id="status" placeholder="Status"><br><br>
+<label>Código:</label><br>
+<input id="codigo"><br><br>
 
-<button onclick="criar()">Criar Rastreamento</button>
+<label>Nome do destinatário:</label><br>
+<input id="nome"><br><br>
+
+<label>Endereço:</label><br>
+<input id="endereco"><br><br>
+
+<button onclick="criar()">Criar Rastreio</button>
+
+<p id="status"></p>
 
 <script type="module">
 
-import { supabase } from "./supabaseClient.js"
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"
 
-async function criar(){
+const supabaseUrl = "https://opiwznepfjcinxrymrxw.supabase.co"
+
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9waXd6bmVwZmpjaW54cnltcnh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI4OTQ3MDQsImV4cCI6MjA4ODQ3MDcwNH0.bcfSAqQzPNs1BISoKBUP2p1KU0MIgCzFimX4OzhU0yU"
+
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+window.criar = async function(){
 
 const codigo = document.getElementById("codigo").value
-const cidade = document.getElementById("cidade").value
-const status = document.getElementById("status").value
+const nome = document.getElementById("nome").value
+const endereco = document.getElementById("endereco").value
 
-// cria rastreio
 const { data, error } = await supabase
-.from("trackings")
+.from("trackings_test")
 .insert([
 {
-codigo: codigo,
-cidade: cidade
+code: codigo,
+recipient_name: nome,
+address: endereco
 }
 ])
 
 if(error){
-alert("Erro ao criar rastreio")
-return
-}
 
-// cria apenas UM evento
-await supabase
-.from("tracking_events")
-.insert([
-{
-codigo: codigo,
-status: status,
-cidade: cidade,
-data: new Date()
-}
-])
+document.getElementById("status").innerText = "Erro: " + error.message
 
-alert("Rastreamento criado")
+}else{
+
+document.getElementById("status").innerText = "Rastreamento criado com sucesso"
+
+}
 
 }
 
