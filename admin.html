@@ -1,129 +1,33 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-<meta charset="UTF-8">
-<title>Área Administrativa</title>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<style>
-
-body{
-font-family:Arial;
-background:#f5f7fb;
-margin:0;
-padding:40px;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-margin-bottom:20px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-input,select{
-width:100%;
-padding:10px;
-margin-top:10px;
-margin-bottom:10px;
-border:1px solid #ccc;
-border-radius:6px;
-}
-
-button{
-padding:10px 15px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-margin-right:10px;
-}
-
-.criar{
-background:#1a73e8;
-color:white;
-}
-
-.atualizar{
-background:#ff9800;
-color:white;
-}
-
-.ver{
-background:#1a73e8;
-color:white;
-}
-
-.excluir{
-background:#e53935;
-color:white;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="container">
-
-<h2>Área Administrativa</h2>
-
-<div class="card">
-
-<h3>Criar Rastreamento</h3>
-
-<input id="codigo" placeholder="Código de rastreio (deixe vazio para gerar automático)">
-
-<input id="destinatario" placeholder="Destinatário">
-
-<input id="cep" placeholder="CEP">
-
-<input id="endereco" placeholder="Endereço">
-
-<input id="localizacao" placeholder="Localização">
-
-<select id="status">
-
-<option>Postado</option>
-<option>Em trânsito</option>
-<option>Centro de distribuição</option>
-<option>Saiu para entrega</option>
-<option>Entregue</option>
-
-</select>
-
-<button class="criar" onclick="criarRastreio()">
-Criar Rastreamento
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>Rastreamentos</h3>
-
-<div id="lista"></div>
-
-</div>
-
-</div>
-
-<script>
-
 const supabaseUrl="https://opiwznepfjcinxrymrxw.supabase.co"
 const supabaseKey="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
 const supabase=window.supabase.createClient(supabaseUrl,supabaseKey)
 
 
+
+// BUSCAR CEP AUTOMATICAMENTE
+
+document.getElementById("cep").addEventListener("blur",async function(){
+
+const cep=this.value.replace(/\D/g,'')
+
+if(cep.length!==8) return
+
+const res=await fetch("https://viacep.com.br/ws/"+cep+"/json/")
+
+const data=await res.json()
+
+if(data.erro) return
+
+document.getElementById("endereco").value=
+data.logradouro+", "+data.bairro+", "+data.localidade+" - "+data.uf
+
+})
+
+
+
+
+// GERAR CÓDIGO AUTOMÁTICO
 
 function gerarCodigo(){
 
@@ -132,6 +36,7 @@ const numeros=Math.floor(Math.random()*9000000000)+1000000000
 return "PQ"+numeros+"BR"
 
 }
+
 
 
 
@@ -179,6 +84,7 @@ Excluir
 })
 
 }
+
 
 
 
@@ -237,13 +143,17 @@ carregar()
 
 
 
+
 async function atualizarStatus(code){
 
 const novoStatus=prompt("Novo status")
+
 if(!novoStatus) return
 
 const novaLocalizacao=prompt("Localização")
+
 const descricao=prompt("Descrição do evento")
+
 const setor=prompt("Setor (Postagem / Transporte / Logística / Distribuição)")
 
 const {data}=await supabase
@@ -283,6 +193,7 @@ carregar()
 
 
 
+
 async function excluir(code){
 
 if(!confirm("Excluir rastreamento?")) return
@@ -298,6 +209,7 @@ carregar()
 
 
 
+
 function ver(code){
 
 window.open("/rastreamento.html?code="+code,"_blank")
@@ -307,8 +219,3 @@ window.open("/rastreamento.html?code="+code,"_blank")
 
 
 carregar()
-
-</script>
-
-</body>
-</html>
