@@ -1,60 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
-<title>Rastreamento</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="/css/style.css">
+<title>Rastreamento FedEx</title>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="style.css">
 
 </head>
-
 <body>
 
-<div class="container rastreio-container">
+<div class="tracking-container">
 
-<div class="rastreamento-grid">
+<header class="tracking-header">
+<div class="tracking-logo">
 
-<div class="card rastreamento-info">
+<img class="tracking-header-logo" src="fedex.png">
 
-<p class="rastreamento-label">
-Seu código de rastreamento é
-</p>
-
-<h2 id="codigo" class="rastreamento-codigo"></h2>
-
-<div class="rastreamento-dados">
-
-<div>
-<strong>Destinatário:</strong><br>
-<span id="destinatario"></span>
-</div>
-
-<div class="endereco-box">
-<strong>Endereço de Entrega:</strong><br>
-<span id="endereco"></span>
-</div>
-
-<div id="ultima" class="ultima-atualizacao"></div>
-
+<div class="logo-text">
+<span class="logo-name">FedEx</span>
+<span class="logo-subtitle">Sistema de Rastreamento</span>
 </div>
 
 </div>
+</header>
 
 
-<div class="card suporte-box">
+<div class="tracking-content">
 
-<h3>Precisa de Ajuda?</h3>
+<div class="tracking-main-card">
 
-<button class="btn-suporte">
-Falar com Suporte
+<div class="tracking-code-label">
+Código de rastreio
+</div>
+
+<div class="tracking-code">
+BR845792163FE
+</div>
+
+
+<div class="tracking-info-section">
+
+<div class="tracking-info-item">
+<span class="info-label">Destinatário</span>
+<span class="info-value">João da Silva</span>
+</div>
+
+</div>
+
+
+<div class="tracking-address-section">
+
+<div class="address-header">
+<span class="address-label">Endereço de entrega</span>
+</div>
+
+<div class="address-value">
+Rua das Flores 123<br>
+São Paulo - SP<br>
+CEP 01234-000
+</div>
+
+</div>
+
+
+<div class="tracking-update-bar">
+Última atualização: Hoje às 14:22
+</div>
+
+</div>
+
+
+<div class="tracking-help-card">
+
+<div class="help-title">
+Precisa de ajuda?
+</div>
+
+<button class="help-button support">
+Suporte
 </button>
 
-<button class="btn-faq">
-Perguntas Frequentes
+<button class="help-button faq">
+Perguntas frequentes
 </button>
 
 </div>
@@ -62,92 +91,92 @@ Perguntas Frequentes
 </div>
 
 
-<div class="card timeline-box">
+<div class="tracking-timeline">
 
-<div id="timeline"></div>
+<div class="timeline-item active">
 
-</div>
+<div class="timeline-dot"></div>
 
-</div>
-
-
-<script>
-
-const SUPABASE_URL="https://opiwznepfjcinxrymrxw.supabase.co"
-const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
-
-const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
-
-async function carregarRastreamento(){
-
-const params=new URLSearchParams(window.location.search)
-const code=params.get("code")
-
-if(!code){
-
-document.getElementById("codigo").innerText="Código inválido"
-return
-
-}
-
-const {data,error}=await db
-.from("trackings_test")
-.select("*")
-.eq("code",code)
-.single()
-
-if(error || !data){
-
-document.getElementById("codigo").innerText="Rastreamento não encontrado"
-return
-
-}
-
-document.getElementById("codigo").innerText=data.code
-document.getElementById("destinatario").innerText=data.recipient_name
-document.getElementById("endereco").innerText=data.address
-
-document.getElementById("ultima").innerText=
-"Última atualização em: "+
-new Date(data.last_update).toLocaleDateString("pt-BR")
-
-const timeline=document.getElementById("timeline")
-
-timeline.innerHTML=""
-
-if(data.timeline){
-
-data.timeline.reverse().forEach(item=>{
-
-timeline.innerHTML+=`
-
-<div class="timeline-item">
-
-<div class="timeline-date">
-${new Date(item.date).toLocaleString("pt-BR")}
-</div>
+<div class="timeline-content">
+<div class="timeline-date">Hoje • 14:22</div>
 
 <div class="timeline-status">
-${item.status}
+Objeto em rota de entrega
+</div>
+
+<div class="timeline-description">
+O pacote saiu para entrega.
 </div>
 
 <div class="timeline-location">
-${item.location}
+São Paulo - SP
+</div>
 </div>
 
 </div>
 
-`
 
-})
+<div class="timeline-item">
 
-}
+<div class="timeline-dot"></div>
 
-}
+<div class="timeline-content">
 
-carregarRastreamento()
+<div class="timeline-date">Ontem • 21:10</div>
 
-</script>
+<div class="timeline-status">
+Centro de distribuição
+</div>
+
+<div class="timeline-description">
+Pacote recebido no centro logístico.
+</div>
+
+<div class="timeline-location">
+São Paulo - SP
+</div>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<div class="timeline-date">12/03 • 18:40</div>
+
+<div class="timeline-status">
+Objeto postado
+</div>
+
+<div class="timeline-description">
+Objeto recebido pela transportadora.
+</div>
+
+<div class="timeline-location">
+Curitiba - PR
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="tracking-logos">
+
+<img class="tracking-logo-fedex" src="fedex.png">
+<img class="tracking-logo-magalu" src="magalu.png">
+
+</div>
+
+
+</div>
 
 </body>
 </html>
