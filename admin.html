@@ -44,7 +44,25 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 margin-right:10px;
+}
+
+.criar{
 background:#1a73e8;
+color:white;
+}
+
+.atualizar{
+background:#ff9800;
+color:white;
+}
+
+.ver{
+background:#1a73e8;
+color:white;
+}
+
+.excluir{
+background:#e53935;
 color:white;
 }
 
@@ -63,26 +81,35 @@ color:white;
 <h3>Criar Rastreamento</h3>
 
 <input id="codigo" placeholder="Código de rastreio (deixe vazio para gerar automático)">
+
 <input id="destinatario" placeholder="Destinatário">
+
 <input id="cep" placeholder="CEP">
+
 <input id="endereco" placeholder="Endereço">
+
 <input id="localizacao" placeholder="Localização">
 
 <select id="status">
+
 <option>Postado</option>
 <option>Em trânsito</option>
 <option>Centro de distribuição</option>
 <option>Saiu para entrega</option>
 <option>Entregue</option>
+
 </select>
 
-<button onclick="criarRastreio()">Criar Rastreamento</button>
+<button class="criar" onclick="criarRastreio()">
+Criar Rastreamento
+</button>
 
 </div>
 
 <div class="card">
 
 <h3>Rastreamentos</h3>
+
 <div id="lista"></div>
 
 </div>
@@ -91,36 +118,94 @@ color:white;
 
 <script>
 
-document.addEventListener("DOMContentLoaded",function(){
-
 const supabaseUrl="https://opiwznepfjcinxrymrxw.supabase.co"
 const supabaseKey="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
-window.supabaseClient=supabase.createClient(supabaseUrl,supabaseKey)
-
-carregar()
-
-})
+const supabase=window.supabase.createClient(supabaseUrl,supabaseKey)
 
 
 
-document.getElementById("cep").addEventListener("blur",async function(){
+// BUSCAR CEP AUTOMÁTICO
 
-const cep=this.value.replace(/\D/g,'')
+document.getElementById("cep").addEventListener("blur",buscarCEP)
+
+async function buscarCEP(){
+
+const cep=document.getElementById("cep").value.replace(/\D/g,'')
 
 if(cep.length!==8) return
 
-const res=await fetch("https://viacep.com.br/ws/"+cep+"/json/")
-const data=await res.json()
+let endereco=""
 
-if(data.erro) return
+try{
 
-document.getElementById("endereco").value=
-data.logradouro+", "+data.bairro+", "+data.localidade+" - "+data.uf
+let r=await fetch("https://opencep.com/v1/"+cep+".json")
 
-})
+if(r.ok){
+
+let d=await r.json()
+
+if(d.logradouro){
+
+endereco=d.logradouro+", "+d.bairro+", "+d.localidade+" - "+d.uf
+
+}
+
+}
+
+}catch(e){}
 
 
+
+if(!endereco){
+
+try{
+
+let r=await fetch("https://viacep.com.br/ws/"+cep+"/json/")
+let d=await r.json()
+
+if(!d.erro){
+
+endereco=d.logradouro+", "+d.bairro+", "+d.localidade+" - "+d.uf
+
+}
+
+}catch(e){}
+
+}
+
+
+
+if(!endereco){
+
+try{
+
+let r=await fetch("https://brasilcep.dev/api/cep/"+cep)
+let d=await r.json()
+
+endereco=d.street+", "+d.neighborhood+", "+d.city+" - "+d.state
+
+}catch(e){}
+
+}
+
+
+
+if(endereco){
+
+document.getElementById("endereco").value=endereco
+
+}else{
+
+alert("CEP não encontrado")
+
+}
+
+}
+
+
+
+// GERAR CODIGO AUTOMATICO
 
 function gerarCodigo(){
 
@@ -132,12 +217,65 @@ return "PQ"+numeros+"BR"
 
 
 
+// CARREGAR LISTA
+
+async function carregar(){
+
+const {data}=await supabase
+.from("trackings_test")
+.select("*")
+.order("id",{ascending:false})
+
+const lista=document.getElementById("lista")
+
+lista.innerHTML=""
+
+data.forEach(r=>{
+
+lista.innerHTML+=`
+
+<div style="border:1px solid #ddd;padding:15px;margin-bottom:10px;border-radius:6px">
+
+<b>${r.code}</b><br>
+${r.recipient_name}<br>
+${r.address}
+
+<div style="margin-top:10px">
+
+<button class="ver" onclick="ver('${r.code}')">
+Ver
+</button>
+
+<button class="atualizar" onclick="atualizarStatus('${r.code}')">
+Atualizar Status
+</button>
+
+<button class="excluir" onclick="excluir('${r.code}')">
+Excluir
+</button>
+
+</div>
+
+</div>
+
+`
+
+})
+
+}
+
+
+
+// CRIAR RASTREIO
+
 async function criarRastreio(){
 
 let code=document.getElementById("codigo").value
 
 if(!code){
+
 code=gerarCodigo()
+
 }
 
 const recipient=document.getElementById("destinatario").value
@@ -154,7 +292,7 @@ date:new Date().toISOString()
 
 }]
 
-const {error}=await window.supabaseClient
+const {error}=await supabase
 .from("trackings_test")
 .insert([{
 
@@ -163,18 +301,20 @@ recipient_name:recipient,
 address:address,
 status:status,
 timeline:timeline,
-cep:cep
+cep:cep,
+last_update:new Date().toISOString(),
+is_verified:true
 
 }])
 
 if(error){
 
-console.error(error)
-alert("Erro ao criar rastreamento")
+alert("Erro ao criar")
 
 }else{
 
-alert("Rastreamento criado")
+alert("Criado com sucesso")
+
 carregar()
 
 }
@@ -183,34 +323,79 @@ carregar()
 
 
 
-async function carregar(){
+// ATUALIZAR STATUS
 
-const {data}=await window.supabaseClient
+async function atualizarStatus(code){
+
+const novoStatus=prompt("Novo status")
+
+if(!novoStatus) return
+
+const novaLocalizacao=prompt("Localização")
+
+const {data}=await supabase
 .from("trackings_test")
-.select("*")
-.order("id",{ascending:false})
+.select("timeline")
+.eq("code",code)
+.single()
 
-const lista=document.getElementById("lista")
+let timeline=data.timeline||[]
 
-lista.innerHTML=""
+timeline.push({
 
-data.forEach(r=>{
-
-lista.innerHTML+=`
-
-<div style="border:1px solid #ddd;padding:10px;margin-bottom:10px">
-
-<b>${r.code}</b><br>
-${r.recipient_name}<br>
-${r.address}
-
-</div>
-
-`
+status:novoStatus,
+location:novaLocalizacao,
+date:new Date().toISOString()
 
 })
 
+await supabase
+.from("trackings_test")
+.update({
+
+status:novoStatus,
+timeline:timeline,
+last_update:new Date().toISOString()
+
+})
+.eq("code",code)
+
+alert("Status atualizado")
+
+carregar()
+
 }
+
+
+
+// EXCLUIR
+
+async function excluir(code){
+
+if(!confirm("Excluir rastreamento?")) return
+
+await supabase
+.from("trackings_test")
+.delete()
+.eq("code",code)
+
+carregar()
+
+}
+
+
+
+// VER RASTREIO
+
+function ver(code){
+
+window.open("/rastreamento.html?code="+code,"_blank")
+
+}
+
+
+
+carregar()
 
 </script>
 
