@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
@@ -61,7 +62,6 @@ Seu código de rastreamento
 
 </div>
 
-
 <div class="tracking-help-card">
 
 <div class="help-title">
@@ -88,7 +88,6 @@ Perguntas Frequentes
 </div>
 
 </div>
-
 
 <script>
 
@@ -144,8 +143,8 @@ return
 document.getElementById("destinatario").innerText = data.recipient_name
 document.getElementById("endereco").innerText = data.address
 
-document.getElementById("atualizacao").innerText =
-new Date(data.last_update).toLocaleString("pt-BR")
+// MOSTRA HORÁRIO EXATO SALVO
+document.getElementById("atualizacao").innerText = data.last_update
 
 const timeline = document.getElementById("timeline")
 
@@ -162,7 +161,7 @@ timeline.innerHTML+=`
 <div class="timeline-content">
 
 <div class="timeline-date">
-${new Date(evento.date).toLocaleString("pt-BR")}
+${evento.date}
 </div>
 
 <div class="timeline-status">
