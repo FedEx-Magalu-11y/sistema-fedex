@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -11,131 +10,174 @@
 
 <link rel="stylesheet" href="/css/style.css">
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </head>
 
 <body>
 
-<header class="header">
-<div class="container">
-<img src="/fedex.png" class="logo">
+<div class="tracking-container">
+
+<div class="tracking-content">
+
+<div class="tracking-main-card">
+
+<div class="tracking-header">
+
+<div class="tracking-logo">
+<img src="/fedex.png" class="tracking-header-logo">
 </div>
-</header>
-
-<div class="container rastreamento-container">
-
-<p>Seu código de rastreamento é</p>
-<h1 id="codigo"></h1>
-
-<p><b>Destinatário:</b></p>
-<p id="destinatario"></p>
-
-<p><b>Endereço de Entrega:</b></p>
-<p id="endereco"></p>
-
-<p>Última atualização em: <span id="atualizacao"></span></p>
-
-<h3>Precisa de Ajuda?</h3>
-<button>Falar com Suporte</button>
-<button>Perguntas Frequentes</button>
-
-<div id="timeline"></div>
 
 </div>
 
-<footer>
-<img src="/fedex.png" width="120">
-</footer>
+<div class="tracking-code-label">
+Seu código de rastreamento
+</div>
+
+<div id="codigo" class="tracking-code"></div>
+
+<div class="tracking-info-section">
+
+<div class="tracking-info-item">
+<span class="info-label">Destinatário</span>
+<span id="destinatario" class="info-value"></span>
+</div>
+
+</div>
+
+<div class="tracking-address-section">
+
+<div class="address-header">
+<span class="address-label">Endereço de Entrega</span>
+</div>
+
+<div id="endereco" class="address-value"></div>
+
+</div>
+
+<div class="tracking-update-bar">
+Última atualização em: <span id="atualizacao"></span>
+</div>
+
+</div>
+
+
+<div class="tracking-help-card">
+
+<div class="help-title">
+Precisa de Ajuda?
+</div>
+
+<button class="help-button support">
+Falar com Suporte
+</button>
+
+<button class="help-button faq">
+Perguntas Frequentes
+</button>
+
+</div>
+
+<div id="timeline" class="tracking-timeline"></div>
+
+</div>
+
+<div class="tracking-logos">
+<img src="/fedex.png" class="tracking-logo-fedex">
+<img src="/logo-magalu-azul (1).png" class="tracking-logo-magalu">
+</div>
+
+</div>
+
 
 <script>
+
+const SUPABASE_URL="https://opiwznepfjcinxrymrxw.supabase.co"
+const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
+
+const db = window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+)
 
 const params = new URLSearchParams(window.location.search)
 const code = params.get("code")
 
 document.getElementById("codigo").innerText = code
 
-const rastreios = JSON.parse(localStorage.getItem("rastreios")) || []
+async function carregar(){
 
-const rastreio = rastreios.find(r => r.codigo === code)
+const {data,error} = await db
+.from("trackings_test")
+.select("*")
+.eq("code",code)
+.single()
 
-if(!rastreio){
+if(error || !data){
 
-document.getElementById("timeline").innerHTML = "Rastreamento não encontrado"
+document.getElementById("timeline").innerHTML=`
 
-throw new Error("Rastreamento não encontrado")
+<div class="tracking-error-message">
+
+<div class="error-icon">⚠️</div>
+
+<div class="error-title">
+Rastreamento não encontrado
+</div>
+
+<p class="error-text">
+O código <strong>${code}</strong> não foi localizado.
+</p>
+
+<p class="error-text">
+Verifique o número e tente novamente.
+</p>
+
+</div>
+
+`
+
+return
 
 }
 
-document.getElementById("destinatario").innerText = rastreio.nome
-document.getElementById("endereco").innerText = rastreio.endereco
-document.getElementById("atualizacao").innerText = new Date().toLocaleDateString()
+document.getElementById("destinatario").innerText = data.recipient_name
+document.getElementById("endereco").innerText = data.address
 
-// pega estado do endereço automaticamente
-const estado = rastreio.endereco.split("-").pop().trim()
-
-const todosStatus = [
-
-{
-id:"Postado",
-data:"19/02/2026 14:00",
-titulo:"Seu pacote foi postado",
-descricao:"Objeto postado após o pagamento",
-local:"Agência de Origem - " + estado
-},
-
-{
-id:"Em movimento",
-data:"20/02/2026 16:30",
-titulo:"Seu pacote está em movimento",
-descricao:"Pacote em trânsito entre unidades",
-local:"Centro de Distribuição - " + estado
-},
-
-{
-id:"Em trânsito",
-data:"21/02/2026 18:00",
-titulo:"Seu pacote está em trânsito",
-descricao:"Encaminhado para unidade regional",
-local:"Logística Regional - " + estado
-},
-
-{
-id:"Em distribuição",
-data:"22/02/2026 10:00",
-titulo:"Seu pacote está em distribuição",
-descricao:"Objeto saiu para entrega",
-local:"Agência de Distribuição - " + estado
-}
-
-]
-
-const ordem = [
-"Postado",
-"Em movimento",
-"Em trânsito",
-"Em distribuição"
-]
-
-const indiceAtual = ordem.indexOf(rastreio.status)
-
-const eventos = todosStatus.slice(0, indiceAtual + 1)
+document.getElementById("atualizacao").innerText =
+new Date(data.last_update).toLocaleString("pt-BR")
 
 const timeline = document.getElementById("timeline")
 
-timeline.innerHTML = ""
+timeline.innerHTML=""
 
-eventos.forEach(e => {
+data.timeline.forEach((evento,index)=>{
 
-timeline.innerHTML += `
+timeline.innerHTML+=`
 
-<div class="timeline-item">
+<div class="timeline-item ${index==data.timeline.length-1 ? "active":""}">
 
-<p>${e.data}</p>
+<div class="timeline-dot"></div>
 
-<h3>${e.titulo}</h3>
+<div class="timeline-content">
 
-<p>${e.descricao}</p>
+<div class="timeline-date">
+${new Date(evento.date).toLocaleString("pt-BR")}
+</div>
 
-<p>${e.local}</p>
+<div class="timeline-status">
+${evento.title}
+</div>
+
+<div class="timeline-description">
+${evento.description}
+</div>
+
+<div class="timeline-location">
+📍 ${evento.location}
+</div>
+
+</div>
 
 </div>
 
@@ -143,9 +185,12 @@ timeline.innerHTML += `
 
 })
 
+}
+
+carregar()
+
 </script>
 
 </body>
 
 </html>
-```
