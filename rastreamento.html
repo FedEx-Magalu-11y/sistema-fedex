@@ -10,6 +10,83 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<style>
+
+.container{
+display:flex;
+max-width:1100px;
+margin:auto;
+gap:40px;
+}
+
+.left{
+flex:2;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
+}
+
+.right{
+flex:1;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
+height:fit-content;
+}
+
+.codigo{
+color:#ff6600;
+font-size:28px;
+margin-bottom:10px;
+}
+
+.update{
+background:#e7f0fb;
+padding:10px;
+border-radius:6px;
+margin-top:15px;
+}
+
+.timeline{
+margin-top:30px;
+border-left:3px solid #ff6600;
+padding-left:20px;
+}
+
+.evento{
+margin-bottom:25px;
+}
+
+.data{
+color:#777;
+font-size:14px;
+}
+
+.titulo{
+font-weight:bold;
+font-size:18px;
+}
+
+.local{
+font-size:14px;
+color:#444;
+}
+
+.btn{
+background:#ff6600;
+color:white;
+padding:12px;
+border:none;
+border-radius:6px;
+width:100%;
+margin-top:20px;
+cursor:pointer;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -37,8 +114,6 @@
 
 <section style="padding:80px">
 
-<h1>Rastreamento do Pedido</h1>
-
 <div id="resultado"></div>
 
 </section>
@@ -52,27 +127,21 @@ const code = params.get("code")
 const banco = {
 
 "PQ0051595372BR":{
-
 status:"Em transporte",
 local:"Centro logístico São Paulo",
 previsao:"2 dias"
-
 },
 
 "PQ8844551122BR":{
-
 status:"Saiu para entrega",
 local:"Unidade Rio de Janeiro",
 previsao:"Hoje"
-
 },
 
 "PQ7779993333BR":{
-
 status:"Aguardando confirmação",
 local:"Centro logístico Curitiba",
 previsao:"3 dias"
-
 }
 
 }
@@ -81,13 +150,58 @@ if(banco[code]){
 
 document.getElementById("resultado").innerHTML = `
 
-<h2>Código: ${code}</h2>
+<div class="container">
 
-<p>Status: ${banco[code].status}</p>
+<div class="left">
 
-<p>Localização: ${banco[code].local}</p>
+<p>Seu código de rastreamento é</p>
 
-<p>Previsão de entrega: ${banco[code].previsao}</p>
+<h1 class="codigo">${code}</h1>
+
+<p>
+<b>Status:</b><br>
+${banco[code].status}
+</p>
+
+<p>
+<b>Localização:</b><br>
+${banco[code].local}
+</p>
+
+<div class="update">
+Previsão de entrega: ${banco[code].previsao}
+</div>
+
+<div class="timeline">
+
+<div class="evento">
+
+<div class="data">Atualização recente</div>
+
+<div class="titulo">${banco[code].status}</div>
+
+<div class="local">${banco[code].local}</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="right">
+
+<h3>Precisa de ajuda?</h3>
+
+<button class="btn">Falar com suporte</button>
+
+<button class="btn" style="background:#eee;color:#333">
+Perguntas Frequentes
+</button>
+
+</div>
+
+</div>
 
 `
 
