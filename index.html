@@ -2,129 +2,186 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Magalu + FedEx</title>
+<title>FedEx - Parceria Magalu</title>
 
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f5f6fa;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(90deg,#4d148c,#0071ce);
+padding:20px 60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.logo img{
+height:40px;
+}
+
+nav a{
+color:white;
+margin-left:30px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+padding:80px 60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.hero-text h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero-text span{
+color:#0071ce;
+}
+
+.hero-text p{
+font-size:18px;
+margin-bottom:20px;
+}
+
+.confirm-box{
+background:white;
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+width:400px;
+margin-bottom:40px;
+}
+
+/* RASTREIO */
+
+.tracking-box{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+width:450px;
+}
+
+.tracking-box h2{
+margin-bottom:20px;
+}
+
+.tracking-box input{
+width:70%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.tracking-box button{
+padding:12px 20px;
+background:#4d148c;
+color:white;
+border:none;
+border-radius:5px;
+margin-left:10px;
+cursor:pointer;
+}
+
+/* BANNERS */
+
+.banner{
+width:100%;
+margin-top:50px;
+}
+
+.banner img{
+width:100%;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="home-container">
+<header>
 
-<header class="home-header">
-
-<div class="header-content">
-
-<div class="header-logo">
-
-<div class="header-logo-wrapper">
-<img src="/magalu.png" class="header-logo-magalu">
+<div class="logo">
+<img src="fedex.png">
 </div>
 
-<div class="header-logo-wrapper">
-<img src="/fedex.png" class="header-logo-fedex">
-</div>
-
-</div>
-
-<nav class="header-nav">
-
+<nav>
 <a href="#">Serviços</a>
 <a href="#">Rastreamento</a>
 <a href="#">Suporte</a>
-
 </nav>
-
-</div>
 
 </header>
 
-
-<section class="hero-section">
-
-<div class="hero-content">
+<section class="hero">
 
 <div class="hero-text">
 
-<h1 class="hero-title">
+<h1>Parceria <span>Magalu</span> e <span>FedEx</span></h1>
 
-Parceria
-<span class="highlight-magalu">Magalu</span>
-e
-<span class="highlight-fedex">FedEx</span>
-
-</h1>
-
-<p class="hero-description">
-
-<strong>Programa de Bonificação Magalu!</strong>
+<p>
+<strong>Programa de Bonificação Magalu!</strong>  
 Confirme sua entrega e participe do sorteio de prêmios incríveis.
-Entregas rápidas, seguras e confiáveis em todo o Brasil através da parceria entre Magalu e FedEx.
-
 </p>
 
-<button class="confirm-button">
-
+<div class="confirm-box">
 ⭐ Confirme sua entrega e concorra a prêmios exclusivos!
-
-</button>
-
-<div class="tracking-search-box">
-
-<div class="search-title">
-Rastreie seu pedido
 </div>
 
-<form class="search-form" onsubmit="buscar(event)">
+<div class="tracking-box">
 
-<input
-class="search-input"
-id="codigo"
-placeholder="Digite o código de rastreamento"
-/>
+<h2>Rastreie seu pedido</h2>
 
-<button class="search-button">
-Rastrear
-</button>
-
-</form>
+<input placeholder="Digite o código de rastreamento">
+<button>Rastrear</button>
 
 </div>
 
 </div>
 
-
-<div class="hero-image">
-
-<img src="/banner.png">
-
-</div>
-
+<div class="hero-img">
+<img src="bannerfedex.png" style="width:500px;">
 </div>
 
 </section>
 
+<div class="banner">
+<img src="bannerfedex2.png">
 </div>
 
-
-<script>
-
-function buscar(e){
-
-e.preventDefault()
-
-const code=document.getElementById("codigo").value
-
-window.location.href="/rastreamento.html?code="+code
-
-}
-
-</script>
+<div class="banner">
+<img src="BANNERMAGALU.png">
+</div>
 
 </body>
 </html>
