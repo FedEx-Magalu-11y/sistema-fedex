@@ -1,174 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
 <title>Rastreamento</title>
 
+<link rel="stylesheet" href="/css/style.css">
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<style>
-
-body{
-font-family:Arial;
-background:#f3f4f6;
-margin:0;
-padding:40px;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:20px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 0 10px rgba(0,0,0,0.08);
-}
-
-.codigo{
-font-size:28px;
-color:#ff6a00;
-font-weight:bold;
-margin-bottom:20px;
-}
-
-.info{
-margin-bottom:15px;
-}
-
-.ultima{
-background:#e7f1ff;
-padding:10px;
-border-radius:6px;
-margin-top:15px;
-}
-
-.timeline{
-margin-top:20px;
-position:relative;
-padding-left:30px;
-}
-
-.timeline:before{
-content:"";
-position:absolute;
-left:10px;
-top:0;
-bottom:0;
-width:3px;
-background:#ff6a00;
-}
-
-.timeline-item{
-margin-bottom:25px;
-position:relative;
-}
-
-.timeline-item:before{
-content:"";
-position:absolute;
-left:-23px;
-top:5px;
-width:12px;
-height:12px;
-background:#ff6a00;
-border-radius:50%;
-}
-
-.data{
-font-size:13px;
-color:#666;
-}
-
-.status{
-font-size:16px;
-font-weight:bold;
-margin:3px 0;
-}
-
-.local{
-font-size:14px;
-color:#444;
-}
-
-.suporte button{
-width:100%;
-padding:12px;
-border:none;
-border-radius:6px;
-margin-bottom:10px;
-cursor:pointer;
-}
-
-.suporte .btn1{
-background:#ff6a00;
-color:white;
-}
-
-.suporte .btn2{
-background:#eee;
-}
-
-</style>
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="container rastreio-container">
+
+<div class="rastreamento-grid">
+
+<div class="card rastreamento-info">
+
+<p class="rastreamento-label">
+Seu código de rastreamento é
+</p>
+
+<h2 id="codigo" class="rastreamento-codigo"></h2>
+
+<div class="rastreamento-dados">
 
 <div>
-
-<div class="card">
-
-<div>Seu código de rastreamento é</div>
-
-<div id="codigo" class="codigo"></div>
-
-<div class="info">
-Destinatário:<br>
-<strong id="destinatario"></strong>
+<strong>Destinatário:</strong><br>
+<span id="destinatario"></span>
 </div>
 
-<div class="info">
-Endereço de Entrega:<br>
+<div class="endereco-box">
+<strong>Endereço de Entrega:</strong><br>
 <span id="endereco"></span>
 </div>
 
-<div id="ultima" class="ultima"></div>
-
-</div>
-
-<div class="card">
-
-<div id="timeline" class="timeline"></div>
+<div id="ultima" class="ultima-atualizacao"></div>
 
 </div>
 
 </div>
 
 
-<div class="card suporte">
+<div class="card suporte-box">
 
 <h3>Precisa de Ajuda?</h3>
 
-<button class="btn1">
+<button class="btn-suporte">
 Falar com Suporte
 </button>
 
-<button class="btn2">
+<button class="btn-faq">
 Perguntas Frequentes
 </button>
 
 </div>
 
 </div>
+
+
+<div class="card timeline-box">
+
+<div id="timeline"></div>
+
+</div>
+
+</div>
+
 
 <script>
 
@@ -177,7 +78,7 @@ const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
 const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
 
-async function carregar(){
+async function carregarRastreamento(){
 
 const params=new URLSearchParams(window.location.search)
 const code=params.get("code")
@@ -222,15 +123,15 @@ timeline.innerHTML+=`
 
 <div class="timeline-item">
 
-<div class="data">
+<div class="timeline-date">
 ${new Date(item.date).toLocaleString("pt-BR")}
 </div>
 
-<div class="status">
+<div class="timeline-status">
 ${item.status}
 </div>
 
-<div class="local">
+<div class="timeline-location">
 ${item.location}
 </div>
 
@@ -244,7 +145,7 @@ ${item.location}
 
 }
 
-carregar()
+carregarRastreamento()
 
 </script>
 
