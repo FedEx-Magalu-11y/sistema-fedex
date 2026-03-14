@@ -246,14 +246,12 @@ return
 
 }
 
-const agora=new Date().toISOString()
-
 const timeline=[{
 
 title:"Seu pacote foi postado",
 description:"Objeto postado",
 location:`Agência de Origem - ${cidade} - ${estado}`,
-date:agora
+date:new Date().toLocaleString("pt-BR")
 
 }]
 
@@ -267,7 +265,7 @@ address:address,
 status:"Postado",
 timeline:timeline,
 cep:cep,
-last_update:agora,
+last_update:new Date().toLocaleString("pt-BR"),
 is_verified:true
 
 }])
@@ -297,8 +295,10 @@ const {data}=await db
 let indice=ordem.indexOf(data.status)
 
 if(indice===ordem.length-1){
+
 alert("Entrega já finalizada")
 return
+
 }
 
 let proximo=ordem[indice+1]
@@ -309,6 +309,7 @@ let estado=""
 try{
 
 const response=await fetch("https://brasilapi.com.br/api/cep/v1/"+data.cep)
+
 const cepData=await response.json()
 
 cidade=cepData.city
@@ -325,50 +326,52 @@ let descricao=""
 let local=""
 
 if(proximo==="Em movimento"){
+
 descricao="O pacote está transitando entre a agência e o centro de distribuição mais próximo"
 local=`Centro de Distribuição - ${cidade} - ${estado}`
+
 }
 
 if(proximo==="Em trânsito"){
+
 descricao="Pacote em rota para o centro de distribuição regional"
 local=`Unidade de Logística Regional - ${cidade} - ${estado}`
+
 }
 
 if(proximo==="Em distribuição"){
+
 descricao="Pacote saiu para entrega"
 local=`Agência de Distribuição - ${cidade} - ${estado}`
+
 }
 
 if(proximo==="Entregue"){
+
 descricao="Entrega realizada com sucesso"
 local=`${cidade} - ${estado}`
+
 }
 
-let timeline=data.timeline
-
-if(typeof timeline==="string"){
-timeline=JSON.parse(timeline)
-}
-
-if(!Array.isArray(timeline)){
-timeline=[]
-}
-
-const agora=new Date().toISOString()
+let timeline=data.timeline||[]
 
 timeline.push({
+
 title:proximo,
 description:descricao,
 location:local,
-date:agora
+date:new Date().toLocaleString("pt-BR")
+
 })
 
 await db
 .from("trackings_test")
 .update({
+
 status:proximo,
 timeline:timeline,
-last_update:agora
+last_update:new Date().toLocaleString("pt-BR")
+
 })
 .eq("code",code)
 
