@@ -1,167 +1,33 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+
 <meta charset="UTF-8">
-<title>Área Administrativa</title>
+<title>Admin</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<style>
-
-body{
-font-family:Arial;
-background:#f5f7fb;
-margin:0;
-padding:40px;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-margin-bottom:20px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-input,select{
-width:100%;
-padding:10px;
-margin-top:10px;
-margin-bottom:10px;
-border:1px solid #ccc;
-border-radius:6px;
-}
-
-button{
-padding:10px 15px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-margin-right:10px;
-}
-
-.criar{background:#1a73e8;color:white;}
-.atualizar{background:#ff9800;color:white;}
-.ver{background:#1a73e8;color:white;}
-.excluir{background:#e53935;color:white;}
-
-</style>
+<script src="js/supabase.js"></script>
 
 </head>
 
 <body>
 
-<div class="container">
+<h2>Painel Admin</h2>
 
-<h2>Área Administrativa</h2>
-
-<div class="card">
-
-<h3>Criar Rastreamento</h3>
-
-<input id="codigo" placeholder="Código de rastreio (deixe vazio para gerar automático)">
-<input id="destinatario" placeholder="Destinatário">
-<input id="cep" placeholder="CEP">
+<input id="codigo" placeholder="Código (opcional)">
+<input id="nome" placeholder="Destinatário">
 <input id="endereco" placeholder="Endereço">
-<input id="localizacao" placeholder="Localização inicial">
+<input id="localizacao" placeholder="Localização">
+<input id="status" placeholder="Status">
 
-<select id="status">
-<option>Postado</option>
-<option>Em trânsito</option>
-<option>Centro de distribuição</option>
-<option>Saiu para entrega</option>
-<option>Entregue</option>
-</select>
+<button onclick="criar()">Criar</button>
 
-<button class="criar" onclick="criarRastreio()">
-Criar Rastreamento
-</button>
+<hr>
 
-</div>
-
-<div class="card">
-
-<h3>Rastreamentos</h3>
 <div id="lista"></div>
 
-</div>
-
-</div>
-
 <script>
-
-const SUPABASE_URL="https://opiwznepfjcinxrymrxw.supabase.co"
-const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
-
-const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
-
-
-// MASCARA CEP
-
-document.getElementById("cep").addEventListener("input",function(e){
-
-let v=e.target.value.replace(/\D/g,'')
-
-if(v.length>5){
-v=v.slice(0,5)+"-"+v.slice(5,8)
-}
-
-e.target.value=v
-
-})
-
-
-// BUSCAR CEP
-
-document.getElementById("cep").addEventListener("blur",buscarCEP)
-
-async function buscarCEP(){
-
-const cep=document.getElementById("cep").value.replace(/\D/g,'')
-
-if(cep.length!==8) return
-
-try{
-
-const response=await fetch(
-"https://brasilapi.com.br/api/cep/v1/"+cep
-)
-
-const data=await response.json()
-
-if(data.street){
-
-const endereco=
-data.street+", "+
-data.neighborhood+", "+
-data.city+" - "+
-data.state
-
-document.getElementById("endereco").value=endereco
-
-}else{
-
-alert("CEP não encontrado")
-
-}
-
-}catch{
-
-alert("Erro ao buscar CEP")
-
-}
-
-}
-
-
-// GERAR CODIGO
 
 function gerarCodigo(){
 
@@ -170,8 +36,46 @@ return "PQ"+numeros+"BR"
 
 }
 
+async function criar(){
 
-// CARREGAR LISTA
+let code=document.getElementById("codigo").value
+
+if(!code){
+code=gerarCodigo()
+}
+
+const nome=document.getElementById("nome").value
+const endereco=document.getElementById("endereco").value
+const status=document.getElementById("status").value
+const location=document.getElementById("localizacao").value
+
+const timeline=[{
+
+title:status,
+description:status,
+location:location,
+date:new Date().toISOString()
+
+}]
+
+await db
+.from("trackings_test")
+.insert([{
+
+code:code,
+recipient_name:nome,
+address:endereco,
+timeline:timeline,
+status:status,
+last_update:new Date().toISOString()
+
+}])
+
+alert("Criado")
+
+carregar()
+
+}
 
 async function carregar(){
 
@@ -188,27 +92,18 @@ data.forEach(r=>{
 
 lista.innerHTML+=`
 
-<div style="border:1px solid #ddd;padding:15px;margin-bottom:10px;border-radius:6px">
+<div>
 
 <b>${r.code}</b><br>
 ${r.recipient_name}<br>
-${r.address}
 
-<div style="margin-top:10px">
-
-<button class="ver" onclick="ver('${r.code}')">
+<button onclick="ver('${r.code}')">
 Ver
 </button>
 
-<button class="atualizar" onclick="atualizarStatus('${r.code}')">
-Atualizar Status
-</button>
-
-<button class="excluir" onclick="excluir('${r.code}')">
+<button onclick="excluir('${r.code}')">
 Excluir
 </button>
-
-</div>
 
 </div>
 
@@ -218,109 +113,7 @@ Excluir
 
 }
 
-
-// CRIAR RASTREIO
-
-async function criarRastreio(){
-
-let code=document.getElementById("codigo").value
-
-if(!code){
-code=gerarCodigo()
-}
-
-const recipient=document.getElementById("destinatario").value
-const address=document.getElementById("endereco").value
-const status=document.getElementById("status").value
-const location=document.getElementById("localizacao").value
-const cep=document.getElementById("cep").value
-
-
-const timeline=[{
-
-title:status,
-description:status,
-location:location,
-date:new Date().toISOString()
-
-}]
-
-
-await db
-.from("trackings_test")
-.insert([{
-
-code:code,
-recipient_name:recipient,
-address:address,
-status:status,
-timeline:timeline,
-cep:cep,
-last_update:new Date().toISOString(),
-is_verified:true
-
-}])
-
-
-alert("Criado com sucesso")
-
-carregar()
-
-}
-
-
-
-// ATUALIZAR STATUS
-
-async function atualizarStatus(code){
-
-const novoStatus=prompt("Novo status")
-
-if(!novoStatus) return
-
-const novaLocalizacao=prompt("Localização")
-
-const {data}=await db
-.from("trackings_test")
-.select("timeline")
-.eq("code",code)
-.single()
-
-let timeline=data.timeline||[]
-
-timeline.push({
-
-title:novoStatus,
-description:novoStatus,
-location:novaLocalizacao,
-date:new Date().toISOString()
-
-})
-
-
-await db
-.from("trackings_test")
-.update({
-
-status:novoStatus,
-timeline:timeline,
-last_update:new Date().toISOString()
-
-})
-.eq("code",code)
-
-alert("Status atualizado")
-
-carregar()
-
-}
-
-
-// EXCLUIR
-
 async function excluir(code){
-
-if(!confirm("Excluir rastreamento?")) return
 
 await db
 .from("trackings_test")
@@ -331,12 +124,9 @@ carregar()
 
 }
 
-
-// VER
-
 function ver(code){
 
-window.open("/rastreamento.html?code="+code,"_blank")
+window.open("/rastreamento.html?code="+code)
 
 }
 
@@ -346,4 +136,3 @@ carregar()
 
 </body>
 </html>
-```
