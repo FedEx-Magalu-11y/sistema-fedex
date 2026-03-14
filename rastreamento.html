@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -7,145 +6,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FedEx - Rastreamento</title>
+<title>Rastreamento</title>
 
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
 
 </head>
 
 <body>
 
-<header class="header">
-<div class="container">
-<img src="/fedex.png" class="logo">
+<div class="tracking-container">
+
+<div class="tracking-main-card">
+
+<div class="tracking-code-label">
+Código de rastreamento
 </div>
-</header>
 
-<div class="container rastreamento-container">
+<div class="tracking-code" id="codigo"></div>
 
-<p>Seu código de rastreamento é</p>
-<h1 id="codigo"></h1>
+<div class="tracking-info-section">
 
-<p><b>Destinatário:</b></p>
-<p id="destinatario"></p>
+<div class="tracking-info-item">
+<div class="info-label">Destinatário</div>
+<div class="info-value" id="destinatario"></div>
+</div>
 
-<p><b>Endereço de Entrega:</b></p>
-<p id="endereco"></p>
-
-<p>Última atualização em: <span id="atualizacao"></span></p>
-
-<h3>Precisa de Ajuda?</h3>
-<button>Falar com Suporte</button>
-<button>Perguntas Frequentes</button>
-
-<div id="timeline"></div>
+<div class="tracking-info-item">
+<div class="info-label">Endereço</div>
+<div class="info-value" id="endereco"></div>
+</div>
 
 </div>
 
-<footer>
-<img src="/fedex.png" width="120">
-</footer>
+</div>
 
-<script>
-
-const params = new URLSearchParams(window.location.search)
-const code = params.get("code")
-
-document.getElementById("codigo").innerText = code
-
-const rastreios = JSON.parse(localStorage.getItem("rastreios")) || []
-
-const rastreio = rastreios.find(r => r.codigo === code)
-
-if(!rastreio){
-
-document.getElementById("timeline").innerHTML = "Rastreamento não encontrado"
-
-throw new Error("Rastreamento não encontrado")
-
-}
-
-document.getElementById("destinatario").innerText = rastreio.nome
-document.getElementById("endereco").innerText = rastreio.endereco
-document.getElementById("atualizacao").innerText = new Date().toLocaleDateString()
-
-// pega estado do endereço automaticamente
-const estado = rastreio.endereco.split("-").pop().trim()
-
-const todosStatus = [
-
-{
-id:"Postado",
-data:"19/02/2026 14:00",
-titulo:"Seu pacote foi postado",
-descricao:"Objeto postado após o pagamento",
-local:"Agência de Origem - " + estado
-},
-
-{
-id:"Em movimento",
-data:"20/02/2026 16:30",
-titulo:"Seu pacote está em movimento",
-descricao:"Pacote em trânsito entre unidades",
-local:"Centro de Distribuição - " + estado
-},
-
-{
-id:"Em trânsito",
-data:"21/02/2026 18:00",
-titulo:"Seu pacote está em trânsito",
-descricao:"Encaminhado para unidade regional",
-local:"Logística Regional - " + estado
-},
-
-{
-id:"Em distribuição",
-data:"22/02/2026 10:00",
-titulo:"Seu pacote está em distribuição",
-descricao:"Objeto saiu para entrega",
-local:"Agência de Distribuição - " + estado
-}
-
-]
-
-const ordem = [
-"Postado",
-"Em movimento",
-"Em trânsito",
-"Em distribuição"
-]
-
-const indiceAtual = ordem.indexOf(rastreio.status)
-
-const eventos = todosStatus.slice(0, indiceAtual + 1)
-
-const timeline = document.getElementById("timeline")
-
-timeline.innerHTML = ""
-
-eventos.forEach(e => {
-
-timeline.innerHTML += `
-
-<div class="timeline-item">
-
-<p>${e.data}</p>
-
-<h3>${e.titulo}</h3>
-
-<p>${e.descricao}</p>
-
-<p>${e.local}</p>
+<div class="tracking-timeline" id="timeline"></div>
 
 </div>
 
-`
-
-})
-
-</script>
+<script src="js/rastreamento.js"></script>
 
 </body>
-
 </html>
-```
