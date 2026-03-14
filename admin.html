@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -69,7 +70,7 @@ margin-right:10px;
 <input id="destinatario" placeholder="Destinatário">
 <input id="cep" placeholder="CEP">
 <input id="endereco" placeholder="Endereço">
-<input id="localizacao" placeholder="Localização">
+<input id="localizacao" placeholder="Localização inicial">
 
 <select id="status">
 <option>Postado</option>
@@ -117,7 +118,7 @@ e.target.value=v
 })
 
 
-// BUSCAR CEP (BRASIL API)
+// BUSCAR CEP
 
 document.getElementById("cep").addEventListener("blur",buscarCEP)
 
@@ -135,8 +136,6 @@ const response=await fetch(
 
 const data=await response.json()
 
-console.log("CEP DATA:",data)
-
 if(data.street){
 
 const endereco=
@@ -153,9 +152,7 @@ alert("CEP não encontrado")
 
 }
 
-}catch(error){
-
-console.error("Erro CEP:",error)
+}catch{
 
 alert("Erro ao buscar CEP")
 
@@ -169,7 +166,6 @@ alert("Erro ao buscar CEP")
 function gerarCodigo(){
 
 const numeros=Math.floor(Math.random()*9000000000)+1000000000
-
 return "PQ"+numeros+"BR"
 
 }
@@ -230,9 +226,7 @@ async function criarRastreio(){
 let code=document.getElementById("codigo").value
 
 if(!code){
-
 code=gerarCodigo()
-
 }
 
 const recipient=document.getElementById("destinatario").value
@@ -241,13 +235,16 @@ const status=document.getElementById("status").value
 const location=document.getElementById("localizacao").value
 const cep=document.getElementById("cep").value
 
+
 const timeline=[{
 
-status:status,
+title:status,
+description:status,
 location:location,
 date:new Date().toISOString()
 
 }]
+
 
 await db
 .from("trackings_test")
@@ -264,11 +261,13 @@ is_verified:true
 
 }])
 
+
 alert("Criado com sucesso")
 
 carregar()
 
 }
+
 
 
 // ATUALIZAR STATUS
@@ -291,11 +290,13 @@ let timeline=data.timeline||[]
 
 timeline.push({
 
-status:novoStatus,
+title:novoStatus,
+description:novoStatus,
 location:novaLocalizacao,
 date:new Date().toISOString()
 
 })
+
 
 await db
 .from("trackings_test")
@@ -345,3 +346,4 @@ carregar()
 
 </body>
 </html>
+```
