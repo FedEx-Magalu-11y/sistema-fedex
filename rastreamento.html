@@ -104,21 +104,13 @@ const code = params.get("code")
 
 document.getElementById("codigo").innerText = code
 
+function formatarDataBrasil(data){
 
-function formatarData(dataISO){
-
-return new Intl.DateTimeFormat("pt-BR",{
-timeZone:"America/Sao_Paulo",
-day:"2-digit",
-month:"2-digit",
-year:"numeric",
-hour:"2-digit",
-minute:"2-digit",
-second:"2-digit"
-}).format(new Date(dataISO))
+return new Date(data).toLocaleString("pt-BR",{
+timeZone:"America/Sao_Paulo"
+})
 
 }
-
 
 async function carregar(){
 
@@ -160,7 +152,7 @@ document.getElementById("destinatario").innerText = data.recipient_name
 document.getElementById("endereco").innerText = data.address
 
 document.getElementById("atualizacao").innerText =
-formatarData(data.last_update)
+formatarDataBrasil(data.last_update)
 
 const timeline = document.getElementById("timeline")
 
@@ -177,7 +169,7 @@ timeline.innerHTML+=`
 <div class="timeline-content">
 
 <div class="timeline-date">
-${formatarData(evento.date)}
+${formatarDataBrasil(evento.date)}
 </div>
 
 <div class="timeline-status">
