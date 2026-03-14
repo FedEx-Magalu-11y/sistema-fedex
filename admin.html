@@ -4,6 +4,8 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Painel Admin</title>
 
 <link rel="stylesheet" href="/css/style.css">
@@ -23,26 +25,80 @@ const db=supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
 
 <body>
 
-<h1>Painel Admin</h1>
+<div class="home-container">
 
-<input id="codigo" placeholder="Código (opcional)">
-<input id="nome" placeholder="Destinatário">
-<input id="endereco" placeholder="Endereço">
-<input id="localizacao" placeholder="Localização">
-<input id="status" placeholder="Status">
+<header class="home-header">
 
-<button onclick="criar()">Criar</button>
+<div class="header-content">
 
-<hr>
+<div class="header-logo">
+
+<div class="header-logo-wrapper">
+<img src="/fedex.png" class="header-logo-fedex">
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<section class="hero-section">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<h1 class="hero-title">
+Painel <span class="highlight-fedex">Admin</span>
+</h1>
+
+
+<div class="tracking-search-box">
+
+<div class="search-title">
+Criar rastreio
+</div>
+
+<input class="search-input" id="codigo" placeholder="Código (opcional)">
+<input class="search-input" id="nome" placeholder="Destinatário">
+<input class="search-input" id="endereco" placeholder="Endereço">
+<input class="search-input" id="localizacao" placeholder="Localização">
+<input class="search-input" id="status" placeholder="Status">
+
+<button class="search-button" onclick="criar()">
+Criar
+</button>
+
+</div>
+
+
+<br><br>
+
+
+<div class="tracking-search-box">
+
+<div class="search-title">
+Rastreios criados
+</div>
 
 <div id="lista"></div>
+
+</div>
+
+
+</div>
+</div>
+</section>
+
+</div>
 
 <script>
 
 function gerarCodigo(){
 
 const numero=Math.floor(Math.random()*9000000000)+1000000000
-
 return "PQ"+numero+"BR"
 
 }
@@ -78,7 +134,7 @@ last_update:new Date().toISOString()
 
 }])
 
-alert("Criado")
+alert("Rastreio criado")
 
 carregar()
 
@@ -99,17 +155,20 @@ data.forEach(r=>{
 
 lista.innerHTML+=`
 
-<div style="margin-bottom:15px">
+<div style="margin-bottom:20px">
 
 <b>${r.code}</b><br>
-
 ${r.recipient_name}
 
 <br><br>
 
-<button onclick="ver('${r.code}')">Ver</button>
+<button class="search-button" onclick="ver('${r.code}')">
+Ver
+</button>
 
-<button onclick="excluir('${r.code}')">Excluir</button>
+<button class="search-button" onclick="excluir('${r.code}')">
+Excluir
+</button>
 
 </div>
 
