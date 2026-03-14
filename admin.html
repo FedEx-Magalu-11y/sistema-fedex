@@ -44,25 +44,7 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 margin-right:10px;
-}
-
-.criar{
 background:#1a73e8;
-color:white;
-}
-
-.atualizar{
-background:#ff9800;
-color:white;
-}
-
-.ver{
-background:#1a73e8;
-color:white;
-}
-
-.excluir{
-background:#e53935;
 color:white;
 }
 
@@ -81,35 +63,26 @@ color:white;
 <h3>Criar Rastreamento</h3>
 
 <input id="codigo" placeholder="Código de rastreio (deixe vazio para gerar automático)">
-
 <input id="destinatario" placeholder="Destinatário">
-
 <input id="cep" placeholder="CEP">
-
 <input id="endereco" placeholder="Endereço">
-
 <input id="localizacao" placeholder="Localização">
 
 <select id="status">
-
 <option>Postado</option>
 <option>Em trânsito</option>
 <option>Centro de distribuição</option>
 <option>Saiu para entrega</option>
 <option>Entregue</option>
-
 </select>
 
-<button class="criar" onclick="criarRastreio()">
-Criar Rastreamento
-</button>
+<button onclick="criarRastreio()">Criar Rastreamento</button>
 
 </div>
 
 <div class="card">
 
 <h3>Rastreamentos</h3>
-
 <div id="lista"></div>
 
 </div>
@@ -118,14 +91,18 @@ Criar Rastreamento
 
 <script>
 
+document.addEventListener("DOMContentLoaded",function(){
+
 const supabaseUrl="https://opiwznepfjcinxrymrxw.supabase.co"
 const supabaseKey="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
-const supabase=window.supabase.createClient(supabaseUrl,supabaseKey)
+window.supabaseClient=supabase.createClient(supabaseUrl,supabaseKey)
+
+carregar()
+
+})
 
 
-
-// BUSCA AUTOMÁTICA DE CEP
 
 document.getElementById("cep").addEventListener("blur",async function(){
 
@@ -145,9 +122,6 @@ data.logradouro+", "+data.bairro+", "+data.localidade+" - "+data.uf
 
 
 
-
-// GERAR CÓDIGO AUTOMÁTICO
-
 function gerarCodigo(){
 
 const numeros=Math.floor(Math.random()*9000000000)+1000000000
@@ -155,55 +129,6 @@ const numeros=Math.floor(Math.random()*9000000000)+1000000000
 return "PQ"+numeros+"BR"
 
 }
-
-
-
-
-async function carregar(){
-
-const {data}=await supabase
-.from("trackings_test")
-.select("*")
-.order("id",{ascending:false})
-
-const lista=document.getElementById("lista")
-
-lista.innerHTML=""
-
-data.forEach(r=>{
-
-lista.innerHTML+=`
-
-<div style="border:1px solid #ddd;padding:15px;margin-bottom:10px;border-radius:6px">
-
-<b>${r.code}</b><br>
-${r.recipient_name}<br>
-${r.address}
-
-<div style="margin-top:10px">
-
-<button class="ver" onclick="ver('${r.code}')">
-Ver
-</button>
-
-<button class="atualizar" onclick="atualizarStatus('${r.code}')">
-Atualizar Status
-</button>
-
-<button class="excluir" onclick="excluir('${r.code}')">
-Excluir
-</button>
-
-</div>
-
-</div>
-
-`
-
-})
-
-}
-
 
 
 
@@ -225,13 +150,11 @@ const timeline=[{
 
 status:status,
 location:location,
-description:"Objeto registrado no sistema",
-sector:"Postagem",
 date:new Date().toISOString()
 
 }]
 
-const {error}=await supabase
+const {error}=await window.supabaseClient
 .from("trackings_test")
 .insert([{
 
@@ -240,20 +163,18 @@ recipient_name:recipient,
 address:address,
 status:status,
 timeline:timeline,
-cep:cep,
-last_update:new Date().toISOString(),
-is_verified:true
+cep:cep
 
 }])
 
 if(error){
 
-alert("Erro ao criar")
+console.error(error)
+alert("Erro ao criar rastreamento")
 
 }else{
 
-alert("Criado com sucesso")
-
+alert("Rastreamento criado")
 carregar()
 
 }
@@ -262,82 +183,34 @@ carregar()
 
 
 
+async function carregar(){
 
-async function atualizarStatus(code){
-
-const novoStatus=prompt("Novo status")
-
-if(!novoStatus) return
-
-const novaLocalizacao=prompt("Localização")
-
-const descricao=prompt("Descrição do evento")
-
-const setor=prompt("Setor (Postagem / Transporte / Logística / Distribuição)")
-
-const {data}=await supabase
+const {data}=await window.supabaseClient
 .from("trackings_test")
-.select("timeline")
-.eq("code",code)
-.single()
+.select("*")
+.order("id",{ascending:false})
 
-let timeline=data.timeline||[]
+const lista=document.getElementById("lista")
 
-timeline.push({
+lista.innerHTML=""
 
-status:novoStatus,
-location:novaLocalizacao,
-description:descricao,
-sector:setor,
-date:new Date().toISOString()
+data.forEach(r=>{
+
+lista.innerHTML+=`
+
+<div style="border:1px solid #ddd;padding:10px;margin-bottom:10px">
+
+<b>${r.code}</b><br>
+${r.recipient_name}<br>
+${r.address}
+
+</div>
+
+`
 
 })
 
-await supabase
-.from("trackings_test")
-.update({
-
-status:novoStatus,
-timeline:timeline,
-last_update:new Date().toISOString()
-
-})
-.eq("code",code)
-
-alert("Status atualizado")
-
-carregar()
-
 }
-
-
-
-
-async function excluir(code){
-
-if(!confirm("Excluir rastreamento?")) return
-
-await supabase
-.from("trackings_test")
-.delete()
-.eq("code",code)
-
-carregar()
-
-}
-
-
-
-
-function ver(code){
-
-window.open("/rastreamento.html?code="+code,"_blank")
-
-}
-
-
-
-carregar()
 
 </script>
 
