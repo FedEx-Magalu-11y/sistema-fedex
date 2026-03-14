@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
@@ -69,15 +70,6 @@ margin-right:10px;
 <input id="destinatario" placeholder="Destinatário">
 <input id="cep" placeholder="CEP">
 <input id="endereco" placeholder="Endereço">
-<input id="localizacao" placeholder="Localização inicial">
-
-<select id="status">
-<option>Postado</option>
-<option>Em trânsito</option>
-<option>Centro de distribuição</option>
-<option>Saiu para entrega</option>
-<option>Entregue</option>
-</select>
 
 <button class="criar" onclick="criarRastreio()">
 Criar Rastreamento
@@ -170,6 +162,210 @@ return "PQ"+numeros+"BR"
 }
 
 
+// CRIAR RASTREIO
+
+async function criarRastreio(){
+
+let code=document.getElementById("codigo").value
+
+if(!code){
+code=gerarCodigo()
+}
+
+const recipient=document.getElementById("destinatario").value
+const address=document.getElementById("endereco").value
+const cep=document.getElementById("cep").value.replace(/\D/g,'')
+
+let cidade=""
+let estado=""
+
+try{
+
+const response=await fetch("https://brasilapi.com.br/api/cep/v1/"+cep)
+const data=await response.json()
+
+cidade=data.city
+estado=data.state
+
+}catch{
+
+alert("Erro ao buscar CEP")
+return
+
+}
+
+const timeline=[{
+
+title:"Seu pacote foi postado",
+description:"Objeto postado após o pagamento",
+location:`Agência de Origem - ${cidade} - ${estado}`,
+sector:"Postagem",
+date:new Date().toISOString()
+
+}]
+
+
+await db
+.from("trackings_test")
+.insert([{
+
+code:code,
+recipient_name:recipient,
+address:address,
+status:"Postado",
+timeline:timeline,
+cep:cep,
+last_update:new Date().toISOString(),
+is_verified:true
+
+}])
+
+
+alert("Criado com sucesso")
+
+carregar()
+
+}
+
+
+
+// ATUALIZAR STATUS AUTOMÁTICO
+
+async function atualizarStatus(code){
+
+const ordem=[
+"Postado",
+"Em movimento",
+"Em trânsito",
+"Em distribuição",
+"Entregue"
+]
+
+const {data}=await db
+.from("trackings_test")
+.select("*")
+.eq("code",code)
+.single()
+
+let indice=ordem.indexOf(data.status)
+
+if(indice===ordem.length-1){
+
+alert("Entrega já finalizada")
+return
+
+}
+
+let proximo=ordem[indice+1]
+
+let cidade=""
+let estado=""
+
+try{
+
+const response=await fetch(
+"https://brasilapi.com.br/api/cep/v1/"+data.cep
+)
+
+const cepData=await response.json()
+
+cidade=cepData.city
+estado=cepData.state
+
+}catch{
+
+cidade="Centro Logístico"
+estado=""
+
+}
+
+let descricao=""
+let local=""
+
+if(proximo==="Em movimento"){
+
+descricao="O pacote está transitando entre a agência e o centro de distribuição mais próximo"
+local=`Centro de Distribuição - ${cidade} - ${estado}`
+
+}
+
+if(proximo==="Em trânsito"){
+
+descricao="Pacote em rota para o centro de distribuição regional"
+local=`Unidade de Logística Regional - ${cidade} - ${estado}`
+
+}
+
+if(proximo==="Em distribuição"){
+
+descricao="Pacote saiu para entrega"
+local=`Agência de Distribuição - ${cidade} - ${estado}`
+
+}
+
+if(proximo==="Entregue"){
+
+descricao="Entrega realizada com sucesso"
+local=`${cidade} - ${estado}`
+
+}
+
+let timeline=data.timeline||[]
+
+timeline.push({
+
+title:proximo,
+description:descricao,
+location:local,
+date:new Date().toISOString()
+
+})
+
+
+await db
+.from("trackings_test")
+.update({
+
+status:proximo,
+timeline:timeline,
+last_update:new Date().toISOString()
+
+})
+.eq("code",code)
+
+alert("Status atualizado para "+proximo)
+
+carregar()
+
+}
+
+
+
+// EXCLUIR
+
+async function excluir(code){
+
+if(!confirm("Excluir rastreamento?")) return
+
+await db
+.from("trackings_test")
+.delete()
+.eq("code",code)
+
+carregar()
+
+}
+
+
+// VER
+
+function ver(code){
+
+window.open("/rastreamento.html?code="+code,"_blank")
+
+}
+
+
 // CARREGAR LISTA
 
 async function carregar(){
@@ -214,128 +410,6 @@ Excluir
 `
 
 })
-
-}
-
-
-// CRIAR RASTREIO
-
-async function criarRastreio(){
-
-let code=document.getElementById("codigo").value
-
-if(!code){
-code=gerarCodigo()
-}
-
-const recipient=document.getElementById("destinatario").value
-const address=document.getElementById("endereco").value
-const status=document.getElementById("status").value
-const location=document.getElementById("localizacao").value
-const cep=document.getElementById("cep").value
-
-
-const timeline=[{
-
-title:status,
-description:status,
-location:location,
-date:new Date().toISOString()
-
-}]
-
-
-await db
-.from("trackings_test")
-.insert([{
-
-code:code,
-recipient_name:recipient,
-address:address,
-status:status,
-timeline:timeline,
-cep:cep,
-last_update:new Date().toISOString(),
-is_verified:true
-
-}])
-
-
-alert("Criado com sucesso")
-
-carregar()
-
-}
-
-
-
-// ATUALIZAR STATUS
-
-async function atualizarStatus(code){
-
-const novoStatus=prompt("Novo status")
-
-if(!novoStatus) return
-
-const novaLocalizacao=prompt("Localização")
-
-const {data}=await db
-.from("trackings_test")
-.select("timeline")
-.eq("code",code)
-.single()
-
-let timeline=data.timeline||[]
-
-timeline.push({
-
-title:novoStatus,
-description:novoStatus,
-location:novaLocalizacao,
-date:new Date().toISOString()
-
-})
-
-
-await db
-.from("trackings_test")
-.update({
-
-status:novoStatus,
-timeline:timeline,
-last_update:new Date().toISOString()
-
-})
-.eq("code",code)
-
-alert("Status atualizado")
-
-carregar()
-
-}
-
-
-// EXCLUIR
-
-async function excluir(code){
-
-if(!confirm("Excluir rastreamento?")) return
-
-await db
-.from("trackings_test")
-.delete()
-.eq("code",code)
-
-carregar()
-
-}
-
-
-// VER
-
-function ver(code){
-
-window.open("/rastreamento.html?code="+code,"_blank")
 
 }
 
