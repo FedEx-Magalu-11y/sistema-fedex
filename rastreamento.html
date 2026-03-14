@@ -1,80 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rastreamento</title>
 
-<title>Rastreamento FedEx</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<link rel="stylesheet" href="css/style.css">
+<style>
+
+body{
+font-family:Arial;
+background:#f3f4f6;
+margin:0;
+padding:40px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,0.08);
+}
+
+.codigo{
+font-size:28px;
+color:#ff6a00;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.info{
+margin-bottom:15px;
+}
+
+.ultima{
+background:#e7f1ff;
+padding:10px;
+border-radius:6px;
+margin-top:15px;
+}
+
+.timeline{
+margin-top:20px;
+position:relative;
+padding-left:30px;
+}
+
+.timeline:before{
+content:"";
+position:absolute;
+left:10px;
+top:0;
+bottom:0;
+width:3px;
+background:#ff6a00;
+}
+
+.timeline-item{
+margin-bottom:25px;
+position:relative;
+}
+
+.timeline-item:before{
+content:"";
+position:absolute;
+left:-23px;
+top:5px;
+width:12px;
+height:12px;
+background:#ff6a00;
+border-radius:50%;
+}
+
+.data{
+font-size:13px;
+color:#666;
+}
+
+.status{
+font-size:16px;
+font-weight:bold;
+margin:3px 0;
+}
+
+.local{
+font-size:14px;
+color:#444;
+}
+
+.suporte button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:6px;
+margin-bottom:10px;
+cursor:pointer;
+}
+
+.suporte .btn1{
+background:#ff6a00;
+color:white;
+}
+
+.suporte .btn2{
+background:#eee;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="tracking-container">
+<div class="container">
 
-<div class="tracking-content">
+<div>
 
-<div class="tracking-main-card">
+<div class="card">
 
-<div class="tracking-code-label">
-Seu código de rastreamento é
+<div>Seu código de rastreamento é</div>
+
+<div id="codigo" class="codigo"></div>
+
+<div class="info">
+Destinatário:<br>
+<strong id="destinatario"></strong>
 </div>
 
-<div class="tracking-code" id="codigo"></div>
-
-<div class="tracking-info-section">
-
-<div class="tracking-info-item">
-
-<div class="info-label">
-Destinatário:
+<div class="info">
+Endereço de Entrega:<br>
+<span id="endereco"></span>
 </div>
 
-<div class="info-value" id="destinatario"></div>
-
-</div>
-
-</div>
-
-<div class="tracking-address-section">
-
-<div class="address-header">
-<div class="address-label">Endereço de Entrega:</div>
-</div>
-
-<div class="address-value" id="endereco"></div>
+<div id="ultima" class="ultima"></div>
 
 </div>
 
-<div class="tracking-update-bar" id="ultima">
-Última atualização
+<div class="card">
+
+<div id="timeline" class="timeline"></div>
+
 </div>
 
 </div>
 
-<div class="tracking-help-card">
 
-<div class="help-title">
-Precisa de Ajuda?
-</div>
+<div class="card suporte">
 
-<button class="help-button support">
+<h3>Precisa de Ajuda?</h3>
+
+<button class="btn1">
 Falar com Suporte
 </button>
 
-<button class="help-button faq">
+<button class="btn2">
 Perguntas Frequentes
 </button>
-
-</div>
-
-<div class="tracking-timeline" id="timeline">
-
-</div>
 
 </div>
 
@@ -82,105 +172,66 @@ Perguntas Frequentes
 
 <script>
 
-const params = new URLSearchParams(window.location.search)
-const code = params.get("code")
+const SUPABASE_URL="https://opiwznepfjcinxrymrxw.supabase.co"
+const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
-const banco = {
+const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
 
-"PQ0051595372BR":{
+async function carregar(){
 
-destinatario:"ANA FLAVIA MARTINS INCALADO",
+const params=new URLSearchParams(window.location.search)
+const code=params.get("code")
 
-endereco:"Rua Iracema, Nossa Senhora do Carmo, Sete Lagoas, MG, 133",
+if(!code){
 
-timeline:[
-
-{
-data:"19/02/2026, 14:00",
-status:"Seu pacote foi postado",
-desc:"Objeto postado após o pagamento",
-local:"Sete Lagoas - MG",
-setor:"Postagem"
-},
-
-{
-data:"20/02/2026, 16:30",
-status:"Seu pacote está em movimento",
-desc:"O pacote está transitando entre a agência e o centro de distribuição mais próximo",
-local:"Centro de Distribuição - Sete Lagoas - MG",
-setor:"Transporte"
-},
-
-{
-data:"21/02/2026, 18:00",
-status:"Seu pacote está em trânsito",
-desc:"Pacote em rota para o centro de distribuição regional",
-local:"Unidade de Logística Regional - Sete Lagoas - MG",
-setor:"Logística"
-},
-
-{
-data:"22/02/2026, 10:00",
-status:"Seu pacote está em distribuição",
-desc:"Pacote saiu para entrega",
-local:"Agência de Distribuição - Sete Lagoas - MG",
-setor:"Distribuição"
-}
-
-]
-
-}
-
-}
-
-if(!banco[code]){
-
-document.body.innerHTML="<h2 style='padding:40px'>Código não encontrado</h2>"
+document.getElementById("codigo").innerText="Código inválido"
 return
 
 }
 
-const dados = banco[code]
+const {data,error}=await db
+.from("trackings_test")
+.select("*")
+.eq("code",code)
+.single()
 
-document.getElementById("codigo").innerText = code
-document.getElementById("destinatario").innerText = dados.destinatario
-document.getElementById("endereco").innerText = dados.endereco
+if(error || !data){
 
-document.getElementById("ultima").innerText =
-"Última atualização em: " + dados.timeline[dados.timeline.length-1].data.split(",")[0]
+document.getElementById("codigo").innerText="Rastreamento não encontrado"
+return
 
-let html=""
+}
 
-dados.timeline.forEach((t,i)=>{
+document.getElementById("codigo").innerText=data.code
+document.getElementById("destinatario").innerText=data.recipient_name
+document.getElementById("endereco").innerText=data.address
 
-html += `
+document.getElementById("ultima").innerText=
+"Última atualização em: "+
+new Date(data.last_update).toLocaleDateString("pt-BR")
 
-<div class="timeline-item ${i==dados.timeline.length-1 ? "active":""}">
+const timeline=document.getElementById("timeline")
 
-<div class="timeline-dot"></div>
+timeline.innerHTML=""
 
-<div class="timeline-content">
+if(data.timeline){
 
-<div class="timeline-date">
-${t.data}
+data.timeline.reverse().forEach(item=>{
+
+timeline.innerHTML+=`
+
+<div class="timeline-item">
+
+<div class="data">
+${new Date(item.date).toLocaleString("pt-BR")}
 </div>
 
-<div class="timeline-status">
-${t.status}
+<div class="status">
+${item.status}
 </div>
 
-<div class="timeline-description">
-${t.desc}
-</div>
-
-<div class="timeline-location">
-${t.local}
-</div>
-
-<div class="timeline-sector">
-Setor: ${t.setor}
-</div>
-
+<div class="local">
+${item.location}
 </div>
 
 </div>
@@ -189,7 +240,11 @@ Setor: ${t.setor}
 
 })
 
-document.getElementById("timeline").innerHTML = html
+}
+
+}
+
+carregar()
 
 </script>
 
