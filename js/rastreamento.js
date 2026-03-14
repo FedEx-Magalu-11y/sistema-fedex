@@ -4,7 +4,7 @@ const code = params.get("code")
 
 async function carregar(){
 
-const { data, error } = await supabase
+const { data, error } = await db
 .from("trackings_test")
 .select("*")
 .eq("code", code)
@@ -13,26 +13,21 @@ const { data, error } = await supabase
 if(error || !data){
 
 document.body.innerHTML="Código não encontrado"
-
 return
 
 }
 
 document.getElementById("codigo").innerText = data.code
-
 document.getElementById("destinatario").innerText = data.recipient_name
-
 document.getElementById("endereco").innerText = data.address
-
 
 const timeline = document.getElementById("timeline")
 
-timeline.innerHTML = ""
-
+timeline.innerHTML=""
 
 data.timeline.forEach((t,i)=>{
 
-timeline.innerHTML += `
+timeline.innerHTML+=`
 
 <div class="timeline-item ${i==data.timeline.length-1 ? "active":""}">
 
@@ -45,19 +40,15 @@ ${new Date(t.date).toLocaleString("pt-BR")}
 </div>
 
 <div class="timeline-status">
-${t.status}
+${t.title}
 </div>
 
 <div class="timeline-description">
-${t.description || ""}
+${t.description}
 </div>
 
 <div class="timeline-location">
 ${t.location}
-</div>
-
-<div class="timeline-sector">
-Setor: ${t.sector || ""}
 </div>
 
 </div>
