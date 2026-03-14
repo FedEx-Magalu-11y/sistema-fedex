@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FedEx - Parceria Magalu</title>
+
+<title>FedEx x Magalu</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -12,77 +14,175 @@
 
 <body>
 
-<header class="header">
-<div class="container header-container">
+<div class="home-container">
+
+<header class="home-header">
+
+<div class="header-content">
 
 <div class="header-logo">
 
-<img src="logo-magalu-azul (1).png" class="header-logo-magalu" alt="Magalu">
+<div class="header-logo-wrapper">
+<img src="logo-magalu-azul (1).png" class="header-logo-magalu">
+</div>
 
-<img src="fedex.png" class="header-logo-fedex" alt="FedEx">
+<div class="header-logo-wrapper">
+<img src="fedex.png" class="header-logo-fedex">
+</div>
 
 </div>
 
 <nav class="header-nav">
-<a href="#">Serviços</a>
-<a href="#">Rastreamento</a>
-<a href="#">Suporte</a>
+<a class="nav-link" href="#">Serviços</a>
+<a class="nav-link" href="#">Rastreamento</a>
+<a class="nav-link" href="#">Suporte</a>
 </nav>
 
 </div>
+
 </header>
 
-<section class="hero">
-<div class="container hero-container">
+
+<section class="hero-section">
+
+<div class="hero-content">
 
 <div class="hero-text">
 
-<h1>
-Parceria <span class="highlight-blue">Magalu</span> e
-<span class="highlight-purple">FedEx</span>
+<h1 class="hero-title">
+Parceria <span class="highlight-magalu">Magalu</span> e <span class="highlight-fedex">FedEx</span>
 </h1>
 
-<p>
-<strong>Programa de Bonificação Magalu!</strong>
-Confirme sua entrega e participe do sorteio de prêmios incríveis.
+<p class="hero-subtitle">
+<strong>Programa de Bonificação Magalu!</strong> Confirme sua entrega e participe do sorteio de prêmios incríveis.
 Entregas rápidas, seguras e confiáveis em todo o Brasil através da parceria entre Magalu e FedEx.
 </p>
 
-<button class="cta-button">
+<div class="bonus-badge">
 ⭐ Confirme sua entrega e concorra a prêmios exclusivos!
+</div>
+
+
+<div class="tracking-search-box">
+
+<div class="search-title">
+Rastreie seu pedido
+</div>
+
+<div class="search-subtitle">
+Digite o código de rastreamento fornecido para acompanhar sua entrega
+</div>
+
+<form class="search-form" onsubmit="buscar(event)">
+
+<input
+class="search-input"
+id="codigo"
+placeholder="Digite o código"
+/>
+
+<button class="search-button">
+Rastrear
 </button>
 
-<div class="tracking-box">
-
-<h2>Rastreie seu pedido</h2>
-
-<div class="tracking-form">
-<input type="text" placeholder="Digite o código de rastreamento" id="trackingCode">
-<button onclick="trackPackage()">Rastrear</button>
-</div>
+</form>
 
 </div>
 
 </div>
+
 
 <div class="hero-image">
-<img src="bannerfedex.png" alt="FedEx Magalu">
+<img src="bannerfedex.png" class="hero-banner">
 </div>
 
 </div>
+
 </section>
 
+
+<section class="services-section">
+
+<div class="services-container">
+
+<h2 class="section-title">
+Gerencie suas remessas
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<div class="service-title">
+ABRA UMA CONTA
+</div>
+
+<div class="service-description">
+Crie sua conta e tenha acesso a todos os serviços
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-title">
+ALERTAS DE SERVIÇO
+</div>
+
+<div class="service-description">
+Receba notificações sobre o status das suas entregas
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-title">
+FERRAMENTAS ON-LINE
+</div>
+
+<div class="service-description">
+Acesse ferramentas exclusivas
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-title">
+HORÁRIO DE ATENDIMENTO
+</div>
+
+<div class="service-description">
+Encontre lojas e horários próximos
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
 <script>
-function trackPackage(){
-const code = document.getElementById("trackingCode").value;
 
-if(!code){
-alert("Digite um código de rastreamento");
-return;
+function buscar(e){
+
+e.preventDefault()
+
+const code = document.getElementById("codigo").value
+
+window.location.href="/rastreamento.html?code="+code
+
 }
 
-window.location.href="rastreamento.html?code="+code;
-}
 </script>
 
 </body>
