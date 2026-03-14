@@ -104,6 +104,24 @@ const code = params.get("code")
 
 document.getElementById("codigo").innerText = code
 
+
+function formatarData(data){
+
+if(!data) return ""
+
+// se já estiver formato BR
+if(data.includes("/")){
+return data
+}
+
+// se for ISO
+const d=new Date(data)
+
+return d.toLocaleString("pt-BR")
+
+}
+
+
 async function carregar(){
 
 const {data,error} = await db
@@ -143,8 +161,8 @@ return
 document.getElementById("destinatario").innerText = data.recipient_name
 document.getElementById("endereco").innerText = data.address
 
-// MOSTRA HORÁRIO EXATO SALVO
-document.getElementById("atualizacao").innerText = data.last_update
+document.getElementById("atualizacao").innerText =
+formatarData(data.last_update)
 
 const timeline = document.getElementById("timeline")
 
@@ -161,7 +179,7 @@ timeline.innerHTML+=`
 <div class="timeline-content">
 
 <div class="timeline-date">
-${evento.date}
+${formatarData(evento.date)}
 </div>
 
 <div class="timeline-status">
