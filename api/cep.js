@@ -19,12 +19,8 @@ headers:{
 
 const data = await response.json()
 
-res.status(200).json({
-logradouro: data.logradouro,
-bairro: data.bairro,
-cidade: data.localidade,
-estado: data.uf
-})
+// retorna tudo que a API mandar
+res.status(200).json(data)
 
 }catch(error){
 
