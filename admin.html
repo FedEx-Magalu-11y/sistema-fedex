@@ -30,7 +30,7 @@ margin-bottom:20px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-input,select{
+input{
 width:100%;
 padding:10px;
 margin-top:10px;
@@ -67,9 +67,16 @@ margin-right:10px;
 <h3>Criar Rastreamento</h3>
 
 <input id="codigo" placeholder="Código de rastreio (deixe vazio para gerar automático)">
+
 <input id="destinatario" placeholder="Destinatário">
+
 <input id="cep" placeholder="CEP">
-<input id="endereco" placeholder="Endereço">
+
+<input id="endereco" placeholder="Rua e Bairro (automático)">
+
+<input id="numero" placeholder="Número da casa">
+
+<input id="complemento" placeholder="Complemento (Apto, Bloco, etc)">
 
 <button class="criar" onclick="criarRastreio()">
 Criar Rastreamento
@@ -162,6 +169,7 @@ return "PQ"+numeros+"BR"
 }
 
 
+
 // CRIAR RASTREIO
 
 async function criarRastreio(){
@@ -173,8 +181,12 @@ code=gerarCodigo()
 }
 
 const recipient=document.getElementById("destinatario").value
-const address=document.getElementById("endereco").value
+const baseEndereco=document.getElementById("endereco").value
+const numero=document.getElementById("numero").value
+const complemento=document.getElementById("complemento").value
 const cep=document.getElementById("cep").value.replace(/\D/g,'')
+
+const address=baseEndereco+", "+numero+(complemento ? " - "+complemento : "")
 
 let cidade=""
 let estado=""
@@ -199,7 +211,6 @@ const timeline=[{
 title:"Seu pacote foi postado",
 description:"Objeto postado após o pagamento",
 location:`Agência de Origem - ${cidade} - ${estado}`,
-sector:"Postagem",
 date:new Date().toISOString()
 
 }]
@@ -219,7 +230,6 @@ last_update:new Date().toISOString(),
 is_verified:true
 
 }])
-
 
 alert("Criado com sucesso")
 
@@ -321,7 +331,6 @@ date:new Date().toISOString()
 
 })
 
-
 await db
 .from("trackings_test")
 .update({
@@ -391,9 +400,7 @@ ${r.address}
 
 <div style="margin-top:10px">
 
-<button class="ver" onclick="ver('${r.code}')">
-Ver
-</button>
+<button class="ver" onclick="ver('${r.code}')">Ver</button>
 
 <button class="atualizar" onclick="atualizarStatus('${r.code}')">
 Atualizar Status
