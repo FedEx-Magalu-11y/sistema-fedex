@@ -1,190 +1,140 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rastreamento FedEx</title>
+<title>FedEx - Rastreamento</title>
 
-<!-- CSS DO SEU PROJETO -->
-
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
 </head>
+
 <body>
 
-<div class="tracking-container">
-
-<header class="tracking-header">
-<div class="tracking-logo">
-
-<img class="tracking-header-logo" src="/fedex.png">
-
-<div class="logo-text">
-<span class="logo-name">FedEx</span>
-<span class="logo-subtitle">Sistema de Rastreamento</span>
-</div>
-
-</div>
+<header class="header">
+    <div class="container">
+        <img src="/fedex.png" class="logo">
+    </div>
 </header>
 
-<div class="tracking-content">
+<div class="container rastreamento-container">
 
-<div class="tracking-main-card">
+    <div class="rastreamento-grid">
 
-<div class="tracking-code-label">
-Código de rastreio
-</div>
+        <div class="rastreamento-info">
 
-<div class="tracking-code" id="codigoRastreio">
-Carregando...
-</div>
+            <p class="rastreamento-label">Seu código de rastreamento é</p>
+            <h1 id="codigo-rastreio"></h1>
 
-<div class="tracking-info-section">
+            <div class="destinatario-box">
+                <p><strong>Destinatário:</strong></p>
+                <p id="destinatario"></p>
+            </div>
 
-<div class="tracking-info-item">
-<span class="info-label">Destinatário</span>
-<span class="info-value">João da Silva</span>
-</div>
+            <div class="endereco-box">
+                <p><strong>Endereço de Entrega:</strong></p>
+                <p id="endereco"></p>
+            </div>
 
-</div>
+            <div class="ultima-atualizacao">
+                Última atualização em: <span id="atualizacao"></span>
+            </div>
 
-<div class="tracking-address-section">
+        </div>
 
-<div class="address-header">
-<span class="address-label">Endereço de entrega</span>
-</div>
+        <div class="rastreamento-ajuda">
 
-<div class="address-value">
-Rua das Flores 123<br>
-São Paulo - SP<br>
-CEP 01234-000
-</div>
+            <h3>Precisa de Ajuda?</h3>
 
-</div>
+            <button class="btn-suporte">
+                Falar com Suporte
+            </button>
 
-<div class="tracking-update-bar">
-Última atualização: Hoje às 14:22
-</div>
+            <button class="btn-faq">
+                Perguntas Frequentes
+            </button>
 
-</div>
+        </div>
 
-<div class="tracking-help-card">
+    </div>
 
-<div class="help-title">
-Precisa de ajuda?
-</div>
+    <div class="timeline" id="timeline">
 
-<button class="help-button support">
-Suporte
-</button>
-
-<button class="help-button faq">
-Perguntas frequentes
-</button>
+    </div>
 
 </div>
 
-</div>
-
-<div class="tracking-timeline">
-
-<div class="timeline-item active">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-content">
-<div class="timeline-date">Hoje • 14:22</div>
-
-<div class="timeline-status">
-Objeto em rota de entrega
-</div>
-
-<div class="timeline-description">
-O pacote saiu para entrega.
-</div>
-
-<div class="timeline-location">
-São Paulo - SP
-</div>
-</div>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-content">
-
-<div class="timeline-date">Ontem • 21:10</div>
-
-<div class="timeline-status">
-Centro de distribuição
-</div>
-
-<div class="timeline-description">
-Pacote recebido no centro logístico.
-</div>
-
-<div class="timeline-location">
-São Paulo - SP
-</div>
-
-</div>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-content">
-
-<div class="timeline-date">12/03 • 18:40</div>
-
-<div class="timeline-status">
-Objeto postado
-</div>
-
-<div class="timeline-description">
-Objeto recebido pela transportadora.
-</div>
-
-<div class="timeline-location">
-Curitiba - PR
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="tracking-logos">
-
-<img class="tracking-logo-fedex" src="/fedex.png">
-<img class="tracking-logo-magalu" src="/magalu.png">
-
-</div>
-
-</div>
+<footer class="footer">
+    <img src="/magalu.png" class="magalu">
+    <img src="/fedex.png" class="fedex-footer">
+</footer>
 
 <script>
 
-/* PEGA O CÓDIGO DA URL */
+const params = new URLSearchParams(window.location.search)
+const code = params.get("code")
 
-const params = new URLSearchParams(window.location.search);
-const codigo = params.get("code");
+document.getElementById("codigo-rastreio").innerText = code || "BR000000000BR"
 
-/* MOSTRA NA TELA */
+document.getElementById("destinatario").innerText = "João da Silva"
 
-if(codigo){
-document.getElementById("codigoRastreio").innerText = codigo;
-}else{
-document.getElementById("codigoRastreio").innerText = "BR845792163FE";
+document.getElementById("endereco").innerText =
+"Rua das Flores 123, Centro, São Paulo - SP"
+
+document.getElementById("atualizacao").innerText =
+new Date().toLocaleDateString()
+
+const eventos = [
+{
+data:"19/02/2026 14:00",
+titulo:"Seu pacote foi postado",
+descricao:"Objeto postado após o pagamento",
+local:"Sete Lagoas - MG"
+},
+{
+data:"20/02/2026 16:30",
+titulo:"Seu pacote está em movimento",
+descricao:"Pacote em trânsito entre unidades",
+local:"Centro de Distribuição - MG"
+},
+{
+data:"21/02/2026 18:00",
+titulo:"Seu pacote está em trânsito",
+descricao:"Encaminhado para unidade regional",
+local:"Logística Regional"
+},
+{
+data:"22/02/2026 10:00",
+titulo:"Seu pacote está em distribuição",
+descricao:"Objeto saiu para entrega",
+local:"Agência de Distribuição"
 }
+]
+
+const timeline = document.getElementById("timeline")
+
+eventos.forEach(e=>{
+
+timeline.innerHTML += `
+<div class="timeline-item">
+
+<div class="timeline-data">${e.data}</div>
+
+<div class="timeline-content">
+
+<h3>${e.titulo}</h3>
+
+<p>${e.descricao}</p>
+
+<span class="local">${e.local}</span>
+
+</div>
+
+</div>
+`
+
+})
 
 </script>
 
