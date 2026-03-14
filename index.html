@@ -6,9 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FedEx x Magalu</title>
+<title>Magalu + FedEx</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
 </head>
 
@@ -23,18 +23,27 @@
 <div class="header-logo">
 
 <div class="header-logo-wrapper">
-<img src="logo-magalu.png" class="header-logo-magalu">
+<img src="/magalu.png" class="header-logo-magalu">
 </div>
 
 <div class="header-logo-wrapper">
-<img src="fedex.png" class="header-logo-fedex">
+<img src="/fedex.png" class="header-logo-fedex">
 </div>
 
 </div>
+
+<nav class="header-nav">
+
+<a href="#">Serviços</a>
+<a href="#">Rastreamento</a>
+<a href="#">Suporte</a>
+
+</nav>
 
 </div>
 
 </header>
+
 
 <section class="hero-section">
 
@@ -43,8 +52,27 @@
 <div class="hero-text">
 
 <h1 class="hero-title">
-Rastreamento <span class="highlight-fedex">FedEx</span>
+
+Parceria
+<span class="highlight-magalu">Magalu</span>
+e
+<span class="highlight-fedex">FedEx</span>
+
 </h1>
+
+<p class="hero-description">
+
+<strong>Programa de Bonificação Magalu!</strong>
+Confirme sua entrega e participe do sorteio de prêmios incríveis.
+Entregas rápidas, seguras e confiáveis em todo o Brasil através da parceria entre Magalu e FedEx.
+
+</p>
+
+<button class="confirm-button">
+
+⭐ Confirme sua entrega e concorra a prêmios exclusivos!
+
+</button>
 
 <div class="tracking-search-box">
 
@@ -57,7 +85,7 @@ Rastreie seu pedido
 <input
 class="search-input"
 id="codigo"
-placeholder="Digite o código"
+placeholder="Digite o código de rastreamento"
 />
 
 <button class="search-button">
@@ -70,11 +98,19 @@ Rastrear
 
 </div>
 
+
+<div class="hero-image">
+
+<img src="/banner.png">
+
+</div>
+
 </div>
 
 </section>
 
 </div>
+
 
 <script>
 
@@ -82,9 +118,9 @@ function buscar(e){
 
 e.preventDefault()
 
-const code = document.getElementById("codigo").value
+const code=document.getElementById("codigo").value
 
-window.location.href = "/rastreamento.html?code=" + code
+window.location.href="/rastreamento.html?code="+code
 
 }
 
