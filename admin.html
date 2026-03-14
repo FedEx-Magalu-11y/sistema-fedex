@@ -142,7 +142,7 @@ e.target.value=v
 
 
 
-// BUSCAR CEP AUTOMATICO
+// BUSCAR CEP
 
 document.getElementById("cep").addEventListener("blur",buscarCEP)
 
@@ -156,32 +156,12 @@ let endereco=""
 
 
 
-try{
-
-let r=await fetch("https://opencep.com/v1/"+cep)
-
-if(r.ok){
-
-let d=await r.json()
-
-if(d.logradouro){
-
-endereco=d.logradouro+", "+d.bairro+", "+d.localidade+" - "+d.uf
-
-}
-
-}
-
-}catch(e){}
-
-
-
-if(!endereco){
+// VIA CEP
 
 try{
 
-let r=await fetch("https://viacep.com.br/ws/"+cep+"/json/")
-let d=await r.json()
+const r=await fetch("https://viacep.com.br/ws/"+cep+"/json/")
+const d=await r.json()
 
 if(!d.erro){
 
@@ -191,19 +171,39 @@ endereco=d.logradouro+", "+d.bairro+", "+d.localidade+" - "+d.uf
 
 }catch(e){}
 
-}
 
 
+// OPEN CEP
 
 if(!endereco){
 
 try{
 
-let r=await fetch("https://brasilcep.dev/api/cep/"+cep)
+const r=await fetch("https://opencep.com/v1/"+cep)
+const d=await r.json()
 
-if(r.ok){
+if(d.logradouro){
 
-let d=await r.json()
+endereco=d.logradouro+", "+d.bairro+", "+d.localidade+" - "+d.uf
+
+}
+
+}catch(e){}
+
+}
+
+
+
+// BRASILCEP
+
+if(!endereco){
+
+try{
+
+const r=await fetch("https://brasilcep.dev/api/cep/"+cep)
+const d=await r.json()
+
+if(d.street){
 
 endereco=d.street+", "+d.neighborhood+", "+d.city+" - "+d.state
 
@@ -290,7 +290,7 @@ Excluir
 
 
 
-// CRIAR RASTREIO
+// CRIAR
 
 async function criarRastreio(){
 
