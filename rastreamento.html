@@ -4,14 +4,23 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Rastreamento</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase.js"></script>
+
+<script>
+
+const SUPABASE_URL="https://opiwznepfjcinxrymrxw.supabase.co"
+const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
+
+const db=supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
+
+</script>
 
 </head>
 
@@ -25,29 +34,39 @@
 Código de rastreamento
 </div>
 
-<div class="tracking-code" id="codigo"></div>
+<div class="tracking-code"></div>
 
 <div class="tracking-info-section">
 
 <div class="tracking-info-item">
-<div class="info-label">Destinatário</div>
-<div class="info-value" id="destinatario"></div>
+
+<div class="info-label">
+Destinatário
+</div>
+
+<div class="info-value recipient-name"></div>
+
 </div>
 
 <div class="tracking-info-item">
-<div class="info-label">Endereço</div>
-<div class="info-value" id="endereco"></div>
+
+<div class="info-label">
+Endereço
+</div>
+
+<div class="info-value recipient-address"></div>
+
 </div>
 
 </div>
 
 </div>
 
-<div class="tracking-timeline" id="timeline"></div>
+<div class="tracking-timeline"></div>
 
 </div>
 
-<script src="js/rastreamento.js"></script>
+<script src="/js/rastreamento.js"></script>
 
 </body>
 </html>
