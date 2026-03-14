@@ -24,11 +24,9 @@
 <div class="tracking-main-card">
 
 <div class="tracking-header">
-
 <div class="tracking-logo">
 <img src="/fedex.png" class="tracking-header-logo">
 </div>
-
 </div>
 
 <div class="tracking-code-label">
@@ -38,22 +36,17 @@ Seu código de rastreamento
 <div id="codigo" class="tracking-code"></div>
 
 <div class="tracking-info-section">
-
 <div class="tracking-info-item">
 <span class="info-label">Destinatário</span>
 <span id="destinatario" class="info-value"></span>
 </div>
-
 </div>
 
 <div class="tracking-address-section">
-
 <div class="address-header">
 <span class="address-label">Endereço de Entrega</span>
 </div>
-
 <div id="endereco" class="address-value"></div>
-
 </div>
 
 <div class="tracking-update-bar">
@@ -104,13 +97,13 @@ const code = params.get("code")
 
 document.getElementById("codigo").innerText = code
 
-function formatarDataBrasil(data){
 
+function formatarDataBrasil(data){
 return new Date(data).toLocaleString("pt-BR",{
 timeZone:"America/Sao_Paulo"
 })
-
 }
+
 
 async function carregar(){
 
@@ -145,14 +138,18 @@ Verifique o número e tente novamente.
 `
 
 return
-
 }
 
 document.getElementById("destinatario").innerText = data.recipient_name
 document.getElementById("endereco").innerText = data.address
 
+
+// PEGA SEMPRE O ÚLTIMO EVENTO DA TIMELINE
+const ultimoEvento = data.timeline[data.timeline.length - 1]
+
 document.getElementById("atualizacao").innerText =
-formatarDataBrasil(data.last_update)
+formatarDataBrasil(ultimoEvento.date)
+
 
 const timeline = document.getElementById("timeline")
 
