@@ -23,7 +23,7 @@
 <div class="header-logo">
 
 <div class="header-logo-wrapper">
-<img src="logo-magalu-azul (1).png" class="header-logo-magalu">
+<img src="logo-magalu.png" class="header-logo-magalu">
 </div>
 
 <div class="header-logo-wrapper">
@@ -32,16 +32,9 @@
 
 </div>
 
-<nav class="header-nav">
-<a class="nav-link" href="#">Serviços</a>
-<a class="nav-link" href="#">Rastreamento</a>
-<a class="nav-link" href="#">Suporte</a>
-</nav>
-
 </div>
 
 </header>
-
 
 <section class="hero-section">
 
@@ -50,27 +43,13 @@
 <div class="hero-text">
 
 <h1 class="hero-title">
-Parceria <span class="highlight-magalu">Magalu</span> e <span class="highlight-fedex">FedEx</span>
+Rastreamento <span class="highlight-fedex">FedEx</span>
 </h1>
-
-<p class="hero-subtitle">
-<strong>Programa de Bonificação Magalu!</strong> Confirme sua entrega e participe do sorteio de prêmios incríveis.
-Entregas rápidas, seguras e confiáveis em todo o Brasil através da parceria entre Magalu e FedEx.
-</p>
-
-<div class="bonus-badge">
-⭐ Confirme sua entrega e concorra a prêmios exclusivos!
-</div>
-
 
 <div class="tracking-search-box">
 
 <div class="search-title">
 Rastreie seu pedido
-</div>
-
-<div class="search-subtitle">
-Digite o código de rastreamento fornecido para acompanhar sua entrega
 </div>
 
 <form class="search-form" onsubmit="buscar(event)">
@@ -91,85 +70,11 @@ Rastrear
 
 </div>
 
-
-<div class="hero-image">
-<img src="bannerfedex.png" class="hero-banner">
-</div>
-
-</div>
-
-</section>
-
-
-<section class="services-section">
-
-<div class="services-container">
-
-<h2 class="section-title">
-Gerencie suas remessas
-</h2>
-
-<div class="services-grid">
-
-<div class="service-card">
-
-<div class="service-title">
-ABRA UMA CONTA
-</div>
-
-<div class="service-description">
-Crie sua conta e tenha acesso a todos os serviços
-</div>
-
-</div>
-
-
-<div class="service-card">
-
-<div class="service-title">
-ALERTAS DE SERVIÇO
-</div>
-
-<div class="service-description">
-Receba notificações sobre o status das suas entregas
-</div>
-
-</div>
-
-
-<div class="service-card">
-
-<div class="service-title">
-FERRAMENTAS ON-LINE
-</div>
-
-<div class="service-description">
-Acesse ferramentas exclusivas
-</div>
-
-</div>
-
-
-<div class="service-card">
-
-<div class="service-title">
-HORÁRIO DE ATENDIMENTO
-</div>
-
-<div class="service-description">
-Encontre lojas e horários próximos
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </section>
 
 </div>
-
 
 <script>
 
@@ -179,7 +84,7 @@ e.preventDefault()
 
 const code = document.getElementById("codigo").value
 
-window.location.href="/rastreamento.html?code="+code
+window.location.href = "/rastreamento.html?code=" + code
 
 }
 
