@@ -124,6 +124,8 @@ const supabaseKey="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
 const supabase=window.supabase.createClient(supabaseUrl,supabaseKey)
 
+const RETECH_KEY="0d5ac812-78ac-4e06-863a-e7532adb81c8.ROLMFYY7SFI7MUQFCZANY4QJEVMDM7FX"
+
 
 
 // MASCARA CEP
@@ -142,7 +144,7 @@ e.target.value=v
 
 
 
-// BUSCAR CEP
+// BUSCAR CEP RETECH
 
 document.getElementById("cep").addEventListener("blur",buscarCEP)
 
@@ -152,76 +154,25 @@ const cep=document.getElementById("cep").value.replace(/\D/g,'')
 
 if(cep.length!==8) return
 
-let endereco=""
-
-
-
-// VIA CEP
-
 try{
 
-const r=await fetch("https://viacep.com.br/ws/"+cep+"/json/")
+const r=await fetch("https://api-core.theretech.com.br/cep/"+cep,{
+
+headers:{
+"X-API-Key":RETECH_KEY
+}
+
+})
+
 const d=await r.json()
 
-if(!d.erro){
-
-endereco=d.logradouro+", "+d.bairro+", "+d.localidade+" - "+d.uf
-
-}
-
-}catch(e){}
-
-
-
-// OPEN CEP
-
-if(!endereco){
-
-try{
-
-const r=await fetch("https://opencep.com/v1/"+cep)
-const d=await r.json()
-
-if(d.logradouro){
-
-endereco=d.logradouro+", "+d.bairro+", "+d.localidade+" - "+d.uf
-
-}
-
-}catch(e){}
-
-}
-
-
-
-// BRASILCEP
-
-if(!endereco){
-
-try{
-
-const r=await fetch("https://brasilcep.dev/api/cep/"+cep)
-const d=await r.json()
-
-if(d.street){
-
-endereco=d.street+", "+d.neighborhood+", "+d.city+" - "+d.state
-
-}
-
-}catch(e){}
-
-}
-
-
-
-if(endereco){
+const endereco=d.logradouro+", "+d.bairro+", "+d.localidade+" - "+d.uf
 
 document.getElementById("endereco").value=endereco
 
-}else{
+}catch(e){
 
-alert("CEP não encontrado")
+alert("Erro ao buscar CEP")
 
 }
 
