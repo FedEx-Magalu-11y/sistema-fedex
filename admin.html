@@ -58,6 +58,8 @@ margin-right:10px;
 
 <body>
 
+<!-- LOGIN -->
+
 <div id="loginBox" style="
 position:fixed;
 top:0;
@@ -159,6 +161,9 @@ const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
 const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
 
+
+// MASCARA CEP
+
 document.getElementById("cep").addEventListener("input",function(e){
 
 let v=e.target.value.replace(/\D/g,'')
@@ -170,6 +175,9 @@ v=v.slice(0,5)+"-"+v.slice(5,8)
 e.target.value=v
 
 })
+
+
+// BUSCAR CEP
 
 document.getElementById("cep").addEventListener("blur",buscarCEP)
 
@@ -205,12 +213,19 @@ alert("Erro ao buscar CEP")
 
 }
 
+
+// GERAR CODIGO
+
 function gerarCodigo(){
 
 const numeros=Math.floor(Math.random()*9000000000)+1000000000
 return "PQ"+numeros+"BR"
 
 }
+
+
+
+// CRIAR RASTREIO
 
 async function criarRastreio(){
 
@@ -249,11 +264,12 @@ return
 const timeline=[{
 
 title:"Seu pacote foi postado",
-description:"Objeto postado",
+description:"Objeto postado após o pagamento",
 location:`Agência de Origem - ${cidade} - ${estado}`,
-date:new Date().toLocaleString("pt-BR")
+date:new Date().toISOString()
 
 }]
+
 
 await db
 .from("trackings_test")
@@ -265,7 +281,7 @@ address:address,
 status:"Postado",
 timeline:timeline,
 cep:cep,
-last_update:new Date().toLocaleString("pt-BR"),
+last_update:new Date().toISOString(),
 is_verified:true
 
 }])
@@ -275,6 +291,10 @@ alert("Criado com sucesso")
 carregar()
 
 }
+
+
+
+// ATUALIZAR STATUS AUTOMÁTICO
 
 async function atualizarStatus(code){
 
@@ -360,7 +380,7 @@ timeline.push({
 title:proximo,
 description:descricao,
 location:local,
-date:new Date().toLocaleString("pt-BR")
+date:new Date().toISOString()
 
 })
 
@@ -370,7 +390,7 @@ await db
 
 status:proximo,
 timeline:timeline,
-last_update:new Date().toLocaleString("pt-BR")
+last_update:new Date().toISOString()
 
 })
 .eq("code",code)
@@ -380,6 +400,10 @@ alert("Status atualizado para "+proximo)
 carregar()
 
 }
+
+
+
+// EXCLUIR
 
 async function excluir(code){
 
@@ -394,11 +418,17 @@ carregar()
 
 }
 
+
+// VER
+
 function ver(code){
 
 window.open("/rastreamento.html?code="+code,"_blank")
 
 }
+
+
+// CARREGAR LISTA
 
 async function carregar(){
 
