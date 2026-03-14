@@ -4,16 +4,26 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Admin</title>
+<title>Painel Admin</title>
+
+<link rel="stylesheet" href="/css/style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase.js"></script>
+
+<script>
+
+const SUPABASE_URL="https://opiwznepfjcinxrymrxw.supabase.co"
+const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
+
+const db=supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
+
+</script>
 
 </head>
 
 <body>
 
-<h2>Painel Admin</h2>
+<h1>Painel Admin</h1>
 
 <input id="codigo" placeholder="Código (opcional)">
 <input id="nome" placeholder="Destinatário">
@@ -31,8 +41,9 @@
 
 function gerarCodigo(){
 
-const numeros=Math.floor(Math.random()*9000000000)+1000000000
-return "PQ"+numeros+"BR"
+const numero=Math.floor(Math.random()*9000000000)+1000000000
+
+return "PQ"+numero+"BR"
 
 }
 
@@ -40,9 +51,7 @@ async function criar(){
 
 let code=document.getElementById("codigo").value
 
-if(!code){
-code=gerarCodigo()
-}
+if(!code) code=gerarCodigo()
 
 const nome=document.getElementById("nome").value
 const endereco=document.getElementById("endereco").value
@@ -58,15 +67,13 @@ date:new Date().toISOString()
 
 }]
 
-await db
-.from("trackings_test")
-.insert([{
+await db.from("trackings_test").insert([{
 
 code:code,
 recipient_name:nome,
 address:endereco,
-timeline:timeline,
 status:status,
+timeline:timeline,
 last_update:new Date().toISOString()
 
 }])
@@ -92,18 +99,17 @@ data.forEach(r=>{
 
 lista.innerHTML+=`
 
-<div>
+<div style="margin-bottom:15px">
 
 <b>${r.code}</b><br>
-${r.recipient_name}<br>
 
-<button onclick="ver('${r.code}')">
-Ver
-</button>
+${r.recipient_name}
 
-<button onclick="excluir('${r.code}')">
-Excluir
-</button>
+<br><br>
+
+<button onclick="ver('${r.code}')">Ver</button>
+
+<button onclick="excluir('${r.code}')">Excluir</button>
 
 </div>
 
@@ -115,8 +121,7 @@ Excluir
 
 async function excluir(code){
 
-await db
-.from("trackings_test")
+await db.from("trackings_test")
 .delete()
 .eq("code",code)
 
