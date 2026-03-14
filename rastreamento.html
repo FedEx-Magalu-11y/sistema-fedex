@@ -1,71 +1,30 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>FedEx - Rastreamento</title>
-
-<link rel="stylesheet" href="/css/style.css">
-
-</head>
-
-<body>
-
-<header class="header">
-<div class="container">
-<img src="/fedex.png" class="logo">
-</div>
-</header>
-
-<div class="container rastreamento-container">
-
-<p>Seu código de rastreamento é</p>
-<h1 id="codigo"></h1>
-
-<p><b>Destinatário:</b></p>
-<p id="destinatario"></p>
-
-<p><b>Endereço de Entrega:</b></p>
-<p id="endereco"></p>
-
-<p>Última atualização em: <span id="atualizacao"></span></p>
-
-<h3>Precisa de Ajuda?</h3>
-<button>Falar com Suporte</button>
-<button>Perguntas Frequentes</button>
-
-<div id="timeline"></div>
-
-</div>
-
-<footer>
-<img src="/fedex.png" width="120">
-</footer>
-
 <script>
 
 const params = new URLSearchParams(window.location.search)
 const code = params.get("code")
 
-document.getElementById("codigo").innerText = code || "BR000000000BR"
+document.getElementById("codigo").innerText = code
 
-const destinatario = "João da Silva"
-const endereco = "Rua das Flores 123, Centro, São Paulo - SP"
+const rastreios = JSON.parse(localStorage.getItem("rastreios")) || []
 
-document.getElementById("destinatario").innerText = destinatario
-document.getElementById("endereco").innerText = endereco
+const rastreio = rastreios.find(r => r.codigo === code)
 
-document.getElementById("atualizacao").innerText =
-new Date().toLocaleDateString()
+if(!rastreio){
+document.getElementById("timeline").innerHTML = "Rastreamento não encontrado"
+throw new Error("Rastreamento não encontrado")
+}
 
-// pega estado do endereço
-const estado = endereco.split("-")[1].trim()
+document.getElementById("destinatario").innerText = rastreio.nome
+document.getElementById("endereco").innerText = rastreio.endereco
+document.getElementById("atualizacao").innerText = new Date().toLocaleDateString()
 
-const eventos = [
+// pega estado do endereço automaticamente
+const estado = rastreio.endereco.split("-").pop().trim()
+
+const todosStatus = [
 
 {
+id:"postado",
 data:"19/02/2026 14:00",
 titulo:"Seu pacote foi postado",
 descricao:"Objeto postado após o pagamento",
@@ -73,6 +32,7 @@ local:"Agência de Origem - "+estado
 },
 
 {
+id:"movimento",
 data:"20/02/2026 16:30",
 titulo:"Seu pacote está em movimento",
 descricao:"Pacote em trânsito entre unidades",
@@ -80,6 +40,7 @@ local:"Centro de Distribuição - "+estado
 },
 
 {
+id:"transito",
 data:"21/02/2026 18:00",
 titulo:"Seu pacote está em trânsito",
 descricao:"Encaminhado para unidade regional",
@@ -87,6 +48,7 @@ local:"Logística Regional - "+estado
 },
 
 {
+id:"distribuicao",
 data:"22/02/2026 10:00",
 titulo:"Seu pacote está em distribuição",
 descricao:"Objeto saiu para entrega",
@@ -95,7 +57,16 @@ local:"Agência de Distribuição - "+estado
 
 ]
 
+// ordem dos status
+const ordem = ["postado","movimento","transito","distribuicao"]
+
+const indiceAtual = ordem.indexOf(rastreio.status)
+
+const eventos = todosStatus.slice(0, indiceAtual + 1)
+
 const timeline = document.getElementById("timeline")
+
+timeline.innerHTML = ""
 
 eventos.forEach(e=>{
 
@@ -116,6 +87,3 @@ timeline.innerHTML += `
 })
 
 </script>
-
-</body>
-</html>
