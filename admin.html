@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
 <meta charset="UTF-8">
 <title>Área Administrativa</title>
 
@@ -125,7 +126,23 @@ const supabase=window.supabase.createClient(supabaseUrl,supabaseKey)
 
 
 
-// BUSCAR CEP AUTOMÁTICO
+// MASCARA CEP
+
+document.getElementById("cep").addEventListener("input",function(e){
+
+let v=e.target.value.replace(/\D/g,'')
+
+if(v.length>5){
+v=v.slice(0,5)+"-"+v.slice(5,8)
+}
+
+e.target.value=v
+
+})
+
+
+
+// BUSCAR CEP AUTOMATICO
 
 document.getElementById("cep").addEventListener("blur",buscarCEP)
 
@@ -137,9 +154,11 @@ if(cep.length!==8) return
 
 let endereco=""
 
+
+
 try{
 
-let r=await fetch("https://opencep.com/v1/"+cep+".json")
+let r=await fetch("https://opencep.com/v1/"+cep)
 
 if(r.ok){
 
@@ -181,9 +200,14 @@ if(!endereco){
 try{
 
 let r=await fetch("https://brasilcep.dev/api/cep/"+cep)
+
+if(r.ok){
+
 let d=await r.json()
 
 endereco=d.street+", "+d.neighborhood+", "+d.city+" - "+d.state
+
+}
 
 }catch(e){}
 
@@ -205,7 +229,7 @@ alert("CEP não encontrado")
 
 
 
-// GERAR CODIGO AUTOMATICO
+// GERAR CODIGO
 
 function gerarCodigo(){
 
@@ -385,7 +409,7 @@ carregar()
 
 
 
-// VER RASTREIO
+// VER
 
 function ver(code){
 
