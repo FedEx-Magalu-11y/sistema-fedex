@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -6,7 +7,9 @@
 
 <title>Rastreamento FedEx</title>
 
-<link rel="stylesheet" href="style.css">
+<!-- CSS DO SEU PROJETO -->
+
+<link rel="stylesheet" href="/style.css">
 
 </head>
 <body>
@@ -16,7 +19,7 @@
 <header class="tracking-header">
 <div class="tracking-logo">
 
-<img class="tracking-header-logo" src="fedex.png">
+<img class="tracking-header-logo" src="/fedex.png">
 
 <div class="logo-text">
 <span class="logo-name">FedEx</span>
@@ -26,7 +29,6 @@
 </div>
 </header>
 
-
 <div class="tracking-content">
 
 <div class="tracking-main-card">
@@ -35,10 +37,9 @@
 Código de rastreio
 </div>
 
-<div class="tracking-code">
-BR845792163FE
+<div class="tracking-code" id="codigoRastreio">
+Carregando...
 </div>
-
 
 <div class="tracking-info-section">
 
@@ -48,7 +49,6 @@ BR845792163FE
 </div>
 
 </div>
-
 
 <div class="tracking-address-section">
 
@@ -64,13 +64,11 @@ CEP 01234-000
 
 </div>
 
-
 <div class="tracking-update-bar">
 Última atualização: Hoje às 14:22
 </div>
 
 </div>
-
 
 <div class="tracking-help-card">
 
@@ -89,7 +87,6 @@ Perguntas frequentes
 </div>
 
 </div>
-
 
 <div class="tracking-timeline">
 
@@ -115,7 +112,6 @@ São Paulo - SP
 
 </div>
 
-
 <div class="timeline-item">
 
 <div class="timeline-dot"></div>
@@ -139,7 +135,6 @@ São Paulo - SP
 </div>
 
 </div>
-
 
 <div class="timeline-item">
 
@@ -167,16 +162,31 @@ Curitiba - PR
 
 </div>
 
-
 <div class="tracking-logos">
 
-<img class="tracking-logo-fedex" src="fedex.png">
-<img class="tracking-logo-magalu" src="magalu.png">
+<img class="tracking-logo-fedex" src="/fedex.png">
+<img class="tracking-logo-magalu" src="/magalu.png">
 
 </div>
 
-
 </div>
+
+<script>
+
+/* PEGA O CÓDIGO DA URL */
+
+const params = new URLSearchParams(window.location.search);
+const codigo = params.get("code");
+
+/* MOSTRA NA TELA */
+
+if(codigo){
+document.getElementById("codigoRastreio").innerText = codigo;
+}else{
+document.getElementById("codigoRastreio").innerText = "BR845792163FE";
+}
+
+</script>
 
 </body>
 </html>
