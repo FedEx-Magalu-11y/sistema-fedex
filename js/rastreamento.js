@@ -1,16 +1,16 @@
-const params=new URLSearchParams(window.location.search)
+const params = new URLSearchParams(window.location.search)
 
-const code=params.get("code")
+const code = params.get("code")
 
 async function carregar(){
 
-const {data}=await supabase
+const { data, error } = await supabase
 .from("trackings_test")
 .select("*")
-.eq("code",code)
+.eq("code", code)
 .single()
 
-if(!data){
+if(error || !data){
 
 document.body.innerHTML="Código não encontrado"
 
@@ -18,25 +18,49 @@ return
 
 }
 
-document.getElementById("codigo").innerText=data.code
+document.getElementById("codigo").innerText = data.code
 
-document.getElementById("destinatario").innerText=data.recipient_name
+document.getElementById("destinatario").innerText = data.recipient_name
 
-document.getElementById("endereco").innerText=data.address
+document.getElementById("endereco").innerText = data.address
 
-const timeline=document.getElementById("timeline")
 
-timeline.innerHTML=""
+const timeline = document.getElementById("timeline")
 
-data.timeline.forEach(t=>{
+timeline.innerHTML = ""
 
-timeline.innerHTML+=`
 
-<div>
+data.timeline.forEach((t,i)=>{
 
-<b>${t.status}</b><br>
-${t.location}<br>
-${new Date(t.date).toLocaleDateString()}
+timeline.innerHTML += `
+
+<div class="timeline-item ${i==data.timeline.length-1 ? "active":""}">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<div class="timeline-date">
+${new Date(t.date).toLocaleString("pt-BR")}
+</div>
+
+<div class="timeline-status">
+${t.status}
+</div>
+
+<div class="timeline-description">
+${t.description || ""}
+</div>
+
+<div class="timeline-location">
+${t.location}
+</div>
+
+<div class="timeline-sector">
+Setor: ${t.sector || ""}
+</div>
+
+</div>
 
 </div>
 
