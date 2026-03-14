@@ -10,114 +10,75 @@
 
 <link rel="stylesheet" href="css/style.css">
 
-<style>
-
-.container{
-display:flex;
-max-width:1100px;
-margin:auto;
-gap:40px;
-}
-
-.left{
-flex:2;
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 6px 20px rgba(0,0,0,0.1);
-}
-
-.right{
-flex:1;
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 6px 20px rgba(0,0,0,0.1);
-height:fit-content;
-}
-
-.codigo{
-color:#ff6600;
-font-size:28px;
-margin-bottom:10px;
-}
-
-.update{
-background:#e7f0fb;
-padding:10px;
-border-radius:6px;
-margin-top:15px;
-}
-
-.timeline{
-margin-top:30px;
-border-left:3px solid #ff6600;
-padding-left:20px;
-}
-
-.evento{
-margin-bottom:25px;
-}
-
-.data{
-color:#777;
-font-size:14px;
-}
-
-.titulo{
-font-weight:bold;
-font-size:18px;
-}
-
-.local{
-font-size:14px;
-color:#444;
-}
-
-.btn{
-background:#ff6600;
-color:white;
-padding:12px;
-border:none;
-border-radius:6px;
-width:100%;
-margin-top:20px;
-cursor:pointer;
-}
-
-</style>
-
 </head>
 
 <body>
 
-<header class="home-header">
+<div class="tracking-container">
 
-<div class="header-content">
+<div class="tracking-content">
 
-<div class="header-logo">
+<div class="tracking-main-card">
 
-<div class="header-logo-wrapper">
-<img src="logo-magalu-azul (1).png" class="header-logo-magalu">
+<div class="tracking-code-label">
+Seu código de rastreamento é
 </div>
 
-<div class="header-logo-wrapper">
-<img src="fedex.png" class="header-logo-fedex">
+<div class="tracking-code" id="codigo"></div>
+
+<div class="tracking-info-section">
+
+<div class="tracking-info-item">
+
+<div class="info-label">
+Destinatário:
+</div>
+
+<div class="info-value" id="destinatario"></div>
+
+</div>
+
+</div>
+
+<div class="tracking-address-section">
+
+<div class="address-header">
+<div class="address-label">Endereço de Entrega:</div>
+</div>
+
+<div class="address-value" id="endereco"></div>
+
+</div>
+
+<div class="tracking-update-bar" id="ultima">
+Última atualização
+</div>
+
+</div>
+
+<div class="tracking-help-card">
+
+<div class="help-title">
+Precisa de Ajuda?
+</div>
+
+<button class="help-button support">
+Falar com Suporte
+</button>
+
+<button class="help-button faq">
+Perguntas Frequentes
+</button>
+
+</div>
+
+<div class="tracking-timeline" id="timeline">
+
 </div>
 
 </div>
 
 </div>
-
-</header>
-
-
-<section style="padding:80px">
-
-<div id="resultado"></div>
-
-</section>
-
 
 <script>
 
@@ -127,77 +88,98 @@ const code = params.get("code")
 const banco = {
 
 "PQ0051595372BR":{
-status:"Em transporte",
-local:"Centro logístico São Paulo",
-previsao:"2 dias"
+
+destinatario:"ANA FLAVIA MARTINS INCALADO",
+
+endereco:"Rua Iracema, Nossa Senhora do Carmo, Sete Lagoas, MG, 133",
+
+timeline:[
+
+{
+data:"19/02/2026, 14:00",
+status:"Seu pacote foi postado",
+desc:"Objeto postado após o pagamento",
+local:"Sete Lagoas - MG",
+setor:"Postagem"
 },
 
-"PQ8844551122BR":{
-status:"Saiu para entrega",
-local:"Unidade Rio de Janeiro",
-previsao:"Hoje"
+{
+data:"20/02/2026, 16:30",
+status:"Seu pacote está em movimento",
+desc:"O pacote está transitando entre a agência e o centro de distribuição mais próximo",
+local:"Centro de Distribuição - Sete Lagoas - MG",
+setor:"Transporte"
 },
 
-"PQ7779993333BR":{
-status:"Aguardando confirmação",
-local:"Centro logístico Curitiba",
-previsao:"3 dias"
+{
+data:"21/02/2026, 18:00",
+status:"Seu pacote está em trânsito",
+desc:"Pacote em rota para o centro de distribuição regional",
+local:"Unidade de Logística Regional - Sete Lagoas - MG",
+setor:"Logística"
+},
+
+{
+data:"22/02/2026, 10:00",
+status:"Seu pacote está em distribuição",
+desc:"Pacote saiu para entrega",
+local:"Agência de Distribuição - Sete Lagoas - MG",
+setor:"Distribuição"
+}
+
+]
+
 }
 
 }
 
-if(banco[code]){
+if(!banco[code]){
 
-document.getElementById("resultado").innerHTML = `
+document.body.innerHTML="<h2 style='padding:40px'>Código não encontrado</h2>"
+return
 
-<div class="container">
+}
 
-<div class="left">
+const dados = banco[code]
 
-<p>Seu código de rastreamento é</p>
+document.getElementById("codigo").innerText = code
+document.getElementById("destinatario").innerText = dados.destinatario
+document.getElementById("endereco").innerText = dados.endereco
 
-<h1 class="codigo">${code}</h1>
+document.getElementById("ultima").innerText =
+"Última atualização em: " + dados.timeline[dados.timeline.length-1].data.split(",")[0]
 
-<p>
-<b>Status:</b><br>
-${banco[code].status}
-</p>
+let html=""
 
-<p>
-<b>Localização:</b><br>
-${banco[code].local}
-</p>
+dados.timeline.forEach((t,i)=>{
 
-<div class="update">
-Previsão de entrega: ${banco[code].previsao}
+html += `
+
+<div class="timeline-item ${i==dados.timeline.length-1 ? "active":""}">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<div class="timeline-date">
+${t.data}
 </div>
 
-<div class="timeline">
-
-<div class="evento">
-
-<div class="data">Atualização recente</div>
-
-<div class="titulo">${banco[code].status}</div>
-
-<div class="local">${banco[code].local}</div>
-
+<div class="timeline-status">
+${t.status}
 </div>
 
+<div class="timeline-description">
+${t.desc}
 </div>
 
+<div class="timeline-location">
+${t.local}
 </div>
 
-
-<div class="right">
-
-<h3>Precisa de ajuda?</h3>
-
-<button class="btn">Falar com suporte</button>
-
-<button class="btn" style="background:#eee;color:#333">
-Perguntas Frequentes
-</button>
+<div class="timeline-sector">
+Setor: ${t.setor}
+</div>
 
 </div>
 
@@ -205,17 +187,9 @@ Perguntas Frequentes
 
 `
 
-}else{
+})
 
-document.getElementById("resultado").innerHTML = `
-
-<h2>Código não encontrado</h2>
-
-<p>Verifique o código de rastreamento.</p>
-
-`
-
-}
+document.getElementById("timeline").innerHTML = html
 
 </script>
 
