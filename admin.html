@@ -246,7 +246,7 @@ return
 
 }
 
-const agora=new Date().toLocaleString("pt-BR")
+const agora=new Date().toISOString()
 
 const timeline=[{
 
@@ -354,7 +354,7 @@ if(!Array.isArray(timeline)){
 timeline=[]
 }
 
-const agora=new Date().toLocaleString("pt-BR")
+const agora=new Date().toISOString()
 
 timeline.push({
 title:proximo,
