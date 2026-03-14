@@ -105,14 +105,17 @@ const code = params.get("code")
 document.getElementById("codigo").innerText = code
 
 
-function corrigirHora(dataISO){
+function formatarData(dataISO){
 
-let data = new Date(dataISO)
-
-// subtrai 3 horas (UTC → Brasil)
-data.setHours(data.getHours() - 3)
-
-return data.toLocaleString("pt-BR")
+return new Intl.DateTimeFormat("pt-BR",{
+timeZone:"America/Sao_Paulo",
+day:"2-digit",
+month:"2-digit",
+year:"numeric",
+hour:"2-digit",
+minute:"2-digit",
+second:"2-digit"
+}).format(new Date(dataISO))
 
 }
 
@@ -157,7 +160,7 @@ document.getElementById("destinatario").innerText = data.recipient_name
 document.getElementById("endereco").innerText = data.address
 
 document.getElementById("atualizacao").innerText =
-corrigirHora(data.last_update)
+formatarData(data.last_update)
 
 const timeline = document.getElementById("timeline")
 
@@ -174,7 +177,7 @@ timeline.innerHTML+=`
 <div class="timeline-content">
 
 <div class="timeline-date">
-${corrigirHora(evento.date)}
+${formatarData(evento.date)}
 </div>
 
 <div class="timeline-status">
