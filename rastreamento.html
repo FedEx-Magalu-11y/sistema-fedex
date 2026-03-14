@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,61 +14,34 @@
 <body>
 
 <header class="header">
-    <div class="container">
-        <img src="/fedex.png" class="logo">
-    </div>
+<div class="container">
+<img src="/fedex.png" class="logo">
+</div>
 </header>
 
 <div class="container rastreamento-container">
 
-    <div class="rastreamento-grid">
+<p>Seu código de rastreamento é</p>
+<h1 id="codigo"></h1>
 
-        <div class="rastreamento-info">
+<p><b>Destinatário:</b></p>
+<p id="destinatario"></p>
 
-            <p class="rastreamento-label">Seu código de rastreamento é</p>
-            <h1 id="codigo-rastreio"></h1>
+<p><b>Endereço de Entrega:</b></p>
+<p id="endereco"></p>
 
-            <div class="destinatario-box">
-                <p><strong>Destinatário:</strong></p>
-                <p id="destinatario"></p>
-            </div>
+<p>Última atualização em: <span id="atualizacao"></span></p>
 
-            <div class="endereco-box">
-                <p><strong>Endereço de Entrega:</strong></p>
-                <p id="endereco"></p>
-            </div>
+<h3>Precisa de Ajuda?</h3>
+<button>Falar com Suporte</button>
+<button>Perguntas Frequentes</button>
 
-            <div class="ultima-atualizacao">
-                Última atualização em: <span id="atualizacao"></span>
-            </div>
-
-        </div>
-
-        <div class="rastreamento-ajuda">
-
-            <h3>Precisa de Ajuda?</h3>
-
-            <button class="btn-suporte">
-                Falar com Suporte
-            </button>
-
-            <button class="btn-faq">
-                Perguntas Frequentes
-            </button>
-
-        </div>
-
-    </div>
-
-    <div class="timeline" id="timeline">
-
-    </div>
+<div id="timeline"></div>
 
 </div>
 
-<footer class="footer">
-    <img src="/magalu.png" class="magalu">
-    <img src="/fedex.png" class="fedex-footer">
+<footer>
+<img src="/fedex.png" width="120">
 </footer>
 
 <script>
@@ -75,41 +49,50 @@
 const params = new URLSearchParams(window.location.search)
 const code = params.get("code")
 
-document.getElementById("codigo-rastreio").innerText = code || "BR000000000BR"
+document.getElementById("codigo").innerText = code || "BR000000000BR"
 
-document.getElementById("destinatario").innerText = "João da Silva"
+const destinatario = "João da Silva"
+const endereco = "Rua das Flores 123, Centro, São Paulo - SP"
 
-document.getElementById("endereco").innerText =
-"Rua das Flores 123, Centro, São Paulo - SP"
+document.getElementById("destinatario").innerText = destinatario
+document.getElementById("endereco").innerText = endereco
 
 document.getElementById("atualizacao").innerText =
 new Date().toLocaleDateString()
 
+// pega estado do endereço
+const estado = endereco.split("-")[1].trim()
+
 const eventos = [
+
 {
 data:"19/02/2026 14:00",
 titulo:"Seu pacote foi postado",
 descricao:"Objeto postado após o pagamento",
-local:"Sete Lagoas - MG"
+local:"Agência de Origem - "+estado
 },
+
 {
 data:"20/02/2026 16:30",
 titulo:"Seu pacote está em movimento",
 descricao:"Pacote em trânsito entre unidades",
-local:"Centro de Distribuição - MG"
+local:"Centro de Distribuição - "+estado
 },
+
 {
 data:"21/02/2026 18:00",
 titulo:"Seu pacote está em trânsito",
 descricao:"Encaminhado para unidade regional",
-local:"Logística Regional"
+local:"Logística Regional - "+estado
 },
+
 {
 data:"22/02/2026 10:00",
 titulo:"Seu pacote está em distribuição",
 descricao:"Objeto saiu para entrega",
-local:"Agência de Distribuição"
+local:"Agência de Distribuição - "+estado
 }
+
 ]
 
 const timeline = document.getElementById("timeline")
@@ -119,17 +102,13 @@ eventos.forEach(e=>{
 timeline.innerHTML += `
 <div class="timeline-item">
 
-<div class="timeline-data">${e.data}</div>
-
-<div class="timeline-content">
+<p>${e.data}</p>
 
 <h3>${e.titulo}</h3>
 
 <p>${e.descricao}</p>
 
-<span class="local">${e.local}</span>
-
-</div>
+<p>${e.local}</p>
 
 </div>
 `
