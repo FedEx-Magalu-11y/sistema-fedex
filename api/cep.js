@@ -12,7 +12,7 @@ const response = await fetch(
 "https://api-core.theretech.com.br/geo/cep?cep="+cep,
 {
 headers:{
-"X-API-Key":"0d5ac812-78ac-4e06-863a-e7532adb81c8.ROLMFYY7SFI7MUQFCZANY4QJEVMDM7FX"
+"X-API-Key":"afdb43b6-8144-49b5-b6ff-b9f484b30b8a.X65WTYTZ5MZSD6Z74BJTNYB5VJBPSTGD"
 }
 }
 )
