@@ -1,15 +1,15 @@
 export default async function handler(req, res) {
 
-try{
+try {
 
 const cep = req.query.cep
 
 if(!cep){
-return res.status(400).json({erro:"CEP não informado"})
+return res.status(400).json({ erro: "CEP não informado" })
 }
 
 const response = await fetch(
-"https://api-core.theretech.com.br/geo/cep?cep="+cep,
+`https://api-core.theretech.com.br/cep/${cep}`,
 {
 headers:{
 "X-API-Key":"afdb43b6-8144-49b5-b6ff-b9f484b30b8a.X65WTYTZ5MZSD6Z74BJTNYB5VJBPSTGD"
@@ -17,20 +17,14 @@ headers:{
 }
 )
 
-const text = await response.text()
+const data = await response.json()
 
-let data
-
-try{
-data = JSON.parse(text)
-}catch{
-return res.status(500).json({
-erro:"API retornou texto inválido",
-resposta:text
+res.status(200).json({
+logradouro: data.logradouro,
+bairro: data.bairro,
+cidade: data.localidade,
+estado: data.uf
 })
-}
-
-res.status(200).json(data)
 
 }catch(error){
 
