@@ -100,8 +100,6 @@ const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
 const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
 
-const RETECH_KEY="0d5ac812-78ac-4e06-863a-e7532adb81c8.ROLMFYY7SFI7MUQFCZANY4QJEVMDM7FX"
-
 
 
 // MASCARA CEP
@@ -120,7 +118,7 @@ e.target.value=v
 
 
 
-// BUSCAR CEP RETECH
+// BUSCAR CEP
 
 document.getElementById("cep").addEventListener("blur",buscarCEP)
 
@@ -132,25 +130,22 @@ if(cep.length!==8) return
 
 try{
 
-const response=await fetch(
-"https://api-core.theretech.com.br/geo/cep/"+cep,
-{
-headers:{
-"X-API-Key":RETECH_KEY
-}
-}
-)
+const response=await fetch("/api/cep?cep="+cep)
 
 const data=await response.json()
 
-console.log("RETECH RESPONSE:",data)
+console.log(data)
 
 if(data){
 
-const endereco=(data.logradouro || data.street || "")+
-", "+(data.bairro || data.neighborhood || "")+
-", "+(data.localidade || data.city || "")+
-" - "+(data.uf || data.state || "")
+const endereco=
+(data.logradouro || data.street || "")+
+", "+
+(data.bairro || data.neighborhood || "")+
+", "+
+(data.localidade || data.city || "")+
+" - "+
+(data.uf || data.state || "")
 
 document.getElementById("endereco").value=endereco
 
@@ -162,8 +157,7 @@ alert("CEP não encontrado")
 
 }catch(error){
 
-console.error("Erro API RETECH:",error)
-
+console.error(error)
 alert("Erro ao buscar CEP")
 
 }
@@ -209,13 +203,9 @@ ${r.address}
 
 <button class="ver" onclick="ver('${r.code}')">Ver</button>
 
-<button class="atualizar" onclick="atualizarStatus('${r.code}')">
-Atualizar Status
-</button>
+<button class="atualizar" onclick="atualizarStatus('${r.code}')">Atualizar Status</button>
 
-<button class="excluir" onclick="excluir('${r.code}')">
-Excluir
-</button>
+<button class="excluir" onclick="excluir('${r.code}')">Excluir</button>
 
 </div>
 
