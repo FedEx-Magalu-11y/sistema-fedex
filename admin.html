@@ -246,12 +246,14 @@ return
 
 }
 
+const agora=new Date().toLocaleString("pt-BR")
+
 const timeline=[{
 
 title:"Seu pacote foi postado",
 description:"Objeto postado",
 location:`Agência de Origem - ${cidade} - ${estado}`,
-date:new Date().toLocaleString("pt-BR")
+date:agora
 
 }]
 
@@ -265,7 +267,7 @@ address:address,
 status:"Postado",
 timeline:timeline,
 cep:cep,
-last_update:new Date().toLocaleString("pt-BR"),
+last_update:agora,
 is_verified:true
 
 }])
@@ -355,12 +357,14 @@ local=`${cidade} - ${estado}`
 
 let timeline=data.timeline||[]
 
+const agora=new Date().toLocaleString("pt-BR")
+
 timeline.push({
 
 title:proximo,
 description:descricao,
 location:local,
-date:new Date().toLocaleString("pt-BR")
+date:agora
 
 })
 
@@ -370,7 +374,7 @@ await db
 
 status:proximo,
 timeline:timeline,
-last_update:new Date().toLocaleString("pt-BR")
+last_update:agora
 
 })
 .eq("code",code)
