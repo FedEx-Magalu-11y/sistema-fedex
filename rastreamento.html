@@ -1,32 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
 
-<title>Rastreamento</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="/css/style.css">
+<title>Rastreamento FedEx</title>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
-<script src="/js/supabase.js"></script>
-
-<script src="/js/rastreamento.js"></script>
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<h2 id="codigo"></h2>
+<header class="home-header">
 
-<p id="destinatario"></p>
+<div class="header-content">
 
-<p id="endereco"></p>
+<div class="header-logo">
 
-<h3>Status</h3>
+<div class="header-logo-wrapper">
+<img src="logo-magalu-azul (1).png" class="header-logo-magalu">
+</div>
 
-<div id="timeline"></div>
+<div class="header-logo-wrapper">
+<img src="fedex.png" class="header-logo-fedex">
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<section style="padding:80px">
+
+<h1>Rastreamento do Pedido</h1>
+
+<div id="resultado"></div>
+
+</section>
+
+
+<script>
+
+const params = new URLSearchParams(window.location.search)
+const code = params.get("code")
+
+const banco = {
+
+"PQ0051595372BR":{
+
+status:"Em transporte",
+local:"Centro logístico São Paulo",
+previsao:"2 dias"
+
+},
+
+"PQ8844551122BR":{
+
+status:"Saiu para entrega",
+local:"Unidade Rio de Janeiro",
+previsao:"Hoje"
+
+},
+
+"PQ7779993333BR":{
+
+status:"Aguardando confirmação",
+local:"Centro logístico Curitiba",
+previsao:"3 dias"
+
+}
+
+}
+
+if(banco[code]){
+
+document.getElementById("resultado").innerHTML = `
+
+<h2>Código: ${code}</h2>
+
+<p>Status: ${banco[code].status}</p>
+
+<p>Localização: ${banco[code].local}</p>
+
+<p>Previsão de entrega: ${banco[code].previsao}</p>
+
+`
+
+}else{
+
+document.getElementById("resultado").innerHTML = `
+
+<h2>Código não encontrado</h2>
+
+<p>Verifique o código de rastreamento.</p>
+
+`
+
+}
+
+</script>
 
 </body>
-
 </html>
