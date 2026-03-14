@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <title>Área Administrativa</title>
 
@@ -80,7 +79,9 @@ margin-right:10px;
 <option>Entregue</option>
 </select>
 
-<button class="criar" onclick="criarRastreio()">Criar Rastreamento</button>
+<button class="criar" onclick="criarRastreio()">
+Criar Rastreamento
+</button>
 
 </div>
 
@@ -101,7 +102,6 @@ const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
 
 
-
 // MASCARA CEP
 
 document.getElementById("cep").addEventListener("input",function(e){
@@ -117,8 +117,7 @@ e.target.value=v
 })
 
 
-
-// BUSCAR CEP
+// BUSCAR CEP (BRASIL API)
 
 document.getElementById("cep").addEventListener("blur",buscarCEP)
 
@@ -130,22 +129,21 @@ if(cep.length!==8) return
 
 try{
 
-const response=await fetch("/api/cep?cep="+cep)
+const response=await fetch(
+"https://brasilapi.com.br/api/cep/v1/"+cep
+)
 
 const data=await response.json()
 
-console.log(data)
+console.log("CEP DATA:",data)
 
-if(data){
+if(data.street){
 
 const endereco=
-(data.logradouro || data.street || "")+
-", "+
-(data.bairro || data.neighborhood || "")+
-", "+
-(data.localidade || data.city || "")+
-" - "+
-(data.uf || data.state || "")
+data.street+", "+
+data.neighborhood+", "+
+data.city+" - "+
+data.state
 
 document.getElementById("endereco").value=endereco
 
@@ -157,7 +155,8 @@ alert("CEP não encontrado")
 
 }catch(error){
 
-console.error(error)
+console.error("Erro CEP:",error)
+
 alert("Erro ao buscar CEP")
 
 }
@@ -165,19 +164,18 @@ alert("Erro ao buscar CEP")
 }
 
 
-
 // GERAR CODIGO
 
 function gerarCodigo(){
 
 const numeros=Math.floor(Math.random()*9000000000)+1000000000
+
 return "PQ"+numeros+"BR"
 
 }
 
 
-
-// CARREGAR
+// CARREGAR LISTA
 
 async function carregar(){
 
@@ -187,6 +185,7 @@ const {data}=await db
 .order("id",{ascending:false})
 
 const lista=document.getElementById("lista")
+
 lista.innerHTML=""
 
 data.forEach(r=>{
@@ -201,11 +200,17 @@ ${r.address}
 
 <div style="margin-top:10px">
 
-<button class="ver" onclick="ver('${r.code}')">Ver</button>
+<button class="ver" onclick="ver('${r.code}')">
+Ver
+</button>
 
-<button class="atualizar" onclick="atualizarStatus('${r.code}')">Atualizar Status</button>
+<button class="atualizar" onclick="atualizarStatus('${r.code}')">
+Atualizar Status
+</button>
 
-<button class="excluir" onclick="excluir('${r.code}')">Excluir</button>
+<button class="excluir" onclick="excluir('${r.code}')">
+Excluir
+</button>
 
 </div>
 
@@ -218,14 +223,17 @@ ${r.address}
 }
 
 
-
-// CRIAR
+// CRIAR RASTREIO
 
 async function criarRastreio(){
 
 let code=document.getElementById("codigo").value
 
-if(!code) code=gerarCodigo()
+if(!code){
+
+code=gerarCodigo()
+
+}
 
 const recipient=document.getElementById("destinatario").value
 const address=document.getElementById("endereco").value
@@ -234,14 +242,17 @@ const location=document.getElementById("localizacao").value
 const cep=document.getElementById("cep").value
 
 const timeline=[{
+
 status:status,
 location:location,
 date:new Date().toISOString()
+
 }]
 
 await db
 .from("trackings_test")
 .insert([{
+
 code:code,
 recipient_name:recipient,
 address:address,
@@ -250,20 +261,22 @@ timeline:timeline,
 cep:cep,
 last_update:new Date().toISOString(),
 is_verified:true
+
 }])
 
 alert("Criado com sucesso")
+
 carregar()
 
 }
 
 
-
-// ATUALIZAR
+// ATUALIZAR STATUS
 
 async function atualizarStatus(code){
 
 const novoStatus=prompt("Novo status")
+
 if(!novoStatus) return
 
 const novaLocalizacao=prompt("Localização")
@@ -277,25 +290,29 @@ const {data}=await db
 let timeline=data.timeline||[]
 
 timeline.push({
+
 status:novoStatus,
 location:novaLocalizacao,
 date:new Date().toISOString()
+
 })
 
 await db
 .from("trackings_test")
 .update({
+
 status:novoStatus,
 timeline:timeline,
 last_update:new Date().toISOString()
+
 })
 .eq("code",code)
 
 alert("Status atualizado")
+
 carregar()
 
 }
-
 
 
 // EXCLUIR
@@ -314,7 +331,6 @@ carregar()
 }
 
 
-
 // VER
 
 function ver(code){
@@ -322,8 +338,6 @@ function ver(code){
 window.open("/rastreamento.html?code="+code,"_blank")
 
 }
-
-
 
 carregar()
 
