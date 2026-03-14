@@ -1,8 +1,7 @@
 const params = new URLSearchParams(window.location.search)
-
 const code = params.get("code")
 
-async function carregar(){
+async function carregar() {
 
 const { data, error } = await db
 .from("trackings_test")
@@ -10,24 +9,20 @@ const { data, error } = await db
 .eq("code", code)
 .single()
 
-if(error || !data){
+if (!data) return
 
-document.body.innerHTML="Código não encontrado"
-return
+document.querySelector(".tracking-code").innerText = data.code
 
-}
+document.querySelector(".recipient-name").innerText = data.recipient_name
+document.querySelector(".recipient-address").innerText = data.address
 
-document.getElementById("codigo").innerText = data.code
-document.getElementById("destinatario").innerText = data.recipient_name
-document.getElementById("endereco").innerText = data.address
+const timelineContainer = document.querySelector(".tracking-timeline")
 
-const timeline = document.getElementById("timeline")
-
-timeline.innerHTML=""
+timelineContainer.innerHTML = ""
 
 data.timeline.forEach((t,i)=>{
 
-timeline.innerHTML+=`
+timelineContainer.innerHTML += `
 
 <div class="timeline-item ${i==data.timeline.length-1 ? "active":""}">
 
@@ -40,15 +35,15 @@ ${new Date(t.date).toLocaleString("pt-BR")}
 </div>
 
 <div class="timeline-status">
-${t.title}
+${t.title || t.status}
 </div>
 
 <div class="timeline-description">
-${t.description}
+${t.description || ""}
 </div>
 
 <div class="timeline-location">
-${t.location}
+${t.location || ""}
 </div>
 
 </div>
