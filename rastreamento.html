@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
@@ -62,6 +61,7 @@ Seu código de rastreamento
 
 </div>
 
+
 <div class="tracking-help-card">
 
 <div class="help-title">
@@ -89,6 +89,7 @@ Perguntas Frequentes
 
 </div>
 
+
 <script>
 
 const SUPABASE_URL="https://opiwznepfjcinxrymrxw.supabase.co"
@@ -103,24 +104,6 @@ const params = new URLSearchParams(window.location.search)
 const code = params.get("code")
 
 document.getElementById("codigo").innerText = code
-
-
-function formatarData(data){
-
-if(!data) return ""
-
-// se já estiver formato BR
-if(data.includes("/")){
-return data
-}
-
-// se for ISO
-const d=new Date(data)
-
-return d.toLocaleString("pt-BR")
-
-}
-
 
 async function carregar(){
 
@@ -162,7 +145,7 @@ document.getElementById("destinatario").innerText = data.recipient_name
 document.getElementById("endereco").innerText = data.address
 
 document.getElementById("atualizacao").innerText =
-formatarData(data.last_update)
+new Date(data.last_update).toLocaleString("pt-BR")
 
 const timeline = document.getElementById("timeline")
 
@@ -179,7 +162,7 @@ timeline.innerHTML+=`
 <div class="timeline-content">
 
 <div class="timeline-date">
-${formatarData(evento.date)}
+${new Date(evento.date).toLocaleString("pt-BR")}
 </div>
 
 <div class="timeline-status">
