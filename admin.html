@@ -80,7 +80,7 @@ color:white;
 
 <h3>Criar Rastreamento</h3>
 
-<input id="codigo" placeholder="Código de rastreio">
+<input id="codigo" placeholder="Código de rastreio (deixe vazio para gerar automático)">
 
 <input id="destinatario" placeholder="Destinatário">
 
@@ -122,6 +122,16 @@ const supabaseUrl="https://opiwznepfjcinxrymrxw.supabase.co"
 const supabaseKey="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
 const supabase=window.supabase.createClient(supabaseUrl,supabaseKey)
+
+
+
+function gerarCodigo(){
+
+const numeros=Math.floor(Math.random()*9000000000)+1000000000
+
+return "PQ"+numeros+"BR"
+
+}
 
 
 
@@ -174,7 +184,12 @@ Excluir
 
 async function criarRastreio(){
 
-const code=document.getElementById("codigo").value
+let code=document.getElementById("codigo").value
+
+if(!code){
+code=gerarCodigo()
+}
+
 const recipient=document.getElementById("destinatario").value
 const address=document.getElementById("endereco").value
 const status=document.getElementById("status").value
@@ -185,6 +200,8 @@ const timeline=[{
 
 status:status,
 location:location,
+description:"Objeto registrado no sistema",
+sector:"Postagem",
 date:new Date().toISOString()
 
 }]
@@ -223,10 +240,11 @@ carregar()
 async function atualizarStatus(code){
 
 const novoStatus=prompt("Novo status")
-
 if(!novoStatus) return
 
 const novaLocalizacao=prompt("Localização")
+const descricao=prompt("Descrição do evento")
+const setor=prompt("Setor (Postagem / Transporte / Logística / Distribuição)")
 
 const {data}=await supabase
 .from("trackings_test")
@@ -240,6 +258,8 @@ timeline.push({
 
 status:novoStatus,
 location:novaLocalizacao,
+description:descricao,
+sector:setor,
 date:new Date().toISOString()
 
 })
@@ -280,7 +300,7 @@ carregar()
 
 function ver(code){
 
-window.open("/rastreamento/"+code,"_blank")
+window.open("/rastreamento.html?code="+code,"_blank")
 
 }
 
