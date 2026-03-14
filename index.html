@@ -2,159 +2,109 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>FedEx - Parceria Magalu</title>
 
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<div class="home-container">
+<header class="header">
+<div class="container header-container">
 
-<header class="home-header">
-
-<div class="header-content">
-
+<div class="header-left">
 <div class="header-logo">
 
 <div class="header-logo-wrapper">
-
-<div class="header-logo-magalu-text">
-Magalu
-</div>
-
+<img src="logo-magalu-azul (1).png" class="header-logo-magalu" alt="Magalu">
 </div>
 
 <div class="header-logo-wrapper">
-<img src="./fedex.png" class="header-logo-fedex" alt="FedEx">
+<img src="fedex.png" class="header-logo-fedex" alt="FedEx">
 </div>
 
+</div>
 </div>
 
 <nav class="header-nav">
-<a class="nav-link">Serviços</a>
-<a class="nav-link">Rastreamento</a>
-<a class="nav-link">Suporte</a>
+<a href="#">Serviços</a>
+<a href="#">Rastreamento</a>
+<a href="#">Suporte</a>
 </nav>
 
 </div>
-
 </header>
 
+<main class="main">
 
-<section class="hero-section">
-
-<div class="hero-content">
+<section class="hero">
+<div class="container hero-container">
 
 <div class="hero-text">
 
-<h1 class="hero-title">
-Parceria
-<span class="highlight-magalu">Magalu</span>
-e
-<span class="highlight-fedex">FedEx</span>
+<h1>
+Parceria <span class="highlight-blue">Magalu</span> e
+<span class="highlight-purple">FedEx</span>
 </h1>
 
-<p class="hero-subtitle">
-
+<p>
 <strong>Programa de Bonificação Magalu!</strong>
-
 Confirme sua entrega e participe do sorteio de prêmios incríveis.
-Entregas rápidas, seguras e confiáveis em todo o Brasil através da parceria entre Magalu e FedEx.
-
+Entregas rápidas, seguras e confiáveis em todo o Brasil através da
+parceria entre Magalu e FedEx.
 </p>
 
-<div class="bonus-badge">
+<button class="cta-button">
 ⭐ Confirme sua entrega e concorra a prêmios exclusivos!
-</div>
-
-
-<div class="tracking-search-box">
-
-<h2 class="search-title">
-Rastreie seu pedido
-</h2>
-
-<p class="search-subtitle">
-Digite o código de rastreamento fornecido para acompanhar sua entrega em tempo real.
-</p>
-
-<div class="search-form">
-
-<input
-class="search-input"
-placeholder="Digite o código de rastreamento"
-/>
-
-<button class="search-button">
-Rastrear
 </button>
 
+<div class="tracking-box">
+
+<h2>Rastreie seu pedido</h2>
+
+<div class="tracking-form">
+
+<input
+type="text"
+placeholder="Digite o código de rastreamento"
+id="trackingCode"
+/>
+
+<button onclick="trackPackage()">Rastrear</button>
+
+</div>
 </div>
 
 </div>
-
-</div>
-
 
 <div class="hero-image">
-
-<img src="./bannerfedex.png" class="hero-banner">
-
+<img src="bannerfedex.png" alt="FedEx Magalu">
 </div>
 
 </div>
-
 </section>
 
+</main>
 
-<section class="magalu-banner-section">
+<script>
 
-<div class="magalu-banner-container">
+function trackPackage(){
 
-<div class="magalu-banner-image">
-<img src="./BANNERMAGALU.png" class="magalu-banner-img">
-</div>
+const code = document.getElementById("trackingCode").value;
 
-<div class="magalu-banner-content">
+if(!code){
+alert("Digite um código de rastreamento");
+return;
+}
 
-<h2 class="magalu-banner-title">
-Muito mais do que você imagina
-</h2>
+window.location.href = "/rastreamento.html?code=" + code;
 
-<p class="magalu-banner-subtitle">
-Entrega rápida, segura e integrada com o ecossistema Magalu.
-</p>
+}
 
-<div class="magalu-benefits">
-
-<div class="magalu-benefit-item">
-<span>Entrega rápida em todo Brasil</span>
-</div>
-
-<div class="magalu-benefit-item">
-<span>Rastreamento em tempo real</span>
-</div>
-
-<div class="magalu-benefit-item">
-<span>Participação em campanhas promocionais</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-</div>
+</script>
 
 </body>
 </html>
