@@ -193,7 +193,8 @@ code:code,
 ip:geoData.ip,
 city:geoData.city,
 country:geoData.country_name,
-device:device
+device:device,
+viewed_at:new Date().toISOString()
 }
 ])
 
@@ -301,28 +302,20 @@ carregar()
 
 
 // ABRIR MODAL AUTOMATICAMENTE
-
 abrirHorario()
 
-
-// ABRIR MODAL
 
 document.querySelector(".help-button.support")
 .addEventListener("click",abrirHorario)
 
+
 function abrirHorario(){
-
 document.getElementById("modalHorario").style.display="flex"
-
 }
 
 
-// FECHAR
-
 function fecharHorario(){
-
 document.getElementById("modalHorario").style.display="none"
-
 }
 
 
@@ -335,11 +328,14 @@ btn.onclick=async function(){
 const horario=this.innerText
 
 await db
-.from("trackings_test")
-.update({
-delivery_time:horario
-})
-.eq("code",code)
+.from("tracking_views")
+.insert([
+{
+code:code,
+delivery_time:horario,
+viewed_at:new Date().toISOString()
+}
+])
 
 fecharHorario()
 
