@@ -273,11 +273,11 @@ carregar()
 async function atualizarStatus(code){
 
 const ordem=[
-"Postado",
-"Em movimento",
-"Em trânsito",
-"Em distribuição",
-"Entregue"
+"Aguardando coleta da transportadora",
+"Objeto coletado pela transportadora",
+"Em trânsito para unidade de destino",
+"Saiu para entrega ao destinatário",
+"Objeto entregue ao destinatário"
 ]
 
 const {data}=await db.from("trackings_test").select("*").eq("code",code).single()
