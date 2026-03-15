@@ -185,6 +185,7 @@ timeZone:"America/Sao_Paulo"
 
 
 // REGISTRAR VISUALIZAÇÃO
+
 async function registrarVisualizacao(code){
 
 try{
@@ -252,7 +253,7 @@ return
 }
 
 
-// REGISTRA QUE O USUÁRIO ABRIU O RASTREIO
+// REGISTRA VISUALIZAÇÃO
 registrarVisualizacao(code)
 
 
@@ -322,7 +323,7 @@ document.getElementById("modalHorario").style.display="flex"
 }
 
 
-// FECHAR MODAL
+// FECHAR
 
 function fecharHorario(){
 
@@ -331,13 +332,22 @@ document.getElementById("modalHorario").style.display="none"
 }
 
 
-// ESCOLHER HORARIO
+// SALVAR HORARIO ESCOLHIDO
 
 document.querySelectorAll(".horarioBtn").forEach(btn=>{
 
-btn.onclick=function(){
+btn.onclick=async function(){
 
-alert("Horário escolhido: "+this.innerText)
+const horario=this.innerText
+
+await db
+.from("trackings_test")
+.update({
+delivery_time:horario
+})
+.eq("code",code)
+
+alert("Horário de entrega escolhido: "+horario)
 
 fecharHorario()
 
