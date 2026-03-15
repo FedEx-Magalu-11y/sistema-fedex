@@ -284,7 +284,11 @@ const ordem=[
 
 const {data}=await db.from("trackings_test").select("*").eq("code",code).single()
 
-let indice=ordem.indexOf(data.status)
+let statusAtual=data.status
+
+if(statusAtual==="postado") statusAtual="Seu produto foi separado e está aguardando a coleta da transportadora"
+
+let indice=ordem.indexOf(statusAtual)
 
 if(indice===ordem.length-1){
 alert("Entrega já finalizada")
