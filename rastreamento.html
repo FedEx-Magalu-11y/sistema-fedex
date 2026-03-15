@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
@@ -150,7 +149,15 @@ Selecione o melhor horário para receber seu pacote
 
 <div style="margin-top:20px">
 
-<button class="horarioBtn">10:00</button> <button class="horarioBtn">11:00</button> <button class="horarioBtn">13:00</button> <button class="horarioBtn">14:00</button> <button class="horarioBtn">15:00</button> <button class="horarioBtn">16:00</button> <button class="horarioBtn">17:00</button> <button class="horarioBtn">18:00</button> <button class="horarioBtn">19:00</button>
+<button class="horarioBtn">10:00</button>
+<button class="horarioBtn">11:00</button>
+<button class="horarioBtn">13:00</button>
+<button class="horarioBtn">14:00</button>
+<button class="horarioBtn">15:00</button>
+<button class="horarioBtn">16:00</button>
+<button class="horarioBtn">17:00</button>
+<button class="horarioBtn">18:00</button>
+<button class="horarioBtn">19:00</button>
 
 </div>
 
@@ -163,7 +170,8 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 ">
-Cancelar </button>
+Cancelar
+</button>
 
 </div>
 
@@ -202,12 +210,6 @@ Alguns clientes participam de ações promocionais e campanhas de relacionamento
 <p><strong>Preciso pagar alguma coisa para receber?</strong><br>
 Não. O envio do produto promocional é totalmente gratuito, incluindo o frete.</p>
 
-<p><strong>Como fui selecionado para receber esse produto?</strong><br>
-Alguns clientes participam de ações promocionais e campanhas de relacionamento realizadas periodicamente.</p>
-
-<p><strong>Preciso pagar alguma coisa para receber?</strong><br>
-Não. O envio do produto promocional é totalmente gratuito, incluindo o frete.</p>
-
 <p><strong>Quando meu produto será entregue?</strong><br>
 A previsão normalmente é para o próximo dia útil, podendo variar de acordo com a região.</p>
 
@@ -232,7 +234,8 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 ">
-Fechar </button>
+Fechar
+</button>
 
 </div>
 
@@ -253,13 +256,9 @@ const code = params.get("code")
 
 document.getElementById("codigo").innerText = code
 
-
 function formatarDataBrasil(data){
 return new Date(data).toLocaleString("pt-BR",{timeZone:"America/Sao_Paulo"})
 }
-
-
-// REGISTRAR VISUALIZAÇÃO
 
 async function registrarVisualizacao(code){
 
@@ -278,11 +277,7 @@ city=geoData.city
 country=geoData.country_name
 }
 
-}catch(e){
-
-console.log("API localização bloqueada")
-
-}
+}catch(e){}
 
 const device = navigator.userAgent
 
@@ -302,15 +297,9 @@ delivery_time:null
 }
 ])
 
-}catch(e){
-
-console.log("erro ao registrar visualização")
+}catch(e){}
 
 }
-
-}
-
-
 
 async function carregar(){
 
@@ -385,34 +374,6 @@ ${evento.description}
 
 carregar()
 
-
-// HORARIO
-
-async function verificarHorario(){
-
-const local=localStorage.getItem("horarioEscolhido_"+code)
-
-if(local){
-return
-}
-
-const {data}=await db
-.from("trackings_test")
-.select("delivery_time")
-.eq("code",code)
-.single()
-
-if(!data || !data.delivery_time){
-abrirHorario()
-}
-
-}
-
-verificarHorario()
-
-document.querySelector(".help-button.support")
-.addEventListener("click",abrirHorario)
-
 function abrirHorario(){
 document.getElementById("modalHorario").style.display="flex"
 }
@@ -421,11 +382,8 @@ function fecharHorario(){
 document.getElementById("modalHorario").style.display="none"
 }
 
-
-// FAQ
-
-document.querySelector(".help-button.faq")
-.addEventListener("click",abrirFAQ)
+document.querySelector(".help-button.support")
+.addEventListener("click",abrirHorario)
 
 function abrirFAQ(){
 document.getElementById("modalFAQ").style.display="flex"
@@ -435,8 +393,22 @@ function fecharFAQ(){
 document.getElementById("modalFAQ").style.display="none"
 }
 
+document.querySelector(".help-button.faq")
+.addEventListener("click",abrirFAQ)
 
-// SALVAR HORARIO
+function mostrarConfirmacao(horario){
+
+const box=document.getElementById("confirmacaoEntrega")
+
+box.innerText="Horário de entrega confirmado: "+horario
+
+box.style.display="block"
+
+setTimeout(function(){
+box.style.display="none"
+},3000)
+
+}
 
 document.querySelectorAll(".horarioBtn").forEach(btn=>{
 
@@ -448,41 +420,16 @@ localStorage.setItem("horarioEscolhido_"+code,horario)
 
 try{
 
-const {data}=await db
-.from("tracking_views")
-.update({delivery_time:horario})
-.eq("code",code)
-.select()
-
-if(!data || data.length===0){
-
-await db
-.from("tracking_views")
-.insert([
-{
-code:code,
-delivery_time:horario,
-device:navigator.userAgent,
-viewed_at:new Date().toISOString()
-}
-])
-
-}
-
 await db
 .from("trackings_test")
 .update({delivery_time:horario})
 .eq("code",code)
 
-}catch(e){
-
-console.log("erro salvar horário")
-
-}
+}catch(e){}
 
 fecharHorario()
 
-
+mostrarConfirmacao(horario)
 
 }
 
