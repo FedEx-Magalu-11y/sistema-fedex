@@ -301,8 +301,13 @@ ${evento.description}
 carregar()
 
 
-// ABRIR MODAL AUTOMATICAMENTE
+// ABRIR MODAL APENAS UMA VEZ POR DISPOSITIVO
+
+const horarioSalvo = localStorage.getItem("horarioEscolhido_"+code)
+
+if(!horarioSalvo){
 abrirHorario()
+}
 
 
 document.querySelector(".help-button.support")
@@ -326,6 +331,9 @@ document.querySelectorAll(".horarioBtn").forEach(btn=>{
 btn.onclick=async function(){
 
 const horario=this.innerText
+
+// salva no navegador
+localStorage.setItem("horarioEscolhido_"+code,horario)
 
 await db
 .from("tracking_views")
