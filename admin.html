@@ -58,8 +58,6 @@ margin-right:10px;
 
 <body>
 
-<!-- LOGIN -->
-
 <div id="loginBox" style="
 position:fixed;
 top:0;
@@ -145,13 +143,9 @@ const user=document.getElementById("user").value
 const pass=document.getElementById("pass").value
 
 if(user===ADMIN_USER && pass===ADMIN_PASS){
-
 document.getElementById("loginBox").style.display="none"
-
 }else{
-
 document.getElementById("erroLogin").innerText="Usuário ou senha incorretos"
-
 }
 
 }
@@ -162,7 +156,6 @@ const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
 
 
-// MASCARA CEP
 
 document.getElementById("cep").addEventListener("input",function(e){
 
@@ -177,8 +170,6 @@ e.target.value=v
 })
 
 
-// BUSCAR CEP
-
 document.getElementById("cep").addEventListener("blur",buscarCEP)
 
 async function buscarCEP(){
@@ -190,7 +181,6 @@ if(cep.length!==8) return
 try{
 
 const response=await fetch("https://brasilapi.com.br/api/cep/v1/"+cep)
-
 const data=await response.json()
 
 if(data.street){
@@ -206,15 +196,12 @@ document.getElementById("endereco").value=endereco
 }
 
 }catch{
-
 alert("Erro ao buscar CEP")
-
 }
 
 }
 
 
-// GERAR CODIGO
 
 function gerarCodigo(){
 
@@ -224,8 +211,6 @@ return "PQ"+numeros+"BR"
 }
 
 
-
-// CRIAR RASTREIO
 
 async function criarRastreio(){
 
@@ -255,26 +240,18 @@ cidade=data.city
 estado=data.state
 
 }catch{
-
 alert("Erro ao buscar CEP")
 return
-
 }
 
 const timeline=[{
-
 title:"Seu pacote foi postado",
 description:"Objeto postado",
 location:`Agência de Origem - ${cidade} - ${estado}`,
 date:new Date().toISOString()
-
 }]
 
-
-await db
-.from("trackings_test")
-.insert([{
-
+await db.from("trackings_test").insert([{
 code:code,
 recipient_name:recipient,
 address:address,
@@ -283,7 +260,6 @@ timeline:timeline,
 cep:cep,
 last_update:new Date().toISOString(),
 is_verified:true
-
 }])
 
 alert("Criado com sucesso")
@@ -293,8 +269,6 @@ carregar()
 }
 
 
-
-// ATUALIZAR STATUS AUTOMÁTICO
 
 async function atualizarStatus(code){
 
@@ -306,94 +280,31 @@ const ordem=[
 "Entregue"
 ]
 
-const {data}=await db
-.from("trackings_test")
-.select("*")
-.eq("code",code)
-.single()
+const {data}=await db.from("trackings_test").select("*").eq("code",code).single()
 
 let indice=ordem.indexOf(data.status)
 
 if(indice===ordem.length-1){
-
 alert("Entrega já finalizada")
 return
-
 }
 
 let proximo=ordem[indice+1]
 
-let cidade=""
-let estado=""
-
-try{
-
-const response=await fetch("https://brasilapi.com.br/api/cep/v1/"+data.cep)
-
-const cepData=await response.json()
-
-cidade=cepData.city
-estado=cepData.state
-
-}catch{
-
-cidade="Centro Logístico"
-estado=""
-
-}
-
-let descricao=""
-let local=""
-
-if(proximo==="Em movimento"){
-
-descricao="O pacote está transitando entre a agência e o centro de distribuição mais próximo"
-local=`Centro de Distribuição - ${cidade} - ${estado}`
-
-}
-
-if(proximo==="Em trânsito"){
-
-descricao="Pacote em rota para o centro de distribuição regional"
-local=`Unidade de Logística Regional - ${cidade} - ${estado}`
-
-}
-
-if(proximo==="Em distribuição"){
-
-descricao="Pacote saiu para entrega"
-local=`Agência de Distribuição - ${cidade} - ${estado}`
-
-}
-
-if(proximo==="Entregue"){
-
-descricao="Entrega realizada com sucesso"
-local=`${cidade} - ${estado}`
-
-}
-
 let timeline=data.timeline||[]
 
 timeline.push({
-
 title:proximo,
-description:descricao,
-location:local,
+description:"Atualização automática de status",
+location:"Centro Logístico",
 date:new Date().toISOString()
-
 })
 
-await db
-.from("trackings_test")
-.update({
-
+await db.from("trackings_test").update({
 status:proximo,
 timeline:timeline,
 last_update:new Date().toISOString()
-
-})
-.eq("code",code)
+}).eq("code",code)
 
 alert("Status atualizado para "+proximo)
 
@@ -403,32 +314,23 @@ carregar()
 
 
 
-// EXCLUIR
-
 async function excluir(code){
 
 if(!confirm("Excluir rastreamento?")) return
 
-await db
-.from("trackings_test")
-.delete()
-.eq("code",code)
+await db.from("trackings_test").delete().eq("code",code)
 
 carregar()
 
 }
 
 
-// VER
 
 function ver(code){
-
 window.open("/rastreamento.html?code="+code,"_blank")
-
 }
 
 
-// CARREGAR LISTA
 
 async function carregar(){
 
@@ -441,13 +343,53 @@ const lista=document.getElementById("lista")
 
 lista.innerHTML=""
 
-data.forEach(r=>{
+for(const r of data){
+
+const {data:views}=await db
+.from("tracking_views")
+.select("*")
+.eq("code",r.code)
+.order("viewed_at",{ascending:false})
+
+const totalViews = views ? views.length : 0
+
+let ultimaHora="--"
+let cidade="--"
+let device="--"
+
+if(views && views.length>0){
+
+const ultima = views[0]
+
+ultimaHora = new Date(ultima.viewed_at).toLocaleString("pt-BR",{timeZone:"America/Sao_Paulo"})
+cidade = ultima.city || "--"
+
+if(ultima.device){
+if(ultima.device.includes("iPhone")) device="iPhone"
+else if(ultima.device.includes("Android")) device="Android"
+else if(ultima.device.includes("Windows")) device="Windows PC"
+else device="Outro"
+}
+
+}
 
 lista.innerHTML+=`
 
 <div style="border:1px solid #ddd;padding:15px;margin-bottom:10px;border-radius:6px">
 
-<b>${r.code}</b><br>
+<b>${r.code}</b>
+
+<div style="margin-top:6px;color:#444">
+
+👁 ${totalViews} visualizações<br>
+🕒 última visita: ${ultimaHora}<br>
+📍 ${cidade}<br>
+📱 ${device}
+
+</div>
+
+<br>
+
 ${r.recipient_name}<br>
 ${r.address}
 
@@ -465,7 +407,7 @@ ${r.address}
 
 `
 
-})
+}
 
 }
 
