@@ -251,7 +251,7 @@ location:`Centro de preparação - ${cidade} - ${estado}`,
 date:new Date().toISOString()
 }]
 
-await db.from("trackings_test").insert([{
+const {error} = await db.from("trackings_test").insert({
 code:code,
 recipient_name:recipient,
 address:address,
@@ -260,7 +260,12 @@ timeline:timeline,
 cep:cep,
 last_update:new Date().toISOString(),
 is_verified:true
-}])
+})
+
+if(error){
+alert("Erro ao criar rastreio: "+error.message)
+return
+}
 
 alert("Criado com sucesso")
 
