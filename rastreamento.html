@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
@@ -12,6 +11,24 @@
 <link rel="stylesheet" href="/css/style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+
+.horarioBtn{
+padding:8px 12px;
+margin:5px;
+border:none;
+border-radius:6px;
+background:#ff6a00;
+color:white;
+cursor:pointer;
+}
+
+.horarioBtn:hover{
+opacity:0.9;
+}
+
+</style>
 
 </head>
 
@@ -62,7 +79,7 @@ Precisa de Ajuda?
 </div>
 
 <button class="help-button support">
-Falar com Suporte
+Escolher horário de entrega
 </button>
 
 <button class="help-button faq">
@@ -81,6 +98,68 @@ Perguntas Frequentes
 </div>
 
 </div>
+
+
+<!-- MODAL HORARIO ENTREGA -->
+
+<div id="modalHorario" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+align-items:center;
+justify-content:center;
+z-index:9999;
+">
+
+<div style="
+background:white;
+padding:30px;
+border-radius:10px;
+width:320px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+">
+
+<h3>Escolher horário de entrega</h3>
+
+<p style="font-size:14px;color:#555;">
+Selecione o melhor horário para receber seu pacote
+</p>
+
+<div style="margin-top:20px">
+
+<button class="horarioBtn">10:00</button>
+<button class="horarioBtn">11:00</button>
+<button class="horarioBtn">13:00</button>
+<button class="horarioBtn">14:00</button>
+<button class="horarioBtn">15:00</button>
+<button class="horarioBtn">16:00</button>
+<button class="horarioBtn">17:00</button>
+<button class="horarioBtn">18:00</button>
+<button class="horarioBtn">19:00</button>
+
+</div>
+
+<br>
+
+<button onclick="fecharHorario()" style="
+background:#ccc;
+padding:8px 15px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+">
+Cancelar
+</button>
+
+</div>
+
+</div>
+
 
 <script>
 
@@ -181,7 +260,6 @@ document.getElementById("destinatario").innerText = data.recipient_name
 document.getElementById("endereco").innerText = data.address
 
 
-// PEGA O ÚLTIMO EVENTO DA TIMELINE
 const ultimoEvento = data.timeline[data.timeline.length - 1]
 
 document.getElementById("atualizacao").innerText =
@@ -230,8 +308,44 @@ ${evento.description}
 
 carregar()
 
+
+
+// ABRIR MODAL
+
+document.querySelector(".help-button.support")
+.addEventListener("click",abrirHorario)
+
+function abrirHorario(){
+
+document.getElementById("modalHorario").style.display="flex"
+
+}
+
+
+// FECHAR MODAL
+
+function fecharHorario(){
+
+document.getElementById("modalHorario").style.display="none"
+
+}
+
+
+// ESCOLHER HORARIO
+
+document.querySelectorAll(".horarioBtn").forEach(btn=>{
+
+btn.onclick=function(){
+
+alert("Horário escolhido: "+this.innerText)
+
+fecharHorario()
+
+}
+
+})
+
 </script>
 
 </body>
-
 </html>
