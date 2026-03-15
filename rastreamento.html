@@ -168,31 +168,47 @@ document.getElementById("codigo").innerText = code
 
 
 function formatarDataBrasil(data){
-return new Date(data).toLocaleString("pt-BR",{
-timeZone:"America/Sao_Paulo"
-})
+return new Date(data).toLocaleString("pt-BR",{timeZone:"America/Sao_Paulo"})
 }
 
 
-// REGISTRAR VISUALIZAÇÃO
+// REGISTRAR VISUALIZAÇÃO (à prova de bloqueio)
 
 async function registrarVisualizacao(code){
 
+let ip=null
+let city=null
+let country=null
+
 try{
 
-const geo = await fetch("https://ipapi.co/json/")
+const geo = await fetch("https://ipapi.co/json/",{method:"GET"})
+
+if(geo.ok){
 const geoData = await geo.json()
+ip=geoData.ip
+city=geoData.city
+country=geoData.country_name
+}
+
+}catch(e){
+
+console.log("API de localização bloqueada")
+
+}
 
 const device = navigator.userAgent
+
+try{
 
 await db
 .from("tracking_views")
 .insert([
 {
 code:code,
-ip:geoData.ip,
-city:geoData.city,
-country:geoData.country_name,
+ip:ip,
+city:city,
+country:country,
 device:device,
 viewed_at:new Date().toISOString(),
 delivery_time:null
@@ -201,7 +217,7 @@ delivery_time:null
 
 }catch(e){
 
-console.log("erro ao registrar visualização")
+console.log("erro ao registrar visualização",e)
 
 }
 
@@ -238,7 +254,6 @@ Verifique o número e tente novamente.
 </p>
 
 </div>
-
 `
 
 return
@@ -248,26 +263,22 @@ return
 // REGISTRA VISUALIZAÇÃO
 registrarVisualizacao(code)
 
+document.getElementById("destinatario").innerText=data.recipient_name
+document.getElementById("endereco").innerText=data.address
 
-document.getElementById("destinatario").innerText = data.recipient_name
-document.getElementById("endereco").innerText = data.address
+const ultimoEvento=data.timeline[data.timeline.length-1]
 
-
-const ultimoEvento = data.timeline[data.timeline.length - 1]
-
-document.getElementById("atualizacao").innerText =
+document.getElementById("atualizacao").innerText=
 formatarDataBrasil(ultimoEvento.date)
 
-
-const timeline = document.getElementById("timeline")
-
+const timeline=document.getElementById("timeline")
 timeline.innerHTML=""
 
 data.timeline.forEach((evento,index)=>{
 
 timeline.innerHTML+=`
 
-<div class="timeline-item ${index==data.timeline.length-1 ? "active":""}">
+<div class="timeline-item ${index==data.timeline.length-1?"active":""}">
 
 <div class="timeline-dot"></div>
 
@@ -304,12 +315,11 @@ carregar()
 
 // ABRIR MODAL APENAS UMA VEZ POR DISPOSITIVO
 
-const horarioSalvo = localStorage.getItem("horarioEscolhido_"+code)
+const horarioSalvo=localStorage.getItem("horarioEscolhido_"+code)
 
 if(!horarioSalvo){
 abrirHorario()
 }
-
 
 document.querySelector(".help-button.support")
 .addEventListener("click",abrirHorario)
@@ -318,7 +328,6 @@ document.querySelector(".help-button.support")
 function abrirHorario(){
 document.getElementById("modalHorario").style.display="flex"
 }
-
 
 function fecharHorario(){
 document.getElementById("modalHorario").style.display="none"
@@ -333,17 +342,22 @@ btn.onclick=async function(){
 
 const horario=this.innerText
 
-// salva no navegador
 localStorage.setItem("horarioEscolhido_"+code,horario)
+
+try{
 
 await db
 .from("tracking_views")
-.update({
-delivery_time:horario
-})
+.update({delivery_time:horario})
 .eq("code",code)
 .order("viewed_at",{ascending:false})
 .limit(1)
+
+}catch(e){
+
+console.log("erro ao salvar horário",e)
+
+}
 
 fecharHorario()
 
