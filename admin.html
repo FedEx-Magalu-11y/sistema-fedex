@@ -295,12 +295,63 @@ let proximo=ordem[indice+1]
 
 let timeline=data.timeline||[]
 
-timeline.push({
-title:proximo,
-description:"Atualização automática de status",
-location:"Centro Logístico",
+let evento={}
+
+if(proximo==="Seu pedido foi coletado pela transportadora"){
+evento={
+title:"Pedido coletado pela transportadora",
+description:"Seu pedido foi coletado pela transportadora e seguirá para o centro logístico",
+location:`Centro de coleta`,
 date:new Date().toISOString()
-})
+}
+}
+
+else if(proximo==="Seu pedido chegou ao centro logístico"){
+evento={
+title:"Chegou ao centro logístico",
+description:"O pacote chegou ao centro logístico da transportadora para triagem",
+location:`Centro logístico`,
+date:new Date().toISOString()
+}
+}
+
+else if(proximo==="Seu pedido está em transferência entre unidades"){
+evento={
+title:"Em transferência",
+description:"O pacote está em transferência entre unidades logísticas da transportadora",
+location:`Em rota de transferência`,
+date:new Date().toISOString()
+}
+}
+
+else if(proximo==="Seu pedido chegou na unidade de distribuição"){
+evento={
+title:"Chegou na unidade de distribuição",
+description:"O pacote chegou na unidade de distribuição responsável pela sua região",
+location:`Unidade de distribuição`,
+date:new Date().toISOString()
+}
+}
+
+else if(proximo==="Seu pedido saiu para entrega"){
+evento={
+title:"Saiu para entrega",
+description:"Seu pedido saiu para entrega e está a caminho do endereço do destinatário",
+location:`Rota de entrega`,
+date:new Date().toISOString()
+}
+}
+
+else if(proximo==="Seu pedido foi entregue com sucesso"){
+evento={
+title:"Pedido entregue",
+description:"Seu pedido foi entregue com sucesso ao destinatário",
+location:`Entrega finalizada`,
+date:new Date().toISOString()
+}
+}
+
+timeline.push(evento)
 
 await db.from("trackings_test").update({
 status:proximo,
