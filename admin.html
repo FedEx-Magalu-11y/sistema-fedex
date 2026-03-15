@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
@@ -94,7 +93,8 @@ border:none;
 border-radius:6px;
 margin-top:10px;
 ">
-Entrar </button>
+Entrar
+</button>
 
 <p id="erroLogin" style="color:red;margin-top:10px;"></p>
 
@@ -380,6 +380,8 @@ lista.innerHTML+=`
 <b>${r.code}</b>
 
 <div style="margin-top:6px;color:#444">
+
+${r.delivery_time ? "⏰ horário escolhido: "+r.delivery_time+"<br>" : ""}
 
 👁 ${totalViews} visualizações<br>
 🕒 última visita: ${ultimaHora}<br>
