@@ -172,7 +172,7 @@ return new Date(data).toLocaleString("pt-BR",{timeZone:"America/Sao_Paulo"})
 }
 
 
-// REGISTRAR VISUALIZAÇÃO (à prova de bloqueio)
+// REGISTRAR VISUALIZAÇÃO
 
 async function registrarVisualizacao(code){
 
@@ -182,7 +182,7 @@ let country=null
 
 try{
 
-const geo = await fetch("https://ipapi.co/json/",{method:"GET"})
+const geo = await fetch("https://ipapi.co/json/")
 
 if(geo.ok){
 const geoData = await geo.json()
@@ -193,7 +193,7 @@ country=geoData.country_name
 
 }catch(e){
 
-console.log("API de localização bloqueada")
+console.log("API localização bloqueada")
 
 }
 
@@ -217,7 +217,7 @@ delivery_time:null
 
 }catch(e){
 
-console.log("erro ao registrar visualização",e)
+console.log("erro ao registrar visualização")
 
 }
 
@@ -236,23 +236,14 @@ const {data,error} = await db
 if(error || !data){
 
 document.getElementById("timeline").innerHTML=`
-
 <div class="tracking-error-message">
-
 <div class="error-icon">⚠️</div>
-
 <div class="error-title">
 Rastreamento não encontrado
 </div>
-
 <p class="error-text">
 O código <strong>${code}</strong> não foi localizado.
 </p>
-
-<p class="error-text">
-Verifique o número e tente novamente.
-</p>
-
 </div>
 `
 
@@ -279,7 +270,6 @@ data.timeline.forEach((evento,index)=>{
 timeline.innerHTML+=`
 
 <div class="timeline-item ${index==data.timeline.length-1?"active":""}">
-
 <div class="timeline-dot"></div>
 
 <div class="timeline-content">
@@ -301,9 +291,7 @@ ${evento.description}
 </div>
 
 </div>
-
 </div>
-
 `
 
 })
@@ -313,13 +301,29 @@ ${evento.description}
 carregar()
 
 
-// ABRIR MODAL APENAS UMA VEZ POR DISPOSITIVO
+// VERIFICAR SE JÁ EXISTE HORÁRIO
 
-const horarioSalvo=localStorage.getItem("horarioEscolhido_"+code)
+async function verificarHorario(){
 
-if(!horarioSalvo){
+const local=localStorage.getItem("horarioEscolhido_"+code)
+
+if(local){
+return
+}
+
+const {data}=await db
+.from("trackings_test")
+.select("delivery_time")
+.eq("code",code)
+.single()
+
+if(!data || !data.delivery_time){
 abrirHorario()
 }
+
+}
+
+verificarHorario()
 
 document.querySelector(".help-button.support")
 .addEventListener("click",abrirHorario)
@@ -334,7 +338,7 @@ document.getElementById("modalHorario").style.display="none"
 }
 
 
-// SALVAR HORARIO ESCOLHIDO
+// SALVAR HORARIO
 
 document.querySelectorAll(".horarioBtn").forEach(btn=>{
 
@@ -346,16 +350,35 @@ localStorage.setItem("horarioEscolhido_"+code,horario)
 
 try{
 
-await db
+const {data}=await db
 .from("tracking_views")
 .update({delivery_time:horario})
 .eq("code",code)
-.order("viewed_at",{ascending:false})
-.limit(1)
+.select()
+
+if(!data || data.length===0){
+
+await db
+.from("tracking_views")
+.insert([
+{
+code:code,
+delivery_time:horario,
+device:navigator.userAgent,
+viewed_at:new Date().toISOString()
+}
+])
+
+}
+
+await db
+.from("trackings_test")
+.update({delivery_time:horario})
+.eq("code",code)
 
 }catch(e){
 
-console.log("erro ao salvar horário",e)
+console.log("erro salvar horário")
 
 }
 
