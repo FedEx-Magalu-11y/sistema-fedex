@@ -284,24 +284,29 @@ const ordem=[
 
 const {data}=await db.from("trackings_test").select("*").eq("code",code).single()
 
-let statusAtual=data.status
+let timeline=data.timeline || []
 
-if(statusAtual==="postado") statusAtual="Seu produto foi separado e está aguardando a coleta da transportadora"
+let indice=timeline.length
 
-let indice=ordem.indexOf(statusAtual)
-
-if(indice===ordem.length-1){
+if(indice>=ordem.length){
 alert("Entrega já finalizada")
 return
 }
 
-let proximo=ordem[indice+1]
-
-let timeline=data.timeline||[]
+let proximo=ordem[indice]
 
 let evento={}
 
-if(proximo==="Seu pedido foi coletado pela transportadora"){
+if(indice===0){
+evento={
+title:"Seu produto foi separado",
+description:"Seu produto foi separado e está aguardando a coleta da transportadora",
+location:`Centro de preparação`,
+date:new Date().toISOString()
+}
+}
+
+else if(proximo==="Seu pedido foi coletado pela transportadora"){
 evento={
 title:"Pedido coletado pela transportadora",
 description:"Seu pedido foi coletado pela transportadora e seguirá para o centro logístico",
