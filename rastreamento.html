@@ -105,6 +105,38 @@ timeZone:"America/Sao_Paulo"
 }
 
 
+// REGISTRAR VISUALIZAÇÃO
+async function registrarVisualizacao(code){
+
+try{
+
+const geo = await fetch("https://ipapi.co/json/")
+const geoData = await geo.json()
+
+const device = navigator.userAgent
+
+await db
+.from("tracking_views")
+.insert([
+{
+code:code,
+ip:geoData.ip,
+city:geoData.city,
+country:geoData.country_name,
+device:device
+}
+])
+
+}catch(e){
+
+console.log("erro ao registrar visualização")
+
+}
+
+}
+
+
+
 async function carregar(){
 
 const {data,error} = await db
@@ -140,11 +172,16 @@ Verifique o número e tente novamente.
 return
 }
 
+
+// REGISTRA QUE O USUÁRIO ABRIU O RASTREIO
+registrarVisualizacao(code)
+
+
 document.getElementById("destinatario").innerText = data.recipient_name
 document.getElementById("endereco").innerText = data.address
 
 
-// PEGA SEMPRE O ÚLTIMO EVENTO DA TIMELINE
+// PEGA O ÚLTIMO EVENTO DA TIMELINE
 const ultimoEvento = data.timeline[data.timeline.length - 1]
 
 document.getElementById("atualizacao").innerText =
