@@ -151,6 +151,69 @@ Cancelar </button>
 
 </div>
 
+<!-- MODAL PERGUNTAS FREQUENTES -->
+
+<div id="modalFAQ" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+align-items:center;
+justify-content:center;
+z-index:9999;
+overflow:auto;
+">
+
+<div style="
+background:white;
+padding:30px;
+border-radius:10px;
+width:420px;
+max-width:90%;
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+">
+
+<h3>Perguntas Frequentes</h3>
+
+<p><strong>Como fui selecionado para receber esse produto?</strong><br>
+Alguns clientes participam de ações promocionais e campanhas de relacionamento realizadas periodicamente.</p>
+
+<p><strong>Preciso pagar alguma coisa para receber?</strong><br>
+Não. O envio do produto promocional é totalmente gratuito, incluindo o frete.</p>
+
+<p><strong>Quando meu produto será entregue?</strong><br>
+A previsão normalmente é para o próximo dia útil, podendo variar de acordo com a região.</p>
+
+<p><strong>Como acompanhar a entrega?</strong><br>
+Todas as atualizações aparecem na página de rastreamento.</p>
+
+<p><strong>Posso escolher o horário da entrega?</strong><br>
+Sim. Você pode selecionar o horário diretamente na página de rastreamento.</p>
+
+<p><strong>O que acontece se eu não estiver no endereço?</strong><br>
+Poderá ser realizada uma nova tentativa de entrega.</p>
+
+<p><strong>O rastreamento não atualizou, é normal?</strong><br>
+Algumas atualizações podem levar algumas horas para aparecer.</p>
+
+<br>
+
+<button onclick="fecharFAQ()" style="
+background:#ccc;
+padding:8px 15px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+">
+Fechar </button>
+
+</div>
+
+</div>
+
 <script>
 
 const SUPABASE_URL="https://opiwznepfjcinxrymrxw.supabase.co"
@@ -250,8 +313,6 @@ O código <strong>${code}</strong> não foi localizado.
 return
 }
 
-
-// REGISTRA VISUALIZAÇÃO
 registrarVisualizacao(code)
 
 document.getElementById("destinatario").innerText=data.recipient_name
@@ -301,7 +362,7 @@ ${evento.description}
 carregar()
 
 
-// VERIFICAR SE JÁ EXISTE HORÁRIO
+// HORARIO
 
 async function verificarHorario(){
 
@@ -328,13 +389,26 @@ verificarHorario()
 document.querySelector(".help-button.support")
 .addEventListener("click",abrirHorario)
 
-
 function abrirHorario(){
 document.getElementById("modalHorario").style.display="flex"
 }
 
 function fecharHorario(){
 document.getElementById("modalHorario").style.display="none"
+}
+
+
+// FAQ
+
+document.querySelector(".help-button.faq")
+.addEventListener("click",abrirFAQ)
+
+function abrirFAQ(){
+document.getElementById("modalFAQ").style.display="flex"
+}
+
+function fecharFAQ(){
+document.getElementById("modalFAQ").style.display="none"
 }
 
 
