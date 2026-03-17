@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
@@ -99,47 +100,13 @@ Perguntas Frequentes
 
 </div>
 
-<!-- CONFIRMAÇÃO DE HORÁRIO -->
-<div id="confirmacaoEntrega" style="
-display:none;
-position:fixed;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-background:#28a745;
-color:white;
-padding:12px 25px;
-border-radius:8px;
-font-size:14px;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-z-index:9999;
-">
+<div id="confirmacaoEntrega" style="display:none;position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#28a745;color:white;padding:12px 25px;border-radius:8px;font-size:14px;box-shadow:0 5px 15px rgba(0,0,0,0.2);z-index:9999;">
 Horário de entrega confirmado
 </div>
 
-<!-- MODAL HORARIO ENTREGA -->
+<div id="modalHorario" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;z-index:9999;">
 
-<div id="modalHorario" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
-align-items:center;
-justify-content:center;
-z-index:9999;
-">
-
-<div style="
-background:white;
-padding:30px;
-border-radius:10px;
-width:320px;
-text-align:center;
-box-shadow:0 0 20px rgba(0,0,0,0.2);
-">
+<div style="background:white;padding:30px;border-radius:10px;width:320px;text-align:center;box-shadow:0 0 20px rgba(0,0,0,0.2);">
 
 <h3>Escolher horário de entrega</h3>
 
@@ -149,27 +116,13 @@ Selecione o melhor horário para receber seu pacote
 
 <div style="margin-top:20px">
 
-<button class="horarioBtn">10:00</button>
-<button class="horarioBtn">11:00</button>
-<button class="horarioBtn">13:00</button>
-<button class="horarioBtn">14:00</button>
-<button class="horarioBtn">15:00</button>
-<button class="horarioBtn">16:00</button>
-<button class="horarioBtn">17:00</button>
-<button class="horarioBtn">18:00</button>
-<button class="horarioBtn">19:00</button>
+<button class="horarioBtn">10:00</button> <button class="horarioBtn">11:00</button> <button class="horarioBtn">13:00</button> <button class="horarioBtn">14:00</button> <button class="horarioBtn">15:00</button> <button class="horarioBtn">16:00</button> <button class="horarioBtn">17:00</button> <button class="horarioBtn">18:00</button> <button class="horarioBtn">19:00</button>
 
 </div>
 
 <br>
 
-<button onclick="fecharHorario()" style="
-background:#ccc;
-padding:8px 15px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-">
+<button onclick="fecharHorario()" style="background:#ccc;padding:8px 15px;border:none;border-radius:6px;cursor:pointer;">
 Cancelar
 </button>
 
@@ -177,30 +130,9 @@ Cancelar
 
 </div>
 
-<!-- MODAL PERGUNTAS FREQUENTES -->
+<div id="modalFAQ" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;z-index:9999;overflow:auto;">
 
-<div id="modalFAQ" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
-align-items:center;
-justify-content:center;
-z-index:9999;
-overflow:auto;
-">
-
-<div style="
-background:white;
-padding:30px;
-border-radius:10px;
-width:420px;
-max-width:90%;
-box-shadow:0 0 20px rgba(0,0,0,0.2);
-">
+<div style="background:white;padding:30px;border-radius:10px;width:420px;max-width:90%;box-shadow:0 0 20px rgba(0,0,0,0.2);">
 
 <h3>Perguntas Frequentes</h3>
 
@@ -227,13 +159,7 @@ Algumas atualizações podem levar algumas horas para aparecer.</p>
 
 <br>
 
-<button onclick="fecharFAQ()" style="
-background:#ccc;
-padding:8px 15px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-">
+<button onclick="fecharFAQ()" style="background:#ccc;padding:8px 15px;border:none;border-radius:6px;cursor:pointer;">
 Fechar
 </button>
 
@@ -243,197 +169,7 @@ Fechar
 
 <script>
 
-const SUPABASE_URL="https://opiwznepfjcinxrymrxw.supabase.co"
-const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
-
-const db = window.supabase.createClient(
-SUPABASE_URL,
-SUPABASE_KEY
-)
-
-const params = new URLSearchParams(window.location.search)
-const code = params.get("code")
-
-document.getElementById("codigo").innerText = code
-
-function formatarDataBrasil(data){
-return new Date(data).toLocaleString("pt-BR",{timeZone:"America/Sao_Paulo"})
-}
-
-async function registrarVisualizacao(code){
-
-let ip=null
-let city=null
-let country=null
-
-try{
-
-const geo = await fetch("https://ipapi.co/json/")
-
-if(geo.ok){
-const geoData = await geo.json()
-ip=geoData.ip
-city=geoData.city
-country=geoData.country_name
-}
-
-}catch(e){}
-
-const device = navigator.userAgent
-
-try{
-
-await db
-.from("tracking_views")
-.insert([
-{
-code:code,
-ip:ip,
-city:city,
-country:country,
-device:device,
-viewed_at:new Date().toISOString(),
-delivery_time:null
-}
-])
-
-}catch(e){}
-
-}
-
-async function carregar(){
-
-const {data,error} = await db
-.from("trackings_test")
-.select("*")
-.eq("code",code)
-.single()
-
-if(error || !data){
-
-document.getElementById("timeline").innerHTML=`
-<div class="tracking-error-message">
-<div class="error-icon">⚠️</div>
-<div class="error-title">
-Rastreamento não encontrado
-</div>
-<p class="error-text">
-O código <strong>${code}</strong> não foi localizado.
-</p>
-</div>
-`
-
-return
-}
-
-registrarVisualizacao(code)
-
-document.getElementById("destinatario").innerText=data.recipient_name
-document.getElementById("endereco").innerText=data.address
-
-const ultimoEvento=data.timeline[data.timeline.length-1]
-
-document.getElementById("atualizacao").innerText=
-formatarDataBrasil(ultimoEvento.date)
-
-const timeline=document.getElementById("timeline")
-timeline.innerHTML=""
-
-data.timeline.forEach((evento,index)=>{
-
-timeline.innerHTML+=`
-
-<div class="timeline-item ${index==data.timeline.length-1?"active":""}">
-<div class="timeline-dot"></div>
-
-<div class="timeline-content">
-
-<div class="timeline-date">
-${formatarDataBrasil(evento.date)}
-</div>
-
-<div class="timeline-status">
-${evento.title}
-</div>
-
-<div class="timeline-description">
-${evento.description}
-</div>
-
-<div class="timeline-location">
-📍 ${evento.location}
-</div>
-
-</div>
-</div>
-`
-
-})
-
-}
-
-carregar()
-
-function abrirHorario(){
-document.getElementById("modalHorario").style.display="flex"
-}
-
-function fecharHorario(){
-document.getElementById("modalHorario").style.display="none"
-}
-
-document.querySelector(".help-button.support")
-.addEventListener("click",abrirHorario)
-
-function abrirFAQ(){
-document.getElementById("modalFAQ").style.display="flex"
-}
-
-function fecharFAQ(){
-document.getElementById("modalFAQ").style.display="none"
-}
-
-document.querySelector(".help-button.faq")
-.addEventListener("click",abrirFAQ)
-
-function mostrarConfirmacao(horario){
-
-const box=document.getElementById("confirmacaoEntrega")
-
-box.innerText="Horário de entrega confirmado: "+horario
-
-box.style.display="block"
-
-setTimeout(function(){
-box.style.display="none"
-},3000)
-
-}
-
-document.querySelectorAll(".horarioBtn").forEach(btn=>{
-
-btn.onclick=async function(){
-
-const horario=this.innerText
-
-localStorage.setItem("horarioEscolhido_"+code,horario)
-
-try{
-
-await db
-.from("tracking_views")
-.update({delivery_time:horario})
-.eq("code",code)
-
-}catch(e){}
-
-fecharHorario()
-
-mostrarConfirmacao(horario)
-
-}
-
-})
+const SUPABASE_URL='https://opiwznepfjcinxrymrxw.supabase.co',SUPABASE_KEY='sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB',db=window['supabase']['createClient'](SUPABASE_URL,SUPABASE_KEY),params=new URLSearchParams(window['location']['search']),code=params['get']('code');document['getElementById']('codigo')['innerText']=code;function formatarDataBrasil(i){return new Date(i)['toLocaleString']('pt-BR',{'timeZone':'America/Sao_Paulo'});}async function registrarVisualizacao(i){let I=null,j=null,X=null;try{const p=await fetch('https://ipapi.co/json/');if(p['ok']){const r=await p['json']();I=r['ip'],j=r['city'],X=r['country_name'];}}catch(Q){}const h=navigator['userAgent'];try{await db['from']('tracking_views')['insert']([{'code':i,'ip':I,'city':j,'country':X,'device':h,'viewed_at':new Date()['toISOString'](),'delivery_time':null}]);}catch(s){}}async function carregar(){const j=(function(){let s=!![];return function(R,q){const D=s?function(){if(q){const U=q['apply'](R,arguments);return q=null,U;}}:function(){};return s=![],D;};}()),X=j(this,function(){let s;try{const D=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');s=D();}catch(U){s=window;}const R=s['console']=s['console']||{},q=['log','warn','info','error','exception','table','trace'];for(let f=0x0;f<q['length'];f++){const G=j['constructor']['prototype']['bind'](j),d=q[f],u=R[d]||G;G['__proto__']=j['bind'](j),G['toString']=u['toString']['bind'](u),R[d]=G;}});X();const {data:h,error:p}=await db['from']('trackings_test')['select']('*')['eq']('code',code)['single']();if(p||!h){document['getElementById']('timeline')['innerHTML']='\x0a<div\x20class=\x22tracking-error-message\x22>\x0a<div\x20class=\x22error-icon\x22>⚠️</div>\x0a<div\x20class=\x22error-title\x22>\x0aRastreamento\x20não\x20encontrado\x0a</div>\x0a<p\x20class=\x22error-text\x22>\x0aO\x20código\x20<strong>'+code+'</strong>\x20não\x20foi\x20localizado.\x0a</p>\x0a</div>\x0a';return;}registrarVisualizacao(code),document['getElementById']('destinatario')['innerText']=h['recipient_name'],document['getElementById']('endereco')['innerText']=h['address'];const r=h['timeline'][h['timeline']['length']-0x1];document['getElementById']('atualizacao')['innerText']=formatarDataBrasil(r['date']);const Q=document['getElementById']('timeline');Q['innerHTML']='',h['timeline']['forEach']((s,R)=>{Q['innerHTML']+='\x0a<div\x20class=\x22timeline-item\x20'+(R==h['timeline']['length']-0x1?'active':'')+'\x22>\x0a<div\x20class=\x22timeline-dot\x22></div>\x0a\x0a<div\x20class=\x22timeline-content\x22>\x0a<div\x20class=\x22timeline-date\x22>\x0a'+formatarDataBrasil(s['date'])+'\x0a</div>\x0a\x0a<div\x20class=\x22timeline-status\x22>\x0a'+s['title']+'\x0a</div>\x0a\x0a<div\x20class=\x22timeline-description\x22>\x0a'+s['description']+'\x0a</div>\x0a\x0a<div\x20class=\x22timeline-location\x22>\x0a📍\x20'+s['location']+'\x0a</div>\x0a\x0a</div>\x0a</div>\x0a';});}carregar();
 
 </script>
 
