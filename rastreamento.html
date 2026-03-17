@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
@@ -14,6 +13,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
+
 .horarioBtn{
 padding:8px 12px;
 margin:5px;
@@ -23,9 +23,11 @@ background:#ff6a00;
 color:white;
 cursor:pointer;
 }
+
 .horarioBtn:hover{
 opacity:0.9;
 }
+
 </style>
 
 </head>
@@ -97,18 +99,56 @@ Perguntas Frequentes
 
 </div>
 
-<div id="confirmacaoEntrega" style="display:none;position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#28a745;color:white;padding:12px 25px;border-radius:8px;font-size:14px;box-shadow:0 5px 15px rgba(0,0,0,0.2);z-index:9999;">
+<!-- CONFIRMAÇÃO DE HORÁRIO -->
+<div id="confirmacaoEntrega" style="
+display:none;
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+background:#28a745;
+color:white;
+padding:12px 25px;
+border-radius:8px;
+font-size:14px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+z-index:9999;
+">
 Horário de entrega confirmado
 </div>
 
-<div id="modalHorario" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;z-index:9999;">
-<div style="background:white;padding:30px;border-radius:10px;width:320px;text-align:center;box-shadow:0 0 20px rgba(0,0,0,0.2);">
+<!-- MODAL HORARIO ENTREGA -->
+
+<div id="modalHorario" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+align-items:center;
+justify-content:center;
+z-index:9999;
+">
+
+<div style="
+background:white;
+padding:30px;
+border-radius:10px;
+width:320px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+">
+
 <h3>Escolher horário de entrega</h3>
+
 <p style="font-size:14px;color:#555;">
 Selecione o melhor horário para receber seu pacote
 </p>
 
 <div style="margin-top:20px">
+
 <button class="horarioBtn">10:00</button>
 <button class="horarioBtn">11:00</button>
 <button class="horarioBtn">13:00</button>
@@ -118,19 +158,49 @@ Selecione o melhor horário para receber seu pacote
 <button class="horarioBtn">17:00</button>
 <button class="horarioBtn">18:00</button>
 <button class="horarioBtn">19:00</button>
+
 </div>
 
 <br>
 
-<button onclick="fecharHorario()" style="background:#ccc;padding:8px 15px;border:none;border-radius:6px;cursor:pointer;">
+<button onclick="fecharHorario()" style="
+background:#ccc;
+padding:8px 15px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+">
 Cancelar
 </button>
 
 </div>
+
 </div>
 
-<div id="modalFAQ" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;z-index:9999;overflow:auto;">
-<div style="background:white;padding:30px;border-radius:10px;width:420px;max-width:90%;box-shadow:0 0 20px rgba(0,0,0,0.2);">
+<!-- MODAL PERGUNTAS FREQUENTES -->
+
+<div id="modalFAQ" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+align-items:center;
+justify-content:center;
+z-index:9999;
+overflow:auto;
+">
+
+<div style="
+background:white;
+padding:30px;
+border-radius:10px;
+width:420px;
+max-width:90%;
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+">
 
 <h3>Perguntas Frequentes</h3>
 
@@ -157,11 +227,18 @@ Algumas atualizações podem levar algumas horas para aparecer.</p>
 
 <br>
 
-<button onclick="fecharFAQ()" style="background:#ccc;padding:8px 15px;border:none;border-radius:6px;cursor:pointer;">
+<button onclick="fecharFAQ()" style="
+background:#ccc;
+padding:8px 15px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+">
 Fechar
 </button>
 
 </div>
+
 </div>
 
 <script>
@@ -169,7 +246,10 @@ Fechar
 const SUPABASE_URL="https://opiwznepfjcinxrymrxw.supabase.co"
 const SUPABASE_KEY="sb_publishable_F7z4q7UuxxNc13r4rDubZA_LsFF1fEB"
 
-const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+const db = window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+)
 
 const params = new URLSearchParams(window.location.search)
 const code = params.get("code")
@@ -187,19 +267,26 @@ let city=null
 let country=null
 
 try{
+
 const geo = await fetch("https://ipapi.co/json/")
+
 if(geo.ok){
 const geoData = await geo.json()
 ip=geoData.ip
 city=geoData.city
 country=geoData.country_name
 }
+
 }catch(e){}
 
 const device = navigator.userAgent
 
 try{
-await db.from("tracking_views").insert([{
+
+await db
+.from("tracking_views")
+.insert([
+{
 code:code,
 ip:ip,
 city:city,
@@ -207,8 +294,11 @@ country:country,
 device:device,
 viewed_at:new Date().toISOString(),
 delivery_time:null
-}])
+}
+])
+
 }catch(e){}
+
 }
 
 async function carregar(){
@@ -220,14 +310,19 @@ const {data,error} = await db
 .single()
 
 if(error || !data){
+
 document.getElementById("timeline").innerHTML=`
 <div class="tracking-error-message">
 <div class="error-icon">⚠️</div>
-<div class="error-title">Rastreamento não encontrado</div>
+<div class="error-title">
+Rastreamento não encontrado
+</div>
 <p class="error-text">
 O código <strong>${code}</strong> não foi localizado.
 </p>
-</div>`
+</div>
+`
+
 return
 }
 
@@ -245,16 +340,34 @@ const timeline=document.getElementById("timeline")
 timeline.innerHTML=""
 
 data.timeline.forEach((evento,index)=>{
+
 timeline.innerHTML+=`
+
 <div class="timeline-item ${index==data.timeline.length-1?"active":""}">
 <div class="timeline-dot"></div>
+
 <div class="timeline-content">
-<div class="timeline-date">${formatarDataBrasil(evento.date)}</div>
-<div class="timeline-status">${evento.title}</div>
-<div class="timeline-description">${evento.description}</div>
-<div class="timeline-location">📍 ${evento.location}</div>
+
+<div class="timeline-date">
+${formatarDataBrasil(evento.date)}
 </div>
-</div>`
+
+<div class="timeline-status">
+${evento.title}
+</div>
+
+<div class="timeline-description">
+${evento.description}
+</div>
+
+<div class="timeline-location">
+📍 ${evento.location}
+</div>
+
+</div>
+</div>
+`
+
 })
 
 }
@@ -269,6 +382,9 @@ function fecharHorario(){
 document.getElementById("modalHorario").style.display="none"
 }
 
+document.querySelector(".help-button.support")
+.addEventListener("click",abrirHorario)
+
 function abrirFAQ(){
 document.getElementById("modalFAQ").style.display="flex"
 }
@@ -277,23 +393,25 @@ function fecharFAQ(){
 document.getElementById("modalFAQ").style.display="none"
 }
 
-document.querySelector(".help-button.support")
-.addEventListener("click",abrirHorario)
-
 document.querySelector(".help-button.faq")
 .addEventListener("click",abrirFAQ)
 
 function mostrarConfirmacao(horario){
+
 const box=document.getElementById("confirmacaoEntrega")
+
 box.innerText="Horário de entrega confirmado: "+horario
+
 box.style.display="block"
 
 setTimeout(function(){
 box.style.display="none"
 },3000)
+
 }
 
 document.querySelectorAll(".horarioBtn").forEach(btn=>{
+
 btn.onclick=async function(){
 
 const horario=this.innerText
@@ -301,16 +419,20 @@ const horario=this.innerText
 localStorage.setItem("horarioEscolhido_"+code,horario)
 
 try{
+
 await db
 .from("tracking_views")
 .update({delivery_time:horario})
 .eq("code",code)
+
 }catch(e){}
 
 fecharHorario()
+
 mostrarConfirmacao(horario)
 
 }
+
 })
 
 </script>
