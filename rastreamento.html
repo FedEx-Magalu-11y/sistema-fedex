@@ -421,7 +421,7 @@ localStorage.setItem("horarioEscolhido_"+code,horario)
 try{
 
 await db
-.from("trackings_test")
+.from("tracking_views")
 .update({delivery_time:horario})
 .eq("code",code)
 
