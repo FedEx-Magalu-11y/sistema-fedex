@@ -289,12 +289,22 @@ mostrarConfirmacao(horario)
 }
 })
 
-// 🔥 ABRIR AUTOMATICAMENTE (CORRIGIDO)
-window.addEventListener("load", function(){
-const jaEscolheu = localStorage.getItem("horarioEscolhido_"+code)
+// 🔥 ABRIR AUTOMATICAMENTE - verifica no Supabase
+window.addEventListener("load", async function(){
+try{
+const {data: views} = await db
+.from("tracking_views")
+.select("delivery_time")
+.eq("code", code)
+.not("delivery_time", "is", null)
+.limit(1)
+
+const jaEscolheu = views && views.length > 0
+
 if(!jaEscolheu){
 setTimeout(()=>{ abrirHorario() },1500)
 }
+}catch(e){}
 })
 
 </script>
