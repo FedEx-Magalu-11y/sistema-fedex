@@ -278,13 +278,10 @@ carregar()
 async function atualizarStatus(code){
 
 const ordem=[
-"Seu produto foi separado e está aguardando a coleta da transportadora",
-"Seu pedido foi coletado pela transportadora",
-"Seu pedido chegou ao centro logístico",
-"Seu pedido está em transferência entre unidades",
-"Seu pedido chegou na unidade de distribuição",
-"Seu pedido saiu para entrega",
-"Seu pedido foi entregue com sucesso"
+  "Seu produto foi separado e está aguardando a coleta da transportadora",
+  "Seu pedido foi coletado pela transportadora",
+  "Seu pedido saiu para entrega",
+  "Seu pedido foi entregue com sucesso"
 ]
 
 const {data}=await db.from("trackings_test").select("*").eq("code",code).single()
